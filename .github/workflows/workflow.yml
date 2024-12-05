@@ -1,4 +1,4 @@
-name: test
+name: Liveboat feed build
 
 # on: push
 on:
@@ -9,7 +9,7 @@ on:
         - 'build*'
 
 jobs:
-  test:
+  liveboat-feed-build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
