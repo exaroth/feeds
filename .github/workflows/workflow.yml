@@ -15,7 +15,10 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: 'master'
       - name: install deps
         run: sudo apt-get update && sudo apt-get install snapd sqlite3
       - name: install newsboat
@@ -26,10 +29,6 @@ jobs:
         run: newsboat -u config/newsboat-urls -C config/newsboat-config -c cache.db -x reload
       - name: Run liveboat
         run: ./bin/liveboat --template-path templates/default --config-file config/liveboat-config.toml
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          ref: 'master'
       - name: Commit files
         id: commit
         run: |
