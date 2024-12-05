@@ -1,0 +1,11 @@
+title = "Liveboat Demo"
+site_path = "/liveboat-demo/"
+show_read_articles = true
+newsboat_urls_file = "/home/runner/work/liveboat-demo/liveboat-demo/config/newsboat-urls"
+newsboat_cache_file = "/home/runner/work/liveboat-demo/liveboat-demo/cache.db"
+time_threshold = 40
+build_dir = "/home/runner/work/liveboat-demo/liveboat-demo/docs"
+template_name = "default"
+remote_url = ""
+exclude_tags = []
+exclude_feeds = []
