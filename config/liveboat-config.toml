@@ -1,10 +1,10 @@
-title = "Liveboat Demo"
-site_path = "/liveboat-demo/"
+title = "Konrad's feeds"
+site_path = "/feeds/"
 show_read_articles = true
-newsboat_urls_file = "/home/runner/work/liveboat-demo/liveboat-demo/config/newsboat-urls"
-newsboat_cache_file = "/home/runner/work/liveboat-demo/liveboat-demo/cache.db"
+newsboat_urls_file = "/home/runner/work/feeds/feeds/config/newsboat-urls"
+newsboat_cache_file = "/home/runner/work/feeds/feeds/cache.db"
 time_threshold = 40
-build_dir = "/home/runner/work/liveboat-demo/liveboat-demo/docs"
+build_dir = "/home/runner/work/feeds/feeds/docs"
 template_name = "default"
 remote_url = ""
 exclude_tags = []
