@@ -1,0 +1,11 @@
+title = "Liveboat Feeds"
+site_path = "/feeds/"
+show_read_articles = true
+newsboat_urls_file = "/home/runner/work/feeds/feeds/config/newsboat-urls"
+newsboat_cache_file = "/home/runner/work/feeds/feeds/cache.db"
+time_threshold = 40
+build_dir = "/home/runner/work/feeds/feeds/docs"
+template_name = "default"
+remote_url = ""
+exclude_tags = []
+exclude_feeds = []
