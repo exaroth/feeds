@@ -3,7 +3,7 @@ name: test
 # on: push
 on:
   schedule:
-    - cron: "* * * * *"
+    - cron: "*/30 * * * *"
   push:
       tags:
         - 'build*'
