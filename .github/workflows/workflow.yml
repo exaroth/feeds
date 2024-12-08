@@ -64,3 +64,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force_with_lease: true
           branch: master
+        if: github.ref == 'refs/heads/master'
