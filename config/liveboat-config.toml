@@ -1,5 +1,5 @@
-title = "Liveboat Demo"
-site_path = "/liveboat-demo/"
+title = "Liveboat Feeds"
+site_path = "/feeds/"
 show_read_articles = true
 newsboat_urls_file = "./config/newsboat-urls"
 newsboat_cache_file = "./cache.db"
