@@ -19,6 +19,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
+          branch: master
       - name: install deps
         run: sudo apt-get update && sudo apt-get install snapd sqlite3
       - name: install newsboat
@@ -63,3 +64,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force_with_lease: true
           branch: master
+        if: github.ref_name == 'master'
