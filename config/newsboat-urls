@@ -8,9 +8,10 @@ file:///home/exaroth/.scripts/atom.xml "~ Atom Pocket"
 
 https://access.acast.com/rss/theeconomistmorningbriefing/default "~News - Daily Brief" news
 https://www.youtube.com/feeds/videos.xml?channel_id=UCknLrEdhRCp1aegoMqRaCZg "~News - DW" news
+https://www.youtube.com/feeds/videos.xml?channel_id=UC52X5wxOL_s5yw0dQk7NtgA "~News - AP" news
 https://www.youtube.com/feeds/videos.xml?channel_id=UCK7tptUDHh-RYDsdxO1-5QQ "~News - Wall Street Journal" news
-https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg "~News - Bloomberg" news
-https://www.youtube.com/feeds/videos.xml?channel_id=UCTrQ7HXWRRxr7OsOtodr2_w "~News - Channel 4" news
+https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg "~News - Bloomberg " news
+https://www.youtube.com/feeds/videos.xml?channel_id=UChqUTb7kYRX8-EiaN3XFrSQ "~News - Reuters " news
 https://www.reddit.com/r/worldnews/top/.rss?sort=top&t=day&limit=10 "~News - Reddit - World News" news
 https://www.reddit.com/r/europe/top/.rss?sort=top&t=day&limit=10 "~News - Reddit - Europe" news
 
@@ -43,6 +44,9 @@ https://blog.codinghorror.com/rss/ "~Dev - Coding Horror" dev
 https://www.youtube.com/feeds/videos.xml?channel_id=UCvqbFHwN-nwalWPjPUKpvTA "~Dev - CNCF" dev
 https://www.youtube.com/feeds/videos.xml?channel_id=UCsBjURrPoezykLs9EqgamOA "~Dev - Fireship" dev
 https://www.youtube.com/feeds/videos.xml?channel_id=UCIat2Cdg661wF5DQDWTQAmg "~Dev - Probabl" dev
+https://www.youtube.com/feeds/videos.xml?channel_id=UCeLvlbC754U6FyFQbKc0UnQ "~Dev - Anton Putra" dev
+https://www.youtube.com/feeds/videos.xml?channel_id=UCSp-OaMpsO8K0KkOqyBl7_w "~Dev - Let's get Rusty" dev
+https://www.youtube.com/feeds/videos.xml?channel_id=UCgY3bHW4qHKq9aC4i3nO-0g "~Dev - Core Dump" dev
 https://medium.com/@kyodo-tech/feed "~Dev - Kyodo-Tech" dev
 https://increment.com/feed.xml "~Dev - Stripe Increment" dev
 https://jvns.ca/atom.xml "~Dev - Julia Evans" dev
@@ -128,6 +132,8 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCG5h8yHSUS4n7zPnh0dG0SA ! y
 https://www.youtube.com/feeds/videos.xml?channel_id=UCG9ShGbASoiwHwFcLcAh9EA ! yt
 # Veritasium
 https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA ! yt
+# Rose Anvil
+https://www.youtube.com/feeds/videos.xml?channel_id=UCId9g4zlQ9BOn6fLKIt1Y0A ! yt
 # Kyle McDougall
 https://www.youtube.com/feeds/videos.xml?channel_id=UCJQcBYfgescGRJUzU6IMCMw ! yt
 # EXPLORE WITH US
@@ -190,6 +196,8 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCntxIE8FKow3FbWG-BCApeQ ! y
 https://www.youtube.com/feeds/videos.xml?channel_id=UCqTHx0ObkFZ97KO2SWUuz9w ! yt
 # Kraut
 https://www.youtube.com/feeds/videos.xml?channel_id=UCr_Q-bPpcw5fJ-Oow1BW1NQ ! yt
+# Forgotten Weapons
+https://www.youtube.com/feeds/videos.xml?channel_id=UCrfKGpvbEQXcbe68dzXgJuA ! yt
 # Horses
 https://www.youtube.com/feeds/videos.xml?channel_id=UCrx2zrPjhGRi9TwszZiLwEg ! yt
 # Like Stories of Old
@@ -234,4 +242,6 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCIlU5KDHKFSaebYviKfOidw ! y
 https://www.youtube.com/feeds/videos.xml?channel_id=UCqoAEDirJPjEUFcF2FklnBA ! yt
 # Jeff Goerling
 https://www.youtube.com/feeds/videos.xml?channel_id=UCR-DXc1voovS8nhAvccRZhg ! yt
+# Jon Tron Show
+https://www.youtube.com/feeds/videos.xml?channel_id=UCdJdEguB1F1CiYe7OEi3SBg ! yt
 
