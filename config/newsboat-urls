@@ -5,6 +5,7 @@ file:///home/exaroth/.scripts/atom.xml "~ Atom Pocket"
 "query:Dev:tags # \"dev\" and age < 2 and unread = \"yes\""
 "query:Tech:tags # \"tech\" and age < 2 and unread = \"yes\""
 "query:Podcast:tags # \"podcast\" and unread = \"yes\""
+"query:Movies:tags # \"movies\" and unread = \"yes\""
 
 https://access.acast.com/rss/theeconomistmorningbriefing/default "~News - Daily Brief" news
 https://www.youtube.com/feeds/videos.xml?channel_id=UCknLrEdhRCp1aegoMqRaCZg "~News - DW" news
@@ -15,15 +16,14 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UChqUTb7kYRX8-EiaN3XFrSQ "~N
 https://www.reddit.com/r/worldnews/top/.rss?sort=top&t=day&limit=10 "~News - Reddit - World News" news
 https://www.reddit.com/r/europe/top/.rss?sort=top&t=day&limit=10 "~News - Reddit - Europe" news
 
-https://www.youtube.com/feeds/videos.xml?channel_id=UCrTNhL_yO3tPTdQ5XgmmWjA "~Movies - RedLetterMedia" movies
-https://www.youtube.com/feeds/videos.xml?channel_id=UCpsjEC4PlHmhM84yX5Y3rrg "~Movies - Fanboy Flicks" movies
-https://www.youtube.com/feeds/videos.xml?channel_id=UCjFqcJQXGZ6T6sxyFB-5i6A "~Movies - Every Frame a Painting" movies
-https://www.youtube.com/feeds/videos.xml?channel_id=UCcGlif61mMV6soFSiN2QHoQ "~Movies - Kino Corner" movies
-https://www.youtube.com/feeds/videos.xml?channel_id=UCUyvQV2JsICeLZP4c_h40kA "~Movies - Thomas Flight" movies
-https://www.youtube.com/feeds/videos.xml?channel_id=UCI62rVaY9gn5yO3Msh6BN0w "~Movies - Layton Eversaul" movies
-https://www.youtube.com/feeds/videos.xml?channel_id=UCFOfgEQLHpPuVNP_m-XldTg "~Movies - FilmStack" movies
-https://www.youtube.com/feeds/videos.xml?channel_id=UC4zKSynEH_sLA1TC8_kU0gQ "~Movies - Oliver Harper" movies
-https://www.youtube.com/feeds/videos.xml?channel_id=UCErmMCK1sHF-kCtyHpuSXtQ "~Movies - Kermode" movies
+https://www.youtube.com/feeds/videos.xml?channel_id=UCrTNhL_yO3tPTdQ5XgmmWjA "~Movies - RedLetterMedia" ! movies
+https://www.youtube.com/feeds/videos.xml?channel_id=UCpsjEC4PlHmhM84yX5Y3rrg "~Movies - Fanboy Flicks" ! movies
+https://www.youtube.com/feeds/videos.xml?channel_id=UCjFqcJQXGZ6T6sxyFB-5i6A "~Movies - Every Frame a Painting" ! movies
+https://www.youtube.com/feeds/videos.xml?channel_id=UCcGlif61mMV6soFSiN2QHoQ "~Movies - Kino Corner" ! movies
+https://www.youtube.com/feeds/videos.xml?channel_id=UCUyvQV2JsICeLZP4c_h40kA "~Movies - Thomas Flight" ! movies
+https://www.youtube.com/feeds/videos.xml?channel_id=UCI62rVaY9gn5yO3Msh6BN0w "~Movies - Layton Eversaul" ! movies
+https://www.youtube.com/feeds/videos.xml?channel_id=UCFOfgEQLHpPuVNP_m-XldTg "~Movies - FilmStack" ! movies
+https://www.youtube.com/feeds/videos.xml?channel_id=UCErmMCK1sHF-kCtyHpuSXtQ "~Movies - Kermode" ! movies
 
 
 https://hnrss.org/best "~HN" dev
