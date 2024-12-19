@@ -10,8 +10,6 @@
 
     <meta name="mobile-web-app-capable" content="yes">
 
-    <link rel="stylesheet" href="./assets/index.css">
-
     <link rel='icon' href='./assets/favicon.ico' type='image/x-icon'>
     <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
@@ -24,10 +22,16 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Liveboat Feeds">
 
+    <link rel="stylesheet" href="./assets/index.css?tv=">
+    <style>
+        :root {
+        }
+    </style>
+
   </head>
   <body>
       <script>
-      window.buildTime = 1734300212;
+      window.buildTime = 1734617037;
       window.pageTitle = 'Liveboat Feeds';
       window.sitePath = '/feeds/';
       window.feeds = [
@@ -361,13 +365,6 @@
             feedLink: "https://changelog.com/podcast",
           },
           {
-            id: "6C2W1azD1rBrwqWWL9kQ1NofbtZZftJZnfQ3u9LZdNi3d1BmyU9HagS",
-            url: "https://feeds.buzzsprout.com/2105116.rss",
-            title: "Command+Shift+Left",
-            displayTitle: "Podcast - Cmd+Shift+Left",
-            feedLink: "https://www.cmdshiftleft.com/",
-          },
-          {
             id: "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JpprHFm2UV2vWRfa9mX2y2pfXs5n2xbtt",
             url: "https://www.youtube.com/feeds/videos.xml?channel_id&#x3D;UCzQUP1qoWDoEbmsQxvdjxgQ",
             title: "PowerfulJRE",
@@ -420,7 +417,7 @@
       </script>
       <div id="app"></div>
 
-    <script type="module" src="./assets/index.js"></script>
+    <script type="module" src="./assets/index.js?tv="></script>
 
   </body>
 </html>
