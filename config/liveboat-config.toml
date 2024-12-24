@@ -4,9 +4,9 @@
 # hosted as default page for the user 
 # (eg <username>.github.io), in that case it should be
 # set to '/'
-site_path = "/liveboat-github-runner/"
+site_path = "/feeds/"
 # Title of the site
-title = "Liveboat Demo"
+title = "Liveboat Feeds"
 # Maximum number of days for which Liveboat will include
 # articles for.
 time_threshold = 40

@@ -1,15 +1,36 @@
-"query:Dev News - Last 2 days:tags # \"dev\" and age < 2 and unread = \"yes\""
-"query:Tech News - Last 2 days:tags # \"tech\" and age < 2 and unread = \"yes\""
-"query:World News - Last day:tags # \"news\" and age < 1 and unread = \"yes\""
-"query:Podcasts:tags # \"podcast\" and unread = \"yes\""
+exec:~/.scripts/pocket_atom
+file:///home/exaroth/.scripts/atom.xml "~ Atom Pocket"
 "query:Youtube:tags # \"yt\""
+"query:News:tags # \"news\" and age < 1 and unread = \"yes\""
+"query:Dev:tags # \"dev\" and age < 2 and unread = \"yes\""
+"query:Tech:tags # \"tech\" and age < 2 and unread = \"yes\""
+"query:Podcast:tags # \"podcast\" and unread = \"yes\""
+"query:Movies:tags # \"movies\" and unread = \"yes\""
+"query:Github Issues:tags # \"gh\" and age < 14"
+
+https://access.acast.com/rss/theeconomistmorningbriefing/default "~News - Daily Brief" news
+https://www.youtube.com/feeds/videos.xml?channel_id=UCknLrEdhRCp1aegoMqRaCZg "~News - DW" news
+https://www.youtube.com/feeds/videos.xml?channel_id=UC52X5wxOL_s5yw0dQk7NtgA "~News - AP" news
+https://www.youtube.com/feeds/videos.xml?channel_id=UCK7tptUDHh-RYDsdxO1-5QQ "~News - Wall Street Journal" news
+https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg "~News - Bloomberg " news
+https://www.youtube.com/feeds/videos.xml?channel_id=UChqUTb7kYRX8-EiaN3XFrSQ "~News - Reuters " news
+https://www.reddit.com/r/worldnews/top/.rss?sort=top&t=day&limit=10 "~News - Reddit - World News" news
+https://www.reddit.com/r/europe/top/.rss?sort=top&t=day&limit=10 "~News - Reddit - Europe" news
+
+https://www.youtube.com/feeds/videos.xml?channel_id=UCrTNhL_yO3tPTdQ5XgmmWjA "~Movies - RedLetterMedia" ! movies
+https://www.youtube.com/feeds/videos.xml?channel_id=UCpsjEC4PlHmhM84yX5Y3rrg "~Movies - Fanboy Flicks" ! movies
+https://www.youtube.com/feeds/videos.xml?channel_id=UCjFqcJQXGZ6T6sxyFB-5i6A "~Movies - Every Frame a Painting" ! movies
+https://www.youtube.com/feeds/videos.xml?channel_id=UCcGlif61mMV6soFSiN2QHoQ "~Movies - Kino Corner" ! movies
+https://www.youtube.com/feeds/videos.xml?channel_id=UCUyvQV2JsICeLZP4c_h40kA "~Movies - Thomas Flight" ! movies
+https://www.youtube.com/feeds/videos.xml?channel_id=UCI62rVaY9gn5yO3Msh6BN0w "~Movies - Layton Eversaul" ! movies
+https://www.youtube.com/feeds/videos.xml?channel_id=UCFOfgEQLHpPuVNP_m-XldTg "~Movies - FilmStack" ! movies
+https://www.youtube.com/feeds/videos.xml?channel_id=UCErmMCK1sHF-kCtyHpuSXtQ "~Movies - Kermode" ! movies
+
 
 https://hnrss.org/best "~HN" dev
 https://hnrss.org/show?points=60 "~HN Show" dev
 https://hnrss.org/frontpage?points=75 "~HN Front" dev
-
 http://rss.slashdot.org/Slashdot/slashdotLinux "~Dev - Slashdot - Linux" dev
-https://www.cyberciti.com/atom/atom.xml "~Dev - NixCraft" dev
 http://rss.slashdot.org/Slashdot/slashdotDevelopers "~Dev - Slashdot - Dev" dev
 http://aphyr.com/posts.atom "~Dev - Aphyr" dev
 https://kubernetes.io/feed.xml "~Dev - Kubernetes Blog" dev
@@ -24,6 +45,9 @@ https://blog.codinghorror.com/rss/ "~Dev - Coding Horror" dev
 https://www.youtube.com/feeds/videos.xml?channel_id=UCvqbFHwN-nwalWPjPUKpvTA "~Dev - CNCF" dev
 https://www.youtube.com/feeds/videos.xml?channel_id=UCsBjURrPoezykLs9EqgamOA "~Dev - Fireship" dev
 https://www.youtube.com/feeds/videos.xml?channel_id=UCIat2Cdg661wF5DQDWTQAmg "~Dev - Probabl" dev
+https://www.youtube.com/feeds/videos.xml?channel_id=UCeLvlbC754U6FyFQbKc0UnQ "~Dev - Anton Putra" dev
+https://www.youtube.com/feeds/videos.xml?channel_id=UCSp-OaMpsO8K0KkOqyBl7_w "~Dev - Let's get Rusty" dev
+https://www.youtube.com/feeds/videos.xml?channel_id=UCgY3bHW4qHKq9aC4i3nO-0g "~Dev - Core Dump" dev
 https://medium.com/@kyodo-tech/feed "~Dev - Kyodo-Tech" dev
 https://increment.com/feed.xml "~Dev - Stripe Increment" dev
 https://jvns.ca/atom.xml "~Dev - Julia Evans" dev
@@ -36,6 +60,7 @@ https://transactional.blog/feed.xml "~Dev - Transactional" dev
 https://newsletter.systemdesign.one/feed "~Dev - System Design Newsletter" dev
 https://blog.algomaster.io/feed "~Dev - Algomaster" dev
 https://vnotes.pages.dev/atom.xml "~Dev - vladkens" dev
+https://www.cyberciti.com/atom/atom.xml "~Dev - NixCraft" dev
 
 https://techcrunch.com/feed/ ! tech
 http://rss.slashdot.org/Slashdot/slashdotMain ! tech
@@ -46,15 +71,8 @@ https://www.gamespot.com/feeds/reviews ! tech
 https://www.phoronix.com/rss.php ! tech
 https://spectrum.ieee.org/customfeeds/feed/all-topics/rss ! tech
 
-https://access.acast.com/rss/theeconomistmorningbriefing/default "~News - Daily Brief" news
-https://www.youtube.com/feeds/videos.xml?channel_id=UCknLrEdhRCp1aegoMqRaCZg "~News - DW" news
-https://www.youtube.com/feeds/videos.xml?channel_id=UC52X5wxOL_s5yw0dQk7NtgA "~News - AP" news
-https://www.youtube.com/feeds/videos.xml?channel_id=UCK7tptUDHh-RYDsdxO1-5QQ "~News - Wall Street Journal" news
-https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg "~News - Bloomberg " news
-https://www.youtube.com/feeds/videos.xml?channel_id=UChqUTb7kYRX8-EiaN3XFrSQ "~News - Reuters " news
-https://www.reddit.com/r/worldnews/top/.rss?sort=top&t=day&limit=10 "~News - Reddit - World News" news
-https://www.reddit.com/r/europe/top/.rss?sort=top&t=day&limit=10 "~News - Reddit - Europe" news
 
+https://access.acast.com/rss/f2925f7a-eb08-471a-9958-387cb5ee6353/default "~Podcast - Ancients" podcast
 https://access.acast.com/rss/c939f8d1-c4bc-478e-8bb9-e5343f9a7ab5/default "~Podcast - HistoryHit" podcast
 https://changelog.com/gotime/feed "~Podcast - Go Time" podcast
 https://changelog.com/podcast/feed "~Podcast - Changelog" podcast
@@ -70,11 +88,15 @@ https://anchor.fm/s/174cb1b8/podcast/rss "~Podcast - MLOps" podcast
 https://www.youtube.com/feeds/videos.xml?channel_id=UCfuj1MM5p37CRzWYPv_PsWA "~Podcast - CodeTalks" podcast
 https://www.youtube.com/feeds/videos.xml?channel_id=UCmYAQDZIQGm_kPvemBc_qwg "~Podcast - DevConfs" podcast
 
+https://gh-issues-to-rss.fly.dev/exaroth/liveboat?m=io ! gh
+
 
 # Astrum
 https://www.youtube.com/feeds/videos.xml?channel_id=UC-9b7aDP6ZN0coj9-xFnrtw ! yt
 # Channel 5 with Andrew Callaghan
 https://www.youtube.com/feeds/videos.xml?channel_id=UC-AQKm7HUNMmxjdS371MSwg ! yt
+# French Cooking Academy
+https://www.youtube.com/feeds/videos.xml?channel_id=UC0lG3Ihe4LGV851lODRIS5g ! yt
 # Real Science
 https://www.youtube.com/feeds/videos.xml?channel_id=UC176GAQozKKjhz62H8u9vQQ ! yt
 # Mustard
@@ -89,48 +111,98 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UC5_QAB65IbajYkL6hzoY-gg ! y
 https://www.youtube.com/feeds/videos.xml?channel_id=UC5_npTvQVSZ28Kc8wvffPew ! yt
 # Sarcasmitron
 https://www.youtube.com/feeds/videos.xml?channel_id=UC6WD1VImCVeOuNccuqDzAdA ! yt
+# The School of Life
+https://www.youtube.com/feeds/videos.xml?channel_id=UC7IcJI8PUf5Z3zKxnZvTBog ! yt
 # PBS Space Time
 https://www.youtube.com/feeds/videos.xml?channel_id=UC7_gcs09iThXybpVgjHZ_7g ! yt
 # Timeline - World History Documentaries
 https://www.youtube.com/feeds/videos.xml?channel_id=UC88lvyJe7aHZmcvzvubDFRg ! yt
 # Patrick Boyle
 https://www.youtube.com/feeds/videos.xml?channel_id=UCASM0cgfkJxQ1ICmRilfHLw ! yt
+# Real Time History
+https://www.youtube.com/feeds/videos.xml?channel_id=UCB1eDEd1AYG3YrRIJSZzMOQ ! yt
+# The Cold War
+https://www.youtube.com/feeds/videos.xml?channel_id=UCCGvq-qmjFmmMD4e-PLQqGg ! yt
+# Extra History
+https://www.youtube.com/feeds/videos.xml?channel_id=UCCODtTcd5M1JavPCOr_Uydg ! yt
 # Chyrosran22
 https://www.youtube.com/feeds/videos.xml?channel_id=UCD0y51PJfvkZNe3y3FR5riw ! yt
+# The People Profiles
+https://www.youtube.com/feeds/videos.xml?channel_id=UCD6TPU-PvTMvqgzC_AM7_uA ! yt
+# Georg Rockall-Schmidt
+https://www.youtube.com/feeds/videos.xml?channel_id=UCG5h8yHSUS4n7zPnh0dG0SA ! yt
 # SEA
 https://www.youtube.com/feeds/videos.xml?channel_id=UCG9ShGbASoiwHwFcLcAh9EA ! yt
 # Veritasium
 https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA ! yt
+# Rose Anvil
+https://www.youtube.com/feeds/videos.xml?channel_id=UCId9g4zlQ9BOn6fLKIt1Y0A ! yt
+# Kyle McDougall
+https://www.youtube.com/feeds/videos.xml?channel_id=UCJQcBYfgescGRJUzU6IMCMw ! yt
+# EXPLORE WITH US
+https://www.youtube.com/feeds/videos.xml?channel_id=UCJWKjrrUh2KL1d3zXQW79cQ ! yt
+# tanks for nothin
+https://www.youtube.com/feeds/videos.xml?channel_id=UCJXxuESjGIaaqb1-IRWFihw ! yt
+# Nerdwriter1
+https://www.youtube.com/feeds/videos.xml?channel_id=UCJkMlOu7faDgqh4PfzbpLdg ! yt
+# The Cinema Cartography
+https://www.youtube.com/feeds/videos.xml?channel_id=UCL5kBJmBUVFLYBDiSiK1VDw ! yt
 # Vox
 https://www.youtube.com/feeds/videos.xml?channel_id=UCLXo7UDZvByw2ixzpQCufnA ! yt
+# ciekawehistorie
+https://www.youtube.com/feeds/videos.xml?channel_id=UCO8czxzBx4PxuTEolCBmq2w ! yt
+# fern
+https://www.youtube.com/feeds/videos.xml?channel_id=UCODHrzPMGbNv67e84WDZhQQ ! yt
+# RealLifeLore
+https://www.youtube.com/feeds/videos.xml?channel_id=UCP5tjEmvPItGyLhmjdwP7Ww ! yt
 # Internet Historian
 https://www.youtube.com/feeds/videos.xml?channel_id=UCR1D15p_vdP3HkrH8wgjQRw ! yt
 # Real Engineering
 https://www.youtube.com/feeds/videos.xml?channel_id=UCR1IuLEqb6UEA_zQ81kwXfg ! yt
 # LEMMiNO
 https://www.youtube.com/feeds/videos.xml?channel_id=UCRcgy6GzDeccI7dkbbBna3Q ! yt
+# Columbus Police Body Camera
+https://www.youtube.com/feeds/videos.xml?channel_id=UCS74cWPjEY1EOuVPM4eJhCw ! yt
 # Fall of Civilizations
 https://www.youtube.com/feeds/videos.xml?channel_id=UCT6Y5JJPKe_JDMivpKgVXew ! yt
 # Bloomberg Originals
 https://www.youtube.com/feeds/videos.xml?channel_id=UCUMZ7gohGI9HcU9VNsr2FJQ ! yt
 # DW Documentary
 https://www.youtube.com/feeds/videos.xml?channel_id=UCW39zufHfsuGgpLviKh297Q ! yt
+# Middle Eats
+https://www.youtube.com/feeds/videos.xml?channel_id=UCWj_rUMGYCP0DjffybE2nbg ! yt
 # History Hit
 https://www.youtube.com/feeds/videos.xml?channel_id=UCZwU2G-KVl-P-O-B35chZOQ ! yt
 # Weird History
 https://www.youtube.com/feeds/videos.xml?channel_id=UCc-N24Y5OA0gqbjBwe1ttfA ! yt
+# 2 Guys & A Cooler
+https://www.youtube.com/feeds/videos.xml?channel_id=UCdnBWzYQfkql-o460NTL1Tw ! yt
 # BBC Earth Science
 https://www.youtube.com/feeds/videos.xml?channel_id=UCdsOTr6SmDrxuWE7sJFrkhQ ! yt
 # Great Art Explained
 https://www.youtube.com/feeds/videos.xml?channel_id=UCePDFpCr78_qmVtpoB1Axaw ! yt
+# You Suck At Cooking
+https://www.youtube.com/feeds/videos.xml?channel_id=UCekQr9znsk2vWxBo3YiLq2w ! yt
 # Core Dump
 https://www.youtube.com/feeds/videos.xml?channel_id=UCgY3bHW4qHKq9aC4i3nO-0g ! yt
+# History Buffs
+https://www.youtube.com/feeds/videos.xml?channel_id=UCggHoXaj8BQHIiPmOxezeWA ! yt
+# Petrolicious
+https://www.youtube.com/feeds/videos.xml?channel_id=UCgyJPixJl95X1ut3E9K99KA ! yt
+# The Life Guide
+https://www.youtube.com/feeds/videos.xml?channel_id=UCheAUBrk8xw6QhJIxEPsvhg ! yt
 # Ben Laude
 https://www.youtube.com/feeds/videos.xml?channel_id=UCnSFlVqRyNfIJDsmpkcY57w ! yt
+# cuoredicioccolato
+https://www.youtube.com/feeds/videos.xml?channel_id=UCntxIE8FKow3FbWG-BCApeQ ! yt
 # The Canvas
 https://www.youtube.com/feeds/videos.xml?channel_id=UCqTHx0ObkFZ97KO2SWUuz9w ! yt
+# Kraut
+https://www.youtube.com/feeds/videos.xml?channel_id=UCr_Q-bPpcw5fJ-Oow1BW1NQ ! yt
 # Horses
 https://www.youtube.com/feeds/videos.xml?channel_id=UCrx2zrPjhGRi9TwszZiLwEg ! yt
+# Like Stories of Old
+https://www.youtube.com/feeds/videos.xml?channel_id=UCs7nPQIEba0T3tGOWWsZpJQ ! yt
 # Royal Armouries
 https://www.youtube.com/feeds/videos.xml?channel_id=UCsMX-XuiEkBi4-GDrYuniWg ! yt
 # Kurzgesagt – In a Nutshell
@@ -139,6 +211,14 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q ! y
 https://www.youtube.com/feeds/videos.xml?channel_id=UCs_tLP3AiwYKwdUHpltJPuA ! yt
 # TED-Ed
 https://www.youtube.com/feeds/videos.xml?channel_id=UCsooa4yRKGN_zEE8iknghZA ! yt
+# Summoning Salt
+https://www.youtube.com/feeds/videos.xml?channel_id=UCtUbO6rBht0daVIOGML3c8w ! yt
+# neo
+https://www.youtube.com/feeds/videos.xml?channel_id=UCtYKe7-XbaDjpUwcU5x0bLg ! yt
+# Radosław Sikorski - kanał oficjalny
+https://www.youtube.com/feeds/videos.xml?channel_id=UCuJY3FfThXIq-T6UpCHjbSA ! yt
+# Townsends
+https://www.youtube.com/feeds/videos.xml?channel_id=UCxr2d4As312LulcajAkKJYw ! yt
 # Folding Ideas
 https://www.youtube.com/feeds/videos.xml?channel_id=UCyNtlmLB73-7gtlBz00XOQQ ! yt
 # Dan Carlin
@@ -147,7 +227,22 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UC3RcjbuyF5M1U4R62zjE3hg ! y
 https://www.youtube.com/feeds/videos.xml?channel_id=UCzR-rom72PHN9Zg7RML9EbA ! yt
 # PBS
 https://www.youtube.com/feeds/videos.xml?channel_id=UCgyeJxD05YnoDquRMNBfBqw ! yt
+# James Sprigon Gardening
+https://www.youtube.com/feeds/videos.xml?channel_id=UC9V_-gqJsZNOy4v_HqbRz3w ! yt
+# More perfect union
+https://www.youtube.com/feeds/videos.xml?channel_id=UCehBVAPy-bxmnbNARF-_tvA ! yt
+# James Jani
+https://www.youtube.com/feeds/videos.xml?channel_id=UCT0dmfFCLWuVKPWZ6wcdKyg ! yt
+# Dodford
+https://www.youtube.com/feeds/videos.xml?channel_id=UC-k1VD5K6kwizjhg-HKj1rw ! yt
 # Frontline
 https://www.youtube.com/feeds/videos.xml?channel_id=UC3ScyryU9Oy9Wse3a8OAmYQ ! yt
+# Newsthink
+https://www.youtube.com/feeds/videos.xml?channel_id=UCIlU5KDHKFSaebYviKfOidw ! yt
 # StarTalk
 https://www.youtube.com/feeds/videos.xml?channel_id=UCqoAEDirJPjEUFcF2FklnBA ! yt
+# Jeff Goerling
+https://www.youtube.com/feeds/videos.xml?channel_id=UCR-DXc1voovS8nhAvccRZhg ! yt
+# Jon Tron Show
+https://www.youtube.com/feeds/videos.xml?channel_id=UCdJdEguB1F1CiYe7OEi3SBg ! yt
+
