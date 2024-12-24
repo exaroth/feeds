@@ -57,7 +57,7 @@ jobs:
       - name: Update Liveboat version and templates
         run: |
           make update;
-          git add ./bin ./templates ./config
+          git add ./templates ./config
         if: env.ENABLE_AUTOMATIC_UPDATES == '1'
 
       - name: Run newsboat
