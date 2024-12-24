@@ -77,7 +77,7 @@ jobs:
         run: |
           git add ./docs
           let ts=$(date +"%s")
-          git diff-index --quiet HEAD || git commit -m "Feed rebuild @ ${ts}" -a
+          git commit -m "Feed rebuild @ ${ts}" -a
         shell: bash
 
       - name: Push changes
