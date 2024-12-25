@@ -6,6 +6,78 @@
   "feedLink": "https://news.ycombinator.com/",
   "items": [
     {
+      "title": "macOS menu bar app that shows how full the ISS urine tank is in real time",
+      "url": "https://github.com/Jaennaet/pISSStream",
+      "date": 1735079920,
+      "author": "ajdude",
+      "unread": true,
+      "desc": "",
+      "content": "\n<p>Article URL: <a href=\"https://github.com/Jaennaet/pISSStream\">https://github.com/Jaennaet/pISSStream</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42505454\">https://news.ycombinator.com/item?id=42505454</a></p>\n<p>Points: 189</p>\n<p># Comments: 60</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Masks, Smoke, and Mirrors: The story of EgyptAir flight 804",
+      "url": "https://admiralcloudberg.medium.com/masks-smoke-and-mirrors-the-untold-story-of-egyptair-flight-804-42c788fcac2d",
+      "date": 1735069180,
+      "author": "gdmt",
+      "unread": true,
+      "desc": "",
+      "content": "\n<p>Article URL: <a href=\"https://admiralcloudberg.medium.com/masks-smoke-and-mirrors-the-untold-story-of-egyptair-flight-804-42c788fcac2d\">https://admiralcloudberg.medium.com/masks-smoke-and-mirrors-the-untold-story-of-egyptair-flight-804-42c788fcac2d</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42504343\">https://news.ycombinator.com/item?id=42504343</a></p>\n<p>Points: 82</p>\n<p># Comments: 35</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "AIs Will Increasingly Fake Alignment",
+      "url": "https://thezvi.substack.com/p/ais-will-increasingly-fake-alignment",
+      "date": 1735062726,
+      "author": "theptip",
+      "unread": true,
+      "desc": "",
+      "content": "\n<p>Article URL: <a href=\"https://thezvi.substack.com/p/ais-will-increasingly-fake-alignment\">https://thezvi.substack.com/p/ais-will-increasingly-fake-alignment</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42503519\">https://news.ycombinator.com/item?id=42503519</a></p>\n<p>Points: 79</p>\n<p># Comments: 69</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Why making friends as an adult is harder",
+      "url": "https://www.theestablished.com/self/health/why-making-friends-as-an-adult-is-harder-than-ever",
+      "date": 1735054828,
+      "author": "yamrzou",
+      "unread": true,
+      "desc": "",
+      "content": "\n<p>Article URL: <a href=\"https://www.theestablished.com/self/health/why-making-friends-as-an-adult-is-harder-than-ever\">https://www.theestablished.com/self/health/why-making-friends-as-an-adult-is-harder-than-ever</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42502580\">https://news.ycombinator.com/item?id=42502580</a></p>\n<p>Points: 100</p>\n<p># Comments: 126</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "JavaScript Benchmarking Is a Mess",
+      "url": "https://byteofdev.com/posts/javascript-benchmarking-mess/",
+      "date": 1735043865,
+      "author": "joseneca",
+      "unread": true,
+      "desc": "",
+      "content": "\n<p>Article URL: <a href=\"https://byteofdev.com/posts/javascript-benchmarking-mess/\">https://byteofdev.com/posts/javascript-benchmarking-mess/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42501532\">https://news.ycombinator.com/item?id=42501532</a></p>\n<p>Points: 108</p>\n<p># Comments: 69</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Tokyo released point cloud data of the entire city for free",
+      "url": "https://twitter.com/spatiallyjess/status/1871342549958537326",
+      "date": 1735037499,
+      "author": "taubek",
+      "unread": true,
+      "desc": "",
+      "content": "\n<p>Article URL: <a href=\"https://twitter.com/spatiallyjess/status/1871342549958537326\">https://twitter.com/spatiallyjess/status/1871342549958537326</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42501102\">https://news.ycombinator.com/item?id=42501102</a></p>\n<p>Points: 227</p>\n<p># Comments: 32</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "Intel shareholders file case asking ex CEO, CFO to return 3 years of salary",
       "url": "https://www.cfodive.com/news/intel-shareholders-yank-exceo-cfo-compensation-foundry/736193/",
       "date": 1735028274,
@@ -36,19 +108,19 @@
       "author": "pkaeding",
       "unread": true,
       "desc": "",
-      "content": "\n<p>Article URL: <a href=\"https://mathstodon.xyz/@johncarlosbaez/113703444230936435\">https://mathstodon.xyz/@johncarlosbaez/113703444230936435</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42499567\">https://news.ycombinator.com/item?id=42499567</a></p>\n<p>Points: 236</p>\n<p># Comments: 98</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://mathstodon.xyz/@johncarlosbaez/113703444230936435\">https://mathstodon.xyz/@johncarlosbaez/113703444230936435</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42499567\">https://news.ycombinator.com/item?id=42499567</a></p>\n<p>Points: 421</p>\n<p># Comments: 175</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
     },
     {
-      "title": "Automating the Search for Artificial Life with Foundation Models",
+      "title": "Automating the search for artificial life with foundation models",
       "url": "https://sakana.ai/asal/",
       "date": 1735008467,
       "author": "hardmaru",
       "unread": true,
       "desc": "",
-      "content": "\n<p>Article URL: <a href=\"https://sakana.ai/asal/\">https://sakana.ai/asal/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42499332\">https://news.ycombinator.com/item?id=42499332</a></p>\n<p>Points: 101</p>\n<p># Comments: 12</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://sakana.ai/asal/\">https://sakana.ai/asal/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42499332\">https://news.ycombinator.com/item?id=42499332</a></p>\n<p>Points: 148</p>\n<p># Comments: 31</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -60,7 +132,7 @@
       "author": "robenkleene",
       "unread": true,
       "desc": "",
-      "content": "\n<p>Article URL: <a href=\"https://www.rfleury.com/p/demystifying-debuggers-part-2-the\">https://www.rfleury.com/p/demystifying-debuggers-part-2-the</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42498982\">https://news.ycombinator.com/item?id=42498982</a></p>\n<p>Points: 110</p>\n<p># Comments: 13</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.rfleury.com/p/demystifying-debuggers-part-2-the\">https://www.rfleury.com/p/demystifying-debuggers-part-2-the</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42498982\">https://news.ycombinator.com/item?id=42498982</a></p>\n<p>Points: 156</p>\n<p># Comments: 21</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -72,7 +144,7 @@
       "author": "m3at",
       "unread": true,
       "desc": "",
-      "content": "\n<p>Article URL: <a href=\"https://www.digikey.com/en/maker/projects/a-step-by-step-guide-to-build-a-low-cost-drone-using-esp32/8afccd0690574bcebfa0d2ad6fd0a391\">https://www.digikey.com/en/maker/projects/a-step-by-step-guide-to-build-a-low-cost-drone-using-esp32/8afccd0690574bcebfa0d2ad6fd0a391</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42498648\">https://news.ycombinator.com/item?id=42498648</a></p>\n<p>Points: 229</p>\n<p># Comments: 71</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.digikey.com/en/maker/projects/a-step-by-step-guide-to-build-a-low-cost-drone-using-esp32/8afccd0690574bcebfa0d2ad6fd0a391\">https://www.digikey.com/en/maker/projects/a-step-by-step-guide-to-build-a-low-cost-drone-using-esp32/8afccd0690574bcebfa0d2ad6fd0a391</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42498648\">https://news.ycombinator.com/item?id=42498648</a></p>\n<p>Points: 342</p>\n<p># Comments: 116</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -84,7 +156,7 @@
       "author": "plasticchris",
       "unread": true,
       "desc": "",
-      "content": "\n<p>Article URL: <a href=\"https://blog.mlc.ai/2023/08/09/Making-AMD-GPUs-competitive-for-LLM-inference\">https://blog.mlc.ai/2023/08/09/Making-AMD-GPUs-competitive-for-LLM-inference</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42498634\">https://news.ycombinator.com/item?id=42498634</a></p>\n<p>Points: 201</p>\n<p># Comments: 124</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://blog.mlc.ai/2023/08/09/Making-AMD-GPUs-competitive-for-LLM-inference\">https://blog.mlc.ai/2023/08/09/Making-AMD-GPUs-competitive-for-LLM-inference</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42498634\">https://news.ycombinator.com/item?id=42498634</a></p>\n<p>Points: 257</p>\n<p># Comments: 162</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -96,7 +168,7 @@
       "author": "PaulHoule",
       "unread": true,
       "desc": "",
-      "content": "\n<p>Article URL: <a href=\"https://onlinelibrary.wiley.com/doi/10.1002/spe.3296\">https://onlinelibrary.wiley.com/doi/10.1002/spe.3296</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42498514\">https://news.ycombinator.com/item?id=42498514</a></p>\n<p>Points: 112</p>\n<p># Comments: 30</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://onlinelibrary.wiley.com/doi/10.1002/spe.3296\">https://onlinelibrary.wiley.com/doi/10.1002/spe.3296</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42498514\">https://news.ycombinator.com/item?id=42498514</a></p>\n<p>Points: 131</p>\n<p># Comments: 34</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -108,7 +180,7 @@
       "author": "huerne",
       "unread": true,
       "desc": "",
-      "content": "\n<p>Article URL: <a href=\"https://seangeiger.substack.com/p/why-are-cancer-guidelines-stuck-in\">https://seangeiger.substack.com/p/why-are-cancer-guidelines-stuck-in</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42498462\">https://news.ycombinator.com/item?id=42498462</a></p>\n<p>Points: 182</p>\n<p># Comments: 81</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://seangeiger.substack.com/p/why-are-cancer-guidelines-stuck-in\">https://seangeiger.substack.com/p/why-are-cancer-guidelines-stuck-in</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42498462\">https://news.ycombinator.com/item?id=42498462</a></p>\n<p>Points: 253</p>\n<p># Comments: 122</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -120,7 +192,31 @@
       "author": "foxtacles",
       "unread": true,
       "desc": "",
-      "content": "\n<p>Article URL: <a href=\"https://github.com/isledecomp/isle\">https://github.com/isledecomp/isle</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42497173\">https://news.ycombinator.com/item?id=42497173</a></p>\n<p>Points: 194</p>\n<p># Comments: 26</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://github.com/isledecomp/isle\">https://github.com/isledecomp/isle</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42497173\">https://news.ycombinator.com/item?id=42497173</a></p>\n<p>Points: 216</p>\n<p># Comments: 30</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Manx – a catalog of manuals for old computers",
+      "url": "https://manx-docs.org/about.php",
+      "date": 1734983997,
+      "author": "Lammy",
+      "unread": true,
+      "desc": "",
+      "content": "\n<p>Article URL: <a href=\"https://manx-docs.org/about.php\">https://manx-docs.org/about.php</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42497148\">https://news.ycombinator.com/item?id=42497148</a></p>\n<p>Points: 80</p>\n<p># Comments: 16</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "What happened to the world's largest tube TV? [video]",
+      "url": "https://www.youtube.com/watch?v=JfZxOuc9Qwk",
+      "date": 1734983374,
+      "author": "ecliptik",
+      "unread": true,
+      "desc": "",
+      "content": "\n<p>Article URL: <a href=\"https://www.youtube.com/watch?v=JfZxOuc9Qwk\">https://www.youtube.com/watch?v=JfZxOuc9Qwk</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42497093\">https://news.ycombinator.com/item?id=42497093</a></p>\n<p>Points: 603</p>\n<p># Comments: 269</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -132,7 +228,7 @@
       "author": "trq_",
       "unread": true,
       "desc": "",
-      "content": "\n<p>Article URL: <a href=\"https://www.goodfire.ai/papers/mapping-latent-spaces-llama/\">https://www.goodfire.ai/papers/mapping-latent-spaces-llama/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42495936\">https://news.ycombinator.com/item?id=42495936</a></p>\n<p>Points: 173</p>\n<p># Comments: 37</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.goodfire.ai/papers/mapping-latent-spaces-llama/\">https://www.goodfire.ai/papers/mapping-latent-spaces-llama/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42495936\">https://news.ycombinator.com/item?id=42495936</a></p>\n<p>Points: 177</p>\n<p># Comments: 41</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -150,13 +246,25 @@
       "enclosureMime": ""
     },
     {
+      "title": "Adversarial policies beat superhuman Go AIs (2023)",
+      "url": "https://arxiv.org/abs/2211.00241",
+      "date": 1734959415,
+      "author": "amichail",
+      "unread": true,
+      "desc": "",
+      "content": "\n<p>Article URL: <a href=\"https://arxiv.org/abs/2211.00241\">https://arxiv.org/abs/2211.00241</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42494127\">https://news.ycombinator.com/item?id=42494127</a></p>\n<p>Points: 234</p>\n<p># Comments: 95</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "My Colleague Julius",
       "url": "https://ploum.net/2024-12-23-julius-en.html",
       "date": 1734959039,
       "author": "dabacaba",
       "unread": true,
       "desc": "",
-      "content": "\n<p>Article URL: <a href=\"https://ploum.net/2024-12-23-julius-en.html\">https://ploum.net/2024-12-23-julius-en.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42494090\">https://news.ycombinator.com/item?id=42494090</a></p>\n<p>Points: 339</p>\n<p># Comments: 66</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://ploum.net/2024-12-23-julius-en.html\">https://ploum.net/2024-12-23-julius-en.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42494090\">https://news.ycombinator.com/item?id=42494090</a></p>\n<p>Points: 463</p>\n<p># Comments: 94</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -168,7 +276,19 @@
       "author": "taubek",
       "unread": true,
       "desc": "",
-      "content": "\n<p>Article URL: <a href=\"https://newsroom.lexmark.com/2024-12-23-Xerox-to-Acquire-Lexmark\">https://newsroom.lexmark.com/2024-12-23-Xerox-to-Acquire-Lexmark</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42494067\">https://news.ycombinator.com/item?id=42494067</a></p>\n<p>Points: 233</p>\n<p># Comments: 201</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://newsroom.lexmark.com/2024-12-23-Xerox-to-Acquire-Lexmark\">https://newsroom.lexmark.com/2024-12-23-Xerox-to-Acquire-Lexmark</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42494067\">https://news.ycombinator.com/item?id=42494067</a></p>\n<p>Points: 244</p>\n<p># Comments: 210</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "On the nature of computing science (1984)",
+      "url": "https://www.cs.utexas.edu/~EWD/transcriptions/EWD08xx/EWD896.html",
+      "date": 1734955398,
+      "author": "ColinWright",
+      "unread": true,
+      "desc": "",
+      "content": "\n<p>Article URL: <a href=\"https://www.cs.utexas.edu/~EWD/transcriptions/EWD08xx/EWD896.html\">https://www.cs.utexas.edu/~EWD/transcriptions/EWD08xx/EWD896.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42493808\">https://news.ycombinator.com/item?id=42493808</a></p>\n<p>Points: 203</p>\n<p># Comments: 82</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -180,7 +300,7 @@
       "author": "mathgenius",
       "unread": true,
       "desc": "",
-      "content": "\n<p>Article URL: <a href=\"https://xenaproject.wordpress.com/2024/12/22/can-ai-do-maths-yet-thoughts-from-a-mathematician/\">https://xenaproject.wordpress.com/2024/12/22/can-ai-do-maths-yet-thoughts-from-a-mathematician/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42493464\">https://news.ycombinator.com/item?id=42493464</a></p>\n<p>Points: 325</p>\n<p># Comments: 282</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://xenaproject.wordpress.com/2024/12/22/can-ai-do-maths-yet-thoughts-from-a-mathematician/\">https://xenaproject.wordpress.com/2024/12/22/can-ai-do-maths-yet-thoughts-from-a-mathematician/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42493464\">https://news.ycombinator.com/item?id=42493464</a></p>\n<p>Points: 355</p>\n<p># Comments: 307</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -192,7 +312,7 @@
       "author": "zackoverflow",
       "unread": true,
       "desc": "",
-      "content": "\n<p>I am totally fascinated by programmers who don't use many of the IDE features I take for granted today: autocomplete, language servers, and recently copilot<p>So to the devs who don't use these tools, how do you do it? Do you just remember every type and field in a codebase? What does your flow look like?<p>One example is that I cannot live without the language server go-to-definition feature. What do you do if you need to look up the definition/implementation of some function which is in some other file?</p>\n<hr>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42492508\">https://news.ycombinator.com/item?id=42492508</a></p>\n<p>Points: 139</p>\n<p># Comments: 305</p>\n",
+      "content": "\n<p>I am totally fascinated by programmers who don't use many of the IDE features I take for granted today: autocomplete, language servers, and recently copilot<p>So to the devs who don't use these tools, how do you do it? Do you just remember every type and field in a codebase? What does your flow look like?<p>One example is that I cannot live without the language server go-to-definition feature. What do you do if you need to look up the definition/implementation of some function which is in some other file?</p>\n<hr>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42492508\">https://news.ycombinator.com/item?id=42492508</a></p>\n<p>Points: 251</p>\n<p># Comments: 495</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -217,6 +337,42 @@
       "unread": true,
       "desc": "",
       "content": "\n<p>Article URL: <a href=\"https://www.sciencealert.com/the-risk-of-cancer-fades-as-we-get-older-and-we-may-finally-know-why\">https://www.sciencealert.com/the-risk-of-cancer-fades-as-we-get-older-and-we-may-finally-know-why</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42487301\">https://news.ycombinator.com/item?id=42487301</a></p>\n<p>Points: 82</p>\n<p># Comments: 22</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "AI Decodes the Calls of the Wild",
+      "url": "https://www.nature.com/immersive/d41586-024-04050-5/index.html",
+      "date": 1734876066,
+      "author": "bookofjoe",
+      "unread": true,
+      "desc": "",
+      "content": "\n<p>Article URL: <a href=\"https://www.nature.com/immersive/d41586-024-04050-5/index.html\">https://www.nature.com/immersive/d41586-024-04050-5/index.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42486356\">https://news.ycombinator.com/item?id=42486356</a></p>\n<p>Points: 75</p>\n<p># Comments: 28</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Hoarder: Self-hostable bookmark-everything app",
+      "url": "https://github.com/hoarder-app/hoarder",
+      "date": 1734867257,
+      "author": "thunderbong",
+      "unread": true,
+      "desc": "",
+      "content": "\n<p>Article URL: <a href=\"https://github.com/hoarder-app/hoarder\">https://github.com/hoarder-app/hoarder</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42485746\">https://news.ycombinator.com/item?id=42485746</a></p>\n<p>Points: 239</p>\n<p># Comments: 52</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Four limitations of Rust's borrow checker",
+      "url": "https://blog.polybdenum.com/2024/12/21/four-limitations-of-rust-s-borrow-checker.html",
+      "date": 1734863606,
+      "author": "todsacerdoti",
+      "unread": true,
+      "desc": "",
+      "content": "\n<p>Article URL: <a href=\"https://blog.polybdenum.com/2024/12/21/four-limitations-of-rust-s-borrow-checker.html\">https://blog.polybdenum.com/2024/12/21/four-limitations-of-rust-s-borrow-checker.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42485536\">https://news.ycombinator.com/item?id=42485536</a></p>\n<p>Points: 148</p>\n<p># Comments: 93</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -313,6 +469,18 @@
       "unread": true,
       "desc": "",
       "content": "\n<p>Article URL: <a href=\"https://s2.dev/blog/intro\">https://s2.dev/blog/intro</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42480105\">https://news.ycombinator.com/item?id=42480105</a></p>\n<p>Points: 338</p>\n<p># Comments: 175</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "CLI tool to insert spacers when command output stops",
+      "url": "https://github.com/samwho/spacer",
+      "date": 1734780459,
+      "author": "freetonik",
+      "unread": true,
+      "desc": "",
+      "content": "\n<p>Article URL: <a href=\"https://github.com/samwho/spacer\">https://github.com/samwho/spacer</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42479040\">https://news.ycombinator.com/item?id=42479040</a></p>\n<p>Points: 233</p>\n<p># Comments: 72</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -481,6 +649,18 @@
       "unread": true,
       "desc": "",
       "content": "\n<p>Article URL: <a href=\"https://arstechnica.com/gadgets/2012/12/the-legacy-of-next-lives-on-in-os-x/\">https://arstechnica.com/gadgets/2012/12/the-legacy-of-next-lives-on-in-os-x/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42468402\">https://news.ycombinator.com/item?id=42468402</a></p>\n<p>Points: 104</p>\n<p># Comments: 126</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "More men are addicted to the 'crack cocaine' of the stock market",
+      "url": "https://www.wsj.com/finance/stocks/stock-market-trading-apps-addiction-afecb07a",
+      "date": 1734668510,
+      "author": "marban",
+      "unread": true,
+      "desc": "",
+      "content": "\n<p>Article URL: <a href=\"https://www.wsj.com/finance/stocks/stock-market-trading-apps-addiction-afecb07a\">https://www.wsj.com/finance/stocks/stock-market-trading-apps-addiction-afecb07a</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42468255\">https://news.ycombinator.com/item?id=42468255</a></p>\n<p>Points: 184</p>\n<p># Comments: 398</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
