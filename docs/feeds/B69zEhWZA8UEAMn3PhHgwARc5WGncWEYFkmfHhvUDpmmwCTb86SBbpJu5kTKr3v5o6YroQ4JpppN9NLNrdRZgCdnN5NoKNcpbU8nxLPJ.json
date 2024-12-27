@@ -52,42 +52,6 @@
       "flags": null,
       "enclosureUrl": "https://www.youtube.com/v/KBdniMP3vac?version=3",
       "enclosureMime": ""
-    },
-    {
-      "title": "D-Link says “just buy a new router” after 9.8 critical vulnerability…",
-      "url": "https://www.youtube.com/watch?v=52v6gKPA4TM",
-      "date": 1732650134,
-      "author": "Fireship",
-      "unread": true,
-      "desc": "",
-      "content": "Use PostHog to build better products https://posthog.com/fireship\n\nD-Link networking hardware has been hit buy multiple serious vulnerabilities over the past few weeks. Let's take a look at these exploits and how to study them with ethical hacking and penetration testing. \n\n#programming #cybersecurity #thecodereport \n\n💬 Chat with Me on Discord\n\nhttps://discord.gg/fireship\n\n🔗 Resources\n\nD-Link NAS Vulnerability https://nvd.nist.gov/vuln/detail/CVE-2024-10914\nAndrew Tate Hack Explained https://youtu.be/xR5d4Ba4FZg\nFirefox Critical Exploit https://youtu.be/2RmUMmUj3u8\nLow Level D-Link Video https://youtu.be/-vpGswuYVg8\n\n🔥 Get More Content - Upgrade to PRO\n\nUpgrade at https://fireship.io/pro\nUse code YT25 for 25% off PRO access \n\n🎨 My Editor Settings\n\n- Atom One Dark \n- vscode-icons\n- Fira Code Font\n\n🔖 Topics Covered\n\n- Overview of D-Link security flaws\n- How to use Kali Linux for pentesting\n- What is command injection?\n- How to hackers scan a network?\n- Examples of planned obsolescence in tech",
-      "flags": null,
-      "enclosureUrl": "https://www.youtube.com/v/52v6gKPA4TM?version=3",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Cheaters are breaking the technical interview... how?",
-      "url": "https://www.youtube.com/watch?v=Lf883rNZjSE",
-      "date": 1732559239,
-      "author": "Fireship",
-      "unread": true,
-      "desc": "",
-      "content": "Find all the best dev content at https://daily.dev/fireship\n\nWith the rise of remote work and AI, the tech world has also seen a rise in cheating on the software engineering technical interview. Let's look into modern techniques people use to cheat during coding interviews and the consequences of when you get caught. \n\n#programming #tech #thecodereport \n\n💬 Chat with Me on Discord\n\nhttps://discord.gg/fireship\n\n🔗 Resources\n\nCaught Cheating with Claude https://twitter.com/TheGregYang/status/1843129139366437109\nInterview Cheating Test https://interviewing.io/blog/how-hard-is-it-to-cheat-with-chatgpt-in-technical-interviews\nHow to not fail the technical interview https://youtu.be/1t1_a1BZ04o\nClaude AI Updates https://youtu.be/DVRg0daTads?si=R7je4fG03JXZZzA7\n\n🔥 Get More Content - Upgrade to PRO\n\nUpgrade at https://fireship.io/pro\nUse code YT25 for 25% off PRO access \n\n🎨 My Editor Settings\n\n- Atom One Dark \n- vscode-icons\n- Fira Code Font\n\n🔖 Topics Covered\n\n- How do people cheat on technical interviews?\n- Trends in the tech job markets\n- Tips for swe interviews\n- How to pass software technical interview\n- What happens if you cheat on technical interview?",
-      "flags": null,
-      "enclosureUrl": "https://www.youtube.com/v/Lf883rNZjSE?version=3",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Top G Andrew Tate penetrated by LGBT hackers",
-      "url": "https://www.youtube.com/watch?v=xR5d4Ba4FZg",
-      "date": 1732478252,
-      "author": "Fireship",
-      "unread": true,
-      "desc": "",
-      "content": "Andrew Tate's Hustler's University, aka The Real World, was recently attacked by an unknown group of hackers. Let's reverse engineer the tech stack and find out how the hack was performed. \n\n#tech #hacker #thecodereport\n\n💬 Chat with Me on Discord\n\nhttps://discord.gg/fireship\n\n🔗 Resources\n\nWayback Attack https://youtu.be/N3ZGNT5S5IU\nXZ Hack https://youtu.be/bS9em7Bg0iU\nAndrew Tate Revolt Feud https://insrt.uk/post/andrew-tate-stealing-software-revolt\n\n🔥 Get More Content - Upgrade to PRO\n\nUpgrade at https://fireship.io/pro\nUse code YT25 for 25% off PRO access \n\n🎨 My Editor Settings\n\n- Atom One Dark \n- vscode-icons\n- Fira Code Font\n\n🔖 Topics Covered\n\n- How did Andrew Tate get hacked? \n- Hustler's University security vulnerability \n- Data leak from The Real World\n- What is Revolt chat platform\n- Andrew Tate dispute with Revolt Chat",
-      "flags": null,
-      "enclosureUrl": "https://www.youtube.com/v/xR5d4Ba4FZg?version=3",
-      "enclosureMime": ""
     }
   ]
 }
