@@ -4,6 +4,7 @@
   "displayTitle": "Github Issues",
   "url": "",
   "feedLink": "",
+  "is_query": true,
   "items": [
     {
       "title": "[issue-open]: Add support for multi-page site generation",
@@ -11,7 +12,6 @@
       "date": 1734427615,
       "author": "exaroth",
       "unread": true,
-      "desc": "",
       "content": "Currently Liveboat supports only SPA (single application) layouts - support for multi-page site can be easily implemented by adding additional dedicated buider",
       "flags": null,
       "enclosureUrl": "",

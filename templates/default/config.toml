@@ -1,10 +1,8 @@
-name = "Default Template"
+version = "1.0.4"
 builder = "spa"
-version = "1.0.2"
-author = "Konrad Wasowicz (exaroth@gmail.com)"
 
 [template_settings]
-text-color = "#c7cfcc"
+background-color = "#181818"
 highlight-color = "#73bed3"
 accent-color = "#3c5e8b"
-background-color = "#181818"
+text-color = "#c7cfcc"
