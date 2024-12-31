@@ -7,12 +7,34 @@
   "is_query": true,
   "items": [
     {
-      "title": "[issue-open]: Add support for multi-page site generation",
-      "url": "https://github.com/exaroth/liveboat/issues/3",
-      "date": 1734427615,
+      "title": "[issue-open]: Add Liveboat image to ghcr repository",
+      "url": "https://github.com/exaroth/liveboat/issues/17",
+      "date": 1735640087,
       "author": "exaroth",
       "unread": true,
-      "content": "Currently Liveboat supports only SPA (single application) layouts - support for multi-page site can be easily implemented by adding additional dedicated buider",
+      "content": "",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "[issue-open]: Enable Link-Time Optimization (LTO)",
+      "url": "https://github.com/exaroth/liveboat/issues/16",
+      "date": 1735613292,
+      "author": "zamazan4ik",
+      "unread": true,
+      "content": "Hi!\n<br>\n<br>I noticed that in the `Cargo.toml` file Link-Time Optimization (LTO) for the project is not enabled. I suggest switching it on since it will reduce the binary size (always a good thing to have) and will likely improve the application's performance a little bit. If you want to read more about LTO and its possible modes, I recommend starting from [this](https://doc.rust-lang.org/rustc/codegen-options/index.html#lto) Rustc documentation.\n<br>\n<br>I think you can enable LTO only for the Release builds so as not to sacrifice the developers' experience while working on the project since LTO consumes an additional amount of time to finish the compilation routine. If you think that a regular Release build should not be affected by such a change as well, then I suggest adding an additional `dist` or `release-lto` profile where in addition to regular `release` optimizations LTO will also be added. Such a change simplifies life for maintainers and others interested in the project persons who want to build the most optimized version of the application. However, if we enable it on the Cargo profile level for the Release profile, users, who install the application with `cargo install` will get the LTO-optimized version of the game \"automatically\". E.g., check `cargo-outdated` Release [profile](https://github.com/kbknapp/cargo-outdated/blob/master/Cargo.toml#L48). You also could be interested in other optimization options like `codegen-units = 1`, etc.\n<br>\n<br>Basically, it can be enabled with the following lines:\n<br>\n<br>```\n<br>[profile.release]\n<br>codegen-units = 1\n<br>lto = true\n<br>```\n<br>\n<br>I have made quick tests (Fedora 41, Rust 1.82, the latest version of the project) - here are the results:\n<br>\n<br>* Release (current default): 16.5 Mib\n<br>* Release + `codegen-units = 1`: 14.7 Mib\n<br>* Release + Thin LTO: 16.6 Mib\n<br>* Release + Fat LTO: 14.1 Mib\n<br>* Release + `codegen-units = 1` + Thin LTO: 14.8 Mib\n<br>* Release + `codegen-units = 1` + Fat LTO: 13.7 Mib\n<br>\n<br>Thank you. It would be nice if you would use LTO for your future Rust developments :)",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "[issue-open]: Docker Support",
+      "url": "https://github.com/exaroth/liveboat/issues/13",
+      "date": 1735586554,
+      "author": "accforgithubtest",
+      "unread": true,
+      "content": "This project looks neat, thank you for creating this.\n<br>\n<br>Would you consider dockerizing this project ?\n<br>So it can be run in a \"self-hosted\" way instead of depending on github ?",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""

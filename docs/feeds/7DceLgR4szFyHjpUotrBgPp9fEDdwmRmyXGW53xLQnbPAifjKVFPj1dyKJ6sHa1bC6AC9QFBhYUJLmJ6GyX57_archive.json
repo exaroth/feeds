@@ -7,6 +7,116 @@
   "is_query": false,
   "items": [
     {
+      "title": "Distribution Release: Murena 2.6.3 (DistroWatch.com News)",
+      "url": "https://www.reddit.com/r/linux/comments/1hqe97g/distribution_release_murena_263_distrowatchcom/",
+      "date": 1735650144,
+      "author": "/u/Candace_Owens_4225",
+      "unread": true,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Candace_Owens_4225\"> /u/Candace_Owens_4225 </a> <br/> <span><a href=\"https://distrowatch.com/?newsid=12321\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/linux/comments/1hqe97g/distribution_release_murena_263_distrowatchcom/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "I love using Linux! Steamdeck is a godsend for Linux noobs like me!",
+      "url": "https://www.reddit.com/r/linux/comments/1hqb3cp/i_love_using_linux_steamdeck_is_a_godsend_for/",
+      "date": 1735636560,
+      "author": "/u/PralineGold6868",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>I love using this thing when I don’t wanna play. Primarily as a tablet! I’m slowly getting used to it and have been doing more and more with it! I haven’t once used the terminal! Been installing non steam games, software etc! Love it and absolutely recommend it!</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/PralineGold6868\"> /u/PralineGold6868 </a> <br/> <span><a href=\"https://i.redd.it/pp9we05li5ae1.jpeg\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/linux/comments/1hqb3cp/i_love_using_linux_steamdeck_is_a_godsend_for/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Adventures and Custom Repositories in Void Linux",
+      "url": "https://www.reddit.com/r/linux/comments/1hq617c/adventures_and_custom_repositories_in_void_linux/",
+      "date": 1735616974,
+      "author": "/u/djsumdog",
+      "unread": true,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/djsumdog\"> /u/djsumdog </a> <br/> <span><a href=\"https://battlepenguin.com/tech/adventures-and-custom-repositories-in-void-linux/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/linux/comments/1hq617c/adventures_and_custom_repositories_in_void_linux/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "why is every software store front-end problematic?",
+      "url": "https://www.reddit.com/r/linux/comments/1hq5qti/why_is_every_software_store_frontend_problematic/",
+      "date": 1735616058,
+      "author": "/u/Zery12",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>gnome software: works when it wants, sometimes you need to wait minutes, sometimes it loads in less than a second. it&#39;s also quite confusing when you have multiple sources for the same software (like rpm and flatpak on fedora). theres a reason canonical decide to make their own snap store, and not use gnome software (which also supports snaps).</p> <p>discover: better than gnome software, no loading issues, can install flatpak and add flathub there. the only disadvantage (a big one imo), is that the UI looks very confusing.</p> <p>pamac GUI (manjaro): no loading issues, flatpak + flathub can be added there too. the UI is similar to discover, but more organized. it have issues when updating some flatpak libraries</p> <p>gnome software being bad is the worst imo. they have the most money, and still can&#39;t make a good front-end, when manjaro, that have way less money, made a decent one. </p> <p>discover just needs a better UI</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Zery12\"> /u/Zery12 </a> <br/> <span><a href=\"https://www.reddit.com/r/linux/comments/1hq5qti/why_is_every_software_store_frontend_problematic/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/linux/comments/1hq5qti/why_is_every_software_store_frontend_problematic/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Integrating systemd soft-reboot into a distribution and surviving it",
+      "url": "https://www.reddit.com/r/linux/comments/1hq1xvq/integrating_systemd_softreboot_into_a/",
+      "date": 1735604579,
+      "author": "/u/Doener23",
+      "unread": true,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Doener23\"> /u/Doener23 </a> <br/> <span><a href=\"https://media.ccc.de/v/all-systems-go-2024-258-integrating-systemd-soft-reboot-into-a-distribution-and-surviving-it\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/linux/comments/1hq1xvq/integrating_systemd_softreboot_into_a/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Little Polkit-Agent using Wayland-native `fuzzel` app launcher for authentication prompts",
+      "url": "https://www.reddit.com/r/linux/comments/1hpz5ar/little_polkitagent_using_waylandnative_fuzzel_app/",
+      "date": 1735597056,
+      "author": "/u/lukeflo-void",
+      "unread": true,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/lukeflo-void\"> /u/lukeflo-void </a> <br/> <span><a href=\"https://codeberg.org/lukeflo/fuzzel-polkit-agent\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/linux/comments/1hpz5ar/little_polkitagent_using_waylandnative_fuzzel_app/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "This is what movie creators think hackers do",
+      "url": "https://www.reddit.com/r/linux/comments/1hpyg1y/this_is_what_movie_creators_think_hackers_do/",
+      "date": 1735595258,
+      "author": "/u/AccidentallyRelevant",
+      "unread": true,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/AccidentallyRelevant\"> /u/AccidentallyRelevant </a> <br/> <span><a href=\"https://i.redd.it/21teo9io32ae1.png\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/linux/comments/1hpyg1y/this_is_what_movie_creators_think_hackers_do/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Recommended reading for a seasoned linux systems engineer about administration of large GPU clusters (openMP, clustered computing ML)",
+      "url": "https://www.reddit.com/r/linux/comments/1hptugw/recommended_reading_for_a_seasoned_linux_systems/",
+      "date": 1735583409,
+      "author": "/u/gleventhal",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>I am not looking for code-related reading, I am more interested in best practices for systems administration and design related to: GPU clusters, NVidia stuff: Nvswitch etc, IB, infrastructure, monitoring, etc. </p> <p>More on the advanced side of things, I am well seasoned with Linux administration and have done GPU cluster administration for a bit but relatively new still and was hoping to get some deeper insights by reading a specific, single source/book , if possible. </p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/gleventhal\"> /u/gleventhal </a> <br/> <span><a href=\"https://www.reddit.com/r/linux/comments/1hptugw/recommended_reading_for_a_seasoned_linux_systems/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/linux/comments/1hptugw/recommended_reading_for_a_seasoned_linux_systems/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "How I helped fix sleep-wake hangs on Linux with AMD GPUs",
+      "url": "https://www.reddit.com/r/linux/comments/1hpph5j/how_i_helped_fix_sleepwake_hangs_on_linux_with/",
+      "date": 1735572125,
+      "author": "/u/FoxInTheRedBox",
+      "unread": true,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/FoxInTheRedBox\"> /u/FoxInTheRedBox </a> <br/> <span><a href=\"https://nyanpasu64.gitlab.io/blog/amdgpu-sleep-wake-hang/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/linux/comments/1hpph5j/how_i_helped_fix_sleepwake_hangs_on_linux_with/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Share specific examples of software built from source works better for you than packages or pre-built binaries",
+      "url": "https://www.reddit.com/r/linux/comments/1hpod0r/share_specific_examples_of_software_built_from/",
+      "date": 1735568903,
+      "author": "/u/TheTwelveYearOld",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>I looked up specifically examples of this and didn&#39;t find answers, they&#39;re buried in general discussions about why compiling may be better than pre-built. The reasons I found were control of flags and features, and optimizations for specific chips (like Intel AVX or ARM Neon), but to what degree do those apply today?</p> <p>The only software I can tell benefits greatly from building from source, is ffmpeg since there are many non-free encoders decoders and upscalers that can be bundled, and performance varies a lot between devices due to which of them is supported by the CPU or GPU. For instance, Nvidia hardware encoders typically produce higher quality video for similar file sizes than ones from Intel AMD or Apple. Software encoders like x265 has optimizations for AVX and NEON (SIMD extensions for CPUs).</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/TheTwelveYearOld\"> /u/TheTwelveYearOld </a> <br/> <span><a href=\"https://www.reddit.com/r/linux/comments/1hpod0r/share_specific_examples_of_software_built_from/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/linux/comments/1hpod0r/share_specific_examples_of_software_built_from/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "Fish 4.0: The Fish Of Theseus",
       "url": "https://www.reddit.com/r/linux/comments/1hpms0u/fish_40_the_fish_of_theseus/",
       "date": 1735563790,

@@ -7,6 +7,94 @@
   "is_query": false,
   "items": [
     {
+      "title": "A GPU-accelerated MD5 Hash Cracker, written using Rust and CUDA",
+      "url": "https://www.reddit.com/r/rust/comments/1hqfiea/a_gpuaccelerated_md5_hash_cracker_written_using/",
+      "date": 1735654466,
+      "author": "/u/vaktibabat",
+      "unread": true,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/vaktibabat\"> /u/vaktibabat </a> <br/> <span><a href=\"https://vaktibabat.github.io/posts/cudacracker/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/rust/comments/1hqfiea/a_gpuaccelerated_md5_hash_cracker_written_using/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Rust, reflection and field access rules",
+      "url": "https://www.reddit.com/r/rust/comments/1hqeh6v/rust_reflection_and_field_access_rules/",
+      "date": 1735650960,
+      "author": "/u/FractalFir",
+      "unread": true,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/FractalFir\"> /u/FractalFir </a> <br/> <span><a href=\"https://fractalfir.github.io/generated_html/refl_priv.html\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/rust/comments/1hqeh6v/rust_reflection_and_field_access_rules/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Galapagos: Simple Evolutionary Solver (Rust)",
+      "url": "https://www.reddit.com/r/rust/comments/1hpz8hz/galapagos_simple_evolutionary_solver_rust/",
+      "date": 1735597297,
+      "author": "/u/wpcarroll",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>I wrote a low dependency, simple evolutionary solver in Rust inspired by a tool I used years ago by the same name. Wanted to share with anyone who might be interested in using it: <a href=\"https://github.com/wpcarro/galapagos\">https://github.com/wpcarro/galapagos</a></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/wpcarroll\"> /u/wpcarroll </a> <br/> <span><a href=\"https://www.reddit.com/r/rust/comments/1hpz8hz/galapagos_simple_evolutionary_solver_rust/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/rust/comments/1hpz8hz/galapagos_simple_evolutionary_solver_rust/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Ideas for CLI apps in Rust?",
+      "url": "https://www.reddit.com/r/rust/comments/1hpw5a3/ideas_for_cli_apps_in_rust/",
+      "date": 1735589241,
+      "author": "/u/Informal_Test_633",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>I&#39;m trying to improve my Rust skills, and I thought about building some CLI apps related to optimizing things or searching within systems. For example: a CLI to optimize an image or file, a CLI to search for specific text (similar to grep), a CLI to develop something related to cybersecurity, etc. </p> <p>How good is Rust for these kinds of tasks? I want to step away a bit from the typical REST API (which is still a good idea, but I want to start from another angle).</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Informal_Test_633\"> /u/Informal_Test_633 </a> <br/> <span><a href=\"https://www.reddit.com/r/rust/comments/1hpw5a3/ideas_for_cli_apps_in_rust/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/rust/comments/1hpw5a3/ideas_for_cli_apps_in_rust/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Why You Need Sccache",
+      "url": "https://www.reddit.com/r/rust/comments/1hpuy01/why_you_need_sccache/",
+      "date": 1735586168,
+      "author": "/u/ChiliPepperHott",
+      "unread": true,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/ChiliPepperHott\"> /u/ChiliPepperHott </a> <br/> <span><a href=\"https://elijahpotter.dev/articles/why_you_need_sccache\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/rust/comments/1hpuy01/why_you_need_sccache/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "sans-IO: The secret to effective Rust for network services",
+      "url": "https://www.reddit.com/r/rust/comments/1hpqgbt/sansio_the_secret_to_effective_rust_for_network/",
+      "date": 1735574706,
+      "author": "/u/EightLines_03",
+      "unread": true,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/EightLines_03\"> /u/EightLines_03 </a> <br/> <span><a href=\"https://www.firezone.dev/blog/sans-io\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/rust/comments/1hpqgbt/sansio_the_secret_to_effective_rust_for_network/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "How to know the first place where Err is returned",
+      "url": "https://www.reddit.com/r/rust/comments/1hpoicl/how_to_know_the_first_place_where_err_is_returned/",
+      "date": 1735569350,
+      "author": "/u/sobagood",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Title says it all.</p> <p>I can not find a way to do it….</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/sobagood\"> /u/sobagood </a> <br/> <span><a href=\"https://www.reddit.com/r/rust/comments/1hpoicl/how_to_know_the_first_place_where_err_is_returned/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/rust/comments/1hpoicl/how_to_know_the_first_place_where_err_is_returned/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "I made a final video for the year 2024 to cover some nice features of Leptos v0.7",
+      "url": "https://www.reddit.com/r/rust/comments/1hpn7cn/i_made_a_final_video_for_the_year_2024_to_cover/",
+      "date": 1735565276,
+      "author": "/u/DavidXkL",
+      "unread": true,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/DavidXkL\"> /u/DavidXkL </a> <br/> <span><a href=\"https://youtu.be/RhCLbuM3bR8?si=RvNDxYaeMqC7lwmu\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/rust/comments/1hpn7cn/i_made_a_final_video_for_the_year_2024_to_cover/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "Introducing rust_arkitect: architectural rule validation for Rust projects",
       "url": "https://www.reddit.com/r/rust/comments/1hpmvur/introducing_rust_arkitect_architectural_rule/",
       "date": 1735564167,
@@ -18,12 +106,34 @@
       "enclosureMime": ""
     },
     {
+      "title": "bedrock-rs: The Universal Toolkit for Minecraft Bedrock Edition in Rust!",
+      "url": "https://www.reddit.com/r/rust/comments/1hplnye/bedrockrs_the_universal_toolkit_for_minecraft/",
+      "date": 1735559650,
+      "author": "/u/theaddonn",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>🌟 Introducing bedrock-rs: The Universal Toolkit for Minecraft Bedrock Edition in Rust!</p> <p>We’re excited to unveil bedrock-rs, a comprehensive and modular library designed to simplify development for Minecraft Bedrock Edition. Whether you’re building tools, creating addons, or running a custom server, bedrock-rs has you covered! </p> <p>Why bedrock-rs? </p> <ul> <li>Protocol Support: Full implementation of Minecraft Bedrock&#39;s protocol for both client and server.<br/></li> <li>Addon Creation: Easily create and manipulate Minecraft Addons programmatically.<br/></li> <li>Level Management: Work with Minecraft levels using efficient data structures and Rust’s LevelDB.<br/></li> <li>Server Foundation: Build lightweight, multi-protocol servers with asynchronous support.<br/></li> <li>Modular Design: Access only the crates and features you need.<br/></li> </ul> <p>Who’s it for?</p> <ul> <li>Developers looking for a robust and efficient toolkit for Minecraft Bedrock.<br/></li> <li>Hobbyists creating custom mods, tools, and servers.<br/></li> <li>Professionals building scalable Minecraft Bedrock solutions.<br/></li> </ul> <p>Get Involved, start exploring bedrock-rs today! Check out the repository, give it a star, and join the community as we shape the future of Minecraft Bedrock development together. </p> <p>GitHub: <a href=\"https://github.com/bedrock-crustaceans/bedrock-rs\">https://github.com/bedrock-crustaceans/bedrock-rs</a></p> <p>Discord: <a href=\"https://discord.com/invite/VCVcrvt3JC\">https://discord.com/invite/VCVcrvt3JC</a> </p> <p>Let’s create something amazing! 🚀</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/theaddonn\"> /u/theaddonn </a> <br/> <span><a href=\"https://www.reddit.com/r/rust/comments/1hplnye/bedrockrs_the_universal_toolkit_for_minecraft/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/rust/comments/1hplnye/bedrockrs_the_universal_toolkit_for_minecraft/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "Reliable software: An interview with Jon Gjengset on writing high quality code",
       "url": "https://www.reddit.com/r/rust/comments/1hpk70n/reliable_software_an_interview_with_jon_gjengset/",
       "date": 1735553509,
       "author": "/u/timClicks",
       "unread": true,
       "content": "<!-- SC_OFF --><div class=\"md\"><p>The feedback from this interview has been excellent so far. I hope that reddit enjoys it!</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/timClicks\"> /u/timClicks </a> <br/> <span><a href=\"https://timclicks.dev/podcast/reliable-software-an-interview-with-jon-gjengset\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/rust/comments/1hpk70n/reliable_software_an_interview_with_jon_gjengset/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "rust-analyzer changelog #266",
+      "url": "https://www.reddit.com/r/rust/comments/1hpjxvr/rustanalyzer_changelog_266/",
+      "date": 1735552455,
+      "author": "/u/WellMakeItSomehow",
+      "unread": true,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/WellMakeItSomehow\"> /u/WellMakeItSomehow </a> <br/> <span><a href=\"https://rust-analyzer.github.io/thisweek/2024/12/30/changelog-266.html\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/rust/comments/1hpjxvr/rustanalyzer_changelog_266/\">[comments]</a></span>",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -651,17 +761,6 @@
       "author": "/u/louisfd94",
       "unread": true,
       "content": "<!-- SC_OFF --><div class=\"md\"><p>Burn made big strides in 2024, bringing us closer to becoming the fastest framework across all devices. This year, we focused on optimizing performance and user experience using strategies that are only possible thanks to Rust.</p> <p><a href=\"https://burn.dev/blog/going-big-and-small-for-2025/\">https://burn.dev/blog/going-big-and-small-for-2025/</a></p> <p>We’re really proud to contribute to the Rust ecosystem and want to thank all the contributors who helped make this possible. Whether it’s code, feedback, or ideas, your input has been invaluable. 🙌</p> <p>In 2025, we’ll be adding quantization and distributed computing, but we’d also love to hear from you! What features or improvements would you like to see in Burn or CubeCL next year?</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/louisfd94\"> /u/louisfd94 </a> <br/> <span><a href=\"https://www.reddit.com/r/rust/comments/1hkpnzf/burn_and_cubecl_going_big_and_small_for_2025/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/rust/comments/1hkpnzf/burn_and_cubecl_going_big_and_small_for_2025/\">[comments]</a></span>",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Seeking beta testers for Rustup v1.28.0",
-      "url": "https://www.reddit.com/r/rust/comments/1hknbu5/seeking_beta_testers_for_rustup_v1280/",
-      "date": 1734959078,
-      "author": "/u/Rami3L_Li",
-      "unread": true,
-      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Rami3L_Li\"> /u/Rami3L_Li </a> <br/> <span><a href=\"https://internals.rust-lang.org/t/seeking-beta-testers-for-rustup-v1-28-0/22060\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/rust/comments/1hknbu5/seeking_beta_testers_for_rustup_v1280/\">[comments]</a></span>",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""

@@ -93,17 +93,6 @@
       "flags": null,
       "enclosureUrl": "https://www.youtube.com/v/npSkuNcm-Og?version=3",
       "enclosureMime": ""
-    },
-    {
-      "title": "Successive Halving",
-      "url": "https://www.youtube.com/watch?v=U5wbvPzW57M",
-      "date": 1733013660,
-      "author": "probabl",
-      "unread": true,
-      "content": "There is an experimental technique for cross validation in scikit-learn that revolves around \"Successive Halving\". In this livestream we discuss how the technique works but also why the approach is still considered experimental at the time of making this recording. \n\nWebsite: https://probabl.ai/\nDiscord: https://discord.probabl.ai/\nLinkedIn: https://www.linkedin.com/company/probabl\nTwitter: https://x.com/probabl_ai\n\nWe also host a podcast called Sample Space, which you can find on your favourite podcast player. All the links can be found here:\nhttps://rss.com/podcasts/sample-space/\n\nIf you're keen to see more videos like this, you can follow us over at  @probabl_ai.",
-      "flags": null,
-      "enclosureUrl": "https://www.youtube.com/v/U5wbvPzW57M?version=3",
-      "enclosureMime": ""
     }
   ]
 }

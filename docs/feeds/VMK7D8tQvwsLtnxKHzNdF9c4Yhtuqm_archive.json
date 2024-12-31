@@ -7,12 +7,56 @@
   "is_query": false,
   "items": [
     {
+      "title": "Jimmy Carter has died",
+      "url": "https://www.washingtonpost.com/obituaries/2024/12/29/jimmy-carter-president-dead/",
+      "date": 1735506501,
+      "author": "gkolli",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://www.washingtonpost.com/obituaries/2024/12/29/jimmy-carter-president-dead/\">https://www.washingtonpost.com/obituaries/2024/12/29/jimmy-carter-president-dead/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42543128\">https://news.ycombinator.com/item?id=42543128</a></p>\n<p>Points: 1144</p>\n<p># Comments: 741</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "Fish 4.0: The Fish of Theseus",
       "url": "https://fishshell.com/blog/rustport/",
       "date": 1735423635,
       "author": "jdxcode",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://fishshell.com/blog/rustport/\">https://fishshell.com/blog/rustport/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42535217\">https://news.ycombinator.com/item?id=42535217</a></p>\n<p>Points: 807</p>\n<p># Comments: 170</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://fishshell.com/blog/rustport/\">https://fishshell.com/blog/rustport/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42535217\">https://news.ycombinator.com/item?id=42535217</a></p>\n<p>Points: 853</p>\n<p># Comments: 190</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Apple Photos phones home on iOS 18 and macOS 15",
+      "url": "https://lapcatsoftware.com/articles/2024/12/3.html",
+      "date": 1735413750,
+      "author": "latexr",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://lapcatsoftware.com/articles/2024/12/3.html\">https://lapcatsoftware.com/articles/2024/12/3.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42533685\">https://news.ycombinator.com/item?id=42533685</a></p>\n<p>Points: 1262</p>\n<p># Comments: 936</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "I automated my job application process",
+      "url": "https://blog.daviddodda.com/how-i-automated-my-job-application-process-part-1",
+      "date": 1735399591,
+      "author": "paul-tharun",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://blog.daviddodda.com/how-i-automated-my-job-application-process-part-1\">https://blog.daviddodda.com/how-i-automated-my-job-application-process-part-1</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42531695\">https://news.ycombinator.com/item?id=42531695</a></p>\n<p>Points: 621</p>\n<p># Comments: 825</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Where can you go in Europe by train in 8h?",
+      "url": "https://www.chronotrains.com/en",
+      "date": 1735386195,
+      "author": "vortex_ape",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://www.chronotrains.com/en\">https://www.chronotrains.com/en</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42530332\">https://news.ycombinator.com/item?id=42530332</a></p>\n<p>Points: 637</p>\n<p># Comments: 398</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -23,7 +67,7 @@
       "date": 1735330544,
       "author": "jeff18",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.plasticlist.org/report\">https://www.plasticlist.org/report</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42525633\">https://news.ycombinator.com/item?id=42525633</a></p>\n<p>Points: 604</p>\n<p># Comments: 184</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.plasticlist.org/report\">https://www.plasticlist.org/report</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42525633\">https://news.ycombinator.com/item?id=42525633</a></p>\n<p>Points: 613</p>\n<p># Comments: 186</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -34,7 +78,7 @@
       "date": 1735323565,
       "author": "hacka22",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.ccc.de/en/updates/2024/das-ist-vollig-entgleist\">https://www.ccc.de/en/updates/2024/das-ist-vollig-entgleist</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42524568\">https://news.ycombinator.com/item?id=42524568</a></p>\n<p>Points: 601</p>\n<p># Comments: 149</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.ccc.de/en/updates/2024/das-ist-vollig-entgleist\">https://www.ccc.de/en/updates/2024/das-ist-vollig-entgleist</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42524568\">https://news.ycombinator.com/item?id=42524568</a></p>\n<p>Points: 613</p>\n<p># Comments: 152</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -45,7 +89,7 @@
       "date": 1735321010,
       "author": "nabla9",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.lloydslist.com/LL1151955/Russia-linked-cable-cutting-tanker-seized-by-Finland-was-loaded-with-spying-equipment\">https://www.lloydslist.com/LL1151955/Russia-linked-cable-cutting-tanker-seized-by-Finland-was-loaded-with-spying-equipment</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42524174\">https://news.ycombinator.com/item?id=42524174</a></p>\n<p>Points: 559</p>\n<p># Comments: 549</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.lloydslist.com/LL1151955/Russia-linked-cable-cutting-tanker-seized-by-Finland-was-loaded-with-spying-equipment\">https://www.lloydslist.com/LL1151955/Russia-linked-cable-cutting-tanker-seized-by-Finland-was-loaded-with-spying-equipment</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42524174\">https://news.ycombinator.com/item?id=42524174</a></p>\n<p>Points: 571</p>\n<p># Comments: 577</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -78,7 +122,7 @@
       "date": 1735302113,
       "author": "JumpCrisscross",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.wsj.com/world/flight-deaths-shot-from-sky-rising-798fd31e\">https://www.wsj.com/world/flight-deaths-shot-from-sky-rising-798fd31e</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42521598\">https://news.ycombinator.com/item?id=42521598</a></p>\n<p>Points: 563</p>\n<p># Comments: 424</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.wsj.com/world/flight-deaths-shot-from-sky-rising-798fd31e\">https://www.wsj.com/world/flight-deaths-shot-from-sky-rising-798fd31e</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42521598\">https://news.ycombinator.com/item?id=42521598</a></p>\n<p>Points: 568</p>\n<p># Comments: 429</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -89,7 +133,7 @@
       "date": 1735244097,
       "author": "matrixhelix",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://ghostty.org/\">https://ghostty.org/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42517447\">https://news.ycombinator.com/item?id=42517447</a></p>\n<p>Points: 2229</p>\n<p># Comments: 656</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://ghostty.org/\">https://ghostty.org/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42517447\">https://news.ycombinator.com/item?id=42517447</a></p>\n<p>Points: 2253</p>\n<p># Comments: 661</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -100,7 +144,7 @@
       "date": 1735204988,
       "author": "Geekette",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.architecturaldigest.com/story/should-more-of-us-be-moving-to-live-near-friends\">https://www.architecturaldigest.com/story/should-more-of-us-be-moving-to-live-near-friends</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42514105\">https://news.ycombinator.com/item?id=42514105</a></p>\n<p>Points: 589</p>\n<p># Comments: 450</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.architecturaldigest.com/story/should-more-of-us-be-moving-to-live-near-friends\">https://www.architecturaldigest.com/story/should-more-of-us-be-moving-to-live-near-friends</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42514105\">https://news.ycombinator.com/item?id=42514105</a></p>\n<p>Points: 597</p>\n<p># Comments: 469</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -111,7 +155,7 @@
       "date": 1735183054,
       "author": "nateb2022",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://github.com/blackcandy-org/blackcandy\">https://github.com/blackcandy-org/blackcandy</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42512896\">https://news.ycombinator.com/item?id=42512896</a></p>\n<p>Points: 674</p>\n<p># Comments: 295</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://github.com/blackcandy-org/blackcandy\">https://github.com/blackcandy-org/blackcandy</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42512896\">https://news.ycombinator.com/item?id=42512896</a></p>\n<p>Points: 678</p>\n<p># Comments: 295</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -133,7 +177,7 @@
       "date": 1735103218,
       "author": "fagnerbrack",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://fhur.me/posts/2024/thats-not-an-abstraction\">https://fhur.me/posts/2024/thats-not-an-abstraction</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42506984\">https://news.ycombinator.com/item?id=42506984</a></p>\n<p>Points: 574</p>\n<p># Comments: 220</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://fhur.me/posts/2024/thats-not-an-abstraction\">https://fhur.me/posts/2024/thats-not-an-abstraction</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42506984\">https://news.ycombinator.com/item?id=42506984</a></p>\n<p>Points: 585</p>\n<p># Comments: 225</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -144,7 +188,7 @@
       "date": 1735096207,
       "author": "joshagilend",
       "unread": true,
-      "content": "\n<p>What are some of your favorite memories from Christmas? Share them here :)<p>- Josh :)</p>\n<hr>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42506577\">https://news.ycombinator.com/item?id=42506577</a></p>\n<p>Points: 1479</p>\n<p># Comments: 383</p>\n",
+      "content": "\n<p>What are some of your favorite memories from Christmas? Share them here :)<p>- Josh :)</p>\n<hr>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42506577\">https://news.ycombinator.com/item?id=42506577</a></p>\n<p>Points: 1486</p>\n<p># Comments: 383</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -155,7 +199,7 @@
       "date": 1735079920,
       "author": "ajdude",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://github.com/Jaennaet/pISSStream\">https://github.com/Jaennaet/pISSStream</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42505454\">https://news.ycombinator.com/item?id=42505454</a></p>\n<p>Points: 1120</p>\n<p># Comments: 254</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://github.com/Jaennaet/pISSStream\">https://github.com/Jaennaet/pISSStream</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42505454\">https://news.ycombinator.com/item?id=42505454</a></p>\n<p>Points: 1126</p>\n<p># Comments: 254</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -166,7 +210,7 @@
       "date": 1735011682,
       "author": "pkaeding",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://mathstodon.xyz/@johncarlosbaez/113703444230936435\">https://mathstodon.xyz/@johncarlosbaez/113703444230936435</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42499567\">https://news.ycombinator.com/item?id=42499567</a></p>\n<p>Points: 571</p>\n<p># Comments: 207</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://mathstodon.xyz/@johncarlosbaez/113703444230936435\">https://mathstodon.xyz/@johncarlosbaez/113703444230936435</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42499567\">https://news.ycombinator.com/item?id=42499567</a></p>\n<p>Points: 574</p>\n<p># Comments: 207</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -188,7 +232,7 @@
       "date": 1734983374,
       "author": "ecliptik",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.youtube.com/watch?v=JfZxOuc9Qwk\">https://www.youtube.com/watch?v=JfZxOuc9Qwk</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42497093\">https://news.ycombinator.com/item?id=42497093</a></p>\n<p>Points: 678</p>\n<p># Comments: 293</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.youtube.com/watch?v=JfZxOuc9Qwk\">https://www.youtube.com/watch?v=JfZxOuc9Qwk</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42497093\">https://news.ycombinator.com/item?id=42497093</a></p>\n<p>Points: 680</p>\n<p># Comments: 293</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -210,7 +254,7 @@
       "date": 1734959039,
       "author": "dabacaba",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://ploum.net/2024-12-23-julius-en.html\">https://ploum.net/2024-12-23-julius-en.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42494090\">https://news.ycombinator.com/item?id=42494090</a></p>\n<p>Points: 580</p>\n<p># Comments: 128</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://ploum.net/2024-12-23-julius-en.html\">https://ploum.net/2024-12-23-julius-en.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42494090\">https://news.ycombinator.com/item?id=42494090</a></p>\n<p>Points: 585</p>\n<p># Comments: 128</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -221,7 +265,7 @@
       "date": 1734905892,
       "author": "zdw",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://minds.md/zakirullin/cognitive\">https://minds.md/zakirullin/cognitive</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42489645\">https://news.ycombinator.com/item?id=42489645</a></p>\n<p>Points: 1727</p>\n<p># Comments: 712</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://minds.md/zakirullin/cognitive\">https://minds.md/zakirullin/cognitive</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42489645\">https://news.ycombinator.com/item?id=42489645</a></p>\n<p>Points: 1743</p>\n<p># Comments: 715</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -243,7 +287,7 @@
       "date": 1734870573,
       "author": "owenthejumper",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.wsj.com/tech/ai/openai-gpt5-orion-delays-639e7693\">https://www.wsj.com/tech/ai/openai-gpt5-orion-delays-639e7693</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42485938\">https://news.ycombinator.com/item?id=42485938</a></p>\n<p>Points: 581</p>\n<p># Comments: 1091</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.wsj.com/tech/ai/openai-gpt5-orion-delays-639e7693\">https://www.wsj.com/tech/ai/openai-gpt5-orion-delays-639e7693</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42485938\">https://news.ycombinator.com/item?id=42485938</a></p>\n<p>Points: 581</p>\n<p># Comments: 1096</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -276,7 +320,7 @@
       "date": 1734856591,
       "author": "nmjenkins",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.fastmail.com/blog/why-we-use-our-own-hardware/\">https://www.fastmail.com/blog/why-we-use-our-own-hardware/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42485124\">https://news.ycombinator.com/item?id=42485124</a></p>\n<p>Points: 925</p>\n<p># Comments: 524</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.fastmail.com/blog/why-we-use-our-own-hardware/\">https://www.fastmail.com/blog/why-we-use-our-own-hardware/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42485124\">https://news.ycombinator.com/item?id=42485124</a></p>\n<p>Points: 930</p>\n<p># Comments: 528</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -320,7 +364,7 @@
       "date": 1734745103,
       "author": "o999",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.reuters.com/technology/cybersecurity/us-judge-finds-israels-nso-group-liable-hacking-whatsapp-lawsuit-2024-12-21/\">https://www.reuters.com/technology/cybersecurity/us-judge-finds-israels-nso-group-liable-hacking-whatsapp-lawsuit-2024-12-21/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42476828\">https://news.ycombinator.com/item?id=42476828</a></p>\n<p>Points: 572</p>\n<p># Comments: 238</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.reuters.com/technology/cybersecurity/us-judge-finds-israels-nso-group-liable-hacking-whatsapp-lawsuit-2024-12-21/\">https://www.reuters.com/technology/cybersecurity/us-judge-finds-israels-nso-group-liable-hacking-whatsapp-lawsuit-2024-12-21/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42476828\">https://news.ycombinator.com/item?id=42476828</a></p>\n<p>Points: 573</p>\n<p># Comments: 238</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -331,7 +375,7 @@
       "date": 1734718273,
       "author": "maurycy",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://arcprize.org/blog/oai-o3-pub-breakthrough\">https://arcprize.org/blog/oai-o3-pub-breakthrough</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42473321\">https://news.ycombinator.com/item?id=42473321</a></p>\n<p>Points: 1718</p>\n<p># Comments: 1753</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://arcprize.org/blog/oai-o3-pub-breakthrough\">https://arcprize.org/blog/oai-o3-pub-breakthrough</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42473321\">https://news.ycombinator.com/item?id=42473321</a></p>\n<p>Points: 1722</p>\n<p># Comments: 1753</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -353,7 +397,7 @@
       "date": 1734697757,
       "author": "jascha_eng",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.anthropic.com/research/building-effective-agents\">https://www.anthropic.com/research/building-effective-agents</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42470541\">https://news.ycombinator.com/item?id=42470541</a></p>\n<p>Points: 684</p>\n<p># Comments: 121</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.anthropic.com/research/building-effective-agents\">https://www.anthropic.com/research/building-effective-agents</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42470541\">https://news.ycombinator.com/item?id=42470541</a></p>\n<p>Points: 756</p>\n<p># Comments: 121</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -419,7 +463,7 @@
       "date": 1734617525,
       "author": "greenie_beans",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://harpers.org/archive/2025/01/the-ghosts-in-the-machine-liz-pelly-spotify-musicians/\">https://harpers.org/archive/2025/01/the-ghosts-in-the-machine-liz-pelly-spotify-musicians/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42461530\">https://news.ycombinator.com/item?id=42461530</a></p>\n<p>Points: 583</p>\n<p># Comments: 383</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://harpers.org/archive/2025/01/the-ghosts-in-the-machine-liz-pelly-spotify-musicians/\">https://harpers.org/archive/2025/01/the-ghosts-in-the-machine-liz-pelly-spotify-musicians/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42461530\">https://news.ycombinator.com/item?id=42461530</a></p>\n<p>Points: 584</p>\n<p># Comments: 383</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -452,7 +496,7 @@
       "date": 1734551878,
       "author": "teekert",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://github.com/pwr-Solaar/Solaar\">https://github.com/pwr-Solaar/Solaar</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42454359\">https://news.ycombinator.com/item?id=42454359</a></p>\n<p>Points: 691</p>\n<p># Comments: 264</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://github.com/pwr-Solaar/Solaar\">https://github.com/pwr-Solaar/Solaar</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42454359\">https://news.ycombinator.com/item?id=42454359</a></p>\n<p>Points: 692</p>\n<p># Comments: 265</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -474,7 +518,7 @@
       "date": 1734545837,
       "author": "dmd",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.elevationlab.com/blogs/news/introducing-timecapsule\">https://www.elevationlab.com/blogs/news/introducing-timecapsule</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42453207\">https://news.ycombinator.com/item?id=42453207</a></p>\n<p>Points: 707</p>\n<p># Comments: 566</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.elevationlab.com/blogs/news/introducing-timecapsule\">https://www.elevationlab.com/blogs/news/introducing-timecapsule</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42453207\">https://news.ycombinator.com/item?id=42453207</a></p>\n<p>Points: 709</p>\n<p># Comments: 566</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -1289,28 +1333,6 @@
       "author": "koch",
       "unread": true,
       "content": "\n<p>Article URL: <a href=\"https://markwhen.com\">https://markwhen.com</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42289690\">https://news.ycombinator.com/item?id=42289690</a></p>\n<p>Points: 912</p>\n<p># Comments: 98</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Advent of Code 2024",
-      "url": "https://adventofcode.com/2024/about",
-      "date": 1733044175,
-      "author": "thinkingemote",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://adventofcode.com/2024/about\">https://adventofcode.com/2024/about</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42287231\">https://news.ycombinator.com/item?id=42287231</a></p>\n<p>Points: 1387</p>\n<p># Comments: 553</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Show HN: Open-source private home security camera system (end-to-end encryption)",
-      "url": "https://github.com/privastead/privastead",
-      "date": 1733004829,
-      "author": "arrdalan",
-      "unread": true,
-      "content": "\n<p>I needed a security camera inside my house, one that would send motion notifications to my smartphone and would allow me to livestream remotely. However, I could not find one that I could trust due to privacy concerns. Many of them upload the plaintext of videos to their servers and none is fully open-source as far as I know. Therefore, I decided to use my spare time to build one from scratch. Called Privastead (as in Private Homestead), it uses OpenMLS for end-to-end encryption (between the camera local hub and the smartphone) and is mostly implemented in Rust (except for part of the Android app that is implemented in Kotlin). The system is functional now and I've been using it in my own house for the past couple of weeks.<p>Based on some of the discussions I've seen online, it seems like there are other users who are also concerned with the privacy implications of home security cameras. Therefore, I decided to open source my solution for everyone to use. If you need a privacy-preserving home security camera, please give it a try and provide feedback. Note that trying out the system requires you to have a supported IP camera, a local machine connected to the IP camera, a server, and an Android smartphone. I have put together detailed instructions on setting up the system, which I hope makes it easier for others to get the system up and running.<p>In addition, consider contributing to the project. The prototype currently has a lot of limitations: mainly that it has only been tested with one IP camera, only allows the use of one camera, and only supports Android. I'll continue to improve the prototype as time permits, but progress will be much faster if there are other contributors as well.</p>\n<hr>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42284412\">https://news.ycombinator.com/item?id=42284412</a></p>\n<p>Points: 548</p>\n<p># Comments: 165</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""

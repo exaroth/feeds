@@ -7,6 +7,105 @@
   "is_query": false,
   "items": [
     {
+      "title": "script: Making it easy to write shell-like scripts in Go",
+      "url": "https://www.reddit.com/r/golang/comments/1hqbumy/script_making_it_easy_to_write_shelllike_scripts/",
+      "date": 1735640049,
+      "author": "/u/AlexandraLinnea",
+      "unread": true,
+      "content": "<table> <tr><td> <a href=\"https://www.reddit.com/r/golang/comments/1hqbumy/script_making_it_easy_to_write_shelllike_scripts/\"> <img src=\"https://external-preview.redd.it/TawLkWXmQneEfUWopoWbtLppErRHSOWgoLi6tlmnlTw.jpg?width=320&amp;crop=smart&amp;auto=webp&amp;s=12fb01fb9179f20eb8f059315f612f2c758ee68b\" alt=\"script: Making it easy to write shell-like scripts in Go\" title=\"script: Making it easy to write shell-like scripts in Go\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/AlexandraLinnea\"> /u/AlexandraLinnea </a> <br/> <span><a href=\"https://github.com/bitfield/script\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/golang/comments/1hqbumy/script_making_it_easy_to_write_shelllike_scripts/\">[comments]</a></span> </td></tr></table>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Easy Auto-Reload with Server-Sent Events in Go",
+      "url": "https://www.reddit.com/r/golang/comments/1hq0okx/easy_autoreload_with_serversent_events_in_go/",
+      "date": 1735601139,
+      "author": "/u/notfunnyxd",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Hey all,</p> <p>I decided to share how I implement auto-reloading for web pages using Server-Sent Events in Go as my first article. English is not my native language so I&#39;m sorry for any mistakes. Feedback is appreciated.</p> <p><a href=\"https://ffss.dev/articles/reloading-pages-sse\">Article</a></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/notfunnyxd\"> /u/notfunnyxd </a> <br/> <span><a href=\"https://www.reddit.com/r/golang/comments/1hq0okx/easy_autoreload_with_serversent_events_in_go/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/golang/comments/1hq0okx/easy_autoreload_with_serversent_events_in_go/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Smaller Interfaces for dependency injection",
+      "url": "https://www.reddit.com/r/golang/comments/1hpzwvu/smaller_interfaces_for_dependency_injection/",
+      "date": 1735599101,
+      "author": "/u/wampey",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Was just thinking that I may be doing something a bit wrong when it comes to dependency injections, interfaces, and unit testing. Was hoping to verify.</p> <p>Say I have an interface with 20 defined methods on it, I have a different function that needs to use 2 methods of that interface along with some attributes of the underlying struct. should I build a new interface just for that function for the very specific use of those two methods? It seems doing so could make testing easier than mocking a 20 method function. Am I missing something?</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/wampey\"> /u/wampey </a> <br/> <span><a href=\"https://www.reddit.com/r/golang/comments/1hpzwvu/smaller_interfaces_for_dependency_injection/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/golang/comments/1hpzwvu/smaller_interfaces_for_dependency_injection/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Why CGO is Dangerous",
+      "url": "https://www.reddit.com/r/golang/comments/1hpyk6g/why_cgo_is_dangerous/",
+      "date": 1735595549,
+      "author": "/u/Ambitious_Nobody2467",
+      "unread": true,
+      "content": "<table> <tr><td> <a href=\"https://www.reddit.com/r/golang/comments/1hpyk6g/why_cgo_is_dangerous/\"> <img src=\"https://external-preview.redd.it/CTUvYf8K19NaRJspvHoe_INq9JEWcPLpRhEoMdmToas.jpg?width=320&amp;crop=smart&amp;auto=webp&amp;s=97ec715d7548c86aa6cdfa594194f480e649211b\" alt=\"Why CGO is Dangerous\" title=\"Why CGO is Dangerous\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Feel free to discuss!</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Ambitious_Nobody2467\"> /u/Ambitious_Nobody2467 </a> <br/> <span><a href=\"https://youtu.be/8mU7KIF6l-k?si=xEfcV7U6gTRJYJXy\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/golang/comments/1hpyk6g/why_cgo_is_dangerous/\">[comments]</a></span> </td></tr></table>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Building a Scalable Bidding System in Go - Looking for Contributors!",
+      "url": "https://www.reddit.com/r/golang/comments/1hptmta/building_a_scalable_bidding_system_in_go_looking/",
+      "date": 1735582863,
+      "author": "/u/saigenix",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Hi everyone!</p> <p>I’m a beginner in Go and currently learning by building a scalable bidding system as a personal project. The idea is to create a platform where users can place bids on items in real time, with features like auction management, bid validation, and notifications. I also want to explore scalability by integrating tools like Redis, PostgreSQL, and WebSockets.</p> <p>While I’m learning as I go, I believe collaboration can make this journey even more exciting and educational. If you’re:</p> <p>Interested in backend development with Go</p> <p>Passionate about learning and contributing to a real-world project</p> <p>Curious about systems design, concurrency, or cloud-native apps</p> <p>…I’d love for you to join me!</p> <p>This project is perfect for fellow beginners or intermediate devs looking to gain experience in Go, scalable architectures, or collaborative coding.</p> <p>If you’re interested, reply here or DM me. Let’s connect, brainstorm, and build something awesome together!</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/saigenix\"> /u/saigenix </a> <br/> <span><a href=\"https://www.reddit.com/r/golang/comments/1hptmta/building_a_scalable_bidding_system_in_go_looking/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/golang/comments/1hptmta/building_a_scalable_bidding_system_in_go_looking/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "I Added a New Feature to My Project: DNS Subdomain Enumeration",
+      "url": "https://www.reddit.com/r/golang/comments/1hptdyx/i_added_a_new_feature_to_my_project_dns_subdomain/",
+      "date": 1735582236,
+      "author": "/u/aleksa_mrda",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Hi gophers, </p> <p>I’ve been working on a CLI networking tool in Go to improve my understanding of networking and Go itself. The latest feature I’ve added is <strong>DNS Subdomain Enumeration</strong>, which performs wordlist-based brute-force subdomain discovery with wildcard record detection.</p> <p>Older things I implemented in this project:</p> <ul> <li>TCP Port Scanning: Concurrent SYN (stealth) scan to identify open ports.</li> <li>Ping Sweeping (Host Discovery): Detects live hosts in an IP range using ICMP.</li> </ul> <p>As part of improving the tool, I also introduced <code>urfave/cli</code> to better structure and manage the CLI commands. It’s been a cool experience - it simplified the process and made my CLI much easier to use and extend.</p> <p>GoSweep is still a work in progress and not heavily tested. You can check out the code on GitHub: <a href=\"https://github.com/murrrda/goSweep\">murrrda/goSweep</a>. If you find it useful or interesting, feel free to drop a ⭐ - it would mean a lot!</p> <p>If you have any technical questions, I’d love to answer them. I’d also appreciate any feedback or suggestions, especially on performance or edge cases.</p> <p>Thanks!</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/aleksa_mrda\"> /u/aleksa_mrda </a> <br/> <span><a href=\"https://www.reddit.com/r/golang/comments/1hptdyx/i_added_a_new_feature_to_my_project_dns_subdomain/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/golang/comments/1hptdyx/i_added_a_new_feature_to_my_project_dns_subdomain/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "🚀 Introducing DiffDeck: A Go-powered Tool for Streamlined Code Reviews and Analysis",
+      "url": "https://www.reddit.com/r/golang/comments/1hpr4rg/introducing_diffdeck_a_gopowered_tool_for/",
+      "date": 1735576472,
+      "author": "/u/KledMainSG",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Hey Gophers! 👋</p> <p>I wanted to share DiffDeck, a Go-based tool I&#39;ve been working on that makes handling code diffs and reviews significantly more efficient. A tool to make working with code differences much easier. Whether you’re reviewing pull requests, comparing branches, or even auditing a repository, DiffDeck has you covered.</p> <p>Here’s how it works: you can compare branches, commits, or even specific files and generate detailed outputs in Markdown, XML, or plain text. It’s super customizable—you can include or exclude specific files, add instructions, and even run security checks for sensitive data or vulnerabilities. DiffDeck also packs in features like directory structures, file summaries, and line-numbered diffs, all tailored to fit your workflow.</p> <p>This started as a way to simplify code reviews, but it’s become something that can help with automation, collaboration, and keeping your codebase secure. If you’re tired of juggling multiple tools for these tasks, give DiffDeck a try!</p> <p>You can check it out here: <a href=\"https://github.com/KnockOutEZ/diffdeck\">https://github.com/KnockOutEZ/diffdeck</a>. If it helps you, a star on GitHub would mean a lot. 🌟 Thanks for taking a look, and happy coding! 🚀</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/KledMainSG\"> /u/KledMainSG </a> <br/> <span><a href=\"https://www.reddit.com/r/golang/comments/1hpr4rg/introducing_diffdeck_a_gopowered_tool_for/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/golang/comments/1hpr4rg/introducing_diffdeck_a_gopowered_tool_for/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Just an(other) async task library",
+      "url": "https://www.reddit.com/r/golang/comments/1hpq5fq/just_another_async_task_library/",
+      "date": 1735573938,
+      "author": "/u/svaloumas",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>iocast is a zero-dependency Go library designed to provide a simple API for running async tasks right in your code. It is intentionally kept minimal to ensure ease of use and integration.</p> <p>I&#39;ve only started working on it a couple of days ago as an Xmas holiday project, so please don&#39;t consider it bulletproof yet :) Any suggestions or feedback is more than welcome.</p> <p>Currently, it supports:</p> <ul> <li>Using custom structs as arguments in your tasks, leveraging generics.</li> <li>Selecting your preferred return types for your task results.</li> <li>Task context awareness.</li> <li>Retry attempts for each task.</li> <li>Running tasks as a pipeline.</li> <li>A database interface for optionally storing task results.</li> <li>Scheduling tasks to run at specific times.</li> </ul> <p>The database interface includes a single method, making it easy to integrate with the backend of your choice.</p> <p>This project was inspired by my earlier experience with <a href=\"https://github.com/svaloumas/valet\">valet</a>, which is quite similar in terms of semantics, but it aims to offer a lighter and more integrated solution.</p> <p>Thank you in advance for checking it out.</p> <p>GitHub: <a href=\"https://github.com/svaloumas/iocast\">iocast</a></p> <p>Examples: <a href=\"https://github.com/svaloumas/iocast/tree/main/_example\">Usage Examples</a></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/svaloumas\"> /u/svaloumas </a> <br/> <span><a href=\"https://www.reddit.com/r/golang/comments/1hpq5fq/just_another_async_task_library/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/golang/comments/1hpq5fq/just_another_async_task_library/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "what go frame recommended in IOT cloud platform",
+      "url": "https://www.reddit.com/r/golang/comments/1hpox4g/what_go_frame_recommended_in_iot_cloud_platform/",
+      "date": 1735570565,
+      "author": "/u/ApprehensiveDig8645",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>i m a china student with little English, in china it has little resource about golang now i m going to develop a platform for my graduation project which could let hardwares data trans to the software platform. what go frame is easy to do this such thing? i m hoping find a frame like javas springboot </p> <p>i ve learned about java and c , know mybatis springboot and vue . so what s can i use? thank u of all</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/ApprehensiveDig8645\"> /u/ApprehensiveDig8645 </a> <br/> <span><a href=\"https://www.reddit.com/r/golang/comments/1hpox4g/what_go_frame_recommended_in_iot_cloud_platform/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/golang/comments/1hpox4g/what_go_frame_recommended_in_iot_cloud_platform/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "What are some good open source Golang websites?",
       "url": "https://www.reddit.com/r/golang/comments/1hpnpja/what_are_some_good_open_source_golang_websites/",
       "date": 1735566937,

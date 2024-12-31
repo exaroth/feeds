@@ -7,12 +7,78 @@
   "is_query": false,
   "items": [
     {
+      "title": "To all the Kubernetes community, I wish you good health, peace, and lots of love in 2025",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hqcwxl/to_all_the_kubernetes_community_i_wish_you_good/",
+      "date": 1735644751,
+      "author": "/u/moneyppt",
+      "unread": true,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/moneyppt\"> /u/moneyppt </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hqcwxl/to_all_the_kubernetes_community_i_wish_you_good/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hqcwxl/to_all_the_kubernetes_community_i_wish_you_good/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "NamespaceHound",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hqbhm8/namespacehound/",
+      "date": 1735638440,
+      "author": "/u/sshaybbc",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p><a href=\"https://github.com/wiz-sec-public/namespacehound\">NamespaceHound </a>is an open-source tool for detecting the risk of potential <strong>namespace crossing violations</strong> in soft-multi-tenancy clusters. Given the cluster, NamespaceHound will run analysis and determine all the possible ways to cross the security boundaries between the namespaces. In addition, it inspects cluster config for anonymous access opportunities.</p> <p>Another instance where NamespaceHound is useful is in helping red-teamers and security researchers to find <strong>lateral movement paths</strong> once they are past the point of initial access into the cluster.</p> <p>== NH is 1 year old, but recent <a href=\"https://www.reddit.com/r/kubernetes/comments/1hb3qhg/exploring_multitenancy_for_my_kubernetes_learning/\">post </a>and podcast about K8s multi-tenancy have prompted me to re-share. Good discussion in the podcast around sharing cluster between students==</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/sshaybbc\"> /u/sshaybbc </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hqbhm8/namespacehound/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hqbhm8/namespacehound/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Happy 2025, everyone!",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hqb85m/happy_2025_everyone/",
+      "date": 1735637179,
+      "author": "/u/pdedene",
+      "unread": true,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/pdedene\"> /u/pdedene </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hqb85m/happy_2025_everyone/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hqb85m/happy_2025_everyone/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Private Registry",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hq0vfv/private_registry/",
+      "date": 1735601669,
+      "author": "/u/area32768",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Hi all,</p> <p>Our secops team have mandated that all helm charts, images etc; are to be stored and distributed from our private registry, with the idea being that all charts can be audited, images can be vuln. scanned etc; Has anyone come across a tool to solve this problem? I guess i&#39;m looking for something that can mirror public helm charts (and the referenced images within the chart), possibly even update references in the template to the private registry? </p> <p>Thanks!</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/area32768\"> /u/area32768 </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hq0vfv/private_registry/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hq0vfv/private_registry/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Kubernetes, Kafka and Database",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hpsppv/kubernetes_kafka_and_database/",
+      "date": 1735580516,
+      "author": "/u/Lumenbyte",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>As a beginner, with lot of research and docker containers, i was finally able to setup everything in my Minikube cluster. The message is produced in one service, database gets updated and kafka is able to do its work. I am just happy. It was my 3 days struggle. First i used to have image in docker and pull the image from there. But using docker inside minikube cluster changes my perspective on docker and kubernetes. </p> <p>Basically at the end of the day, kubernetes just needs image to work with containers. Lot of things like resourcequota, autoscaling are still pending. But feels so great with the setup as of now. Just happy and wanted to share the feelings here ☺️☺️☺️</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Lumenbyte\"> /u/Lumenbyte </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hpsppv/kubernetes_kafka_and_database/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hpsppv/kubernetes_kafka_and_database/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "Exploring Cloud Native projects in CNCF Sandbox. Part 2: 12 arrivals of 2023 H2",
       "url": "https://www.reddit.com/r/kubernetes/comments/1hpq4fs/exploring_cloud_native_projects_in_cncf_sandbox/",
       "date": 1735573866,
       "author": "/u/dshurupov",
       "unread": true,
       "content": "<table> <tr><td> <a href=\"https://www.reddit.com/r/kubernetes/comments/1hpq4fs/exploring_cloud_native_projects_in_cncf_sandbox/\"> <img src=\"https://external-preview.redd.it/mt1zZckyK09P0CcRCalbGV7WnjzSIfpnTBgCne70E10.jpg?width=640&amp;crop=smart&amp;auto=webp&amp;s=f931935ce5c694cc779b612a97ae7f65794d9bf9\" alt=\"Exploring Cloud Native projects in CNCF Sandbox. Part 2: 12 arrivals of 2023 H2\" title=\"Exploring Cloud Native projects in CNCF Sandbox. Part 2: 12 arrivals of 2023 H2\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>A brief overview (with quick helpful links) of the projects added to the CNCF Sandbox in the second part of 2023: Logging operator, K8sGPT, kcp, KubeStellar, Copa, Kanister, KCL, Easegress, Kuasar, krkn, kube-burner, and Spiderpool.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/dshurupov\"> /u/dshurupov </a> <br/> <span><a href=\"https://blog.palark.com/cncf-sandbox-2023-h2/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hpq4fs/exploring_cloud_native_projects_in_cncf_sandbox/\">[comments]</a></span> </td></tr></table>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Is there a tool like k9s for helm?",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hpor4i/is_there_a_tool_like_k9s_for_helm/",
+      "date": 1735570084,
+      "author": "/u/string111",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>I am looking for an identical tool that let me manage helm like I do manage k8s with k9s?</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/string111\"> /u/string111 </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hpor4i/is_there_a_tool_like_k9s_for_helm/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hpor4i/is_there_a_tool_like_k9s_for_helm/\">[comments]</a></span>",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
