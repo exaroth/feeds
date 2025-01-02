@@ -764,17 +764,6 @@
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
-    },
-    {
-      "title": "gorm to sqlc",
-      "url": "https://www.reddit.com/r/golang/comments/1hm1awn/gorm_to_sqlc/",
-      "date": 1735135514,
-      "author": "/u/SeniorAd8704",
-      "unread": true,
-      "content": "<!-- SC_OFF --><div class=\"md\"><p>We have an existing (large) backend written in go/gorm using gorm-migrate.</p> <p>We would like to move away from gorm and toward sqlc, but an entire rewrite is not possible--we would have to do this gradually. Do you think this is possible? The problem, of course, is that gorm and sqlc take opposite views. gorm generates sql, while sqlc generates the go bindings for the SQL you write.</p> <p>The issue is that with gorn, the source of truth are the structs, while sqlc&#39;s source of truth are SQL queries and the schema.</p> <p>Has anybody had similar experience? I don&#39;t think it&#39;s feasible, but maybe I&#39;m missing something. Remember this is a large, business-critical app with many users.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/SeniorAd8704\"> /u/SeniorAd8704 </a> <br/> <span><a href=\"https://www.reddit.com/r/golang/comments/1hm1awn/gorm_to_sqlc/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/golang/comments/1hm1awn/gorm_to_sqlc/\">[comments]</a></span>",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
     }
   ]
 }

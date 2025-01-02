@@ -7,6 +7,28 @@
   "is_query": false,
   "items": [
     {
+      "title": "OCP Statefulset replica staticIPs",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hrtlyj/ocp_statefulset_replica_staticips/",
+      "date": 1735824260,
+      "author": "/u/Plane_Swan4558",
+      "unread": true,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Plane_Swan4558\"> /u/Plane_Swan4558 </a> <br/> <span><a href=\"/r/openshift/comments/1hrtjyr/ocp_statefulset_replica_staticips/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hrtlyj/ocp_statefulset_replica_staticips/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Multiscript in one pod",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hrsypw/multiscript_in_one_pod/",
+      "date": 1735822167,
+      "author": "/u/Lukeos11",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Hey,</p> <p>Am I able to create a pod that will run a script to download and create some files and then that script starts another script using the files downloaded? </p> <p>Thanks in advance! </p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Lukeos11\"> /u/Lukeos11 </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hrsypw/multiscript_in_one_pod/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hrsypw/multiscript_in_one_pod/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "How load balancing is \"really\" used in production",
       "url": "https://www.reddit.com/r/kubernetes/comments/1hrrzd1/how_load_balancing_is_really_used_in_production/",
       "date": 1735818544,

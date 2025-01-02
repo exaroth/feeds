@@ -40,6 +40,17 @@
       "enclosureMime": ""
     },
     {
+      "title": "Announcing Rust-SNMP 2",
+      "url": "https://www.reddit.com/r/rust/comments/1hr77sv/announcing_rustsnmp_2/",
+      "date": 1735751454,
+      "author": "/u/disserman",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Good day and Happy New Year everyone,</p> <p>Let me present my SNMP crate for Rust. It&#39;s a fork of the original &quot;snmp&quot; crate, which has been abandoned about 8 years ago.</p> <p><a href=\"https://github.com/roboplc/snmp2\">https://github.com/roboplc/snmp2</a></p> <p>The fork includes additional features:</p> <ul> <li>SNMP v1-v3 support (including traps)</li> <li>MIBs support (currently via libnetsnmp)</li> <li>Async sessions</li> <li>Crate code has been refactored and cleaned up</li> <li>Improved PDU API and trap handling examples</li> </ul> <p>For the moment it&#39;s the most complete SNMP implementation for Rust in a single crate, including full SNMPv3 support.</p> <p>Simple Network Management Protocol (SNMP) is an Internet Standard protocol for collecting and organizing information about managed devices on IP networks and for modifying that information to change device behavior. Devices that typically support SNMP include cable modems, routers, network switches, servers, workstations, printers and industrial automation equipment.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/disserman\"> /u/disserman </a> <br/> <span><a href=\"https://www.reddit.com/r/rust/comments/1hr77sv/announcing_rustsnmp_2/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/rust/comments/1hr77sv/announcing_rustsnmp_2/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "Arnis - generate any location from the real world in Minecraft from OpenStreetMap data (newly ported from Python to Rust)",
       "url": "https://www.reddit.com/r/rust/comments/1hr6sq6/arnis_generate_any_location_from_the_real_world/",
       "date": 1735750310,

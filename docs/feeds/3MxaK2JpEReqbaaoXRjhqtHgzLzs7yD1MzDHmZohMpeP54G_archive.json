@@ -38,17 +38,6 @@
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
-    },
-    {
-      "title": "Designing data products: Working backwards from use cases",
-      "url": "https://martinfowler.com/articles/designing-data-products.html",
-      "date": 1733234640,
-      "author": "Martin Fowler",
-      "unread": true,
-      "content": "\n<div class = 'img-link'><a href = 'https://martinfowler.com/articles/designing-data-products.html'><img src = 'https://martinfowler.com/articles/designing-data-products/card.png' width = '350px'></img></a></div>\n\n<p>Increasingly the industry is seeing the value of creating data\n       products as a core organizing principle for analytic data. <b class = 'author'>Kiran\n       Prakash</b> has helped many clients design their data products, and\n       shares what he's learned. In particular his methodical approach doesn't\n       begin by thinking about some data that might be handy to share, but\n       instead works from what consumers of a data product need.</p>\n\n<p><a class = 'more' href = 'https://martinfowler.com/articles/designing-data-products.html'>more…</a></p>",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
     }
   ]
 }
