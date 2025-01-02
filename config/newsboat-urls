@@ -11,9 +11,7 @@ file:///home/exaroth/.scripts/atom.xml "~ Atom Pocket"
 https://access.acast.com/rss/theeconomistmorningbriefing/default "~News - Daily Brief" news
 https://www.youtube.com/feeds/videos.xml?channel_id=UCknLrEdhRCp1aegoMqRaCZg "~News - DW" news
 https://www.youtube.com/feeds/videos.xml?channel_id=UC52X5wxOL_s5yw0dQk7NtgA "~News - AP" news
-https://www.youtube.com/feeds/videos.xml?channel_id=UCK7tptUDHh-RYDsdxO1-5QQ "~News - Wall Street Journal" news
 https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg "~News - Bloomberg " news
-https://www.youtube.com/feeds/videos.xml?channel_id=UChqUTb7kYRX8-EiaN3XFrSQ "~News - Reuters " news
 https://www.reddit.com/r/worldnews/top/.rss?sort=top&t=day&limit=10 "~News - Reddit - World News" news
 https://www.reddit.com/r/europe/top/.rss?sort=top&t=day&limit=10 "~News - Reddit - Europe" news
 
@@ -35,6 +33,7 @@ http://rss.slashdot.org/Slashdot/slashdotDevelopers "~Dev - Slashdot - Dev" dev
 http://aphyr.com/posts.atom "~Dev - Aphyr" dev
 https://kubernetes.io/feed.xml "~Dev - Kubernetes Blog" dev
 http://blog.golang.org/feed.atom "~Dev - Golang Blog" dev
+https://zig.news/rss "~Dev - Zig News" dev
 https://www.reddit.com/r/golang/top/.rss?sort=top&t=day&limit=6 "~Reddit - Go" dev
 https://www.reddit.com/r/zig/top/.rss?sort=top&t=day&limit=6 "~Reddit - Zig" dev
 https://www.reddit.com/r/rust/top/.rss?sort=top&t=day&limit=6 "~Reddit - Rust" dev
@@ -180,8 +179,6 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCWj_rUMGYCP0DjffybE2nbg ! y
 https://www.youtube.com/feeds/videos.xml?channel_id=UCZwU2G-KVl-P-O-B35chZOQ ! yt
 # Weird History
 https://www.youtube.com/feeds/videos.xml?channel_id=UCc-N24Y5OA0gqbjBwe1ttfA ! yt
-# 2 Guys & A Cooler
-https://www.youtube.com/feeds/videos.xml?channel_id=UCdnBWzYQfkql-o460NTL1Tw ! yt
 # BBC Earth Science
 https://www.youtube.com/feeds/videos.xml?channel_id=UCdsOTr6SmDrxuWE7sJFrkhQ ! yt
 # Great Art Explained
@@ -192,12 +189,6 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCekQr9znsk2vWxBo3YiLq2w ! y
 https://www.youtube.com/feeds/videos.xml?channel_id=UCgY3bHW4qHKq9aC4i3nO-0g ! yt
 # History Buffs
 https://www.youtube.com/feeds/videos.xml?channel_id=UCggHoXaj8BQHIiPmOxezeWA ! yt
-# Petrolicious
-https://www.youtube.com/feeds/videos.xml?channel_id=UCgyJPixJl95X1ut3E9K99KA ! yt
-# The Life Guide
-https://www.youtube.com/feeds/videos.xml?channel_id=UCheAUBrk8xw6QhJIxEPsvhg ! yt
-# Ben Laude
-https://www.youtube.com/feeds/videos.xml?channel_id=UCnSFlVqRyNfIJDsmpkcY57w ! yt
 # cuoredicioccolato
 https://www.youtube.com/feeds/videos.xml?channel_id=UCntxIE8FKow3FbWG-BCApeQ ! yt
 # The Canvas
@@ -220,26 +211,14 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCsooa4yRKGN_zEE8iknghZA ! y
 https://www.youtube.com/feeds/videos.xml?channel_id=UCtUbO6rBht0daVIOGML3c8w ! yt
 # neo
 https://www.youtube.com/feeds/videos.xml?channel_id=UCtYKe7-XbaDjpUwcU5x0bLg ! yt
-# Radosław Sikorski - kanał oficjalny
-https://www.youtube.com/feeds/videos.xml?channel_id=UCuJY3FfThXIq-T6UpCHjbSA ! yt
-# Townsends
-https://www.youtube.com/feeds/videos.xml?channel_id=UCxr2d4As312LulcajAkKJYw ! yt
 # Folding Ideas
 https://www.youtube.com/feeds/videos.xml?channel_id=UCyNtlmLB73-7gtlBz00XOQQ ! yt
-# Dan Carlin
-https://www.youtube.com/feeds/videos.xml?channel_id=UC3RcjbuyF5M1U4R62zjE3hg ! yt
-# PBS Eons
-https://www.youtube.com/feeds/videos.xml?channel_id=UCzR-rom72PHN9Zg7RML9EbA ! yt
 # PBS
 https://www.youtube.com/feeds/videos.xml?channel_id=UCgyeJxD05YnoDquRMNBfBqw ! yt
-# James Sprigon Gardening
-https://www.youtube.com/feeds/videos.xml?channel_id=UC9V_-gqJsZNOy4v_HqbRz3w ! yt
 # More perfect union
 https://www.youtube.com/feeds/videos.xml?channel_id=UCehBVAPy-bxmnbNARF-_tvA ! yt
 # James Jani
 https://www.youtube.com/feeds/videos.xml?channel_id=UCT0dmfFCLWuVKPWZ6wcdKyg ! yt
-# Dodford
-https://www.youtube.com/feeds/videos.xml?channel_id=UC-k1VD5K6kwizjhg-HKj1rw ! yt
 # Frontline
 https://www.youtube.com/feeds/videos.xml?channel_id=UC3ScyryU9Oy9Wse3a8OAmYQ ! yt
 # Newsthink
@@ -250,4 +229,5 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCqoAEDirJPjEUFcF2FklnBA ! y
 https://www.youtube.com/feeds/videos.xml?channel_id=UCR-DXc1voovS8nhAvccRZhg ! yt
 # Jon Tron Show
 https://www.youtube.com/feeds/videos.xml?channel_id=UCdJdEguB1F1CiYe7OEi3SBg ! yt
-
+# Wall street Journal
+https://www.youtube.com/feeds/videos.xml?channel_id=UCK7tptUDHh-RYDsdxO1-5QQ ! yt
