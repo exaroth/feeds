@@ -7,23 +7,353 @@
   "is_query": false,
   "items": [
     {
-      "title": "Darktable 5.0.0",
-      "url": "https://www.darktable.org/2024/12/darktable-5.0.0-released/",
-      "date": 1735643957,
-      "author": "morsch",
+      "title": "MitmProxy2Swagger: Automagically reverse-engineer REST APIs",
+      "url": "https://github.com/alufers/mitmproxy2swagger",
+      "date": 1735805295,
+      "author": "AbuAssar",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.darktable.org/2024/12/darktable-5.0.0-released/\">https://www.darktable.org/2024/12/darktable-5.0.0-released/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42558037\">https://news.ycombinator.com/item?id=42558037</a></p>\n<p>Points: 87</p>\n<p># Comments: 30</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://github.com/alufers/mitmproxy2swagger\">https://github.com/alufers/mitmproxy2swagger</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42572662\">https://news.ycombinator.com/item?id=42572662</a></p>\n<p>Points: 118</p>\n<p># Comments: 16</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
     },
     {
-      "title": "Deepseek – A Chinese AI startup whose latest model beat OpenAI’s o1",
+      "title": "Zasper: A Modern and Efficient Alternative to JupyterLab, Built in Go",
+      "url": "https://github.com/zasper-io/zasper",
+      "date": 1735797320,
+      "author": "thunderbong",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://github.com/zasper-io/zasper\">https://github.com/zasper-io/zasper</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42572057\">https://news.ycombinator.com/item?id=42572057</a></p>\n<p>Points: 137</p>\n<p># Comments: 37</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Autodesk deletes old forum posts suddenly",
+      "url": "https://forums.autodesk.com/t5/net/regarding-community-content-archiving/td-p/13198106",
+      "date": 1735796608,
+      "author": "nsoonhui",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://forums.autodesk.com/t5/net/regarding-community-content-archiving/td-p/13198106\">https://forums.autodesk.com/t5/net/regarding-community-content-archiving/td-p/13198106</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42571995\">https://news.ycombinator.com/item?id=42571995</a></p>\n<p>Points: 84</p>\n<p># Comments: 41</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Blogs rot. Wikis wait",
+      "url": "https://j3s.sh/thought/blogs-rot-wikis-wait.html",
+      "date": 1735788777,
+      "author": "j3s",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://j3s.sh/thought/blogs-rot-wikis-wait.html\">https://j3s.sh/thought/blogs-rot-wikis-wait.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42571367\">https://news.ycombinator.com/item?id=42571367</a></p>\n<p>Points: 134</p>\n<p># Comments: 80</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Kotaemon: An open-source RAG-based tool for chatting with your documents",
+      "url": "https://github.com/Cinnamon/kotaemon",
+      "date": 1735787612,
+      "author": "miles",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://github.com/Cinnamon/kotaemon\">https://github.com/Cinnamon/kotaemon</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42571272\">https://news.ycombinator.com/item?id=42571272</a></p>\n<p>Points: 80</p>\n<p># Comments: 5</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "The GPU, not the TPM, is the root of hardware DRM",
+      "url": "https://mjg59.dreamwidth.org/70954.html",
+      "date": 1735783785,
+      "author": "DvdGiessen",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://mjg59.dreamwidth.org/70954.html\">https://mjg59.dreamwidth.org/70954.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42570988\">https://news.ycombinator.com/item?id=42570988</a></p>\n<p>Points: 185</p>\n<p># Comments: 158</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Are there more trees on Earth than stars in the Milky Way? (2016)",
+      "url": "https://www.snopes.com/fact-check/trees-stars-milky-way/",
+      "date": 1735773653,
+      "author": "alexmolas",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://www.snopes.com/fact-check/trees-stars-milky-way/\">https://www.snopes.com/fact-check/trees-stars-milky-way/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42570138\">https://news.ycombinator.com/item?id=42570138</a></p>\n<p>Points: 98</p>\n<p># Comments: 61</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "My 25-year adventure in AI and ML",
+      "url": "https://austinhenley.com/blog/25yearsofai.html",
+      "date": 1735771276,
+      "author": "ibobev",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://austinhenley.com/blog/25yearsofai.html\">https://austinhenley.com/blog/25yearsofai.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42569913\">https://news.ycombinator.com/item?id=42569913</a></p>\n<p>Points: 122</p>\n<p># Comments: 15</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Rails for everything",
+      "url": "https://literallythevoid.com/blog/rails_for_everything.html",
+      "date": 1735765084,
+      "author": "FigurativeVoid",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://literallythevoid.com/blog/rails_for_everything.html\">https://literallythevoid.com/blog/rails_for_everything.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42569236\">https://news.ycombinator.com/item?id=42569236</a></p>\n<p>Points: 259</p>\n<p># Comments: 142</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "My favourite computer ergonomics hack",
+      "url": "https://blog.jacobvosmaer.nl/0036-beeper/",
+      "date": 1735763993,
+      "author": "vortex_ape",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://blog.jacobvosmaer.nl/0036-beeper/\">https://blog.jacobvosmaer.nl/0036-beeper/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42569109\">https://news.ycombinator.com/item?id=42569109</a></p>\n<p>Points: 159</p>\n<p># Comments: 35</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Indexing Code at Scale with Glean",
+      "url": "https://engineering.fb.com/2024/12/19/developer-tools/glean-open-source-code-indexing/",
+      "date": 1735759532,
+      "author": "GavCo",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://engineering.fb.com/2024/12/19/developer-tools/glean-open-source-code-indexing/\">https://engineering.fb.com/2024/12/19/developer-tools/glean-open-source-code-indexing/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42568516\">https://news.ycombinator.com/item?id=42568516</a></p>\n<p>Points: 80</p>\n<p># Comments: 21</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "One of my papers got declined today",
+      "url": "https://mathstodon.xyz/@tao/113721192051328193",
+      "date": 1735758777,
+      "author": "GavCo",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://mathstodon.xyz/@tao/113721192051328193\">https://mathstodon.xyz/@tao/113721192051328193</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42568399\">https://news.ycombinator.com/item?id=42568399</a></p>\n<p>Points: 638</p>\n<p># Comments: 211</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Why does storing 2FA codes in your password manager make sense?",
+      "url": "https://andygrunwald.com/blog/why-does-storing-two-factor-authentication-codes-in-your-password-manager-make-sense/",
+      "date": 1735750783,
+      "author": "andygrunwald",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://andygrunwald.com/blog/why-does-storing-two-factor-authentication-codes-in-your-password-manager-make-sense/\">https://andygrunwald.com/blog/why-does-storing-two-factor-authentication-codes-in-your-password-manager-make-sense/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42567279\">https://news.ycombinator.com/item?id=42567279</a></p>\n<p>Points: 77</p>\n<p># Comments: 79</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Databases in 2024: A Year in Review",
+      "url": "https://www.cs.cmu.edu/~pavlo/blog/2025/01/2024-databases-retrospective.html",
+      "date": 1735741659,
+      "author": "avinassh",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://www.cs.cmu.edu/~pavlo/blog/2025/01/2024-databases-retrospective.html\">https://www.cs.cmu.edu/~pavlo/blog/2025/01/2024-databases-retrospective.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42566192\">https://news.ycombinator.com/item?id=42566192</a></p>\n<p>Points: 526</p>\n<p># Comments: 161</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Ruby 3.4 Highlights",
+      "url": "https://blog.sinjakli.co.uk/2025/01/01/ruby-3-4-highlights/",
+      "date": 1735741107,
+      "author": "mscccc",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://blog.sinjakli.co.uk/2025/01/01/ruby-3-4-highlights/\">https://blog.sinjakli.co.uk/2025/01/01/ruby-3-4-highlights/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42566141\">https://news.ycombinator.com/item?id=42566141</a></p>\n<p>Points: 174</p>\n<p># Comments: 73</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "DOOM CAPTCHA",
+      "url": "https://doom-captcha.vercel.app/",
+      "date": 1735740735,
+      "author": "denysvitali",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://doom-captcha.vercel.app/\">https://doom-captcha.vercel.app/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42566112\">https://news.ycombinator.com/item?id=42566112</a></p>\n<p>Points: 913</p>\n<p># Comments: 217</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Show HN: API Parrot – Automatically Reverse Engineer HTTP APIs",
+      "url": "https://apiparrot.com/",
+      "date": 1735737303,
+      "author": "pvarghav",
+      "unread": true,
+      "content": "\n<p>When automating business processes at work, I found it difficult and time-consuming to reverse engineer business systems' APIs. I often had to manually reverse engineer APIs using developer tools or settle for less optimal technologies such as Robotic Process Automation (RPA).<p>Often, the issue is that it can be hard to resolve all the cookies, access tokens, and other elements required to successfully execute the requests. Manually trying to resolve these dependencies using developer tools is especially challenging with multiple requests where data is stored in JavaScript objects or HTML elements.<p>To try to solve this issue, I built a tool called API Parrot that automatically identifies the data correlations between requests and builds a graphical representation of the flow to give users a better understanding. To streamline the process, I also included functionality to record requests, define your own inputs and outputs, and export the entire flow—or parts of it—as JavaScript code.<p>The application is Electron-based and currently compiled for Windows and Linux. Please try it out and give feedback!<p>Online Tutorial: A simple example of reverse engineering the USPS API is available at <a href=\"https://docs.apiparrot.com/docs/category/tutorial---reverse-engineering-the-usps-api\" rel=\"nofollow\">https://docs.apiparrot.com/docs/category/tutorial---reverse-...</a></p>\n<hr>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42565821\">https://news.ycombinator.com/item?id=42565821</a></p>\n<p>Points: 363</p>\n<p># Comments: 90</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "A. A. Milne's Winnie-the-Pooh as an accessible eBook",
+      "url": "https://tilde.zone/@gluejar/113749300977151258",
+      "date": 1735732678,
+      "author": "sohkamyung",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://tilde.zone/@gluejar/113749300977151258\">https://tilde.zone/@gluejar/113749300977151258</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42565513\">https://news.ycombinator.com/item?id=42565513</a></p>\n<p>Points: 86</p>\n<p># Comments: 14</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Books I Loved Reading in 2024",
+      "url": "https://thoughts.wyounas.com/p/books-i-enjoyed-most-in-2024",
+      "date": 1735719369,
+      "author": "simplegeek",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://thoughts.wyounas.com/p/books-i-enjoyed-most-in-2024\">https://thoughts.wyounas.com/p/books-i-enjoyed-most-in-2024</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42564687\">https://news.ycombinator.com/item?id=42564687</a></p>\n<p>Points: 334</p>\n<p># Comments: 140</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Cesium for Unreal – Bring the Real World to Unreal Engine",
+      "url": "https://cesium.com/platform/cesium-for-unreal/",
+      "date": 1735703823,
+      "author": "doodlesdev",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://cesium.com/platform/cesium-for-unreal/\">https://cesium.com/platform/cesium-for-unreal/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42563845\">https://news.ycombinator.com/item?id=42563845</a></p>\n<p>Points: 127</p>\n<p># Comments: 43</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Large Concept Models: Language modeling in a sentence representation space",
+      "url": "https://github.com/facebookresearch/large_concept_model",
+      "date": 1735699102,
+      "author": "batata_frita",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://github.com/facebookresearch/large_concept_model\">https://github.com/facebookresearch/large_concept_model</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42563534\">https://news.ycombinator.com/item?id=42563534</a></p>\n<p>Points: 143</p>\n<p># Comments: 49</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Déjà vu: Ghostly CVEs in my terminal title",
+      "url": "https://dgl.cx/2024/12/ghostty-terminal-title",
+      "date": 1735688876,
+      "author": "dgl",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://dgl.cx/2024/12/ghostty-terminal-title\">https://dgl.cx/2024/12/ghostty-terminal-title</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42562743\">https://news.ycombinator.com/item?id=42562743</a></p>\n<p>Points: 180</p>\n<p># Comments: 48</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "FBI: Largest homemade explosives cache in agency history found in Virginia",
+      "url": "https://thehill.com/national-security/5061535-virginia-man-arrested-explosives/",
+      "date": 1735686210,
+      "author": "domofutu",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://thehill.com/national-security/5061535-virginia-man-arrested-explosives/\">https://thehill.com/national-security/5061535-virginia-man-arrested-explosives/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42562529\">https://news.ycombinator.com/item?id=42562529</a></p>\n<p>Points: 220</p>\n<p># Comments: 332</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Building Game Prototypes with LÖVE",
+      "url": "https://healeycodes.com/building-game-prototypes-with-love",
+      "date": 1735682335,
+      "author": "healeycodes",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://healeycodes.com/building-game-prototypes-with-love\">https://healeycodes.com/building-game-prototypes-with-love</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42562175\">https://news.ycombinator.com/item?id=42562175</a></p>\n<p>Points: 162</p>\n<p># Comments: 66</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Arnis: Generate cities in Minecraft from OpenStreetMap",
+      "url": "https://github.com/louis-e/arnis",
+      "date": 1735678032,
+      "author": "jamesy0ung",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://github.com/louis-e/arnis\">https://github.com/louis-e/arnis</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42561711\">https://news.ycombinator.com/item?id=42561711</a></p>\n<p>Points: 432</p>\n<p># Comments: 64</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Dinner for One: British comedy Germans have been laughing at for years (2018)",
+      "url": "https://www.theguardian.com/tv-and-radio/2018/dec/30/dinner-for-one-german-television-new-years-eve",
+      "date": 1735665804,
+      "author": "Tomte",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://www.theguardian.com/tv-and-radio/2018/dec/30/dinner-for-one-german-television-new-years-eve\">https://www.theguardian.com/tv-and-radio/2018/dec/30/dinner-for-one-german-television-new-years-eve</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42560171\">https://news.ycombinator.com/item?id=42560171</a></p>\n<p>Points: 100</p>\n<p># Comments: 54</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "The GTA III port for the Dreamcast has been released",
+      "url": "https://gitlab.com/skmp/dca3-game",
+      "date": 1735663941,
+      "author": "Funes-",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://gitlab.com/skmp/dca3-game\">https://gitlab.com/skmp/dca3-game</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42559909\">https://news.ycombinator.com/item?id=42559909</a></p>\n<p>Points: 415</p>\n<p># Comments: 134</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Systems ideas that sound good but almost never work",
+      "url": "https://hardcoresoftware.learningbyshipping.com/p/225-systems-ideas-that-sound-good",
+      "date": 1735663674,
+      "author": "kaycebasques",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://hardcoresoftware.learningbyshipping.com/p/225-systems-ideas-that-sound-good\">https://hardcoresoftware.learningbyshipping.com/p/225-systems-ideas-that-sound-good</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42559882\">https://news.ycombinator.com/item?id=42559882</a></p>\n<p>Points: 354</p>\n<p># Comments: 213</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Morris Chang and the Origins of TSMC",
+      "url": "https://www.construction-physics.com/p/morris-chang-and-the-origins-of-tsmc",
+      "date": 1735657135,
+      "author": "rbanffy",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://www.construction-physics.com/p/morris-chang-and-the-origins-of-tsmc\">https://www.construction-physics.com/p/morris-chang-and-the-origins-of-tsmc</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42559052\">https://news.ycombinator.com/item?id=42559052</a></p>\n<p>Points: 221</p>\n<p># Comments: 56</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "How to monitor your local weather with Grafana",
+      "url": "https://grafana.com/blog/2024/12/26/how-to-monitor-your-local-weather-with-grafana/",
+      "date": 1735653907,
+      "author": "meysamazad",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://grafana.com/blog/2024/12/26/how-to-monitor-your-local-weather-with-grafana/\">https://grafana.com/blog/2024/12/26/how-to-monitor-your-local-weather-with-grafana/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42558763\">https://news.ycombinator.com/item?id=42558763</a></p>\n<p>Points: 165</p>\n<p># Comments: 38</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Darktable 5.0.0",
+      "url": "https://www.darktable.org/2024/12/darktable-5.0.0-released/",
+      "date": 1735643957,
+      "author": "morsch",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://www.darktable.org/2024/12/darktable-5.0.0-released/\">https://www.darktable.org/2024/12/darktable-5.0.0-released/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42558037\">https://news.ycombinator.com/item?id=42558037</a></p>\n<p>Points: 285</p>\n<p># Comments: 97</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Deepseek: The quiet giant leading China’s AI race",
       "url": "https://www.chinatalk.media/p/deepseek-ceo-interview-with-chinas",
       "date": 1735637328,
       "author": "sunny-beast",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.chinatalk.media/p/deepseek-ceo-interview-with-chinas\">https://www.chinatalk.media/p/deepseek-ceo-interview-with-chinas</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42557586\">https://news.ycombinator.com/item?id=42557586</a></p>\n<p>Points: 109</p>\n<p># Comments: 74</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.chinatalk.media/p/deepseek-ceo-interview-with-chinas\">https://www.chinatalk.media/p/deepseek-ceo-interview-with-chinas</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42557586\">https://news.ycombinator.com/item?id=42557586</a></p>\n<p>Points: 408</p>\n<p># Comments: 356</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -34,7 +364,7 @@
       "date": 1735633443,
       "author": "mmsc",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://krebsonsecurity.com/2024/12/u-s-army-soldier-arrested-in-att-verizon-extortions/\">https://krebsonsecurity.com/2024/12/u-s-army-soldier-arrested-in-att-verizon-extortions/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42557342\">https://news.ycombinator.com/item?id=42557342</a></p>\n<p>Points: 186</p>\n<p># Comments: 92</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://krebsonsecurity.com/2024/12/u-s-army-soldier-arrested-in-att-verizon-extortions/\">https://krebsonsecurity.com/2024/12/u-s-army-soldier-arrested-in-att-verizon-extortions/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42557342\">https://news.ycombinator.com/item?id=42557342</a></p>\n<p>Points: 251</p>\n<p># Comments: 146</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -45,7 +375,40 @@
       "date": 1735632359,
       "author": "T-A",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://dogagingproject.org/\">https://dogagingproject.org/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42557276\">https://news.ycombinator.com/item?id=42557276</a></p>\n<p>Points: 87</p>\n<p># Comments: 68</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://dogagingproject.org/\">https://dogagingproject.org/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42557276\">https://news.ycombinator.com/item?id=42557276</a></p>\n<p>Points: 108</p>\n<p># Comments: 91</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Software Design Is Knowledge Building",
+      "url": "https://olano.dev/blog/software-design-is-knowledge-building/",
+      "date": 1735631994,
+      "author": "signa11",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://olano.dev/blog/software-design-is-knowledge-building/\">https://olano.dev/blog/software-design-is-knowledge-building/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42557255\">https://news.ycombinator.com/item?id=42557255</a></p>\n<p>Points: 295</p>\n<p># Comments: 79</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "App Should Have Been a Website (and Probably Your Game Too)",
+      "url": "https://rogueengine.io/blog/your-app-should-have-been-a-website",
+      "date": 1735630686,
+      "author": "thunderbong",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://rogueengine.io/blog/your-app-should-have-been-a-website\">https://rogueengine.io/blog/your-app-should-have-been-a-website</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42557172\">https://news.ycombinator.com/item?id=42557172</a></p>\n<p>Points: 188</p>\n<p># Comments: 285</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "An Unreasonable Amount of Time",
+      "url": "https://allenpike.com/2024/an-unreasonable-amount-of-time",
+      "date": 1735629619,
+      "author": "memalign",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://allenpike.com/2024/an-unreasonable-amount-of-time\">https://allenpike.com/2024/an-unreasonable-amount-of-time</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42557098\">https://news.ycombinator.com/item?id=42557098</a></p>\n<p>Points: 440</p>\n<p># Comments: 71</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -56,18 +419,7 @@
       "date": 1735609926,
       "author": "rntn",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.theregister.com/2024/12/30/att_verizon_confirm_salt_typhoon_breach/\">https://www.theregister.com/2024/12/30/att_verizon_confirm_salt_typhoon_breach/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42555594\">https://news.ycombinator.com/item?id=42555594</a></p>\n<p>Points: 163</p>\n<p># Comments: 114</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Orbit by Mozilla",
-      "url": "https://orbitbymozilla.com/",
-      "date": 1735608051,
-      "author": "blinky88",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://orbitbymozilla.com/\">https://orbitbymozilla.com/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42555440\">https://news.ycombinator.com/item?id=42555440</a></p>\n<p>Points: 296</p>\n<p># Comments: 286</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.theregister.com/2024/12/30/att_verizon_confirm_salt_typhoon_breach/\">https://www.theregister.com/2024/12/30/att_verizon_confirm_salt_typhoon_breach/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42555594\">https://news.ycombinator.com/item?id=42555594</a></p>\n<p>Points: 388</p>\n<p># Comments: 315</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -78,7 +430,7 @@
       "date": 1735606483,
       "author": "TaurenHunter",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://aipapersacademy.com/chain-of-continuous-thought/\">https://aipapersacademy.com/chain-of-continuous-thought/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42555320\">https://news.ycombinator.com/item?id=42555320</a></p>\n<p>Points: 248</p>\n<p># Comments: 86</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://aipapersacademy.com/chain-of-continuous-thought/\">https://aipapersacademy.com/chain-of-continuous-thought/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42555320\">https://news.ycombinator.com/item?id=42555320</a></p>\n<p>Points: 330</p>\n<p># Comments: 135</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -100,7 +452,7 @@
       "date": 1735599506,
       "author": "eutropia",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://blog.llvm.org/posts/2024-12-03-minimalistic-ruby-compiler/\">https://blog.llvm.org/posts/2024-12-03-minimalistic-ruby-compiler/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42554521\">https://news.ycombinator.com/item?id=42554521</a></p>\n<p>Points: 112</p>\n<p># Comments: 16</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://blog.llvm.org/posts/2024-12-03-minimalistic-ruby-compiler/\">https://blog.llvm.org/posts/2024-12-03-minimalistic-ruby-compiler/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42554521\">https://news.ycombinator.com/item?id=42554521</a></p>\n<p>Points: 120</p>\n<p># Comments: 16</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -111,7 +463,7 @@
       "date": 1735598973,
       "author": "2bluesc",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://people.kernel.org/kees/colliding-with-the-sha-prefix-of-linuxs-initial-git-commit\">https://people.kernel.org/kees/colliding-with-the-sha-prefix-of-linuxs-initial-git-commit</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42554420\">https://news.ycombinator.com/item?id=42554420</a></p>\n<p>Points: 149</p>\n<p># Comments: 38</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://people.kernel.org/kees/colliding-with-the-sha-prefix-of-linuxs-initial-git-commit\">https://people.kernel.org/kees/colliding-with-the-sha-prefix-of-linuxs-initial-git-commit</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42554420\">https://news.ycombinator.com/item?id=42554420</a></p>\n<p>Points: 199</p>\n<p># Comments: 52</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -123,6 +475,17 @@
       "author": "shinryudbz",
       "unread": true,
       "content": "\n<p>Article URL: <a href=\"https://arxiv.org/abs/2412.18052\">https://arxiv.org/abs/2412.18052</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42554209\">https://news.ycombinator.com/item?id=42554209</a></p>\n<p>Points: 87</p>\n<p># Comments: 30</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "RWKV Language Model",
+      "url": "https://www.rwkv.com/",
+      "date": 1735597145,
+      "author": "simonpure",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://www.rwkv.com/\">https://www.rwkv.com/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42554161\">https://news.ycombinator.com/item?id=42554161</a></p>\n<p>Points: 89</p>\n<p># Comments: 24</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -144,7 +507,7 @@
       "date": 1735595493,
       "author": "tehnub",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://jonot.me/posts/zig-gba/\">https://jonot.me/posts/zig-gba/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42553949\">https://news.ycombinator.com/item?id=42553949</a></p>\n<p>Points: 249</p>\n<p># Comments: 87</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://jonot.me/posts/zig-gba/\">https://jonot.me/posts/zig-gba/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42553949\">https://news.ycombinator.com/item?id=42553949</a></p>\n<p>Points: 309</p>\n<p># Comments: 124</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -155,7 +518,7 @@
       "date": 1735593652,
       "author": "bikenaga",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.gutenberg.org/files/38769/38769-pdf.pdf\">https://www.gutenberg.org/files/38769/38769-pdf.pdf</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42553682\">https://news.ycombinator.com/item?id=42553682</a></p>\n<p>Points: 238</p>\n<p># Comments: 62</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.gutenberg.org/files/38769/38769-pdf.pdf\">https://www.gutenberg.org/files/38769/38769-pdf.pdf</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42553682\">https://news.ycombinator.com/item?id=42553682</a></p>\n<p>Points: 281</p>\n<p># Comments: 78</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -166,7 +529,7 @@
       "date": 1735591598,
       "author": "chimpanzee",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://pov.imv.au.dk/Issue_24/section_1/artc4A.html\">https://pov.imv.au.dk/Issue_24/section_1/artc4A.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42553313\">https://news.ycombinator.com/item?id=42553313</a></p>\n<p>Points: 106</p>\n<p># Comments: 20</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://pov.imv.au.dk/Issue_24/section_1/artc4A.html\">https://pov.imv.au.dk/Issue_24/section_1/artc4A.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42553313\">https://news.ycombinator.com/item?id=42553313</a></p>\n<p>Points: 112</p>\n<p># Comments: 24</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -211,17 +574,6 @@
       "author": "marban",
       "unread": true,
       "content": "\n<p>Article URL: <a href=\"https://www.ft.com/content/c755a34d-eb97-40d1-b780-ae2e2f0e7ad9\">https://www.ft.com/content/c755a34d-eb97-40d1-b780-ae2e2f0e7ad9</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42552222\">https://news.ycombinator.com/item?id=42552222</a></p>\n<p>Points: 158</p>\n<p># Comments: 122</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Tell HN: John Friel my father, internet pioneer and creator of QModem, has died",
-      "url": "https://news.ycombinator.com/item?id=42551900",
-      "date": 1735582307,
-      "author": "AaronFriel",
-      "unread": true,
-      "content": "\n<p>If you knew him in life or remember his contribution to the world, please share your stories.</p>\n<hr>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42551900\">https://news.ycombinator.com/item?id=42551900</a></p>\n<p>Points: 981</p>\n<p># Comments: 84</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -282,17 +634,6 @@
       "enclosureMime": ""
     },
     {
-      "title": "AI companies cause most of traffic on forums",
-      "url": "https://pod.geraspora.de/posts/17342163",
-      "date": 1735569437,
-      "author": "ta988",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://pod.geraspora.de/posts/17342163\">https://pod.geraspora.de/posts/17342163</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42549624\">https://news.ycombinator.com/item?id=42549624</a></p>\n<p>Points: 306</p>\n<p># Comments: 208</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
       "title": "Bench to be acquired after abruptly shutting down",
       "url": "https://techcrunch.com/2024/12/30/bench-to-be-acquired-after-abruptly-shutting-down/",
       "date": 1735567453,
@@ -326,12 +667,45 @@
       "enclosureMime": ""
     },
     {
+      "title": "The Cognitive Style of PowerPoint [pdf]",
+      "url": "https://www.inf.ed.ac.uk/teaching/courses/pi/2016_2017/phil/tufte-powerpoint.pdf",
+      "date": 1735565882,
+      "author": "raviisoccupied",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://www.inf.ed.ac.uk/teaching/courses/pi/2016_2017/phil/tufte-powerpoint.pdf\">https://www.inf.ed.ac.uk/teaching/courses/pi/2016_2017/phil/tufte-powerpoint.pdf</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42549147\">https://news.ycombinator.com/item?id=42549147</a></p>\n<p>Points: 89</p>\n<p># Comments: 35</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "How AI is unlocking ancient texts",
+      "url": "https://www.nature.com/articles/d41586-024-04161-z",
+      "date": 1735565746,
+      "author": "Marceltan",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://www.nature.com/articles/d41586-024-04161-z\">https://www.nature.com/articles/d41586-024-04161-z</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42549123\">https://news.ycombinator.com/item?id=42549123</a></p>\n<p>Points: 135</p>\n<p># Comments: 38</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "Ts_zip: Text Compression Using Large Language Models",
       "url": "https://bellard.org/ts_zip/",
       "date": 1735565442,
       "author": "signa11",
       "unread": true,
       "content": "\n<p>Article URL: <a href=\"https://bellard.org/ts_zip/\">https://bellard.org/ts_zip/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42549083\">https://news.ycombinator.com/item?id=42549083</a></p>\n<p>Points: 123</p>\n<p># Comments: 48</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Most people don't care about quality",
+      "url": "https://shkspr.mobi/blog/2024/12/most-people-dont-care-about-quality/",
+      "date": 1735565076,
+      "author": "ColinWright",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://shkspr.mobi/blog/2024/12/most-people-dont-care-about-quality/\">https://shkspr.mobi/blog/2024/12/most-people-dont-care-about-quality/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42549039\">https://news.ycombinator.com/item?id=42549039</a></p>\n<p>Points: 76</p>\n<p># Comments: 63</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -359,12 +733,45 @@
       "enclosureMime": ""
     },
     {
+      "title": "Lucy: A concise language for describing Finite State Machines",
+      "url": "https://pkg.spooky.click/lucylang/",
+      "date": 1735556827,
+      "author": "whatever3",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://pkg.spooky.click/lucylang/\">https://pkg.spooky.click/lucylang/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42548282\">https://news.ycombinator.com/item?id=42548282</a></p>\n<p>Points: 90</p>\n<p># Comments: 15</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Nvidia bets on robotics to drive future growth",
+      "url": "https://www.ft.com/content/7c3dafa8-ffb9-4ca8-b677-ab3cc2afbdcb",
+      "date": 1735554065,
+      "author": "pella",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://www.ft.com/content/7c3dafa8-ffb9-4ca8-b677-ab3cc2afbdcb\">https://www.ft.com/content/7c3dafa8-ffb9-4ca8-b677-ab3cc2afbdcb</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42548077\">https://news.ycombinator.com/item?id=42548077</a></p>\n<p>Points: 145</p>\n<p># Comments: 107</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "Limits to Growth (1972)",
       "url": "http://bit-player.org/extras/limits/",
       "date": 1735552953,
       "author": "Tomte",
       "unread": true,
       "content": "\n<p>Article URL: <a href=\"http://bit-player.org/extras/limits/\">http://bit-player.org/extras/limits/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42548000\">https://news.ycombinator.com/item?id=42548000</a></p>\n<p>Points: 79</p>\n<p># Comments: 51</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Reciprocal Approximation with 1 Subtraction",
+      "url": "https://news.ycombinator.com/item?id=42547867",
+      "date": 1735550789,
+      "author": "mbitsnbites",
+      "unread": true,
+      "content": "\n<p>Today's find: You can get a floating-point approximation of 1/x that's accurate to 3 bits with a single integer subtraction instruction.<p><pre><code>  float fast_reciprocal(float x)\n  {\n    unsigned i = *(unsigned *) &x; \n    i = 0x7effffffU - i;\n    return *(float *) &i;\n  }\n</code></pre>\nThe magic number 0x7effffff accomplishes two things:<p>1) The exponent is calculated as 253-e, which effectively negates the exponent and subtracts 1.<p>2) The mantissa is approximated as a 1st order polynomial in the interval [1, 2).<p>Interesting, but perhaps not very useful (as most CPU:s have more accurate reciprocal approximations these days).</p>\n<hr>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42547867\">https://news.ycombinator.com/item?id=42547867</a></p>\n<p>Points: 83</p>\n<p># Comments: 34</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -398,28 +805,6 @@
       "author": "bj-rn",
       "unread": true,
       "content": "\n<p>Article URL: <a href=\"https://github.com/KreitinnSoftware/MiceWine-Application\">https://github.com/KreitinnSoftware/MiceWine-Application</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42547610\">https://news.ycombinator.com/item?id=42547610</a></p>\n<p>Points: 197</p>\n<p># Comments: 63</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "'Obelisks': New class of life has been found in human digestive system",
-      "url": "https://www.sciencealert.com/obelisks-entirely-new-class-of-life-has-been-found-in-the-human-digestive-system",
-      "date": 1735546368,
-      "author": "unkeen",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.sciencealert.com/obelisks-entirely-new-class-of-life-has-been-found-in-the-human-digestive-system\">https://www.sciencealert.com/obelisks-entirely-new-class-of-life-has-been-found-in-the-human-digestive-system</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42547489\">https://news.ycombinator.com/item?id=42547489</a></p>\n<p>Points: 369</p>\n<p># Comments: 116</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "I keep turning my Google Sheets into phone-friendly webapps",
-      "url": "https://arstechnica.com/gadgets/2024/12/making-tiny-no-code-webapps-out-of-spreadsheets-is-a-weirdly-fulfilling-hobby/",
-      "date": 1735539901,
-      "author": "cpeterso",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://arstechnica.com/gadgets/2024/12/making-tiny-no-code-webapps-out-of-spreadsheets-is-a-weirdly-fulfilling-hobby/\">https://arstechnica.com/gadgets/2024/12/making-tiny-no-code-webapps-out-of-spreadsheets-is-a-weirdly-fulfilling-hobby/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42547003\">https://news.ycombinator.com/item?id=42547003</a></p>\n<p>Points: 442</p>\n<p># Comments: 139</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -502,17 +887,6 @@
       "enclosureMime": ""
     },
     {
-      "title": "Show HN: Chorus, a Mac app that lets you chat with a bunch of AIs at once",
-      "url": "https://melty.sh/chorus",
-      "date": 1735508842,
-      "author": "Charlieholtz",
-      "unread": true,
-      "content": "\n<p>There's so many cool models to try but they're all in different places. In Chorus you can chat with a bunch of models all at once, and add your own system prompts.<p>Like 4o with a CBT overview, or a succinct Claude. Excited to hear your thoughts!</p>\n<hr>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42543601\">https://news.ycombinator.com/item?id=42543601</a></p>\n<p>Points: 97</p>\n<p># Comments: 40</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
       "title": "The Zombocom Problem",
       "url": "https://newsletter.squishy.computer/p/the-zombocom-problem",
       "date": 1735500602,
@@ -530,6 +904,17 @@
       "author": "trinsic2",
       "unread": true,
       "content": "\n<p>Article URL: <a href=\"https://www.scottrlarson.com/updates/update-closed-technology-ecosystems-storage-configuration-lockdown/\">https://www.scottrlarson.com/updates/update-closed-technology-ecosystems-storage-configuration-lockdown/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42542138\">https://news.ycombinator.com/item?id=42542138</a></p>\n<p>Points: 181</p>\n<p># Comments: 126</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Developing inside a virtual machine",
+      "url": "https://blog.disintegrator.dev/posts/dev-virtual-machine/",
+      "date": 1735494661,
+      "author": "disintegrator",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://blog.disintegrator.dev/posts/dev-virtual-machine/\">https://blog.disintegrator.dev/posts/dev-virtual-machine/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42541508\">https://news.ycombinator.com/item?id=42541508</a></p>\n<p>Points: 110</p>\n<p># Comments: 70</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -623,6 +1008,17 @@
       "enclosureMime": ""
     },
     {
+      "title": "ASCII porn predates the Internet but it's still everywhere (2019)",
+      "url": "https://www.vice.com/en/article/ascii-pr0n-porn-predates-the-internet-but-its-still-everywhere-rule-34/",
+      "date": 1735472961,
+      "author": "Bluestein",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://www.vice.com/en/article/ascii-pr0n-porn-predates-the-internet-but-its-still-everywhere-rule-34/\">https://www.vice.com/en/article/ascii-pr0n-porn-predates-the-internet-but-its-still-everywhere-rule-34/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42539385\">https://news.ycombinator.com/item?id=42539385</a></p>\n<p>Points: 132</p>\n<p># Comments: 51</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "I Run LLMs Locally",
       "url": "https://abishekmuthian.com/how-i-run-llms-locally/",
       "date": 1735469340,
@@ -662,28 +1058,6 @@
       "author": "doener",
       "unread": true,
       "content": "\n<p>Article URL: <a href=\"https://media.ccc.de/v/38c3-bioterrorism-will-save-your-life-with-the-4-thieves-vinegar-collective\">https://media.ccc.de/v/38c3-bioterrorism-will-save-your-life-with-the-4-thieves-vinegar-collective</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42538903\">https://news.ycombinator.com/item?id=42538903</a></p>\n<p>Points: 144</p>\n<p># Comments: 148</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "38C3: Illegal Instructions",
-      "url": "https://media.ccc.de/c/38c3",
-      "date": 1735448073,
-      "author": "type0",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://media.ccc.de/c/38c3\">https://media.ccc.de/c/38c3</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42537631\">https://news.ycombinator.com/item?id=42537631</a></p>\n<p>Points: 399</p>\n<p># Comments: 60</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "WebGL Fluid Simulation",
-      "url": "https://paveldogreat.github.io/WebGL-Fluid-Simulation/",
-      "date": 1735447189,
-      "author": "ChadNauseam",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://paveldogreat.github.io/WebGL-Fluid-Simulation/\">https://paveldogreat.github.io/WebGL-Fluid-Simulation/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42537567\">https://news.ycombinator.com/item?id=42537567</a></p>\n<p>Points: 420</p>\n<p># Comments: 55</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -733,6 +1107,17 @@
       "enclosureMime": ""
     },
     {
+      "title": "What Happens to Relicensed Open Source Projects and Their Forks?",
+      "url": "https://thenewstack.io/what-happens-to-relicensed-open-source-projects-and-their-forks/",
+      "date": 1735424740,
+      "author": "zdw",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://thenewstack.io/what-happens-to-relicensed-open-source-projects-and-their-forks/\">https://thenewstack.io/what-happens-to-relicensed-open-source-projects-and-their-forks/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42535354\">https://news.ycombinator.com/item?id=42535354</a></p>\n<p>Points: 87</p>\n<p># Comments: 25</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "Finding and exploiting hidden features of Animal Crossing's NES emulator (2018)",
       "url": "https://jamchamb.net/2018/07/11/animal-crossing-nes-emulator-hacks.html",
       "date": 1735424540,
@@ -766,6 +1151,17 @@
       "enclosureMime": ""
     },
     {
+      "title": "Why it's hard to trust software, but you mostly have to anyway",
+      "url": "https://educatedguesswork.org/posts/ensuring-software-provenance/",
+      "date": 1735421318,
+      "author": "ekr____",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://educatedguesswork.org/posts/ensuring-software-provenance/\">https://educatedguesswork.org/posts/ensuring-software-provenance/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42534918\">https://news.ycombinator.com/item?id=42534918</a></p>\n<p>Points: 89</p>\n<p># Comments: 90</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "EU law mandating universal chargers for devices comes into force",
       "url": "https://www.france24.com/en/europe/20241228-eu-law-mandating-universal-chargers-for-devices-comes-into-force",
       "date": 1735420835,
@@ -777,12 +1173,23 @@
       "enclosureMime": ""
     },
     {
+      "title": "After a 24-second test of its engines, the New Glenn rocket is ready to fly",
+      "url": "https://arstechnica.com/space/2024/12/blue-origin-hot-fires-new-glenn-rocket-setting-up-a-launch-early-next-year/",
+      "date": 1735418816,
+      "author": "fenced_load",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://arstechnica.com/space/2024/12/blue-origin-hot-fires-new-glenn-rocket-setting-up-a-launch-early-next-year/\">https://arstechnica.com/space/2024/12/blue-origin-hot-fires-new-glenn-rocket-setting-up-a-launch-early-next-year/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42534555\">https://news.ycombinator.com/item?id=42534555</a></p>\n<p>Points: 77</p>\n<p># Comments: 99</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "Ruby-refrigerator: Freeze all core Ruby classes",
       "url": "https://github.com/jeremyevans/ruby-refrigerator",
       "date": 1735413446,
       "author": "thunderbong",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://github.com/jeremyevans/ruby-refrigerator\">https://github.com/jeremyevans/ruby-refrigerator</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42533648\">https://news.ycombinator.com/item?id=42533648</a></p>\n<p>Points: 80</p>\n<p># Comments: 21</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://github.com/jeremyevans/ruby-refrigerator\">https://github.com/jeremyevans/ruby-refrigerator</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42533648\">https://news.ycombinator.com/item?id=42533648</a></p>\n<p>Points: 118</p>\n<p># Comments: 37</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -793,18 +1200,7 @@
       "date": 1735409200,
       "author": "pierremenard",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://unity.com/blog/engine-platform/debugging-memory-debugging-memory-corruption-who-wrote-2-into-my-stack-who-the-hell\">https://unity.com/blog/engine-platform/debugging-memory-debugging-memory-corruption-who-wrote-2-into-my-stack-who-the-hell</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42532979\">https://news.ycombinator.com/item?id=42532979</a></p>\n<p>Points: 146</p>\n<p># Comments: 29</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Google's Results Are Infested, Open AI Is Using Their Playbook from the 2000s",
-      "url": "https://chuckwnelson.com/blog/google-search-results-infested-open-ai-using-google-playbook",
-      "date": 1735405600,
-      "author": "chuckwnelson",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://chuckwnelson.com/blog/google-search-results-infested-open-ai-using-google-playbook\">https://chuckwnelson.com/blog/google-search-results-infested-open-ai-using-google-playbook</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42532441\">https://news.ycombinator.com/item?id=42532441</a></p>\n<p>Points: 317</p>\n<p># Comments: 367</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://unity.com/blog/engine-platform/debugging-memory-debugging-memory-corruption-who-wrote-2-into-my-stack-who-the-hell\">https://unity.com/blog/engine-platform/debugging-memory-debugging-memory-corruption-who-wrote-2-into-my-stack-who-the-hell</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42532979\">https://news.ycombinator.com/item?id=42532979</a></p>\n<p>Points: 345</p>\n<p># Comments: 156</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -816,6 +1212,17 @@
       "author": "homebrewer",
       "unread": true,
       "content": "\n<p>Article URL: <a href=\"https://yosefk.com/blog/my-history-with-forth-stack-machines.html\">https://yosefk.com/blog/my-history-with-forth-stack-machines.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42532157\">https://news.ycombinator.com/item?id=42532157</a></p>\n<p>Points: 95</p>\n<p># Comments: 24</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "I Reversed a Drone and Landed It with My PC",
+      "url": "https://www.hardbreak.wiki/network-analysis/protocols/application-layer/proprietary-protocols/parrot-anafi-drone-reverse-engineering",
+      "date": 1735402434,
+      "author": "hw-f3nter",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://www.hardbreak.wiki/network-analysis/protocols/application-layer/proprietary-protocols/parrot-anafi-drone-reverse-engineering\">https://www.hardbreak.wiki/network-analysis/protocols/application-layer/proprietary-protocols/parrot-anafi-drone-reverse-engineering</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42532014\">https://news.ycombinator.com/item?id=42532014</a></p>\n<p>Points: 161</p>\n<p># Comments: 42</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -843,12 +1250,34 @@
       "enclosureMime": ""
     },
     {
+      "title": "Revisiting the NetBSD Build System",
+      "url": "https://blogsystem5.substack.com/p/netbsd-build-system",
+      "date": 1735387687,
+      "author": "abhi9u",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://blogsystem5.substack.com/p/netbsd-build-system\">https://blogsystem5.substack.com/p/netbsd-build-system</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42530459\">https://news.ycombinator.com/item?id=42530459</a></p>\n<p>Points: 117</p>\n<p># Comments: 13</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "Spotify Shuts Down ‘Unwrapped’ Artist Royalty Calculator with Legal Threats",
       "url": "https://www.digitalmusicnews.com/2024/12/23/billionaire-daniel-ek-shuts-down-spotify-unwrapped-calculator/",
       "date": 1735387209,
       "author": "cpach",
       "unread": true,
       "content": "\n<p>Article URL: <a href=\"https://www.digitalmusicnews.com/2024/12/23/billionaire-daniel-ek-shuts-down-spotify-unwrapped-calculator/\">https://www.digitalmusicnews.com/2024/12/23/billionaire-daniel-ek-shuts-down-spotify-unwrapped-calculator/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42530410\">https://news.ycombinator.com/item?id=42530410</a></p>\n<p>Points: 115</p>\n<p># Comments: 149</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Penrose Mazes (2020)",
+      "url": "https://justinpombrio.net/archive/penrose-maze/",
+      "date": 1735380568,
+      "author": "082349872349872",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://justinpombrio.net/archive/penrose-maze/\">https://justinpombrio.net/archive/penrose-maze/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42529894\">https://news.ycombinator.com/item?id=42529894</a></p>\n<p>Points: 89</p>\n<p># Comments: 10</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -937,6 +1366,17 @@
       "author": "doener",
       "unread": true,
       "content": "\n<p>Article URL: <a href=\"https://media.ccc.de/v/38c3-liberating-wi-fi-on-the-esp32\">https://media.ccc.de/v/38c3-liberating-wi-fi-on-the-esp32</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42527265\">https://news.ycombinator.com/item?id=42527265</a></p>\n<p>Points: 315</p>\n<p># Comments: 123</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Behind the Scenes: Alien Worlds – Jumpship over a tidally locked planet",
+      "url": "https://www.blendernation.com/2024/12/24/behind-the-scenes-alien-worlds-jumpship-over-a-tidally-locked-planet/",
+      "date": 1735341592,
+      "author": "sohkamyung",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://www.blendernation.com/2024/12/24/behind-the-scenes-alien-worlds-jumpship-over-a-tidally-locked-planet/\">https://www.blendernation.com/2024/12/24/behind-the-scenes-alien-worlds-jumpship-over-a-tidally-locked-planet/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42526978\">https://news.ycombinator.com/item?id=42526978</a></p>\n<p>Points: 75</p>\n<p># Comments: 5</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -1046,7 +1486,7 @@
       "date": 1735320776,
       "author": "kolui",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://gianlucaventurini.com/posts/2024/factorio-sat\">https://gianlucaventurini.com/posts/2024/factorio-sat</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42524130\">https://news.ycombinator.com/item?id=42524130</a></p>\n<p>Points: 210</p>\n<p># Comments: 32</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://gianlucaventurini.com/posts/2024/factorio-sat\">https://gianlucaventurini.com/posts/2024/factorio-sat</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42524130\">https://news.ycombinator.com/item?id=42524130</a></p>\n<p>Points: 227</p>\n<p># Comments: 41</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -1167,7 +1607,7 @@
       "date": 1735285890,
       "author": "tosh",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://daringfireball.net/linked/2024/12/24/coding-font-selection-tournament\">https://daringfireball.net/linked/2024/12/24/coding-font-selection-tournament</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42520601\">https://news.ycombinator.com/item?id=42520601</a></p>\n<p>Points: 90</p>\n<p># Comments: 68</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://daringfireball.net/linked/2024/12/24/coding-font-selection-tournament\">https://daringfireball.net/linked/2024/12/24/coding-font-selection-tournament</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42520601\">https://news.ycombinator.com/item?id=42520601</a></p>\n<p>Points: 118</p>\n<p># Comments: 98</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -1223,17 +1663,6 @@
       "author": "gnabgib",
       "unread": true,
       "content": "\n<p>Article URL: <a href=\"https://www.wsj.com/business/media/james-bond-movies-amazon-barbara-broccoli-0b04f0db\">https://www.wsj.com/business/media/james-bond-movies-amazon-barbara-broccoli-0b04f0db</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42519168\">https://news.ycombinator.com/item?id=42519168</a></p>\n<p>Points: 99</p>\n<p># Comments: 168</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Bill requiring US agencies to share source code with each other becomes law",
-      "url": "https://fedscoop.com/agencies-must-share-custom-source-code-under-new-share-it-act/",
-      "date": 1735257472,
-      "author": "speckx",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://fedscoop.com/agencies-must-share-custom-source-code-under-new-share-it-act/\">https://fedscoop.com/agencies-must-share-custom-source-code-under-new-share-it-act/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42518833\">https://news.ycombinator.com/item?id=42518833</a></p>\n<p>Points: 367</p>\n<p># Comments: 125</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -1343,7 +1772,7 @@
       "date": 1735239993,
       "author": "chunkles",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://bellard.org/ts_sms/\">https://bellard.org/ts_sms/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42517035\">https://news.ycombinator.com/item?id=42517035</a></p>\n<p>Points: 217</p>\n<p># Comments: 97</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://bellard.org/ts_sms/\">https://bellard.org/ts_sms/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42517035\">https://news.ycombinator.com/item?id=42517035</a></p>\n<p>Points: 239</p>\n<p># Comments: 106</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -1663,281 +2092,6 @@
       "author": "akkad33",
       "unread": true,
       "content": "\n<p>Article URL: <a href=\"https://fstar-lang.org/\">https://fstar-lang.org/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42508642\">https://news.ycombinator.com/item?id=42508642</a></p>\n<p>Points: 242</p>\n<p># Comments: 59</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Guide to mechanical keyboards",
-      "url": "https://arstechnica.com/gadgets/2022/03/the-ars-technica-guide-to-mechanical-keyboards/",
-      "date": 1735120058,
-      "author": "Bluestein",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://arstechnica.com/gadgets/2022/03/the-ars-technica-guide-to-mechanical-keyboards/\">https://arstechnica.com/gadgets/2022/03/the-ars-technica-guide-to-mechanical-keyboards/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42507932\">https://news.ycombinator.com/item?id=42507932</a></p>\n<p>Points: 175</p>\n<p># Comments: 194</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Ruby 3.4.0",
-      "url": "https://www.ruby-lang.org/en/news/2024/12/25/ruby-3-4-0-released/",
-      "date": 1735108807,
-      "author": "aaronbrethorst",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.ruby-lang.org/en/news/2024/12/25/ruby-3-4-0-released/\">https://www.ruby-lang.org/en/news/2024/12/25/ruby-3-4-0-released/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42507312\">https://news.ycombinator.com/item?id=42507312</a></p>\n<p>Points: 361</p>\n<p># Comments: 215</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "CRT Simulation in a GPU Shader, Looks Better Than Black Frame Insertion",
-      "url": "https://blurbusters.com/crt-simulation-in-a-gpu-shader-looks-better-than-bfi/",
-      "date": 1735089989,
-      "author": "bangonkeyboard",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://blurbusters.com/crt-simulation-in-a-gpu-shader-looks-better-than-bfi/\">https://blurbusters.com/crt-simulation-in-a-gpu-shader-looks-better-than-bfi/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42506211\">https://news.ycombinator.com/item?id=42506211</a></p>\n<p>Points: 193</p>\n<p># Comments: 62</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "T * sin (t)' ≈ Ornamented Christmas Tree (2013)",
-      "url": "https://community.wolfram.com/c/portal/getImageAttachment?filename=tree.gif&userId=93201",
-      "date": 1735088842,
-      "author": "ryeguy_24",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://community.wolfram.com/c/portal/getImageAttachment?filename=tree.gif&userId=93201\">https://community.wolfram.com/c/portal/getImageAttachment?filename=tree.gif&userId=93201</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42506145\">https://news.ycombinator.com/item?id=42506145</a></p>\n<p>Points: 354</p>\n<p># Comments: 39</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Gordon Mah Ung has died",
-      "url": "https://www.pcworld.com/article/2564783/gordon-mah-ung-remembered.html",
-      "date": 1735080914,
-      "author": "EA-3167",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.pcworld.com/article/2564783/gordon-mah-ung-remembered.html\">https://www.pcworld.com/article/2564783/gordon-mah-ung-remembered.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42505542\">https://news.ycombinator.com/item?id=42505542</a></p>\n<p>Points: 109</p>\n<p># Comments: 17</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Trying out QvQ – Qwen's new visual reasoning model",
-      "url": "https://simonwillison.net/2024/Dec/24/qvq/",
-      "date": 1735075532,
-      "author": "simonw",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://simonwillison.net/2024/Dec/24/qvq/\">https://simonwillison.net/2024/Dec/24/qvq/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42505038\">https://news.ycombinator.com/item?id=42505038</a></p>\n<p>Points: 158</p>\n<p># Comments: 51</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Shockley Semiconductor Laboratory",
-      "url": "https://www.abortretry.fail/p/shockley-semiconductor-laboratory",
-      "date": 1735072149,
-      "author": "BirAdam",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.abortretry.fail/p/shockley-semiconductor-laboratory\">https://www.abortretry.fail/p/shockley-semiconductor-laboratory</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42504677\">https://news.ycombinator.com/item?id=42504677</a></p>\n<p>Points: 82</p>\n<p># Comments: 27</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Masks, Smoke, and Mirrors: The story of EgyptAir flight 804",
-      "url": "https://admiralcloudberg.medium.com/masks-smoke-and-mirrors-the-untold-story-of-egyptair-flight-804-42c788fcac2d",
-      "date": 1735069180,
-      "author": "gdmt",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://admiralcloudberg.medium.com/masks-smoke-and-mirrors-the-untold-story-of-egyptair-flight-804-42c788fcac2d\">https://admiralcloudberg.medium.com/masks-smoke-and-mirrors-the-untold-story-of-egyptair-flight-804-42c788fcac2d</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42504343\">https://news.ycombinator.com/item?id=42504343</a></p>\n<p>Points: 227</p>\n<p># Comments: 118</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Cerebrum: Simulate and infer synaptic connectivity in large-scale brain networks",
-      "url": "https://svbrain.xyz/2024/12/20/cerebrum",
-      "date": 1735064059,
-      "author": "notallm",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://svbrain.xyz/2024/12/20/cerebrum\">https://svbrain.xyz/2024/12/20/cerebrum</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42503696\">https://news.ycombinator.com/item?id=42503696</a></p>\n<p>Points: 82</p>\n<p># Comments: 63</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "AIs Will Increasingly Fake Alignment",
-      "url": "https://thezvi.substack.com/p/ais-will-increasingly-fake-alignment",
-      "date": 1735062726,
-      "author": "theptip",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://thezvi.substack.com/p/ais-will-increasingly-fake-alignment\">https://thezvi.substack.com/p/ais-will-increasingly-fake-alignment</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42503519\">https://news.ycombinator.com/item?id=42503519</a></p>\n<p>Points: 79</p>\n<p># Comments: 69</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Taxi drivers offer a clue to Alzheimer's risk",
-      "url": "https://www.wsj.com/health/wellness/alzheimers-risk-taxi-ambulance-drivers-be15739b",
-      "date": 1735057390,
-      "author": "julienchastang",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.wsj.com/health/wellness/alzheimers-risk-taxi-ambulance-drivers-be15739b\">https://www.wsj.com/health/wellness/alzheimers-risk-taxi-ambulance-drivers-be15739b</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42502899\">https://news.ycombinator.com/item?id=42502899</a></p>\n<p>Points: 105</p>\n<p># Comments: 96</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "VPR: Nordic's First RISC-V Processor",
-      "url": "https://danielmangum.com/posts/vpr-nordic-risc-v-processor/",
-      "date": 1735055428,
-      "author": "hasheddan",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://danielmangum.com/posts/vpr-nordic-risc-v-processor/\">https://danielmangum.com/posts/vpr-nordic-risc-v-processor/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42502658\">https://news.ycombinator.com/item?id=42502658</a></p>\n<p>Points: 147</p>\n<p># Comments: 32</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Why making friends as an adult is harder",
-      "url": "https://www.theestablished.com/self/health/why-making-friends-as-an-adult-is-harder-than-ever",
-      "date": 1735054828,
-      "author": "yamrzou",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.theestablished.com/self/health/why-making-friends-as-an-adult-is-harder-than-ever\">https://www.theestablished.com/self/health/why-making-friends-as-an-adult-is-harder-than-ever</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42502580\">https://news.ycombinator.com/item?id=42502580</a></p>\n<p>Points: 100</p>\n<p># Comments: 126</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "JavaScript Benchmarking Is a Mess",
-      "url": "https://byteofdev.com/posts/javascript-benchmarking-mess/",
-      "date": 1735043865,
-      "author": "joseneca",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://byteofdev.com/posts/javascript-benchmarking-mess/\">https://byteofdev.com/posts/javascript-benchmarking-mess/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42501532\">https://news.ycombinator.com/item?id=42501532</a></p>\n<p>Points: 122</p>\n<p># Comments: 71</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Tokyo released point cloud data of the entire city for free",
-      "url": "https://twitter.com/spatiallyjess/status/1871342549958537326",
-      "date": 1735037499,
-      "author": "taubek",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://twitter.com/spatiallyjess/status/1871342549958537326\">https://twitter.com/spatiallyjess/status/1871342549958537326</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42501102\">https://news.ycombinator.com/item?id=42501102</a></p>\n<p>Points: 227</p>\n<p># Comments: 32</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Intel shareholders file case asking ex CEO, CFO to return 3 years of salary",
-      "url": "https://www.cfodive.com/news/intel-shareholders-yank-exceo-cfo-compensation-foundry/736193/",
-      "date": 1735028274,
-      "author": "YetAnotherNick",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.cfodive.com/news/intel-shareholders-yank-exceo-cfo-compensation-foundry/736193/\">https://www.cfodive.com/news/intel-shareholders-yank-exceo-cfo-compensation-foundry/736193/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42500482\">https://news.ycombinator.com/item?id=42500482</a></p>\n<p>Points: 170</p>\n<p># Comments: 72</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "38th Chaos Communication Congress",
-      "url": "https://events.ccc.de/congress/2024/infos/index.html",
-      "date": 1735028149,
-      "author": "joeig",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://events.ccc.de/congress/2024/infos/index.html\">https://events.ccc.de/congress/2024/infos/index.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42500475\">https://news.ycombinator.com/item?id=42500475</a></p>\n<p>Points: 259</p>\n<p># Comments: 123</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Automating the search for artificial life with foundation models",
-      "url": "https://sakana.ai/asal/",
-      "date": 1735008467,
-      "author": "hardmaru",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://sakana.ai/asal/\">https://sakana.ai/asal/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42499332\">https://news.ycombinator.com/item?id=42499332</a></p>\n<p>Points: 148</p>\n<p># Comments: 31</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Demystifying Debuggers, Part 2: The Anatomy of a Running Program",
-      "url": "https://www.rfleury.com/p/demystifying-debuggers-part-2-the",
-      "date": 1735004011,
-      "author": "robenkleene",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.rfleury.com/p/demystifying-debuggers-part-2-the\">https://www.rfleury.com/p/demystifying-debuggers-part-2-the</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42498982\">https://news.ycombinator.com/item?id=42498982</a></p>\n<p>Points: 156</p>\n<p># Comments: 21</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "1584 LAN party photos from 1996 – 2010 from Australia's island state archived",
-      "url": "https://issung.com/posts/lanphotosarchive/",
-      "date": 1735000830,
-      "author": "issung",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://issung.com/posts/lanphotosarchive/\">https://issung.com/posts/lanphotosarchive/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42498754\">https://news.ycombinator.com/item?id=42498754</a></p>\n<p>Points: 141</p>\n<p># Comments: 43</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Making AMD GPUs competitive for LLM inference (2023)",
-      "url": "https://blog.mlc.ai/2023/08/09/Making-AMD-GPUs-competitive-for-LLM-inference",
-      "date": 1734999438,
-      "author": "plasticchris",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://blog.mlc.ai/2023/08/09/Making-AMD-GPUs-competitive-for-LLM-inference\">https://blog.mlc.ai/2023/08/09/Making-AMD-GPUs-competitive-for-LLM-inference</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42498634\">https://news.ycombinator.com/item?id=42498634</a></p>\n<p>Points: 278</p>\n<p># Comments: 179</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Parsing millions of URLs per Second (2023)",
-      "url": "https://onlinelibrary.wiley.com/doi/10.1002/spe.3296",
-      "date": 1734997688,
-      "author": "PaulHoule",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://onlinelibrary.wiley.com/doi/10.1002/spe.3296\">https://onlinelibrary.wiley.com/doi/10.1002/spe.3296</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42498514\">https://news.ycombinator.com/item?id=42498514</a></p>\n<p>Points: 131</p>\n<p># Comments: 34</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Why are cancer guidelines stuck in PDFs?",
-      "url": "https://seangeiger.substack.com/p/why-are-cancer-guidelines-stuck-in",
-      "date": 1734996997,
-      "author": "huerne",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://seangeiger.substack.com/p/why-are-cancer-guidelines-stuck-in\">https://seangeiger.substack.com/p/why-are-cancer-guidelines-stuck-in</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42498462\">https://news.ycombinator.com/item?id=42498462</a></p>\n<p>Points: 269</p>\n<p># Comments: 132</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Manx – a catalog of manuals for old computers",
-      "url": "https://manx-docs.org/about.php",
-      "date": 1734983997,
-      "author": "Lammy",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://manx-docs.org/about.php\">https://manx-docs.org/about.php</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42497148\">https://news.ycombinator.com/item?id=42497148</a></p>\n<p>Points: 80</p>\n<p># Comments: 16</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Fogus: Things and Stuff of 2024",
-      "url": "https://blog.fogus.me/2024/12/23/the-best-things-and-stuff-of-2024/",
-      "date": 1734967835,
-      "author": "janvdberg",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://blog.fogus.me/2024/12/23/the-best-things-and-stuff-of-2024/\">https://blog.fogus.me/2024/12/23/the-best-things-and-stuff-of-2024/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42495077\">https://news.ycombinator.com/item?id=42495077</a></p>\n<p>Points: 249</p>\n<p># Comments: 35</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""

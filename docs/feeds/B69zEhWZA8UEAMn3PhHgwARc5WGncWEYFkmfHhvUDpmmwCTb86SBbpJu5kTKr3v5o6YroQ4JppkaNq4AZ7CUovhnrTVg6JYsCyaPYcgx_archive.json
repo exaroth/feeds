@@ -71,17 +71,6 @@
       "flags": null,
       "enclosureUrl": "https://www.youtube.com/v/iPnMPnelWOE?version=3",
       "enclosureMime": ""
-    },
-    {
-      "title": "Redis vs Dragonfly Performance (Latency - Throughput - Saturation)",
-      "url": "https://www.youtube.com/watch?v=DgcBFb4L0dI",
-      "date": 1733142597,
-      "author": "Anton Putra",
-      "unread": true,
-      "content": "🔴 To support my channel, I'd like to offer Mentorship/On-the-Job Support/Consulting (me@antonputra.com)\n\n🍿 Benchmarks: https://youtube.com/playlist?list=PLiMWaCMwGJXmcDLvMQeORJ-j_jayKaLVn&si=p-UOaVM_6_SFx52H\n\n👋 AWS is expensive - Infra Support Fund: https://buymeacoffee.com/antonputra\n\n▬▬▬▬▬ Experience & Location 💼 ▬▬▬▬▬\n►  I’m a Senior Software Engineer at Juniper Networks (13+ years of experience)\n►  Located in San Francisco Bay Area, CA (US citizen)\n\n▬▬▬▬▬▬ Connect with me 👋 ▬▬▬▬▬▬\n►  LinkedIn: https://www.linkedin.com/in/anton-putra\n►  Twitter/X: https://twitter.com/antonvputra\n►  Instagram: https://www.instagram.com/aputrabay\n►  GitHub: https://github.com/antonputra\n►  Email: me@antonputra.com\n\n▬▬▬▬▬▬▬ Timestamps ⏰  ▬▬▬▬▬▬▬\n0:00 Intro\n2:04 Redis Cluster\n3:28 Dragonfly CPU Usage\n4:22 Configuration Overview\n5:12 1st Test\n8:48 2nd Test\n\n▬▬▬▬▬▬▬ Source Code 📚 ▬▬▬▬▬▬▬\n► Original Source Code: https://github.com/antonputra/tutorials/tree/228/lessons/228\n\n#redis #dragonfly #devops",
-      "flags": null,
-      "enclosureUrl": "https://www.youtube.com/v/DgcBFb4L0dI?version=3",
-      "enclosureMime": ""
     }
   ]
 }

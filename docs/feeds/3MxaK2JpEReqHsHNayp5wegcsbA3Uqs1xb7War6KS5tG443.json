@@ -93,17 +93,6 @@
       "flags": null,
       "enclosureUrl": "https://op3.dev/e/https://cdn.changelog.com/uploads/podcast/620/the-changelog-620.mp3",
       "enclosureMime": ""
-    },
-    {
-      "title": "If not React, then what? (News)",
-      "url": "https://changelog.com/news/123",
-      "date": 1733169600,
-      "author": "",
-      "unread": true,
-      "content": "<p>Alex Russell answers the question, “If not React, then what?” Csaba Okrona identifies four core problems that create and reinforce knowledge silos, Rob Koch’s Markwhen is like Markdown for timelines, Jeff Geerling is quite impressed by Apple’s latest iteration on the Mac mini &amp; Sylvain Kerkour took the time to draw a comparison of Amazon’s O.G. S3 service with Cloudflare’s R2 competitor.</p>\n<p><a href=\"https://changelog.com/news/123/email\">View the newsletter</a></p><p><a href=\"https://changelog.zulipchat.com/#narrow/stream/455469-news\">Join the discussion</a></p><p><a href=\"https://changelog.com/++\" rel=\"payment\">Changelog++</a> members get a bonus 6 minutes at the end of this episode and zero ads. Join today!</p><p>Sponsors:</p><p><ul><li><a href=\"https://sentry.io/\">Sentry</a> – <strong>Code breaks, fix it faster.</strong> Use the code <code>CHANGELOG</code> when you sign up to <strong>get $100 off the team plan</strong>. Don’t just observe. Take action. Sentry is the only app monitoring platform built for developers that gets to the root cause for every issue. 100,000+ growing teams use sentry to find problems fast.\n</li>\n</ul></p><p>Featuring:</p><ul><li>Jerod Santo &ndash; <a href=\"https://github.com/jerodsanto\" rel=\"external ugc\">GitHub</a>, <a href=\"https://www.linkedin.com/in/jerodsanto\" rel=\"external ugc\">LinkedIn</a>, <a href=\"https://changelog.social/@jerod\" rel=\"external ugc\">Mastodon</a>, <a href=\"https://x.com/jerodsanto\" rel=\"external ugc\">X</a></li></ul></p>",
-      "flags": null,
-      "enclosureUrl": "https://op3.dev/e/https://cdn.changelog.com/uploads/news/123/changelog-news-123.mp3",
-      "enclosureMime": ""
     }
   ]
 }

@@ -7,6 +7,171 @@
   "is_query": false,
   "items": [
     {
+      "title": "How load balancing is \"really\" used in production",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hrrzd1/how_load_balancing_is_really_used_in_production/",
+      "date": 1735818544,
+      "author": "/u/khaloudkhaloud",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Hi all,</p> <p>I&#39;m forming myself on K8s technnology, and my background is network engineer</p> <p>I&#39;m on the Ingress, API Gateway chapters, i understand the principle, but i would like to know how it&#39;s really used in real world</p> <p>For example, in classical datacenter, applications were load balanced through a load balancer, with parameters ( HTTP modification, TLS terminate etc)and metrics chosen, and it worked like thats even for very high throuput and TCP sessions, i remember well working on load balancer who had more than 200 000 TCP sessions, and trafic superior to 9 Gbps</p> <p>How is the diffenrence with K8s own load balancing solutions in real use ?</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/khaloudkhaloud\"> /u/khaloudkhaloud </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hrrzd1/how_load_balancing_is_really_used_in_production/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hrrzd1/how_load_balancing_is_really_used_in_production/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Weekly: This Week I Learned (TWIL?) thread",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hrr9cs/weekly_this_week_i_learned_twil_thread/",
+      "date": 1735815608,
+      "author": "/u/gctaylor",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Did you learn something new this week? Share here!</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/gctaylor\"> /u/gctaylor </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hrr9cs/weekly_this_week_i_learned_twil_thread/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hrr9cs/weekly_this_week_i_learned_twil_thread/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Flannel vs Calico",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hrockt/flannel_vs_calico/",
+      "date": 1735802620,
+      "author": "/u/Upper-Aardvark-6684",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>I have never used calico, I have flannel as CNI in my cluster. Is it better than flannel ?</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Upper-Aardvark-6684\"> /u/Upper-Aardvark-6684 </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hrockt/flannel_vs_calico/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hrockt/flannel_vs_calico/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Can I use the standard ingress controller as the Gateway API or I have to use Nginx Fabric for the instead??",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hriymc/can_i_use_the_standard_ingress_controller_as_the/",
+      "date": 1735783709,
+      "author": "/u/Junior_Pitch_2216",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>We use nginx ingress controller and we need to now migrate to implement Gateway API. I am wondering what could be the best approach to move for migration.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Junior_Pitch_2216\"> /u/Junior_Pitch_2216 </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hriymc/can_i_use_the_standard_ingress_controller_as_the/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hriymc/can_i_use_the_standard_ingress_controller_as_the/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Have you faced challenges with Kubernetes audit logs?",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hr3s4v/have_you_faced_challenges_with_kubernetes_audit/",
+      "date": 1735741151,
+      "author": "/u/ofirc",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Audit logs are crucial for forensics and attack detection in Kubernetes (K8s) clusters, yet they come with challenges that can leave organizations vulnerable. At Wiz, we&#39;ve explored these &quot;gotchas&quot; in our Kubernetes Detection and Response (KDR) implementation and here are the key takeaways:</p> <ol> <li>Audit logs are disabled by default in services like AWS EKS and Azure AKS but always-on in Oracle&#39;s Kubernetes Engine, creating inconsistencies. Vendor Formats: Cloud providers often modify Kubernetes log formats, making it hard to maintain universal detection rules.</li> <li>CSPs control what&#39;s logged and often keep policies private, leaving teams in the dark.</li> <li>Logs to centralized systems like CloudWatch introduces latency and costs, hindering real-time detection.</li> <li>Gaps in logs and missed detections can obscure attacker techniques like lateral movement or privilege escalation. </li> </ol> <p><strong>How to Overcome These Issues</strong></p> <ol> <li>Use cloud-native logs, VPC flow logs, and dynamic admission controllers for additional insights.</li> <li>Standardize audit log formats for consistent rule application.</li> <li>Wiz&#39;s Kubernetes security stack combines audit logs, network monitoring, and cloud logs for real-time detection. For a deeper dive, check out our blog: Kubernetes Audit Log Gotchas. </li> </ol> <p>How are you tackling Kubernetes logging challenges? Let&#39;s discuss in the comments!</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/ofirc\"> /u/ofirc </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hr3s4v/have_you_faced_challenges_with_kubernetes_audit/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hr3s4v/have_you_faced_challenges_with_kubernetes_audit/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "looking for feedback about a new tool",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hr2ofv/looking_for_feedback_about_a_new_tool/",
+      "date": 1735737133,
+      "author": "/u/eladitzko",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p><strong>Hey everyone,</strong></p> <p>I hope this doesn’t break any group rules!</p> <p>I’m part of a startup working on a new tool for AWS S3 users to manage their storage more effectively. It provides detailed insights into your S3 usage, automates things like tiering and lifecycle policies, and helps uncover hidden costs like unnecessary API calls or data transfers.</p> <p>We’re looking for AWS S3 users to test it out and share honest feedback—it’s still a work in progress, and your input would mean so much to us. If you’re interested, let me know, and I’d be happy to show you how it works.</p> <p>Thanks in advance to anyone who’s willing to help!</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/eladitzko\"> /u/eladitzko </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hr2ofv/looking_for_feedback_about_a_new_tool/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hr2ofv/looking_for_feedback_about_a_new_tool/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Monthly: Certification help requests, vents, and brags",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hr0ue2/monthly_certification_help_requests_vents_and/",
+      "date": 1735729302,
+      "author": "/u/thockin",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Did you pass a cert? Congratulations, tell us about it!</p> <p>Did you bomb a cert exam and want help? This is the thread for you.</p> <p>Do you just hate the process? Complain here.</p> <p>(Note: other certification related posts will be removed)</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/thockin\"> /u/thockin </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hr0ue2/monthly_certification_help_requests_vents_and/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hr0ue2/monthly_certification_help_requests_vents_and/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Monthly: Who is hiring?",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hr0tkh/monthly_who_is_hiring/",
+      "date": 1735729220,
+      "author": "/u/gctaylor",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>This monthly post can be used to share Kubernetes-related job openings within <strong>your</strong> company. Please include:</p> <ul> <li>Name of the company</li> <li>Location requirements (or lack thereof)</li> <li>At least one of: a link to a job posting/application page or contact details<br/></li> </ul> <p>If you are interested in a job, please contact the poster directly. </p> <p>Common reasons for comment removal:</p> <ul> <li>Not meeting the above requirements</li> <li>Recruiter post / recruiter listings</li> <li>Negative, inflammatory, or abrasive tone</li> </ul> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/gctaylor\"> /u/gctaylor </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hr0tkh/monthly_who_is_hiring/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hr0tkh/monthly_who_is_hiring/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Weekly: Share your EXPLOSIONS thread",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hr0tka/weekly_share_your_explosions_thread/",
+      "date": 1735729219,
+      "author": "/u/gctaylor",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Did anything explode this week (or recently)? Share the details for our mutual betterment.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/gctaylor\"> /u/gctaylor </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hr0tka/weekly_share_your_explosions_thread/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hr0tka/weekly_share_your_explosions_thread/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Passed CKA Exam Two Days Ago - Some Tidbits",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hr0n7n/passed_cka_exam_two_days_ago_some_tidbits/",
+      "date": 1735728395,
+      "author": "/u/electricninja911",
+      "unread": true,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/electricninja911\"> /u/electricninja911 </a> <br/> <span><a href=\"/r/devops/comments/1hr0mjw/passed_cka_exam_two_days_ago_some_tidbits/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hr0n7n/passed_cka_exam_two_days_ago_some_tidbits/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "When to use blue green deployment vs rolling update",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hqyg4l/when_to_use_blue_green_deployment_vs_rolling/",
+      "date": 1735717952,
+      "author": "/u/BackgroundNature4581",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Can someone give a usecase where bluegreen deployment is used in kubernetes and rolling update would not have helped?</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/BackgroundNature4581\"> /u/BackgroundNature4581 </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hqyg4l/when_to_use_blue_green_deployment_vs_rolling/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hqyg4l/when_to_use_blue_green_deployment_vs_rolling/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Kubecon india videos are uploaded on cncf channel. Link in body",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hqfrqq/kubecon_india_videos_are_uploaded_on_cncf_channel/",
+      "date": 1735655315,
+      "author": "/u/mighty_fap",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p><a href=\"https://youtube.com/playlist?list=PLj6h78yzYM2P0vFbS4o1I0gRHSiXgLiEe&amp;si=aWyr2IvZlGSatBVm\">https://youtube.com/playlist?list=PLj6h78yzYM2P0vFbS4o1I0gRHSiXgLiEe&amp;si=aWyr2IvZlGSatBVm</a></p> <p>Which lectures you found useful? Or were excited but it failed on your expectations?</p> <p>Just starting a discussion here.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/mighty_fap\"> /u/mighty_fap </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hqfrqq/kubecon_india_videos_are_uploaded_on_cncf_channel/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hqfrqq/kubecon_india_videos_are_uploaded_on_cncf_channel/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "KusionStack is now a CNCF sandbox project",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hqfdfc/kusionstack_is_now_a_cncf_sandbox_project/",
+      "date": 1735654023,
+      "author": "/u/ElliotXXX",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Hi Guys, I am one of <a href=\"https://github.com/KusionStack\">KusionStack</a> maintainers and I am excited to announce that KusionStack has been voted to be a <a href=\"https://github.com/cncf/sandbox/issues/295\">CNCF sandbox project</a>. Thanks for all the support. 🙏 Those who haven&#39;t checked out the project, please feel free to visit our github page and show your support. Cheers!</p> <ul> <li>Github: <a href=\"https://github.com/KusionStack\">https://github.com/KusionStack</a></li> <li>Website: <a href=\"https://kusionstack.io/\">https://kusionstack.io/</a></li> <li>Blog: <a href=\"https://blog.kusionstack.io/\">https://blog.kusionstack.io/</a></li> </ul> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/ElliotXXX\"> /u/ElliotXXX </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hqfdfc/kusionstack_is_now_a_cncf_sandbox_project/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hqfdfc/kusionstack_is_now_a_cncf_sandbox_project/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Cluster API -- The Definitive Guide, the first chapter begins with a gentle introduction then dives into the details of Cluster API its organization and management structure, and associated sister projects. We further look into users and contributors of Cluster API.",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hqf8bi/cluster_api_the_definitive_guide_the_first/",
+      "date": 1735653570,
+      "author": "/u/sadysnaat",
+      "unread": true,
+      "content": "<table> <tr><td> <a href=\"https://www.reddit.com/r/kubernetes/comments/1hqf8bi/cluster_api_the_definitive_guide_the_first/\"> <img src=\"https://external-preview.redd.it/sfsYN89pu2GrPZ-qOIq_VPHvRC23efXxshiauoxYT4M.jpg?width=640&amp;crop=smart&amp;auto=webp&amp;s=681f9a8e1333d534cc498cc4f8a1b47b5b1f6944\" alt=\"Cluster API -- The Definitive Guide, the first chapter begins with a gentle introduction then dives into the details of Cluster API its organization and management structure, and associated sister projects. We further look into users and contributors of Cluster API.\" title=\"Cluster API -- The Definitive Guide, the first chapter begins with a gentle introduction then dives into the details of Cluster API its organization and management structure, and associated sister projects. We further look into users and contributors of Cluster API.\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/sadysnaat\"> /u/sadysnaat </a> <br/> <span><a href=\"https://medium.com/@sadysnaat/list/cluster-api-the-definitive-guide-chapter-1-20d65356197a\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hqf8bi/cluster_api_the_definitive_guide_the_first/\">[comments]</a></span> </td></tr></table>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "I am writing a book about Cluster API, if you are interested in Cluster API as an executive, operator or a developer, please have look and let me know if there are any changes that you want to be added or removed, happy to discuss :)",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hqezxo/i_am_writing_a_book_about_cluster_api_if_you_are/",
+      "date": 1735652783,
+      "author": "/u/sadysnaat",
+      "unread": true,
+      "content": "<table> <tr><td> <a href=\"https://www.reddit.com/r/kubernetes/comments/1hqezxo/i_am_writing_a_book_about_cluster_api_if_you_are/\"> <img src=\"https://external-preview.redd.it/VeoWRay-FTHpOd1p3pfCnqKmw6O6An_E0OWziLTOqQU.jpg?width=640&amp;crop=smart&amp;auto=webp&amp;s=bc7976e9146d81af812ba928494099822b551c46\" alt=\"I am writing a book about Cluster API, if you are interested in Cluster API as an executive, operator or a developer, please have look and let me know if there are any changes that you want to be added or removed, happy to discuss :) \" title=\"I am writing a book about Cluster API, if you are interested in Cluster API as an executive, operator or a developer, please have look and let me know if there are any changes that you want to be added or removed, happy to discuss :) \" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/sadysnaat\"> /u/sadysnaat </a> <br/> <span><a href=\"https://medium.com/%E0%A4%97%E0%A5%8B%E0%A4%AA%E0%A4%BE%E0%A4%B2-engineering/cluster-api-the-definitive-guide-a12815bd55bc?sk=66dd83bdd6d807deb725fd156c5bd571\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hqezxo/i_am_writing_a_book_about_cluster_api_if_you_are/\">[comments]</a></span> </td></tr></table>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "To all the Kubernetes community, I wish you good health, peace, and lots of love in 2025",
       "url": "https://www.reddit.com/r/kubernetes/comments/1hqcwxl/to_all_the_kubernetes_community_i_wish_you_good/",
       "date": 1735644751,
@@ -18,12 +183,34 @@
       "enclosureMime": ""
     },
     {
+      "title": "Weekly: Questions and advice",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hqcgk8/weekly_questions_and_advice/",
+      "date": 1735642810,
+      "author": "/u/gctaylor",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Have any questions about Kubernetes, related tooling, or how to adopt or use Kubernetes? Ask away!</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/gctaylor\"> /u/gctaylor </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hqcgk8/weekly_questions_and_advice/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hqcgk8/weekly_questions_and_advice/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "NamespaceHound",
       "url": "https://www.reddit.com/r/kubernetes/comments/1hqbhm8/namespacehound/",
       "date": 1735638440,
       "author": "/u/sshaybbc",
       "unread": true,
       "content": "<!-- SC_OFF --><div class=\"md\"><p><a href=\"https://github.com/wiz-sec-public/namespacehound\">NamespaceHound </a>is an open-source tool for detecting the risk of potential <strong>namespace crossing violations</strong> in soft-multi-tenancy clusters. Given the cluster, NamespaceHound will run analysis and determine all the possible ways to cross the security boundaries between the namespaces. In addition, it inspects cluster config for anonymous access opportunities.</p> <p>Another instance where NamespaceHound is useful is in helping red-teamers and security researchers to find <strong>lateral movement paths</strong> once they are past the point of initial access into the cluster.</p> <p>== NH is 1 year old, but recent <a href=\"https://www.reddit.com/r/kubernetes/comments/1hb3qhg/exploring_multitenancy_for_my_kubernetes_learning/\">post </a>and podcast about K8s multi-tenancy have prompted me to re-share. Good discussion in the podcast around sharing cluster between students==</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/sshaybbc\"> /u/sshaybbc </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hqbhm8/namespacehound/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hqbhm8/namespacehound/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "GKE Content",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1hqbco2/gke_content/",
+      "date": 1735637773,
+      "author": "/u/theboredabdel",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Disclaimer: I work for the company behind GKE.</p> <p>I&#39;m looking at what my team can bring for 2025 to make your life easier on GKE. Things like content in all it&#39;s forms (Video, tutorials...), hands-on-labs, best practices...</p> <p>If you are using GKE today what are the top 3 things you would love to learn more about?<br/> Also if you are not what would be the things you want to learn about!</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/theboredabdel\"> /u/theboredabdel </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hqbco2/gke_content/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hqbco2/gke_content/\">[comments]</a></span>",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
