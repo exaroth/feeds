@@ -36,6 +36,7 @@ http://aphyr.com/posts.atom "~Dev - Aphyr" dev
 https://kubernetes.io/feed.xml "~Dev - Kubernetes Blog" dev
 http://blog.golang.org/feed.atom "~Dev - Golang Blog" dev
 https://www.reddit.com/r/golang/top/.rss?sort=top&t=day&limit=6 "~Reddit - Go" dev
+https://www.reddit.com/r/zig/top/.rss?sort=top&t=day&limit=6 "~Reddit - Zig" dev
 https://www.reddit.com/r/rust/top/.rss?sort=top&t=day&limit=6 "~Reddit - Rust" dev
 https://www.reddit.com/r/linux/top/.rss?sort=top&t=day&limit=6 "~Reddit - Linux" dev
 https://www.reddit.com/r/kubernetes/top/.rss?sort=top&t=day&limit=6 "~Reddit - Kubernetes" dev
