@@ -16,17 +16,6 @@
       "flags": null,
       "enclosureUrl": "https://www.youtube.com/v/eJFWTS0ktXo?version=3",
       "enclosureMime": ""
-    },
-    {
-      "title": "5 deadly Rust anti-patterns to avoid",
-      "url": "https://www.youtube.com/watch?v=SWwTD2neodE",
-      "date": 1733237452,
-      "author": "Let's Get Rusty",
-      "unread": true,
-      "content": "In this video, we explore 5 deadly anti-patterns in Rust that can lead to buggy, inefficient, or hard-to-maintain code. Avoid these mistakes to write cleaner, more reliable Rust code.\n\nFree Rust training: https://letsgetrusty.com/training\n\nChapters:\n0:00 Intro\n0:03 Lazy-man error handling\n2:39 Neglecting STD traits\n4:30 Clone() everywhere\n7:33 Underutilizing pattern matching\n9:07 Glob imports\n12:41 Bonus anti-pattern",
-      "flags": null,
-      "enclosureUrl": "https://www.youtube.com/v/SWwTD2neodE?version=3",
-      "enclosureMime": ""
     }
   ]
 }

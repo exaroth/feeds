@@ -16,17 +16,6 @@
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
-    },
-    {
-      "title": "Notes On: Disaggregated OLTP Systems",
-      "url": "https://transactional.blog/notes-on/disaggregated-oltp.html",
-      "date": 1733356800,
-      "author": "",
-      "unread": true,
-      "content": "Aurora, Socrates, PolarDB, and Taurus.",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
     }
   ]
 }

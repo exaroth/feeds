@@ -7,12 +7,67 @@
   "is_query": false,
   "items": [
     {
-      "title": "30% drop in O1-preview accuracy when Putnam problems are slightly variated",
-      "url": "https://openreview.net/forum?id=YXnwlZe0yf&noteId=yrsGpHd0Sf",
-      "date": 1735734078,
-      "author": "optimalsolver",
+      "title": "I am rich and have no idea what to do",
+      "url": "https://vinay.sh/i-am-rich-and-have-no-idea-what-to-do-with-my-life/",
+      "date": 1735858215,
+      "author": "vhiremath4",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://openreview.net/forum?id=YXnwlZe0yf&noteId=yrsGpHd0Sf\">https://openreview.net/forum?id=YXnwlZe0yf&noteId=yrsGpHd0Sf</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42565606\">https://news.ycombinator.com/item?id=42565606</a></p>\n<p>Points: 485</p>\n<p># Comments: 449</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://vinay.sh/i-am-rich-and-have-no-idea-what-to-do-with-my-life/\">https://vinay.sh/i-am-rich-and-have-no-idea-what-to-do-with-my-life/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42579873\">https://news.ycombinator.com/item?id=42579873</a></p>\n<p>Points: 831</p>\n<p># Comments: 1469</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "iTerm2 critical security release",
+      "url": "https://iterm2.com/downloads/stable/iTerm2-3_5_11.changelog",
+      "date": 1735855722,
+      "author": "tjwds",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://iterm2.com/downloads/stable/iTerm2-3_5_11.changelog\">https://iterm2.com/downloads/stable/iTerm2-3_5_11.changelog</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42579472\">https://news.ycombinator.com/item?id=42579472</a></p>\n<p>Points: 652</p>\n<p># Comments: 419</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "uBlock Origin GPL code being stolen by team behind honey browser extension",
+      "url": "https://old.reddit.com/r/uBlockOrigin/comments/1hr6xjc/ubo_quick_filters_list_being_stolen_by_team/",
+      "date": 1735838848,
+      "author": "extesy",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://old.reddit.com/r/uBlockOrigin/comments/1hr6xjc/ubo_quick_filters_list_being_stolen_by_team/\">https://old.reddit.com/r/uBlockOrigin/comments/1hr6xjc/ubo_quick_filters_list_being_stolen_by_team/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42576443\">https://news.ycombinator.com/item?id=42576443</a></p>\n<p>Points: 967</p>\n<p># Comments: 409</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "One of my papers got declined today",
+      "url": "https://mathstodon.xyz/@tao/113721192051328193",
+      "date": 1735758777,
+      "author": "GavCo",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://mathstodon.xyz/@tao/113721192051328193\">https://mathstodon.xyz/@tao/113721192051328193</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42568399\">https://news.ycombinator.com/item?id=42568399</a></p>\n<p>Points: 826</p>\n<p># Comments: 275</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Databases in 2024: A Year in Review",
+      "url": "https://www.cs.cmu.edu/~pavlo/blog/2025/01/2024-databases-retrospective.html",
+      "date": 1735741659,
+      "author": "avinassh",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://www.cs.cmu.edu/~pavlo/blog/2025/01/2024-databases-retrospective.html\">https://www.cs.cmu.edu/~pavlo/blog/2025/01/2024-databases-retrospective.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42566192\">https://news.ycombinator.com/item?id=42566192</a></p>\n<p>Points: 586</p>\n<p># Comments: 203</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "DOOM CAPTCHA",
+      "url": "https://doom-captcha.vercel.app/",
+      "date": 1735740735,
+      "author": "denysvitali",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://doom-captcha.vercel.app/\">https://doom-captcha.vercel.app/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42566112\">https://news.ycombinator.com/item?id=42566112</a></p>\n<p>Points: 1256</p>\n<p># Comments: 266</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -23,7 +78,7 @@
       "date": 1735690083,
       "author": "atombender",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://curiouscoding.nl/posts/static-search-tree/\">https://curiouscoding.nl/posts/static-search-tree/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42562847\">https://news.ycombinator.com/item?id=42562847</a></p>\n<p>Points: 571</p>\n<p># Comments: 192</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://curiouscoding.nl/posts/static-search-tree/\">https://curiouscoding.nl/posts/static-search-tree/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42562847\">https://news.ycombinator.com/item?id=42562847</a></p>\n<p>Points: 629</p>\n<p># Comments: 221</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -34,7 +89,7 @@
       "date": 1735688916,
       "author": "martynvandijke",
       "unread": true,
-      "content": "\n<p>Hey HN, this site always drags me back to visit it everyday. So for that Happy New year !</p>\n<hr>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42562750\">https://news.ycombinator.com/item?id=42562750</a></p>\n<p>Points: 1149</p>\n<p># Comments: 244</p>\n",
+      "content": "\n<p>Hey HN, this site always drags me back to visit it everyday. So for that Happy New year !</p>\n<hr>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42562750\">https://news.ycombinator.com/item?id=42562750</a></p>\n<p>Points: 1196</p>\n<p># Comments: 257</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -45,7 +100,7 @@
       "date": 1735668666,
       "author": "simonw",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://simonwillison.net/2024/Dec/31/llms-in-2024/\">https://simonwillison.net/2024/Dec/31/llms-in-2024/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42560558\">https://news.ycombinator.com/item?id=42560558</a></p>\n<p>Points: 897</p>\n<p># Comments: 540</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://simonwillison.net/2024/Dec/31/llms-in-2024/\">https://simonwillison.net/2024/Dec/31/llms-in-2024/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42560558\">https://news.ycombinator.com/item?id=42560558</a></p>\n<p>Points: 942</p>\n<p># Comments: 563</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -67,7 +122,7 @@
       "date": 1735582307,
       "author": "AaronFriel",
       "unread": true,
-      "content": "\n<p>If you knew him in life or remember his contribution to the world, please share your stories.</p>\n<hr>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42551900\">https://news.ycombinator.com/item?id=42551900</a></p>\n<p>Points: 1054</p>\n<p># Comments: 93</p>\n",
+      "content": "\n<p>If you knew him in life or remember his contribution to the world, please share your stories.</p>\n<hr>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42551900\">https://news.ycombinator.com/item?id=42551900</a></p>\n<p>Points: 1070</p>\n<p># Comments: 95</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -78,7 +133,7 @@
       "date": 1735569437,
       "author": "ta988",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://pod.geraspora.de/posts/17342163\">https://pod.geraspora.de/posts/17342163</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42549624\">https://news.ycombinator.com/item?id=42549624</a></p>\n<p>Points: 665</p>\n<p># Comments: 392</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://pod.geraspora.de/posts/17342163\">https://pod.geraspora.de/posts/17342163</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42549624\">https://news.ycombinator.com/item?id=42549624</a></p>\n<p>Points: 715</p>\n<p># Comments: 434</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -100,7 +155,7 @@
       "date": 1735539901,
       "author": "cpeterso",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://arstechnica.com/gadgets/2024/12/making-tiny-no-code-webapps-out-of-spreadsheets-is-a-weirdly-fulfilling-hobby/\">https://arstechnica.com/gadgets/2024/12/making-tiny-no-code-webapps-out-of-spreadsheets-is-a-weirdly-fulfilling-hobby/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42547003\">https://news.ycombinator.com/item?id=42547003</a></p>\n<p>Points: 668</p>\n<p># Comments: 219</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://arstechnica.com/gadgets/2024/12/making-tiny-no-code-webapps-out-of-spreadsheets-is-a-weirdly-fulfilling-hobby/\">https://arstechnica.com/gadgets/2024/12/making-tiny-no-code-webapps-out-of-spreadsheets-is-a-weirdly-fulfilling-hobby/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42547003\">https://news.ycombinator.com/item?id=42547003</a></p>\n<p>Points: 685</p>\n<p># Comments: 220</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -111,7 +166,7 @@
       "date": 1735506501,
       "author": "gkolli",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.washingtonpost.com/obituaries/2024/12/29/jimmy-carter-president-dead/\">https://www.washingtonpost.com/obituaries/2024/12/29/jimmy-carter-president-dead/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42543128\">https://news.ycombinator.com/item?id=42543128</a></p>\n<p>Points: 1161</p>\n<p># Comments: 802</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.washingtonpost.com/obituaries/2024/12/29/jimmy-carter-president-dead/\">https://www.washingtonpost.com/obituaries/2024/12/29/jimmy-carter-president-dead/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42543128\">https://news.ycombinator.com/item?id=42543128</a></p>\n<p>Points: 1169</p>\n<p># Comments: 817</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -144,7 +199,7 @@
       "date": 1735423635,
       "author": "jdxcode",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://fishshell.com/blog/rustport/\">https://fishshell.com/blog/rustport/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42535217\">https://news.ycombinator.com/item?id=42535217</a></p>\n<p>Points: 876</p>\n<p># Comments: 192</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://fishshell.com/blog/rustport/\">https://fishshell.com/blog/rustport/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42535217\">https://news.ycombinator.com/item?id=42535217</a></p>\n<p>Points: 890</p>\n<p># Comments: 193</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -155,7 +210,7 @@
       "date": 1735413750,
       "author": "latexr",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://lapcatsoftware.com/articles/2024/12/3.html\">https://lapcatsoftware.com/articles/2024/12/3.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42533685\">https://news.ycombinator.com/item?id=42533685</a></p>\n<p>Points: 1305</p>\n<p># Comments: 967</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://lapcatsoftware.com/articles/2024/12/3.html\">https://lapcatsoftware.com/articles/2024/12/3.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42533685\">https://news.ycombinator.com/item?id=42533685</a></p>\n<p>Points: 1320</p>\n<p># Comments: 978</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -177,7 +232,7 @@
       "date": 1735399591,
       "author": "paul-tharun",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://blog.daviddodda.com/how-i-automated-my-job-application-process-part-1\">https://blog.daviddodda.com/how-i-automated-my-job-application-process-part-1</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42531695\">https://news.ycombinator.com/item?id=42531695</a></p>\n<p>Points: 638</p>\n<p># Comments: 840</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://blog.daviddodda.com/how-i-automated-my-job-application-process-part-1\">https://blog.daviddodda.com/how-i-automated-my-job-application-process-part-1</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42531695\">https://news.ycombinator.com/item?id=42531695</a></p>\n<p>Points: 649</p>\n<p># Comments: 842</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -188,7 +243,7 @@
       "date": 1735386195,
       "author": "vortex_ape",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.chronotrains.com/en\">https://www.chronotrains.com/en</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42530332\">https://news.ycombinator.com/item?id=42530332</a></p>\n<p>Points: 642</p>\n<p># Comments: 407</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.chronotrains.com/en\">https://www.chronotrains.com/en</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42530332\">https://news.ycombinator.com/item?id=42530332</a></p>\n<p>Points: 644</p>\n<p># Comments: 408</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -199,7 +254,7 @@
       "date": 1735330544,
       "author": "jeff18",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.plasticlist.org/report\">https://www.plasticlist.org/report</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42525633\">https://news.ycombinator.com/item?id=42525633</a></p>\n<p>Points: 620</p>\n<p># Comments: 188</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.plasticlist.org/report\">https://www.plasticlist.org/report</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42525633\">https://news.ycombinator.com/item?id=42525633</a></p>\n<p>Points: 632</p>\n<p># Comments: 190</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -210,7 +265,7 @@
       "date": 1735323565,
       "author": "hacka22",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.ccc.de/en/updates/2024/das-ist-vollig-entgleist\">https://www.ccc.de/en/updates/2024/das-ist-vollig-entgleist</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42524568\">https://news.ycombinator.com/item?id=42524568</a></p>\n<p>Points: 626</p>\n<p># Comments: 153</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.ccc.de/en/updates/2024/das-ist-vollig-entgleist\">https://www.ccc.de/en/updates/2024/das-ist-vollig-entgleist</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42524568\">https://news.ycombinator.com/item?id=42524568</a></p>\n<p>Points: 636</p>\n<p># Comments: 154</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -221,7 +276,7 @@
       "date": 1735321010,
       "author": "nabla9",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.lloydslist.com/LL1151955/Russia-linked-cable-cutting-tanker-seized-by-Finland-was-loaded-with-spying-equipment\">https://www.lloydslist.com/LL1151955/Russia-linked-cable-cutting-tanker-seized-by-Finland-was-loaded-with-spying-equipment</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42524174\">https://news.ycombinator.com/item?id=42524174</a></p>\n<p>Points: 583</p>\n<p># Comments: 589</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.lloydslist.com/LL1151955/Russia-linked-cable-cutting-tanker-seized-by-Finland-was-loaded-with-spying-equipment\">https://www.lloydslist.com/LL1151955/Russia-linked-cable-cutting-tanker-seized-by-Finland-was-loaded-with-spying-equipment</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42524174\">https://news.ycombinator.com/item?id=42524174</a></p>\n<p>Points: 587</p>\n<p># Comments: 563</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -232,7 +287,7 @@
       "date": 1735318413,
       "author": "uticus",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.lucaiaconistewart.com/model-777\">https://www.lucaiaconistewart.com/model-777</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42523745\">https://news.ycombinator.com/item?id=42523745</a></p>\n<p>Points: 556</p>\n<p># Comments: 99</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.lucaiaconistewart.com/model-777\">https://www.lucaiaconistewart.com/model-777</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42523745\">https://news.ycombinator.com/item?id=42523745</a></p>\n<p>Points: 559</p>\n<p># Comments: 100</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -243,7 +298,7 @@
       "date": 1735305857,
       "author": "jnord",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.bcs.org/articles-opinion-and-research/does-current-ai-represent-a-dead-end/\">https://www.bcs.org/articles-opinion-and-research/does-current-ai-represent-a-dead-end/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42521865\">https://news.ycombinator.com/item?id=42521865</a></p>\n<p>Points: 538</p>\n<p># Comments: 1035</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.bcs.org/articles-opinion-and-research/does-current-ai-represent-a-dead-end/\">https://www.bcs.org/articles-opinion-and-research/does-current-ai-represent-a-dead-end/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42521865\">https://news.ycombinator.com/item?id=42521865</a></p>\n<p>Points: 541</p>\n<p># Comments: 1045</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -254,7 +309,7 @@
       "date": 1735302113,
       "author": "JumpCrisscross",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.wsj.com/world/flight-deaths-shot-from-sky-rising-798fd31e\">https://www.wsj.com/world/flight-deaths-shot-from-sky-rising-798fd31e</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42521598\">https://news.ycombinator.com/item?id=42521598</a></p>\n<p>Points: 578</p>\n<p># Comments: 431</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.wsj.com/world/flight-deaths-shot-from-sky-rising-798fd31e\">https://www.wsj.com/world/flight-deaths-shot-from-sky-rising-798fd31e</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42521598\">https://news.ycombinator.com/item?id=42521598</a></p>\n<p>Points: 582</p>\n<p># Comments: 432</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -276,7 +331,7 @@
       "date": 1735244097,
       "author": "matrixhelix",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://ghostty.org/\">https://ghostty.org/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42517447\">https://news.ycombinator.com/item?id=42517447</a></p>\n<p>Points: 2279</p>\n<p># Comments: 669</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://ghostty.org/\">https://ghostty.org/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42517447\">https://news.ycombinator.com/item?id=42517447</a></p>\n<p>Points: 2301</p>\n<p># Comments: 675</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -287,7 +342,7 @@
       "date": 1735204988,
       "author": "Geekette",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.architecturaldigest.com/story/should-more-of-us-be-moving-to-live-near-friends\">https://www.architecturaldigest.com/story/should-more-of-us-be-moving-to-live-near-friends</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42514105\">https://news.ycombinator.com/item?id=42514105</a></p>\n<p>Points: 605</p>\n<p># Comments: 477</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.architecturaldigest.com/story/should-more-of-us-be-moving-to-live-near-friends\">https://www.architecturaldigest.com/story/should-more-of-us-be-moving-to-live-near-friends</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42514105\">https://news.ycombinator.com/item?id=42514105</a></p>\n<p>Points: 615</p>\n<p># Comments: 481</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -298,7 +353,7 @@
       "date": 1735183054,
       "author": "nateb2022",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://github.com/blackcandy-org/blackcandy\">https://github.com/blackcandy-org/blackcandy</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42512896\">https://news.ycombinator.com/item?id=42512896</a></p>\n<p>Points: 689</p>\n<p># Comments: 297</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://github.com/blackcandy-org/blackcandy\">https://github.com/blackcandy-org/blackcandy</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42512896\">https://news.ycombinator.com/item?id=42512896</a></p>\n<p>Points: 692</p>\n<p># Comments: 297</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -320,7 +375,7 @@
       "date": 1735103218,
       "author": "fagnerbrack",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://fhur.me/posts/2024/thats-not-an-abstraction\">https://fhur.me/posts/2024/thats-not-an-abstraction</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42506984\">https://news.ycombinator.com/item?id=42506984</a></p>\n<p>Points: 589</p>\n<p># Comments: 226</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://fhur.me/posts/2024/thats-not-an-abstraction\">https://fhur.me/posts/2024/thats-not-an-abstraction</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42506984\">https://news.ycombinator.com/item?id=42506984</a></p>\n<p>Points: 592</p>\n<p># Comments: 226</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -331,7 +386,7 @@
       "date": 1735096207,
       "author": "joshagilend",
       "unread": true,
-      "content": "\n<p>What are some of your favorite memories from Christmas? Share them here :)<p>- Josh :)</p>\n<hr>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42506577\">https://news.ycombinator.com/item?id=42506577</a></p>\n<p>Points: 1493</p>\n<p># Comments: 383</p>\n",
+      "content": "\n<p>What are some of your favorite memories from Christmas? Share them here :)<p>- Josh :)</p>\n<hr>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42506577\">https://news.ycombinator.com/item?id=42506577</a></p>\n<p>Points: 1500</p>\n<p># Comments: 383</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -342,7 +397,7 @@
       "date": 1735079920,
       "author": "ajdude",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://github.com/Jaennaet/pISSStream\">https://github.com/Jaennaet/pISSStream</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42505454\">https://news.ycombinator.com/item?id=42505454</a></p>\n<p>Points: 1130</p>\n<p># Comments: 254</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://github.com/Jaennaet/pISSStream\">https://github.com/Jaennaet/pISSStream</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42505454\">https://news.ycombinator.com/item?id=42505454</a></p>\n<p>Points: 1134</p>\n<p># Comments: 254</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -353,7 +408,7 @@
       "date": 1735011682,
       "author": "pkaeding",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://mathstodon.xyz/@johncarlosbaez/113703444230936435\">https://mathstodon.xyz/@johncarlosbaez/113703444230936435</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42499567\">https://news.ycombinator.com/item?id=42499567</a></p>\n<p>Points: 575</p>\n<p># Comments: 207</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://mathstodon.xyz/@johncarlosbaez/113703444230936435\">https://mathstodon.xyz/@johncarlosbaez/113703444230936435</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42499567\">https://news.ycombinator.com/item?id=42499567</a></p>\n<p>Points: 576</p>\n<p># Comments: 207</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -375,7 +430,7 @@
       "date": 1734983374,
       "author": "ecliptik",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.youtube.com/watch?v=JfZxOuc9Qwk\">https://www.youtube.com/watch?v=JfZxOuc9Qwk</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42497093\">https://news.ycombinator.com/item?id=42497093</a></p>\n<p>Points: 685</p>\n<p># Comments: 293</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://www.youtube.com/watch?v=JfZxOuc9Qwk\">https://www.youtube.com/watch?v=JfZxOuc9Qwk</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42497093\">https://news.ycombinator.com/item?id=42497093</a></p>\n<p>Points: 687</p>\n<p># Comments: 295</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -397,7 +452,7 @@
       "date": 1734959039,
       "author": "dabacaba",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://ploum.net/2024-12-23-julius-en.html\">https://ploum.net/2024-12-23-julius-en.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42494090\">https://news.ycombinator.com/item?id=42494090</a></p>\n<p>Points: 593</p>\n<p># Comments: 129</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://ploum.net/2024-12-23-julius-en.html\">https://ploum.net/2024-12-23-julius-en.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42494090\">https://news.ycombinator.com/item?id=42494090</a></p>\n<p>Points: 597</p>\n<p># Comments: 129</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -497,61 +552,6 @@
       "author": "nkko",
       "unread": true,
       "content": "\n<p>Article URL: <a href=\"https://github.com/malmeloo/FindMy.py\">https://github.com/malmeloo/FindMy.py</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42479233\">https://news.ycombinator.com/item?id=42479233</a></p>\n<p>Points: 480</p>\n<p># Comments: 177</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "US judge finds NSO Group liable for hacking journalists via WhatsApp",
-      "url": "https://www.reuters.com/technology/cybersecurity/us-judge-finds-israels-nso-group-liable-hacking-whatsapp-lawsuit-2024-12-21/",
-      "date": 1734745103,
-      "author": "o999",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.reuters.com/technology/cybersecurity/us-judge-finds-israels-nso-group-liable-hacking-whatsapp-lawsuit-2024-12-21/\">https://www.reuters.com/technology/cybersecurity/us-judge-finds-israels-nso-group-liable-hacking-whatsapp-lawsuit-2024-12-21/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42476828\">https://news.ycombinator.com/item?id=42476828</a></p>\n<p>Points: 573</p>\n<p># Comments: 238</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "OpenAI O3 breakthrough high score on ARC-AGI-PUB",
-      "url": "https://arcprize.org/blog/oai-o3-pub-breakthrough",
-      "date": 1734718273,
-      "author": "maurycy",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://arcprize.org/blog/oai-o3-pub-breakthrough\">https://arcprize.org/blog/oai-o3-pub-breakthrough</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42473321\">https://news.ycombinator.com/item?id=42473321</a></p>\n<p>Points: 1722</p>\n<p># Comments: 1753</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Grayjay Desktop App",
-      "url": "https://grayjay.app/desktop/",
-      "date": 1734715980,
-      "author": "pierrelf",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://grayjay.app/desktop/\">https://grayjay.app/desktop/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42473032\">https://news.ycombinator.com/item?id=42473032</a></p>\n<p>Points: 541</p>\n<p># Comments: 305</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Building Effective \"Agents\"",
-      "url": "https://www.anthropic.com/research/building-effective-agents",
-      "date": 1734697757,
-      "author": "jascha_eng",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.anthropic.com/research/building-effective-agents\">https://www.anthropic.com/research/building-effective-agents</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42470541\">https://news.ycombinator.com/item?id=42470541</a></p>\n<p>Points: 756</p>\n<p># Comments: 121</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Tldraw Computer",
-      "url": "https://computer.tldraw.com/",
-      "date": 1734680556,
-      "author": "duck",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://computer.tldraw.com\">https://computer.tldraw.com</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42469074\">https://news.ycombinator.com/item?id=42469074</a></p>\n<p>Points: 553</p>\n<p># Comments: 120</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
