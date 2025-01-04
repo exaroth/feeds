@@ -27,17 +27,6 @@
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
-    },
-    {
-      "title": "Generalizing the design of data products",
-      "url": "https://martinfowler.com/articles/designing-data-products.html#OverlayAdditionalUseCasesAndGeneralise",
-      "date": 1733326560,
-      "author": "Martin Fowler",
-      "unread": true,
-      "content": "\n<div class = 'img-link'><a href = 'https://martinfowler.com/articles/designing-data-products.html#OverlayAdditionalUseCasesAndGeneralise'><img src = 'https://martinfowler.com/articles/designing-data-products/card.png#OverlayAdditionalUseCasesAndGeneralise' width = '350px'></img></a></div>\n\n<p>Having got an initial data product, <b class = 'author'>Kiran Prakash</b>\n       leads us through the <a href = 'https://martinfowler.com/articles/designing-data-products.html#OverlayAdditionalUseCasesAndGeneralise'>next steps:</a> covering similar uses cases to\n       generalize the data product, determining which domains the products fit\n       into, and considering service level objectives. </p>\n\n<p><a class = 'more' href = 'https://martinfowler.com/articles/designing-data-products.html#OverlayAdditionalUseCasesAndGeneralise'>more…</a></p>",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
     }
   ]
 }

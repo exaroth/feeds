@@ -1,0 +1,109 @@
+{
+  "id": "KWcVEiwEzuiGGuVCeJEYXr8oePYYMmThA64XKX4pLSjxAVFybiMNe4wuzLW34BL34N8bMRzHn8nKtoqJMB",
+  "title": "top scoring links : Zig",
+  "displayTitle": "Reddit - Zig",
+  "url": "https://www.reddit.com/r/zig/top/.rss?sort=top&t=day&limit=6",
+  "feedLink": "https://www.reddit.com/r/zig/top/?sort=top&t=day&limit=6",
+  "is_query": false,
+  "items": [
+    {
+      "title": "Pass \"self\" by pointer vs by value in member functions performance-wise",
+      "url": "https://www.reddit.com/r/Zig/comments/1hsw2a8/pass_self_by_pointer_vs_by_value_in_member/",
+      "date": 1735935845,
+      "author": "/u/KapitanTyr",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Hiya! I wanted to figure something out regarding passing &quot;self&quot; to member functions. Let&#39;s say I have a big struct. Performance-wise is there a difference if I implement its member functions with pointers to self vs self passed by value? In general what I&#39;m asking is - does a call to a member function with &quot;self&quot; passed as a value actually create a copy of the calling object or is there some compiler magic to prevent that?</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/KapitanTyr\"> /u/KapitanTyr </a> <br/> <span><a href=\"https://www.reddit.com/r/Zig/comments/1hsw2a8/pass_self_by_pointer_vs_by_value_in_member/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/Zig/comments/1hsw2a8/pass_self_by_pointer_vs_by_value_in_member/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Private struct fields \"patterns\"",
+      "url": "https://www.reddit.com/r/Zig/comments/1hstsf1/private_struct_fields_patterns/",
+      "date": 1735930173,
+      "author": "/u/72616e646f6d6e657373",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Hello, zig noob here.<br/> I&#39;ve been writing my first zig code and like many of you (us?), I stumbled upon the fact that all the struct fields are public.</p> <p>Reading the relevant GH issue and some other Reddit/HN threads, it is obvious many of us don&#39;t agree with this decision. So my question is, have any patterns emerged for &quot;dealing&quot; with this &quot;issue&quot;?</p> <p>Here is a code example:</p> <pre><code>pub fn Stack(comptime T: type, comptime cap: usize) type { return struct { const Self = (); inner: std.BoundedArray(T, cap), pub fn init() Self { const inner = std.BoundedArray(T, cap).init(0) catch unreachable; return .{ .inner = inner, }; } pub fn push(self: *Self, item: T) !void { try self.inner.append(item); } pub fn pop(self: *Self) ?T { self.inner.popOrNull(); } }; } </code></pre> <p>This is a contrived example, but it should be helpful.</p> <p>Let&#39;s say I want to add some &quot;domain/business&quot; logic specific to my <code>Stack</code>, as asked above, is there any way I can prevent the &quot;user&quot; of my Stack from doing smth. like <code>stack.inner.append()</code>?</p> <p>I know I can deter them from doing so either by naming or the docs, and reading <a href=\"https://github.com/ziglang/zig/issues/9909#issuecomment-942686366\">andrewk&#39;s comment on this issue</a>, this is his preferred way.<br/> But I don&#39;t like it/don&#39;t agree with him on this. IMHO, where mistakes can easily be made, they will be made. Even if a field has an ugly as** name like <code>inner_do_not_use_me</code></p> <p>Please note: Even though I don&#39;t agree with this design, I&#39;m not posting here to flamewar against it, nor am I calling to change this behavior, I&#39;m asking if it can be dealt with (hopefully &quot;neatly&quot;) in the userspace. </p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/72616e646f6d6e657373\"> /u/72616e646f6d6e657373 </a> <br/> <span><a href=\"https://www.reddit.com/r/Zig/comments/1hstsf1/private_struct_fields_patterns/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/Zig/comments/1hstsf1/private_struct_fields_patterns/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Beanstalkz and Beanstalkd - best duo for background job processing",
+      "url": "https://www.reddit.com/r/Zig/comments/1hsjptk/beanstalkz_and_beanstalkd_best_duo_for_background/",
+      "date": 1735900813,
+      "author": "/u/g41797",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p><a href=\"https://github.com/g41797/beanstalkz\">Beanstalkz</a> is the f<em>irst Zig client</em> for <a href=\"https://pmatseykanets.github.io/beanstalkd-docs/\">Beanstalkd</a> -</p> <blockquote> <p>...<strong>fast</strong> general purpose <strong>work queue</strong>. The beauty of Beanstalkd is its absolute <strong>simplicity</strong>...</p> </blockquote> <p>Beanstalkd is supported by <em>67 client libraries</em> on <em>21 programming languages</em>.</p> <p>In order to run background processing, you will use just 3 commands <a href=\"https://github.com/g41797/beanstalkz#supported-commands\">from 11 supported</a></p> <ul> <li>submit(put) job into the queue</li> <li>take(reserve) job from the queue for processing</li> <li>delete job from the queue</li> </ul> <p>&#8203;</p> <pre><code> // On producer side _ = try producer.put(1, 0, 120, &quot;job data&quot;); // On worker side var job: Job = .{}; try job.init(allocator); defer job.deinit(); try worker.reserve(10, &amp;job); // job.body().? - contains &quot;job data&quot; // process job // ........... // job.id().? - contains job id try worker.delete(job.id().?); </code></pre> <p>My question is:</p> <p><strong>Are you going to use Zig for background job processing:</strong></p> <ul> <li>big no-no</li> <li>on producer side (<em>my bet</em>)</li> <li>on both sides</li> </ul> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/g41797\"> /u/g41797 </a> <br/> <span><a href=\"https://www.reddit.com/r/Zig/comments/1hsjptk/beanstalkz_and_beanstalkd_best_duo_for_background/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/Zig/comments/1hsjptk/beanstalkz_and_beanstalkd_best_duo_for_background/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "about \".\" syntax",
+      "url": "https://www.reddit.com/r/Zig/comments/1hsiqk3/about_syntax/",
+      "date": 1735896689,
+      "author": "/u/IAmCesarMarinhoRJ",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>hi all!!! zig newbie here!!!<br/> Zig is amazing. I start learning it. is a great pleasure. is awesome. </p> <p>where in documentation has something related to that &quot;.&quot; syntax and correct name of this... this is zig exclusive i think.<br/> example: .{} .some() et all...</p> <p>just to clarify the meaning...</p> <p>thanks!!!</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/IAmCesarMarinhoRJ\"> /u/IAmCesarMarinhoRJ </a> <br/> <span><a href=\"https://www.reddit.com/r/Zig/comments/1hsiqk3/about_syntax/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/Zig/comments/1hsiqk3/about_syntax/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Aliasing in Zig",
+      "url": "https://www.reddit.com/r/Zig/comments/1hs6l5z/aliasing_in_zig/",
+      "date": 1735857263,
+      "author": "/u/TheKiller36_real",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>TL;DR: What&#39;s the deal with aliasing in Zig? What can I expect the rules to become in the near and distant future?</p> <p>Warning: I&#39;m not good with words and sprinkling praise into this post every two sentences is not helping anyone anyway, so Imma only state it once here: I love Zig, the design decisions made by the team. The organization and Andrew are phenomenal and the project has enabled me to learn a lot about computing. <code>comptime</code> is great, the vector and integer types are ingenious and the C-interop is really really cool.</p> <p>From here on out the post may read as extremely entitled (which it probably also is) but I wanted to clear up that I don&#39;t want to attack anyone with this. However, there is currently a glaring issue I have with Zig: aliasing!</p> <p>There are patches from years back that promised return value copy-elison - testing today with zig13 it&#39;s simply not happening. Why? Well google results say it&#39;s the aliasing rules!(?) NRVO is an optimization every C compiler does! How/why is the “successor to C” that&#39;s “faster than C” not able to figure this out? And no, blasting <code>@returnAdress()</code> everywhere is not a satisfying solution - especially if none of <code>std</code> uses it (well except that you can pass it to <code>Allocator</code>s for them to ignore it).</p> <p>The language ref contains <code>noalias</code> since 0.1.1 but I wasn&#39;t able to find a single explanation of what it does anywhere. The aforementioned page lists “TODO add documentation for noalias” for over 4 years now. I don&#39;t want to read the llvm IR and guess what it does! I also don&#39;t want to read the compiler source code and figure out what semantics the implementation tries to provide! <code>restrict</code> is working flawlessly using <code>clang</code> so I don&#39;t get what <em>experimental</em> LLVM-features supposedly block progress on this.</p> <p>The <code>mayalias</code> GitHub issue(s) reach(es) back 6+ years and nothing actually has happened. There is no agreement on the syntax. There is no agreement on semantics. There is no agreement on how it relates to return values and whether/how-to name them. Threads discussing this go stale or lead nowhere and the milestone is postponed over and over again.</p> <p>I understand that getting stuff done as a small team funded by sponsors is hard enough already and that&#39;s why I completely get that there are issues that take years to act upon. However, this seems like an extremely fundamental language concept and not something that should be an afterthought years down the line.</p> <p>I want to use Zig! Not having something basic like this settled is an extremely unfortunate reason to keep waiting and using other langs. Have I missed some consensus on what the future will be? Can I expect that this will be solved sometime? Does anyone have related resources or advise that I can apply right now?</p> <p>Sorry again for rudeness - there is no ill intent, I swear :)</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/TheKiller36_real\"> /u/TheKiller36_real </a> <br/> <span><a href=\"https://www.reddit.com/r/Zig/comments/1hs6l5z/aliasing_in_zig/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/Zig/comments/1hs6l5z/aliasing_in_zig/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Automated releases with GitHub Actions and GoReleaser",
+      "url": "https://www.reddit.com/r/Zig/comments/1hrv6in/automated_releases_with_github_actions_and/",
+      "date": 1735828925,
+      "author": "/u/caarlos0",
+      "unread": true,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/caarlos0\"> /u/caarlos0 </a> <br/> <span><a href=\"https://carlosbecker.com/posts/goreleaser-rust-zig/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/Zig/comments/1hrv6in/automated_releases_with_github_actions_and/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Package management in a future ?",
+      "url": "https://www.reddit.com/r/Zig/comments/1hrr6ra/package_management_in_a_future/",
+      "date": 1735815295,
+      "author": "/u/skarrrrrrr",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Hi, I have been lurking here and reading more about ZIG, just wanted to ask if there are plans for package management in the future ? </p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/skarrrrrrr\"> /u/skarrrrrrr </a> <br/> <span><a href=\"https://www.reddit.com/r/Zig/comments/1hrr6ra/package_management_in_a_future/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/Zig/comments/1hrr6ra/package_management_in_a_future/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Zig vs C19?",
+      "url": "https://www.reddit.com/r/Zig/comments/1hr751h/zig_vs_c19/",
+      "date": 1735751242,
+      "author": "/u/parametricRegression",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>So, I&#39;ve seen Zig compared to Rust in many articles. &#39;If you never made friends with the borrow checker, Zig might be more your vibe.&#39; I haven&#39;t seen enough comparing it to, well, C.</p> <p>I&#39;m bff&#39;s with the borrow checker, but am sometimes annoyed by how quickly Rust&#39;s beautiful crossplatform abstractions fall apart if you want to explicitly optimize for speed. Suddenly it&#39;s &#39;unsafe the block, and write separate code for all architectures with explicits or inline asm&#39;, and at this point I&#39;m like well... um... at that point why not just use C <em>just for that function</em> and include it.</p> <p>I&#39;m in the Linus Torvalds camp, never got into C++, but Rust fills that void for me completely.</p> <p>I love C, but even with all the updates, it carries ancient luggage. Sometimes I&#39;d like to be sure my ABI is consistent across architectures without googling what size an &#39;unsigned long long&#39; is on each, and have a higher level of comfort while getting that almost-assembly bare metal feel.</p> <p>I&#39;m wondering if Zig could be / will be / is aiming to be the tool for that niche.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/parametricRegression\"> /u/parametricRegression </a> <br/> <span><a href=\"https://www.reddit.com/r/Zig/comments/1hr751h/zig_vs_c19/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/Zig/comments/1hr751h/zig_vs_c19/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "MiSSHod -a minimal SSH client in pure Zig",
+      "url": "https://www.reddit.com/r/Zig/comments/1hr5ly2/misshod_a_minimal_ssh_client_in_pure_zig/",
+      "date": 1735746964,
+      "author": "/u/trjzig",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>MiSSHod is a minimal, experimental SSH client implemented using std.crypto. It’s not safe, it’s not secure, please don’t actually use it for anything important.<br/> <a href=\"https://github.com/ringtailsoftware/misshod\">https://github.com/ringtailsoftware/misshod</a></p> <p>However, it’s quite small. It’s very flexible and I hope at some point to get it running on a microcontroller.</p> <p>Also, a brief primer I&#39;ve written on what the SSH protocol looks like so you don&#39;t have to read all of the RFCs: <a href=\"https://github.com/ringtailsoftware/misshod/blob/main/doc/primer.md\">https://github.com/ringtailsoftware/misshod/blob/main/doc/primer.md</a></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/trjzig\"> /u/trjzig </a> <br/> <span><a href=\"https://www.reddit.com/r/Zig/comments/1hr5ly2/misshod_a_minimal_ssh_client_in_pure_zig/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/Zig/comments/1hr5ly2/misshod_a_minimal_ssh_client_in_pure_zig/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    }
+  ]
+}
