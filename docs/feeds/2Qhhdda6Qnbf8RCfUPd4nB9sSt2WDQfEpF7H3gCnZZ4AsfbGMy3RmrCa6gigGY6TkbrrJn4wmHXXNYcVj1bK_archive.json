@@ -31,6 +31,17 @@
       "enclosureMime": ""
     },
     {
+      "title": "RFC #3762: Make trait methods callable in const contexts",
+      "url": "https://www.reddit.com/r/rust/comments/1i0kjhj/rfc_3762_make_trait_methods_callable_in_const/",
+      "date": 1736792303,
+      "author": "/u/OptimalFa",
+      "unread": true,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/OptimalFa\"> /u/OptimalFa </a> <br/> <span><a href=\"https://archive.is/fwawu\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/rust/comments/1i0kjhj/rfc_3762_make_trait_methods_callable_in_const/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "How fast is rust? Simulating 200,000,000 particles",
       "url": "https://www.reddit.com/r/rust/comments/1i0jjiz/how_fast_is_rust_simulating_200000000_particles/",
       "date": 1736789854,
@@ -3018,17 +3029,6 @@
       "author": "/u/CodeBrad",
       "unread": true,
       "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/CodeBrad\"> /u/CodeBrad </a> <br/> <span><a href=\"https://doublefree.bearblog.dev/solving-advent-of-code-at-compile-time-with-rust-macros/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/rust/comments/1heu1ub/solving_advent_of_code_at_compile_time_with_rust/\">[comments]</a></span>",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Talk to me about macros",
-      "url": "https://www.reddit.com/r/rust/comments/1heswfv/talk_to_me_about_macros/",
-      "date": 1734270446,
-      "author": "/u/barrowburner",
-      "unread": true,
-      "content": "<!-- SC_OFF --><div class=\"md\"><p>Hello Rust community,</p> <p>I&#39;m writing to help clarify and clear up my misconceptions around macros. I am taking my first steps with Rust, and I am experiencing a moderate aversion to the whole concept of macros. Something about them doesn&#39;t smell quite right: they feel like they solve a problem that with a bit of thought could have been solved in another, better way. They feel like a duct-tape solution. However, I don&#39;t really know enough about comptime (Zig: more below) or macros to judge them on their merits and deficiencies. I don&#39;t have enough context or understanding of macros, in any language, to know how to frame my thoughts or questions.</p> <p>My hobby language for the last year or so has been Zig, and while it would be a stretch to say I&#39;m competent with Zig, it is fair to say that I&#39;m comfortable with the language, and I do very much enjoy working with it. Zig is known for having eschewed macros entirely, and for having replaced them with its comptime keyword. <a href=\"https://zig.news/edyu/wtf-is-zig-comptime-and-inline-257b\">Here</a> is a great intro to comptime for those who are curious. This feels well designed: it basically allows you to evaluate Zig code at compile time and negates the requirement for macros entirely. Again, though, this is not much more than a feeling; I don&#39;t have enough experience with them to discuss their merits, and I have no basis for comparison with other solutions.</p> <p>I would like to ask for your opinions, hot takes, etc. regarding macros:</p> <ul> <li><p>What do you like/dislike about macros in Rust?</p></li> <li><p>for those of you with experience in both Rust and Zig: any thoughts on one&#39;s approach vs the other&#39;s?</p></li> <li><p>for those of you with experience in both Rust and C++: any thoughts on how Rust may or may not have improved on the cpp implementation of macros?</p></li> <li><p>if anyone has interesting articles, podcasts, blogs, etc. that discuss macros, I&#39;d love to read through</p></li> </ul> <p>Thanks in advance for taking the time!</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/barrowburner\"> /u/barrowburner </a> <br/> <span><a href=\"https://www.reddit.com/r/rust/comments/1heswfv/talk_to_me_about_macros/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/rust/comments/1heswfv/talk_to_me_about_macros/\">[comments]</a></span>",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""

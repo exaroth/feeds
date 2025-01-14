@@ -9,6 +9,72 @@
   "isHidden": false,
   "items": [
     {
+      "title": "Enlightenment 0.27 Desktop Environment Released",
+      "url": "https://www.reddit.com/r/linux/comments/1i15ge7/enlightenment_027_desktop_environment_released/",
+      "date": 1736859425,
+      "author": "/u/levensvraagstuk",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p><a href=\"https://linuxiac.com/enlightenment-0-27-desktop-environment-released/\">https://linuxiac.com/enlightenment-0-27-desktop-environment-released/</a></p> <p>That means the first stable version will be out in 2102! Can&#39;t wait.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/levensvraagstuk\"> /u/levensvraagstuk </a> <br/> <span><a href=\"https://www.reddit.com/r/linux/comments/1i15ge7/enlightenment_027_desktop_environment_released/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/linux/comments/1i15ge7/enlightenment_027_desktop_environment_released/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Plant CO2 uptake rises by nearly one third in new global estimates",
+      "url": "https://www.ornl.gov/news/plant-co2-uptake-rises-nearly-one-third-new-global-estimates",
+      "date": 1736858506,
+      "author": "akyuu",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://www.ornl.gov/news/plant-co2-uptake-rises-nearly-one-third-new-global-estimates\">https://www.ornl.gov/news/plant-co2-uptake-rises-nearly-one-third-new-global-estimates</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42696517\">https://news.ycombinator.com/item?id=42696517</a></p>\n<p>Points: 84</p>\n<p># Comments: 65</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Which Kubernetes PostgreSQL operator should you choose?",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1i14dax/which_kubernetes_postgresql_operator_should_you/",
+      "date": 1736855544,
+      "author": "/u/danielepolencic",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Are you running <strong>PostgreSQL</strong> on <strong>Kubernetes</strong> and need to choose the <em>right</em> operator? In this episode, <strong>David Pech</strong>, Staff Cloud Ops Engineer, shares his experience implementing database platforms on Kubernetes and guides teams through operator selection and platform requirements.</p> <p>You will learn:</p> <ul> <li>The core requirements for a <strong>PostgreSQL platform</strong> on Kubernetes, including autopilot capabilities, security practices, and observability</li> <li>How to evaluate <strong>PostgreSQL operators</strong> based on their architecture — from single-instance deployments to cloud-native implementations</li> <li>What teams should consider before building their own <strong>database-as-a-service</strong> and common pitfalls to avoid</li> <li>The distinction between being <strong>production-ready</strong> (running single instances) versus <strong>platform-ready</strong> (operating at scale with proper tooling)</li> </ul> <p>Watch it here: <a href=\"https://ku.bz/rGMF2ktdb\">https://ku.bz/rGMF2ktdb</a></p> <p>Listen on: - Apple Podcast <a href=\"https://kube.fm/apple\">https://kube.fm/apple</a> - Spotify <a href=\"https://kube.fm/spotify\">https://kube.fm/spotify</a> - Amazon Music <a href=\"https://kube.fm/amazon\">https://kube.fm/amazon</a> - Overcast <a href=\"https://kube.fm/overcast\">https://kube.fm/overcast</a> - Pocket casts <a href=\"https://kube.fm/pocket-casts\">https://kube.fm/pocket-casts</a> - Deezer <a href=\"https://kube.fm/deezer\">https://kube.fm/deezer</a></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/danielepolencic\"> /u/danielepolencic </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1i14dax/which_kubernetes_postgresql_operator_should_you/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1i14dax/which_kubernetes_postgresql_operator_should_you/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "PostgreSQL is the Database Management System of the Year 2024",
+      "url": "https://www.reddit.com/r/programming/comments/1i147sn/postgresql_is_the_database_management_system_of/",
+      "date": 1736854919,
+      "author": "/u/prlaur782",
+      "unread": true,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/prlaur782\"> /u/prlaur782 </a> <br/> <span><a href=\"https://db-engines.com/en/blog_post/109\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/programming/comments/1i147sn/postgresql_is_the_database_management_system_of/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "I Switched to Firefox and Never Looked Back",
+      "url": "https://www.howtogeek.com/why-i-switched-to-firefox-and-never-looked-back/",
+      "date": 1736854678,
+      "author": "Vinnl",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://www.howtogeek.com/why-i-switched-to-firefox-and-never-looked-back/\">https://www.howtogeek.com/why-i-switched-to-firefox-and-never-looked-back/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42696081\">https://news.ycombinator.com/item?id=42696081</a></p>\n<p>Points: 149</p>\n<p># Comments: 108</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "PostgreSQL Is the Database Management System of the Year 2024",
+      "url": "https://db-engines.com/en/blog_post/109",
+      "date": 1736854677,
+      "author": "plaur782",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://db-engines.com/en/blog_post/109\">https://db-engines.com/en/blog_post/109</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42696080\">https://news.ycombinator.com/item?id=42696080</a></p>\n<p>Points: 101</p>\n<p># Comments: 20</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "Traffic distribution in my gke cluster",
       "url": "https://www.reddit.com/r/kubernetes/comments/1i144le/traffic_distribution_in_my_gke_cluster/",
       "date": 1736854537,
@@ -91,7 +157,7 @@
       "date": 1736838539,
       "author": "scrp",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://github.com/openzfs/zfs/releases/tag/zfs-2.3.0\">https://github.com/openzfs/zfs/releases/tag/zfs-2.3.0</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42694596\">https://news.ycombinator.com/item?id=42694596</a></p>\n<p>Points: 90</p>\n<p># Comments: 31</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://github.com/openzfs/zfs/releases/tag/zfs-2.3.0\">https://github.com/openzfs/zfs/releases/tag/zfs-2.3.0</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42694596\">https://news.ycombinator.com/item?id=42694596</a></p>\n<p>Points: 238</p>\n<p># Comments: 153</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -163,6 +229,17 @@
       "enclosureMime": ""
     },
     {
+      "title": "The Sikh Practice of Langar, a Free Meal Where Everyone Is Equal",
+      "url": "https://www.wttw.com/playlist/2022/04/05/langar-maah-chhole-daal",
+      "date": 1736830772,
+      "author": "thunderbong",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://www.wttw.com/playlist/2022/04/05/langar-maah-chhole-daal\">https://www.wttw.com/playlist/2022/04/05/langar-maah-chhole-daal</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42693849\">https://news.ycombinator.com/item?id=42693849</a></p>\n<p>Points: 80</p>\n<p># Comments: 70</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "What's involved in getting a \"modern\" terminal setup?",
       "url": "https://www.reddit.com/r/programming/comments/1i0y8o2/whats_involved_in_getting_a_modern_terminal_setup/",
       "date": 1736829645,
@@ -196,6 +273,28 @@
       "enclosureMime": ""
     },
     {
+      "title": "Campsite is now open source",
+      "url": "https://github.com/campsite/campsite",
+      "date": 1736818284,
+      "author": "bpierre",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://github.com/campsite/campsite\">https://github.com/campsite/campsite</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42692311\">https://news.ycombinator.com/item?id=42692311</a></p>\n<p>Points: 103</p>\n<p># Comments: 65</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Dragonfly's extreme loop-the-loops",
+      "url": "https://www.science.org/content/article/absolutely-insane-dragonfly-s-extreme-loop-loops-are-unparalleled-nature",
+      "date": 1736815713,
+      "author": "pseudolus",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://www.science.org/content/article/absolutely-insane-dragonfly-s-extreme-loop-loops-are-unparalleled-nature\">https://www.science.org/content/article/absolutely-insane-dragonfly-s-extreme-loop-loops-are-unparalleled-nature</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42691899\">https://news.ycombinator.com/item?id=42691899</a></p>\n<p>Points: 92</p>\n<p># Comments: 34</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "Anyone tried boot dev for learning Go?",
       "url": "https://www.reddit.com/r/golang/comments/1i0szpt/anyone_tried_boot_dev_for_learning_go/",
       "date": 1736813767,
@@ -223,7 +322,29 @@
       "date": 1736810708,
       "author": "weitzj",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://docs.linuxserver.io/images/docker-webtop/\">https://docs.linuxserver.io/images/docker-webtop/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42690983\">https://news.ycombinator.com/item?id=42690983</a></p>\n<p>Points: 180</p>\n<p># Comments: 27</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://docs.linuxserver.io/images/docker-webtop/\">https://docs.linuxserver.io/images/docker-webtop/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42690983\">https://news.ycombinator.com/item?id=42690983</a></p>\n<p>Points: 250</p>\n<p># Comments: 47</p>\n",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Linus Torvalds Offers to Build Guitar Effects Pedal For Kernel Developer",
+      "url": "https://linux.slashdot.org/story/25/01/13/2131230/linus-torvalds-offers-to-build-guitar-effects-pedal-for-kernel-developer?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+      "date": 1736810400,
+      "author": "BeauHD",
+      "unread": true,
+      "content": "Linux creator Linus Torvalds announced a playful giveaway for kernel contributors: he'll hand-build a guitar effects pedal for one lucky developer selected at random, using his holiday hobby skills with pedal kits. To qualify, developers must have a 2024 commit in Torvalds' kernel git tree and email him with the subject \"I WANT A GUITAR PEDAL\". He'll pick a winner at random, use his own money to buy a pedal kit from a company called Aion FX, and then 'build it with my own shaky little fingers, and send it to the victim by US postal services.'\" The Register reports: The odd offer appeared in his weekly state-of-the-kernel post, which on Sunday US time informed the Linux world that release candidate (rc) seven for version 6.13 of the Linux kernel \"is slightly bigger than normal, but considering the timing, it's pretty much where I would have expected, and nothing really stands out.\" Torvalds therefore expects version 6.13 to debut next week, meaning it will arrive after his preferred seven release candidates and without delays caused by the usual holiday-period slowdown. Torvalds then added a postscript in which he revealed that he often uses the holiday season to build LEGO, which he frequently receives for Christmas and his late December birthday.\n \nHe kept up that tradition last year, but \"also ended up doing a number of guitar pedal kit builds\" which he described as \"LEGO for grown-ups with a soldering iron.\" [...] Torvalds doesn't play guitar, but did the builds \"because I enjoy the tinkering, and the guitar pedals actually do something and are the right kind of \"not very complex, but not some 5-minute 555 LED blinking thing.'\" He enjoyed the experience and wants to build more pedals, so has decided to give one away to a random kernel developer -- both as an act of generosity and to \"check to see if anybody actually ever reads these weekly rc announcements of mine.\" Torvalds rated his past pedal-building efforts a \"good success so far\" but warned entrants \"I'm a software person with a soldering iron.\"\n \n\"I will test the result to the best of my abilities, and the end result may actually work ... but you should set your expectations along the lines of \"quality kit built by a SW person who doesn't know one end of a guitar from the other.'\"<p><div class=\"share_submission\" style=\"position:relative;\">\n<a class=\"slashpop\" href=\"http://twitter.com/home?status=Linus+Torvalds+Offers+to+Build+Guitar+Effects+Pedal+For+Kernel+Developer%3A+https%3A%2F%2Flinux.slashdot.org%2Fstory%2F25%2F01%2F13%2F2131230%2F%3Futm_source%3Dtwitter%26utm_medium%3Dtwitter\"><img src=\"https://a.fsdn.com/sd/twitter_icon_large.png\"></a>\n<a class=\"slashpop\" href=\"http://www.facebook.com/sharer.php?u=https%3A%2F%2Flinux.slashdot.org%2Fstory%2F25%2F01%2F13%2F2131230%2Flinus-torvalds-offers-to-build-guitar-effects-pedal-for-kernel-developer%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook\"><img src=\"https://a.fsdn.com/sd/facebook_icon_large.png\"></a>\n\n\n\n</div></p><p><a href=\"https://linux.slashdot.org/story/25/01/13/2131230/linus-torvalds-offers-to-build-guitar-effects-pedal-for-kernel-developer?utm_source=rss1.0moreanon&amp;utm_medium=feed\">Read more of this story</a> at Slashdot.</p>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Voyage-code-3",
+      "url": "https://blog.voyageai.com/2024/12/04/voyage-code-3/",
+      "date": 1736809754,
+      "author": "fzliu",
+      "unread": true,
+      "content": "\n<p>Article URL: <a href=\"https://blog.voyageai.com/2024/12/04/voyage-code-3/\">https://blog.voyageai.com/2024/12/04/voyage-code-3/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42690818\">https://news.ycombinator.com/item?id=42690818</a></p>\n<p>Points: 84</p>\n<p># Comments: 23</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -245,7 +366,7 @@
       "date": 1736807907,
       "author": "arkadiyt",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://sourcecodered.com/snyk-malicious-npm-package/\">https://sourcecodered.com/snyk-malicious-npm-package/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42690473\">https://news.ycombinator.com/item?id=42690473</a></p>\n<p>Points: 290</p>\n<p># Comments: 146</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://sourcecodered.com/snyk-malicious-npm-package/\">https://sourcecodered.com/snyk-malicious-npm-package/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42690473\">https://news.ycombinator.com/item?id=42690473</a></p>\n<p>Points: 445</p>\n<p># Comments: 210</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -388,7 +509,7 @@
       "date": 1736794531,
       "author": "ulrischa",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://anderegg.ca/2025/01/11/wordpress-is-in-trouble\">https://anderegg.ca/2025/01/11/wordpress-is-in-trouble</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42687121\">https://news.ycombinator.com/item?id=42687121</a></p>\n<p>Points: 521</p>\n<p># Comments: 323</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://anderegg.ca/2025/01/11/wordpress-is-in-trouble\">https://anderegg.ca/2025/01/11/wordpress-is-in-trouble</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42687121\">https://news.ycombinator.com/item?id=42687121</a></p>\n<p>Points: 598</p>\n<p># Comments: 393</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -400,6 +521,17 @@
       "author": "/u/ct_the_man_doll",
       "unread": true,
       "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/ct_the_man_doll\"> /u/ct_the_man_doll </a> <br/> <span><a href=\"https://social.treehouse.systems/@marcan/113821266231103150\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/linux/comments/1i0ko4q/when_simple_linux_subsystems_collide_with_complex/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
+      "title": "RFC #3762: Make trait methods callable in const contexts",
+      "url": "https://www.reddit.com/r/rust/comments/1i0kjhj/rfc_3762_make_trait_methods_callable_in_const/",
+      "date": 1736792303,
+      "author": "/u/OptimalFa",
+      "unread": true,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/OptimalFa\"> /u/OptimalFa </a> <br/> <span><a href=\"https://archive.is/fwawu\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/rust/comments/1i0kjhj/rfc_3762_make_trait_methods_callable_in_const/\">[comments]</a></span>",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -597,7 +729,7 @@
       "date": 1736776246,
       "author": "sschueller",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://mitxela.com/projects/fluid-pendant\">https://mitxela.com/projects/fluid-pendant</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42683389\">https://news.ycombinator.com/item?id=42683389</a></p>\n<p>Points: 310</p>\n<p># Comments: 43</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://mitxela.com/projects/fluid-pendant\">https://mitxela.com/projects/fluid-pendant</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42683389\">https://news.ycombinator.com/item?id=42683389</a></p>\n<p>Points: 390</p>\n<p># Comments: 55</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -696,7 +828,7 @@
       "date": 1736772147,
       "author": "donohoe",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://moral.net.au/writing/2025/01/11/waiting_for_oregon/\">https://moral.net.au/writing/2025/01/11/waiting_for_oregon/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42682813\">https://news.ycombinator.com/item?id=42682813</a></p>\n<p>Points: 181</p>\n<p># Comments: 88</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://moral.net.au/writing/2025/01/11/waiting_for_oregon/\">https://moral.net.au/writing/2025/01/11/waiting_for_oregon/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42682813\">https://news.ycombinator.com/item?id=42682813</a></p>\n<p>Points: 202</p>\n<p># Comments: 96</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -740,7 +872,7 @@
       "date": 1736770062,
       "author": "omkar-foss",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://dwheeler.com/essays/debugging-agans.html\">https://dwheeler.com/essays/debugging-agans.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42682602\">https://news.ycombinator.com/item?id=42682602</a></p>\n<p>Points: 457</p>\n<p># Comments: 201</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://dwheeler.com/essays/debugging-agans.html\">https://dwheeler.com/essays/debugging-agans.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42682602\">https://news.ycombinator.com/item?id=42682602</a></p>\n<p>Points: 488</p>\n<p># Comments: 206</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -773,7 +905,7 @@
       "date": 1736767261,
       "author": "crbelaus",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://paulgraham.com/woke.html\">https://paulgraham.com/woke.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42682305\">https://news.ycombinator.com/item?id=42682305</a></p>\n<p>Points: 602</p>\n<p># Comments: 1524</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://paulgraham.com/woke.html\">https://paulgraham.com/woke.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42682305\">https://news.ycombinator.com/item?id=42682305</a></p>\n<p>Points: 808</p>\n<p># Comments: 1831</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -1125,7 +1257,7 @@
       "date": 1736722396,
       "author": "medhir",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://medhir.com/blog/right-to-root-access\">https://medhir.com/blog/right-to-root-access</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42677835\">https://news.ycombinator.com/item?id=42677835</a></p>\n<p>Points: 440</p>\n<p># Comments: 368</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://medhir.com/blog/right-to-root-access\">https://medhir.com/blog/right-to-root-access</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42677835\">https://news.ycombinator.com/item?id=42677835</a></p>\n<p>Points: 456</p>\n<p># Comments: 386</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -1235,7 +1367,7 @@
       "date": 1736712409,
       "author": "astronautas",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://valatka.dev/2025/01/12/on-killer-uv-feature.html\">https://valatka.dev/2025/01/12/on-killer-uv-feature.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42676432\">https://news.ycombinator.com/item?id=42676432</a></p>\n<p>Points: 464</p>\n<p># Comments: 389</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://valatka.dev/2025/01/12/on-killer-uv-feature.html\">https://valatka.dev/2025/01/12/on-killer-uv-feature.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42676432\">https://news.ycombinator.com/item?id=42676432</a></p>\n<p>Points: 480</p>\n<p># Comments: 404</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -1499,7 +1631,7 @@
       "date": 1736697660,
       "author": "mooreds",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://labs.watchtowr.com/more-governments-backdoors-in-your-backdoors/\">https://labs.watchtowr.com/more-governments-backdoors-in-your-backdoors/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42674455\">https://news.ycombinator.com/item?id=42674455</a></p>\n<p>Points: 415</p>\n<p># Comments: 59</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://labs.watchtowr.com/more-governments-backdoors-in-your-backdoors/\">https://labs.watchtowr.com/more-governments-backdoors-in-your-backdoors/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42674455\">https://news.ycombinator.com/item?id=42674455</a></p>\n<p>Points: 424</p>\n<p># Comments: 65</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -1532,7 +1664,7 @@
       "date": 1736694794,
       "author": "vortex_ape",
       "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://eieio.games/blog/bad-apple-with-regex-in-vim/\">https://eieio.games/blog/bad-apple-with-regex-in-vim/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42674116\">https://news.ycombinator.com/item?id=42674116</a></p>\n<p>Points: 560</p>\n<p># Comments: 56</p>\n",
+      "content": "\n<p>Article URL: <a href=\"https://eieio.games/blog/bad-apple-with-regex-in-vim/\">https://eieio.games/blog/bad-apple-with-regex-in-vim/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42674116\">https://news.ycombinator.com/item?id=42674116</a></p>\n<p>Points: 582</p>\n<p># Comments: 59</p>\n",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
@@ -1599,61 +1731,6 @@
       "author": "/u/Shoyo-02",
       "unread": true,
       "content": "<!-- SC_OFF --><div class=\"md\"><p>What is the best way to query a gke job’s current status dynamically. Currently using python’s kubernetes package in django app, but not sure how to update the status in database dynamically. </p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Shoyo-02\"> /u/Shoyo-02 </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hznsd7/queryingpolling_gke_jobs_current_status/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hznsd7/queryingpolling_gke_jobs_current_status/\">[comments]</a></span>",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "(Right-Nulled) Generalised LR Parsing",
-      "url": "https://www.reddit.com/r/programming/comments/1hznenp/rightnulled_generalised_lr_parsing/",
-      "date": 1736690868,
-      "author": "/u/Apanatshka",
-      "unread": true,
-      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Apanatshka\"> /u/Apanatshka </a> <br/> <span><a href=\"https://blog.jeffsmits.net/generalised-lr-parsing/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/programming/comments/1hznenp/rightnulled_generalised_lr_parsing/\">[comments]</a></span>",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "The mistake of yearning for the 'friendly' online world of 20 years ago",
-      "url": "https://english.elpais.com/lifestyle/2025-01-07/the-internet-hasnt-made-us-bad-we-were-already-like-that-the-mistake-of-yearning-for-the-friendly-online-world-of-20-years-ago.html",
-      "date": 1736690595,
-      "author": "geox",
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://english.elpais.com/lifestyle/2025-01-07/the-internet-hasnt-made-us-bad-we-were-already-like-that-the-mistake-of-yearning-for-the-friendly-online-world-of-20-years-ago.html\">https://english.elpais.com/lifestyle/2025-01-07/the-internet-hasnt-made-us-bad-we-were-already-like-that-the-mistake-of-yearning-for-the-friendly-online-world-of-20-years-ago.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42673596\">https://news.ycombinator.com/item?id=42673596</a></p>\n<p>Points: 124</p>\n<p># Comments: 148</p>\n",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Enlightenment 0.27.0 Release",
-      "url": "https://www.reddit.com/r/linux/comments/1hzmy8b/enlightenment_0270_release/",
-      "date": 1736689456,
-      "author": "/u/ouyawei",
-      "unread": true,
-      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/ouyawei\"> /u/ouyawei </a> <br/> <span><a href=\"https://www.enlightenment.org/news/2025-01-11-enlightenment-0.27.0\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/linux/comments/1hzmy8b/enlightenment_0270_release/\">[comments]</a></span>",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "I want to know if a compile time list-like thing can be made in rust",
-      "url": "https://www.reddit.com/r/rust/comments/1hzmojd/i_want_to_know_if_a_compile_time_listlike_thing/",
-      "date": 1736688588,
-      "author": "/u/OkProgrammer2073",
-      "unread": true,
-      "content": "<!-- SC_OFF --><div class=\"md\"><p>I have been doing rust for a little while and now i want to try doing more compile-time/generic stuff in rust, since i have heard so much about rust&#39;s type system being good,</p> <p>I basically want to be able to make a struct/tuple that also acts as a type-generic list whose type is decided/given at compile time.</p> <p>The list should have elements whose types should satisfy some constraints (for now, just being one of the given types, but not rust enums, something i can build at compile time).</p> <p>When later I use them in functions/other types, i want to be able to do some map like operation on the given list.</p> <p>Maybe I will later want to add more things to the list, but for now these are the minimum things i want to be able to do.</p> <p>Also I dont want to have to write full proc macro for it if as much as possible and rather do it at the type-generics level.</p> <p>Can this be done trivially/semi-trivially in rust or is it just too hard to do/practically impossible? How can i achieve this?</p> <p>[Edit]<br/> An example of what i want to be able to do : </p> <p><code>// mystruct is a helper macro to make differing type of struct according to arguments</code></p> <p><code>let sample1 = mystruct!(1 as u32, 2.0 as f32, -23 as i64);</code></p> <p><code>let sample2 = mystruct!(1 as u32, 2.0 as f32, -23 as i64, 71 as f64);</code></p> <p><code>// The hypothetical criteria for making structs with mystruct!() is that element type alter between integer type and floating point type</code></p> <p><code>// a function that uses it:</code></p> <p><code>pub fn calc_sum_of_mystruct&lt;T&gt;(the_struct: T) -&gt; f64 // T is a type made with mystruct!()</code></p> <p><code>{</code></p> <p><code>let mut sum:f64 = 0; // A sample usage of calculating sum</code></p> <p><code>the_struct.map(|i|{</code></p> <p><code>if i is i64 {</code></p> <p><code>sum -= i as f64;</code></p> <p><code>}</code></p> <p><code>else {</code></p> <p><code>sum += i as f64;</code></p> <p><code>}</code></p> <p><code>});</code></p> <p><code>// Since the type and elements of struct can be known at compile time, the above code should just expand for &#39;sample1&#39; as</code></p> <p><code>/*</code></p> <p><code>sum += the_struct._0 as f64; // or some other name</code></p> <p><code>sum += the_struct._1 as f64;</code></p> <p><code>sum -= the_struct._2 as f64;</code></p> <p><code>*/</code></p> <p><code>return sum;</code></p> <p><code>}</code></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/OkProgrammer2073\"> /u/OkProgrammer2073 </a> <br/> <span><a href=\"https://www.reddit.com/r/rust/comments/1hzmojd/i_want_to_know_if_a_compile_time_listlike_thing/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/rust/comments/1hzmojd/i_want_to_know_if_a_compile_time_listlike_thing/\">[comments]</a></span>",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Storing centalized node_modules in kubernetes",
-      "url": "https://www.reddit.com/r/kubernetes/comments/1hzmb67/storing_centalized_node_modules_in_kubernetes/",
-      "date": 1736687351,
-      "author": "/u/dark2132",
-      "unread": true,
-      "content": "<!-- SC_OFF --><div class=\"md\"><p>I am building a platform like Replit and I am storing the users code in S3 and i run a deployment for each person and I am planning to store a centralised node_modules in a pod for every program. Any idea on how would you guys do it?</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/dark2132\"> /u/dark2132 </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hzmb67/storing_centalized_node_modules_in_kubernetes/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hzmb67/storing_centalized_node_modules_in_kubernetes/\">[comments]</a></span>",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""

@@ -9,6 +9,17 @@
   "isHidden": false,
   "items": [
     {
+      "title": "Which Kubernetes PostgreSQL operator should you choose?",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1i14dax/which_kubernetes_postgresql_operator_should_you/",
+      "date": 1736855544,
+      "author": "/u/danielepolencic",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Are you running <strong>PostgreSQL</strong> on <strong>Kubernetes</strong> and need to choose the <em>right</em> operator? In this episode, <strong>David Pech</strong>, Staff Cloud Ops Engineer, shares his experience implementing database platforms on Kubernetes and guides teams through operator selection and platform requirements.</p> <p>You will learn:</p> <ul> <li>The core requirements for a <strong>PostgreSQL platform</strong> on Kubernetes, including autopilot capabilities, security practices, and observability</li> <li>How to evaluate <strong>PostgreSQL operators</strong> based on their architecture — from single-instance deployments to cloud-native implementations</li> <li>What teams should consider before building their own <strong>database-as-a-service</strong> and common pitfalls to avoid</li> <li>The distinction between being <strong>production-ready</strong> (running single instances) versus <strong>platform-ready</strong> (operating at scale with proper tooling)</li> </ul> <p>Watch it here: <a href=\"https://ku.bz/rGMF2ktdb\">https://ku.bz/rGMF2ktdb</a></p> <p>Listen on: - Apple Podcast <a href=\"https://kube.fm/apple\">https://kube.fm/apple</a> - Spotify <a href=\"https://kube.fm/spotify\">https://kube.fm/spotify</a> - Amazon Music <a href=\"https://kube.fm/amazon\">https://kube.fm/amazon</a> - Overcast <a href=\"https://kube.fm/overcast\">https://kube.fm/overcast</a> - Pocket casts <a href=\"https://kube.fm/pocket-casts\">https://kube.fm/pocket-casts</a> - Deezer <a href=\"https://kube.fm/deezer\">https://kube.fm/deezer</a></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/danielepolencic\"> /u/danielepolencic </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1i14dax/which_kubernetes_postgresql_operator_should_you/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1i14dax/which_kubernetes_postgresql_operator_should_you/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "Traffic distribution in my gke cluster",
       "url": "https://www.reddit.com/r/kubernetes/comments/1i144le/traffic_distribution_in_my_gke_cluster/",
       "date": 1736854537,

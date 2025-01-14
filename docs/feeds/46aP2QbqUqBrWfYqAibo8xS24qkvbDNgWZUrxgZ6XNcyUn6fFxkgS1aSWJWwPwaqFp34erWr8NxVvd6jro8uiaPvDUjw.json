@@ -9,6 +9,17 @@
   "isHidden": false,
   "items": [
     {
+      "title": "Which Kubernetes PostgreSQL operator should you choose?",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1i14dax/which_kubernetes_postgresql_operator_should_you/",
+      "date": 1736855544,
+      "author": "/u/danielepolencic",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>Are you running <strong>PostgreSQL</strong> on <strong>Kubernetes</strong> and need to choose the <em>right</em> operator? In this episode, <strong>David Pech</strong>, Staff Cloud Ops Engineer, shares his experience implementing database platforms on Kubernetes and guides teams through operator selection and platform requirements.</p> <p>You will learn:</p> <ul> <li>The core requirements for a <strong>PostgreSQL platform</strong> on Kubernetes, including autopilot capabilities, security practices, and observability</li> <li>How to evaluate <strong>PostgreSQL operators</strong> based on their architecture — from single-instance deployments to cloud-native implementations</li> <li>What teams should consider before building their own <strong>database-as-a-service</strong> and common pitfalls to avoid</li> <li>The distinction between being <strong>production-ready</strong> (running single instances) versus <strong>platform-ready</strong> (operating at scale with proper tooling)</li> </ul> <p>Watch it here: <a href=\"https://ku.bz/rGMF2ktdb\">https://ku.bz/rGMF2ktdb</a></p> <p>Listen on: - Apple Podcast <a href=\"https://kube.fm/apple\">https://kube.fm/apple</a> - Spotify <a href=\"https://kube.fm/spotify\">https://kube.fm/spotify</a> - Amazon Music <a href=\"https://kube.fm/amazon\">https://kube.fm/amazon</a> - Overcast <a href=\"https://kube.fm/overcast\">https://kube.fm/overcast</a> - Pocket casts <a href=\"https://kube.fm/pocket-casts\">https://kube.fm/pocket-casts</a> - Deezer <a href=\"https://kube.fm/deezer\">https://kube.fm/deezer</a></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/danielepolencic\"> /u/danielepolencic </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1i14dax/which_kubernetes_postgresql_operator_should_you/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1i14dax/which_kubernetes_postgresql_operator_should_you/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "Traffic distribution in my gke cluster",
       "url": "https://www.reddit.com/r/kubernetes/comments/1i144le/traffic_distribution_in_my_gke_cluster/",
       "date": 1736854537,
@@ -796,17 +807,6 @@
       "author": "/u/Icy-Net-1378",
       "unread": true,
       "content": "<!-- SC_OFF --><div class=\"md\"><p>Hello all. I&#39;m interested in using Kong API Gateway in order to expose some internal APIs. I&#39;m really keen in using Kong as it is a CNCF project, and probably the most well known out there. </p> <p>However, I&#39;d like also to use a service mesh to suppot mTLS within the cluster. Would the services mesh and Kong somehow clash in between? Would just meshifying the Kong deployment make everything work?</p> <p>Has anyone of youj a similar setup?</p> <p>Thanks</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Icy-Net-1378\"> /u/Icy-Net-1378 </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hv0auq/kong_api_gateway_and_service_mesh/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1hv0auq/kong_api_gateway_and_service_mesh/\">[comments]</a></span>",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Strange Inter-Pod network performance compared to Inter-Node network performance",
-      "url": "https://www.reddit.com/r/kubernetes/comments/1huzkwh/strange_interpod_network_performance_compared_to/",
-      "date": 1736171809,
-      "author": "/u/ogreten",
-      "unread": true,
-      "content": "<table> <tr><td> <a href=\"https://www.reddit.com/r/kubernetes/comments/1huzkwh/strange_interpod_network_performance_compared_to/\"> <img src=\"https://b.thumbs.redditmedia.com/YClyYrMo2rmn1cigR0LIFfhdkDwtUg4Y75pmVtoYOtY.jpg\" alt=\"Strange Inter-Pod network performance compared to Inter-Node network performance\" title=\"Strange Inter-Pod network performance compared to Inter-Node network performance\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Hello,</p> <p>While testing, I catch something strange I couldn&#39;t find the reason or solution to. Basically, we have 3cp+2w setup for our staging environment.</p> <p>When I test w1-w2 network using iperf I get around 18Gbits/sec.</p> <p><a href=\"https://preview.redd.it/teppah0apdbe1.png?width=1600&amp;format=png&amp;auto=webp&amp;s=c5024c3517e82ecc6774e42232083d8270b1a952\">https://preview.redd.it/teppah0apdbe1.png?width=1600&amp;format=png&amp;auto=webp&amp;s=c5024c3517e82ecc6774e42232083d8270b1a952</a></p> <p>Then, I tested pod1-pod2 network using iperf I get around 2Gbits/sec.</p> <p><a href=\"https://preview.redd.it/4hkerybfpdbe1.png?width=1426&amp;format=png&amp;auto=webp&amp;s=dd4a579a13ddbf9a28d351e770eee22fb3a89ba6\">https://preview.redd.it/4hkerybfpdbe1.png?width=1426&amp;format=png&amp;auto=webp&amp;s=dd4a579a13ddbf9a28d351e770eee22fb3a89ba6</a></p> <p>Our cluster is setup with terraform rke. By default it uses canal but I also tested with calico, flannel, cilium. However, the behavior is the same. Then, I also setup the same cluster using rke2. However, the behaviour is still there.</p> <p>More strange is when I test w1-pod2. I get around 7Gbits/sec.</p> <p><a href=\"https://preview.redd.it/yfm33khopdbe1.png?width=1426&amp;format=png&amp;auto=webp&amp;s=cf1f3319e02bd3af6fdaf4a9abff85be4e65da7a\">https://preview.redd.it/yfm33khopdbe1.png?width=1426&amp;format=png&amp;auto=webp&amp;s=cf1f3319e02bd3af6fdaf4a9abff85be4e65da7a</a></p> <p>What do you think the problem may be? Do you have any suggestion to fixing this?</p> <p>Note: Our primary problem is to provide rwx-like volumes to pods on different nodes. I tested with longhorn but performance was suboptimal and I traced the problem back to here. Any suggestion or feedback is also welcome.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/ogreten\"> /u/ogreten </a> <br/> <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1huzkwh/strange_interpod_network_performance_compared_to/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1huzkwh/strange_interpod_network_performance_compared_to/\">[comments]</a></span> </td></tr></table>",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""

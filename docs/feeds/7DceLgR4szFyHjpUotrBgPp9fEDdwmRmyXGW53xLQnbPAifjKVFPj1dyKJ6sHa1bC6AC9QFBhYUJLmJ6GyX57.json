@@ -9,6 +9,17 @@
   "isHidden": false,
   "items": [
     {
+      "title": "Enlightenment 0.27 Desktop Environment Released",
+      "url": "https://www.reddit.com/r/linux/comments/1i15ge7/enlightenment_027_desktop_environment_released/",
+      "date": 1736859425,
+      "author": "/u/levensvraagstuk",
+      "unread": true,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p><a href=\"https://linuxiac.com/enlightenment-0-27-desktop-environment-released/\">https://linuxiac.com/enlightenment-0-27-desktop-environment-released/</a></p> <p>That means the first stable version will be out in 2102! Can&#39;t wait.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/levensvraagstuk\"> /u/levensvraagstuk </a> <br/> <span><a href=\"https://www.reddit.com/r/linux/comments/1i15ge7/enlightenment_027_desktop_environment_released/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/linux/comments/1i15ge7/enlightenment_027_desktop_environment_released/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "What Are the Best Online Courses to Learn Linux (Basics to Advanced)?",
       "url": "https://www.reddit.com/r/linux/comments/1i0ykpa/what_are_the_best_online_courses_to_learn_linux/",
       "date": 1736830825,
@@ -807,17 +818,6 @@
       "author": "/u/NonStandardUser",
       "unread": true,
       "content": "<!-- SC_OFF --><div class=\"md\"><p>As of kernel 6.12.8, the Mediatek MT7922 Bluetooth chipset no longer causes the kernel to hang on resuming from suspend. This issue started on 6.11.3(Oct 2024 on Fedora); in the meantime, folks have resorted to disabling Bluetooth on their systems, creating scripts or systemd services to disable and re-enable Bluetooth before and after suspend, or swapping out their MT7922 cards with something else outright.</p> <p>The diff that is pertinent to this issue can be found <a href=\"https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/diff/drivers/bluetooth/btusb.c?id=v6.12.8&amp;id2=v6.12.7\">here</a>.</p> <p>Commits: </p> <ul> <li><code>b967b37cefdf7ae1b0d3dc26cce6bfd1e7faf315</code></li> <li><code>9da1cfc4f111b7e4ea3d7f388b16b17bb881795e</code></li> <li><code>cc569d791ab2a0de74f76e470515d25d24c9b84b</code></li> <li><code>f5c5661f02b5539d88aea8497f8d0835d165e945</code></li> </ul> <p>Interestingly, the commits are all dated September 23rd 2024, 16:47:02-16:47:05.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/NonStandardUser\"> /u/NonStandardUser </a> <br/> <span><a href=\"https://www.reddit.com/r/linux/comments/1hv24zb/mt7922_no_longer_causes_kernel_panic_on_resume/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/linux/comments/1hv24zb/mt7922_no_longer_causes_kernel_panic_on_resume/\">[comments]</a></span>",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Flowkeeper - a Pomodoro timer (Python + Qt6), which I develop and test on Linux. Will appreciate your feedback!",
-      "url": "https://www.reddit.com/r/linux/comments/1huz34h/flowkeeper_a_pomodoro_timer_python_qt6_which_i/",
-      "date": 1736170414,
-      "author": "/u/setwindowtext",
-      "unread": true,
-      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/setwindowtext\"> /u/setwindowtext </a> <br/> <span><a href=\"https://i.redd.it/pl7ob8ioldbe1.png\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/linux/comments/1huz34h/flowkeeper_a_pomodoro_timer_python_qt6_which_i/\">[comments]</a></span>",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""
