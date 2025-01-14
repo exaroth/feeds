@@ -4,8 +4,54 @@
   "displayTitle": "Dev - Anton Putra",
   "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCeLvlbC754U6FyFQbKc0UnQ",
   "feedLink": "https://www.youtube.com/channel/UCeLvlbC754U6FyFQbKc0UnQ",
-  "is_query": false,
+  "isQuery": false,
+  "isEmpty": false,
+  "isHidden": false,
   "items": [
+    {
+      "title": "Create GKE Cluster using Terraform",
+      "url": "https://www.youtube.com/watch?v=YIENf3I0aRE",
+      "date": 1736678472,
+      "author": "Anton Putra",
+      "unread": true,
+      "content": "Google Kubernetes Engine GKE Tutorial (Part 2)\n\n👋 [Playlist] Google Kubernetes Engine GKE Tutorial: https://www.youtube.com/playlist?list=PLiMWaCMwGJXlyWNHxoGCY7XLydiJa2atL\n\n🍿 Benchmarks: https://youtube.com/playlist?list=PLiMWaCMwGJXmcDLvMQeORJ-j_jayKaLVn&si=p-UOaVM_6_SFx52H\n\n▬▬▬▬▬ Experience & Location 💼 ▬▬▬▬▬\n►  I’m a Senior Software Engineer at Juniper Networks (13+ years of experience)\n►  Located in San Francisco Bay Area, CA (US citizen)\n\n▬▬▬▬▬▬ Connect with me 👋 ▬▬▬▬▬▬\n►  LinkedIn: https://www.linkedin.com/in/anton-putra\n►  Twitter/X: https://twitter.com/antonvputra\n►  Instagram: https://www.instagram.com/aputrabay\n►  GitHub: https://github.com/antonputra\n►  Email: me@antonputra.com\n\n▬▬▬▬▬▬▬ Timestamps ⏰  ▬▬▬▬▬▬▬\n0:00 Intro\n1:36 Create GKE Cluster using Terraform\n5:20 Create GKE Nodes using Terraform\n\n▬▬▬▬▬▬▬ Source Code 📚 ▬▬▬▬▬▬▬\n► Original Source Code: https://github.com/antonputra/tutorials/tree/238/lessons/238\n\n#GCP #GKE  #Terraform",
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/YIENf3I0aRE?version=3",
+      "enclosureMime": ""
+    },
+    {
+      "title": "VM vs Kubernetes: Performance 🚀",
+      "url": "https://www.youtube.com/watch?v=Y4pOmi0j_90",
+      "date": 1736515886,
+      "author": "Anton Putra",
+      "unread": true,
+      "content": "Kubernetes Performance Testing.\n\n🔴 To support my channel, I'd like to offer Mentorship/On-the-Job Support/Consulting (me@antonputra.com)\n\n🍿 Benchmarks: https://youtube.com/playlist?list=PLiMWaCMwGJXmcDLvMQeORJ-j_jayKaLVn&si=p-UOaVM_6_SFx52H\n\n👋 AWS is expensive - Infra Support Fund: https://buymeacoffee.com/antonputra\n\n▬▬▬▬▬ Experience & Location 💼 ▬▬▬▬▬\n►  I’m a Senior Software Engineer at Juniper Networks (13+ years of experience)\n►  Located in San Francisco Bay Area, CA (US citizen)\n\n▬▬▬▬▬▬ Connect with me 👋 ▬▬▬▬▬▬\n►  LinkedIn: https://www.linkedin.com/in/anton-putra\n►  Twitter/X: https://twitter.com/antonvputra\n►  Instagram: https://www.instagram.com/aputrabay\n►  GitHub: https://github.com/antonputra\n►  Email: me@antonputra.com\n\n▬▬▬▬▬▬▬ Timestamps ⏰  ▬▬▬▬▬▬▬\n0:00 Intro\n1:33 Test\n\n▬▬▬▬▬▬▬ Source Code 📚 ▬▬▬▬▬▬▬\n► Original Source Code: https://github.com/antonputra/tutorials/tree/237/lessons/237\n\n#kubernetes #k8s #devops",
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/Y4pOmi0j_90?version=3",
+      "enclosureMime": ""
+    },
+    {
+      "title": "FastAPI (Python) vs Node.js Performance",
+      "url": "https://www.youtube.com/watch?v=i3TcSeRO8gs",
+      "date": 1736411648,
+      "author": "Anton Putra",
+      "unread": true,
+      "content": "Python vs Node.js performance Performance Benchmark.\n\n🔴 To support my channel, I'd like to offer Mentorship/On-the-Job Support/Consulting (me@antonputra.com)\n\n🍿 Benchmarks: https://youtube.com/playlist?list=PLiMWaCMwGJXmcDLvMQeORJ-j_jayKaLVn&si=p-UOaVM_6_SFx52H\n\n👋 AWS is expensive - Infra Support Fund: https://buymeacoffee.com/antonputra\n\n▬▬▬▬▬ Experience & Location 💼 ▬▬▬▬▬\n►  I’m a Senior Software Engineer at Juniper Networks (13+ years of experience)\n►  Located in San Francisco Bay Area, CA (US citizen)\n\n▬▬▬▬▬▬ Connect with me 👋 ▬▬▬▬▬▬\n►  LinkedIn: https://www.linkedin.com/in/anton-putra\n►  Twitter/X: https://twitter.com/antonvputra\n►  Instagram: https://www.instagram.com/aputrabay\n►  GitHub: https://github.com/antonputra\n►  Email: me@antonputra.com\n\n▬▬▬▬▬▬▬ Timestamps ⏰  ▬▬▬▬▬▬▬\n0:00 Intro\n1:50 1st Test (Static)\n5:34 2nd Test (Postgres + Memcache)\n\n▬▬▬▬▬▬▬ Source Code 📚 ▬▬▬▬▬▬▬\n► Original Source Code: https://github.com/antonputra/tutorials/tree/236/lessons/236\n\n#python #nodejs #fastapi",
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/i3TcSeRO8gs?version=3",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Terraform GCP Tutorial (Getting Started with Google Cloud Platform)",
+      "url": "https://www.youtube.com/watch?v=t6TxyALn05Y",
+      "date": 1736241227,
+      "author": "Anton Putra",
+      "unread": true,
+      "content": "🔴 To support my channel, I'd like to offer Mentorship/On-the-Job Support/Consulting (me@antonputra.com)\n\n👋 [Playlist] Google Kubernetes Engine GKE Tutorial: https://www.youtube.com/playlist?list=PLiMWaCMwGJXlyWNHxoGCY7XLydiJa2atL\n\n🍿 Benchmarks: https://youtube.com/playlist?list=PLiMWaCMwGJXmcDLvMQeORJ-j_jayKaLVn&si=p-UOaVM_6_SFx52H\n\n👋 AWS is expensive - Infra Support Fund: https://buymeacoffee.com/antonputra\n\n▬▬▬▬▬ Experience & Location 💼 ▬▬▬▬▬\n►  I’m a Senior Software Engineer at Juniper Networks (13+ years of experience)\n►  Located in San Francisco Bay Area, CA (US citizen)\n\n▬▬▬▬▬▬ Connect with me 👋 ▬▬▬▬▬▬\n►  LinkedIn: https://www.linkedin.com/in/anton-putra\n►  Twitter/X: https://twitter.com/antonvputra\n►  Instagram: https://www.instagram.com/aputrabay\n►  GitHub: https://github.com/antonputra\n►  Email: me@antonputra.com\n\n▬▬▬▬▬▬▬ Timestamps ⏰  ▬▬▬▬▬▬▬\n0:00 Intro\n3:39 Why Should You Use Terraform?\n7:11 GCP VPC Network Overview\n8:52 Create a GCP Project\n15:14 Install Terraform\n16:47 Install cloud CLI\n19:40 Create GCP VPC using Terraform\n27:13 Create GCP Subnets using Terraform\n33:57 Create GCP Firewall using Terraform\n38:27 Import Terraform state\n44:09 Remove Object From Terraform state\n\n▬▬▬▬▬▬▬ Source Code 📚 ▬▬▬▬▬▬▬\n► Original Source Code: https://github.com/antonputra/tutorials/tree/235/lessons/235\n\n#GCP #GKE  #Terraform",
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/t6TxyALn05Y?version=3",
+      "enclosureMime": ""
+    },
     {
       "title": "PostgreSQL vs Amazon RDS: Performance & Price",
       "url": "https://www.youtube.com/watch?v=fFAJ_5WOzp8",
@@ -37,28 +83,6 @@
       "content": "FastAPI vs Go Performance Benchmark.\n\nPrevious benchmark (FastAPI vs GO): https://youtu.be/CdkAMceuoBg\n\n🔴 To support my channel, I'd like to offer Mentorship/On-the-Job Support/Consulting (me@antonputra.com)\n\n🍿 Benchmarks: https://youtube.com/playlist?list=PLiMWaCMwGJXmcDLvMQeORJ-j_jayKaLVn&si=p-UOaVM_6_SFx52H\n\n👋 AWS is expensive - Infra Support Fund: https://buymeacoffee.com/antonputra\n\n▬▬▬▬▬ Experience & Location 💼 ▬▬▬▬▬\n►  I’m a Senior Software Engineer at Juniper Networks (13+ years of experience)\n►  Located in San Francisco Bay Area, CA (US citizen)\n\n▬▬▬▬▬▬ Connect with me 👋 ▬▬▬▬▬▬\n►  LinkedIn: https://www.linkedin.com/in/anton-putra\n►  Twitter/X: https://twitter.com/antonvputra\n►  Instagram: https://www.instagram.com/aputrabay\n►  GitHub: https://github.com/antonputra\n►  Email: me@antonputra.com\n\n▬▬▬▬▬▬▬ Timestamps ⏰  ▬▬▬▬▬▬▬\n0:00 Intro\n2:09 1st Test (Static)\n4:57 2nd Test (Postgres + Memcache)\n\n▬▬▬▬▬▬▬ Source Code 📚 ▬▬▬▬▬▬▬\n► Original Source Code: https://github.com/antonputra/tutorials/tree/232/lessons/232\n\n► PR by Aloizio to improve FastAPI - https://github.com/antonputra/tutorials/pull/372\n► PR by Arnaud Durand to improve FastAPI - https://github.com/antonputra/tutorials/pull/373\n► PR by Uday to improve FastAPI - https://github.com/antonputra/tutorials/pull/375\n► PR by Evgenii to improve FastAPI - https://github.com/antonputra/tutorials/pull/376\n► PR by Viky to improve FastAPI - https://github.com/antonputra/tutorials/pull/377\n► PR by RealistikDash to improve FastAPI - https://github.com/antonputra/tutorials/pull/378\n► PR by Tj to improve FastAPI - https://github.com/antonputra/tutorials/pull/379\n► PR by Uday to improve FastAPI - https://github.com/antonputra/tutorials/pull/380\n► PR by Uday to improve FastAPI - https://github.com/antonputra/tutorials/pull/384\n► PR by Paweł to improve FastAPI - https://github.com/antonputra/tutorials/pull/386\n► PR by Uday to improve FastAPI - https://github.com/antonputra/tutorials/pull/387\n► PR by Evgenii to improve FastAPI - https://github.com/antonputra/tutorials/pull/388\n► PR by RealistikDash to improve FastAPI - https://github.com/antonputra/tutorials/pull/389\n► PR by Romain to improve FastAPI - https://github.com/antonputra/tutorials/pull/391\n\n\n#python #golang #fastapi",
       "flags": null,
       "enclosureUrl": "https://www.youtube.com/v/sxdpKG-6HSY?version=3",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Python (FastAPI) vs Go (Golang) Performance Benchmark",
-      "url": "https://www.youtube.com/watch?v=CdkAMceuoBg",
-      "date": 1734008401,
-      "author": "Anton Putra",
-      "unread": true,
-      "content": "FastAPI vs Go Performance Benchmark.\n\n🍿 FastAPI vs Go (round 2): https://youtu.be/sxdpKG-6HSY\n\n🔴 To support my channel, I'd like to offer Mentorship/On-the-Job Support/Consulting (me@antonputra.com)\n\n🍿 Benchmarks: https://youtube.com/playlist?list=PLiMWaCMwGJXmcDLvMQeORJ-j_jayKaLVn&si=p-UOaVM_6_SFx52H\n\n👋 AWS is expensive - Infra Support Fund: https://buymeacoffee.com/antonputra\n\n▬▬▬▬▬ Experience & Location 💼 ▬▬▬▬▬\n►  I’m a Senior Software Engineer at Juniper Networks (13+ years of experience)\n►  Located in San Francisco Bay Area, CA (US citizen)\n\n▬▬▬▬▬▬ Connect with me 👋 ▬▬▬▬▬▬\n►  LinkedIn: https://www.linkedin.com/in/anton-putra\n►  Twitter/X: https://twitter.com/antonvputra\n►  Instagram: https://www.instagram.com/aputrabay\n►  GitHub: https://github.com/antonputra\n►  Email: me@antonputra.com\n\n▬▬▬▬▬▬▬ Timestamps ⏰  ▬▬▬▬▬▬▬\n0:00 Intro\n2:15 1st Test\n5:29 2nd Test (Postgres + Memcache)\n\n▬▬▬▬▬▬▬ Source Code 📚 ▬▬▬▬▬▬▬\n► Original Source Code: https://github.com/antonputra/tutorials/tree/231/lessons/231\n\n► PR by Aloizio to improve FastAPI - https://github.com/antonputra/tutorials/pull/372\n► PR by Arnaud Durand to improve FastAPI - https://github.com/antonputra/tutorials/pull/373\n► PR by Uday to improve FastAPI - https://github.com/antonputra/tutorials/pull/375\n► PR by Evgenii to improve FastAPI - https://github.com/antonputra/tutorials/pull/376\n► PR by Viky to improve FastAPI - https://github.com/antonputra/tutorials/pull/377\n► PR by RealistikDash to improve FastAPI - https://github.com/antonputra/tutorials/pull/378\n► PR by Tj to improve FastAPI - https://github.com/antonputra/tutorials/pull/379\n► PR by Uday to improve FastAPI - https://github.com/antonputra/tutorials/pull/380\n► PR by Uday to improve FastAPI - https://github.com/antonputra/tutorials/pull/384\n► PR by Paweł to improve FastAPI - https://github.com/antonputra/tutorials/pull/386\n► PR by Uday to improve FastAPI - https://github.com/antonputra/tutorials/pull/387\n► PR by Evgenii to improve FastAPI - https://github.com/antonputra/tutorials/pull/388\n► PR by RealistikDash to improve FastAPI - https://github.com/antonputra/tutorials/pull/389\n\n\n#python #golang #fastapi",
-      "flags": null,
-      "enclosureUrl": "https://www.youtube.com/v/CdkAMceuoBg?version=3",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Elixir vs Go (Golang) Performance (Latency - Throughput - Saturation - Availability)",
-      "url": "https://www.youtube.com/watch?v=eDq9GbRPA0Q",
-      "date": 1733687208,
-      "author": "Anton Putra",
-      "unread": true,
-      "content": "🔴 To support my channel, I'd like to offer Mentorship/On-the-Job Support/Consulting (me@antonputra.com)\n\n🍿 Benchmarks: https://youtube.com/playlist?list=PLiMWaCMwGJXmcDLvMQeORJ-j_jayKaLVn&si=p-UOaVM_6_SFx52H\n\n👋 AWS is expensive - Infra Support Fund: https://buymeacoffee.com/antonputra\n\n▬▬▬▬▬ Experience & Location 💼 ▬▬▬▬▬\n►  I’m a Senior Software Engineer at Juniper Networks (13+ years of experience)\n►  Located in San Francisco Bay Area, CA (US citizen)\n\n▬▬▬▬▬▬ Connect with me 👋 ▬▬▬▬▬▬\n►  LinkedIn: https://www.linkedin.com/in/anton-putra\n►  Twitter/X: https://twitter.com/antonvputra\n►  Instagram: https://www.instagram.com/aputrabay\n►  GitHub: https://github.com/antonputra\n►  Email: me@antonputra.com\n\n▬▬▬▬▬▬▬ Timestamps ⏰  ▬▬▬▬▬▬▬\n0:00 Intro\n2:06 Test Design\n3:30 1st Test\n7:54 2nd Test (Postgres)\n\n▬▬▬▬▬▬▬ Source Code 📚 ▬▬▬▬▬▬▬\n► Original Source Code: https://github.com/antonputra/tutorials/tree/230/lessons/230\n► PR by Yordis Prieto - https://github.com/antonputra/tutorials/pull/345\n\n#elixir #golang #devops",
-      "flags": null,
-      "enclosureUrl": "https://www.youtube.com/v/eDq9GbRPA0Q?version=3",
       "enclosureMime": ""
     }
   ]

@@ -4,8 +4,120 @@
   "displayTitle": "News - Daily Brief",
   "url": "https://access.acast.com/rss/theeconomistmorningbriefing/default",
   "feedLink": "https://www.economist.com/audio/podcasts/the-world-in-brief",
-  "is_query": false,
+  "isQuery": false,
+  "isEmpty": false,
+  "isHidden": false,
   "items": [
+    {
+      "title": "Emerging ceasefire deal in Gaza; dollar hits two-year high, and more",
+      "url": "https://shows.acast.com/theeconomistmorningbriefing/episodes/emerging-ceasefire-deal-in-gaza-dollar-hits-two-year-high",
+      "date": 1736830116,
+      "author": "",
+      "unread": true,
+      "content": "<ituneshack>President Joe Biden said that a ceasefire deal in Gaza was on “the brink” of being finalised.</ituneshack>",
+      "flags": null,
+      "enclosureUrl": "https://sphinx.acast.com/p/acast/s/theeconomistmorningbriefing/e/6785eca2dabee83c73098bb5/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJpbiI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzY4MzAwMDc4MzgtODcxNWE5ZjEtYzcwMy00MTQ1LTljODAtN2I3YWVhMTIyYWExLXB1YmxpY0ludHJvLm1wMyIsIm91dCI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzY4MzAwMTA5NTEtMTAyODE1ZWItNTkzZi00ZmE3LWFjOTktOWRiNWQ5OTQyZDBjLXB1YmxpY091dHJvLm1wMyIsInN0YXR1cyI6InB1YmxpYyJ9&sig=TSNK9wnMG21aMmShg2Mk4MTfStGLpQuWYTNoUeCWkas",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Firefighters contain one of LA’s blazes; Nippon Steel gets more time, and more",
+      "url": "https://shows.acast.com/theeconomistmorningbriefing/episodes/firefighters-contain-one-of-las-blazes-nippon-steel-gets",
+      "date": 1736741417,
+      "author": "",
+      "unread": true,
+      "content": "<ituneshack>One of the four fires burning in Los Angeles County has been contained, according to California’s fire department.</ituneshack>",
+      "flags": null,
+      "enclosureUrl": "https://sphinx.acast.com/p/acast/s/theeconomistmorningbriefing/e/678492287ba57787eb847503/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJpbiI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzY3NDEyMTcwMTItY2I3NzdiYTgtZWMwMS00MGM0LTgzNTgtYmVlOTFkMzc0MzA3LXB1YmxpY0ludHJvLm1wMyIsIm91dCI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzY3NDEyMTk3MzktZWQ2YmY1YzYtZmNkZC00MjA3LTg1OWQtOTU0OGQxOWE3M2QxLXB1YmxpY091dHJvLm1wMyIsInN0YXR1cyI6InB1YmxpYyJ9&sig=4v6hLjI2Mqf2s5h7YcczU33AKjowONMd9dPVHoHEW08",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Ukraine captures North Korean soldiers; LA’s blaze changes course, and more",
+      "url": "https://shows.acast.com/theeconomistmorningbriefing/episodes/ukraine-captures-north-korean-soldiers-las-blaze-changes-cou",
+      "date": 1736656880,
+      "author": "",
+      "unread": true,
+      "content": "<ituneshack>The black boxes on the Jeju Air flight that crashed in South Korea on December 29th stopped recording in the crucial final four minutes</ituneshack>",
+      "flags": null,
+      "enclosureUrl": "https://sphinx.acast.com/p/acast/s/theeconomistmorningbriefing/e/6782fb22793854daae68bde5/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJpbiI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzY2MzcxMzc3MDMtYWJhOGUzNmMtYjk4Yi00OWRmLWI1YTQtN2UyNmE5OTcxM2FiLXB1YmxpY0ludHJvLm1wMyIsIm91dCI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzY2MzcxNDM2ODctNDA2MTJhM2MtOGQxNS00MzY4LTk0YjktMDQzMzVlYjgyYmU4LXB1YmxpY091dHJvLm1wMyIsInN0YXR1cyI6InB1YmxpYyJ9&sig=72-zG71XjsmvaiTmnRdDJmDq8QSBWO4UGruFw-cAJpw",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Trump sentenced in hush-money case; America beats jobs forecast, and more",
+      "url": "https://shows.acast.com/theeconomistmorningbriefing/episodes/trump-sentenced-in-hush-money-case-america-beats-jobs-foreca",
+      "date": 1736569962,
+      "author": "",
+      "unread": true,
+      "content": "<ituneshack>During a hearing on Friday America’s Supreme Court justices seemed inclined to uphold a law requiring TikTok to be sold by ByteDance, its Chinese owner, or to shut down by January 19th</ituneshack>",
+      "flags": null,
+      "enclosureUrl": "https://sphinx.acast.com/p/acast/s/theeconomistmorningbriefing/e/6781d384ec40818e0b883e13/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJpbiI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzY1NjE0NDQ2NjktZWM1NzFjYzctOTdmMS00YTlhLTlmOGEtNjg4ZDE0ZjI4ZTRlLXB1YmxpY0ludHJvLm1wMyIsIm91dCI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzY1NjE0NTg2MTUtMGY2N2RlNzAtMTQ2OC00NzAwLTg0MDctYWU5MmM3MWE2ZWE3LXB1YmxpY091dHJvLm1wMyIsInN0YXR1cyI6InB1YmxpYyJ9&sig=phdIjFr59nWFCWX5DgpnUtgULnC9UB9Du2SI86_cldI",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Venezuela’s opposition leader briefly detained; LA death toll “will rise”, and more",
+      "url": "https://shows.acast.com/theeconomistmorningbriefing/episodes/venezuelas-opposition-leader-briefly-detained-la-death-toll-",
+      "date": 1736485049,
+      "author": "",
+      "unread": true,
+      "content": "<ituneshack>María Corina Machado, Venezuela’s opposition leader, was briefly detained after protesting against Nicolás Maduro’s planned inauguration, her party said.</ituneshack>",
+      "flags": null,
+      "enclosureUrl": "https://sphinx.acast.com/p/acast/s/theeconomistmorningbriefing/e/6780a8b78993e7efa2f4a3a6/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJpbiI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzY0ODQ5MzUyNzUtOTUyOGEyY2YtM2RmMy00ODQzLTljMWEtZGE5NjEzNTE4NzkxLXB1YmxpY0ludHJvLm1wMyIsIm91dCI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzY0ODQ5MzkyNTctYmE0ODA5NGMtMmMxZC00Mzg5LWEzOTQtYWE5YWVkOGMzZjAzLXB1YmxpY091dHJvLm1wMyIsInN0YXR1cyI6InB1YmxpYyJ9&sig=Ok2TAMy3FmOsMaSa7GAkE3asLcNVzvZWmKkHp1JlI3E",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Two dead in Los Angeles fires; Trump’s designs on Greenland, and more",
+      "url": "https://shows.acast.com/theeconomistmorningbriefing/episodes/two-dead-in-los-angeles-fires-trumps-designs-on-greenland",
+      "date": 1736395500,
+      "author": "",
+      "unread": true,
+      "content": "<ituneshack>The fire chief of Los Angeles County said that two people had been killed and more than 1,000 buildings destroyed by wildfires.</ituneshack>",
+      "flags": null,
+      "enclosureUrl": "https://sphinx.acast.com/p/acast/s/theeconomistmorningbriefing/e/677f4aea3888e2bd7e58734b/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJpbiI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzYzOTU0MzQ0NzItYmM0NjE2YTAtMzU3ZS00MTM1LWE5ZWEtZDgwOWNiYjRjZTliLXB1YmxpY0ludHJvLm1wMyIsIm91dCI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzYzOTU0MzcyMTktNTM4ZDk3NDQtNzE1OC00MzhmLWE3NWMtOTMxODVkZTlhOTc5LXB1YmxpY091dHJvLm1wMyIsInN0YXR1cyI6InB1YmxpYyJ9&sig=4uXTypka2p1ioYJ1pOa0UEWGazj5YhENNkTOy3Upb6U",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Meta scraps fact-checking system; deadly earthquake strikes Tibet, and more",
+      "url": "https://shows.acast.com/theeconomistmorningbriefing/episodes/meta-scraps-fact-checking-system-deadly-earthquake-strikes",
+      "date": 1736310108,
+      "author": "",
+      "unread": true,
+      "content": "<ituneshack>Meta, a social-media giant, will abandon its fact-checking programme in favour of crowdsourced checks.</ituneshack>",
+      "flags": null,
+      "enclosureUrl": "https://sphinx.acast.com/p/acast/s/theeconomistmorningbriefing/e/677dfd5b1f00b28b23ddc7ac/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJpbiI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzYzMTAwMjA3ODEtZGMyNTE1YjUtMWJkYS00YmRhLTlmYzktY2EyNmI4YzU3MDRjLXB1YmxpY0ludHJvLm1wMyIsIm91dCI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzYzMTAwMjM3ODktMDkzMTUxNTktM2QwYi00YTdlLWEzZGEtODdjYTgyYTk0M2M2LXB1YmxpY091dHJvLm1wMyIsInN0YXR1cyI6InB1YmxpYyJ9&sig=BG-I7EXPOuXwEt3jBr9D3zq_cwridbJyjo7of0PIZAY",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Trudeau resigns; steel firms file lawsuit against Biden, and more",
+      "url": "https://shows.acast.com/theeconomistmorningbriefing/episodes/trudeau-resigns-steel-firms-file-lawsuit-against-biden",
+      "date": 1736224515,
+      "author": "",
+      "unread": true,
+      "content": "<ituneshack>Justin Trudeau said he would resign as Canada’s prime minister, and announced a contest to replace him as leader of the Liberal Party.</ituneshack>",
+      "flags": null,
+      "enclosureUrl": "https://sphinx.acast.com/p/acast/s/theeconomistmorningbriefing/e/677caf03172a299f31e2ceea/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJpbiI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzYyMjQwMjI4NDEtYTdmNGU2YjItNWU3OC00ZmIwLWEzNWUtZjQxM2I3MDdhYzUwLXB1YmxpY0ludHJvLm1wMyIsIm91dCI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzYyMjQwMjU5MzQtNjNlNDI3ZDEtNjc2YS00NjZiLWFjYjgtYjNiMGM0YmQ3ODYwLXB1YmxpY091dHJvLm1wMyIsInN0YXR1cyI6InB1YmxpYyJ9&sig=Mr_kDEP48TOs3Yo3jrlQQ8n3yqdhiB8pnUZUh2-sqT8",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Austria’s far right eyes government; America plans $8bn arms sale to Israel, and more",
+      "url": "https://shows.acast.com/theeconomistmorningbriefing/episodes/austrias-far-right-eyes-government-america-plans-8bn-arms",
+      "date": 1736138724,
+      "author": "",
+      "unread": true,
+      "content": "<ituneshack>Austria’s far-right Freedom Party inched closer to power.</ituneshack>",
+      "flags": null,
+      "enclosureUrl": "https://sphinx.acast.com/p/acast/s/theeconomistmorningbriefing/e/677b5fe24f8140cb1f84c08e/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJpbiI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzYxMzg2NDE2MDAtYjAxOWM4NmEtMDE4Ni00NjQxLTkxNTUtNDNiNzkxOTNkNjg3LXB1YmxpY0ludHJvLm1wMyIsIm91dCI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzYxMzg2NDQ0ODctZDdjNWY3MjItNTQ3YS00Y2NmLTlmZmUtYzA5NDEzZjA5MzNhLXB1YmxpY091dHJvLm1wMyIsInN0YXR1cyI6InB1YmxpYyJ9&sig=MqJz9tcbGObICmsSKvwLm8XCEYNhe7Pcr4eAWBAxZR8",
+      "enclosureMime": ""
+    },
+    {
+      "title": "Russia shoots down ATACMS; America plans $8bn arms sale to Israel, and more",
+      "url": "https://shows.acast.com/theeconomistmorningbriefing/episodes/russia-shoots-down-atacms-america-plans-8bn-arms-sale-to-isr",
+      "date": 1736050938,
+      "author": "",
+      "unread": true,
+      "content": "<ituneshack>Microsoft announced plans to spend $80bn on “AI-enabled data centres” in the current fiscal year</ituneshack>",
+      "flags": null,
+      "enclosureUrl": "https://sphinx.acast.com/p/acast/s/theeconomistmorningbriefing/e/6779c3412eb550d3c6a9b568/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJpbiI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzYwMzMwMDA1MzAtYzFlZjQyMjItMDY2Mi00MWMxLWIwYzAtZTU2M2E5Y2ZjNDMyLXB1YmxpY0ludHJvLm1wMyIsIm91dCI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzYwMzMwMTY3MzUtNjAxZWU4YWQtOTRkMi00MGFlLTg4Y2MtOTE2NWZhYWRjZjM5LXB1YmxpY091dHJvLm1wMyIsInN0YXR1cyI6InB1YmxpYyJ9&sig=1V2meRP53xwMJIHElIQhMM7lmjIPs78bZ0sEuiD3JWQ",
+      "enclosureMime": ""
+    },
     {
       "title": "Johnson re-elected as House speaker; Trump to be sentenced, and more",
       "url": "https://shows.acast.com/theeconomistmorningbriefing/episodes/johnson-re-elected-as-house-speaker-trump-to-be-sentenced-an",
@@ -191,105 +303,6 @@
       "content": "<ituneshack>Britain and America reported having “contact” with Hayat Tahrir al-Sham, one of the groups that toppled Bashar al-Assad in Syria, though both consider it a terrorist organisation.</ituneshack>",
       "flags": null,
       "enclosureUrl": "https://sphinx.acast.com/p/acast/s/theeconomistmorningbriefing/e/675fa8ba27740406d8f3c71f/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJpbiI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzQzMjIyNDEyMTYtNjQ1Zjg0ZTEtMWQ3Ni00ZDI2LWI5NzktZDdlZTEwNTdmZDdjLXB1YmxpY0ludHJvLm1wMyIsIm91dCI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzQzMjIyNDYwODAtNDE1ZDA2ZjQtM2U2MS00NmIyLTllOWEtYzE2ZjM5MTk0M2M2LXB1YmxpY091dHJvLm1wMyIsInN0YXR1cyI6InB1YmxpYyJ9&sig=vuDywnKc3Aa0Eye4aha2zx5xw1N-aVqz1WesP1aHIbk",
-      "enclosureMime": ""
-    },
-    {
-      "title": "America in “direct contact” with Syria’s new rulers; South Korea’s Yoon impeached, and more",
-      "url": "https://shows.acast.com/theeconomistmorningbriefing/episodes/america-in-direct-contact-with-syrias-new-rulers-south-korea",
-      "date": 1734233568,
-      "author": "",
-      "unread": true,
-      "content": "<ituneshack>TikTok failed to win a temporary reprieve from a law requiring it to divest in America</ituneshack>",
-      "flags": null,
-      "enclosureUrl": "https://sphinx.acast.com/p/acast/s/theeconomistmorningbriefing/e/675e4b80a89833ab77535ddc/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJpbiI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzQyMzMwOTI3MzktNjQxYjhjNjYtMGI1Ny00ZGFiLWE1MmUtNGZlNjFlNzZiYmRlLXB1YmxpY0ludHJvLm1wMyIsIm91dCI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzQyMzI4NzAyNDYtY2NhMGViN2MtOTExMC00Y2QyLWFhMTQtNzU0YjQ0ZjFjNDczLXB1YmxpY091dHJvLm1wMyIsInN0YXR1cyI6InB1YmxpYyJ9&sig=xfbNeurk1AzIqGBsbMW2yc6hnnvku3_jzhOEDHYzg_s",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Rallies in Syria; France’s new prime minister, and more",
-      "url": "https://shows.acast.com/theeconomistmorningbriefing/episodes/rallies-in-syria-frances-new-prime-minister-and-more",
-      "date": 1734158607,
-      "author": "",
-      "unread": true,
-      "content": "<ituneshack>Sam Altman, OpenAI’s boss, will reportedly donate $1m to Donald Trump’s inauguration events</ituneshack>",
-      "flags": null,
-      "enclosureUrl": "https://sphinx.acast.com/p/acast/s/theeconomistmorningbriefing/e/675d25c74e4fa96770aa3451/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJpbiI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzQxNTc2NDQ3NDQtM2JjYzFlMDgtMDJiMS00YjY2LWFiNWItMzFlMTA2MTMwMTU0LXB1YmxpY0ludHJvLm1wMyIsIm91dCI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzQxNTc2NDgyNTYtN2M0ZDY0OWQtZGMzMi00NzRmLThhYzYtYWUzYWVkZmI4MjNlLXB1YmxpY091dHJvLm1wMyIsInN0YXR1cyI6InB1YmxpYyJ9&sig=qUOymsjI9nWNGw3HYmHLJNnkqlUHjNNVEhuu6Ax7ZgU",
-      "enclosureMime": ""
-    },
-    {
-      "title": "The ECB cuts rates; Biden grants record pardons, and more",
-      "url": "https://shows.acast.com/theeconomistmorningbriefing/episodes/the-ecb-cuts-rates-biden-grants-record-pardons",
-      "date": 1734064708,
-      "author": "",
-      "unread": true,
-      "content": "<ituneshack>The European Central Bank cut interest rates by a quarter of a percentage point, from 3.25% to 3%.</ituneshack>",
-      "flags": null,
-      "enclosureUrl": "https://sphinx.acast.com/p/acast/s/theeconomistmorningbriefing/e/675bba4365cf55f4475737d9/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJpbiI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzQwNjQzODA4MjgtNjNlNThiOGQtMTdhYS00NGI0LTg0YWEtNTBkMDMyZjFhZGViLXB1YmxpY0ludHJvLm1wMyIsIm91dCI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzQwNjQzODUzOTYtNzkwZGQ0MTAtNzljYy00MTBlLTliZmYtZWQ3YmI0MGJkMjQzLXB1YmxpY091dHJvLm1wMyIsInN0YXR1cyI6InB1YmxpYyJ9&sig=iSkP6jStB9IgovpA0GOIUKMsvVGFVOV-XDVG30LisOQ",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Syrian rebel groups vow revenge; ExxonMobil expands production, and more",
-      "url": "https://shows.acast.com/theeconomistmorningbriefing/episodes/syrian-rebel-groups-vow-revenge-exxonmobil-expands",
-      "date": 1733978876,
-      "author": "",
-      "unread": true,
-      "content": "<ituneshack>A leader of Hayat Tahrir al-Sham, the Islamist group that led the offensive that toppled Bashar al-Assad in Syria, vowed to pursue those responsible for torture and killings under the dictatorship, ruling out any possibility of pardons.</ituneshack>",
-      "flags": null,
-      "enclosureUrl": "https://sphinx.acast.com/p/acast/s/theeconomistmorningbriefing/e/675a6afb397042d413cd05c2/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJpbiI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzM5Nzg2OTYxNDItZjVhOGI3NmYtNjFlOS00MjEwLWFiODQtZDM4NDVmYzUyYmZhLXB1YmxpY0ludHJvLm1wMyIsIm91dCI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzM5Nzg3MDE4NjUtYmQ1NWI3NjAtNTYwYi00YmRkLWFkMjgtMDRjZDdmNWZhMDZlLXB1YmxpY091dHJvLm1wMyIsInN0YXR1cyI6InB1YmxpYyJ9&sig=JCkVxQ6PdwoGyHWtpuS4_SVakeGhnhgmzKyZizvUAFE",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Syria’s interim prime minister; Israel’s buffer zone in Syria, and more",
-      "url": "https://shows.acast.com/theeconomistmorningbriefing/episodes/syrias-interim-prime-minister-israels-buffer-zone-in-syria-a",
-      "date": 1733891587,
-      "author": "",
-      "unread": true,
-      "content": "<ituneshack>Hayat Tahrir al-Sham, the Islamist group that toppled Bashar al-Assad in Syria, appointed Mohammed al-Bashir as caretaker prime minister.</ituneshack>",
-      "flags": null,
-      "enclosureUrl": "https://sphinx.acast.com/p/acast/s/theeconomistmorningbriefing/e/67591603c705e44179a6612d/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJpbiI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzM4OTE1MzUwNTctY2QxYjY0M2QtOTU4ZC00ODc2LWIzZGQtNmM2YTAyZDNhMTRjLXB1YmxpY0ludHJvLm1wMyIsIm91dCI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzM4OTE1MzkzNjYtYTEwYTA1Y2ItMjQyNC00YzcyLTkwZDQtZmFiMDgzYmRlNTM3LXB1YmxpY091dHJvLm1wMyIsInN0YXR1cyI6InB1YmxpYyJ9&sig=AG0vftrD35lRnC-6aaG6E8p8EfHVsn19ywe0OSlkAcw",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Syria plans for new government; arrest in health-care CEO case, and more",
-      "url": "https://shows.acast.com/theeconomistmorningbriefing/episodes/syria-plans-for-new-government-arrest-in-health-care-ceo-cas",
-      "date": 1733806938,
-      "author": "",
-      "unread": true,
-      "content": "<ituneshack>Hayat Tahrir al-Sham, the group that spearheaded the overthrow of Bashar al-Assad in Syria, announced plans to form a new government, pledging to restore order.</ituneshack>",
-      "flags": null,
-      "enclosureUrl": "https://sphinx.acast.com/p/acast/s/theeconomistmorningbriefing/e/6757cb5ad59c6635eee5bd72/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJpbiI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzM4MDY4MjQ5NDAtZjBjOGU0NDQtNzIzYy00ZmM4LWE5OTgtNzBhYmU4MGNkYWFmLXB1YmxpY0ludHJvLm1wMyIsIm91dCI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzM4MDY4Mjg5MTMtODdmNjZiMWQtNTIxZS00YzdiLWI3NDMtNjFjYTU0NjZhMjJmLXB1YmxpY091dHJvLm1wMyIsInN0YXR1cyI6InB1YmxpYyJ9&sig=YF_FG7EEnhKJM1KbyJKvGd8ibUNsqnpLHRx3Dr6TeHo",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Syria’s dictator flees to Russia; South Korea opens investigation into its president, and more",
-      "url": "https://shows.acast.com/theeconomistmorningbriefing/episodes/syrias-dictator-flees-to-russia-south-korea-investigation",
-      "date": 1733719227,
-      "author": "",
-      "unread": true,
-      "content": "<ituneshack>Abu Muhammad al-Jolani, a rebel leader, visited Damascus after anti-government forces took control of the Syrian capital.</ituneshack>",
-      "flags": null,
-      "enclosureUrl": "https://sphinx.acast.com/p/acast/s/theeconomistmorningbriefing/e/675674ba99fbf63ceda90038/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJpbiI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzM3MTg5NzI3ODUtNDRiYjQ2NWItYWU0NS00ODNjLTliMTQtNjE3NTBjZGIxNTk1LXB1YmxpY0ludHJvLm1wMyIsIm91dCI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzM3MTg5NzcwMTQtMGM5ODU4ZTYtZGYzOS00NzMzLThhZDgtYjA3ZTRlZDljMDljLXB1YmxpY091dHJvLm1wMyIsInN0YXR1cyI6InB1YmxpYyJ9&sig=nl5N48u7tfShFOpRk7gI7xIaW-0tbGiQpfllZ1wTonw",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Syria’s dictator flees to Russia; South Korea opens investigation into its president, and more",
-      "url": "https://shows.acast.com/theeconomistmorningbriefing/episodes/syrias-dictator-flees-to-russia-south-korea-opens-investigat",
-      "date": 1733700736,
-      "author": "",
-      "unread": true,
-      "content": "<ituneshack>Syria’s dictator flees to Russia; South Korea opens investigation into its president, and more</ituneshack>",
-      "flags": null,
-      "enclosureUrl": "https://sphinx.acast.com/p/acast/s/theeconomistmorningbriefing/e/67562c812dd88df1329e63c7/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJzdGF0dXMiOiJwdWJsaWMifQ==&sig=W7hse2totiiymsjmn76iIp2HOaXnzWMn7bql-FRDWTk",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Rebels declare Damascus “free”; South Korea arrests former defence minister, and more",
-      "url": "https://shows.acast.com/theeconomistmorningbriefing/episodes/rebels-declare-damascus-free-south-korea-arrests-former-defe",
-      "date": 1733634536,
-      "author": "",
-      "unread": true,
-      "content": "<ituneshack>Ukraine’s president, Volodymyr Zelensky, told Donald Trump that any settlement with Russia must be “just” during three-way talks with Emmanuel Macron, France’s president</ituneshack>",
-      "flags": null,
-      "enclosureUrl": "https://sphinx.acast.com/p/acast/s/theeconomistmorningbriefing/e/6755233a2dd88df13232b3c7/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJpbiI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzM2MzI3NTc5ODctZjUwYmRmMWUtMzQ0ZS00ODY5LThmZDctYWJiYjdhMzA4YWM4LXB1YmxpY0ludHJvLm1wMyIsIm91dCI6Imh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMucGlwcGEuaW8vc2hvd3MvNjJlMjg2YTkzNGQ0ZDkwNmUzODc0MjRiLzE3MzM2MzI3Njk0NTYtNDIwNjI1ZjUtYzM3Ni00YzEyLWI4ZDUtMjQ4MmZjMGExYWE2LXB1YmxpY091dHJvLm1wMyIsInN0YXR1cyI6InB1YmxpYyJ9&sig=pDUIj6E9NykM7AgJZpdhftA-KVKn__8Mi4OBB7CmA8o",
       "enclosureMime": ""
     }
   ]

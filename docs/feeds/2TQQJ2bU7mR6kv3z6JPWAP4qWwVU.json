@@ -4,7 +4,9 @@
   "displayTitle": "Dev - Zig News",
   "url": "https://zig.news/rss",
   "feedLink": "https://zig.news/",
-  "is_query": false,
+  "isQuery": false,
+  "isEmpty": false,
+  "isHidden": false,
   "items": [
     {
       "title": "Convert decimal odds to probabilities with Zig",

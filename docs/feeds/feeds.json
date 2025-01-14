@@ -9,7 +9,7 @@
       "hidden": false,
       "is_query": true,
       "tags": [],
-      "num_items": 449
+      "num_items": 392
     },
     {
       "id": "31E7iA",
@@ -20,7 +20,7 @@
       "hidden": false,
       "is_query": true,
       "tags": [],
-      "num_items": 61
+      "num_items": 124
     },
     {
       "id": "PyU9",
@@ -31,7 +31,7 @@
       "hidden": false,
       "is_query": true,
       "tags": [],
-      "num_items": 212
+      "num_items": 150
     },
     {
       "id": "3A81sm",
@@ -42,7 +42,7 @@
       "hidden": false,
       "is_query": true,
       "tags": [],
-      "num_items": 107
+      "num_items": 178
     },
     {
       "id": "43nutaBRYF",
@@ -53,7 +53,7 @@
       "hidden": false,
       "is_query": true,
       "tags": [],
-      "num_items": 103
+      "num_items": 107
     },
     {
       "id": "fZWkWx2e",
@@ -64,7 +64,7 @@
       "hidden": false,
       "is_query": true,
       "tags": [],
-      "num_items": 38
+      "num_items": 36
     },
     {
       "id": "6wzEadYDsRnmWN6sy4",
@@ -75,7 +75,7 @@
       "hidden": false,
       "is_query": true,
       "tags": [],
-      "num_items": 5
+      "num_items": 3
     },
     {
       "id": "368La1qZAv727wqsvC8sbLBZGryhH8SVwbTpqXaweRcuutW1gXksMDmNaCNQmszjC3ZZGEBhaSSEnnHmMXtmcZ71",
@@ -88,7 +88,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 26
+      "num_items": 27
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppnEufZaA96bvPyKqWS5DRkgXpf9zJK8",
@@ -101,7 +101,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 420
+      "num_items": 400
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppXXAQCe8LGUnBWHDnF4s2jjN39bSf9J",
@@ -114,7 +114,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 909
+      "num_items": 1108
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppcxvGLUpev4ECsNqF1CwVLDFzmk9jft",
@@ -127,7 +127,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 613
+      "num_items": 640
     },
     {
       "id": "46aP2QbqUqBrWfYqAibo8xS24qkvbDNgWZV4Z6rf2nuJ3cBJ971pKb6XZkWhnDxr957c82fPU4Cg4j63MSkVSUXrPi55",
@@ -140,7 +140,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 454
+      "num_items": 476
     },
     {
       "id": "368La1qZAv72idE55Whuffkk2TBtHuSndX6iNywdUkLBDxxx55cLvowsw5Rj5VbHUHjCYUBR5tHfX6BAYFQZS3af",
@@ -153,7 +153,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 452
+      "num_items": 472
     },
     {
       "id": "VMK7D8tQvwsLtnxKHzNdF9c4Yhtuqm",
@@ -166,7 +166,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 127
+      "num_items": 138
     },
     {
       "id": "82kPqomaPXmNomrHzpZWfbkQxiiNUBTAYKxHR5qZBEpf",
@@ -179,7 +179,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 79
+      "num_items": 75
     },
     {
       "id": "4W3i2hyrJTVfcLq85rWgduVQ3y3BMzrSD4pVUCMqPpFhmXWpqxQ",
@@ -192,7 +192,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 631
+      "num_items": 682
     },
     {
       "id": "CQdwDV8xyajeX5DKoSYfBQhN4kkXBaTmXPYgJyANUWHyjCo5BpHUjy5gJhgngST",
@@ -205,7 +205,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 7
+      "num_items": 4
     },
     {
       "id": "6gUbcJtcgqw1wQBapm8qwcP58MMnPvoDmUVDva7XtKUuLQTDpuyDxDo1yehnZDohDQ6a5p",
@@ -218,7 +218,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 13
+      "num_items": 12
     },
     {
       "id": "F7pXcmPnWkLEHkvQBb3zXkgdiHy14GQcP2RQp",
@@ -244,7 +244,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 6
+      "num_items": 3
     },
     {
       "id": "82kPqoBYiySD8ih7nAXkFuDhjyLjtPi8jr6gSpxV4VMW",
@@ -283,7 +283,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 257
+      "num_items": 278
     },
     {
       "id": "KWcVEiwEzuiGGuVCeJEYXr8oePYYMmThA64XKX4pLSjxAVFybiMNe4wuzLW34BL34N8bMRzHn8nKtoqJMB",
@@ -296,7 +296,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 11
+      "num_items": 49
     },
     {
       "id": "2Qhhdda6Qnbf8RCfUPd4nB9sSt2WDQfEpF7H3gCnZZ4AsfbGMy3RmrCa6gigGY6TkbrrJn4wmHXXNYcVj1bK",
@@ -309,7 +309,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 262
+      "num_items": 275
     },
     {
       "id": "7DceLgR4szFyHjpUotrBgPp9fEDdwmRmyXGW53xLQnbPAifjKVFPj1dyKJ6sHa1bC6AC9QFBhYUJLmJ6GyX57",
@@ -322,7 +322,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 259
+      "num_items": 276
     },
     {
       "id": "46aP2QbqUqBrWfYqAibo8xS24qkvbDNgWZUrxgZ6XNcyUn6fFxkgS1aSWJWwPwaqFp34erWr8NxVvd6jro8uiaPvDUjw",
@@ -335,7 +335,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 260
+      "num_items": 274
     },
     {
       "id": "EfcLDDAkyqguXw9Vbtcae7fRhxCsY1chPUNLpwbK9oHS42b4dGEMeGvA2hWHB2j3LFSAo7qhibLNgPBcA5djbGp95Jk5T",
@@ -348,7 +348,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 272
+      "num_items": 276
     },
     {
       "id": "BRWJ2YmdUFoz1jUcCg5P21RYgb4CmSRDHkju2uMS7GB1447d",
@@ -361,7 +361,20 @@
       "tags": [
         "dev"
       ],
-      "num_items": 4
+      "num_items": 2
+    },
+    {
+      "id": "3MxaK2JpEReqG7uUTfHxTELDZk2vRYBtH7tbJ586soFdUhL",
+      "title": "Coding Horror",
+      "display_title": "Dev - Coding Horror",
+      "url": "https://blog.codinghorror.com/rss/",
+      "feedlink": "https://blog.codinghorror.com/",
+      "hidden": false,
+      "is_query": false,
+      "tags": [
+        "dev"
+      ],
+      "num_items": 1
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppqEFxmGRGmiRESeGsJuLMU6AM6VCzYY",
@@ -387,7 +400,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 4
+      "num_items": 2
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4Jppcztx1sqULsdY4zpYkgotFx6rQ5jWnr",
@@ -413,7 +426,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 5
+      "num_items": 7
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppfjDj3hX9ZYrNpKpipZVWeqMDxvr3XC",
@@ -421,6 +434,19 @@
       "display_title": "Dev - Let's get Rusty",
       "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCSp-OaMpsO8K0KkOqyBl7_w",
       "feedlink": "https://www.youtube.com/channel/UCSp-OaMpsO8K0KkOqyBl7_w",
+      "hidden": false,
+      "is_query": false,
+      "tags": [
+        "dev"
+      ],
+      "num_items": 1
+    },
+    {
+      "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4Jppo1oP7RTFaog67znf4uowDtM47GKxFS",
+      "title": "Logan Smith",
+      "display_title": "Dev - Logan Smith",
+      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCnHX5FjwtQpxkCGziuh4NJA",
+      "feedlink": "https://www.youtube.com/channel/UCnHX5FjwtQpxkCGziuh4NJA",
       "hidden": false,
       "is_query": false,
       "tags": [
@@ -439,7 +465,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 4
+      "num_items": 3
     },
     {
       "id": "AXJnNj1p7gNGHeShbM5NH2qrEU51AXyHm",
@@ -465,7 +491,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 2
+      "num_items": 3
     },
     {
       "id": "sML2JBPsdAyCMAUuDAb4rMUzpB9GRgBrSJo6frY3aqUzYMyY1KqfA5MTDk9Bkxae",
@@ -491,7 +517,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 1
+      "num_items": 2
     },
     {
       "id": "6C2W1azD1rBsV4qJANNfruBrvGgdqLWrPGWtk6Mp1WgfCNcfvBZHFQw",
@@ -504,7 +530,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 1
+      "num_items": 3
     },
     {
       "id": "2bP4pJr4wVimh6yine63HqNeafoyheTFz1gqCrQ4h7Z",
@@ -517,20 +543,20 @@
       "tags": [
         "dev"
       ],
-      "num_items": 7
+      "num_items": 8
     },
     {
       "id": "Y2iXpRRkNSnxtBLmMYZFrnqj4bsEj1XB8agfaptmWsYpB",
-      "title": "vnotes",
+      "title": "vladkens.cc",
       "display_title": "Dev - vladkens",
       "url": "https://vnotes.pages.dev/atom.xml",
-      "feedlink": "https://vnotes.pages.dev/",
+      "feedlink": "https://vladkens.cc/",
       "hidden": false,
       "is_query": false,
       "tags": [
         "dev"
       ],
-      "num_items": 1
+      "num_items": 4
     },
     {
       "id": "2BCfkBRHmbhytY8nm9spZ4inpFkqHBsLKs6LqzTxwmhuxSvfYzGLsd",
@@ -582,7 +608,7 @@
       "tags": [
         "podcast"
       ],
-      "num_items": 2
+      "num_items": 1
     },
     {
       "id": "3MxaK2JpEReqHsHNayp5wegcsbA3Uqs1xb7War6KS5tG443",
@@ -608,7 +634,7 @@
       "tags": [
         "podcast"
       ],
-      "num_items": 12
+      "num_items": 13
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4Jppfgmh6LcqyabuJ1NAzZy3UBF1JfvUYg",
@@ -634,7 +660,7 @@
       "tags": [
         "podcast"
       ],
-      "num_items": 43
+      "num_items": 46
     },
     {
       "id": "x7L2VSNEiyAFPo5H6bnPWAveyi4npegYaNeyr78Gjr6vQqtjp4cKiAbg9y6hcgadVzEqXA589jFXfyD",
@@ -647,7 +673,7 @@
       "tags": [
         "podcast"
       ],
-      "num_items": 9
+      "num_items": 10
     },
     {
       "id": "7DceLgR4szFxQ3UB53HWzbG45Ex5fdouH7krrJM2AKs6cssjdexHZCQGYMtghshA1XvfPN6ncGeVc5C7GNvnN",

@@ -4,7 +4,9 @@
   "displayTitle": "Dev - Aphyr",
   "url": "http://aphyr.com/posts.atom",
   "feedLink": "http://aphyr.com/posts.atom",
-  "is_query": false,
+  "isQuery": false,
+  "isEmpty": false,
+  "isHidden": false,
   "items": [
     {
       "title": "Seconds Since the Epoch",

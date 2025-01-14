@@ -4,8 +4,21 @@
   "displayTitle": "Dev - NixCraft",
   "url": "https://www.cyberciti.com/atom/atom.xml",
   "feedLink": "https://www.cyberciti.biz/atom/",
-  "is_query": false,
+  "isQuery": false,
+  "isEmpty": false,
+  "isHidden": false,
   "items": [
+    {
+      "title": "ZFS Raidz Expansion Finally, Here in version 2.3.0",
+      "url": "https://www.cyberciti.biz/linux-news/zfs-raidz-expansion-finally-here-in-version-2-3-0/",
+      "date": 1736846360,
+      "author": "Vivek Gite",
+      "unread": true,
+      "content": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><span class=\"drop_cap\">A</span>fter years of development and testing, the ZFS raidz expansion is finally here and has been released as part of version 2.3.0. ZFS is a popular file system for Linux and FreeBSD. RAIDz is like RAID 5, which you find with hardware or Linux software raid devices. It protects your data by spreading it across multiple hard disks along with parity information. A raidz device can have single, double, or triple parity to sustain one, two, or three hard disk failures, respectively, without losing any data. Hence, expanding or adding a new HDD is a very handy feature for sysadmins in today's data-sensitive apps.</p>\n<p>Love this? sudo share_on: <strong><a href=\"https://twitter.com/intent/tweet?url=https://www.cyberciti.biz/linux-news/zfs-raidz-expansion-finally-here-in-version-2-3-0/&amp;text=ZFS Raidz Expansion Finally, Here in version 2.3.0&amp;via=nixcraft\">Twitter</a></strong> - <strong><a href=\"https://www.facebook.com/sharer/sharer.php?u=https://www.cyberciti.biz/linux-news/zfs-raidz-expansion-finally-here-in-version-2-3-0/\">Facebook</a></strong> - <strong><a href=\"https://www.linkedin.com/sharing/share-offsite/?url=https://www.cyberciti.biz/linux-news/zfs-raidz-expansion-finally-here-in-version-2-3-0/\">LinkedIn</a></strong> - <strong><a href=\"https://wa.me/?text=ZFS Raidz Expansion Finally, Here in version 2.3.0 https://www.cyberciti.biz/linux-news/zfs-raidz-expansion-finally-here-in-version-2-3-0/\">Whatsapp</a></strong> - <strong><a href=\"https://reddit.com/submit?url=https://www.cyberciti.biz/linux-news/zfs-raidz-expansion-finally-here-in-version-2-3-0/&amp;title=ZFS Raidz Expansion Finally, Here in version 2.3.0\">Reddit</a></strong></p>\n<p>The post <a href=\"https://www.cyberciti.biz/linux-news/zfs-raidz-expansion-finally-here-in-version-2-3-0/\">ZFS Raidz Expansion Finally, Here in version 2.3.0</a> appeared first on <a href=\"https://www.cyberciti.biz\">nixCraft</a>.</p></div>\n    ",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
     {
       "title": "How to run Docker inside Incus containers",
       "url": "https://www.cyberciti.biz/faq/how-to-run-docker-inside-incus-containers/",
@@ -13,17 +26,6 @@
       "author": "Vivek Gite",
       "unread": true,
       "content": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div style=\"float: right; margin-top: 0; margin-left: 5px;\"><a href=\"https://www.cyberciti.biz/faq/category/incus-linux-tutorials/\" title=\"See all FFmpeg command releated tutorials\"><img alt=\"See all FFmpeg command releated tutorials\" border=\"0\" height=\"108\" src=\"https://www.cyberciti.biz/media/new/category/incus-logo.png\" width=\"199\"/></a></div>\n<p><span class=\"drop_cap\">I</span>ncus and Docker both use Linux kernel features to containerize your applications. Incus is best suited when you need system-level containers that act like traditional VMs and provide a persistent developer experience. On the other hand, Docker containers are ephemeral, i.e., temporary in nature. All files created inside Docker containers are lost when your Docker container is stopped or removed unless you stored them using volumes in different directories outside Docker. Docker is created as a disposable app deployment system. Incus containers are not typically created as disposables, and data is kept inside when they are stopped. Because of the Linux kernel support nesting feature, you can run Docker inside Incus. This page explains how to run Docker inside Incus containers.</p>\n<p>Love this? sudo share_on: <strong><a href=\"https://twitter.com/intent/tweet?url=https://www.cyberciti.biz/faq/how-to-run-docker-inside-incus-containers/&amp;text=How to run Docker inside Incus containers&amp;via=nixcraft\">Twitter</a></strong> - <strong><a href=\"https://www.facebook.com/sharer/sharer.php?u=https://www.cyberciti.biz/faq/how-to-run-docker-inside-incus-containers/\">Facebook</a></strong> - <strong><a href=\"https://www.linkedin.com/sharing/share-offsite/?url=https://www.cyberciti.biz/faq/how-to-run-docker-inside-incus-containers/\">LinkedIn</a></strong> - <strong><a href=\"https://wa.me/?text=How to run Docker inside Incus containers https://www.cyberciti.biz/faq/how-to-run-docker-inside-incus-containers/\">Whatsapp</a></strong> - <strong><a href=\"https://reddit.com/submit?url=https://www.cyberciti.biz/faq/how-to-run-docker-inside-incus-containers/&amp;title=How to run Docker inside Incus containers\">Reddit</a></strong></p>\n<p>The post <a href=\"https://www.cyberciti.biz/faq/how-to-run-docker-inside-incus-containers/\">How to run Docker inside Incus containers</a> appeared first on <a href=\"https://www.cyberciti.biz/faq/\" title=\"Linux and Unix tutorials for new and seasoned sysadmin section\">nixCraft</a>.</p></div>\n    ",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "MySQL Change root Password Command",
-      "url": "https://www.cyberciti.biz/faq/mysql-change-root-password/",
-      "date": 1733761140,
-      "author": "Vivek Gite",
-      "unread": true,
-      "content": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div style=\"float: right; margin-top: 0; margin-left: 5px;\"><a href=\"https://www.cyberciti.biz/faq/category/mysql/\" title=\"See all MySQL Database Server related FAQ\"><img alt=\"See all MySQL Database Server related FAQ\" border=\"0\" height=\"52\" src=\"https://www.cyberciti.biz/media/new/category/old/mysqllogo.gif\" width=\"100\"/></a></div>\n<p><span class=\"drop_cap\">H</span>ow do I change MySQL root password under Linux, FreeBSD, OpenBSD and UNIX-like like operating system over the ssh session?</p>\n<p>Love this? sudo share_on: <strong><a href=\"https://twitter.com/intent/tweet?url=https://www.cyberciti.biz/faq/mysql-change-root-password/&amp;text=MySQL Change root Password Command&amp;via=nixcraft\">Twitter</a></strong> - <strong><a href=\"https://www.facebook.com/sharer/sharer.php?u=https://www.cyberciti.biz/faq/mysql-change-root-password/\">Facebook</a></strong> - <strong><a href=\"https://www.linkedin.com/sharing/share-offsite/?url=https://www.cyberciti.biz/faq/mysql-change-root-password/\">LinkedIn</a></strong> - <strong><a href=\"https://wa.me/?text=MySQL Change root Password Command https://www.cyberciti.biz/faq/mysql-change-root-password/\">Whatsapp</a></strong> - <strong><a href=\"https://reddit.com/submit?url=https://www.cyberciti.biz/faq/mysql-change-root-password/&amp;title=MySQL Change root Password Command\">Reddit</a></strong></p>\n<p>The post <a href=\"https://www.cyberciti.biz/faq/mysql-change-root-password/\">MySQL Change root Password Command</a> appeared first on <a href=\"https://www.cyberciti.biz/faq/\" title=\"Linux and Unix tutorials for new and seasoned sysadmin section\">nixCraft</a>.</p></div>\n    ",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""

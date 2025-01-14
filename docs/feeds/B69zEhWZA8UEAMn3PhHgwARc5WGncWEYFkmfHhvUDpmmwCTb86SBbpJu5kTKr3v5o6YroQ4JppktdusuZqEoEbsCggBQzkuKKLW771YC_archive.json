@@ -4,7 +4,9 @@
   "displayTitle": "Podcast - CodeTalks",
   "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCfuj1MM5p37CRzWYPv_PsWA",
   "feedLink": "https://www.youtube.com/channel/UCfuj1MM5p37CRzWYPv_PsWA",
-  "is_query": false,
+  "isQuery": false,
+  "isEmpty": false,
+  "isHidden": false,
   "items": [
     {
       "title": "Rolling out Service Levels across a large org",

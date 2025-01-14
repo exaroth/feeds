@@ -4,7 +4,9 @@
   "displayTitle": "Dev - Let's get Rusty",
   "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCSp-OaMpsO8K0KkOqyBl7_w",
   "feedLink": "https://www.youtube.com/channel/UCSp-OaMpsO8K0KkOqyBl7_w",
-  "is_query": false,
+  "isQuery": false,
+  "isEmpty": false,
+  "isHidden": false,
   "items": [
     {
       "title": "Should you learn Rust in 2025?",

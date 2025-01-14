@@ -4,7 +4,9 @@
   "displayTitle": "Podcast - CoRecursive",
   "url": "https://link.chtbl.com/corecursive?id=corecursive&platform=rss",
   "feedLink": "http://corecursive.com/",
-  "is_query": false,
+  "isQuery": false,
+  "isEmpty": false,
+  "isHidden": false,
   "items": [
     {
       "title": "Story: Leaving Stripe",

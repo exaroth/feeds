@@ -4,7 +4,9 @@
   "displayTitle": "Dev - Golang Blog",
   "url": "http://blog.golang.org/feed.atom",
   "feedLink": "http://blog.golang.org/feed.atom",
-  "is_query": false,
+  "isQuery": false,
+  "isEmpty": false,
+  "isHidden": false,
   "items": [
     {
       "title": "Go Developer Survey 2024 H2 Results",

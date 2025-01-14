@@ -4,8 +4,21 @@
   "displayTitle": "Dev - Transactional",
   "url": "https://transactional.blog/feed.xml",
   "feedLink": "https://transactional.blog/",
-  "is_query": false,
+  "isQuery": false,
+  "isEmpty": false,
+  "isHidden": false,
   "items": [
+    {
+      "title": "SQLite: ANALYZE",
+      "url": "https://transactional.blog/sqlite/analyze.html",
+      "date": 1736553600,
+      "author": "",
+      "unread": true,
+      "content": "",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
     {
       "title": "Personal: Time Tracking in Obsidian",
       "url": "https://transactional.blog/personal/time-tracking-in-obsidian.html",
