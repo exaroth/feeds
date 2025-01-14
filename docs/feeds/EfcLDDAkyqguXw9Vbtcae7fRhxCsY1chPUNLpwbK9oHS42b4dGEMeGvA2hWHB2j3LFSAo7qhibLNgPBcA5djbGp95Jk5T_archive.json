@@ -9,6 +9,17 @@
   "isHidden": false,
   "items": [
     {
+      "title": "PostgreSQL is the Database Management System of the Year 2024",
+      "url": "https://www.reddit.com/r/programming/comments/1i147sn/postgresql_is_the_database_management_system_of/",
+      "date": 1736854919,
+      "author": "/u/prlaur782",
+      "unread": true,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/prlaur782\"> /u/prlaur782 </a> <br/> <span><a href=\"https://db-engines.com/en/blog_post/109\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/programming/comments/1i147sn/postgresql_is_the_database_management_system_of/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "Copilot Induced Crash: how AI-assisted code introduces new types of bugs",
       "url": "https://www.reddit.com/r/programming/comments/1i11bjc/copilot_induced_crash_how_aiassisted_code/",
       "date": 1736842131,
@@ -3007,39 +3018,6 @@
       "author": "/u/guest271314",
       "unread": true,
       "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/guest271314\"> /u/guest271314 </a> <br/> <span><a href=\"https://github.com/humodz/node-wasi-preopens-escape\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/programming/comments/1hetgf7/proof_of_concept_showcasing_how_a_wasm_program/\">[comments]</a></span>",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "A simple virtual computer to practice writing compilers (crosspost)",
-      "url": "https://www.reddit.com/r/programming/comments/1hesnly/a_simple_virtual_computer_to_practice_writing/",
-      "date": 1734269634,
-      "author": "/u/Bowtiestyle",
-      "unread": true,
-      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Bowtiestyle\"> /u/Bowtiestyle </a> <br/> <span><a href=\"https://github.com/JanNeuendorf/SVC16\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/programming/comments/1hesnly/a_simple_virtual_computer_to_practice_writing/\">[comments]</a></span>",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Understanding Round Robin DNS",
-      "url": "https://www.reddit.com/r/programming/comments/1hesdx8/understanding_round_robin_dns/",
-      "date": 1734268664,
-      "author": "/u/stackoverflooooooow",
-      "unread": true,
-      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/stackoverflooooooow\"> /u/stackoverflooooooow </a> <br/> <span><a href=\"https://blog.hyperknot.com/p/understanding-round-robin-dns\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/programming/comments/1hesdx8/understanding_round_robin_dns/\">[comments]</a></span>",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "[Codemanship/Jason Gorman] Rookie Mistake - Minimising \"Interruptions\"",
-      "url": "https://www.reddit.com/r/programming/comments/1hesaom/codemanshipjason_gorman_rookie_mistake_minimising/",
-      "date": 1734268327,
-      "author": "/u/Euphoricus",
-      "unread": true,
-      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Euphoricus\"> /u/Euphoricus </a> <br/> <span><a href=\"https://youtu.be/s6H9C2cl90I?si=F5uP4fbVtYUshP4c\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/programming/comments/1hesaom/codemanshipjason_gorman_rookie_mistake_minimising/\">[comments]</a></span>",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""

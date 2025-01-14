@@ -31,6 +31,17 @@
       "enclosureMime": ""
     },
     {
+      "title": "RFC #3762: Make trait methods callable in const contexts",
+      "url": "https://www.reddit.com/r/rust/comments/1i0kjhj/rfc_3762_make_trait_methods_callable_in_const/",
+      "date": 1736792303,
+      "author": "/u/OptimalFa",
+      "unread": true,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/OptimalFa\"> /u/OptimalFa </a> <br/> <span><a href=\"https://archive.is/fwawu\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/rust/comments/1i0kjhj/rfc_3762_make_trait_methods_callable_in_const/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "How fast is rust? Simulating 200,000,000 particles",
       "url": "https://www.reddit.com/r/rust/comments/1i0jjiz/how_fast_is_rust_simulating_200000000_particles/",
       "date": 1736789854,
@@ -807,17 +818,6 @@
       "author": "/u/Seriy0904",
       "unread": true,
       "content": "<!-- SC_OFF --><div class=\"md\"><p>I am a newbie in rust. I&#39;ve been reading some stuff regarding traits, and I seem to be confused what is the difference between this: <code>rust fn print_area(shape: &amp;dyn Shape) { println!(&quot;Area: {}&quot;, shape.area()); } </code> And this : <code>rust fn print_area(shape: &amp;impl Shape) { println!(&quot;Area: {}&quot;, shape.area()); } </code></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Seriy0904\"> /u/Seriy0904 </a> <br/> <span><a href=\"https://www.reddit.com/r/rust/comments/1hv0n0w/impl_or_dyn/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/rust/comments/1hv0n0w/impl_or_dyn/\">[comments]</a></span>",
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": ""
-    },
-    {
-      "title": "Lisp interpreter in a browser with Rust + WASM",
-      "url": "https://www.reddit.com/r/rust/comments/1huyr7a/lisp_interpreter_in_a_browser_with_rust_wasm/",
-      "date": 1736169412,
-      "author": "/u/Independent-Golf-754",
-      "unread": true,
-      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Independent-Golf-754\"> /u/Independent-Golf-754 </a> <br/> <span><a href=\"https://vishpat.github.io/lisp-rs-wasm\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/rust/comments/1huyr7a/lisp_interpreter_in_a_browser_with_rust_wasm/\">[comments]</a></span>",
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": ""

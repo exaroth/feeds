@@ -9,6 +9,17 @@
   "isHidden": false,
   "items": [
     {
+      "title": "PostgreSQL is the Database Management System of the Year 2024",
+      "url": "https://www.reddit.com/r/programming/comments/1i147sn/postgresql_is_the_database_management_system_of/",
+      "date": 1736854919,
+      "author": "/u/prlaur782",
+      "unread": true,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/prlaur782\"> /u/prlaur782 </a> <br/> <span><a href=\"https://db-engines.com/en/blog_post/109\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/programming/comments/1i147sn/postgresql_is_the_database_management_system_of/\">[comments]</a></span>",
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": ""
+    },
+    {
       "title": "Copilot Induced Crash: how AI-assisted code introduces new types of bugs",
       "url": "https://www.reddit.com/r/programming/comments/1i11bjc/copilot_induced_crash_how_aiassisted_code/",
       "date": 1736842131,
