@@ -7,28 +7,35 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
+  "itemCount": 2,
   "items": [
     {
       "title": "SQLite: ANALYZE",
       "url": "https://transactional.blog/sqlite/analyze.html",
       "date": 1736553600,
       "author": "",
+      "guid": 12242,
       "unread": true,
-      "content": "",
+      "content": "<html><head></head><body></body></html>",
+      "contentLength": 0,
       "flags": null,
       "enclosureUrl": "",
-      "enclosureMime": ""
+      "enclosureMime": "",
+      "commentsUrl": null
     },
     {
       "title": "Personal: Time Tracking in Obsidian",
       "url": "https://transactional.blog/personal/time-tracking-in-obsidian.html",
       "date": 1735344000,
       "author": "",
+      "guid": 7982,
       "unread": true,
-      "content": "",
+      "content": "<html><head></head><body></body></html>",
+      "contentLength": 0,
       "flags": null,
       "enclosureUrl": "",
-      "enclosureMime": ""
+      "enclosureMime": "",
+      "commentsUrl": null
     }
   ]
 }

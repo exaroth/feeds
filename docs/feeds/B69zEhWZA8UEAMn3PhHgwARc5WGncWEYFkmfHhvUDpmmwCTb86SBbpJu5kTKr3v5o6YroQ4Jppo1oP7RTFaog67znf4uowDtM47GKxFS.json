@@ -7,17 +7,21 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
+  "itemCount": 1,
   "items": [
     {
       "title": "Comprehending Proc Macros",
       "url": "https://www.youtube.com/watch?v=SMCRQj9Hbx8",
       "date": 1736449223,
       "author": "Logan Smith",
+      "guid": 11554,
       "unread": true,
-      "content": "Rust procedural macros can do amazing things, including implementing an entire dang Python feature from scratch. I've wanted to make this \"lecture+tutorial\" combo video for about a year and it took me about that long to get around to doing it--hope you enjoy and learn something.\n\nWe'll deep dive about macros in general, some compiler architecture stuff, and some thoughts on how to architect macros well. Then we'll talk about Python list/set/generator comprehensions and how to emulate them in Rust code, and then we'll write a macro that does exactly that for us. We'll meet some friends like syn and quote and we'll end up with a macro that is quite clean and yet quite powerful, if I do say so.\n\nFULL VERSION of the implementation that handles multiple for-if-clauses:\nhttps://gist.github.com/kepler-5/065346184523890310e38bcf9adff03e\n\nI use the amazing Manim library for animating these videos, and I edit them with Blender and Audacity.\nhttps://www.manim.community/\nhttps://www.blender.org/\nhttps://www.audacityteam.org/",
+      "content": "<html><head></head><body>Rust procedural macros can do amazing things, including implementing an entire dang Python feature from scratch. I've wanted to make this \"lecture+tutorial\" combo video for about a year and it took me about that long to get around to doing it--hope you enjoy and learn something.\n\nWe'll deep dive about macros in general, some compiler architecture stuff, and some thoughts on how to architect macros well. Then we'll talk about Python list/set/generator comprehensions and how to emulate them in Rust code, and then we'll write a macro that does exactly that for us. We'll meet some friends like syn and quote and we'll end up with a macro that is quite clean and yet quite powerful, if I do say so.\n\nFULL VERSION of the implementation that handles multiple for-if-clauses:\nhttps://gist.github.com/kepler-5/065346184523890310e38bcf9adff03e\n\nI use the amazing Manim library for animating these videos, and I edit them with Blender and Audacity.\nhttps://www.manim.community/\nhttps://www.blender.org/\nhttps://www.audacityteam.org/</body></html>",
+      "contentLength": 1028,
       "flags": null,
       "enclosureUrl": "https://www.youtube.com/v/SMCRQj9Hbx8?version=3",
-      "enclosureMime": ""
+      "enclosureMime": "",
+      "commentsUrl": null
     }
   ]
 }

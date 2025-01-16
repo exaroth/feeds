@@ -9,7 +9,7 @@
       "hidden": false,
       "is_query": true,
       "tags": [],
-      "num_items": 392
+      "num_items": 416
     },
     {
       "id": "31E7iA",
@@ -20,7 +20,7 @@
       "hidden": false,
       "is_query": true,
       "tags": [],
-      "num_items": 121
+      "num_items": 134
     },
     {
       "id": "PyU9",
@@ -31,7 +31,7 @@
       "hidden": false,
       "is_query": true,
       "tags": [],
-      "num_items": 157
+      "num_items": 151
     },
     {
       "id": "3A81sm",
@@ -42,7 +42,7 @@
       "hidden": false,
       "is_query": true,
       "tags": [],
-      "num_items": 179
+      "num_items": 235
     },
     {
       "id": "43nutaBRYF",
@@ -64,7 +64,7 @@
       "hidden": false,
       "is_query": true,
       "tags": [],
-      "num_items": 36
+      "num_items": 35
     },
     {
       "id": "6wzEadYDsRnmWN6sy4",
@@ -75,7 +75,7 @@
       "hidden": false,
       "is_query": true,
       "tags": [],
-      "num_items": 3
+      "num_items": 1
     },
     {
       "id": "368La1qZAv727wqsvC8sbLBZGryhH8SVwbTpqXaweRcuutW1gXksMDmNaCNQmszjC3ZZGEBhaSSEnnHmMXtmcZ71",
@@ -101,7 +101,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 399
+      "num_items": 392
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppXXAQCe8LGUnBWHDnF4s2jjN39bSf9J",
@@ -114,7 +114,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 1109
+      "num_items": 1131
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppcxvGLUpev4ECsNqF1CwVLDFzmk9jft",
@@ -127,7 +127,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 640
+      "num_items": 689
     },
     {
       "id": "46aP2QbqUqBrWfYqAibo8xS24qkvbDNgWZV4Z6rf2nuJ3cBJ971pKb6XZkWhnDxr957c82fPU4Cg4j63MSkVSUXrPi55",
@@ -153,7 +153,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 470
+      "num_items": 472
     },
     {
       "id": "VMK7D8tQvwsLtnxKHzNdF9c4Yhtuqm",
@@ -166,7 +166,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 140
+      "num_items": 138
     },
     {
       "id": "82kPqomaPXmNomrHzpZWfbkQxiiNUBTAYKxHR5qZBEpf",
@@ -179,7 +179,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 75
+      "num_items": 84
     },
     {
       "id": "4W3i2hyrJTVfcLq85rWgduVQ3y3BMzrSD4pVUCMqPpFhmXWpqxQ",
@@ -192,7 +192,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 685
+      "num_items": 709
     },
     {
       "id": "CQdwDV8xyajeX5DKoSYfBQhN4kkXBaTmXPYgJyANUWHyjCo5BpHUjy5gJhgngST",
@@ -205,7 +205,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 5
+      "num_items": 6
     },
     {
       "id": "6gUbcJtcgqw1wQBapm8qwcP58MMnPvoDmUVDva7XtKUuLQTDpuyDxDo1yehnZDohDQ6a5p",
@@ -218,7 +218,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 12
+      "num_items": 13
     },
     {
       "id": "F7pXcmPnWkLEHkvQBb3zXkgdiHy14GQcP2RQp",
@@ -244,7 +244,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 3
+      "num_items": 1
     },
     {
       "id": "82kPqoBYiySD8ih7nAXkFuDhjyLjtPi8jr6gSpxV4VMW",
@@ -257,7 +257,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 2
+      "num_items": 1
     },
     {
       "id": "2TQQJ2bU7mR6kv3z6JPWAP4qWwVU",
@@ -270,7 +270,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 1
+      "num_items": 2
     },
     {
       "id": "USgKoryE83j5SszZjyr68sh7DjLn4j6MWUagcNjQES7kQ1n2HXebXN4bJpBn8stf6LqSMrbny1unc4R1hi6qmf",
@@ -283,7 +283,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 278
+      "num_items": 276
     },
     {
       "id": "KWcVEiwEzuiGGuVCeJEYXr8oePYYMmThA64XKX4pLSjxAVFybiMNe4wuzLW34BL34N8bMRzHn8nKtoqJMB",
@@ -296,7 +296,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 49
+      "num_items": 59
     },
     {
       "id": "2Qhhdda6Qnbf8RCfUPd4nB9sSt2WDQfEpF7H3gCnZZ4AsfbGMy3RmrCa6gigGY6TkbrrJn4wmHXXNYcVj1bK",
@@ -309,7 +309,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 275
+      "num_items": 280
     },
     {
       "id": "7DceLgR4szFyHjpUotrBgPp9fEDdwmRmyXGW53xLQnbPAifjKVFPj1dyKJ6sHa1bC6AC9QFBhYUJLmJ6GyX57",
@@ -322,7 +322,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 277
+      "num_items": 271
     },
     {
       "id": "46aP2QbqUqBrWfYqAibo8xS24qkvbDNgWZUrxgZ6XNcyUn6fFxkgS1aSWJWwPwaqFp34erWr8NxVvd6jro8uiaPvDUjw",
@@ -335,7 +335,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 275
+      "num_items": 277
     },
     {
       "id": "EfcLDDAkyqguXw9Vbtcae7fRhxCsY1chPUNLpwbK9oHS42b4dGEMeGvA2hWHB2j3LFSAo7qhibLNgPBcA5djbGp95Jk5T",
@@ -348,7 +348,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 274
+      "num_items": 275
     },
     {
       "id": "BRWJ2YmdUFoz1jUcCg5P21RYgb4CmSRDHkju2uMS7GB1447d",
@@ -387,7 +387,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 108
+      "num_items": 107
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JpppN9NLNrdRZgCdnN5NoKNcpbU8nxLPJ",
@@ -400,7 +400,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 2
+      "num_items": 3
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4Jppcztx1sqULsdY4zpYkgotFx6rQ5jWnr",
@@ -413,7 +413,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 7
+      "num_items": 6
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppkaNq4AZ7CUovhnrTVg6JYsCyaPYcgx",
@@ -439,7 +439,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 1
+      "num_items": 2
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4Jppo1oP7RTFaog67znf4uowDtM47GKxFS",
@@ -465,7 +465,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 3
+      "num_items": 2
     },
     {
       "id": "AXJnNj1p7gNGHeShbM5NH2qrEU51AXyHm",
@@ -491,7 +491,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 3
+      "num_items": 4
     },
     {
       "id": "sML2JBPsdAyCMAUuDAb4rMUzpB9GRgBrSJo6frY3aqUzYMyY1KqfA5MTDk9Bkxae",
@@ -521,7 +521,7 @@
     },
     {
       "id": "6C2W1azD1rBsV4qJANNfruBrvGgdqLWrPGWtk6Mp1WgfCNcfvBZHFQw",
-      "title": "System Design Newsletter",
+      "title": "The System Design Newsletter",
       "display_title": "Dev - System Design Newsletter",
       "url": "https://newsletter.systemdesign.one/feed",
       "feedlink": "https://newsletter.systemdesign.one/",
@@ -543,7 +543,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 7
+      "num_items": 8
     },
     {
       "id": "Y2iXpRRkNSnxtBLmMYZFrnqj4bsEj1XB8agfaptmWsYpB",
@@ -569,7 +569,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 2
+      "num_items": 4
     },
     {
       "id": "7ohP4GDMGPrTecAsbdk4Ux7kX8oRRvqavmV8ox2Lh37BT7UxKva1vyh8AakqH35BFwAg8eQ9fL1LBGzW4QrWmuCaCHW2kuVDhY5q",
@@ -582,7 +582,7 @@
       "tags": [
         "podcast"
       ],
-      "num_items": 8
+      "num_items": 9
     },
     {
       "id": "7ohP4GDMGPrTecAsbdk4Ux7kX8oRRvqavmV8ox2Lg53hhcq7wNE81x1V7wRzBRAAwq1qwKSjzyWP8JBzbs6Uq6UgbUcg21dXiqZm",
@@ -660,7 +660,7 @@
       "tags": [
         "podcast"
       ],
-      "num_items": 46
+      "num_items": 45
     },
     {
       "id": "x7L2VSNEiyAFPo5H6bnPWAveyi4npegYaNeyr78Gjr6vQqtjp4cKiAbg9y6hcgadVzEqXA589jFXfyD",
@@ -673,7 +673,7 @@
       "tags": [
         "podcast"
       ],
-      "num_items": 10
+      "num_items": 11
     },
     {
       "id": "7DceLgR4szFxQ3UB53HWzbG45Ex5fdouH7krrJM2AKs6cssjdexHZCQGYMtghshA1XvfPN6ncGeVc5C7GNvnN",
@@ -700,19 +700,6 @@
         "podcast"
       ],
       "num_items": 5
-    },
-    {
-      "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppktdusuZqEoEbsCggBQzkuKKLW771YC",
-      "title": "code.talks (ehem. Developer Conference)",
-      "display_title": "Podcast - CodeTalks",
-      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCfuj1MM5p37CRzWYPv_PsWA",
-      "feedlink": "https://www.youtube.com/channel/UCfuj1MM5p37CRzWYPv_PsWA",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "podcast"
-      ],
-      "num_items": 1
     }
   ]
 }
