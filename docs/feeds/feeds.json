@@ -9,7 +9,7 @@
       "hidden": false,
       "is_query": true,
       "tags": [],
-      "num_items": 416
+      "num_items": 402
     },
     {
       "id": "31E7iA",
@@ -20,7 +20,7 @@
       "hidden": false,
       "is_query": true,
       "tags": [],
-      "num_items": 134
+      "num_items": 141
     },
     {
       "id": "PyU9",
@@ -31,7 +31,7 @@
       "hidden": false,
       "is_query": true,
       "tags": [],
-      "num_items": 151
+      "num_items": 194
     },
     {
       "id": "3A81sm",
@@ -42,7 +42,7 @@
       "hidden": false,
       "is_query": true,
       "tags": [],
-      "num_items": 235
+      "num_items": 251
     },
     {
       "id": "43nutaBRYF",
@@ -53,7 +53,7 @@
       "hidden": false,
       "is_query": true,
       "tags": [],
-      "num_items": 107
+      "num_items": 108
     },
     {
       "id": "fZWkWx2e",
@@ -64,7 +64,7 @@
       "hidden": false,
       "is_query": true,
       "tags": [],
-      "num_items": 35
+      "num_items": 45
     },
     {
       "id": "6wzEadYDsRnmWN6sy4",
@@ -88,7 +88,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 27
+      "num_items": 29
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppnEufZaA96bvPyKqWS5DRkgXpf9zJK8",
@@ -101,7 +101,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 392
+      "num_items": 405
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppXXAQCe8LGUnBWHDnF4s2jjN39bSf9J",
@@ -114,7 +114,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 1131
+      "num_items": 1177
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppcxvGLUpev4ECsNqF1CwVLDFzmk9jft",
@@ -127,7 +127,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 689
+      "num_items": 775
     },
     {
       "id": "46aP2QbqUqBrWfYqAibo8xS24qkvbDNgWZV4Z6rf2nuJ3cBJ971pKb6XZkWhnDxr957c82fPU4Cg4j63MSkVSUXrPi55",
@@ -140,7 +140,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 477
+      "num_items": 502
     },
     {
       "id": "368La1qZAv72idE55Whuffkk2TBtHuSndX6iNywdUkLBDxxx55cLvowsw5Rj5VbHUHjCYUBR5tHfX6BAYFQZS3af",
@@ -153,7 +153,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 472
+      "num_items": 497
     },
     {
       "id": "VMK7D8tQvwsLtnxKHzNdF9c4Yhtuqm",
@@ -166,7 +166,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 138
+      "num_items": 133
     },
     {
       "id": "82kPqomaPXmNomrHzpZWfbkQxiiNUBTAYKxHR5qZBEpf",
@@ -179,7 +179,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 84
+      "num_items": 82
     },
     {
       "id": "4W3i2hyrJTVfcLq85rWgduVQ3y3BMzrSD4pVUCMqPpFhmXWpqxQ",
@@ -192,7 +192,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 709
+      "num_items": 776
     },
     {
       "id": "CQdwDV8xyajeX5DKoSYfBQhN4kkXBaTmXPYgJyANUWHyjCo5BpHUjy5gJhgngST",
@@ -218,7 +218,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 13
+      "num_items": 17
     },
     {
       "id": "F7pXcmPnWkLEHkvQBb3zXkgdiHy14GQcP2RQp",
@@ -239,19 +239,6 @@
       "display_title": "Dev - Kubernetes Blog",
       "url": "https://kubernetes.io/feed.xml",
       "feedlink": "https://kubernetes.io/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev"
-      ],
-      "num_items": 1
-    },
-    {
-      "id": "82kPqoBYiySD8ih7nAXkFuDhjyLjtPi8jr6gSpxV4VMW",
-      "title": "The Go Blog",
-      "display_title": "Dev - Golang Blog",
-      "url": "http://blog.golang.org/feed.atom",
-      "feedlink": "http://blog.golang.org/feed.atom",
       "hidden": false,
       "is_query": false,
       "tags": [
@@ -283,7 +270,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 276
+      "num_items": 290
     },
     {
       "id": "KWcVEiwEzuiGGuVCeJEYXr8oePYYMmThA64XKX4pLSjxAVFybiMNe4wuzLW34BL34N8bMRzHn8nKtoqJMB",
@@ -296,7 +283,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 59
+      "num_items": 83
     },
     {
       "id": "2Qhhdda6Qnbf8RCfUPd4nB9sSt2WDQfEpF7H3gCnZZ4AsfbGMy3RmrCa6gigGY6TkbrrJn4wmHXXNYcVj1bK",
@@ -309,7 +296,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 280
+      "num_items": 289
     },
     {
       "id": "7DceLgR4szFyHjpUotrBgPp9fEDdwmRmyXGW53xLQnbPAifjKVFPj1dyKJ6sHa1bC6AC9QFBhYUJLmJ6GyX57",
@@ -322,7 +309,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 271
+      "num_items": 283
     },
     {
       "id": "46aP2QbqUqBrWfYqAibo8xS24qkvbDNgWZUrxgZ6XNcyUn6fFxkgS1aSWJWwPwaqFp34erWr8NxVvd6jro8uiaPvDUjw",
@@ -335,7 +322,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 277
+      "num_items": 287
     },
     {
       "id": "EfcLDDAkyqguXw9Vbtcae7fRhxCsY1chPUNLpwbK9oHS42b4dGEMeGvA2hWHB2j3LFSAo7qhibLNgPBcA5djbGp95Jk5T",
@@ -348,7 +335,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 275
+      "num_items": 297
     },
     {
       "id": "BRWJ2YmdUFoz1jUcCg5P21RYgb4CmSRDHkju2uMS7GB1447d",
@@ -361,7 +348,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 2
+      "num_items": 1
     },
     {
       "id": "3MxaK2JpEReqG7uUTfHxTELDZk2vRYBtH7tbJ586soFdUhL",
@@ -387,7 +374,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 107
+      "num_items": 136
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JpppN9NLNrdRZgCdnN5NoKNcpbU8nxLPJ",
@@ -400,7 +387,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 3
+      "num_items": 7
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4Jppcztx1sqULsdY4zpYkgotFx6rQ5jWnr",
@@ -413,7 +400,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 6
+      "num_items": 7
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppkaNq4AZ7CUovhnrTVg6JYsCyaPYcgx",
@@ -426,7 +413,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 7
+      "num_items": 6
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppfjDj3hX9ZYrNpKpipZVWeqMDxvr3XC",
@@ -439,7 +426,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 2
+      "num_items": 1
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4Jppo1oP7RTFaog67znf4uowDtM47GKxFS",
@@ -453,19 +440,6 @@
         "dev"
       ],
       "num_items": 1
-    },
-    {
-      "id": "BRWJ2YmdUFp1VkEaibbVg9gmctcLUWiZeYcbFJGMkd7Cuwto",
-      "title": "Stories by Kyodo Tech on Medium",
-      "display_title": "Dev - Kyodo-Tech",
-      "url": "https://medium.com/@kyodo-tech/feed",
-      "feedlink": "https://medium.com/@kyodo-tech?source=rss-ac02ab142942------2",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev"
-      ],
-      "num_items": 2
     },
     {
       "id": "AXJnNj1p7gNGHeShbM5NH2qrEU51AXyHm",
@@ -491,7 +465,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 4
+      "num_items": 5
     },
     {
       "id": "sML2JBPsdAyCMAUuDAb4rMUzpB9GRgBrSJo6frY3aqUzYMyY1KqfA5MTDk9Bkxae",
@@ -504,7 +478,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 5
+      "num_items": 4
     },
     {
       "id": "BRWJ2YmdUFp2T1vhh7n3V5SVNJLVQ56WoZtJvhiNDyE3aj1V",
@@ -569,7 +543,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 4
+      "num_items": 3
     },
     {
       "id": "7ohP4GDMGPrTecAsbdk4Ux7kX8oRRvqavmV8ox2Lh37BT7UxKva1vyh8AakqH35BFwAg8eQ9fL1LBGzW4QrWmuCaCHW2kuVDhY5q",
@@ -598,19 +572,6 @@
       "num_items": 13
     },
     {
-      "id": "Y2iXpRRkNSnqECsCn3WffSk23JTPczWhqrW7RYRN3orCK",
-      "title": "Go Time: Golang, Software Engineering",
-      "display_title": "Podcast - Go Time",
-      "url": "https://changelog.com/gotime/feed",
-      "feedlink": "https://changelog.com/gotime",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "podcast"
-      ],
-      "num_items": 1
-    },
-    {
       "id": "3MxaK2JpEReqHsHNayp5wegcsbA3Uqs1xb7War6KS5tG443",
       "title": "The Changelog: Software Development, Open Source",
       "display_title": "Podcast - Changelog",
@@ -621,7 +582,7 @@
       "tags": [
         "podcast"
       ],
-      "num_items": 7
+      "num_items": 8
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JpprHFm2UV2vWRfa9mX2y2pfXs5n2xbtt",
@@ -634,7 +595,7 @@
       "tags": [
         "podcast"
       ],
-      "num_items": 13
+      "num_items": 14
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4Jppfgmh6LcqyabuJ1NAzZy3UBF1JfvUYg",
@@ -660,7 +621,7 @@
       "tags": [
         "podcast"
       ],
-      "num_items": 45
+      "num_items": 46
     },
     {
       "id": "x7L2VSNEiyAFPo5H6bnPWAveyi4npegYaNeyr78Gjr6vQqtjp4cKiAbg9y6hcgadVzEqXA589jFXfyD",
@@ -699,7 +660,7 @@
       "tags": [
         "podcast"
       ],
-      "num_items": 5
+      "num_items": 4
     }
   ]
 }

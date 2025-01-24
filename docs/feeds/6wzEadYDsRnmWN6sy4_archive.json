@@ -16,7 +16,7 @@
       "author": "accforgithubtest",
       "guid": 12154,
       "unread": true,
-      "content": "I want to propose a feature request for easier navigation.\n<br><br><p>It would be great to have a sidebar for navigation, that provides a tree-like structure to navigate by `category` and list of sources under each category. This will be helpful when there are multiple categories and many sources for each category.</p>",
+      "content": "I want to propose a feature request for easier navigation.\n<p>It would be great to have a sidebar for navigation, that provides a tree-like structure to navigate by `category` and list of sources under each category. This will be helpful when there are multiple categories and many sources for each category.</p>",
       "contentLength": 305,
       "flags": null,
       "enclosureUrl": "",

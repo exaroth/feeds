@@ -7,7 +7,7 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 2,
+  "itemCount": 1,
   "items": [
     {
       "title": "Breaking Rust’s memory safety with 1 line of code",
@@ -16,24 +16,10 @@
       "author": "Let's Get Rusty",
       "guid": 13802,
       "unread": true,
-      "content": "<html><head></head><body>Discover how Rust's memory safety guarantee was shattered with just one line of code! Dive into the story of a 10-year-old bug in the Rust compiler that allows undefined behavior in safe Rust. Learn how this discovery raises questions about Rust's promise of reliability and what it means for the future of the language. \n\nFree Rust training: https://letsgetrusty.com/bootcamp\n\nGitHub issue: https://github.com/rust-lang/rust/issues/25860</body></html>",
+      "content": "<article>Discover how Rust's memory safety guarantee was shattered with just one line of code! Dive into the story of a 10-year-old bug in the Rust compiler that allows undefined behavior in safe Rust. Learn how this discovery raises questions about Rust's promise of reliability and what it means for the future of the language. \n\nFree Rust training: https://letsgetrusty.com/bootcamp\n\nGitHub issue: https://github.com/rust-lang/rust/issues/25860</article>",
       "contentLength": 438,
       "flags": null,
       "enclosureUrl": "https://www.youtube.com/v/HGERkwG0ViI?version=3",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Should you learn Rust in 2025?",
-      "url": "https://www.youtube.com/watch?v=eJFWTS0ktXo",
-      "date": 1734706854,
-      "author": "Let's Get Rusty",
-      "guid": 5945,
-      "unread": true,
-      "content": "<html><head></head><body>In this video, we explore whether learning Rust in 2025 is a good investment for developers. We’ll explore the language’s features, the expanding Rust ecosystem, job market demand, and how Rust stacks up against other programming languages. If you're considering adding Rust to your skill set, this video will help you decide if it’s the right choice for your career and future projects!\n\nFree Rust training: https://letsgetrusty.com/training\n\nRust 2024 edition guide: https://doc.rust-lang.org/nightly/edition-guide/rust-2024/index.html\nRust 2024 edition testing: https://blog.rust-lang.org/2024/11/27/Rust-2024-public-testing.html\n\nChapter:\n0:00 Intro\n0:21 Language &amp; ecosystem\n2:54 Popularity, growth &amp; Industry adoption\n5:41 Rust job market\n9:07 Impact of AI</body></html>",
-      "contentLength": 768,
-      "flags": null,
-      "enclosureUrl": "https://www.youtube.com/v/eJFWTS0ktXo?version=3",
       "enclosureMime": "",
       "commentsUrl": null
     }
