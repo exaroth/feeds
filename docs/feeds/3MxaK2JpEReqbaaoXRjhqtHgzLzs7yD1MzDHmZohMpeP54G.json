@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 5,
+  "itemCount": 6,
   "items": [
+    {
+      "title": "Podcast with Luca Rossi",
+      "url": "https://refactoring.fm/p/growing-the-development-forest-with",
+      "date": 1737741660,
+      "author": "Martin Fowler",
+      "guid": 16583,
+      "unread": true,
+      "content": "<p>Luca Rossi hosts a podcast (and newsletter) called Refactoring, so it's\n      obvious that we have some interests in common. The tile comes from me\n      leaning heavily on Beth Anders-Beck and Kent Beck's metaphor of <a href=\"https://refactoring.fm/bliki/ForestAndDesert.html\">The Forest and The Desert</a>. We talk\n      about the impact of AI on software development, the metaphor of technical\n      debt, and the current state of agile software development.</p>",
+      "contentLength": 397,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Codemods in other languages",
       "url": "https://martinfowler.com/articles/codemods-api-refactoring.html#CodemodsInOtherLanguages",

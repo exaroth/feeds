@@ -7,7 +7,7 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 17,
+  "itemCount": 16,
   "items": [
     {
       "title": "IMDb Founder Steps Down As CEO After 35 Years",
@@ -228,20 +228,6 @@
       "unread": true,
       "content": "\"Over the course of 2024, Python has proven again and again why it's one of the most popular, useful, and promising programming languages out there,\" writes InfoWorld:\n\nThe latest version of the language pushes the envelope further for speed and power, sheds many of Python's most decrepit elements, and broadens its appeal with developers worldwide. Here's a look back at the year in Python. \n\nIn the biggest news of the year, the core Python development team took a major step toward overcoming one of Python's longstanding drawbacks: the Global Interpreter Lock or \"GIL,\" a mechanism for managing interpreter state. The GIL prevents data corruption across threads in Python programs, but it comes at the cost of making threads nearly useless for CPU-bound work. Over the years, various attempts to remove the GIL ended in tears, as they made single-threaded Python programs drastically slower. But the most recent no-GIL project goes a long way toward fixing that issue — enough that it's been made available for regular users to try out. \n\nThe no-GIL or \"free-threaded\" builds are still considered experimental, so they shouldn't be deployed in production yet. The Python team wants to alleviate as much of the single-threaded performance impact as possible, along with any other concerns, before giving the no-GIL builds the full green light. It's also entirely possible these builds may never make it to full-blown production-ready status, but the early signs are encouraging. \nAnother forward-looking feature introduced in Python 3.13 is the experimental just-in-time compiler or JIT. It expands on previous efforts to speed up the interpreter by generating machine code for certain operations at runtime. Right now, the speedup doesn't amount to much (maybe 5% for most programs), but future versions of Python will expand the JIT's functionality where it yields real-world payoffs.\n \nPython is now more widely used than JavaScript on GitHub (thanks partly to its role in AI and data science code).",
       "contentLength": 2008,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Bret Taylor Urges Rethink of Software Development as AI Reshapes Industry",
-      "url": "https://developers.slashdot.org/story/24/12/25/1611229/bret-taylor-urges-rethink-of-software-development-as-ai-reshapes-industry?utm_source=rss1.0mainlinkanon&utm_medium=feed",
-      "date": 1735143000,
-      "author": "msmash",
-      "guid": 7106,
-      "unread": true,
-      "content": "Software development is entering an \"autopilot era\" with AI coding assistants, but the industry needs to prepare for full autonomy, argues former Salesforce co-CEO Bret Taylor. Drawing parallels with self-driving cars, he suggests the role of software engineers will evolve from code authors to operators of code-generating machines. Taylor, a board member of OpenAI and who once rewrote Google Maps over a weekend, calls for new programming systems, languages, and verification methods to ensure AI-generated code remains robust and secure. From his post: In the Autonomous Era of software engineering, the role of a software engineer will likely transform from being the author of computer code to being the operator of a code generating machine. What is a computer programming system built natively for that workflow? \n\nIf generating code is no longer a limiting factor, what types of programming languages should we build? \n\nIf a computer is generating most code, how do we make it easy for a software engineer to verify it does what they intend? What is the role of programming language design (e.g., what Rust did for memory safety)? What is the role of formal verification? What is the role of tests, CI/CD, and development workflows? \n\nToday, a software engineer's primary desktop is their editor. What is the Mission Control for a software engineer in the era of autonomous development?",
-      "contentLength": 1395,
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": "",

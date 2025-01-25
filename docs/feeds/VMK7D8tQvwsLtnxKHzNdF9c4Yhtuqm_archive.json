@@ -7,7 +7,7 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 133,
+  "itemCount": 131,
   "items": [
     {
       "title": "TabBoo – add random jumpscares to websites you're trying to avoid",
@@ -1837,34 +1837,6 @@
       "guid": 7252,
       "unread": true,
       "content": "\n<p>Article URL: <a href=\"https://github.com/blackcandy-org/blackcandy\">https://github.com/blackcandy-org/blackcandy</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42512896\">https://news.ycombinator.com/item?id=42512896</a></p>\n<p>Points: 693</p>\n<p># Comments: 297</p>\n",
-      "contentLength": 0,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "This open problem taught me what topology is [video]",
-      "url": "https://www.youtube.com/watch?v=IQqtsm-bBRU",
-      "date": 1735106925,
-      "author": "surprisetalk",
-      "guid": 7153,
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.youtube.com/watch?v=IQqtsm-bBRU\">https://www.youtube.com/watch?v=IQqtsm-bBRU</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42507185\">https://news.ycombinator.com/item?id=42507185</a></p>\n<p>Points: 503</p>\n<p># Comments: 83</p>\n",
-      "contentLength": 0,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "That's not an abstraction, that's a layer of indirection",
-      "url": "https://fhur.me/posts/2024/thats-not-an-abstraction",
-      "date": 1735103218,
-      "author": "fagnerbrack",
-      "guid": 7807,
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://fhur.me/posts/2024/thats-not-an-abstraction\">https://fhur.me/posts/2024/thats-not-an-abstraction</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42506984\">https://news.ycombinator.com/item?id=42506984</a></p>\n<p>Points: 594</p>\n<p># Comments: 226</p>\n",
       "contentLength": 0,
       "flags": null,
       "enclosureUrl": "",

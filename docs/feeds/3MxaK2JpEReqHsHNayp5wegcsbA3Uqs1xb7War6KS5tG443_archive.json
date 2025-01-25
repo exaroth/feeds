@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 8,
+  "itemCount": 9,
   "items": [
+    {
+      "title": "Fallthrough & Friends (Friends)",
+      "url": "https://changelog.com/friends/77",
+      "date": 1737727200,
+      "author": "",
+      "guid": 16471,
+      "unread": true,
+      "content": "<p>Kris Brandow &amp; Matthew Sanabria from <a href=\"https://fallthrough.fm\">Fallthrough.fm</a> join Jerod to discuss tools we’re switching to, whether or not Go is still a great systems programming language choice, user-centric documentation, the need for archivists &amp; more.</p><p><a href=\"https://changelog.com/++\" rel=\"payment\">Changelog++</a> members save 7 minutes on this episode because they made the ads disappear. Join today!</p><ul><li><a href=\"https://www.augmentcode.com\">Augment Code</a> – Developer AI that uses deep understanding of your large codebase and how you build software to deliver personalized code suggestions and insights. Augment provides relevant, contextualized code right in your IDE or Slack. It transforms scattered knowledge into code or answers, eliminating time spent searching docs or interrupting teammates.\n</li><li><a href=\"https://fly.io/\">Fly.io</a> – <strong>The home of Changelog.com</strong> — Deploy your apps close to your users — global Anycast load-balancing, zero-configuration private networking, hardware isolation, and instant WireGuard VPN connections. Push-button deployments that scale to thousands of instances. <a href=\"https://fly.io/speedrun/\">Check out the speedrun</a> to get started in minutes.\n</li></ul>",
+      "contentLength": 1015,
+      "flags": null,
+      "enclosureUrl": "https://op3.dev/e/https://cdn.changelog.com/uploads/friends/77/changelog--friends-77.mp3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "From open source to acquired (Interview)",
       "url": "https://changelog.com/podcast/625",

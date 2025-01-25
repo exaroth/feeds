@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 6,
+  "itemCount": 7,
   "items": [
+    {
+      "title": "Linux 6.14 Adds Support For The Microsoft Copilot Key Found On New Laptops",
+      "url": "https://linux.slashdot.org/story/25/01/23/2333254/linux-614-adds-support-for-the-microsoft-copilot-key-found-on-new-laptops?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+      "date": 1737678000,
+      "author": "BeauHD",
+      "guid": 16342,
+      "unread": true,
+      "content": "The Linux 6.14 kernel now maps out support for Microsoft's \"Copilot\" key \"so that user-space software can determine the behavior for handling that key's action on the Linux desktop,\" writes Phoronix's Michael Larabel. From the report: A change made to the atkbd keyboard driver on Linux now maps the F23 key to support the default copilot shortcut action. The patch authored by Lenovo engineer Mark Pearson explains [...]. Now it's up to the Linux desktop environments for determining what to do if the new Copilot key is pressed. The patch was part of the input updates now merged for the Linux 6.14 kernel.",
+      "contentLength": 608,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Linux 6.13 Released",
       "url": "https://linux.slashdot.org/story/25/01/20/0555227/linux-613-released?utm_source=rss1.0mainlinkanon&utm_medium=feed",
