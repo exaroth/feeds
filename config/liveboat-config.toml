@@ -5,7 +5,7 @@
 # (eg <username>.github.io), in that case it should be
 # set to '/'
 site_path = "/feeds/"
-site_url = "https://konrad.website/feeds"
+site_url = "https://konrad.website/feeds/"
 # Title of the site
 title = "Liveboat Feeds"
 # Maximum number of days for which Liveboat will include
