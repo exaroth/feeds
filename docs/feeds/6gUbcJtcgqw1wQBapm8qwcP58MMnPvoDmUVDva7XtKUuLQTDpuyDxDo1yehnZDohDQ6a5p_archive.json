@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 16,
+  "itemCount": 17,
   "items": [
+    {
+      "title": "Epic Games To Cover Developer iOS Fees",
+      "url": "https://games.slashdot.org/story/25/01/23/2350253/epic-games-to-cover-developer-ios-fees?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+      "date": 1737680400,
+      "author": "BeauHD",
+      "guid": 16341,
+      "unread": true,
+      "content": "Epic Games is expanding its mobile app store to include nearly 20 third-party games on Android and EU iOS, launching a free games program, and temporarily covering Apple's Core Technology Fee for participating developers to counter platform restrictions. \"Our aim here isn't just to launch a bunch of different stores in different places, but to build a single, cross-platform store in which, within the era of multi-platform games, if you buy a game or digital items in one place, you have the ability to own them everywhere,\" Epic CEO Tim Sweeney told reporters during a press briefing. The Verge reports: Under the program, Epic will offer new free games in the store each month before eventually switching to a weekly schedule. However, the games aren't actually in the store yet -- Epic said on Thursday that it \"ran into a few bugs that we're working through now\" and \"we'll provide an update once the games are live and ready to play!\"\n \nTo sweeten the deal for developers that participate in the free games program on iOS, Epic will help defray the cost of using third-party marketplaces. For one year, it will pay these developers' Core Technology Fee (CTF): a 50 euro cent fee levied on every install of an iOS app that uses third-party stores after it exceeds 1 million annual downloads. (Apple gives developers with less than 10 million euros in global revenue a three-year on-ramp.) [...] Epic writes in its blog post that covering the fee \"is not financially viable for every third party app store or for Epic long term, but we'll do it while the European Commission investigates Apple's non-compliance with the law.\"",
+      "contentLength": 1631,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "IMDb Founder Steps Down As CEO After 35 Years",
       "url": "https://developers.slashdot.org/story/25/01/21/2232241/imdb-founder-steps-down-as-ceo-after-35-years?utm_source=rss1.0mainlinkanon&utm_medium=feed",

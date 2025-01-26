@@ -7,7 +7,7 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 13,
+  "itemCount": 12,
   "items": [
     {
       "title": "The Panama Canal",
@@ -174,20 +174,6 @@
       "contentLength": 632,
       "flags": null,
       "enclosureUrl": "https://sphinx.acast.com/p/acast/s/dansnowshistoryhit/e/674743e8c4b78e9ebb2064e2/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJzdGF0dXMiOiJwdWJsaWMifQ==&sig=vNg47WpHjJSjC34JWPVeYv7k2j1pKhjuB3ggmc979TA",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "The Origins of Istanbul",
-      "url": "https://shows.acast.com/dansnowshistoryhit/episodes/the-origins-of-istanbul",
-      "date": 1735259444,
-      "author": "",
-      "guid": 7512,
-      "unread": true,
-      "content": "<p>Today we dig into the history of Istanbul, the city at the crossroads of East and West. Across thousands of years, the city has survived the rise and fall of empires, weathered sieges and Crusades, and remained a centre of world religion, trade and politics.</p><p>With us is Jonathan Harris, Professor of the History of Byzantium at Royal Holloway and author of 'Constantinople: Capital of Byzantium'. He tells us all about the key moments that transformed the Eastern Roman capital of Constantinople into the modern-day city of Istanbul.</p><p>Produced by James Hickmann and edited by Dougal Patmore.</p>",
-      "contentLength": 588,
-      "flags": null,
-      "enclosureUrl": "https://sphinx.acast.com/p/acast/s/dansnowshistoryhit/e/674dfa8c869ee21f962031a0/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJzdGF0dXMiOiJwdWJsaWMifQ==&sig=7PYHS1LkUqtGnCcPRxYFrYwMGDrzOn6TDojVBEb3RPs",
       "enclosureMime": "",
       "commentsUrl": null
     }

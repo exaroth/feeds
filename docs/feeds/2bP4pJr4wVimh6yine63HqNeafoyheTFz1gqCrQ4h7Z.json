@@ -7,7 +7,7 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 8,
+  "itemCount": 7,
   "items": [
     {
       "title": "Master the Art of REST API Design",
@@ -104,20 +104,6 @@
       "contentLength": 11907,
       "flags": null,
       "enclosureUrl": "https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe981dbbb-6d70-41ad-b6df-43c5bcb20f76_582x390.png",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "How to Choose the Right Database in a System Design Interview",
-      "url": "https://blog.algomaster.io/p/how-to-choose-the-right-database",
-      "date": 1735219825,
-      "author": "Ashish Pratap Singh",
-      "guid": 7330,
-      "unread": true,
-      "content": "<p>In , the quality of your design and its ability to scale depends heavily on the  you choose.</p><p>Choosing the wrong database can lead to high latency, data loss, or even system downtime.</p><p>In this article, we will cover the  that come up often in system design interviews and explore the best databases for each scenario.</p><p> provides deep session replays with every detail you need to find and fix a bug. From frontend screens to backend traces, metrics, and logs, all in one place. Debug faster and fix customer problems more easily, so you and your team can stay focused on building great software, not combing through APM data.</p><h2>1. Structured Data Requiring ACID Compliance</h2><p>Consider a major online marketplace like  or , which processes millions of transactions daily. </p><p>Each order involves multiple interdependent operations:</p><ul><li><p>Deducting payment from the customer.</p></li><li><p>Recording the sale for accounting and analytics.</p></li></ul><p>These operations need  and  transactions to avoid any data anomalies or transaction failures.</p><ul><li><p> ensures that if you fail to charge the customer’s credit card, you won’t ship the item.</p></li><li><p> guarantees that the product count never goes negative if the system runs out of stock.</p></li><li><p> prevents two customers from purchasing the last item at the exact same time.</p></li><li><p> ensures that once a payment is processed, you can’t lose that record if the server crashes the next second.</p></li></ul><h4>Recommended Database - </h4><p>When you need strict data consistency and a well-defined schema,  like  or  are often the best choice.</p><p>These databases are specifically designed to enforce relationships, constraints, and transactional guarantees.</p><p>This article is for . As a paid subscriber you get an exclusive deep dive every week + .</p>",
-      "contentLength": 1679,
-      "flags": null,
-      "enclosureUrl": "https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc724d440-c5f7-46a9-9554-0835cc70085f_1064x623.png",
       "enclosureMime": "",
       "commentsUrl": null
     }

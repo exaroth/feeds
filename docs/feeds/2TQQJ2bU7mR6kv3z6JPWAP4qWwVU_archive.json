@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 2,
+  "itemCount": 3,
   "items": [
+    {
+      "title": "Discover Unlimited Anime with GogoAnime!",
+      "url": "https://zig.news/gogoanimeofficial/discover-unlimited-anime-with-gogoanime-2k41",
+      "date": 1737864546,
+      "author": "Gogo Anime",
+      "guid": 17013,
+      "unread": true,
+      "content": "<p>Are you an anime fan looking for a platform to watch your favorite shows? Look no further than GogoAnime! With a massive library of classic and trending anime, GogoAnime is your one-stop destination for all things anime.</p><p>Why Choose GogoAnime?\nExtensive Collection: From action-packed adventures to heartfelt romances, find anime across all genres.<p>\nSubbed &amp; Dubbed Options: Watch in English subtitles or enjoy dubbed versions, tailored for every viewer.</p>\nHigh-Quality Streaming: Enjoy seamless streaming with HD quality videos.<p>\nCompletely Free: No subscription is required; dive into the anime world without spending a dime.</p>\nVisit GogoAnime today and start your anime journey: <a href=\"https://gogoanimeofficial.com/\">gogoanime</a></p><p>Stay tuned for more updates, and let us know which anime you're binge-watching right now</p>",
+      "contentLength": 771,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Easy web requests in Zig with Client.fetch",
       "url": "https://zig.news/andrewgossage/easy-web-requests-in-zig-with-clientfetch-k43",
