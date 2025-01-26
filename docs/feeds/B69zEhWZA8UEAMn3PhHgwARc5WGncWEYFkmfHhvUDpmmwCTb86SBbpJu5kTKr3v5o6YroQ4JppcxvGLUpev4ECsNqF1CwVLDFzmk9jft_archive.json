@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 821,
+  "itemCount": 822,
   "items": [
+    {
+      "title": "#netflix show puts Korean chefs in spotlight",
+      "url": "https://www.youtube.com/watch?v=G0477nhIW84",
+      "date": 1737874810,
+      "author": "Bloomberg Television",
+      "guid": 17026,
+      "unread": true,
+      "content": "<article>In September, Seoul’s fine dining scene got a big boost with the premiere of hit Netflix cooking competition Culinary Class Wars. @sunny_newsiee reports on how the show continues to influence Korean diners and increase revenue for operators https://trib.al/NAw8ik5</article>",
+      "contentLength": 266,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/G0477nhIW84?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Davos 2025: Saudi Economy Minister Faisal Alibrahim on Trump, Debt, Vision 2030 Plan, Investment",
       "url": "https://www.youtube.com/watch?v=u5ScKuaJEEI",
@@ -11503,5 +11517,8 @@
       "enclosureMime": "",
       "commentsUrl": null
     }
+  ],
+  "tags": [
+    "news"
   ]
 }

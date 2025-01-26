@@ -8,7 +8,9 @@
       "feedlink": "",
       "hidden": false,
       "is_query": true,
-      "tags": [],
+      "tags": [
+        "yt"
+      ],
       "num_items": 412
     },
     {
@@ -19,8 +21,10 @@
       "feedlink": "",
       "hidden": false,
       "is_query": true,
-      "tags": [],
-      "num_items": 75
+      "tags": [
+        "news"
+      ],
+      "num_items": 78
     },
     {
       "id": "PyU9",
@@ -30,8 +34,10 @@
       "feedlink": "",
       "hidden": false,
       "is_query": true,
-      "tags": [],
-      "num_items": 148
+      "tags": [
+        "dev"
+      ],
+      "num_items": 145
     },
     {
       "id": "3A81sm",
@@ -41,7 +47,9 @@
       "feedlink": "",
       "hidden": false,
       "is_query": true,
-      "tags": [],
+      "tags": [
+        "tech"
+      ],
       "num_items": 163
     },
     {
@@ -52,7 +60,9 @@
       "feedlink": "",
       "hidden": false,
       "is_query": true,
-      "tags": [],
+      "tags": [
+        "podcast"
+      ],
       "num_items": 109
     },
     {
@@ -63,7 +73,9 @@
       "feedlink": "",
       "hidden": false,
       "is_query": true,
-      "tags": [],
+      "tags": [
+        "movies"
+      ],
       "num_items": 38
     },
     {
@@ -74,7 +86,9 @@
       "feedlink": "",
       "hidden": false,
       "is_query": true,
-      "tags": [],
+      "tags": [
+        "gh"
+      ],
       "num_items": 2
     },
     {
@@ -114,7 +128,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 1155
+      "num_items": 1156
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppcxvGLUpev4ECsNqF1CwVLDFzmk9jft",
@@ -127,7 +141,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 821
+      "num_items": 822
     },
     {
       "id": "46aP2QbqUqBrWfYqAibo8xS24qkvbDNgWZV4Z6rf2nuJ3cBJ971pKb6XZkWhnDxr957c82fPU4Cg4j63MSkVSUXrPi55",
@@ -205,7 +219,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 8
+      "num_items": 7
     },
     {
       "id": "6gUbcJtcgqw1wQBapm8qwcP58MMnPvoDmUVDva7XtKUuLQTDpuyDxDo1yehnZDohDQ6a5p",

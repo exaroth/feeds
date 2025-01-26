@@ -7,8 +7,36 @@
   "isQuery": true,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 75,
+  "itemCount": 78,
   "items": [
+    {
+      "title": "UN peacekeeping force on situation in Lebanon ahead of ceasefire deadline",
+      "url": "https://www.youtube.com/watch?v=YZVO-c7pwVM",
+      "date": 1737874829,
+      "author": "Associated Press",
+      "guid": 17027,
+      "unread": true,
+      "content": "<article>A day before the deadline for the first phase of an agreement that ended the war between Israel and the Hezbollah militant group, a team from the Associated Press accompanied a UNIFIL peacekeeping force on a trip to border towns in south Lebanon. Read more here: https://bit.ly/40vm5ea\n\n#lebanon #israel #news \n\nSubscribe: http://smarturl.it/AssociatedPress\nRead more: https://apnews.com​\n\nThis video may be available for archive licensing via https://newsroom.ap.org/home</article>",
+      "contentLength": 474,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/YZVO-c7pwVM?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "#netflix show puts Korean chefs in spotlight",
+      "url": "https://www.youtube.com/watch?v=G0477nhIW84",
+      "date": 1737874810,
+      "author": "Bloomberg Television",
+      "guid": 17026,
+      "unread": true,
+      "content": "<article>In September, Seoul’s fine dining scene got a big boost with the premiere of hit Netflix cooking competition Culinary Class Wars. @sunny_newsiee reports on how the show continues to influence Korean diners and increase revenue for operators https://trib.al/NAw8ik5</article>",
+      "contentLength": 266,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/G0477nhIW84?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Growing crackdown on dissent raises alarms in Uganda | DW News",
       "url": "https://www.youtube.com/watch?v=dZ2wGRP29KA",
@@ -80,6 +108,20 @@
       "commentsUrl": null
     },
     {
+      "title": "Trump wants Jordan and Egypt to accept more refugees and floats plan to 'just clean out' Gaza",
+      "url": "https://apnews.com/article/trump-biden-israel-bomb-gaza-hamas-war-023b36984c6116c128b5e47f117bba2a",
+      "date": 1737859644,
+      "author": "/u/DomesticErrorist22",
+      "guid": 17028,
+      "unread": true,
+      "content": "",
+      "contentLength": 0,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": "https://www.reddit.com/r/worldnews/comments/1ia42lz/trump_wants_jordan_and_egypt_to_accept_more/"
+    },
+    {
       "title": "Chicken Becomes a Booming Business in the Saudi Desert",
       "url": "https://www.youtube.com/watch?v=eozFaZltPKQ",
       "date": 1737856825,
@@ -94,7 +136,7 @@
       "commentsUrl": null
     },
     {
-      "title": "India's Republic Day Parade 2025 LIVE: Watch the event in New Delhi",
+      "title": "India's Republic Day 2025 LIVE: Watch the parade in New Delhi",
       "url": "https://www.youtube.com/watch?v=YldgNTQ4sYQ",
       "date": 1737854637,
       "author": "Associated Press",
@@ -1059,5 +1101,8 @@
       "enclosureMime": "",
       "commentsUrl": "https://www.reddit.com/r/europe/comments/1i9i6vh/450000_dutch_people_left_social_media_platform_x/"
     }
+  ],
+  "tags": [
+    "news"
   ]
 }

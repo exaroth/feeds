@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 50,
+  "itemCount": 51,
   "items": [
+    {
+      "title": "Trump wants Jordan and Egypt to accept more refugees and floats plan to 'just clean out' Gaza",
+      "url": "https://apnews.com/article/trump-biden-israel-bomb-gaza-hamas-war-023b36984c6116c128b5e47f117bba2a",
+      "date": 1737859644,
+      "author": "/u/DomesticErrorist22",
+      "guid": 17028,
+      "unread": true,
+      "content": "",
+      "contentLength": 0,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": "https://www.reddit.com/r/worldnews/comments/1ia42lz/trump_wants_jordan_and_egypt_to_accept_more/"
+    },
     {
       "title": "Police investigate Musk salute projected on Tesla factory",
       "url": "https://www.dw.com/en/german-police-investigate-musk-salute-projected-on-tesla-factory/a-71403737",
@@ -660,8 +674,8 @@
       "author": "/u/Silly-avocatoe",
       "guid": 16281,
       "unread": true,
-      "content": "",
-      "contentLength": 0,
+      "content": "<p>Polish President Andrzej Duda said on Thursday, 23 January, that Kremlin leader Vladimir Putin must be made \"to beg Ukraine, to beg allies of Ukraine to sit at the table and to talk\".</p><p> During the Ukrainian Breakfast discussion in Davos, Duda emphasised that not every peaceful resolution to the war aligns with the interests of Ukraine, Poland, or Eastern Europe and the EU.</p><p>He noted that this pertains to countries that have been behind the Iron Curtain for years and were considered to be under the Russian sphere of influence.</p><p>Duda believes it is necessary to adopt a plan that would guarantee peace for Ukraine, its sovereignty and Russia's respect for international law.</p><p>Duda argued that it would be a mistake to focus on how to encourage Putin to negotiate and seek peace.</p><p> \"I want Vladimir Putin to beg us, to beg Ukraine, to beg allies of Ukraine to sit at the table and to talk.\"</p><p>Duda also emphasised that the Russo-Ukrainian war \"is not a local conflict, this is a global conflict, so it requires a global solution\".</p><ul><li aria-level=\"1\">On 22 January, US President Donald Trump called on Russia to make a \"deal\" to end the war in Ukraine, warning of intensified <a href=\"https://www.eurointegration.com.ua/eng/news/2025/01/22/7203148/\">sanctions and tariffs</a> against Moscow if no agreement is reached.</li><li aria-level=\"1\">On 23 January, NATO Secretary General Mark Rutte stressed the need <a href=\"https://www.eurointegration.com.ua/eng/news/2025/01/23/7203191/\">to strengthen support</a> for Ukraine, emphasising that it is vital that Russia does not win.</li></ul>",
+      "contentLength": 1365,
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": "",
@@ -709,5 +723,8 @@
       "enclosureMime": "",
       "commentsUrl": "https://www.reddit.com/r/worldnews/comments/1i807t2/nepal_sharply_increases_permit_fee_for_everest/"
     }
+  ],
+  "tags": [
+    "news"
   ]
 }
