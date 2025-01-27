@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 12,
+  "itemCount": 13,
   "items": [
+    {
+      "title": "A History of Auschwitz",
+      "url": "https://shows.acast.com/dansnowshistoryhit/episodes/a-history-of-auschwitz",
+      "date": 1737937800,
+      "author": "",
+      "guid": 17215,
+      "unread": true,
+      "content": "<p>On January 27th 1945, the Red Army liberated the concentration camp at Auschwitz unveiling its almost unspeakable horrors to the world.&nbsp;</p><p>The concentration camp system began almost immediately after Adolf Hitler became Chancellor of Germany in 1933. It was an integral part of the Nazi regime's rapid dismantling of German democracy. Within weeks, the first concentration camp, Dachau, was opened to imprison political opponents, marking the start of a vast and brutal system of camps across Germany and later in the occupied territories. The camps began as places to imprison political enemies and people the Nazis deemed to be “undesirables”. But, as the Second World War progressed, these camps became centres of industrial-scale genocide, with Auschwitz becoming perhaps the most infamous.&nbsp;</p><p>In this episode, Dan is joined by Nikolaus Wachsmann, Professor of Modern European History at Birkbeck University of London. They discuss the historical context and horrors of Auschwitz, marking Holocaust Memorial Day on the 80th anniversary of its liberation by the Red Army.</p><p><strong><u>Warning: This episode contains a detailed discussion of the Holocaust and genocide which some listeners may find upsetting.</u></strong></p>",
+      "contentLength": 1197,
+      "flags": null,
+      "enclosureUrl": "https://sphinx.acast.com/p/acast/s/dansnowshistoryhit/e/6793b2a4ae8b037c91dcda93/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJzdGF0dXMiOiJwdWJsaWMifQ==&sig=udjMUcAw-wAWjSBZ-eazgP0DmE0yhKpUfRSBCGrH3ek",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "The Panama Canal",
       "url": "https://shows.acast.com/dansnowshistoryhit/episodes/the-panama-canal",

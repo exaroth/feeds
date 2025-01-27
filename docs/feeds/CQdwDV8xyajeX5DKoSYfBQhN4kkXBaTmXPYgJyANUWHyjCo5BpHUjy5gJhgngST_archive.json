@@ -7,8 +7,36 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 7,
+  "itemCount": 9,
   "items": [
+    {
+      "title": "Linux 6.14 Brings Some Systems Faster Suspend and Resume",
+      "url": "https://linux.slashdot.org/story/25/01/25/2343225/linux-614-brings-some-systems-faster-suspend-and-resume?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+      "date": 1737909240,
+      "author": "EditorDavid",
+      "guid": 17113,
+      "unread": true,
+      "content": "Amid the ongoing Linux 6.14 kernel development cycle, Phoronix spotted a pull request for ACPI updates which \"will allow for faster suspend and resume cycles on some systems.\" \n\nWikipedia defines ACPI as \"an open standard that operating systems can use to discover and configure computer hardware components\" for things like power management and putting unused hardware components to sleep. Phoronix reports:\n\nThe ACPI change worth highlighting for Linux 6.14 is switching from msleep() to usleep_range() within the acpi_os_sleep() call in the kernel. This reduces spurious sleep time due to timer inaccuracy. Linux ACPI/PM maintainer Rafael Wysocki of Intel who authored this change noted that it could \"spectacularly\" reduce the duration of system suspend and resume transitions on some systems... \n\nRafael explained in the patch making the sleep change: \n\n \"The extra delay added by msleep() to the sleep time value passed to it can be significant, roughly between 1.5 ns on systems with HZ = 1000 and as much as 15 ms on systems with HZ = 100, which is hardly acceptable, at least for small sleep time values.\" \nOne 2022 bug report complained a Dell XPS 13 using Thunderbolt took \"a full 8 seconds to suspend and a full 8 seconds to resume even though no physical devices are connected.\" In November an Intel engineer posted on the kernel mailing list that the fix gave a Dell XPS 13 a 42% improvement in kernel resume time (from 1943ms to 1127ms).",
+      "contentLength": 1452,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "Could New Linux Code Cut Data Center Energy Use By 30%?",
+      "url": "https://hardware.slashdot.org/story/25/01/25/2111225/could-new-linux-code-cut-data-center-energy-use-by-30?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+      "date": 1737848040,
+      "author": "EditorDavid",
+      "guid": 16967,
+      "unread": true,
+      "content": "Two computer scientists at the University of Waterloo in Canada believe changing 30 lines of code in Linux \"could cut energy use at some data centers by up to 30 percent,\" according to the site Data Centre Dynamics. \n\nIt's the code that processes packets of network traffic, and Linux \"is the most widely used OS for data center servers,\" according to the article:\n\nThe team tested their solution's effectiveness and submitted it to Linux for consideration, and the code was published this month as part of Linux's newest kernel, release version 6.13. \"All these big companies — Amazon, Google, Meta — use Linux in some capacity, but they're very picky about how they decide to use it,\" said Martin Karsten [professor of Computer Science in the Waterloo's Math Faculty]. \"If they choose to 'switch on' our method in their data centers, it could save gigawatt hours of energy worldwide. Almost every single service request that happens on the Internet could be positively affected by this.\" \n\nThe University of Waterloo is building a green computer server room as part of its new mathematics building, and Karsten believes sustainability research must be a priority for computer scientists. \"We all have a part to play in building a greener future,\" he said. The Linux Foundation, which oversees the development of the Linux OS, is a founder member of the Green Software Foundation, an organization set up to look at ways of developing \"green software\" — code that reduces energy consumption. \n\nKarsten \"teamed up with Joe Damato, distinguished engineer at Fastly\" to develop the 30 lines of code, according to an announcement from the university. \"The Linux kernel code addition developed by Karsten and Damato was based on research published in ACM SIGMETRICS Performance Evaluation Review\" (by Karsten and grad student Peter Cai). \n\nTheir paper \"reviews the performance characteristics of network stack processing for communication-heavy server applications,\" devising an \"indirect methodology\" to \"identify and quantify the direct and indirect costs of asynchronous hardware interrupt requests (IRQ) as a major source of overhead... \n\n\"Based on these findings, a small modification of a vanilla Linux system is devised that improves the efficiency and performance of traditional kernel-based networking significantly, resulting in up to 45% increased throughput...\"",
+      "contentLength": 2374,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Linux 6.14 Adds Support For The Microsoft Copilot Key Found On New Laptops",
       "url": "https://linux.slashdot.org/story/25/01/23/2333254/linux-614-adds-support-for-the-microsoft-copilot-key-found-on-new-laptops?utm_source=rss1.0mainlinkanon&utm_medium=feed",

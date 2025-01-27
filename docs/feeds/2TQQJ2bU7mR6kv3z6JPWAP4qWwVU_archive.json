@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 3,
+  "itemCount": 4,
   "items": [
+    {
+      "title": "Zig Cross Compiling",
+      "url": "https://zig.news/david_vanderson/zig-cross-compiling-37en",
+      "date": 1737944648,
+      "author": "David Vanderson",
+      "guid": 17223,
+      "unread": true,
+      "content": "<p>My first cross-compiling attempt with zig was great.</p><p>Both run Linux, and I had already successfully compiled on the phone itself, but the edit/debug cycle was too long.</p><p>So first up, find out what the phone target is, by running  which produces tons of output, but at the bottom:</p><div><pre><code> \"native\": {\n  \"triple\": \"aarch64-linux.4.19.325...4.19.325-gnu.2.39\",\n  \"cpu\": {\n   \"arch\": \"aarch64\",\n   \"name\": \"cortex_a78\",\n</code></pre></div><div><pre><code>$zig build -Dtarget=aarch64-linux.4.19.325...4.19.325-gnu.2.39\n</code></pre></div><div><pre><code>/home/dvanderson/.cache/zig/p/122004e82d4a0c61a9c414539c1f87bb125cb2b293573af77b153ea3903cb209b65b/library/aesce.c:182:18: \nerror: always_inline function 'vaesimcq_u8' requires target feature 'aes', \nbut would be inlined into function 'mbedtls_aesce_inverse_key' \nthat is compiled without support for 'aes'\n</code></pre></div><p>It looks like I need to also pass some , so again using the output of  from above:</p><div><pre><code>$zig build -Dtarget=aarch64-linux.4.19.325...4.19.325-gnu.2.39 -Dcpu=cortex_a78\n</code></pre></div><p>Note that this is all with zig 0.13, and there are a few issues that might change how to pass the target/cpu/libc/abi information in the future.</p>",
+      "contentLength": 1081,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Discover Unlimited Anime with GogoAnime!",
       "url": "https://zig.news/gogoanimeofficial/discover-unlimited-anime-with-gogoanime-2k41",

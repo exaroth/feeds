@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 17,
+  "itemCount": 18,
   "items": [
+    {
+      "title": "Oracle and US Investors (Including Microsoft) Discuss Taking Control of TikTok in the US",
+      "url": "https://tech.slashdot.org/story/25/01/26/0037255/oracle-and-us-investors-including-microsoft-discuss-taking-control-of-tiktok-in-the-us?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+      "date": 1737858840,
+      "author": "EditorDavid",
+      "guid": 16999,
+      "unread": true,
+      "content": "A plan to keep TikTok available in the U.S. \"involves tapping software company Oracle and a group of outside investors,\" reports NPR, \"to effectively take control of the app's global operations, according to two people with direct knowledge of the talks...\" \n\n\"[P]otential investors who are engaged in the talks include Microsoft.\"\n\nUnder the deal now being negotiated by the White House, TikTok's China-based owner ByteDance would retain a minority stake in the company, but the app's algorithm, data collection and software updates will be overseen by Oracle, which already provides the foundation of TikTok's web infrastructure... \"The goal is for Oracle to effectively monitor and provide oversight with what is going on with TikTok,\" said the person directly involved in the talks, who was not authorized to speak publicly about the deliberations. \"ByteDance wouldn't completely go away, but it would minimize Chinese ownership....\" Officials from Oracle and the White House held a meeting on Friday about a potential deal, and another meeting has been scheduled for next week, according to the source involved in the discussions, who said Oracle is interested in a TikTok stake \"in the tens of billions,\" but the rest of the deal is in flux... \n\n\nUnder a law passed by Congress and upheld by the Supreme Court, TikTok must execute what is known as \"qualified divestiture\" from ByteDance in order to stay in business in the U.S... A congressional staffer involved in talks about TikTok's future, who was not authorized to speak publicly, said binding legal agreements from the White House ensuring ByteDance cannot covertly manipulate the app will prove critical in winning lawmakers' approval. \"A key part is showing there is no operational relationship with ByteDance, that they do not have control,\" the Congressional staffer said. \"There needs to be no backdoors where China can potentially gain access....\" \n\n\nChinese regulators, who have for years opposed the selling of TikTok, recently signaled that they would not stand in the way of a TikTok ownership change, saying acquisitions \"should be independently decided by the enterprises and based on market principles.\" The statement, at first, does not seem to say much, but negotiators in the White House believe it indicates that Beijing is not planning to block a deal that gives American investors a majority-stake position in the company.\n \n\n\"Meanwhile, Apple and Google still have not returned TikTok to app stores...\"",
+      "contentLength": 2485,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Epic Games To Cover Developer iOS Fees",
       "url": "https://games.slashdot.org/story/25/01/23/2350253/epic-games-to-cover-developer-ios-fees?utm_source=rss1.0mainlinkanon&utm_medium=feed",

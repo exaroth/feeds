@@ -10,6 +10,20 @@
   "itemCount": 50,
   "items": [
     {
+      "title": "isA() - A function that checks if a given type was constructed by a certain type constructor",
+      "url": "https://www.reddit.com/r/Zig/comments/1ib4v48/isa_a_function_that_checks_if_a_given_type_was/",
+      "date": 1737971846,
+      "author": "/u/fghekrglkbjrekoev",
+      "guid": 17278,
+      "unread": true,
+      "content": "<div><pre><code>inline fn isA(comptime T: type, comptime F: anytype) bool { switch (@typeInfo(@TypeOf(F))) { .@\"fn\" =&gt; |f| { if (f.return_type != type) @compileError(\"F is not a type constructor\\n\"); switch (@typeInfo(T)) { .@\"struct\" =&gt; |s| { if (f.params.len &gt; s.decls.len) return false; comptime var fields: [f.params.len]std.builtin.Type.StructField = undefined; inline for (f.params, s.decls[0..f.params.len], 0..) |param, decl, i| { const decl_type = @TypeOf(@field(T, decl.name)); if (!param.is_generic and decl_type != param.type) return false; comptime var buf: [16]u8 = undefined; fields[i] = .{ .name = comptime std.fmt.bufPrintZ(&amp;buf, \"{}\", .{i}) catch unreachable, .type = decl_type, .default_value_ptr = @ptrCast(&amp;@field(T, decl.name)), .is_comptime = true, .alignment = @alignOf(decl_type) }; } const params = std.builtin.Type.Struct{ .is_tuple = true, .decls = &amp;.{}, .fields = &amp;fields, .layout = .auto }; const S = @Type(std.builtin.Type{ .@\"struct\" = params }); return @call(.compile_time, F, S{}) == T; }, else =&gt; @compileError(\"T is not a struct\\n\"), } }, else =&gt; @compileError(\"F is not a type constructor\\n\"), } } </code></pre><p>Just wanted to share this as I was looking for a generic way to do this and couldn't find anything on the internet.</p><p>In order for this to work, the type constructor  must meet the following conditions:</p><ul><li>In this implementation, it must return a struct (but you can extend it to other structure types like union)</li><li>The type that is constructed must expose the parameters as public const declarations. For example:</li></ul><pre><code>fn MyTypeConstructor(comptime T: type, comptime C: usize) type { return struct { pub const Type = T; pub const Capacity = C; buffer: [C]T, }; } </code></pre><ul><li>These exposed declarations MUST be in the same order as the type constructor's parameters</li><li>These exposed declarations MUST be the first declarations in the returned struct</li><li>These exposed declarations MUST be public even if they aren't accessed outside the current namespace</li><li>You may name the declarations however you want</li></ul><pre><code>fn MyTypeConstructor2(comptime T: type, comptime C: usize, comptime D: anytype) type { return struct { pub const Type = T; pub const Capacity = C; pub const Default_Value = D; buffer: ?[C]T, }; } _ = isA(MyTypeConstructor2(u32, 4, [_]u32{}), MyTypeConstructor2); // returns true </code></pre><p>You can also extend a type constructor that is externally defined:</p><pre><code>const std = @import(\"std\"); fn MyBoundedArray(comptime T: type, comptime C: usize) type { return struct { pub const Type = T; pub const Capacity = C; // Note that Self must be defined here, AFTER the type constructor parameters pub const Self = @This(); inner: std.BoundedArray(T, C), pub fn init(c: usize) !Self { return .{ .inner = try std.BoundedArray(T, C).init(c) }; } }; } const BA = MyBoundedArray(u8, 16); var arr = BA.init(0) catch unreachable; arr.inner.appendSlice(\"H\") catch unreachable; arr.inner.appendSlice(\"ello\") catch unreachable; _ = isA(@TypeOf(arr), MyBoundedArray); // returns true </code></pre></div>   submitted by   <a href=\"https://www.reddit.com/user/fghekrglkbjrekoev\"> /u/fghekrglkbjrekoev </a>",
+      "contentLength": 2971,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
       "title": "Questions about using OpenGL with Zig language",
       "url": "https://www.reddit.com/r/Zig/comments/1ia78rh/questions_about_using_opengl_with_zig_language/",
       "date": 1737870803,
@@ -690,20 +704,6 @@
       "unread": true,
       "content": "<p>I'm starting to learn zig and noticed when trying to print to stdout that I see a message \"LLVM Emit Object\" flash up just before the stdout is shown (see screenshot). Is this a `zig run` thing (e.g. some non-optimised, non-compiled reasoning) or nothing to do with Zig and maybe something else entirely (like ghostty terminal or my shell setup)?</p>",
       "contentLength": 346,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Checking for user input without freezing",
-      "url": "https://www.reddit.com/r/Zig/comments/1hzk5nt/checking_for_user_input_without_freezing/",
-      "date": 1736678655,
-      "author": "/u/D0mbi",
-      "guid": 12324,
-      "unread": true,
-      "content": "<p>Hey, I've been trying to learn Zig and as with every other language I just start with programming a simple game for the terminal. The problem: I'm programming pacman and have a while loop in which the game is running. There's a 2D array in which the character moves. But on each pass of while loop the game stops and waits for user movement input and then &lt;CR&gt;. Is there any way to check for user input withou freezing? And then if there is user input it being processed automatically?</p>",
-      "contentLength": 485,
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": "",
