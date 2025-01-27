@@ -50,7 +50,7 @@
       "tags": [
         "tech"
       ],
-      "num_items": 93
+      "num_items": 90
     },
     {
       "id": "43nutaBRYF",
@@ -141,7 +141,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 834
+      "num_items": 836
     },
     {
       "id": "46aP2QbqUqBrWfYqAibo8xS24qkvbDNgWZV4Z6rf2nuJ3cBJ971pKb6XZkWhnDxr957c82fPU4Cg4j63MSkVSUXrPi55",
@@ -152,7 +152,8 @@
       "hidden": false,
       "is_query": false,
       "tags": [
-        "news"
+        "news",
+        "reddit"
       ],
       "num_items": 505
     },
@@ -165,9 +166,10 @@
       "hidden": false,
       "is_query": false,
       "tags": [
-        "news"
+        "news",
+        "reddit"
       ],
-      "num_items": 497
+      "num_items": 496
     },
     {
       "id": "VMK7D8tQvwsLtnxKHzNdF9c4Yhtuqm",
@@ -178,7 +180,8 @@
       "hidden": false,
       "is_query": false,
       "tags": [
-        "dev"
+        "dev",
+        "hn"
       ],
       "num_items": 140
     },
@@ -191,9 +194,10 @@
       "hidden": false,
       "is_query": false,
       "tags": [
-        "dev"
+        "dev",
+        "hn"
       ],
-      "num_items": 88
+      "num_items": 85
     },
     {
       "id": "4W3i2hyrJTVfcLq85rWgduVQ3y3BMzrSD4pVUCMqPpFhmXWpqxQ",
@@ -204,9 +208,10 @@
       "hidden": false,
       "is_query": false,
       "tags": [
-        "dev"
+        "dev",
+        "hn"
       ],
-      "num_items": 780
+      "num_items": 785
     },
     {
       "id": "CQdwDV8xyajeX5DKoSYfBQhN4kkXBaTmXPYgJyANUWHyjCo5BpHUjy5gJhgngST",
@@ -217,9 +222,10 @@
       "hidden": false,
       "is_query": false,
       "tags": [
-        "dev"
+        "dev",
+        "slashdot"
       ],
-      "num_items": 9
+      "num_items": 8
     },
     {
       "id": "6gUbcJtcgqw1wQBapm8qwcP58MMnPvoDmUVDva7XtKUuLQTDpuyDxDo1yehnZDohDQ6a5p",
@@ -230,7 +236,8 @@
       "hidden": false,
       "is_query": false,
       "tags": [
-        "dev"
+        "dev",
+        "slashdot"
       ],
       "num_items": 18
     },
@@ -243,7 +250,8 @@
       "hidden": false,
       "is_query": false,
       "tags": [
-        "dev"
+        "dev",
+        "k8s"
       ],
       "num_items": 1
     },
@@ -269,7 +277,9 @@
       "hidden": false,
       "is_query": false,
       "tags": [
-        "dev"
+        "dev",
+        "reddit",
+        "go"
       ],
       "num_items": 292
     },
@@ -282,7 +292,8 @@
       "hidden": false,
       "is_query": false,
       "tags": [
-        "dev"
+        "dev",
+        "zig"
       ],
       "num_items": 89
     },
@@ -295,7 +306,8 @@
       "hidden": false,
       "is_query": false,
       "tags": [
-        "dev"
+        "dev",
+        "rust"
       ],
       "num_items": 287
     },
@@ -321,7 +333,8 @@
       "hidden": false,
       "is_query": false,
       "tags": [
-        "dev"
+        "dev",
+        "k8s"
       ],
       "num_items": 289
     },
@@ -347,7 +360,8 @@
       "hidden": false,
       "is_query": false,
       "tags": [
-        "dev"
+        "dev",
+        "python"
       ],
       "num_items": 1
     },
@@ -373,7 +387,8 @@
       "hidden": false,
       "is_query": false,
       "tags": [
-        "dev"
+        "dev",
+        "k8s"
       ],
       "num_items": 143
     },
@@ -425,7 +440,8 @@
       "hidden": false,
       "is_query": false,
       "tags": [
-        "dev"
+        "dev",
+        "rust"
       ],
       "num_items": 1
     },
@@ -545,123 +561,6 @@
         "dev"
       ],
       "num_items": 3
-    },
-    {
-      "id": "7ohP4GDMGPrTecAsbdk4Ux7kX8oRRvqavmV8ox2Lh37BT7UxKva1vyh8AakqH35BFwAg8eQ9fL1LBGzW4QrWmuCaCHW2kuVDhY5q",
-      "title": "The Ancients",
-      "display_title": "Podcast - Ancients",
-      "url": "https://access.acast.com/rss/f2925f7a-eb08-471a-9958-387cb5ee6353/default",
-      "feedlink": "https://www.historyhit.com/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "podcast"
-      ],
-      "num_items": 9
-    },
-    {
-      "id": "7ohP4GDMGPrTecAsbdk4Ux7kX8oRRvqavmV8ox2Lg53hhcq7wNE81x1V7wRzBRAAwq1qwKSjzyWP8JBzbs6Uq6UgbUcg21dXiqZm",
-      "title": "Dan Snow's History Hit",
-      "display_title": "Podcast - HistoryHit",
-      "url": "https://access.acast.com/rss/c939f8d1-c4bc-478e-8bb9-e5343f9a7ab5/default",
-      "feedlink": "https://www.historyhit.com/podcasts/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "podcast"
-      ],
-      "num_items": 13
-    },
-    {
-      "id": "3MxaK2JpEReqHsHNayp5wegcsbA3Uqs1xb7War6KS5tG443",
-      "title": "The Changelog: Software Development, Open Source",
-      "display_title": "Podcast - Changelog",
-      "url": "https://changelog.com/podcast/feed",
-      "feedlink": "https://changelog.com/podcast",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "podcast"
-      ],
-      "num_items": 9
-    },
-    {
-      "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JpprHFm2UV2vWRfa9mX2y2pfXs5n2xbtt",
-      "title": "PowerfulJRE",
-      "display_title": "Podcast - Joe Rogan",
-      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCzQUP1qoWDoEbmsQxvdjxgQ",
-      "feedlink": "https://www.youtube.com/channel/UCzQUP1qoWDoEbmsQxvdjxgQ",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "podcast"
-      ],
-      "num_items": 14
-    },
-    {
-      "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4Jppfgmh6LcqyabuJ1NAzZy3UBF1JfvUYg",
-      "title": "Lex Fridman",
-      "display_title": "Podcast - Lex Fridman",
-      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCSHZKyawb77ixDdsGog4iWA",
-      "feedlink": "https://www.youtube.com/channel/UCSHZKyawb77ixDdsGog4iWA",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "podcast"
-      ],
-      "num_items": 3
-    },
-    {
-      "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppnTPmKLxpU2tRhdtRTKSt57YWBdJkQg",
-      "title": "Closer To Truth",
-      "display_title": "Podcast - Closer to Truth",
-      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCl9StMQ79LtEvlrskzjoYbQ",
-      "feedlink": "https://www.youtube.com/channel/UCl9StMQ79LtEvlrskzjoYbQ",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "podcast"
-      ],
-      "num_items": 45
-    },
-    {
-      "id": "x7L2VSNEiyAFPo5H6bnPWAveyi4npegYaNeyr78Gjr6vQqtjp4cKiAbg9y6hcgadVzEqXA589jFXfyD",
-      "title": "Podcast Archives - Software Engineering Daily",
-      "display_title": "Podcast - Software Engineering Daily",
-      "url": "https://softwareengineeringdaily.com/category/podcast/feed",
-      "feedlink": "http://softwareengineeringdaily.com/category/all-episodes/exclusive-content/podcast/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "podcast"
-      ],
-      "num_items": 11
-    },
-    {
-      "id": "7DceLgR4szFxQ3UB53HWzbG45Ex5fdouH7krrJM2AKs6cssjdexHZCQGYMtghshA1XvfPN6ncGeVc5C7GNvnN",
-      "title": "CoRecursive: Coding Stories",
-      "display_title": "Podcast - CoRecursive",
-      "url": "https://link.chtbl.com/corecursive?id=corecursive&platform=rss",
-      "feedlink": "http://corecursive.com/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "podcast"
-      ],
-      "num_items": 1
-    },
-    {
-      "id": "6C2W1azD1rBrcTRY3HU8boSx83NbkHKLjCRzRoNgHM1f9rDLzUhN2yx",
-      "title": "MLOps.community",
-      "display_title": "Podcast - MLOps",
-      "url": "https://anchor.fm/s/174cb1b8/podcast/rss",
-      "feedlink": "https://mlops.community/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "podcast"
-      ],
-      "num_items": 5
     }
   ]
 }

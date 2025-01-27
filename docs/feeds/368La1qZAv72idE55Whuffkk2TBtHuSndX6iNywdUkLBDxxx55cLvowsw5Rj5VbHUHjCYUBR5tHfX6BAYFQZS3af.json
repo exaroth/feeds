@@ -366,8 +366,8 @@
       "author": "/u/EUstrongerthanUS",
       "guid": 16839,
       "unread": true,
-      "content": "\n                Mandatory cookies are used on our website www.aa.com.tr in order to provide you with a better service. These cookies cannot be disabled via the \"Cookie Control Panel\". You can view the cookies used on our site via the \"Cookie Control Panel\" and change your preferences.\n                ",
-      "contentLength": 303,
+      "content": "",
+      "contentLength": 0,
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": "",
@@ -711,6 +711,7 @@
     }
   ],
   "tags": [
-    "news"
+    "news",
+    "reddit"
   ]
 }
