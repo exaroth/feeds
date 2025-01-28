@@ -10,6 +10,20 @@
   "itemCount": 50,
   "items": [
     {
+      "title": "Anduril with Gokul Subramanian",
+      "url": "https://softwareengineeringdaily.com/2025/01/28/anduril-with-gokul-subramanian/?utm_source=rss&utm_medium=rss&utm_campaign=anduril-with-gokul-subramanian",
+      "date": 1738058438,
+      "author": "SEDaily",
+      "guid": 17675,
+      "unread": true,
+      "content": "<div><p>Anduril is a technology defense company with a focus on drones, computer vision, and other problems related to national security. It is a full-stack company that builds its own hardware and software, which leads to a great many interesting questions about cloud services, engineering workflows, and management.</p></div><div><p><a href=\"https://www.anduril.com/profile/gokul-subramanian/\">Gokul Subramanian</a> is Senior Vice President of Engineering for Software Programs at <a href=\"https://www.anduril.com/\">Anduril</a> Industries. He joins the show to share his knowledge of the national security problem set, how Anduril operates and what the company has built.</p></div>",
+      "contentLength": 544,
+      "flags": null,
+      "enclosureUrl": "https://traffic.megaphone.fm/SED5987055178.mp3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
       "title": "DeepSeek-R1's epic pull request (News)",
       "url": "https://changelog.com/news/129",
       "date": 1738009800,
@@ -692,20 +706,6 @@
       "contentLength": 1143,
       "flags": null,
       "enclosureUrl": "https://www.youtube.com/v/dw1fRnui-Oo?version=3",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Joe Rogan Experience #2257 - Bryan Callen",
-      "url": "https://www.youtube.com/watch?v=qOSGaYEAJMw",
-      "date": 1736964044,
-      "author": "PowerfulJRE",
-      "guid": 13537,
-      "unread": true,
-      "content": "<article>Bryan Callen is an actor, comedian, and podcaster. He's the co-host of the podcasts \"The Fighter and the Kid\" and \"Conspiracy Social Club,\" and host of \"The Bryan Callen Show.\"\nhttp://www.bryancallen.com\n\nThis episode is brought to you by BetterHelp. Get working on a better you with therapy. Visit http://www.BetterHelp.com/JRE today to get 10% off your first month.\n\nDon’t miss out on all the action this week at DraftKings! Download the DraftKings app today! Sign-up using http://dkng.co/rogan or through my promo code ROGAN.\n\nGAMBLING PROBLEM? CALL 1-800-GAMBLER, (800) 327-5050 or visit http://gamblinghelplinema.org (MA). Call 877-8-HOPENY/text HOPENY (467369) (NY). Please Gamble Responsibly. 888-789-7777/visit http://ccpg.org (CT) or visit http://www.mdgamblinghelp.org (MD).21+ and present in most states. (18+ DC/KY/NH/WY). Void in ONT/OR/NH. Eligibility restrictions apply. On behalf of Boot Hill Casino &amp; Resort (KS). 1 per new customer. Min. $5 deposit. Min. $5 bet. Max. $200 issued as non-withdrawable Bonus Bets that expire in 7 days (168 hours). Stake removed from payout. Terms: http://dkng.co/dk-offer-terms. Ends 2/9/25 at 11:59 PM ET. Sponsored by DK.</article>",
-      "contentLength": 1175,
-      "flags": null,
-      "enclosureUrl": "https://www.youtube.com/v/qOSGaYEAJMw?version=3",
       "enclosureMime": "",
       "commentsUrl": null
     }

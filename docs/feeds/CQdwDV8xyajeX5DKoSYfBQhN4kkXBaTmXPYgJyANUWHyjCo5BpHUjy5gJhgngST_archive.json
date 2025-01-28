@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 9,
+  "itemCount": 10,
   "items": [
+    {
+      "title": "Facebook Flags Linux Topics As 'Cybersecurity Threats'",
+      "url": "https://linux.slashdot.org/story/25/01/27/2120230/facebook-flags-linux-topics-as-cybersecurity-threats?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+      "date": 1738018800,
+      "author": "BeauHD",
+      "guid": 17549,
+      "unread": true,
+      "content": "Facebook has banned posts mentioning Linux-related topics, with the popular Linux news and discussion site, DistroWatch, at the center of the controversy. Tom's Hardware reports: A post on the site claims, \"Facebook's internal policy makers decided that Linux is malware and labeled groups associated with Linux as being 'cybersecurity threats.' We tried to post some blurb about distrowatch.com on Facebook and can confirm that it was barred with a message citing Community Standards. DistroWatch says that the Facebook ban took effect on January 19. Readers have reported difficulty posting links to the site on this social media platform. Moreover, some have told DistroWatch that their Facebook accounts have been locked or limited after sharing posts mentioning Linux topics.\n \nIf you're wondering if there might be something specific to DistroWatch.com, something on the site that the owners/operators perhaps don't even know about, for example, then it seems pretty safe to rule out such a possibility. Reports show that \"multiple groups associated with Linux and Linux discussions have either been shut down or had many of their posts removed.\" However, we tested a few other Facebook posts with mentions of Linux, and they didn't get blocked immediately. Copenhagen-hosted DistroWatch says it has tried to appeal against the Community Standards-triggered ban. However, they say that a Facebook representative said that Linux topics would remain on the cybersecurity filter. The DistroWatch writer subsequently got their Facebook account locked... DistroWatch points out the irony at play here: \"Facebook runs much of its infrastructure on Linux and often posts job ads looking for Linux developers.\"",
+      "contentLength": 1708,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Linux 6.14 Brings Some Systems Faster Suspend and Resume",
       "url": "https://linux.slashdot.org/story/25/01/25/2343225/linux-614-brings-some-systems-faster-suspend-and-resume?utm_source=rss1.0mainlinkanon&utm_medium=feed",

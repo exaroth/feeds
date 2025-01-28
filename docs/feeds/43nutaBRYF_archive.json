@@ -10,6 +10,20 @@
   "itemCount": 112,
   "items": [
     {
+      "title": "Anduril with Gokul Subramanian",
+      "url": "https://softwareengineeringdaily.com/2025/01/28/anduril-with-gokul-subramanian/?utm_source=rss&utm_medium=rss&utm_campaign=anduril-with-gokul-subramanian",
+      "date": 1738058438,
+      "author": "SEDaily",
+      "guid": 17675,
+      "unread": true,
+      "content": "<div><p>Anduril is a technology defense company with a focus on drones, computer vision, and other problems related to national security. It is a full-stack company that builds its own hardware and software, which leads to a great many interesting questions about cloud services, engineering workflows, and management.</p></div><div><p><a href=\"https://www.anduril.com/profile/gokul-subramanian/\">Gokul Subramanian</a> is Senior Vice President of Engineering for Software Programs at <a href=\"https://www.anduril.com/\">Anduril</a> Industries. He joins the show to share his knowledge of the national security problem set, how Anduril operates and what the company has built.</p></div>",
+      "contentLength": 544,
+      "flags": null,
+      "enclosureUrl": "https://traffic.megaphone.fm/SED5987055178.mp3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
       "title": "DeepSeek-R1's epic pull request (News)",
       "url": "https://changelog.com/news/129",
       "date": 1738009800,
@@ -1560,20 +1574,6 @@
       "contentLength": 1329,
       "flags": null,
       "enclosureUrl": "https://www.youtube.com/v/dhzTSvcNVe4?version=3",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Emperor Constantine",
-      "url": "https://shows.acast.com/the-ancients/episodes/emperor-constantine",
-      "date": 1735441224,
-      "author": "",
-      "guid": 7991,
-      "unread": true,
-      "content": "<p>How did Constantine the Great conquer his rivals and shape the Roman Empire?</p><p>Tristan Hughes discusses the dramatic rise of Roman Emperor Constantine I with Professor David Potter. They discuss the scandalous tales and strategic manoeuvres that defined Constantine's ascent, including his brutal execution of his son Crispus and his wife Fausta, his significant victory at the Milvian Bridge, and his delicate balance between Christianity and Roman paganism. Together they uncover the personal dramas and political strategies that reshaped the Roman Empire and cemented Constantine's legacy.</p><p>Presented by Tristan Hughes. Audio editor is Aidan Lonergan, the producer is Joseph Knight. The senior producer is Anne-Marie Luff.</p><p><em>The Ancients is a History Hit podcast.</em></p><p>You can take part in our listener survey <a href=\"https://www.surveymonkey.co.uk/r/6FFT7MK\" rel=\"noopener noreferrer\" target=\"_blank\">here</a>:</p><p>Theme music from Motion Array, all other music from Epidemic Sound</p>",
-      "contentLength": 870,
-      "flags": null,
-      "enclosureUrl": "https://sphinx.acast.com/p/acast/s/the-ancients/e/676184cbd9cd65ec1e58ac23/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJzdGF0dXMiOiJwdWJsaWMifQ==&sig=ZwVQyTUsaHr7HWbNXuDxeYjk4ROUPoWRlRH9l2hIXDI",
       "enclosureMime": "",
       "commentsUrl": null
     }

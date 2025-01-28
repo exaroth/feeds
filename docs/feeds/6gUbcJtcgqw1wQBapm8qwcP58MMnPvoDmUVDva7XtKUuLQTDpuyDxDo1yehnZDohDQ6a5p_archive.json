@@ -7,7 +7,7 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 19,
+  "itemCount": 18,
   "items": [
     {
       "title": "New Michigan Law Requires High Schools to Offer CS Classes",
@@ -256,20 +256,6 @@
       "unread": true,
       "content": "After a four-year hiatus, 2025 will see the return of the International Obfuscated C Code Contest. Started in 1984 (and inspired partly by a bug in the classic Bourne shell), it's \"the Internet's oldest contest,\" acording to their official social media account on Mastodon. \n\nThe contest enters its \"pending\" state today at 2024-12-29 23:58 UTC — meaning an opening date for submissions has been officially scheduled (for January 31st) as well as a closing date roughly eight weeks later on April 1st, 2025. That's according to the newly-released (proposed and tentative) rules and guidelines, listing contest goals like \"show the importance of programming style, in an ironic way\" and \"stress C compilers with unusual code.\" And the contest's home page adds an additional goal: \"to have fun with C!\" \n\nExcerpts from the official rules:\n\n\nRule 0 \nJust as C starts at 0, so the IOCCC starts at rule 0. :-) \n\nRule 1 \nYour submission must be a complete program.... \n\nRule 5 \nYour submission MUST not modify the content or filename of any part of your original submission including, but not limited to prog.c, the Makefile (that we create from your how to build instructions), as well as any data files you submit.... \n\n\nRule 6 \nI am not a rule, I am a free(void *human); \n while (!(ioccc(rule(you(are(number(6)))))) {\n ha_ha_ha();\n } \n\n \nRule 6 is clearly a reference to The Prisoner... (Some other rules are even sillier...) And the guidelines include their own jokes:\n You are in a maze of twisty guidelines, all different. \n\nThere are at least zero judges who think that Fideism has little or nothing to do with the IOCCC judging process.... \n\n\nWe suggest that you avoid trying for the 'smallest self-replicating' source. The smallest, a zero byte entry, won in 1994.\n \n\nAnd this weekend there was also a second announcement:\n\nAfter a 4 year effort by a number of people, with over 6168+ commits, the Great Fork Merge has been completed and the Official IOCCC web site has been updated! A significant number of improvements has been made to the IOCCC winning entries. A number of fixes and improvements involve the ability of reasonable modern Unix/Linux systems to be able to compile and even run them. \n\nThanks to long-time Slashdot reader — and C programmer — achowe for sharing the news.",
       "contentLength": 2297,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Python in 2024: Faster, More Powerful, and More Popular Than Ever",
-      "url": "https://developers.slashdot.org/story/24/12/29/0534253/python-in-2024-faster-more-powerful-and-more-popular-than-ever?utm_source=rss1.0mainlinkanon&utm_medium=feed",
-      "date": 1735461240,
-      "author": "EditorDavid",
-      "guid": 8020,
-      "unread": true,
-      "content": "\"Over the course of 2024, Python has proven again and again why it's one of the most popular, useful, and promising programming languages out there,\" writes InfoWorld:\n\nThe latest version of the language pushes the envelope further for speed and power, sheds many of Python's most decrepit elements, and broadens its appeal with developers worldwide. Here's a look back at the year in Python. \n\nIn the biggest news of the year, the core Python development team took a major step toward overcoming one of Python's longstanding drawbacks: the Global Interpreter Lock or \"GIL,\" a mechanism for managing interpreter state. The GIL prevents data corruption across threads in Python programs, but it comes at the cost of making threads nearly useless for CPU-bound work. Over the years, various attempts to remove the GIL ended in tears, as they made single-threaded Python programs drastically slower. But the most recent no-GIL project goes a long way toward fixing that issue — enough that it's been made available for regular users to try out. \n\nThe no-GIL or \"free-threaded\" builds are still considered experimental, so they shouldn't be deployed in production yet. The Python team wants to alleviate as much of the single-threaded performance impact as possible, along with any other concerns, before giving the no-GIL builds the full green light. It's also entirely possible these builds may never make it to full-blown production-ready status, but the early signs are encouraging. \nAnother forward-looking feature introduced in Python 3.13 is the experimental just-in-time compiler or JIT. It expands on previous efforts to speed up the interpreter by generating machine code for certain operations at runtime. Right now, the speedup doesn't amount to much (maybe 5% for most programs), but future versions of Python will expand the JIT's functionality where it yields real-world payoffs.\n \nPython is now more widely used than JavaScript on GitHub (thanks partly to its role in AI and data science code).",
-      "contentLength": 2008,
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": "",
