@@ -7,8 +7,50 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 89,
+  "itemCount": 92,
   "items": [
+    {
+      "title": "I managed to get Zig code running on a Nintendo 64",
+      "url": "https://fsl.yellowapple.us/zig64",
+      "date": 1738024626,
+      "author": "/u/northrupthebandgeek",
+      "guid": 17593,
+      "unread": true,
+      "content": "<div><p>It's a self-contained sample Zig codebase capable of building a\nNintendo 64 ROM.  Nothing shows up on the screen (yet), but it'll\nnonetheless run on real hardware (with debug output via USB on a\n<a href=\"https://summercart64.dev/\">SummerCart 64</a>) or on low-level emulators\nlike <a href=\"https://ares-emu.net/\">Ares</a> (with debug output if the emulator\nsupports ISViewer-based debug logging).</p><p>I like Zig, I like the Nintendo 64, I want to write homebrew in Zig\nfor the Nintendo 64, and as far as I can tell nobody else has done\nthis (or at least nobody else has posted anything online indicating\nthat they've done this).</p><p>I ~~stole~~ \"borrowed\" the  source code,  linker\nscript, and \"dev\" IPL3 from <a href=\"https://libdragon.dev/\">libdragon</a>.  The\nincluded  compiles , compiles a MIPS3 ELF\nexecutable (using  and ), and uses the\ncompiled  to append the resulting  to libdragon's\nIPL3 () and produce a .  All this\nhappens automatically when running .</p><p>There's also  (which uploads the ROM to a\nUSB-connected <a href=\"https://summercart64.dev/\">SummerCart 64</a>) and  (which opens a debug console via the SummerCart's\nUSB serial interface).  Both of these require the <a href=\"https://github.com/Polprzewodnikowy/SummerCart64/releases\">\ntool</a> to\nalready be installed on your local machine to work; they're just thin\nwrappers around <code>sc64-deployer upload zig-out/zig64.z64</code> and\n (respectively), though since they're integrated\ninto  they'll automatically trigger rebuilding the ELF and\nROM as necessary.</p><p>Yes!  See  for details, but long story short, this demo code\nis effectively public-domain (zero-clause BSD), as are the pieces\ncopied over from Libdragon (Unlicense).</p></div>",
+      "contentLength": 1446,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": "https://www.reddit.com/r/Zig/comments/1ibp095/i_managed_to_get_zig_code_running_on_a_nintendo_64/"
+    },
+    {
+      "title": "zig cc, wasm and lto enabled results in failing programs",
+      "url": "https://www.reddit.com/r/Zig/comments/1ibcq9x/zig_cc_wasm_and_lto_enabled_results_in_failing/",
+      "date": 1737994240,
+      "author": "/u/karurochari",
+      "guid": 17431,
+      "unread": true,
+      "content": "<p>Basically, when enabling linker time optimizations on a WASM/WASI target, the final binary will soon encounter exceptions of all kinds. Following some advice I just got, I tried to isolate the issue by removing my code first, and all libraries after from the problem.<p> And yes, even when testing a project which is only linking </p> and  the generated binary will still fail. Disabling  results in a functioning binary.</p><p>Is there any known compatibility between  and the versions of libraries used by zig while cross-compiling for WASM/WASI?</p><p><strong>----Follow up ---------------------------------</strong></p><p>Well, I am really failing to make it work as I would expect. I made few tests using zig 14-dev standalone, without meson, just the command to compile and link.</p><pre><code>#include &lt;iostream&gt; int main(){ std::cout&lt;&lt;\"hello\\n\"; return 0; } </code></pre><pre><code>#include &lt;stdio.h&gt; int main(){ printf(\"hello\\n\"); return 0; } </code></pre><p><code>zig c++ --target=wasm32-wasi main.cpp -flto</code> -&gt; fail to run<code>zig c++ --target=wasm32-wasi main.cpp</code> -&gt; fail, surprisingly as from meson it works.<code>zig cc --target=wasm32-wasi main.c -flto</code> -&gt; fail to run<code>zig cc --target=wasm32-wasi main.c</code> -&gt; working</p><p>I also tested C++ using the C code, no libc++ and it works without .</p><p>I also noticed that the  attribute does not work, so  does not generate a static build, but clang would.</p>",
+      "contentLength": 1281,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "Easiest way to make std.json.stringify work on std.ArrayLists?",
+      "url": "https://www.reddit.com/r/Zig/comments/1ibam69/easiest_way_to_make_stdjsonstringify_work_on/",
+      "date": 1737988915,
+      "author": "/u/Verfin",
+      "guid": 17395,
+      "unread": true,
+      "content": "<p>Stringify can handle arrays, but not ArrayLists making it very annoying to work with.</p><p>Is there a way to add the functionality into the ArrayList, or should I write a wrapper and use that throughout the codebase?</p><p>I can also work with a library that works on the latest nightly and can de/serialize ArrayLists, if anyone has any suggestions!</p>",
+      "contentLength": 337,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "isA() - A function that checks if a given type was constructed by a certain type constructor",
       "url": "https://www.reddit.com/r/Zig/comments/1ib4v48/isa_a_function_that_checks_if_a_given_type_was/",
@@ -674,8 +716,8 @@
       "author": "/u/Djpatata",
       "guid": 12506,
       "unread": true,
-      "content": "<div><p>I'm a zig noob trying to translate C, but I can't find a simple way to do it.</p><p>``` int main(){ long number = 0x625f491e53532047; char *p = (char *)&amp;number;</p><pre><code>for (int i = 0; i &lt; 8; i++){ p[i] = (p[i] - 5) ^ 42; } for (int i = 0; i &lt; 8; i++){ printf(\"%c\", p[i]); } return 0; </code></pre><p>Can somebody help me in this?</p></div>   submitted by   <a href=\"https://www.reddit.com/user/Djpatata\"> /u/Djpatata </a>",
-      "contentLength": 329,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>I&#39;m a zig noob trying to translate C, but I can&#39;t find a simple way to do it.</p> <p>``` int main(){ long number = 0x625f491e53532047; char *p = (char *)&amp;number;</p> <pre><code>for (int i = 0; i &lt; 8; i++){ p[i] = (p[i] - 5) ^ 42; } for (int i = 0; i &lt; 8; i++){ printf(&quot;%c&quot;, p[i]); } return 0; </code></pre> <p>} ```</p> <p>Can somebody help me in this?</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Djpatata\"> /u/Djpatata </a> <br/> <span><a href=\"https://www.reddit.com/r/Zig/comments/1i022t3/c_to_zig_code_translation/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/Zig/comments/1i022t3/c_to_zig_code_translation/\">[comments]</a></span>",
+      "contentLength": 0,
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": "",
@@ -688,8 +730,8 @@
       "author": "/u/zanza2023",
       "guid": 12403,
       "unread": true,
-      "content": "   submitted by   <a href=\"https://www.reddit.com/user/zanza2023\"> /u/zanza2023 </a>",
-      "contentLength": 32,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p><a href=\"https://www.youtube.com/watch?v=PG0wRb7eYms\">https://www.youtube.com/watch?v=PG0wRb7eYms</a></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/zanza2023\"> /u/zanza2023 </a> <br/> <span><a href=\"https://www.reddit.com/r/Zig/comments/1hzq0c6/massive_memory_leaks_in_system76s_cosmic_desktop/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/Zig/comments/1hzq0c6/massive_memory_leaks_in_system76s_cosmic_desktop/\">[comments]</a></span>",
+      "contentLength": 0,
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": "",
@@ -702,8 +744,8 @@
       "author": "/u/FastlyIntegralist",
       "guid": 12370,
       "unread": true,
-      "content": "<p>I'm starting to learn zig and noticed when trying to print to stdout that I see a message \"LLVM Emit Object\" flash up just before the stdout is shown (see screenshot). Is this a `zig run` thing (e.g. some non-optimised, non-compiled reasoning) or nothing to do with Zig and maybe something else entirely (like ghostty terminal or my shell setup)?</p>",
-      "contentLength": 346,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>I&#39;m starting to learn zig and noticed when trying to print to stdout that I see a message &quot;LLVM Emit Object&quot; flash up just before the stdout is shown (see screenshot). Is this a `zig run` thing (e.g. some non-optimised, non-compiled reasoning) or nothing to do with Zig and maybe something else entirely (like ghostty terminal or my shell setup)?</p> <p>Thanks.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/FastlyIntegralist\"> /u/FastlyIntegralist </a> <br/> <span><a href=\"https://www.reddit.com/r/Zig/comments/1hznwb2/llvm_emit_object/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/Zig/comments/1hznwb2/llvm_emit_object/\">[comments]</a></span>",
+      "contentLength": 0,
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": "",
@@ -1258,6 +1300,7 @@
   ],
   "tags": [
     "dev",
-    "zig"
+    "zig",
+    "reddit"
   ]
 }

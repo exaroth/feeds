@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 8,
+  "itemCount": 9,
   "items": [
+    {
+      "title": "Linux 6.14 Brings Some Systems Faster Suspend and Resume",
+      "url": "https://linux.slashdot.org/story/25/01/25/2343225/linux-614-brings-some-systems-faster-suspend-and-resume?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+      "date": 1737909240,
+      "author": "EditorDavid",
+      "guid": 17113,
+      "unread": true,
+      "content": "Amid the ongoing Linux 6.14 kernel development cycle, Phoronix spotted a pull request for ACPI updates which \"will allow for faster suspend and resume cycles on some systems.\" \n\nWikipedia defines ACPI as \"an open standard that operating systems can use to discover and configure computer hardware components\" for things like power management and putting unused hardware components to sleep. Phoronix reports:\n\nThe ACPI change worth highlighting for Linux 6.14 is switching from msleep() to usleep_range() within the acpi_os_sleep() call in the kernel. This reduces spurious sleep time due to timer inaccuracy. Linux ACPI/PM maintainer Rafael Wysocki of Intel who authored this change noted that it could \"spectacularly\" reduce the duration of system suspend and resume transitions on some systems... \n\nRafael explained in the patch making the sleep change: \n\n \"The extra delay added by msleep() to the sleep time value passed to it can be significant, roughly between 1.5 ns on systems with HZ = 1000 and as much as 15 ms on systems with HZ = 100, which is hardly acceptable, at least for small sleep time values.\" \nOne 2022 bug report complained a Dell XPS 13 using Thunderbolt took \"a full 8 seconds to suspend and a full 8 seconds to resume even though no physical devices are connected.\" In November an Intel engineer posted on the kernel mailing list that the fix gave a Dell XPS 13 a 42% improvement in kernel resume time (from 1943ms to 1127ms).",
+      "contentLength": 1452,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Could New Linux Code Cut Data Center Energy Use By 30%?",
       "url": "https://hardware.slashdot.org/story/25/01/25/2111225/could-new-linux-code-cut-data-center-energy-use-by-30?utm_source=rss1.0mainlinkanon&utm_medium=feed",

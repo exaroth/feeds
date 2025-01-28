@@ -10,6 +10,34 @@
   "itemCount": 50,
   "items": [
     {
+      "title": "Hyprland 0.47.0 has arrived!",
+      "url": "https://hyprland.org/news/update47/",
+      "date": 1737995590,
+      "author": "/u/gabriel_3",
+      "guid": 17507,
+      "unread": true,
+      "content": "<p data-svelte-h=\"svelte-f7ye1f\">New year, new Hyprland release. This one is quite a large one, with tons of fixes and changes\naccumulated over about a month and a half.</p><p data-svelte-h=\"svelte-2vvse\">There have been quite a bunch of internal rewrites, mostly around memory safety, the renderer, and animation system. Although performance shouldn’t change\nmuch, it should improve stability in edge cases. Please do report any regressions you might find, if they aren’t reported already.</p><p data-svelte-h=\"svelte-82qooi\">Firstly, we got one breaking change:</p><ul data-svelte-h=\"svelte-1gp26y6\"><li><code>master:always_center_master</code> has been replaced with a more flexible <code>master:slave_count_for_center_master</code></li></ul><p data-svelte-h=\"svelte-1ejdgvs\">For the cooler stuff in the release, I’ve decided to give you a few “highlights”:</p><p data-svelte-h=\"svelte-1m3dhlz\">HDR and Color Management support has been merged and is now functional. You might want to look at the \nsection of the config variables for more information.</p><p data-svelte-h=\"svelte-1kyle9c\">Please do note it  experimental!</p><p data-svelte-h=\"svelte-1mhj6nv\">Added support for squircles in your corners:</p><img src=\"https://hyprland.org/imgs/blog/update47/squircles.png\"><p data-svelte-h=\"svelte-n7clq9\">it’s a cosmetic change for sure, but an anticipated one.</p><p data-svelte-h=\"svelte-11madcf\">A few new stuff has been implemented, namely  (used already in quickshell) and  which\nshould allow hypridle to make your system wait for the lock to launch before putting your system into suspend, avoiding\nyour desktop appearing for a moment after unsuspending.</p><p data-svelte-h=\"svelte-9rocbf\">A bit following in KDE’s footsteps, we’ve added a small “donation nag” that will appear  in july and  in december.\nYou can disable it with <code>ecosystem:no_donation_nag</code>, if you are a cruel person.</p><img src=\"https://hyprland.org/imgs/blog/update47/nag.png\"><p data-svelte-h=\"svelte-eyca5i\">and will of course go away if you click “No thanks”.</p><ul data-svelte-h=\"svelte-8unk0i\"><li> for negating any regex has been added</li><li> will now send more information than  on socket2</li><li>new  window selector for matching windows by tag</li><li>a few new window destruction dispatchers to kill windows instead of gracefully closing</li><li> got a  arg to cycle all visible windows</li></ul><p data-svelte-h=\"svelte-1ts9ndl\">Some less, but still notable new stuff / fixes include:</p><ul data-svelte-h=\"svelte-6htcen\"><li>CTM (used by hyprsunset) now has a smooth transition (except for Nvidia, because Nvidia)</li><li> has been added to Hyprland which will not launch Hyprland, and just print whether your config is well-formed or not</li><li>hyprpm got an option to force reload all plugins</li><li>regexes have been sped up by caching the compiled regexes where possible</li><li>xwayland got a few fixes around clipboard and dnd</li><li>config should now be reloaded noticeably faster than before thanks to the move to inotify</li></ul><p data-svelte-h=\"svelte-1ygbzwz\">if you are the type that enjoys reading, check the release out on <a href=\"https://github.com/hyprwm/Hyprland/releases/tag/v0.47.0\" rel=\"nofollow\">Github</a></p>",
+      "contentLength": 2307,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": "https://www.reddit.com/r/linux/comments/1ibda5l/hyprland_0470_has_arrived/"
+    },
+    {
+      "title": "Normal to give random install scripts root permissions?",
+      "url": "https://www.reddit.com/r/linux/comments/1ib8jle/normal_to_give_random_install_scripts_root/",
+      "date": 1737983279,
+      "author": "/u/chemolz9",
+      "guid": 17506,
+      "unread": true,
+      "content": "<p>I'm regularly stumbling over official installation guides in the internet for linux software, that just downloads and runs a shell script. The shell script then asks for root permissions. This seems highly dangerous to me and I'm baffled that this seems to be a thing.</p><p>Any idea how to deal with such installation guides? I don't want to scan 350 lines of code for malicious commands before I install some software.</p><p>[edit] Because so many people miss the point. They keyword is . Of coure I trust the source well enough to run it on user level.</p>",
+      "contentLength": 541,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
       "title": "Facebook considers Linux and related topics a \"cybersecurity threat\", according to Distrowatch",
       "url": "https://www.reddit.com/r/linux/comments/1ib3vaf/facebook_considers_linux_and_related_topics_a/",
       "date": 1737968106,
@@ -680,37 +708,10 @@
       "enclosureUrl": "",
       "enclosureMime": "",
       "commentsUrl": null
-    },
-    {
-      "title": "[ZRAM] New zramd Feature: Comprehensive ZRAM Metrics Collection and Analysis",
-      "url": "https://www.reddit.com/r/linux/comments/1i7q2ml/zram_new_zramd_feature_comprehensive_zram_metrics/",
-      "date": 1737590577,
-      "author": "/u/definitive_solutions",
-      "guid": 15945,
-      "unread": true,
-      "content": "<p>I wanted to share a new feature I just developed that helps understand how ZRAM is performing on your system. The new metrics collector tracks detailed compression and memory usage statistics over time.</p><p>The rationale is pretty simple: I hardcoded a \"3\" multiplier on my version of zramd because that's what my manual tests said zstd could compress to. I'm not a fan of guessing though, especially if it means I can brick my O.S. So I'll leave this collector running for about a month and come back with some hard data to tweak my settings accordingly.</p><p>A systemd service () that collects and analyzes:</p><ul><li><ul><li>Best/worst/average compression ratios</li><li>Distribution of compression quality (excellent: ≤20%, good: 20-30%, fair: 30-40%, poor: &gt;40%)</li></ul></li><li><ul><li>Usage distribution across different thresholds</li><li>Hourly usage patterns to identify peak times</li></ul></li><li><ul></ul></li></ul><p>The service periodically reads metrics from the ZRAM sysfs interface () and maintains aggregated statistics in <code>/var/log/zramd/metrics/zram_stats.json</code>. It's designed to work with both newer kernels (using mm_stat) and older ones (using individual metric files).</p><ol><li>Optimize your ZRAM configuration based on actual usage patterns</li><li>Identify if you're getting good compression ratios for your workload</li><li>Spot potential memory pressure issues</li><li>Understand when your system needs ZRAM the most</li></ol><p>The metrics are stored in a structured JSON format, making it easy to analyze or integrate with monitoring tools.</p><p>All feedback and feature requests welcome!</p><p><em>Technical note: Compatible with all kernel versions that support ZRAM, requires minimal system resources to run.</em></p><p>\"It works on my machine\"... Please read the source code of everything you install on your computer, especially if you need to run it as a superuser, and only install stuff you trust. No guarantees, yada yada, the usual.</p><p>Also, any and all feedback appreciated.</p>",
-      "contentLength": 1820,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "AMD Announces The AMDGPU Composition Stack \"ACS\" For Advanced Linux Desktop Features",
-      "url": "https://www.phoronix.com/news/AMD-AMDGPU-Composition-Stack",
-      "date": 1737559857,
-      "author": "/u/BinkReddit",
-      "guid": 15765,
-      "unread": true,
-      "content": "\nAn unexpected surprise today are AMD Linux software engineers announcing a new project a bit further outside the scope of their open-source graphics drivers... The AMDGPU Composition Stack \"ACS\" is for delivering new advanced features atop Wayland for bettering the Linux desktop display capabilities.\n<p>The AMDGPU Composition Stack is a fork of Wayland's Weston compositor and this is where AMD engineers will be experimenting with \"</p><em>additional advanced features</em>\" as a staging area for their Wayland features they hope to see adopted by Weston and other Wayland compositors. ACS will also serve as \"<em>a reference compositor for AMD's advanced graphics and display feature development.</em>\" This Wayland compositor is also designed to \"<em>extract the best out of AMD Display and Graphics [hardware]</em>.\"\n<p>The AMDGPU Composition Stack isn't just some one-off playground for AMD Linux engineers but they note that it's to be a \"</p><em>full stack opensource delivery vehicle for AMDs commercial solutions and products.</em>\" Furthermore their release announcement this morning calls it \"<em>To be the space where AMD specific in-house SW tools (performance tweakers, multimedia players, 3D games, profiling tools etc) can be saved in future.</em>\"\n<p>Presumably AMD is investing in the AMDGPU Composition Stack to help further their efforts along with the Steam Deck and other AMD Linux powered handheld  gaming devices, the wins that AMD has been enjoying for powering various in-vehicle infotainment systems that typically run on Linux, and other similar applications.\n</p><p>The ACS Wayland Compositor code is hosted on </p><a href=\"https://gitlab.com/acs-wayland\">GitLab</a> and was announced this morning on the <a href=\"https://lore.kernel.org/dri-devel/MW4PR12MB5667223EA6FF4C686FC76A6DF2E12@MW4PR12MB5667.namprd12.prod.outlook.com/T/#u\">DRI mailing list</a>.\n<p>Here's a screenshot from AMD showing off their initial AMDGPU Composition Stack:\n</p>It will be interesting to see what innovations AMD engineers work on driving around Wayland to complement their open-source Linux graphics/display stack. The <a href=\"https://gitlab.com/acs-wayland/weston/-/wikis/home/ACS-Features\">ACS feature page</a> lists some of its features as VRR/FreeSync, MPO support using underlays, direct multimedia decode, color management with wide gamut, full screen HDR video playback with tone mapping, and multi-seat support. Some planned features include more around color management / HDR, windowed HDR playback, TMZ and Secure Display, virtualization support, a custom QEMU implementation, and more.",
-      "contentLength": 2276,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": "https://www.reddit.com/r/linux/comments/1i7dpp0/amd_announces_the_amdgpu_composition_stack_acs/"
     }
   ],
   "tags": [
-    "dev"
+    "dev",
+    "reddit"
   ]
 }

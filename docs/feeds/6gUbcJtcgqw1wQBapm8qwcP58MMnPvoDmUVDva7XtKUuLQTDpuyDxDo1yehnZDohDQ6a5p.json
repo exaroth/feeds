@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 18,
+  "itemCount": 19,
   "items": [
+    {
+      "title": "New Michigan Law Requires High Schools to Offer CS Classes",
+      "url": "https://news.slashdot.org/story/25/01/26/1547204/new-michigan-law-requires-high-schools-to-offer-cs-classes?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+      "date": 1737912840,
+      "author": "EditorDavid",
+      "guid": 17121,
+      "unread": true,
+      "content": "The state of Michigan will now require each public high school in the state to offer at least one computer science course to its students. \"This bill aligns Michigan with a majority of the country,\" according to the state's announcement, which says the bill \"advances technological literacy\" and ensures their students \"are well-equipped with the critical thinking skills necessary for success in the workforce.\" \nSlashdot reader theodp writes:\n\n\n\nFrom the Michigan House Fiscal Agency Analysis: \"Supporters of the bill say that increasing access to computer science courses for students in schools should be a priority of the state in order to ensure that students can compete for the types of jobs that have good pay and will be needed in the coming decades.\" \nThat analysis goes on to report that testifying in favor of the bill were tech-giant backed nonprofit Code.org (Microsoft is a $30 million Code.org donor), Amazon and AWS (Amazon is a $30+ million Code.org donor), the tech-supported Computer Science Teachers Association (CSTA), and the lobbying organization TechNet, whose members include Amazon, Apple, Google, Meta, and OpenAI). \nIt's not clear how many high schools in Michigan are already teaching CS courses, but this still raises a popular question for discussion. Should high schools be required to teach at least one CS course?",
+      "contentLength": 1349,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Oracle and US Investors (Including Microsoft) Discuss Taking Control of TikTok in the US",
       "url": "https://tech.slashdot.org/story/25/01/26/0037255/oracle-and-us-investors-including-microsoft-discuss-taking-control-of-tiktok-in-the-us?utm_source=rss1.0mainlinkanon&utm_medium=feed",
