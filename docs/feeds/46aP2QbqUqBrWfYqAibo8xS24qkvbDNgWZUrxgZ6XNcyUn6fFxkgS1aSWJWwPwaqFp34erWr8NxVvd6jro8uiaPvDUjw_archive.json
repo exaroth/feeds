@@ -7,7 +7,7 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 286,
+  "itemCount": 287,
   "items": [
     {
       "title": "Kubernetes Podcast episode 246: Linkerd, with William Morgan",
@@ -18,6 +18,20 @@
       "unread": true,
       "content": "   submitted by   <a href=\"https://www.reddit.com/user/kubernetespodcast\"> /u/kubernetespodcast </a>",
       "contentLength": 40,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "Service launch triggered by hardware changes?",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1icg8q7/service_launch_triggered_by_hardware_changes/",
+      "date": 1738108431,
+      "author": "/u/samthehugenerd",
+      "guid": 18028,
+      "unread": true,
+      "content": "<p>I had a deranged idea that it would be neat to be able to plug a USB storage device into any node and have a service start that shares the disk over SMB/NFS with mDNS broadcast for discoverability. Has anyone messed around with something like this before?</p><p>I don't think it would be especially useful, but I do think it would be a fun challenge.</p>",
+      "contentLength": 343,
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": "",
@@ -697,17 +711,17 @@
     },
     {
       "title": "Cluster API to production: authentication with service accounts and RBAC using External Secrets and Kyverno",
-      "url": "https://blog.sneakybugs.com/rbac-for-capi-clusters/",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1i844zt/cluster_api_to_production_authentication_with/",
       "date": 1737641269,
       "author": "/u/LKummer",
       "guid": 16106,
       "unread": true,
-      "content": "<!DOCTYPE html>",
+      "content": "<table> <tr><td> <a href=\"https://www.reddit.com/r/kubernetes/comments/1i844zt/cluster_api_to_production_authentication_with/\"> <img src=\"https://external-preview.redd.it/AuK8MZA3Zy2NvWjWQn9rHFDGsIHx1-Y1HMirfPAnlkg.jpg?width=640&amp;crop=smart&amp;auto=webp&amp;s=940c426e1f84ea16b7e29d8f61539a898e120ef4\" alt=\"Cluster API to production: authentication with service accounts and RBAC using External Secrets and Kyverno\" title=\"Cluster API to production: authentication with service accounts and RBAC using External Secrets and Kyverno\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/LKummer\"> /u/LKummer </a> <br/> <span><a href=\"https://blog.sneakybugs.com/rbac-for-capi-clusters/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/kubernetes/comments/1i844zt/cluster_api_to_production_authentication_with/\">[comments]</a></span> </td></tr></table>",
       "contentLength": 0,
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": "",
-      "commentsUrl": "https://www.reddit.com/r/kubernetes/comments/1i844zt/cluster_api_to_production_authentication_with/"
+      "commentsUrl": null
     },
     {
       "title": "Poc for migrating from aws to onpremise",

@@ -24,6 +24,20 @@
       "commentsUrl": null
     },
     {
+      "title": "Service launch triggered by hardware changes?",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1icg8q7/service_launch_triggered_by_hardware_changes/",
+      "date": 1738108431,
+      "author": "/u/samthehugenerd",
+      "guid": 18028,
+      "unread": true,
+      "content": "<p>I had a deranged idea that it would be neat to be able to plug a USB storage device into any node and have a service start that shares the disk over SMB/NFS with mDNS broadcast for discoverability. Has anyone messed around with something like this before?</p><p>I don't think it would be especially useful, but I do think it would be a fun challenge.</p>",
+      "contentLength": 343,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
       "title": "ClusterCreator - Automated K8s on Proxmox - Version 2.0",
       "url": "https://www.reddit.com/r/kubernetes/comments/1ic4szv/clustercreator_automated_k8s_on_proxmox_version_20/",
       "date": 1738080009,
@@ -694,20 +708,6 @@
       "enclosureUrl": "",
       "enclosureMime": "",
       "commentsUrl": null
-    },
-    {
-      "title": "Cluster API to production: authentication with service accounts and RBAC using External Secrets and Kyverno",
-      "url": "https://blog.sneakybugs.com/rbac-for-capi-clusters/",
-      "date": 1737641269,
-      "author": "/u/LKummer",
-      "guid": 16106,
-      "unread": true,
-      "content": "<!DOCTYPE html>",
-      "contentLength": 0,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": "https://www.reddit.com/r/kubernetes/comments/1i844zt/cluster_api_to_production_authentication_with/"
     }
   ],
   "tags": [
