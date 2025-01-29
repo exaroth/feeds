@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 6,
+  "itemCount": 7,
   "items": [
+    {
+      "title": "Emerging Patterns in Building GenAI Products",
+      "url": "https://martinfowler.com/articles/gen-ai-patterns/",
+      "date": 1738068180,
+      "author": "Martin Fowler",
+      "guid": 17729,
+      "unread": true,
+      "content": "<p>Everyone is fascinated about using generative AI these days, and my\n      colleagues are no exception. Some of them have had the opportunity to put\n      these system into practice, both as proof-of-concept, and more importantly\n      as production system. I've known  for\n      many years as a technology leader in India, he's been assembling the\n      lessons we've learned and I've worked with him to describe them as\n      patterns.</p><p>In this first installment, we look the limits of the base case of\n      Direct Prompting, and how we might assess the capability of a system using\n      Evals.</p>",
+      "contentLength": 595,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Podcast with Luca Rossi",
       "url": "https://refactoring.fm/p/growing-the-development-forest-with",
