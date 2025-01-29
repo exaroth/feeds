@@ -55,7 +55,8 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCjRVKSokBHlljocLdnUD9pg "~D
 https://kubernetespodcast.com/feeds/audio.xml "~Dev - Kubernetes Podcast" dev k8s podcast
 https://cprss.s3.amazonaws.com/golangweekly.com.xml "~Dev - Golang Weekly" dev go
 https://dave.cheney.net/rss "~Dev - Dave Cheney" dev go
-https://blog.rust-lang.org/feed "~DEv - Rust Blog" dev official rust
+https://blog.rust-lang.org/feed "~Dev - Rust Blog" dev official rust
+https://github.blog/rss "~Dev - Github Blog" dev
 
 
 https://medium.com/@kyodo-tech/feed "~Dev - Kyodo-Tech" dev
