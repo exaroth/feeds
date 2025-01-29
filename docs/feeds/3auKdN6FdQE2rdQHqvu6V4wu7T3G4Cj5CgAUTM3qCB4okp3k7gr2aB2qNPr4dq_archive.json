@@ -1,0 +1,46 @@
+{
+  "id": "3auKdN6FdQE2rdQHqvu6V4wu7T3G4Cj5CgAUTM3qCB4okp3k7gr2aB2qNPr4dq",
+  "title": "Kubernetes Podcast from Google",
+  "displayTitle": "Dev - Kubernetes Podcast",
+  "url": "https://kubernetespodcast.com/feeds/audio.xml",
+  "feedLink": "https://kubernetespodcast.com/",
+  "isQuery": false,
+  "isEmpty": false,
+  "isHidden": false,
+  "itemCount": 2,
+  "items": [
+    {
+      "title": "Linkerd, with William Morgan",
+      "url": "http://sites.libsyn.com/419861/linkerd-with-william-morgan",
+      "date": 1738110300,
+      "author": "gdevs.podcast@gmail.com (gdevs.podcast@gmail.com)",
+      "guid": 18034,
+      "unread": true,
+      "content": "<p dir=\"ltr\"><a href=\"https://www.linkedin.com/in/wmorgan/\">William Morgan</a> is the CEO of <a href=\"https://buoyant.io/\">Buoyant</a>, the company behind Linkerd. You worked at Twitter before as a software engineer and engineering manager and you have a long experience in the field.</p><p dir=\"ltr\">Do you have something cool to share? Some questions? Let us know:</p> News of the week  Links from the interview ",
+      "contentLength": 295,
+      "flags": null,
+      "enclosureUrl": "https://traffic.libsyn.com/secure/e780d51f-f115-44a6-8252-aed9216bb521/KPod246.mp3?dest-id=3486674",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "Device Management in Kubernetes, with John Belamaric",
+      "url": "http://sites.libsyn.com/419861/device-management-in-kubernetes-with-john-belamaric",
+      "date": 1736902740,
+      "author": "gdevs.podcast@gmail.com (gdevs.podcast@gmail.com)",
+      "guid": 18033,
+      "unread": true,
+      "content": "<p dir=\"ltr\"><a href=\"https://www.linkedin.com/in/johnbelamaric/\">John Belamaric</a> is a senior staff software engineer at Google who has been involved in Kubernetes since 2016, and is currently a co-chair of both SIG Architecture and WG Device Management.</p><p dir=\"ltr\">Do you have something cool to share? Some questions? Let us know:</p> News of the week  Links from the interview  Links from the post-interview chat ",
+      "contentLength": 332,
+      "flags": null,
+      "enclosureUrl": "https://traffic.libsyn.com/secure/e780d51f-f115-44a6-8252-aed9216bb521/KPod245.mp3?dest-id=3486674",
+      "enclosureMime": "",
+      "commentsUrl": null
+    }
+  ],
+  "tags": [
+    "dev",
+    "k8s",
+    "podcast"
+  ]
+}

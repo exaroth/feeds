@@ -67,6 +67,8 @@
     }
   ],
   "tags": [
-    "dev"
+    "dev",
+    "official",
+    "zig"
   ]
 }

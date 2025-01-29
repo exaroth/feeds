@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 288,
+  "itemCount": 289,
   "items": [
+    {
+      "title": "Could rust have been used on machines from the 80's 90's?",
+      "url": "https://www.reddit.com/r/rust/comments/1icj6fu/could_rust_have_been_used_on_machines_from_the/",
+      "date": 1738116820,
+      "author": "/u/bloomingFemme",
+      "guid": 18026,
+      "unread": true,
+      "content": "<p>TL;DR Do you think had memory safety being thought or engineered earlier the technology of its time would make rust compile times feasible? Can you think of anything which would have made rust unsuitable for the time? Because if not we can turn back in time and bring rust to everyone.</p><p>I just have a lot of free time and I was thinking that rust compile times are slow for some and I was wondering if I could fit a rust compiler in a 70mhz 500kb ram microcontroller -idea which has got me insulted everywhere- and besides being somewhat unnecessary I began wondering if there are some technical limitations which would make the existence of a rust compiler dependent on powerful hardware to be present -because of ram or cpu clock speed- as lifetimes and the borrow checker take most of the computations from the compiler take place. </p>",
+      "contentLength": 833,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Abstract Impl: code generic trait implementations",
       "url": "https://crates.io/crates/abstract-impl",
@@ -697,17 +711,17 @@
     },
     {
       "title": "This Week in Rust #583",
-      "url": "https://this-week-in-rust.org/blog/2025/01/22/this-week-in-rust-583/",
+      "url": "https://www.reddit.com/r/rust/comments/1i81bmu/this_week_in_rust_583/",
       "date": 1737631854,
       "author": "/u/seino_chan",
       "guid": 16157,
       "unread": true,
-      "content": "<p>This week's crate is <a href=\"https://crates.io/crates/resvg\">resvg</a>, an SVG rendering library.</p><p>An important step for RFC implementation is for people to experiment with the\nimplementation and give feedback, especially before stabilization.  The following\nRFCs would benefit from user testing before moving forward:</p><ul><li><em>No calls for testing were issued this week.</em></li></ul><ul><li><em>No calls for testing were issued this week.</em></li></ul><ul><li><em>No calls for testing were issued this week.</em></li></ul><p>If you are a feature implementer and would like your RFC to appear on the above list, add the new \nlabel to your RFC along with a comment providing testing instructions and/or guidance on which aspect(s) of the feature\nneed testing.</p><p>Always wanted to contribute to open-source projects but did not know where to start?\nEvery week we highlight some tasks from the Rust community for you to pick and get started!</p><p>Some of these tasks may also have mentors available, visit the task page for more information.</p><p>Are you a new or experienced speaker looking for a place to share something cool? This section highlights events that are being planned and are accepting submissions to join their event as a speaker.</p><p>A very quiet week for performance, with small improvements essentially on all benchmarks.</p><p>0 Regression, 1 Improvement, 2 Mixed; 0 of them in rollups\n40 artifact comparisons made in total</p><p>Every week, <a href=\"https://www.rust-lang.org/team.html\">the team</a> announces the 'final comment period' for RFCs and key PRs\nwhich are reaching a decision. Express your opinions now.</p><ul><li><em>No Cargo Tracking Issues or PRs entered Final Comment Period this week.</em></li></ul><ul><li><em>No Language Team Proposals entered Final Comment Period this week.</em></li></ul><ul><li><em>No Language Reference RFCs entered Final Comment Period this week.</em></li></ul><ul><li><em>No Unsafe Code Guideline Tracking Issues or PRs entered Final Comment Period this week.</em></li></ul><p>Rusty Events between 2025-01-22 - 2025-02-19 🦀</p><p>If you are running a Rust event please add it to the <a href=\"https://www.google.com/calendar/embed?src=apd9vmbc22egenmtu5l6c5jbfc%40group.calendar.google.com\">calendar</a> to get\nit mentioned here. Please remember to add a link to the event too.\nEmail the <a href=\"mailto:community-team@rust-lang.org\">Rust Community Team</a> for access.</p><blockquote><p>Memory safety issues mean you can’t trust what you’re seeing in your source code anymore.</p></blockquote>",
-      "contentLength": 2032,
+      "content": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/seino_chan\"> /u/seino_chan </a> <br/> <span><a href=\"https://this-week-in-rust.org/blog/2025/01/22/this-week-in-rust-583/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/rust/comments/1i81bmu/this_week_in_rust_583/\">[comments]</a></span>",
+      "contentLength": 0,
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": "",
-      "commentsUrl": "https://www.reddit.com/r/rust/comments/1i81bmu/this_week_in_rust_583/"
+      "commentsUrl": null
     },
     {
       "title": "What would you, as a Rustacean specifically, want to know about a potential employer?",
