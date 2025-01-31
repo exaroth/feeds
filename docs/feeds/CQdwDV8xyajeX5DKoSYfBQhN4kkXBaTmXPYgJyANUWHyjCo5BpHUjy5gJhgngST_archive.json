@@ -7,7 +7,7 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 10,
+  "itemCount": 9,
   "items": [
     {
       "title": "Facebook Flags Linux Topics As 'Cybersecurity Threats'",
@@ -130,20 +130,6 @@
       "unread": true,
       "content": "Phoronix reports on Valve's \"Steam Survey\" results for December 2024, saying the new numbers \"reflect a nice upward trend for the Linux gaming statistics and a high point in recent times.\"\n\n In November the Steam Survey reflected a 2.03% marketshare for Linux... Roughly inline with what we have been seeing for Linux right at around the 2% threshold. With the just-published December survey numbers, there is a 0.29% increase to 2.29%...! When looking at the Linux numbers, SteamOS Holo accounts for around 36% of all Linux gamers... SteamOS Holo being the operating system of the Steam Deck and beginning to appear on other devices as well... Driven in large part by the Steam Deck relying on a custom AMD SoC/APU and AMD being popular with Linux gamers/enthusiasts for their open-source driver support, AMD CPU use on Linux commands a 73.6% marketshare. \n\n In fact, December \"saw AMD reach another record-high share among participants of Valve's survey,\" according to TechSpot — \"up 3.02% last month, taking its total to 38.7% as Intel fell slightly to 63.4%...\"\nElsewhere, Windows 11 is now comfortably the most popular OS in the survey. It pulled ahead another 2% to an almost 55% share in December as Windows 10 dropped to 42.3%... However, it's a different story when looking at global users: Windows 10's share has increased two months in a row to 62.7% while Windows 11 has declined to 34.1%.\nRounding up the rest of the survey, 16GB of RAM remains the most popular amount of system RAM but it's lead is declining as second-place 32GB grows; a trend that is mirrored in the VRAM category... \n\nPhoronix adds that the Windows percent \"pulled back by 0.51% to 96.1% while Apple macOS also gained 0.22% going up to a 1.61% marketshare.\"",
       "contentLength": 1743,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Is 2025 the Year of the Linux Desktop?",
-      "url": "https://linux.slashdot.org/story/24/12/31/205245/is-2025-the-year-of-the-linux-desktop?utm_source=rss1.0mainlinkanon&utm_medium=feed",
-      "date": 1735676400,
-      "author": "msmash",
-      "guid": 8780,
-      "unread": true,
-      "content": "The long-anticipated \"year of the Linux desktop\" could see renewed interest in 2025 as Microsoft's planned end of support for Windows 10 approaches, potentially driving users to explore alternatives. \n\nWith Windows 10 reaching end of support in October 2025, many users will face decisions about upgrading hardware for Windows 11 or considering different operating systems entirely. Linux distributions have evolved to offer increasingly polished desktop experiences, with improving hardware compatibility and familiar user interfaces. \n\n2024 saw Linux adoption grow thanks to the Steam Deck's success, reaching a 4.04% market share in December, up from 3.85% during the same time last year. More Linux laptops, improved gaming compatibility, and growing awareness of its benefits also contributed to its steady rise.",
-      "contentLength": 817,
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": "",

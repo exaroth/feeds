@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 7,
+  "itemCount": 8,
   "items": [
+    {
+      "title": "The ups and downs of stratified cross-validation",
+      "url": "https://www.youtube.com/watch?v=EpK9pWZGjbE",
+      "date": 1738237726,
+      "author": "probabl",
+      "guid": 18518,
+      "unread": true,
+      "content": "<article>When you use GridSearchCV in scikit-learn will do a cross-validated hyperparameter search. This is neat, but there are some worthwhile details involved when it comes to selection the cross-validation segments.\n\n\nWebsite: https://probabl.ai/\nLinkedIn: https://www.linkedin.com/company/probabl\nTwitter: https://x.com/probabl_ai\nBluesky: https://bsky.app/profile/probabl.bsky.social\nDiscord: https://discord.probabl.ai\n\nWe also host a podcast called Sample Space, which you can find on your favourite podcast player. All the links can be found here:\nhttps://rss.com/podcasts/sample-space/\n\n#probabl</article>",
+      "contentLength": 595,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/EpK9pWZGjbE?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Playing with the classification report",
       "url": "https://www.youtube.com/watch?v=765qaIk30Rs",

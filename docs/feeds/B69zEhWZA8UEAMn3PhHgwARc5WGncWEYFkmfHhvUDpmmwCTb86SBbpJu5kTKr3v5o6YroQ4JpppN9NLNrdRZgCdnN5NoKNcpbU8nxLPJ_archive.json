@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 8,
+  "itemCount": 9,
   "items": [
+    {
+      "title": "DeepSeek stole our tech... says OpenAI",
+      "url": "https://www.youtube.com/watch?v=hpwoGjpYygI",
+      "date": 1738183642,
+      "author": "Fireship",
+      "guid": 18324,
+      "unread": true,
+      "content": "<article>Build better apps with PostHog https://posthog.com/fireship\n\nOpenAI and AI Czar David Sacks accuse DeepSeek of stealing their IP to train their new R1 model, citing hard evidence gained from Microsoft. In addition, Alibaba just released Qwen 2.5 with impressive benchmark results. \n\n#tech #ai #thecodereport \n\n💬 Chat with Me on Discord\n\nhttps://discord.gg/fireship\n\n🔗 Resources\n\nSource https://www.ft.com/content/a0dfedd1-5255-4fa9-8ccc-1fe01de87ea6\nQwen 2.5 on GitHub https://github.com/QwenLM/Qwen2.5\nDeepSeek Ollama Tutorial https://youtu.be/clJCDHml2cA\nDeepSeek Crashes Stocks https://youtu.be/Nl7aCUsWykg\n\n🔥 Get More Content - Upgrade to PRO\n\nUpgrade at https://fireship.io/pro\nUse code YT25 for 25% off PRO access \n\n🎨 My Editor Settings\n\n- Atom One Dark \n- vscode-icons\n- Fira Code Font\n\n🔖 Topics Covered\n\n- Qwen 2.5 vs DeepSeek\n- Deepseek accused of IP theft by OpenAI\n- Latest trends in artificial intelligence\n- Chinese AI development boom explained \n- DeepSeek Janus image diffusion model</article>",
+      "contentLength": 1013,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/hpwoGjpYygI?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Big Tech in panic mode... Did DeepSeek R1 just pop the AI bubble?",
       "url": "https://www.youtube.com/watch?v=Nl7aCUsWykg",

@@ -7,7 +7,7 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 19,
+  "itemCount": 18,
   "items": [
     {
       "title": "UK Council Sells Assets To Fund Ballooning $50 Million Oracle Project",
@@ -256,20 +256,6 @@
       "unread": true,
       "content": "Researchers from Inria and Microsoft have developed a system to automatically convert specific types of C programming code into memory-safe Rust code, addressing growing cybersecurity concerns about memory vulnerabilities in software systems. \n\nThe technique, detailed in a new paper, requires programmers to use a restricted version of C called \"Mini-C\" that excludes features like pointer arithmetic. The researchers successfully tested their conversion system on two major code libraries, including the 80,000-line HACL* cryptographic library. Parts of the converted code have already been integrated into Mozilla's NSS and OpenSSH security systems, according to the researchers. Memory safety errors account for 76% of Android vulnerabilities in 2019.",
       "contentLength": 755,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Over 3.1 Million Fake 'Stars' on GitHub Projects Used To Boost Rankings",
-      "url": "https://developers.slashdot.org/story/24/12/31/1726239/over-31-million-fake-stars-on-github-projects-used-to-boost-rankings?utm_source=rss1.0mainlinkanon&utm_medium=feed",
-      "date": 1735666020,
-      "author": "msmash",
-      "guid": 8722,
-      "unread": true,
-      "content": "Researchers have uncovered widespread manipulation of GitHub's star-rating system, with over 3.1 million fraudulent stars identified across 15,835 repositories, according to a new study by Socket, Carnegie Mellon University, and North Carolina State University. \n\nThe research team analyzed 20TB of data from GHArchive, spanning 6 billion GitHub events from 2019 to 2024, using their \"StarScout\" detection tool. The tool identified 278,000 accounts engaging in coordinated inauthentic behavior to artificially boost repository rankings. \n\nGitHub uses stars, similar to social media likes, to rank projects and recommend content to users. The platform has previously encountered malicious exploitation of this system, including the \"Stargazers Ghost Network\" malware operation discovered last summer. Approximately 91% of flagged repositories and 62% of suspicious accounts were removed by October 2024.",
-      "contentLength": 902,
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": "",

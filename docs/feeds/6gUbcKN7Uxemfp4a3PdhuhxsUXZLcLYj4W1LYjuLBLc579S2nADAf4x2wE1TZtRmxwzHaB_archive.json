@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 3,
+  "itemCount": 4,
   "items": [
+    {
+      "title": "A continued focus on the benefits of Go 1.24",
+      "url": "https://golangweekly.com/issues/540",
+      "date": 1738108800,
+      "author": "",
+      "guid": 18239,
+      "unread": true,
+      "content": "<li><p><a href=\"https://golangweekly.com/link/164971/rss\">SRCL</a> is a neat new suite of React components for creating webapps with a monospaced, terminal-style aesthetic.</p></li><li><p>If you ever need to work with JavaScript server-side, <a href=\"https://golangweekly.com/link/164972/rss\">Bun 1.2</a> is a huge release for an increasingly popular, high performance -based Node-a-like. It 'just works' for a lot of stuff where Node gives me&nbsp;headaches.</p></li><li><p><a href=\"https://golangweekly.com/link/164974/rss\">Take a look at every byte</a> that goes over the network when making a real Postgres query over TLS . Everything is annotated to help you understand the&nbsp;complexity.</p></li>",
+      "contentLength": 483,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Go 1.24 Release Candidate 2",
       "url": "https://golangweekly.com/issues/539",

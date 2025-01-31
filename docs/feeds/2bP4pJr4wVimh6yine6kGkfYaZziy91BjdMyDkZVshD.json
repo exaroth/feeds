@@ -1,14 +1,28 @@
 {
   "id": "2bP4pJr4wVimh6yine6kGkfYaZziy91BjdMyDkZVshD",
   "title": "Rust Blog",
-  "displayTitle": "DEv - Rust Blog",
+  "displayTitle": "Dev - Rust Blog",
   "url": "https://blog.rust-lang.org/feed",
   "feedLink": "https://blog.rust-lang.org/",
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 3,
+  "itemCount": 4,
   "items": [
+    {
+      "title": "Announcing Rust 1.84.1",
+      "url": "https://blog.rust-lang.org/2025/01/30/Rust-1.84.1.html",
+      "date": 1738195200,
+      "author": "The Rust Release Team",
+      "guid": 18722,
+      "unread": true,
+      "content": "<p>The Rust team has published a new point release of Rust, 1.84.1. Rust is a\nprogramming language that is empowering everyone to build reliable and\nefficient software.</p><p>If you have a previous version of Rust installed via rustup, getting Rust\n1.84.1 is as easy as:</p><p>If you don't have it already, you can <a href=\"https://www.rust-lang.org/install.html\">get </a> from the\nappropriate page on our website.</p><p>1.84.1 resolves a few regressions introduced in 1.84.0:</p><p>It also includes several fixes for those building Rust from source:</p><p>Many people came together to create Rust 1.84.1. We couldn't have done it\nwithout all of you. <a href=\"https://thanks.rust-lang.org/rust/1.84.1/\">Thanks!</a></p>",
+      "contentLength": 567,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "December Project Goals Update",
       "url": "https://blog.rust-lang.org/2025/01/23/Project-Goals-Dec-Update.html",

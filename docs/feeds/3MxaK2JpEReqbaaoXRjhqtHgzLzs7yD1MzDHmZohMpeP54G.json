@@ -7,8 +7,36 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 7,
+  "itemCount": 9,
   "items": [
+    {
+      "title": "Bliki: Forest And Desert",
+      "url": "https://martinfowler.com/bliki/ForestAndDesert.html",
+      "date": 1738213200,
+      "author": "Martin Fowler",
+      "guid": 18733,
+      "unread": true,
+      "content": "<div><img src=\"https://martinfowler.com/bliki/images/forest-desert.png\"></div><p>The Forest and the Desert is a metaphor for thinking about software\n  development processes, developed by Beth Anders-Beck and her father Kent Beck.\n  It posits that two communities of software developers have great difficulty\n  communicating to each other because they live in very different contexts, so\n  advice that applies to one sounds like nonsense to the other.</p><p>The desert is the common world of software development, where bugs are\n  plentiful, skill isn't cultivated, and communications with users is difficult.\n  The forest is the world of a well-run team that uses something like <a href=\"https://martinfowler.com/bliki/ExtremeProgramming.html\">Extreme Programming</a>, where developers swiftly put changes into\n  production, protected by their tests, code is invested in to keep it healthy,\n  and there is regular contact with The Customer.</p><p>Clearly Beth and Kent prefer The Forest (as do I). But the metaphor is more\n  about how description of The Forest and the advice for how to work there often\n  sounds nonsensical to those whose only experience is The Desert. It reminds us\n  that any lessons we draw about software development practice, or architectural\n  patterns, are governed by the context that we experienced them. It is possible\n  to change Desert into Forest, but it's difficult - often requiring people to do\n  things that are both hard and counter-intuitive. (It seems sadly easier for\n  The Forest to submit to desertification.) </p><p>In this framing I'm definitely a Forest Dweller, and seek with Thoughtworks\n  to cultivate a healthy forest for us and our clients. I work to explain The Forest to Desert\n  Dwellers, and help my fellow Forest Dwellers to make their forest even more\n  plentiful.</p><div><p>Kent Beck supplied the image, which he may have painstakingly drew pixel by\n    pixel. Or not.</p></div>",
+      "contentLength": 1742,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "Embeddings in GenAI Products",
+      "url": "https://martinfowler.com/articles/gen-ai-patterns/#embedding",
+      "date": 1738166100,
+      "author": "Martin Fowler",
+      "guid": 18203,
+      "unread": true,
+      "content": "<p>GenAI systems, like many modern AI approaches, have to handle vast\n      quantities of data, and find similarities between elements in an image or\n      chunk of words.  and I describe a key tool\n      to do this - <a href=\"https://martinfowler.com/articles/gen-ai-patterns/#embedding\">Embeddings</a> - transforming large data blocks into\n      numeric vectors so that embeddings near each other represent related\n      concepts</p>",
+      "contentLength": 353,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Emerging Patterns in Building GenAI Products",
       "url": "https://martinfowler.com/articles/gen-ai-patterns/",
