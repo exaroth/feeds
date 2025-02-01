@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 18,
+  "itemCount": 19,
   "items": [
+    {
+      "title": "Oracle Faces Java Customer Revolt After 'Predatory' Pricing Changes",
+      "url": "https://developers.slashdot.org/story/25/01/30/1617210/oracle-faces-java-customer-revolt-after-predatory-pricing-changes?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+      "date": 1738255260,
+      "author": "msmash",
+      "guid": 18653,
+      "unread": true,
+      "content": "Nearly 90% of Oracle Java customers are looking to abandon the software maker's products following controversial licensing changes made in 2023, according to research firm Dimensional Research. \n\nThe exodus reflects growing frustration with Oracle's shift to per-employee pricing for its Java platform, which critics called \"predatory\" and could increase costs up to five times for the same software, Gartner found. The dissatisfaction runs deepest in Europe, where 92% of French and 95% of German users want to switch to alternative providers like Bellsoft Liberica, IBM Semeru, or Azul Platform Core.",
+      "contentLength": 602,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "UK Council Sells Assets To Fund Ballooning $50 Million Oracle Project",
       "url": "https://news.slashdot.org/story/25/01/28/004213/uk-council-sells-assets-to-fund-ballooning-50-million-oracle-project?utm_source=rss1.0mainlinkanon&utm_medium=feed",
