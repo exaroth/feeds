@@ -52,11 +52,19 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCSp-OaMpsO8K0KkOqyBl7_w "~D
 https://www.youtube.com/feeds/videos.xml?channel_id=UCgY3bHW4qHKq9aC4i3nO-0g "~Dev - Core Dump" dev
 https://www.youtube.com/feeds/videos.xml?channel_id=UCnHX5FjwtQpxkCGziuh4NJA "~Dev - Logan Smith" dev
 https://www.youtube.com/feeds/videos.xml?channel_id=UCjRVKSokBHlljocLdnUD9pg "~Dev - Sreekanth" dev
+https://lucumr.pocoo.org/feed.atom "~Dev - Armin Ronacher Blog" dev
 https://kubernetespodcast.com/feeds/audio.xml "~Dev - Kubernetes Podcast" dev k8s podcast
 https://cprss.s3.amazonaws.com/golangweekly.com.xml "~Dev - Golang Weekly" dev go
 https://dave.cheney.net/rss "~Dev - Dave Cheney" dev go
 https://blog.rust-lang.org/feed "~Dev - Rust Blog" dev official rust
 https://github.blog/rss "~Dev - Github Blog" dev
+https://www.philschmid.de/rss "~Dev - Phil Shmid" dev
+https://www.404media.co/rss "~Dev - 404" dev
+https://jalammar.github.io/feed "~Dev - Jay Alammar" dev ai
+http://static.fsf.org/fsforg/rss/blogs.xml "~Dev - Free Software Foundation" dev linux
+https://archlinux.org/feeds/news/ "~Dev - Arch Linux News" dev linux
+https://www.feedspot.com/infiniterss.php?_src=followbtn&followfeedid=4129537 "~Dev - Ubuntu Insights" dev linux
+https://www.feedspot.com/infiniterss.php?_src=feed_title&followfeedid=5001721 "~Dev - OMG! Ubuntu" dev linux
 
 
 https://medium.com/@kyodo-tech/feed "~Dev - Kyodo-Tech" dev
@@ -83,6 +91,7 @@ https://hackernoon.com/feed "~Tech - HackerNoon" ! tech
 https://www.gamespot.com/feeds/reviews ! tech
 https://www.phoronix.com/rss.php ! tech
 https://spectrum.ieee.org/customfeeds/feed/all-topics/rss ! tech
+https://www.techdirt.com/feed/ ! tech
 
 
 https://access.acast.com/rss/f2925f7a-eb08-471a-9958-387cb5ee6353/default "~Podcast - Ancients" ! podcast
