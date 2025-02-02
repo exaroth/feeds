@@ -1,0 +1,30 @@
+{
+  "id": "o1AJ9qDyyJNNeEUrNXM2motB3Lf5LtZLjgUFkfKXwbG1A43BR",
+  "title": "Jane Street Tech Blog",
+  "displayTitle": "Dev - Jane Street",
+  "url": "https://blog.janestreet.com/feed.xml",
+  "feedLink": "https://blog.janestreet.com/",
+  "isQuery": false,
+  "isEmpty": false,
+  "isHidden": false,
+  "itemCount": 1,
+  "items": [
+    {
+      "title": "How we accidentally built a better build system for OCaml",
+      "url": "https://blog.janestreet.com/how-we-accidentally-built-a-better-build-system-for-ocaml-index/",
+      "date": 1737676800,
+      "author": "",
+      "guid": 18896,
+      "unread": true,
+      "content": "<p>A “build system” is one of the most important tools in a developer’s\ntoolbox. Roughly, it figures out how to create runnable programs from\na bunch of different source files by calling out to the compiler,\nsetting up and executing test suites, and so on. Because you interact\nwith it daily, above all it has to be <a href=\"https://xkcd.com/303/\">fast</a> –\nbut it also has to be flexible.</p>",
+      "contentLength": 359,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    }
+  ],
+  "tags": [
+    "dev"
+  ]
+}

@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 9,
+  "itemCount": 10,
   "items": [
+    {
+      "title": "Grafana is the goat... Let's deploy the LGTM stack",
+      "url": "https://www.youtube.com/watch?v=1X3dV3D5EJg",
+      "date": 1738423479,
+      "author": "Fireship",
+      "guid": 19310,
+      "unread": true,
+      "content": "<article>Get up to 67% off VPS at Hostinger. Use code FIRESHIP for an extra discount at https://hostinger.com/fireship\n\n#linux #programming #softwareengineer \n\n💬 Chat with Me on Discord\n\nhttps://discord.gg/fireship\n\n🔗 Resources\n\nDocker 101 https://youtu.be/rIrNIzy6U_g\nFull Deno Course https://fireship.io/courses/deno\nGrafana on GitHub https://github.com/grafana/grafana\n\n🔥 Get More Content - Upgrade to PRO\n\nUpgrade at https://fireship.io/pro\nUse code YT25 for 25% off PRO access \n\n🎨 My Editor Settings\n\n- Atom One Dark \n- vscode-icons\n- Fira Code Font\n\n🔖 Topics Covered\n\nWhat is Grafana? \nHow to get started with software observability?\nWhat is Open Telemetry?\nHow to deploy LGTM stack?\nHow monitor Linux server performance?</article>",
+      "contentLength": 733,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/1X3dV3D5EJg?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "DeepSeek stole our tech... says OpenAI",
       "url": "https://www.youtube.com/watch?v=hpwoGjpYygI",
