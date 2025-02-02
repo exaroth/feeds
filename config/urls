@@ -65,6 +65,7 @@ http://static.fsf.org/fsforg/rss/blogs.xml "~Dev - Free Software Foundation" dev
 https://archlinux.org/feeds/news/ "~Dev - Arch Linux News" dev linux
 https://www.feedspot.com/infiniterss.php?_src=followbtn&followfeedid=4129537 "~Dev - Ubuntu Insights" dev linux
 https://www.feedspot.com/infiniterss.php?_src=feed_title&followfeedid=5001721 "~Dev - OMG! Ubuntu" dev linux
+https://mshibanami.github.io/GitHubTrendingRSS/weekly/all.xml "~Dev - Github Trending" dev
 
 
 https://medium.com/@kyodo-tech/feed "~Dev - Kyodo-Tech" dev
