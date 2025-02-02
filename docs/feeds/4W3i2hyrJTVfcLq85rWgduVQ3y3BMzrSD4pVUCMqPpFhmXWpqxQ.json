@@ -7,7 +7,7 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 70,
+  "itemCount": 69,
   "items": [
     {
       "title": "Avoid ISP Routers",
@@ -974,20 +974,6 @@
       "enclosureUrl": "",
       "enclosureMime": "",
       "commentsUrl": "https://news.ycombinator.com/item?id=42874885"
-    },
-    {
-      "title": "Hard Mode Rust (2022)",
-      "url": "https://matklad.github.io/2022/10/06/hard-mode-rust.html",
-      "date": 1738208789,
-      "author": "rrampage",
-      "guid": 18520,
-      "unread": true,
-      "content": "",
-      "contentLength": 0,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": "https://news.ycombinator.com/item?id=42874605"
     }
   ],
   "tags": [

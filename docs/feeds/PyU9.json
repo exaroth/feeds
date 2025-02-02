@@ -7,8 +7,22 @@
   "isQuery": true,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 139,
+  "itemCount": 150,
   "items": [
+    {
+      "title": "Slashdot Asks: Do You Remember Your High School's 'Computer Room'?",
+      "url": "https://developers.slashdot.org/story/25/02/02/0233216/slashdot-asks-do-you-remember-your-high-schools-computer-room?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+      "date": 1738463760,
+      "author": "EditorDavid",
+      "guid": 19430,
+      "unread": true,
+      "content": "Bill Gates' blog has been updated with short videos about his upcoming book, including one about how his school ended up with an ASR-33 teletype that could connect their Seattle classroom to a computer in California. \"The teachers faded away pretty quickly,\" Gates adds, \"But about six of us stayed hardcore. One was Paul Allen...\" — the future co-founder of Microsoft. And the experience clearly meant a lot to Gates. \"Microsoft just never would've happened without Paul — and this teletype room.\" \n\nIn a longer post thanking his \"brilliant\" teachers, Gates calls his teletype experience \"an encounter that would shape my entire future\" and \"opened up a whole new world for me.\" Gates also thanks World War II Navy pilot and Boeing engineer Bill Dougall, who \"was instrumental in bringing computer access to our school, something he and other faculty members pushed for after taking a summer computer class... The fascinating thing about Mr. Dougall was that he didn't actually know much about programming; he exhausted his knowledge within a week. But he had the vision to know it was important and the trust to let us students figure it out.\" \n\nGates shared a similar memory about the computer-room's 20-something overseer Fred Wright, who \"intuitively understood that the best way to get students to learn was to let us explore on our own terms. There was no sign-up sheet, no locked door, no formal instruction.\"\n\nInstead, Mr. Wright let us figure things out ourselves and trusted that, without his guidance, we'd have to get creative... Some of the other teachers argued for tighter regulations, worried about what we might be doing in there unsupervised. But even though Mr. Wright occasionally popped in to break up a squabble or listen as someone explained their latest program, for the most part he defended our autonomy... \nMr. Wright gave us something invaluable: the space to discover our own potential.\n \n\nAny Slashdot readers have a similarly impactful experience? Share your own thoughts and memories in the comments. \n\nDo you remember your high school's computer room?",
+      "contentLength": 2089,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "In Zig, what's a writer?",
       "url": "https://www.reddit.com/r/Zig/comments/1ifm8jt/in_zig_whats_a_writer/",
@@ -20,6 +34,34 @@
       "contentLength": 37,
       "flags": null,
       "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "Picking a global allocator",
+      "url": "https://www.reddit.com/r/rust/comments/1ifjzvv/picking_a_global_allocator/",
+      "date": 1738453948,
+      "author": "/u/exater",
+      "guid": 19456,
+      "unread": true,
+      "content": "<p>I wrote a long running axum webserver in rust that has metrics, so I am able to see the process' memory usage. Over the course of a month, I noticed the server was slowly increasing in memory until it reached it's limit and OOM'd and restarted. This is a sign of a memory leak for sure, so I have gone over all my server's code multiple times, used profiling, and I cannot see where a leak could be. However, in profiling I did notice that my code does do a lot of allocating and de-allocating on the heap. I could probably optimize some of this, but aside from performance hits on this, I swear its not leaking anything. I did some more research and read the default allocator in rust is pretty simple and is best for short running, single-threaded, simple memory applications. My server, is pretty allocation intense, multi threaded (tokio), and runs 24/7. </p><p>Should I be swapping to a difference allocator for this server? I've never done much digging into allocators so I don't know too much here. In some short reading, I saw jemalloc is for multi threaded, long running applications. Could the reason the process' memory is going up over time that the standard allocator is not handling the intense allocating and deallocating, leading to memory fragmentation over time?</p>",
+      "contentLength": 1273,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "The CDC’s Website Is Being Actively Purged to Comply With Trump DEI Order",
+      "url": "https://www.404media.co/the-cdcs-website-is-being-actively-purged-to-comply-with-trump-dei-order/",
+      "date": 1738453076,
+      "author": "Joseph Cox",
+      "guid": 19490,
+      "unread": true,
+      "content": "<img src=\"https://www.404media.co/content/images/2025/01/49663460306_caa53a7655_z-1.jpg\" alt=\"The CDC’s Website Is Being Actively Purged to Comply With Trump DEI Order\"><p>Large parts of the CDC’s website and several important databases were taken down on Friday and Saturday to comply with Trump’s executive orders banning DEI content. Saturday, a message at the top of the CDC’s home page said the website “is being modified to comply with President Trump’s Executive Orders.”</p><p>CDC websites and databases taken offline include the CDC Atlas, the CDC Youth Risk Behavior Surveillance System, a CDC website about HIV treatment, and the CDC Social Vulnerability Index. Some of these removals were <a href=\"https://www.nbcnews.com/health/health-news/trump-dei-hiv-cdc-website-removed-lgbtq-rcna190068?ref=404media.co\"><u>earlier reported by NBC News</u></a>. Some of the pages were replaced with messages that read “Page Not Found or Temporarily Unavailable” or “The page you're looking for was not found.” There was widespread uncertainty throughout Friday as to whether a broader takedown across the government would happen.</p><p>“Our team’s government affairs firm is advising that as of 5pm today, all U.S. government agency websites will be taken down,” an internal email obtained by 404 Media earlier Friday read. “According to reports, agencies are unable to comply fast enough with President Trump’s EO ordering all government entities to remove all DEI references from their websites, so these websites will be taken offline. There is no word on when they will be made available again.”</p><p>At 5pm Friday, however, no widespread, cross-government takedowns happened. Throughout the day Friday and Saturday, however CDC pages continued to disappear. Saturday, a message at the top of the CDC’s website said “CDC’s website is being modified to comply with President Trump’s Executive Orders.”</p><div><div><b><strong>Do you know anything else about this story? We would love to hear from you. Using a non-work device, you can message Jason securely on Signal at +1 202 505 1702. Otherwise, send me an email at jason@404media.co.</strong></b></div></div><p>Some federal contractors and federal employees spent much of Friday afternoon <a href=\"https://www.reddit.com/r/publichealth/comments/1ienmhj/archive_your_data_now_5pm_federal_website_shutdown/?ref=404media.co\"><u>panicking about the deletions</u></a>, and there was uncertainty about what would be taken offline and how widespread the takedowns would be. A CDC employee that 404 Media granted anonymity to speak about sensitive issues said that they were told by the Office of the Chief Information Security Officer of the Department of Health and Human Services that all employees were told they had to delete their preferred pronouns from their email signatures by 5 PM Friday.</p><p>Agencies were also ordered to “review all agency programs, contracts, and grants, and terminate any that promote or inculcate gender ideology” and to “take down all outward facing media (websites, social media accounts, etc.) that inculcate or promote gender ideology,” <a href=\"https://chcoc.gov/content/initial-guidance-regarding-president-trump%E2%80%99s-executive-order-defending-women?ref=404media.co\"><u>with a deadline of 5 PM Eastern Friday</u></a>. Agencies were forced to “send an email to all agency employees announcing that the agency will be complying with Defending Women and this guidance.” Agencies have been ordered to create a report within the next week that includes “a complete list of actions taken in response to this guidance.” The specific executive order is Trump’s “Defending Women from Gender Ideology Extremism and Restoring Biological Truth to the Federal Government (Defending Women).”</p><p>A similar message was <a href=\"https://www.reddit.com/r/DataHoarder/comments/1iekywr/cdc_website_going_down_by_eod/?rdt=46927&amp;ref=404media.co\"><u>posted to Reddit earlier on Friday</u></a>. “We are being told that the CDC website is scheduled to go down by EOD today. Please share this with your partners and encourage them, as well as you should plan to download any significant information,” it reads.</p><p>There have been several efforts to archive data that already existed across the federal government, <a href=\"https://www.404media.co/archivists-work-to-identify-and-save-the-thousands-of-datasets-disappearing-from-data-gov/\"><u>including the End of Term Archive</u></a>, a volunteer effort that saved hundreds of terabytes of data before Trump was inaugurated.</p>",
+      "contentLength": 3660,
+      "flags": null,
+      "enclosureUrl": "https://www.404media.co/content/images/2025/01/49663460306_caa53a7655_z-1.jpg",
       "enclosureMime": "",
       "commentsUrl": null
     },
@@ -248,6 +290,20 @@
       "commentsUrl": "https://www.reddit.com/r/programming/comments/1if9xze/beyond_the_ai_mvp_what_it_really_takes/"
     },
     {
+      "title": "Engineering With Java: Digest #44",
+      "url": "https://javabulletin.substack.com/p/engineering-with-java-digest-44",
+      "date": 1738426881,
+      "author": "/u/Educational-Ad2036",
+      "guid": 19459,
+      "unread": true,
+      "content": "",
+      "contentLength": 0,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": "https://www.reddit.com/r/programming/comments/1if9ub7/engineering_with_java_digest_44/"
+    },
+    {
       "title": "Par, an experimental concurrent language with an interactive playground",
       "url": "https://github.com/faiface/par-lang",
       "date": 1738426638,
@@ -260,6 +316,34 @@
       "enclosureUrl": "",
       "enclosureMime": "",
       "commentsUrl": "https://www.reddit.com/r/programming/comments/1if9r5l/par_an_experimental_concurrent_language_with_an/"
+    },
+    {
+      "title": "Musk’s DOGE Brings in HR Consultant Focused on ‘Non-Woke’ DEI 'Aligned With Our Faith’",
+      "url": "https://www.404media.co/musks-doge-brings-in-hr-consultant-focused-on-non-woke-dei-aligned-with-our-faith/",
+      "date": 1738425681,
+      "author": "Jason Koebler",
+      "guid": 19489,
+      "unread": true,
+      "content": "<img src=\"https://www.404media.co/content/images/2025/02/File-1.jpg\" alt=\"Musk’s DOGE Brings in HR Consultant Focused on ‘Non-Woke’ DEI 'Aligned With Our Faith’\"><p>Elon Musk’s DOGE, the newly formed government agency aiming for drastic cuts across the U.S. government, has brought in an HR employment attorney and consultant who has spent the last few years teaching companies her “refreshing approach to diversity and inclusion” which include attempting to “redefine” DEI in a manner that she says is more consistent with Christianity and offers a “non-woke” version of HR practices, 404 Media has learned.</p><p>Stephanie Holmes is in charge of HR at DOGE, two people familiar told 404 Media. Holmes is one of many new faces at the agency, which has been rebranded from the United States Digital Service to “United States DOGE Service.” DOGE, which stands for the “Department of Government Efficiency,” has also brought in a series of employees from Musk’s other companies and asked government tech workers to <a href=\"https://www.wired.com/story/elon-musk-government-tech-workers-gsa-tts/?ref=404media.co\"><u>show Musk’s aides their code</u></a>. DOGE higher ups re-interviewed every existing employee of the US Digital Service <a href=\"https://www.nextgov.com/people/2025/01/us-digital-service-employees-are-being-re-interviewed-under-doge-transition/402423/?ref=404media.co\"><u>immediately following Musk’s takeover</u></a>.</p><p>A 404 Media review of Holmes’ previous speaking engagements, which touch on her perception of diversity and maintaining company culture, provide insight into what might be in store for DOGE and the federal government at large. Holmes’ association with DOGE has not been previously reported.</p><div><div><b><strong>Do you know anything else about this story? We would love to hear from you. Using a non-work device, you can message Jason securely on Signal at +1 202 505 1702. You can reach Joseph securely on Signal at +44 20 8133 5190.</strong></b></div></div><p>“Working in the HR space and seeing the DEI efforts and progressive ideology that HR was pushing into corporate America was particularly concerning to me, and I didn’t see any other alternatives for employers in the HR space. I care a lot about these issues and saw a problem I wanted to help fix,” she said. “I left my job and started BrighterSideHR, an HR consulting company to offer an alternative kind of more values aligned space for employers.”</p><p>“I do workplace training, discrimination, harassment training, how to do workplace investigations,” she added. “It’s simply just a non-woke version, offering employers an alternative approach to diversity and inclusion.”</p><p>The BrighterSideHR website shut down in recent weeks, and <a href=\"https://brightersidehr.com/closed/?ref=404media.co\"><u>now says it is “no longer active</u></a>.” An archived version of the site says “We focus on employee conduct at the workplace as opposed to imposing a particular ideological viewpoint.”</p><p>At the Napa Institute’s conference panel on “<a href=\"https://www.youtube.com/watch?v=PA5fRI5cFiU&amp;ref=404media.co\"><u>Practical Steps for Dealing with DEI</u></a>,” Holmes sat on a panel with former Trump administration official and current Heritage Foundation fellow Roger Severino. A moderator introduced the panel by saying “we’re here to discuss diversity, equity, and inclusion, or DEI, or as I like to put it, DIE. Many of us are quite aware of diversity, equity, and inclusion and how it has its roots really going back to Marxism.”</p><p>Holmes said on the panel that the “mainstream kind of leftist approach to DEI presents us with a lot to push back against.”</p><p>“It is really inconsistent with our faith and I also think that this presents us with an opportunity to not only say why we’re against this, why we’re opposed to mainstream DEI initiatives, but it’s important for us to be part of the conservation and to use it to say what we are for and why we have a positive vision and positive solution of DEI in a way that is consistent with our values,” she said.</p><p>She said she advises employers to “move away from defining diversity exclusively focused on employees’ race, sex, or other protected category,” and to instead focus on “bringing together employees with diverse backgrounds, viewpoints, perspectives, and beliefs to achieve common workplace goals.” She said employers need to also be “reframing the term inclusion to incorporate that in a way that’s more aligned with our faith.”</p><p>When asked whether any of the panelists “knew of a DEI program that incorporates Catholic values,” the Heritage Foundation’s Severino said “don’t use that word DEI ever again in a positive light. That phrase should be deemed toxic now.” Holmes said, however, that she has taught companies that they probably need to continue using the term because employees have asked for there to be a consideration of diversity at work.&nbsp;</p><p>Larger companies must “balance how to kind of umm, play the game essentially. So I oftentimes use the term ‘diversity’ and ‘inclusion.’ I do use the term ‘equality’ instead of ‘equity’ because I think that’s particularly problematic, but I also understand that sometimes it’s just not politically feasible within a company to fully implement different terms,” she said. “I sometimes use those terms generally speaking because it’s just too politically, too much of a political hot potato to do otherwise.”</p><p>The United States Digital Service did not respond to a request for comment.</p>",
+      "contentLength": 4966,
+      "flags": null,
+      "enclosureUrl": "https://www.404media.co/content/images/2025/02/File-1.jpg",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "WIP - e2e testing orchestration helper - is this something that you would find useful? roast the code now that it's alpha :)",
+      "url": "https://codeberg.org/jjba23/poppenspeler",
+      "date": 1738424795,
+      "author": "/u/kosakgroove",
+      "guid": 19463,
+      "unread": true,
+      "content": "<p>\nDefine your test cases and environment setups using the expressive power of a DSL. This allows for flexible and maintainable test code.</p><p>\nEasily start and stop multiple applications, services, and databases as part of your test environment.   handles the complexities of managing dependencies and ensuring everything is running smoothly.</p><p>\nDeclare dependencies between your applications and services.  will ensure that dependencies are started in the correct order and are available when needed.</p><p>\nConfigure your test environment using simple and intuitive structures.  Define ports, environment variables, and other settings for each application.</p><p>\nGet detailed logs of your test runs, including output from all applications and services, making it easy to diagnose issues.</p>",
+      "contentLength": 767,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": "https://www.reddit.com/r/golang/comments/1if92s1/wip_e2e_testing_orchestration_helper_is_this/"
     },
     {
       "title": "Grafana is the goat... Let's deploy the LGTM stack",
@@ -330,6 +414,34 @@
       "enclosureUrl": "",
       "enclosureMime": "",
       "commentsUrl": "https://www.reddit.com/r/rust/comments/1if73w1/hydro_a_distributed_dataflow_language_and/"
+    },
+    {
+      "title": "Tiling Shell Brings Advanced Window Management to Linux",
+      "url": "https://www.reddit.com/r/linux/comments/1if6zk7/tiling_shell_brings_advanced_window_management_to/",
+      "date": 1738418684,
+      "author": "/u/Domyf",
+      "guid": 19460,
+      "unread": true,
+      "content": "<p>Hey <a href=\"https://www.reddit.com/r/Linux\">r/Linux</a> I'm the developer of <a href=\"https://extensions.gnome.org/extension/7065/tiling-shell/\">Tiling Shell</a>, a GNOME extension for advanced window management. It's highly configurable and offers different ways of tiling and managing your windows. The focus is on delivering the best user experience, highest stability, and full customization. Give it a try! <a href=\"https://extensions.gnome.org/extension/7065/tiling-shell/\">Link</a> for download.</p><p>It also works with multiple monitors (even if they use different scaling), comes with a number of tiling layouts built-in but there is a layout editor to allow you to create and save customs layouts.</p><p>Tiling Shell also features the Snap Assistant, borrowed from Windows 11: just move a window to the top with your mouse and the Snap Assistant slides in and you can place the window where you want and how you want.</p><ul><li>I've implemented automatic tiling as well</li><li>Fully customizable keyboard shortcuts to tile, move windows, change focus and more</li><li>You can also move the window to the edge of the screen to tile it</li><li>Right click on the window title to place the window where you want and how you want it</li><li>Coming soon this week, Windows Suggestions: after tiling a window you get suggestions for other windows to fill the remaining tiles</li></ul>",
+      "contentLength": 1131,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "Who Made this Radioactive Saharan Dust Cloud?",
+      "url": "https://www.404media.co/who-made-this-radioactive-saharan-dust-cloud/",
+      "date": 1738418445,
+      "author": "Becky Ferreira",
+      "guid": 19488,
+      "unread": true,
+      "content": "<img src=\"https://www.404media.co/content/images/2025/01/image1-1.jpg\" alt=\"Who Made this Radioactive Saharan Dust Cloud?\"><p>Welcome back to the Abstract!&nbsp;</p><p>This week, we’re serving up some much-needed good news about global biodiversity! Well, it’s more like a silver lining, but in the Anthropocene you have to take what you can get. As you may have noticed, humans are highly annoying and deadly to many other lifeforms on Earth, a condition that is driving a global decline of biodiversity. But there are bright spots in this dark trend, as conservation efforts continue to yield results around the world.&nbsp;</p><p>Then, just how radioactive was that Saharan dust cloud that engulfed Europe in 2022? Scientists found answers, and they were weird! Next, the effects of Daylight Savings Time…on dogs. Finally, it’s time to warm up in the balmy gassy vistas of ancient Mars.&nbsp;&nbsp;</p><p><strong>Biodiversity Loss Is Staggering, but Conservation Pays Off&nbsp;</strong></p><p>It is understandable to feel overwhelmed by the escalating consequences of human activity on our planet and its inhabitants. In fact, it is a sign that your brain is good at recognizing reality, even at its own peril. But there were welcome rays of hope from conservation science this week: It turns out trying to stop biodiversity loss actually works sometimes!</p><p>On Wednesday, scientists published a massive meta-analysis of genetic diversity that encompasses decades of data collected from 628 species of animals, plants, and fungi across every land environment and most maritime regions on the planet. It is “the most comprehensive investigation of within-population genetic diversity change to date,” according to the study.</p><p>“Here we report an overall global decline in intraspecific genetic diversity,” said researchers co-led by Robyn Shaw of the University of Canberra and Katherine Farquharson of the University of Sydney. “In birds and mammals in particular, the evidence for genetic diversity decline is clear.”</p><p>“Genetic diversity accumulates over evolutionary timescales through mutation and once lost, is difficult to restore,” the team continued. “However, we also show that we have the theoretical and technical means, as well as the on-ground conservation management approaches, to prevent further loss if we act now.”</p><p>The study points to many success stories about targeted conservation that have reversed genetic diversity in species as diverse as the Hine’s emerald dragonfly to the Golden bandicoot. As it happens, two unrelated case studies were also published this week about the <a href=\"https://www.pnas.org/doi/abs/10.1073/pnas.2401679122?ref=404media.co\"></a> across their historic Scandinavian range, and <a href=\"https://www.science.org/doi/10.1126/science.adk4827?ref=404media.co\"><u>the recovery of tigers in India</u></a>, both of which offer inspiration from gains made with these iconic carnivores.</p><p>“We provide pervasive evidence for successful expansion of the wolverine population from the refuge-like alpine range into boreal forest, which was previously considered suboptimal habitat for wolverines in Scandinavia,” said researchers led by Ehsan Moqanaki of the University of Montana. “The ongoing recovery of the Scandinavian wolverine demonstrates that coexistence of apex predators with humans on multiuse landscapes is possible.”</p><p>Meanwhile, the study on tigers found that India’s recovery efforts “offers cautious optimism for megafauna recovery, particularly in the Global South.”</p><p>“Tiger occupancy increased by 30% (at 2929 square kilometers per year) over the past two decades, leading to the largest global population occupying ~138,200 square kilometers,” said researchers led by Yadvendradev Jhala of the Wildlife Institute of India. “The success of tiger recovery in India offers important lessons for tiger-range countries as well as other regions for conserving large carnivores while benefiting biodiversity and communities simultaneously. It rekindles hope for a biodiverse Anthropocene.”</p><p>Of course, these studies are not presenting an altogether rosy picture; the global trends of biodiversity loss are still incredibly concerning and there’s no doubt humans are fueling a major spike in extinction rates. But it’s much better to know that conservation efforts, if we make them, do pay off, and that we’re not just pissing in the wind. So let's take the win and stick it up our noses or ears or wherever you’re supposed to put hopium these days.</p><p><strong>Oops! It’s a Radioactive Saharan Dust Cloud</strong></p><p>In the beginning, Cilllian Murphy invented nuclear weapons. For decades afterward, governments around the world came up with the flimsiest excuses to make them go boom. Hmm, should we nuke a battleship? <a href=\"https://www.history.navy.mil/our-collections/art/exhibits/conflicts-and-operations/operation-crossroads-bikini-atoll.html?ref=404media.co\"></a>. Nuke the sky? <a href=\"https://en.wikipedia.org/wiki/High-altitude_nuclear_explosion?ref=404media.co\"></a>. Nuke the Sahara? <a href=\"https://en.wikipedia.org/wiki/Reggane_series,_French_nuclear_tests?ref=404media.co\"></a> (because France did that one).&nbsp;&nbsp;</p><p>In a twist, the spectre of those Saharan nukes literally visited itself upon Europe in March 2022, when a desert storm blew dust clouds from the Algerian test site across the continent. The event raised concerns that radioactive particles from the four atmospheric detonations, which were performed over Reggane in 1960 and 1961, may have contaminated those nations, potentially posing a public health threat.</p><p>To investigate the risk, researchers enlisted citizen sciences to collect more than 100 dust samples from six countries in Western Europe, which they tested for plutonium isotope signatures. In yet another twist, the team found that there  detectable radioactive contamination in the particles from the 2022 storm, but it mostly didn’t come from the French atmospheric tests. It was dominated by the global fallout signature of the atmospheric tests conducted by the United States and the Soviet Union before sky nukes were banned in 1963.&nbsp;</p><p>“Radionuclide signatures detected in Saharan dust collected in 2022 remained in the range of the global fallout found as a background signal in soils worldwide, and they significantly differed from the characteristics of the French atmospheric nuclear tests conducted in Southern Algeria,” said researchers led by Yangjunjie Xu-Yang of Université Paris-Saclay.</p><p>The team concluded that the contamination didn’t pose a public health threat, but it’s still a little disconcerting to be reminded that the planet is covered in a film of radioactive dust. As the sage Nelson Muntz once proclaimed: Gotta nuke something.</p><p><strong>Spring Forward, Fall Back, Shake a Paw</strong></p><p>Dogs are thrown off by Daylight Savings Time (DST) too, at least if they are gainfully employed. That’s the conclusion of the first study to examine how DST affects all the good boys and good girls out there. </p><p>To accomplish this feat, the team put accelerometers into the collars of 25 sled dogs and 29 companion dogs living around Ontario during the fall time change in 2020 and 2021 respectively. By measuring the activity of the dogs, they were able to determine that sled dogs were more sensitive to time changes because of their rigid working schedules.&nbsp;&nbsp;</p><p>“Recognizing that DST is an extreme form of anthropogenic intervention on the effects of natural light on circadian rhythm regulation, we aim to investigate how this abrupt shift in the timing of human activity affects companion animals,” said researchers led by Lavania Nagendran of the University of Toronto.</p><p>“Sled dogs took one day to adjust to the time shift,” the researchers concluded. “In companion dogs, we did not find evidence for any changes in morning onset activity following DST.”</p><p>In other words, the coalition ban time changes may have just earned a powerful new bloc: Huskies and malamutes. These dogs will make great political allies, assuming they can take some time away from other important business (digging holes, chasing squirrels, and yowling discordantly).&nbsp;</p><p><strong>The Lost Water World of Mars&nbsp;</strong></p><p>Mars was once a warm world of gushing rivers and huge lakes that may have supported microbial life. But just how Mars remained toasty enough to produce these balmy conditions is a matter of some debate; the Sun was dimmer four billion years ago, when Mars was habitable, plus the red planet receives less sunlight than Earth due to its orbital distance, so solar radiation alone cannot account for its liquid water.</p><p>Scientists now propose that Mars was partly warmed by its own farts—or, in more scientific terms, its crustal outgassing. Hydrogen gas released by water sinking into the crust could have helped “to transiently foster warm, humid climates” according to researchers led by Danica Adams of Harvard University.</p><p>These events of outgassing due crustal hydration would have been short-lived, lasting tens of millions of years. This scenario adds more evidence to the idea that Martian climate, and thus its habitability, fluctuated until about three billion years ago, when the planet permanently transformed into the cold dry husk we like to put our best robots on today.</p><p>Adams and her colleagues note that these models will be put to the test once samples from Mars are returned to Earth (though <a href=\"https://spacenews.com/rethink-the-mars-program/?ref=404media.co\"><u>the Mars Sample Return mission</u></a> is currently experiencing&nbsp; setbacks). For now, we’ll have to be satisfied with this glimpse of a gassy ancient Mars and the possible organisms that may have flourished during its warm spells.&nbsp;&nbsp;</p><p>Thanks for reading! See you next week.</p>",
+      "contentLength": 8972,
+      "flags": null,
+      "enclosureUrl": "https://www.404media.co/content/images/2025/01/image1-1.jpg",
+      "enclosureMime": "",
+      "commentsUrl": null
     },
     {
       "title": "Open Source Tool For Painting Normal Maps For Pixel Art",
@@ -438,6 +550,20 @@
       "unread": true,
       "content": "<p>Did you pass a cert? Congratulations, tell us about it!</p><p>Did you bomb a cert exam and want help? This is the thread for you.</p><p>Do you just hate the process? Complain here.</p><p>(Note: other certification related posts will be removed)</p>",
       "contentLength": 223,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "Monthly: Who is hiring?",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1if3zpp/monthly_who_is_hiring/",
+      "date": 1738407632,
+      "author": "/u/gctaylor",
+      "guid": 19461,
+      "unread": true,
+      "content": "<div><p>This monthly post can be used to share Kubernetes-related job openings within  company. Please include:</p><ul><li>Location requirements (or lack thereof)</li><li>At least one of: a link to a job posting/application page or contact details</li></ul><p>If you are interested in a job, please contact the poster directly. </p><p>Common reasons for comment removal:</p><ul><li>Not meeting the above requirements</li><li>Recruiter post / recruiter listings</li><li>Negative, inflammatory, or abrasive tone</li></ul></div>   submitted by   <a href=\"https://www.reddit.com/user/gctaylor\"> /u/gctaylor </a>",
+      "contentLength": 461,
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": "",
@@ -736,6 +862,20 @@
       "enclosureUrl": "",
       "enclosureMime": "",
       "commentsUrl": "https://www.reddit.com/r/kubernetes/comments/1ievokr/i_created_an_operator_for_distributing_gihub/"
+    },
+    {
+      "title": "Android 16's Linux Terminal Runs Doom",
+      "url": "https://linux.slashdot.org/story/25/01/31/2317212/android-16s-linux-terminal-runs-doom?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+      "date": 1738374000,
+      "author": "BeauHD",
+      "guid": 19211,
+      "unread": true,
+      "content": "Google is enhancing Android 16's Linux Terminal app to support graphical Linux applications, so Android Authority decided to put it to the test by running Doom. From the report: The Terminal app first appeared in the Android 15 QPR2 beta as a developer option, and it still remains locked behind developer settings. Since its initial public release, Google pushed a few changes that fixed issues with the installation process and added a settings menu to resize the disk, forward ports, and backup the installation. However, the biggest changes the company has been working on, which include adding hardware acceleration support and a full graphical environment, have not been pushed to any public releases.\n \nThankfully, since Google is working on this feature in the open, it's possible to simply compile a build of AOSP with these changes added in. This gives us the opportunity to trial upcoming features of the Android Linux Terminal app before a public release. To demonstrate, we fired up the Linux Terminal on a Pixel 9 Pro, tapped a new button on the top right to enter the Display activity, and then ran the 'weston' command to open up a graphical environment. (Weston is a reference implementation of a Wayland compositor, a modern display server protocol.)\n \nWe also went ahead and enabled hardware acceleration beforehand as well as installed Chocolate Doom, a source port of Doom, to see if it would run. Doom did run, as you can see below. It ran well, which is no surprise considering Doom can run on literal potatoes. There wasn't any audio because an audio server isn't available yet, but audio support is something that Google is still working on.",
+      "contentLength": 1666,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
     },
     {
       "title": "Decision to dump water from Tulare County lakes altered after confusing locals",
@@ -1256,6 +1396,20 @@
       "commentsUrl": null
     },
     {
+      "title": "Behind the Blog: Boom, Bust, and Big Ideas",
+      "url": "https://www.404media.co/behind-the-blog-boom-bust-and-big-ideas/",
+      "date": 1738343468,
+      "author": "Samantha Cole",
+      "guid": 19487,
+      "unread": true,
+      "content": "<img src=\"https://www.404media.co/content/images/2025/01/nl1.31--2--1.png\" alt=\"Behind the Blog: Boom, Bust, and Big Ideas\"><p><em>This is Behind the Blog, where we share our behind-the-scenes thoughts about how a few of our top stories of the week came together. This week, we discuss AI's boom or bust, trying Github's Copilot, and making time for good ideas.</em></p><p>When we started 404 Media, I bought a macro lens for my camera and used it to take pictures of leaked documents, things we had FOIAed, things like that. Sometimes I printed out the documents and took pictures of them, other times I took pictures of my computer screen. The thinking was that it was a cooler visual style than just screenshotting them, which obviously takes half a second. It wasn’t a policy or anything, but I took pics for the first few weeks, and they did look cool. I only have one camera, and I mainly use it as a webcam for our podcast. So it was definitely a pain in the ass to take it off a tripod, change the lens, take the photos, put them on my computer, and so on. So after a few weeks, I stopped doing it, and now we use screenshots like everyone else on the entire internet.</p>",
+      "contentLength": 1035,
+      "flags": null,
+      "enclosureUrl": "https://www.404media.co/content/images/2025/01/nl1.31--2--1.png",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
       "title": "Show HN: Uscope, a new Linux debugger written from scratch",
       "url": "https://github.com/jcalabro/uscope",
       "date": 1738343221,
@@ -1366,6 +1520,20 @@
       "enclosureUrl": "",
       "enclosureMime": "",
       "commentsUrl": "https://www.reddit.com/r/rust/comments/1ieiijc/microsofts_pluton_uses_rust_tock_os_under_the_hood/"
+    },
+    {
+      "title": "Sellers of Anom, the FBI's Secret Backdoored Phone, Plead Guilty",
+      "url": "https://www.404media.co/sellers-of-anom-the-fbis-secret-backdoored-phone-plead-guilty/",
+      "date": 1738337613,
+      "author": "Joseph Cox",
+      "guid": 19486,
+      "unread": true,
+      "content": "<img src=\"https://www.404media.co/content/images/2025/01/anom-logo-2.JPG\" alt=\"Sellers of Anom, the FBI's Secret Backdoored Phone, Plead Guilty\"><p>A group of men who sold Anom devices, the encrypted phone secretly backdoored by the FBI which led to <a href=\"https://www.hachettebookgroup.com/titles/joseph-cox/dark-wire/9781541702691/?ref=404media.co\"><u>the largest sting operation in history</u></a>, pleaded guilty this month in San Diego. The defendants had been set to go to trial, in which the government <a href=\"https://www.404media.co/government-to-name-key-witness-who-provided-fbi-with-backdoored-encrypted-chat-app-anom-2/\"><u>was preparing to reveal the real identity</u></a> of the confidential human source who provided the FBI with the Anom company in the first place. Now, that trial most likely won’t happen.</p><p>The court records released as part of the plea deals also provide new insight into how some of the phone sellers discussed drug trafficking on their Anom devices as well.</p><p>“If you really want to be secure there is only one word. ANOM,” one of the defendants wrote in messages collected from a backdoored phone.</p><p>In 2018, the FBI shut down an encrypted phone company <a href=\"https://www.vice.com/en/article/the-network-vincent-ramos-phantom-secure/?ref=404media.co\"></a>. Companies in this underground industry typically take ordinary mobile handsets, then load them with custom encrypted messaging software and sometimes make modifications to the hardware too, such as removing the microphone or camera. Their customer bases are often disproportionately serious organized criminals, including drug traffickers, hitmen, and money launderers.&nbsp;</p><p>After shuttering Phantom Secure, a seller of the devices who used the moniker “Afgoo” approached the FBI with a staggering proposition: would the agency like to take the new encrypted phone company they had started, called Anom, and run it themselves? This meant the FBI could secretly backdoor Anom’s phones, and if criminals started using them, read all of their messages.&nbsp;</p><p>That would only work if criminals bought the phones, and if people in the encrypted phone industry sold them. That’s where the defendants Aurangzeb Ayub, Shane Ngakuru, Seyyed Hossein Hosseini, and Alexander Dmintrienko come in. Prosecutors allege they became part of Anom and sold Anom devices to criminals around the world.</p><div><div><b><strong>Do you know anything else about Anom or encrypted phones? I would love to hear from you. Using a non-work device, you can message me securely on Signal at +44 20 8133 5190. Otherwise, send me an email at joseph@404media.co.</strong></b></div></div><p>Anom became a popular tool for serious criminals in Australia, Europe, South America, and South East Asia. Customers <a href=\"https://www.wired.com/story/inside-biggest-fbi-sting-operation-in-history/?ref=404media.co\"><u>used the phones to coordinate massive</u></a>, multi-ton shipments of drugs. In June 2021, authorities launched a global relay race of raids, with more than nine thousand law enforcement officials acting across a single day.</p><p>In a twist, even though the FBI secretly managed the Anom company, deciding which features should be included and those which shouldn’t, authorities also decided to charge what they saw as some of Anom’s most significant sellers. That indictment <a href=\"https://www.vice.com/en/article/doj-charges-anom-influencers-fake-honeypot-company/?ref=404media.co\"></a>, including Hakan Ayik, who was Australia’s most wanted man and a key reason why Anom went global. Associates <a href=\"https://www.404media.co/associates-react-to-arrest-of-hakan-ayik-anom/\"><u>called him the “encryption king.”</u></a></p><p>The new plea agreements point to the defendants’ communications with criminal users of the phones. “Defendant assured his criminal customers that Anom would be safe from law enforcement and that Anom was more secure than other hardened encrypted device companies that had recently been infiltrated by law enforcement,” <a href=\"https://legacy.www.documentcloud.org/documents/25510472-anom-plea-1?ref=404media.co\"><u>Ayub’s plea agreement reads</u></a>.&nbsp;</p><p>In March 2021, authorities shut down Sky, one of the largest encrypted phone companies. Ayub then told Anom higher ups he was ready to sell 100 Anom devices and another 600 devices down the line, the record adds. “Defendant recognized that the criminal market for hardened encrypted device brands were overlapping and that the fall of a competitor provider presented opportunities for the growth of the Anom Enterprise,” it reads.</p><p><a href=\"https://legacy.www.documentcloud.org/documents/25510473-anom-plea-2?ref=404media.co\"></a> mentions a conversation where some of the men discussed keeping Anom underground. “Remeber. Word of mouth only. No social media nothing We don’t exist xx,” one called Edwin Harmendra Kumar wrote (Kumar <a href=\"https://www.justice.gov/usao-sdca/pr/distributor-anom-hardened-encrypted-devices-sentenced-63-months-prison-racketeering?ref=404media.co\"><u>previously pleaded guilty</u></a>). “Yes we don’t advertize ,” Dmitrienko added. Hosseini then wrote “This one of the policies of ANOM no advertising!! I know you guys are aware of it.. Just a minder… 😉.” The irony, of course, was that all of these messages were being collected and then read by the FBI.</p><p>Some of the phone sellers also discussed drug sales in their messages, according to the plea agreements. <a href=\"https://legacy.www.documentcloud.org/documents/25510474-anom-plea-3?ref=404media.co\"><u>Ngakuru coordinated a shipment of methamphetamine</u></a> to New Zealand; Ayub spoke about the sale of kilograms of cocaine; and Hosseini discussed cocaine trafficking, according to the documents. Those three men have entered their pleas, but Dmintrienko’s hearing has been delayed to February, according to the court docket. Hosseini’s plea agreement mentions Dmintrienko in the cocaine discussion.</p><p>The guilty pleas close those cases, but some of the people charged by the U.S. remain overseas, including “encryption king” Ayik and Maximilian Rivkin, a Serbia-born drug trafficker who was also crucial to Anom’s aggressive expansion.</p>",
+      "contentLength": 4885,
+      "flags": null,
+      "enclosureUrl": "https://www.404media.co/content/images/2025/01/anom-logo-2.JPG",
+      "enclosureMime": "",
+      "commentsUrl": null
     },
     {
       "title": "home-watcher: Find out which programs are creating those random files in your home directory",
@@ -1506,6 +1674,20 @@
       "enclosureUrl": "",
       "enclosureMime": "",
       "commentsUrl": "https://news.ycombinator.com/item?id=42887939"
+    },
+    {
+      "title": "Here's the Video for Our Fifth FOIA Forum: Federal Records",
+      "url": "https://www.404media.co/heres-the-video-for-our-fifth-foia-forum-federal-records/",
+      "date": 1738332762,
+      "author": "Joseph Cox",
+      "guid": 19485,
+      "unread": true,
+      "content": "<img src=\"https://www.404media.co/content/images/2025/01/foia-forum-top.png\" alt=\"Here's the Video for Our Fifth FOIA Forum: Federal Records\"><p>The FOIA Forum is a livestreamed event for paying subscribers where we talk about how to file public records requests and answer questions. If you're not already signed up, please consider doing so&nbsp;<a href=\"https://www.404media.co/membership/\" rel=\"noreferrer\">here</a>.&nbsp;</p><p>Recently we had a FOIA Forum where we focused on getting information from federal government agencies. With any new administration there is a flurry of activity, and Freedom of Information Act (FOIA) requests are a way to get more information on what is happening inside government. </p>",
+      "contentLength": 489,
+      "flags": null,
+      "enclosureUrl": "https://www.404media.co/content/images/2025/01/foia-forum-top.png",
+      "enclosureMime": "",
+      "commentsUrl": null
     },
     {
       "title": "The VEKOS operating system is now able to execute programs",
@@ -1922,34 +2104,6 @@
       "unread": true,
       "content": "",
       "contentLength": 0,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Rubywm: An X11 window manager in pure Ruby",
-      "url": "https://github.com/vidarh/rubywm",
-      "date": 1738295504,
-      "author": "Kerrick",
-      "guid": 18963,
-      "unread": true,
-      "content": "",
-      "contentLength": 0,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": "https://news.ycombinator.com/item?id=42884556"
-    },
-    {
-      "title": "Just completed my Golang Fundamentals Properly 🤩",
-      "url": "https://www.reddit.com/r/golang/comments/1ie5zxd/just_completed_my_golang_fundamentals_properly/",
-      "date": 1738295109,
-      "author": "/u/light_4seeker",
-      "guid": 18878,
-      "unread": true,
-      "content": "<div><p>Hey, I am very new to Go and I having finally completed my Golang Fundamentals </p><p>Here is my repo and also attached a notion page where I am putting all of my learnings please rate this and guide me in this journey..</p></div>   submitted by   <a href=\"https://www.reddit.com/user/light_4seeker\"> /u/light_4seeker </a>",
-      "contentLength": 249,
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": "",

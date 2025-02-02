@@ -7,7 +7,7 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 284,
+  "itemCount": 285,
   "items": [
     {
       "title": "I love Linux.",
@@ -36,6 +36,20 @@
       "enclosureUrl": "",
       "enclosureMime": "",
       "commentsUrl": "https://www.reddit.com/r/linux/comments/1if7bkh/llama_31_community_license_is_not_a_free_software/"
+    },
+    {
+      "title": "Tiling Shell Brings Advanced Window Management to Linux",
+      "url": "https://www.reddit.com/r/linux/comments/1if6zk7/tiling_shell_brings_advanced_window_management_to/",
+      "date": 1738418684,
+      "author": "/u/Domyf",
+      "guid": 19460,
+      "unread": true,
+      "content": "<p>Hey <a href=\"https://www.reddit.com/r/Linux\">r/Linux</a> I'm the developer of <a href=\"https://extensions.gnome.org/extension/7065/tiling-shell/\">Tiling Shell</a>, a GNOME extension for advanced window management. It's highly configurable and offers different ways of tiling and managing your windows. The focus is on delivering the best user experience, highest stability, and full customization. Give it a try! <a href=\"https://extensions.gnome.org/extension/7065/tiling-shell/\">Link</a> for download.</p><p>It also works with multiple monitors (even if they use different scaling), comes with a number of tiling layouts built-in but there is a layout editor to allow you to create and save customs layouts.</p><p>Tiling Shell also features the Snap Assistant, borrowed from Windows 11: just move a window to the top with your mouse and the Snap Assistant slides in and you can place the window where you want and how you want.</p><ul><li>I've implemented automatic tiling as well</li><li>Fully customizable keyboard shortcuts to tile, move windows, change focus and more</li><li>You can also move the window to the edge of the screen to tile it</li><li>Right click on the window title to place the window where you want and how you want it</li><li>Coming soon this week, Windows Suggestions: after tiling a window you get suggestions for other windows to fill the remaining tiles</li></ul>",
+      "contentLength": 1131,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
     },
     {
       "title": "I made a steampunk bullet heaven game on and for Linux",
@@ -702,8 +716,8 @@
       "author": "/u/chemolz9",
       "guid": 17506,
       "unread": true,
-      "content": "<p>I'm regularly stumbling over official installation guides in the internet for linux software, that just downloads and runs a shell script. The shell script then asks for root permissions. This seems highly dangerous to me and I'm baffled that this seems to be a thing.</p><p>Any idea how to deal with such installation guides? I don't want to scan 350 lines of code for malicious commands before I install some software.</p><p>[edit] Because so many people miss the point. They keyword is . Of coure I trust the source well enough to run it on user level.</p>",
-      "contentLength": 541,
+      "content": "<!-- SC_OFF --><div class=\"md\"><p>I&#39;m regularly stumbling over official installation guides in the internet for linux software, that just downloads and runs a shell script. The shell script then asks for root permissions. This seems highly dangerous to me and I&#39;m baffled that this seems to be a thing.</p> <p>Latest example: <a href=\"https://ollama.com/download\">https://ollama.com/download</a></p> <p>Any idea how to deal with such installation guides? I don&#39;t want to scan 350 lines of code for malicious commands before I install some software.</p> <p>[edit] Because so many people miss the point. They keyword is <strong>root permissions</strong>. Of coure I trust the source well enough to run it on user level.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/chemolz9\"> /u/chemolz9 </a> <br/> <span><a href=\"https://www.reddit.com/r/linux/comments/1ib8jle/normal_to_give_random_install_scripts_root/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/linux/comments/1ib8jle/normal_to_give_random_install_scripts_root/\">[comments]</a></span>",
+      "contentLength": 0,
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": "",

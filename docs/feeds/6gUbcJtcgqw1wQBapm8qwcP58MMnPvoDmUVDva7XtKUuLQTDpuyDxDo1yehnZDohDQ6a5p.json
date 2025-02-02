@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 19,
+  "itemCount": 20,
   "items": [
+    {
+      "title": "Slashdot Asks: Do You Remember Your High School's 'Computer Room'?",
+      "url": "https://developers.slashdot.org/story/25/02/02/0233216/slashdot-asks-do-you-remember-your-high-schools-computer-room?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+      "date": 1738463760,
+      "author": "EditorDavid",
+      "guid": 19430,
+      "unread": true,
+      "content": "Bill Gates' blog has been updated with short videos about his upcoming book, including one about how his school ended up with an ASR-33 teletype that could connect their Seattle classroom to a computer in California. \"The teachers faded away pretty quickly,\" Gates adds, \"But about six of us stayed hardcore. One was Paul Allen...\" — the future co-founder of Microsoft. And the experience clearly meant a lot to Gates. \"Microsoft just never would've happened without Paul — and this teletype room.\" \n\nIn a longer post thanking his \"brilliant\" teachers, Gates calls his teletype experience \"an encounter that would shape my entire future\" and \"opened up a whole new world for me.\" Gates also thanks World War II Navy pilot and Boeing engineer Bill Dougall, who \"was instrumental in bringing computer access to our school, something he and other faculty members pushed for after taking a summer computer class... The fascinating thing about Mr. Dougall was that he didn't actually know much about programming; he exhausted his knowledge within a week. But he had the vision to know it was important and the trust to let us students figure it out.\" \n\nGates shared a similar memory about the computer-room's 20-something overseer Fred Wright, who \"intuitively understood that the best way to get students to learn was to let us explore on our own terms. There was no sign-up sheet, no locked door, no formal instruction.\"\n\nInstead, Mr. Wright let us figure things out ourselves and trusted that, without his guidance, we'd have to get creative... Some of the other teachers argued for tighter regulations, worried about what we might be doing in there unsupervised. But even though Mr. Wright occasionally popped in to break up a squabble or listen as someone explained their latest program, for the most part he defended our autonomy... \nMr. Wright gave us something invaluable: the space to discover our own potential.\n \n\nAny Slashdot readers have a similarly impactful experience? Share your own thoughts and memories in the comments. \n\nDo you remember your high school's computer room?",
+      "contentLength": 2089,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Oracle Faces Java Customer Revolt After 'Predatory' Pricing Changes",
       "url": "https://developers.slashdot.org/story/25/01/30/1617210/oracle-faces-java-customer-revolt-after-predatory-pricing-changes?utm_source=rss1.0mainlinkanon&utm_medium=feed",

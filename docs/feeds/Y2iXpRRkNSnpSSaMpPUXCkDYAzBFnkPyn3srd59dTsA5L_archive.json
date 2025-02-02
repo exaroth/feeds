@@ -1,0 +1,31 @@
+{
+  "id": "Y2iXpRRkNSnpSSaMpPUXCkDYAzBFnkPyn3srd59dTsA5L",
+  "title": "Arch Linux: Recent news updates",
+  "displayTitle": "Dev - Arch Linux News",
+  "url": "https://archlinux.org/feeds/news/",
+  "feedLink": "https://archlinux.org/news/",
+  "isQuery": false,
+  "isEmpty": false,
+  "isHidden": false,
+  "itemCount": 1,
+  "items": [
+    {
+      "title": "Critical rsync security release 3.4.0",
+      "url": "https://archlinux.org/news/critical-rsync-security-release-340/",
+      "date": 1737041623,
+      "author": "Robin Candau",
+      "guid": 19455,
+      "unread": true,
+      "content": "<p>We'd like to raise awareness about the rsync security release version  as described in our advisory <a href=\"https://security.archlinux.org/ASA-202501-1\">ASA-202501-1</a>.</p><p>An attacker only requires anonymous read access to a vulnerable rsync server, such as a public mirror, to execute arbitrary code on the machine the server is running on. \nAdditionally, attackers can take control of an affected server and read/write arbitrary files of any connected client.\nSensitive data can be extracted, such as OpenPGP and SSH keys, and malicious code can be executed by overwriting files such as  or .</p><p>We highly advise anyone who runs an rsync daemon or client prior to version  to upgrade and reboot their systems immediately.\nAs Arch Linux mirrors are mostly synchronized using rsync, we highly advise any mirror administrator to act immediately, even though the hosted package files themselves are cryptographically signed.</p><p>All infrastructure servers and mirrors maintained by Arch Linux have already been updated.</p>",
+      "contentLength": 949,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    }
+  ],
+  "tags": [
+    "dev",
+    "linux"
+  ]
+}

@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 9,
+  "itemCount": 10,
   "items": [
+    {
+      "title": "Android 16's Linux Terminal Runs Doom",
+      "url": "https://linux.slashdot.org/story/25/01/31/2317212/android-16s-linux-terminal-runs-doom?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+      "date": 1738374000,
+      "author": "BeauHD",
+      "guid": 19211,
+      "unread": true,
+      "content": "Google is enhancing Android 16's Linux Terminal app to support graphical Linux applications, so Android Authority decided to put it to the test by running Doom. From the report: The Terminal app first appeared in the Android 15 QPR2 beta as a developer option, and it still remains locked behind developer settings. Since its initial public release, Google pushed a few changes that fixed issues with the installation process and added a settings menu to resize the disk, forward ports, and backup the installation. However, the biggest changes the company has been working on, which include adding hardware acceleration support and a full graphical environment, have not been pushed to any public releases.\n \nThankfully, since Google is working on this feature in the open, it's possible to simply compile a build of AOSP with these changes added in. This gives us the opportunity to trial upcoming features of the Android Linux Terminal app before a public release. To demonstrate, we fired up the Linux Terminal on a Pixel 9 Pro, tapped a new button on the top right to enter the Display activity, and then ran the 'weston' command to open up a graphical environment. (Weston is a reference implementation of a Wayland compositor, a modern display server protocol.)\n \nWe also went ahead and enabled hardware acceleration beforehand as well as installed Chocolate Doom, a source port of Doom, to see if it would run. Doom did run, as you can see below. It ran well, which is no surprise considering Doom can run on literal potatoes. There wasn't any audio because an audio server isn't available yet, but audio support is something that Google is still working on.",
+      "contentLength": 1666,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Facebook Flags Linux Topics As 'Cybersecurity Threats'",
       "url": "https://linux.slashdot.org/story/25/01/27/2120230/facebook-flags-linux-topics-as-cybersecurity-threats?utm_source=rss1.0mainlinkanon&utm_medium=feed",

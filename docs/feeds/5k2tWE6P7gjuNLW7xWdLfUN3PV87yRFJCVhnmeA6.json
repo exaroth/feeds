@@ -1,0 +1,72 @@
+{
+  "id": "5k2tWE6P7gjuNLW7xWdLfUN3PV87yRFJCVhnmeA6",
+  "title": "philschmid.de - RSS feed",
+  "displayTitle": "Dev - Phil Shmid",
+  "url": "https://www.philschmid.de/rss",
+  "feedLink": "https://www.philschmid.de/",
+  "isQuery": false,
+  "isEmpty": false,
+  "isHidden": false,
+  "itemCount": 4,
+  "items": [
+    {
+      "title": "Mini-R1: Reproduce Deepseek R1 „aha moment“ a RL tutorial",
+      "url": "https://www.philschmid.de/mini-deepseek-r1",
+      "date": 1738195200,
+      "author": "",
+      "guid": 19438,
+      "unread": true,
+      "content": "<article>Reproduce Deepseek R1 „aha moment“ and train an open model using reinforcement learning trying to teach it self-verification and search abilities all on its own to solve the Countdown Game.</article>",
+      "contentLength": 193,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "How to align open LLMs in 2025 with DPO and and synthetic data",
+      "url": "https://www.philschmid.de/rl-with-llms-in-2025-dpo",
+      "date": 1737590400,
+      "author": "",
+      "guid": 19437,
+      "unread": true,
+      "content": "<article>Learn how to align LLMs using Hugging Face TRL and RLHF through Direct Preference Optimization (DPO) and on-policy synthetic data.</article>",
+      "contentLength": 130,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "How to use Anthropic MCP Server with open LLMs, OpenAI or Google Gemini",
+      "url": "https://www.philschmid.de/mcp-example-llama",
+      "date": 1737072000,
+      "author": "",
+      "guid": 19435,
+      "unread": true,
+      "content": "<article>How to use Anthropic MCP Server with open LLMs, OpenAI or Google Gemini</article>",
+      "contentLength": 71,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "Bite: How Deepseek R1 was trained",
+      "url": "https://www.philschmid.de/deepseek-r1",
+      "date": 1737072000,
+      "author": "",
+      "guid": 19436,
+      "unread": true,
+      "content": "<article>5 Minute Read on how Deepseek R1 was trained using Group Relative Policy Optimization (GRPO) and RL-focused multi-stage training approach.</article>",
+      "contentLength": 138,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    }
+  ],
+  "tags": [
+    "dev"
+  ]
+}

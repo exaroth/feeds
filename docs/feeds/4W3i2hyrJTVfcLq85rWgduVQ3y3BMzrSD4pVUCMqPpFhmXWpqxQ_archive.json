@@ -7,7 +7,7 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 790,
+  "itemCount": 788,
   "items": [
     {
       "title": "Avoid ISP Routers",
@@ -982,12 +982,12 @@
       "author": "rrampage",
       "guid": 18520,
       "unread": true,
-      "content": "",
+      "content": "\n<p>Article URL: <a href=\"https://matklad.github.io/2022/10/06/hard-mode-rust.html\">https://matklad.github.io/2022/10/06/hard-mode-rust.html</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42874605\">https://news.ycombinator.com/item?id=42874605</a></p>\n<p>Points: 126</p>\n<p># Comments: 44</p>\n",
       "contentLength": 0,
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": "",
-      "commentsUrl": "https://news.ycombinator.com/item?id=42874605"
+      "commentsUrl": null
     },
     {
       "title": "Decompiling 2024: A Year of Resurgance in Decompilation Research",
@@ -11035,34 +11035,6 @@
       "guid": 9486,
       "unread": true,
       "content": "\n<p>Article URL: <a href=\"https://blogscroll.com/\">https://blogscroll.com/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42583086\">https://news.ycombinator.com/item?id=42583086</a></p>\n<p>Points: 248</p>\n<p># Comments: 70</p>\n",
-      "contentLength": 0,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Kuvasz-streamer: open-source CDC for Postgres for low latency replication",
-      "url": "https://streamer.kuvasz.io/",
-      "date": 1735876362,
-      "author": "thunderbong",
-      "guid": 9552,
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://streamer.kuvasz.io/\">https://streamer.kuvasz.io/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42582203\">https://news.ycombinator.com/item?id=42582203</a></p>\n<p>Points: 107</p>\n<p># Comments: 33</p>\n",
-      "contentLength": 0,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Using watermarks to coordinate change data capture in Postgres",
-      "url": "https://blog.sequinstream.com/using-watermarks-to-coordinate-change-data-capture-in-postgres/",
-      "date": 1735874906,
-      "author": "misonic",
-      "guid": 10249,
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://blog.sequinstream.com/using-watermarks-to-coordinate-change-data-capture-in-postgres/\">https://blog.sequinstream.com/using-watermarks-to-coordinate-change-data-capture-in-postgres/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=42582044\">https://news.ycombinator.com/item?id=42582044</a></p>\n<p>Points: 81</p>\n<p># Comments: 0</p>\n",
       "contentLength": 0,
       "flags": null,
       "enclosureUrl": "",

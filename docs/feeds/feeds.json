@@ -24,7 +24,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 66
+      "num_items": 68
     },
     {
       "id": "PyU9",
@@ -37,7 +37,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 139
+      "num_items": 150
     },
     {
       "id": "3A81sm",
@@ -50,7 +50,7 @@
       "tags": [
         "tech"
       ],
-      "num_items": 144
+      "num_items": 150
     },
     {
       "id": "43nutaBRYF",
@@ -115,7 +115,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 470
+      "num_items": 471
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppXXAQCe8LGUnBWHDnF4s2jjN39bSf9J",
@@ -141,7 +141,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 996
+      "num_items": 997
     },
     {
       "id": "46aP2QbqUqBrWfYqAibo8xS24qkvbDNgWZV4Z6rf2nuJ3cBJ971pKb6XZkWhnDxr957c82fPU4Cg4j63MSkVSUXrPi55",
@@ -169,7 +169,7 @@
         "news",
         "reddit"
       ],
-      "num_items": 486
+      "num_items": 488
     },
     {
       "id": "VMK7D8tQvwsLtnxKHzNdF9c4Yhtuqm",
@@ -211,7 +211,7 @@
         "dev",
         "hn"
       ],
-      "num_items": 790
+      "num_items": 788
     },
     {
       "id": "CQdwDV8xyajeX5DKoSYfBQhN4kkXBaTmXPYgJyANUWHyjCo5BpHUjy5gJhgngST",
@@ -225,7 +225,7 @@
         "dev",
         "slashdot"
       ],
-      "num_items": 9
+      "num_items": 10
     },
     {
       "id": "6gUbcJtcgqw1wQBapm8qwcP58MMnPvoDmUVDva7XtKUuLQTDpuyDxDo1yehnZDohDQ6a5p",
@@ -239,7 +239,7 @@
         "dev",
         "slashdot"
       ],
-      "num_items": 19
+      "num_items": 20
     },
     {
       "id": "MvwLKznkcWQJt9LV3qspiNNstpReRGojdXM3bsYDh",
@@ -284,7 +284,7 @@
         "reddit",
         "go"
       ],
-      "num_items": 288
+      "num_items": 289
     },
     {
       "id": "KWcVEiwEzuiGGuVCeJEYXr8oePYYMmThA64XKX4pLSjxAVFybiMNe4wuzLW34BL34N8bMRzHn8nKtoqJMB",
@@ -314,7 +314,7 @@
         "rust",
         "reddit"
       ],
-      "num_items": 285
+      "num_items": 286
     },
     {
       "id": "7DceLgR4szFyHjpUotrBgPp9fEDdwmRmyXGW53xLQnbPAifjKVFPj1dyKJ6sHa1bC6AC9QFBhYUJLmJ6GyX57",
@@ -328,7 +328,7 @@
         "dev",
         "reddit"
       ],
-      "num_items": 284
+      "num_items": 285
     },
     {
       "id": "46aP2QbqUqBrWfYqAibo8xS24qkvbDNgWZUrxgZ6XNcyUn6fFxkgS1aSWJWwPwaqFp34erWr8NxVvd6jro8uiaPvDUjw",
@@ -343,7 +343,7 @@
         "k8s",
         "reddit"
       ],
-      "num_items": 283
+      "num_items": 284
     },
     {
       "id": "EfcLDDAkyqguXw9Vbtcae7fRhxCsY1chPUNLpwbK9oHS42b4dGEMeGvA2hWHB2j3LFSAo7qhibLNgPBcA5djbGp95Jk5T",
@@ -357,7 +357,7 @@
         "dev",
         "reddit"
       ],
-      "num_items": 297
+      "num_items": 298
     },
     {
       "id": "BRWJ2YmdUFoz1jUcCg5P21RYgb4CmSRDHkju2uMS7GB1447d",
@@ -399,7 +399,7 @@
         "dev",
         "k8s"
       ],
-      "num_items": 121
+      "num_items": 107
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JpppN9NLNrdRZgCdnN5NoKNcpbU8nxLPJ",
@@ -468,6 +468,19 @@
       "num_items": 1
     },
     {
+      "id": "3MxaK2JpEReqZwbft8oaVrcfgKZxp5G3SWyg5tNUM6a9RKA",
+      "title": "Armin Ronacher's Thoughts and Writings",
+      "display_title": "Dev - Armin Ronacher Blog",
+      "url": "https://lucumr.pocoo.org/feed.atom",
+      "feedlink": "https://lucumr.pocoo.org/feed.atom",
+      "hidden": false,
+      "is_query": false,
+      "tags": [
+        "dev"
+      ],
+      "num_items": 3
+    },
+    {
       "id": "3auKdN6FdQE2rdQHqvu6V4wu7T3G4Cj5CgAUTM3qCB4okp3k7gr2aB2qNPr4dq",
       "title": "Kubernetes Podcast from Google",
       "display_title": "Dev - Kubernetes Podcast",
@@ -523,6 +536,60 @@
         "dev"
       ],
       "num_items": 12
+    },
+    {
+      "id": "5k2tWE6P7gjuNLW7xWdLfUN3PV87yRFJCVhnmeA6",
+      "title": "philschmid.de - RSS feed",
+      "display_title": "Dev - Phil Shmid",
+      "url": "https://www.philschmid.de/rss",
+      "feedlink": "https://www.philschmid.de/",
+      "hidden": false,
+      "is_query": false,
+      "tags": [
+        "dev"
+      ],
+      "num_items": 4
+    },
+    {
+      "id": "F7pXcna7voXyqwL8WRn2Gt9RynL8LW7FbrzXU",
+      "title": "404 Media",
+      "display_title": "Dev - 404",
+      "url": "https://www.404media.co/rss",
+      "feedlink": "https://www.404media.co/",
+      "hidden": false,
+      "is_query": false,
+      "tags": [
+        "dev"
+      ],
+      "num_items": 15
+    },
+    {
+      "id": "2k7TU6Gfnp2tyJfbxs8611DnHYRCp47PKuexSXBFEUwLXWnu6o3w4xupSw",
+      "title": "FSF blogs",
+      "display_title": "Dev - Free Software Foundation",
+      "url": "http://static.fsf.org/fsforg/rss/blogs.xml",
+      "feedlink": "http://www.fsf.org/blogs/recent-blog-posts",
+      "hidden": false,
+      "is_query": false,
+      "tags": [
+        "dev",
+        "linux"
+      ],
+      "num_items": 13
+    },
+    {
+      "id": "Y2iXpRRkNSnpSSaMpPUXCkDYAzBFnkPyn3srd59dTsA5L",
+      "title": "Arch Linux: Recent news updates",
+      "display_title": "Dev - Arch Linux News",
+      "url": "https://archlinux.org/feeds/news/",
+      "feedlink": "https://archlinux.org/news/",
+      "hidden": false,
+      "is_query": false,
+      "tags": [
+        "dev",
+        "linux"
+      ],
+      "num_items": 1
     },
     {
       "id": "BRWJ2YmdUFp1VkEaibbVg9gmctcLUWiZeYcbFJGMkd7Cuwto",

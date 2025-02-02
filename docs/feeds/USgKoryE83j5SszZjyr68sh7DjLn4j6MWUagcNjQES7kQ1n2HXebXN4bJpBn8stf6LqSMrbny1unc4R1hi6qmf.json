@@ -38,6 +38,20 @@
       "commentsUrl": null
     },
     {
+      "title": "WIP - e2e testing orchestration helper - is this something that you would find useful? roast the code now that it's alpha :)",
+      "url": "https://codeberg.org/jjba23/poppenspeler",
+      "date": 1738424795,
+      "author": "/u/kosakgroove",
+      "guid": 19463,
+      "unread": true,
+      "content": "<p>\nDefine your test cases and environment setups using the expressive power of a DSL. This allows for flexible and maintainable test code.</p><p>\nEasily start and stop multiple applications, services, and databases as part of your test environment.   handles the complexities of managing dependencies and ensuring everything is running smoothly.</p><p>\nDeclare dependencies between your applications and services.  will ensure that dependencies are started in the correct order and are available when needed.</p><p>\nConfigure your test environment using simple and intuitive structures.  Define ports, environment variables, and other settings for each application.</p><p>\nGet detailed logs of your test runs, including output from all applications and services, making it easy to diagnose issues.</p>",
+      "contentLength": 767,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": "https://www.reddit.com/r/golang/comments/1if92s1/wip_e2e_testing_orchestration_helper_is_this/"
+    },
+    {
       "title": "How do you manage concurrency limits?",
       "url": "https://www.reddit.com/r/golang/comments/1if5wzm/how_do_you_manage_concurrency_limits/",
       "date": 1738415220,
@@ -694,20 +708,6 @@
       "enclosureUrl": "",
       "enclosureMime": "",
       "commentsUrl": null
-    },
-    {
-      "title": "The road to golangci-lint v2",
-      "url": "https://github.com/golangci/golangci-lint/issues/5300",
-      "date": 1737985895,
-      "author": "/u/ldez",
-      "guid": 17379,
-      "unread": true,
-      "content": "",
-      "contentLength": 0,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": "https://www.reddit.com/r/golang/comments/1ib9je7/the_road_to_golangcilint_v2/"
     }
   ],
   "tags": [

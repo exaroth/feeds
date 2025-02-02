@@ -80,6 +80,20 @@
       "commentsUrl": null
     },
     {
+      "title": "Monthly: Who is hiring?",
+      "url": "https://www.reddit.com/r/kubernetes/comments/1if3zpp/monthly_who_is_hiring/",
+      "date": 1738407632,
+      "author": "/u/gctaylor",
+      "guid": 19461,
+      "unread": true,
+      "content": "<div><p>This monthly post can be used to share Kubernetes-related job openings within  company. Please include:</p><ul><li>Location requirements (or lack thereof)</li><li>At least one of: a link to a job posting/application page or contact details</li></ul><p>If you are interested in a job, please contact the poster directly. </p><p>Common reasons for comment removal:</p><ul><li>Not meeting the above requirements</li><li>Recruiter post / recruiter listings</li><li>Negative, inflammatory, or abrasive tone</li></ul></div>   submitted by   <a href=\"https://www.reddit.com/user/gctaylor\"> /u/gctaylor </a>",
+      "contentLength": 461,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
       "title": "Best way to deploy Kubernetes manifests? Crossplane?",
       "url": "https://www.reddit.com/r/kubernetes/comments/1iewzie/best_way_to_deploy_kubernetes_manifests_crossplane/",
       "date": 1738379271,
@@ -690,20 +704,6 @@
       "unread": true,
       "content": "<p>I installed the <a href=\"https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack\">kube-prometheus-stack</a>, and while it has some stuff missing (no logging OOTB), it seems to be doing a pretty decent job. </p><p>In the grafana ui I noticed that apparently they offer their own helm chart. I'm having a little hard time understanding what's included in there, has anyone got any experience with either? What am I missing, which one is better/easier/more complete?</p>",
       "contentLength": 386,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "hetzner-k3s v2.2.0 has been released! 🎉",
-      "url": "https://www.reddit.com/r/kubernetes/comments/1ibripr/hetznerk3s_v220_has_been_released/",
-      "date": 1738032031,
-      "author": "/u/Sky_Linx",
-      "guid": 17606,
-      "unread": true,
-      "content": "<div><p>I put a lot of work into this so I hope more people can try it and give me feedback :)</p></div>   submitted by   <a href=\"https://www.reddit.com/user/Sky_Linx\"> /u/Sky_Linx </a>",
-      "contentLength": 117,
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": "",

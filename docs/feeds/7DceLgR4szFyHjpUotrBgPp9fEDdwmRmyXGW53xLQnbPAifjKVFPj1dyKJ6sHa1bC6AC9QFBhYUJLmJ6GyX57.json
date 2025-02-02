@@ -38,6 +38,20 @@
       "commentsUrl": "https://www.reddit.com/r/linux/comments/1if7bkh/llama_31_community_license_is_not_a_free_software/"
     },
     {
+      "title": "Tiling Shell Brings Advanced Window Management to Linux",
+      "url": "https://www.reddit.com/r/linux/comments/1if6zk7/tiling_shell_brings_advanced_window_management_to/",
+      "date": 1738418684,
+      "author": "/u/Domyf",
+      "guid": 19460,
+      "unread": true,
+      "content": "<p>Hey <a href=\"https://www.reddit.com/r/Linux\">r/Linux</a> I'm the developer of <a href=\"https://extensions.gnome.org/extension/7065/tiling-shell/\">Tiling Shell</a>, a GNOME extension for advanced window management. It's highly configurable and offers different ways of tiling and managing your windows. The focus is on delivering the best user experience, highest stability, and full customization. Give it a try! <a href=\"https://extensions.gnome.org/extension/7065/tiling-shell/\">Link</a> for download.</p><p>It also works with multiple monitors (even if they use different scaling), comes with a number of tiling layouts built-in but there is a layout editor to allow you to create and save customs layouts.</p><p>Tiling Shell also features the Snap Assistant, borrowed from Windows 11: just move a window to the top with your mouse and the Snap Assistant slides in and you can place the window where you want and how you want.</p><ul><li>I've implemented automatic tiling as well</li><li>Fully customizable keyboard shortcuts to tile, move windows, change focus and more</li><li>You can also move the window to the edge of the screen to tile it</li><li>Right click on the window title to place the window where you want and how you want it</li><li>Coming soon this week, Windows Suggestions: after tiling a window you get suggestions for other windows to fill the remaining tiles</li></ul>",
+      "contentLength": 1131,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
       "title": "I made a steampunk bullet heaven game on and for Linux",
       "url": "https://store.steampowered.com/app/2858150/Airships_Lost_Flotilla/",
       "date": 1738404395,
@@ -690,20 +704,6 @@
       "unread": true,
       "content": "<p>We've had a couple of posts in the past few days about cursor latency on Wayland, <a href=\"https://old.reddit.com/r/linux/comments/1i9t0jc/wayland_cursor_lag_a_somewhat_long_rant/\">here</a> and <a href=\"https://old.reddit.com/r/linux/comments/1iajb1o/hard_numbers_in_the_wayland_vs_x11_input_latency/\">here</a>, with calls for more empirical measurements.</p><p>I've made some click-to-photon latency measurements in past comparing Wayland and Xorg as seen here:</p><p>These measurements were made with photodiode hooked up to Pro Micro clone. Seeing the recent discussion I decided to whip up my trusty old Arduino clone and take a crack at cursor latency measurement. </p><p>In order to have a clear brightness differential for photodiode to pick up, I changed my mouse cursor to 128x128 black box that occluded a bright part of the screen. I programmed Arduino to move the cursor across the screen revealing the bright part of the monitor. Arduino would then calculate the difference in time between sending the command and sensing voltage change in the circuit, after which the setup would reset to original position and start again. Arduino emulated USB-mouse at 1000hz and mouse movements were achieved with built in <a href=\"https://docs.arduino.cc/language-reference/en/functions/usb/Mouse/mouseMove/\">Mouse.move()</a> function. This was simple to setup and automate so I could gather large amounts of measurements, around thousand per compositor (998-999 measurements since my script reading serial monitor would fail to record last few measurements). Diodes are also very fast with response well below millisecond making accurate measurements possible.</p><p>I tested Gnome on both Wayland and Xorg, Sway and i3wm. Testing was done on Debian 12.9. It is undoubtedly a little long in the tooth at this point, but what are you gonna do, not run Debian? On the upside, older versions of Wayland compositors would probably be less mature than today and more likely to show performance problems, if there are any. </p><ul><li>Sway 1.7, libwlroots 0.15</li></ul><p>Max render time on sway was set to 3ms, which might be irrelevant with cursor latency. Mouse acceleration was disabled and same sensitivity was used on all compositors.</p><ul><li>Dell Inc. DELL P2314H. 1920x1080, 60hz.</li></ul><p>Here is a box plot representation of the gathered data:</p><p>Gnome on Wayland had a single outlier at 32.1ms. Outliers are not rendered it the boxplot for the sake of readability.</p><p>Below are the relevant numbers if you don't like clicking links.</p><table><thead><tr></tr></thead><tbody></tbody></table><p>Xorg offers the lowest possible latency which is in line with my click-to-photon testing. Gnome's compositor doesn't add any latency to Xorg, which is not always given. Some standalone compositors that are often used with window managers add significant amount of latency. Sway trails behind ever so slightly and Gnome Wayland adds 3ms compared to Xorg. 28% latency increase sounds like a lot but in absolute terms, 3ms is quite a small difference. Is 3ms difference enough to cause difference in cursor feel? <a href=\"https://dl.acm.org/doi/fullHtml/10.1145/3678299.3678331#BibPLXBIB0031\">For context, musicians can't tell such a slow latency differential in audio.</a> One other possible cause could be high variability in latency but I didn't observer it in my testing. Variance between different compositors were between 4.3-4.8ms, a difference so small that it is unlike to explain any perceived differences between cursor feel. </p><p>TLDR here is that Xorg is measurable better but only just.</p><p>Edit: Added info about mouse emulation.</p>",
       "contentLength": 3101,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Normal to give random install scripts root permissions?",
-      "url": "https://www.reddit.com/r/linux/comments/1ib8jle/normal_to_give_random_install_scripts_root/",
-      "date": 1737983279,
-      "author": "/u/chemolz9",
-      "guid": 17506,
-      "unread": true,
-      "content": "<p>I'm regularly stumbling over official installation guides in the internet for linux software, that just downloads and runs a shell script. The shell script then asks for root permissions. This seems highly dangerous to me and I'm baffled that this seems to be a thing.</p><p>Any idea how to deal with such installation guides? I don't want to scan 350 lines of code for malicious commands before I install some software.</p><p>[edit] Because so many people miss the point. They keyword is . Of coure I trust the source well enough to run it on user level.</p>",
-      "contentLength": 541,
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": "",

@@ -7,7 +7,7 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 288,
+  "itemCount": 289,
   "items": [
     {
       "title": "how to share transaction between multi-repositories",
@@ -36,6 +36,20 @@
       "enclosureUrl": "",
       "enclosureMime": "",
       "commentsUrl": null
+    },
+    {
+      "title": "WIP - e2e testing orchestration helper - is this something that you would find useful? roast the code now that it's alpha :)",
+      "url": "https://codeberg.org/jjba23/poppenspeler",
+      "date": 1738424795,
+      "author": "/u/kosakgroove",
+      "guid": 19463,
+      "unread": true,
+      "content": "<p>\nDefine your test cases and environment setups using the expressive power of a DSL. This allows for flexible and maintainable test code.</p><p>\nEasily start and stop multiple applications, services, and databases as part of your test environment.   handles the complexities of managing dependencies and ensuring everything is running smoothly.</p><p>\nDeclare dependencies between your applications and services.  will ensure that dependencies are started in the correct order and are available when needed.</p><p>\nConfigure your test environment using simple and intuitive structures.  Define ports, environment variables, and other settings for each application.</p><p>\nGet detailed logs of your test runs, including output from all applications and services, making it easy to diagnose issues.</p>",
+      "contentLength": 767,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": "https://www.reddit.com/r/golang/comments/1if92s1/wip_e2e_testing_orchestration_helper_is_this/"
     },
     {
       "title": "How do you manage concurrency limits?",
@@ -697,17 +711,17 @@
     },
     {
       "title": "The road to golangci-lint v2",
-      "url": "https://github.com/golangci/golangci-lint/issues/5300",
+      "url": "https://www.reddit.com/r/golang/comments/1ib9je7/the_road_to_golangcilint_v2/",
       "date": 1737985895,
       "author": "/u/ldez",
       "guid": 17379,
       "unread": true,
-      "content": "",
+      "content": "<table> <tr><td> <a href=\"https://www.reddit.com/r/golang/comments/1ib9je7/the_road_to_golangcilint_v2/\"> <img src=\"https://external-preview.redd.it/ZITHbdFReHbV4SD7OTKHJX0EWex_M4R9AXIKu6kEY-w.jpg?width=640&amp;crop=smart&amp;auto=webp&amp;s=f21b18ebbc250ca793fe028fdfecdf1655095297\" alt=\"The road to golangci-lint v2\" title=\"The road to golangci-lint v2\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/ldez\"> /u/ldez </a> <br/> <span><a href=\"https://github.com/golangci/golangci-lint/issues/5300\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/golang/comments/1ib9je7/the_road_to_golangcilint_v2/\">[comments]</a></span> </td></tr></table>",
       "contentLength": 0,
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": "",
-      "commentsUrl": "https://www.reddit.com/r/golang/comments/1ib9je7/the_road_to_golangcilint_v2/"
+      "commentsUrl": null
     },
     {
       "title": "How to handle JSON data types in HTTP request body?",
