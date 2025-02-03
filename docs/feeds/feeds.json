@@ -24,7 +24,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 68
+      "num_items": 117
     },
     {
       "id": "PyU9",
@@ -37,7 +37,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 150
+      "num_items": 174
     },
     {
       "id": "3A81sm",
@@ -50,7 +50,7 @@
       "tags": [
         "tech"
       ],
-      "num_items": 150
+      "num_items": 123
     },
     {
       "id": "43nutaBRYF",
@@ -63,7 +63,7 @@
       "tags": [
         "podcast"
       ],
-      "num_items": 118
+      "num_items": 121
     },
     {
       "id": "fZWkWx2e",
@@ -115,7 +115,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 471
+      "num_items": 473
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppXXAQCe8LGUnBWHDnF4s2jjN39bSf9J",
@@ -128,7 +128,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 1216
+      "num_items": 1234
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppcxvGLUpev4ECsNqF1CwVLDFzmk9jft",
@@ -141,7 +141,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 997
+      "num_items": 994
     },
     {
       "id": "46aP2QbqUqBrWfYqAibo8xS24qkvbDNgWZV4Z6rf2nuJ3cBJ971pKb6XZkWhnDxr957c82fPU4Cg4j63MSkVSUXrPi55",
@@ -155,7 +155,7 @@
         "news",
         "reddit"
       ],
-      "num_items": 518
+      "num_items": 512
     },
     {
       "id": "368La1qZAv72idE55Whuffkk2TBtHuSndX6iNywdUkLBDxxx55cLvowsw5Rj5VbHUHjCYUBR5tHfX6BAYFQZS3af",
@@ -169,7 +169,7 @@
         "news",
         "reddit"
       ],
-      "num_items": 488
+      "num_items": 485
     },
     {
       "id": "VMK7D8tQvwsLtnxKHzNdF9c4Yhtuqm",
@@ -183,7 +183,7 @@
         "dev",
         "hn"
       ],
-      "num_items": 136
+      "num_items": 137
     },
     {
       "id": "82kPqomaPXmNomrHzpZWfbkQxiiNUBTAYKxHR5qZBEpf",
@@ -211,7 +211,7 @@
         "dev",
         "hn"
       ],
-      "num_items": 788
+      "num_items": 801
     },
     {
       "id": "CQdwDV8xyajeX5DKoSYfBQhN4kkXBaTmXPYgJyANUWHyjCo5BpHUjy5gJhgngST",
@@ -225,7 +225,7 @@
         "dev",
         "slashdot"
       ],
-      "num_items": 10
+      "num_items": 11
     },
     {
       "id": "6gUbcJtcgqw1wQBapm8qwcP58MMnPvoDmUVDva7XtKUuLQTDpuyDxDo1yehnZDohDQ6a5p",
@@ -239,7 +239,7 @@
         "dev",
         "slashdot"
       ],
-      "num_items": 20
+      "num_items": 21
     },
     {
       "id": "MvwLKznkcWQJt9LV3qspiNNstpReRGojdXM3bsYDh",
@@ -284,7 +284,7 @@
         "reddit",
         "go"
       ],
-      "num_items": 289
+      "num_items": 290
     },
     {
       "id": "KWcVEiwEzuiGGuVCeJEYXr8oePYYMmThA64XKX4pLSjxAVFybiMNe4wuzLW34BL34N8bMRzHn8nKtoqJMB",
@@ -299,7 +299,7 @@
         "zig",
         "reddit"
       ],
-      "num_items": 109
+      "num_items": 114
     },
     {
       "id": "2Qhhdda6Qnbf8RCfUPd4nB9sSt2WDQfEpF7H3gCnZZ4AsfbGMy3RmrCa6gigGY6TkbrrJn4wmHXXNYcVj1bK",
@@ -314,7 +314,7 @@
         "rust",
         "reddit"
       ],
-      "num_items": 286
+      "num_items": 280
     },
     {
       "id": "7DceLgR4szFyHjpUotrBgPp9fEDdwmRmyXGW53xLQnbPAifjKVFPj1dyKJ6sHa1bC6AC9QFBhYUJLmJ6GyX57",
@@ -328,7 +328,7 @@
         "dev",
         "reddit"
       ],
-      "num_items": 285
+      "num_items": 280
     },
     {
       "id": "46aP2QbqUqBrWfYqAibo8xS24qkvbDNgWZUrxgZ6XNcyUn6fFxkgS1aSWJWwPwaqFp34erWr8NxVvd6jro8uiaPvDUjw",
@@ -343,7 +343,7 @@
         "k8s",
         "reddit"
       ],
-      "num_items": 284
+      "num_items": 287
     },
     {
       "id": "EfcLDDAkyqguXw9Vbtcae7fRhxCsY1chPUNLpwbK9oHS42b4dGEMeGvA2hWHB2j3LFSAo7qhibLNgPBcA5djbGp95Jk5T",
@@ -357,7 +357,7 @@
         "dev",
         "reddit"
       ],
-      "num_items": 298
+      "num_items": 297
     },
     {
       "id": "BRWJ2YmdUFoz1jUcCg5P21RYgb4CmSRDHkju2uMS7GB1447d",
@@ -399,7 +399,7 @@
         "dev",
         "k8s"
       ],
-      "num_items": 107
+      "num_items": 65
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JpppN9NLNrdRZgCdnN5NoKNcpbU8nxLPJ",
@@ -412,7 +412,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 10
+      "num_items": 9
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4Jppcztx1sqULsdY4zpYkgotFx6rQ5jWnr",
@@ -438,7 +438,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 6
+      "num_items": 7
     },
     {
       "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppfjDj3hX9ZYrNpKpipZVWeqMDxvr3XC",
@@ -561,7 +561,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 15
+      "num_items": 19
     },
     {
       "id": "2k7TU6Gfnp2tyJfbxs8611DnHYRCp47PKuexSXBFEUwLXWnu6o3w4xupSw",
@@ -575,7 +575,7 @@
         "dev",
         "linux"
       ],
-      "num_items": 13
+      "num_items": 9
     },
     {
       "id": "Y2iXpRRkNSnpSSaMpPUXCkDYAzBFnkPyn3srd59dTsA5L",
@@ -589,7 +589,20 @@
         "dev",
         "linux"
       ],
-      "num_items": 1
+      "num_items": 2
+    },
+    {
+      "id": "2Qhhdda6QnbewojSNJ2aRFECbZgyReaFrE1rrV7SoTLcdBVa8RGottwF6A9Veq2S5DxhoZZ99T9dxyMtHRiK",
+      "title": "GitHub All Languages Weekly Trending",
+      "display_title": "Dev - Github Trending",
+      "url": "https://mshibanami.github.io/GitHubTrendingRSS/weekly/all.xml",
+      "feedlink": "http://mshibanami.github.io/GitHubTrendingRSS",
+      "hidden": false,
+      "is_query": false,
+      "tags": [
+        "dev"
+      ],
+      "num_items": 17
     },
     {
       "id": "BRWJ2YmdUFp1VkEaibbVg9gmctcLUWiZeYcbFJGMkd7Cuwto",
@@ -641,7 +654,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 3
+      "num_items": 2
     },
     {
       "id": "BRWJ2YmdUFp2T1vhh7n3V5SVNJLVQ56WoZtJvhiNDyE3aj1V",
