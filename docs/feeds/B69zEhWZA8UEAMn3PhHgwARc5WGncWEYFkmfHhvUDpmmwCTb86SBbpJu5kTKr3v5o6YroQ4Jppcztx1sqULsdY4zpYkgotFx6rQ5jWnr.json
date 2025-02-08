@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 8,
+  "itemCount": 9,
   "items": [
+    {
+      "title": "Remembering the order of the train_test_split",
+      "url": "https://www.youtube.com/watch?v=wb4bKSHiDik",
+      "date": 1738836414,
+      "author": "probabl",
+      "guid": 20975,
+      "unread": true,
+      "content": "<article>The page for the `train_test_split` function is the most visited page on the scikit-learn website. The reason, we suspect, is because folks often forget the order of arrays that come out. We know that `X_train` comes first, but then what? Is it `y_train` or `X_test`? This video explains the reasoning and also does a deep dive on the implementation.\n\nWebsite: https://probabl.ai/\nLinkedIn: https://www.linkedin.com/company/probabl\nTwitter: https://x.com/probabl_ai\nBluesky: https://bsky.app/profile/probabl.bsky.social\nDiscord: https://discord.probabl.ai\n\nWe also host a podcast called Sample Space, which you can find on your favourite podcast player. All the links can be found here:\nhttps://rss.com/podcasts/sample-space/\n\n#probabl</article>",
+      "contentLength": 735,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/wb4bKSHiDik?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "The ups and downs of stratified cross-validation",
       "url": "https://www.youtube.com/watch?v=EpK9pWZGjbE",
@@ -94,6 +108,20 @@
       "commentsUrl": null
     },
     {
+      "title": "ModernBert: time for a new BERT",
+      "url": "https://www.youtube.com/watch?v=ZWo6Q8580sA",
+      "date": 1736555689,
+      "author": "probabl",
+      "guid": 20966,
+      "unread": true,
+      "content": "<article>During the holiday season there has been a bit of buzz around a new family of BERT models called ModernBert. We figured we might explore some of these models at the start of this year to see of these models might also be useful for scikit-learn pipelines. \n\nColab link:\nhttps://colab.research.google.com/drive/143ljL9xthdgdtKsThs3qglk0dPAsY3Q3?usp=sharing\n\nWebsite: https://probabl.ai/\nDiscord: https://discord.probabl.ai/\nLinkedIn: https://www.linkedin.com/company/probabl\nTwitter: https://x.com/probabl_ai\n\nWe also host a podcast called Sample Space, which you can find on your favourite podcast player. All the links can be found here:\nhttps://rss.com/podcasts/sample-space/\n\nIf you're keen to see more videos like this, you can follow us over at  @probabl_ai.</article>",
+      "contentLength": 763,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/ZWo6Q8580sA?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
       "title": "Dumb models can be very smart",
       "url": "https://www.youtube.com/watch?v=0553mUt3O-E",
       "date": 1736421311,
@@ -104,20 +132,6 @@
       "contentLength": 740,
       "flags": null,
       "enclosureUrl": "https://www.youtube.com/v/0553mUt3O-E?version=3",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "ModernBert: time for a new BERT",
-      "url": "https://www.youtube.com/watch?v=ZWo6Q8580sA",
-      "date": 1736242423,
-      "author": "probabl",
-      "guid": 11766,
-      "unread": true,
-      "content": "<article>During the holiday season there has been a bit of buzz around a new family of BERT models called ModernBert. We figured we might explore some of these models at the start of this year to see of these models might also be useful for scikit-learn pipelines. \n\nColab link:\nhttps://colab.research.google.com/drive/143ljL9xthdgdtKsThs3qglk0dPAsY3Q3?usp=sharing\n\nWebsite: https://probabl.ai/\nDiscord: https://discord.probabl.ai/\nLinkedIn: https://www.linkedin.com/company/probabl\nTwitter: https://x.com/probabl_ai\n\nWe also host a podcast called Sample Space, which you can find on your favourite podcast player. All the links can be found here:\nhttps://rss.com/podcasts/sample-space/\n\nIf you're keen to see more videos like this, you can follow us over at  @probabl_ai.</article>",
-      "contentLength": 763,
-      "flags": null,
-      "enclosureUrl": "https://www.youtube.com/v/ZWo6Q8580sA?version=3",
       "enclosureMime": "",
       "commentsUrl": null
     }

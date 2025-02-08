@@ -7,8 +7,50 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 10,
+  "itemCount": 12,
   "items": [
+    {
+      "title": "UK demands backdoor for encrypted Apple user data...",
+      "url": "https://www.youtube.com/watch?v=ozkg_iW9mNU",
+      "date": 1738959621,
+      "author": "Fireship",
+      "guid": 21604,
+      "unread": true,
+      "content": "<article>Try Brilliant free for 30 days https://brilliant.org/fireship You’ll also get 20% off an annual premium subscription.\n\nThe United Kingdom is demanding Apple build a backdoor to access encrypted iCloud user data. Learn how end-to-end-encryption works and other tools that protect your digital privacy. \n\n#apple #tech #thecodereport \n\n💬 Chat with Me on Discord\n\nhttps://discord.gg/fireship\n\n🔗 Resources\n\nMainstream Source https://www.washingtonpost.com/technology/2025/02/07/apple-encryption-backdoor-uk/\nFull Cryptography Tutorial https://youtu.be/NuyzuNBFWxQ\nApple Intelligence gone Wild https://youtu.be/7rXgVsIGvGQ\nTails OS in 100 Seconds https://youtu.be/mVKAyw0xqxw\n\n🔥 Get More Content - Upgrade to PRO\n\nUpgrade at https://fireship.io/pro\nUse code YT25 for 25% off PRO access \n\n🎨 My Editor Settings\n\n- Atom One Dark \n- vscode-icons\n- Fira Code Font\n\n🔖 Topics Covered\n\n- Why does the UK want Apple iCloud data?\n- What is a double rachet algorithm?\n- How does signal e2ee protocol work?\n- How do I keep browsing data private?\n- Best Linux distro for privacy</article>",
+      "contentLength": 1076,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/ozkg_iW9mNU?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "Google finally shipped some fire…",
+      "url": "https://www.youtube.com/watch?v=k9xbh9LUYn0",
+      "date": 1738866378,
+      "author": "Fireship",
+      "guid": 21161,
+      "unread": true,
+      "content": "<article>Deploy your app without complexity using Sevalla http://bit.ly/4hDju8W\n\nTake a first look at Google Gemini 2.0 and see how it compares to models like DeepSeek R1 and OpenAI o3-mini. Learn how to use AI models like Gemini Flash to solve real-world problems. \n\n#tech #ai #thecodereport\n\n💬 Chat with Me on Discord\n\nhttps://discord.gg/fireship\n\n🔗 Resources\n\nGemini for PDF processing https://www.sergey.fyi/articles/gemini-flash-2\nOpenAI o3 First Look https://youtu.be/PoeFxGzPpXE\nDeepSeek R1 Fallout https://youtu.be/Nl7aCUsWykg\n\n🔥 Get More Content - Upgrade to PRO\n\nUpgrade at https://fireship.io/pro\nUse code YT25 for 25% off PRO access \n\n🎨 My Editor Settings\n\n- Atom One Dark \n- vscode-icons\n- Fira Code Font\n\n🔖 Topics Covered\n\n- Is Google Gemini better than OpenAI?\n- How to use Gemini Flash\n- Comparison of top LLMs\n- o3 vs Gemini vs DeepSeek\n- Latest trends in Google technology</article>",
+      "contentLength": 896,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/k9xbh9LUYn0?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "OpenAI o3 tries to curb stomp DeepSeek...",
+      "url": "https://www.youtube.com/watch?v=PoeFxGzPpXE",
+      "date": 1738694906,
+      "author": "Fireship",
+      "guid": 20366,
+      "unread": true,
+      "content": "<article>Stay updated with the best dev content at https://daily.dev/fireship\n\nLet's take a first look at OpenAI o3-mini and its new deep research feature. In addition, we will examine the recent bans on DeepSeek R1 and it compare it to other AI tools.  \n\n#tech #ai #thecodereport \n\n💬 Chat with Me on Discord\n\nhttps://discord.gg/fireship\n\n🔗 Resources\n\nOpenAI Deep Research https://openai.com/index/introducing-deep-research/\nOpenAI accuses DeepSeek of IP theft https://youtu.be/hpwoGjpYygI\nTech Trends 2025 https://youtu.be/v4H2fTgHGuc\nGodot in 100 Seconds https://youtu.be/QKgTZWbwD1U\n\n🔥 Get More Content - Upgrade to PRO\n\nUpgrade at https://fireship.io/pro\nUse code YT25 for 25% off PRO access \n\n🎨 My Editor Settings\n\n- Atom One Dark \n- vscode-icons\n- Fira Code Font\n\n🔖 Topics Covered\n\n- OpenAI Deep Research First Look\n- Why is DeepSeek banned?\n- Latest AI features in tech\n- o3-mini vs DeepSeek R1 vs Claude Sonnet</article>",
+      "contentLength": 924,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/PoeFxGzPpXE?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Grafana is the goat... Let's deploy the LGTM stack",
       "url": "https://www.youtube.com/watch?v=1X3dV3D5EJg",
@@ -132,20 +174,6 @@
       "contentLength": 801,
       "flags": null,
       "enclosureUrl": "https://www.youtube.com/v/mBFf-aYoV6Q?version=3",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "The amazing, but unsettling future of technology...",
-      "url": "https://www.youtube.com/watch?v=v4H2fTgHGuc",
-      "date": 1735925884,
-      "author": "Fireship",
-      "guid": 9611,
-      "unread": true,
-      "content": "<article>Get the free 80,000 hours career guide https://80000hours.org/fireship \n\nTake a look at 13 trends in technology that will affect programmers and software engineers in the year 2025. \n\n#technology #programming #thecodereport \n\n💬 Chat with Me on Discord\n\nhttps://discord.gg/fireship\n\n🔗 Resources\n\nTrends 2024 (last year) https://youtu.be/vyQv563Y-fk\nTrueUp Job Trends https://www.trueup.io/job-trend\n\n🔥 Get More Content - Upgrade to PRO\n\nUpgrade at https://fireship.io/pro\nUse code YT25 for 25% off PRO access \n\n🎨 My Editor Settings\n\n- Atom One Dark \n- vscode-icons\n- Fira Code Font\n\n🔖 Topics Covered\n\n- AI trends in 2025\n- Expected timeline for AGI\n- When will artificial superintelligence emerge?\n- JavaScript framework updates\n- Technology trends to watch in 2025\n- Future predictions for programmers\n- Tech job market outlook</article>",
-      "contentLength": 842,
-      "flags": null,
-      "enclosureUrl": "https://www.youtube.com/v/v4H2fTgHGuc?version=3",
       "enclosureMime": "",
       "commentsUrl": null
     }

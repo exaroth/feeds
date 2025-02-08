@@ -10,6 +10,20 @@
   "itemCount": 4,
   "items": [
     {
+      "title": "sync/v2 and the 'v2'-ification of Go's standard library",
+      "url": "https://golangweekly.com/issues/541",
+      "date": 1738713600,
+      "author": "",
+      "guid": 20710,
+      "unread": true,
+      "content": "<p> — It uses Linux-only network namespaces for now, but this is a Go-powered process-scoped HTTP tracer you can run  root privileges. It even decrypts TLS traffic by generating a CA on the fly. Handy for debugging or seeing if dependencies or apps are ‘phoning&nbsp;home,’&nbsp;perhaps..</p><p>Monastic Academy for the Preservation of Life on Earth </p>",
+      "contentLength": 338,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
       "title": "A continued focus on the benefits of Go 1.24",
       "url": "https://golangweekly.com/issues/540",
       "date": 1738108800,
@@ -46,20 +60,6 @@
       "unread": true,
       "content": "<p>📄 <a href=\"https://golangweekly.com/link/164282/rss\">Making 'Beautiful' API Keys</a> – Making auth tokens/keys more attractive probably shouldn’t be a priority, but if you want/need to, <a href=\"https://golangweekly.com/link/164283/rss\">uuidkey</a> may be for&nbsp;you. <cite>Jack Spirou (AgentStation)</cite></p>",
       "contentLength": 189,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "The latest Go dev survey results",
-      "url": "https://golangweekly.com/issues/537",
-      "date": 1736294400,
-      "author": "",
-      "guid": 18021,
-      "unread": true,
-      "content": "",
-      "contentLength": 0,
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": "",

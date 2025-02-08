@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 4,
+  "itemCount": 5,
   "items": [
+    {
+      "title": "From PDFs to Insights: Structured Outputs from PDFs with Gemini 2.0",
+      "url": "https://www.philschmid.de/gemini-pdf-to-data",
+      "date": 1738886400,
+      "author": "",
+      "guid": 21477,
+      "unread": true,
+      "content": "<article>Learn how to extract structured data from PDFs with Gemini 2.0 and Pydantic.</article>",
+      "contentLength": 76,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Mini-R1: Reproduce Deepseek R1 „aha moment“ a RL tutorial",
       "url": "https://www.philschmid.de/mini-deepseek-r1",
