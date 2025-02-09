@@ -11,7 +11,7 @@
       "tags": [
         "yt"
       ],
-      "num_items": 534
+      "num_items": 540
     },
     {
       "id": "31E7iA",
@@ -24,38 +24,12 @@
       "tags": [
         "news"
       ],
-      "num_items": 134
+      "num_items": 66
     },
     {
-      "id": "PyU9",
-      "title": "Dev",
-      "display_title": "Dev",
-      "url": "",
-      "feedlink": "",
-      "hidden": false,
-      "is_query": true,
-      "tags": [
-        "dev"
-      ],
-      "num_items": 178
-    },
-    {
-      "id": "3A81sm",
-      "title": "Tech",
-      "display_title": "Tech",
-      "url": "",
-      "feedlink": "",
-      "hidden": false,
-      "is_query": true,
-      "tags": [
-        "tech"
-      ],
-      "num_items": 232
-    },
-    {
-      "id": "43nutaBRYF",
-      "title": "Podcast",
-      "display_title": "Podcast",
+      "id": "ETKeSdT1Jvn",
+      "title": "Podcasts",
+      "display_title": "Podcasts",
       "url": "",
       "feedlink": "",
       "hidden": false,
@@ -63,7 +37,7 @@
       "tags": [
         "podcast"
       ],
-      "num_items": 122
+      "num_items": 119
     },
     {
       "id": "fZWkWx2e",
@@ -76,100 +50,176 @@
       "tags": [
         "movies"
       ],
-      "num_items": 49
+      "num_items": 43
     },
     {
-      "id": "6wzEadYDsRnmWN6sy4",
-      "title": "Github Issues",
-      "display_title": "Github Issues",
+      "id": "JhrqbqvVZH2dzff",
+      "title": "General Dev",
+      "display_title": "General Dev",
       "url": "",
       "feedlink": "",
       "hidden": false,
       "is_query": true,
       "tags": [
-        "gh"
+        "dev"
       ],
-      "num_items": 2
+      "num_items": 159
     },
     {
-      "id": "368La1qZAv727wqsvC8sbLBZGryhH8SVwbTpqXaweRcuutW1gXksMDmNaCNQmszjC3ZZGEBhaSSEnnHmMXtmcZ71",
-      "title": "The World in Brief from The Economist",
-      "display_title": "News - Daily Brief",
-      "url": "https://access.acast.com/rss/theeconomistmorningbriefing/default",
-      "feedlink": "https://www.economist.com/audio/podcasts/the-world-in-brief",
+      "id": "3A81sm",
+      "title": "Tech",
+      "display_title": "Tech",
+      "url": "",
+      "feedlink": "",
       "hidden": false,
-      "is_query": false,
+      "is_query": true,
       "tags": [
-        "news"
+        "tech"
       ],
-      "num_items": 30
+      "num_items": 143
     },
     {
-      "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppnEufZaA96bvPyKqWS5DRkgXpf9zJK8",
-      "title": "DW News",
-      "display_title": "News - DW",
-      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCknLrEdhRCp1aegoMqRaCZg",
-      "feedlink": "https://www.youtube.com/channel/UCknLrEdhRCp1aegoMqRaCZg",
+      "id": "5yA",
+      "title": "AI",
+      "display_title": "AI",
+      "url": "",
+      "feedlink": "",
       "hidden": false,
-      "is_query": false,
+      "is_query": true,
       "tags": [
-        "news"
+        "ai"
       ],
-      "num_items": 496
+      "num_items": 78
     },
     {
-      "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppXXAQCe8LGUnBWHDnF4s2jjN39bSf9J",
-      "title": "Associated Press",
-      "display_title": "News - AP",
-      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC52X5wxOL_s5yw0dQk7NtgA",
-      "feedlink": "https://www.youtube.com/channel/UC52X5wxOL_s5yw0dQk7NtgA",
+      "id": "V6K7T1BWVgurAdxL65u",
+      "title": "Linux and Unix",
+      "display_title": "Linux and Unix",
+      "url": "",
+      "feedlink": "",
       "hidden": false,
-      "is_query": false,
+      "is_query": true,
       "tags": [
-        "news"
+        "linux"
       ],
-      "num_items": 1239
+      "num_items": 29
     },
     {
-      "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppcxvGLUpev4ECsNqF1CwVLDFzmk9jft",
-      "title": "Bloomberg Television",
-      "display_title": "News - Bloomberg ",
-      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg",
-      "feedlink": "https://www.youtube.com/channel/UCIALMKvObZNtJ6AmdCLP7Lg",
+      "id": "5EtLJWwbEiHVuC",
+      "title": "Kubernetes",
+      "display_title": "Kubernetes",
+      "url": "",
+      "feedlink": "",
       "hidden": false,
-      "is_query": false,
+      "is_query": true,
       "tags": [
-        "news"
+        "k8s"
       ],
-      "num_items": 1049
+      "num_items": 349
     },
     {
-      "id": "46aP2QbqUqBrWfYqAibo8xS24qkvbDNgWZV4Z6rf2nuJ3cBJ971pKb6XZkWhnDxr957c82fPU4Cg4j63MSkVSUXrPi55",
-      "title": "top scoring links : worldnews",
-      "display_title": "News - Reddit - World News",
-      "url": "https://www.reddit.com/r/worldnews/top/.rss?sort=top&t=day&limit=10",
-      "feedlink": "https://www.reddit.com/r/worldnews/top/?sort=top&t=day&limit=10",
+      "id": "CnRcF85LaEw",
+      "title": "Frontend",
+      "display_title": "Frontend",
+      "url": "",
+      "feedlink": "",
       "hidden": false,
-      "is_query": false,
+      "is_query": true,
       "tags": [
-        "news",
-        "reddit"
+        "frontend"
       ],
-      "num_items": 512
+      "num_items": 18
     },
     {
-      "id": "368La1qZAv72idE55Whuffkk2TBtHuSndX6iNywdUkLBDxxx55cLvowsw5Rj5VbHUHjCYUBR5tHfX6BAYFQZS3af",
-      "title": "top scoring links : europe",
-      "display_title": "News - Reddit - Europe",
-      "url": "https://www.reddit.com/r/europe/top/.rss?sort=top&t=day&limit=10",
-      "feedlink": "https://www.reddit.com/r/europe/top/?sort=top&t=day&limit=10",
+      "id": "37FSEo",
+      "title": "Rust",
+      "display_title": "Rust",
+      "url": "",
+      "feedlink": "",
       "hidden": false,
-      "is_query": false,
+      "is_query": true,
       "tags": [
-        "news",
-        "reddit"
+        "rust"
       ],
-      "num_items": 486
+      "num_items": 292
+    },
+    {
+      "id": "6SJ",
+      "title": "Go",
+      "display_title": "Go",
+      "url": "",
+      "feedlink": "",
+      "hidden": false,
+      "is_query": true,
+      "tags": [
+        "go"
+      ],
+      "num_items": 292
+    },
+    {
+      "id": "6W9",
+      "title": "HN",
+      "display_title": "HN",
+      "url": "",
+      "feedlink": "",
+      "hidden": false,
+      "is_query": true,
+      "tags": [
+        "hn"
+      ],
+      "num_items": 1029
+    },
+    {
+      "id": "AkSxojk",
+      "title": "Video",
+      "display_title": "Video",
+      "url": "",
+      "feedlink": "",
+      "hidden": false,
+      "is_query": true,
+      "tags": [
+        "video"
+      ],
+      "num_items": 26
+    },
+    {
+      "id": "2hUc62",
+      "title": "Blog",
+      "display_title": "Blog",
+      "url": "",
+      "feedlink": "",
+      "hidden": false,
+      "is_query": true,
+      "tags": [
+        "blog"
+      ],
+      "num_items": 44
+    },
+    {
+      "id": "7caSwCnanpF82DyESN",
+      "title": "Official News",
+      "display_title": "Official News",
+      "url": "",
+      "feedlink": "",
+      "hidden": false,
+      "is_query": true,
+      "tags": [
+        "official"
+      ],
+      "num_items": 31
+    },
+    {
+      "id": "Y3eBkdwE4EHk9FoM4kA",
+      "title": "Trending Repos",
+      "display_title": "Trending Repos",
+      "url": "",
+      "feedlink": "",
+      "hidden": false,
+      "is_query": true,
+      "tags": [
+        "trending"
+      ],
+      "num_items": 24
     },
     {
       "id": "VMK7D8tQvwsLtnxKHzNdF9c4Yhtuqm",
@@ -183,7 +233,7 @@
         "dev",
         "hn"
       ],
-      "num_items": 137
+      "num_items": 135
     },
     {
       "id": "82kPqomaPXmNomrHzpZWfbkQxiiNUBTAYKxHR5qZBEpf",
@@ -197,7 +247,7 @@
         "dev",
         "hn"
       ],
-      "num_items": 89
+      "num_items": 90
     },
     {
       "id": "4W3i2hyrJTVfcLq85rWgduVQ3y3BMzrSD4pVUCMqPpFhmXWpqxQ",
@@ -211,515 +261,7 @@
         "dev",
         "hn"
       ],
-      "num_items": 816
-    },
-    {
-      "id": "CQdwDV8xyajeX5DKoSYfBQhN4kkXBaTmXPYgJyANUWHyjCo5BpHUjy5gJhgngST",
-      "title": "Slashdot: Linux",
-      "display_title": "Dev - Slashdot - Linux",
-      "url": "http://rss.slashdot.org/Slashdot/slashdotLinux",
-      "feedlink": "https://linux.slashdot.org/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev",
-        "slashdot"
-      ],
-      "num_items": 15
-    },
-    {
-      "id": "6gUbcJtcgqw1wQBapm8qwcP58MMnPvoDmUVDva7XtKUuLQTDpuyDxDo1yehnZDohDQ6a5p",
-      "title": "Slashdot: Developers",
-      "display_title": "Dev - Slashdot - Dev",
-      "url": "http://rss.slashdot.org/Slashdot/slashdotDevelopers",
-      "feedlink": "https://developers.slashdot.org/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev",
-        "slashdot"
-      ],
-      "num_items": 21
-    },
-    {
-      "id": "MvwLKznkcWQJt9LV3qspiNNstpReRGojdXM3bsYDh",
-      "title": "Kubernetes Blog",
-      "display_title": "Dev - Kubernetes Blog",
-      "url": "https://kubernetes.io/feed.xml",
-      "feedlink": "https://kubernetes.io/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev",
-        "official",
-        "k8s"
-      ],
-      "num_items": 1
-    },
-    {
-      "id": "2TQQJ2bU7mR6kv3z6JPWAP4qWwVU",
-      "title": "Zig NEWS",
-      "display_title": "Dev - Zig News",
-      "url": "https://zig.news/rss",
-      "feedlink": "https://zig.news/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev",
-        "official",
-        "zig"
-      ],
-      "num_items": 4
-    },
-    {
-      "id": "USgKoryE83j5SszZjyr68sh7DjLn4j6MWUagcNjQES7kQ1n2HXebXN4bJpBn8stf6LqSMrbny1unc4R1hi6qmf",
-      "title": "top scoring links : golang",
-      "display_title": "Reddit - Go",
-      "url": "https://www.reddit.com/r/golang/top/.rss?sort=top&t=day&limit=6",
-      "feedlink": "https://www.reddit.com/r/golang/top/?sort=top&t=day&limit=6",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev",
-        "reddit",
-        "go"
-      ],
-      "num_items": 291
-    },
-    {
-      "id": "KWcVEiwEzuiGGuVCeJEYXr8oePYYMmThA64XKX4pLSjxAVFybiMNe4wuzLW34BL34N8bMRzHn8nKtoqJMB",
-      "title": "top scoring links : Zig",
-      "display_title": "Reddit - Zig",
-      "url": "https://www.reddit.com/r/zig/top/.rss?sort=top&t=day&limit=6",
-      "feedlink": "https://www.reddit.com/r/zig/top/?sort=top&t=day&limit=6",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev",
-        "zig",
-        "reddit"
-      ],
-      "num_items": 110
-    },
-    {
-      "id": "2Qhhdda6Qnbf8RCfUPd4nB9sSt2WDQfEpF7H3gCnZZ4AsfbGMy3RmrCa6gigGY6TkbrrJn4wmHXXNYcVj1bK",
-      "title": "top scoring links : rust",
-      "display_title": "Reddit - Rust",
-      "url": "https://www.reddit.com/r/rust/top/.rss?sort=top&t=day&limit=6",
-      "feedlink": "https://www.reddit.com/r/rust/top/?sort=top&t=day&limit=6",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev",
-        "rust",
-        "reddit"
-      ],
-      "num_items": 280
-    },
-    {
-      "id": "7DceLgR4szFyHjpUotrBgPp9fEDdwmRmyXGW53xLQnbPAifjKVFPj1dyKJ6sHa1bC6AC9QFBhYUJLmJ6GyX57",
-      "title": "top scoring links : linux",
-      "display_title": "Reddit - Linux",
-      "url": "https://www.reddit.com/r/linux/top/.rss?sort=top&t=day&limit=6",
-      "feedlink": "https://www.reddit.com/r/linux/top/?sort=top&t=day&limit=6",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev",
-        "reddit"
-      ],
-      "num_items": 288
-    },
-    {
-      "id": "46aP2QbqUqBrWfYqAibo8xS24qkvbDNgWZUrxgZ6XNcyUn6fFxkgS1aSWJWwPwaqFp34erWr8NxVvd6jro8uiaPvDUjw",
-      "title": "top scoring links : kubernetes",
-      "display_title": "Reddit - Kubernetes",
-      "url": "https://www.reddit.com/r/kubernetes/top/.rss?sort=top&t=day&limit=6",
-      "feedlink": "https://www.reddit.com/r/kubernetes/top/?sort=top&t=day&limit=6",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev",
-        "k8s",
-        "reddit"
-      ],
-      "num_items": 286
-    },
-    {
-      "id": "EfcLDDAkyqguXw9Vbtcae7fRhxCsY1chPUNLpwbK9oHS42b4dGEMeGvA2hWHB2j3LFSAo7qhibLNgPBcA5djbGp95Jk5T",
-      "title": "top scoring links : programming",
-      "display_title": "Reddit - Programming",
-      "url": "https://www.reddit.com/r/programming/top/.rss?sort=top&t=day&limit=6",
-      "feedlink": "https://www.reddit.com/r/programming/top/?sort=top&t=day&limit=6",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev",
-        "reddit"
-      ],
-      "num_items": 301
-    },
-    {
-      "id": "BRWJ2YmdUFoz1jUcCg5P21RYgb4CmSRDHkju2uMS7GB1447d",
-      "title": "Mouse Vs Python",
-      "display_title": "Dev - Python Blog",
-      "url": "https://blog.pythonlibrary.org/feed",
-      "feedlink": "https://www.blog.pythonlibrary.org/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev",
-        "official",
-        "python"
-      ],
-      "num_items": 1
-    },
-    {
-      "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppqEFxmGRGmiRESeGsJuLMU6AM6VCzYY",
-      "title": "CNCF [Cloud Native Computing Foundation]",
-      "display_title": "Dev - CNCF",
-      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCvqbFHwN-nwalWPjPUKpvTA",
-      "feedlink": "https://www.youtube.com/channel/UCvqbFHwN-nwalWPjPUKpvTA",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev",
-        "k8s"
-      ],
-      "num_items": 61
-    },
-    {
-      "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JpppN9NLNrdRZgCdnN5NoKNcpbU8nxLPJ",
-      "title": "Fireship",
-      "display_title": "Dev - Fireship",
-      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCsBjURrPoezykLs9EqgamOA",
-      "feedlink": "https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev"
-      ],
-      "num_items": 12
-    },
-    {
-      "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4Jppcztx1sqULsdY4zpYkgotFx6rQ5jWnr",
-      "title": "probabl",
-      "display_title": "Dev - Probabl",
-      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCIat2Cdg661wF5DQDWTQAmg",
-      "feedlink": "https://www.youtube.com/channel/UCIat2Cdg661wF5DQDWTQAmg",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev"
-      ],
-      "num_items": 9
-    },
-    {
-      "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppkaNq4AZ7CUovhnrTVg6JYsCyaPYcgx",
-      "title": "Anton Putra",
-      "display_title": "Dev - Anton Putra",
-      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCeLvlbC754U6FyFQbKc0UnQ",
-      "feedlink": "https://www.youtube.com/channel/UCeLvlbC754U6FyFQbKc0UnQ",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev"
-      ],
-      "num_items": 7
-    },
-    {
-      "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4JppfjDj3hX9ZYrNpKpipZVWeqMDxvr3XC",
-      "title": "Let's Get Rusty",
-      "display_title": "Dev - Let's get Rusty",
-      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCSp-OaMpsO8K0KkOqyBl7_w",
-      "feedlink": "https://www.youtube.com/channel/UCSp-OaMpsO8K0KkOqyBl7_w",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev",
-        "rust"
-      ],
-      "num_items": 1
-    },
-    {
-      "id": "B69zEhWZA8UEAMn3PhHgwARc5WGncWEYFkmfHhvUDpmmwCTb86SBbpJu5kTKr3v5o6YroQ4Jppo1oP7RTFaog67znf4uowDtM47GKxFS",
-      "title": "Logan Smith",
-      "display_title": "Dev - Logan Smith",
-      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCnHX5FjwtQpxkCGziuh4NJA",
-      "feedlink": "https://www.youtube.com/channel/UCnHX5FjwtQpxkCGziuh4NJA",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev"
-      ],
-      "num_items": 1
-    },
-    {
-      "id": "3MxaK2JpEReqZwbft8oaVrcfgKZxp5G3SWyg5tNUM6a9RKA",
-      "title": "Armin Ronacher's Thoughts and Writings",
-      "display_title": "Dev - Armin Ronacher Blog",
-      "url": "https://lucumr.pocoo.org/feed.atom",
-      "feedlink": "https://lucumr.pocoo.org/feed.atom",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev"
-      ],
-      "num_items": 4
-    },
-    {
-      "id": "3auKdN6FdQE2rdQHqvu6V4wu7T3G4Cj5CgAUTM3qCB4okp3k7gr2aB2qNPr4dq",
-      "title": "Kubernetes Podcast from Google",
-      "display_title": "Dev - Kubernetes Podcast",
-      "url": "https://kubernetespodcast.com/feeds/audio.xml",
-      "feedlink": "https://kubernetespodcast.com/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev",
-        "k8s",
-        "podcast"
-      ],
-      "num_items": 2
-    },
-    {
-      "id": "6gUbcKN7Uxemfp4a3PdhuhxsUXZLcLYj4W1LYjuLBLc579S2nADAf4x2wE1TZtRmxwzHaB",
-      "title": "Golang Weekly",
-      "display_title": "Dev - Golang Weekly",
-      "url": "https://cprss.s3.amazonaws.com/golangweekly.com.xml",
-      "feedlink": "https://golangweekly.com/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev",
-        "go"
-      ],
-      "num_items": 4
-    },
-    {
-      "id": "2bP4pJr4wVimh6yine6kGkfYaZziy91BjdMyDkZVshD",
-      "title": "Rust Blog",
-      "display_title": "Dev - Rust Blog",
-      "url": "https://blog.rust-lang.org/feed",
-      "feedlink": "https://blog.rust-lang.org/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev",
-        "official",
-        "rust"
-      ],
-      "num_items": 4
-    },
-    {
-      "id": "3A8evQZovd7BB9ekVCAqyqtWhhQt7kyx",
-      "title": "The GitHub Blog",
-      "display_title": "Dev - Github Blog",
-      "url": "https://github.blog/rss",
-      "feedlink": "https://github.blog/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev"
-      ],
-      "num_items": 15
-    },
-    {
-      "id": "5k2tWE6P7gjuNLW7xWdLfUN3PV87yRFJCVhnmeA6",
-      "title": "philschmid.de - RSS feed",
-      "display_title": "Dev - Phil Shmid",
-      "url": "https://www.philschmid.de/rss",
-      "feedlink": "https://www.philschmid.de/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev"
-      ],
-      "num_items": 5
-    },
-    {
-      "id": "F7pXcna7voXyqwL8WRn2Gt9RynL8LW7FbrzXU",
-      "title": "404 Media",
-      "display_title": "Dev - 404",
-      "url": "https://www.404media.co/rss",
-      "feedlink": "https://www.404media.co/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev"
-      ],
-      "num_items": 31
-    },
-    {
-      "id": "2k7TU6Gfnp2tyJfbxs8611DnHYRCp47PKuexSXBFEUwLXWnu6o3w4xupSw",
-      "title": "FSF blogs",
-      "display_title": "Dev - Free Software Foundation",
-      "url": "http://static.fsf.org/fsforg/rss/blogs.xml",
-      "feedlink": "http://www.fsf.org/blogs/recent-blog-posts",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev",
-        "linux"
-      ],
-      "num_items": 10
-    },
-    {
-      "id": "Y2iXpRRkNSnpSSaMpPUXCkDYAzBFnkPyn3srd59dTsA5L",
-      "title": "Arch Linux: Recent news updates",
-      "display_title": "Dev - Arch Linux News",
-      "url": "https://archlinux.org/feeds/news/",
-      "feedlink": "https://archlinux.org/news/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev",
-        "linux"
-      ],
-      "num_items": 2
-    },
-    {
-      "id": "2Qhhdda6QnbewojSNJ2aRFECbZgyReaFrE1rrV7SoTLcdBVa8RGottwF6A9Veq2S5DxhoZZ99T9dxyMtHRiK",
-      "title": "GitHub All Languages Weekly Trending",
-      "display_title": "Dev - Github Trending",
-      "url": "https://mshibanami.github.io/GitHubTrendingRSS/weekly/all.xml",
-      "feedlink": "http://mshibanami.github.io/GitHubTrendingRSS",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev"
-      ],
-      "num_items": 33
-    },
-    {
-      "id": "BRWJ2YmdUFp1VkEaibbVg9gmctcLUWiZeYcbFJGMkd7Cuwto",
-      "title": "Stories by Kyodo Tech on Medium",
-      "display_title": "Dev - Kyodo-Tech",
-      "url": "https://medium.com/@kyodo-tech/feed",
-      "feedlink": "https://medium.com/@kyodo-tech?source=rss-ac02ab142942------2",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev"
-      ],
-      "num_items": 2
-    },
-    {
-      "id": "AXJnNj1p7gNGHeShbM5NH2qrEU51AXyHm",
-      "title": "Julia Evans",
-      "display_title": "Dev - Julia Evans",
-      "url": "https://jvns.ca/atom.xml",
-      "feedlink": "https://jvns.ca/atom.xml",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev"
-      ],
-      "num_items": 2
-    },
-    {
-      "id": "3MxaK2JpEReqbaaoXRjhqtHgzLzs7yD1MzDHmZohMpeP54G",
-      "title": "Martin Fowler",
-      "display_title": "Dev - Martin Fowler",
-      "url": "https://martinfowler.com/feed.atom",
-      "feedlink": "https://martinfowler.com/feed.atom",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev"
-      ],
-      "num_items": 13
-    },
-    {
-      "id": "sML2JBPsdAyCMAUuDAb4rMUzpB9GRgBrSJo6frY3aqUzYMyY1KqfA5MTDk9Bkxae",
-      "title": "Blog - Bitfield Consulting",
-      "display_title": "Dev - Bitfield",
-      "url": "https://bitfieldconsulting.com/posts?format=rss",
-      "feedlink": "https://bitfieldconsulting.com/posts/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev"
-      ],
-      "num_items": 2
-    },
-    {
-      "id": "BRWJ2YmdUFp2T1vhh7n3V5SVNJLVQ56WoZtJvhiNDyE3aj1V",
-      "title": "Transactional",
-      "display_title": "Dev - Transactional",
-      "url": "https://transactional.blog/feed.xml",
-      "feedlink": "https://transactional.blog/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev"
-      ],
-      "num_items": 1
-    },
-    {
-      "id": "6C2W1azD1rBsV4qJANNfruBrvGgdqLWrPGWtk6Mp1WgfCNcfvBZHFQw",
-      "title": "The System Design Newsletter",
-      "display_title": "Dev - System Design Newsletter",
-      "url": "https://newsletter.systemdesign.one/feed",
-      "feedlink": "https://newsletter.systemdesign.one/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev"
-      ],
-      "num_items": 4
-    },
-    {
-      "id": "2bP4pJr4wVimh6yine63HqNeafoyheTFz1gqCrQ4h7Z",
-      "title": "AlgoMaster Newsletter",
-      "display_title": "Dev - Algomaster",
-      "url": "https://blog.algomaster.io/feed",
-      "feedlink": "https://blog.algomaster.io/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev"
-      ],
-      "num_items": 9
-    },
-    {
-      "id": "2BCfkBRHmbhytY8nm9spZ4inpFkqHBsLKs6LqzTxwmhuxSvfYzGLsd",
-      "title": "nixCraft: Linux Tips, Hacks, Tutorials, And Ideas In Blog Format (RSS/FEED)",
-      "display_title": "Dev - NixCraft",
-      "url": "https://www.cyberciti.com/atom/atom.xml",
-      "feedlink": "https://www.cyberciti.biz/atom/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev"
-      ],
-      "num_items": 3
-    },
-    {
-      "id": "Pufd3b1W2k6ypsvAkMLeXFLwL8C1uVfAjjWK1ye9o8k8whQGUjF43aC3",
-      "title": "Language Models & Co.",
-      "display_title": "Dev - LLM.newsletter",
-      "url": "https://newsletter.languagemodels.co/feed",
-      "feedlink": "https://newsletter.languagemodels.co/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev"
-      ],
-      "num_items": 2
-    },
-    {
-      "id": "o1AJ9qDyyJNNeEUrNXM2motB3Lf5LtZLjgUFkfKXwbG1A43BR",
-      "title": "Jane Street Tech Blog",
-      "display_title": "Dev - Jane Street",
-      "url": "https://blog.janestreet.com/feed.xml",
-      "feedlink": "https://blog.janestreet.com/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev"
-      ],
-      "num_items": 1
+      "num_items": 804
     }
   ]
 }
