@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Trending Repos</title><link>https://konrad.website/feeds/</link><description></description><item><title>lobehub/lobe-chat</title><link>https://github.com/lobehub/lobe-chat</link><author></author><category>trending</category><pubDate>Sun, 9 Feb 2025 02:28:32 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[🤯 Lobe Chat - an open-source, modern-design AI chat framework. Supports Multi AI Providers( OpenAI / Claude 3 / Gemini / Ollama / Qwen / DeepSeek), Knowledge Base (file upload / knowledge management / RAG ), Multi-Modals (Vision/TTS/Plugins/Artifacts). One-click FREE deployment of your private ChatGPT/ Claude application.👋🏻 Getting Started & Join Our CommunityWe are a group of e/acc design-engineers, hoping to provide modern design components and tools for AIGC. By adopting the Bootstrapping approach, we aim to provide developers and users with a more open, transparent, and user-friendly product ecosystem.Whether for users or professional developers, LobeHub will be your AI Agent playground. Please be aware that LobeChat is currently under active development, and feedback is welcome for any issues encountered., You will receive all release notifications from GitHub without any delay ~ ⭐️LobeChat supports file upload and knowledge base functionality. You can upload various types of files including documents, images, audio, and video, as well as create knowledge bases, making it convenient for users to manage and search for files. Additionally, you can utilize files and knowledge base features during conversations, enabling a richer dialogue experience.In the continuous development of LobeChat, we deeply understand the importance of diversity in model service providers for meeting the needs of the community when providing AI conversation services. Therefore, we have expanded our support to multiple model service providers, rather than being limited to a single one, in order to offer users a more diverse and rich selection of conversations.In this way, LobeChat can more flexibly adapt to the needs of different users, while also providing developers with a wider range of choices.Supported Model Service ProvidersWe have implemented support for the following model service providers:: OpenAI is a global leader in artificial intelligence research, with models like the GPT series pushing the frontiers of natural language processing. OpenAI is committed to transforming multiple industries through innovative and efficient AI solutions. Their products demonstrate significant performance and cost-effectiveness, widely used in research, business, and innovative applications.: Ollama provides models that cover a wide range of fields, including code generation, mathematical operations, multilingual processing, and conversational interaction, catering to diverse enterprise-level and localized deployment needs.: Anthropic is a company focused on AI research and development, offering a range of advanced language models such as Claude 3.5 Sonnet, Claude 3 Sonnet, Claude 3 Opus, and Claude 3 Haiku. These models achieve an ideal balance between intelligence, speed, and cost, suitable for various applications from enterprise workloads to rapid-response scenarios. Claude 3.5 Sonnet, as their latest model, has excelled in multiple evaluations while maintaining a high cost-performance ratio.: Bedrock is a service provided by Amazon AWS, focusing on delivering advanced AI language and visual models for enterprises. Its model family includes Anthropic's Claude series, Meta's Llama 3.1 series, and more, offering a range of options from lightweight to high-performance, supporting tasks such as text generation, conversation, and image processing for businesses of varying scales and needs.: Google's Gemini series represents its most advanced, versatile AI models, developed by Google DeepMind, designed for multimodal capabilities, supporting seamless understanding and processing of text, code, images, audio, and video. Suitable for various environments from data centers to mobile devices, it significantly enhances the efficiency and applicability of AI models.: DeepSeek is a company focused on AI technology research and application, with its latest model DeepSeek-V2.5 integrating general dialogue and code processing capabilities, achieving significant improvements in human preference alignment, writing tasks, and instruction following.: The HuggingFace Inference API provides a fast and free way for you to explore thousands of models for various tasks. Whether you are prototyping for a new application or experimenting with the capabilities of machine learning, this API gives you instant access to high-performance models across multiple domains.: OpenRouter is a service platform providing access to various cutting-edge large model interfaces, supporting OpenAI, Anthropic, LLaMA, and more, suitable for diverse development and application needs. Users can flexibly choose the optimal model and pricing based on their requirements, enhancing the AI experience.: Run serverless GPU-powered machine learning models on Cloudflare's global network.: With GitHub Models, developers can become AI engineers and leverage the industry's leading AI models.At the same time, we are also planning to support more model service providers. If you would like LobeChat to support your favorite service provider, feel free to join our 💬 community discussion.To meet the specific needs of users, LobeChat also supports the use of local models based on Ollama, allowing users to flexibly use their own or third-party models.LobeChat now supports OpenAI's latest  model with visual recognition capabilities, a multimodal intelligence that can perceive visuals. Users can easily upload or drag and drop images into the dialogue box, and the agent will be able to recognize the content of the images and engage in intelligent conversation based on this, creating smarter and more diversified chat scenarios.This feature opens up new interactive methods, allowing communication to transcend text and include a wealth of visual elements. Whether it's sharing images in daily use or interpreting images within specific industries, the agent provides an outstanding conversational experience.LobeChat supports Text-to-Speech (TTS) and Speech-to-Text (STT) technologies, enabling our application to convert text messages into clear voice outputs, allowing users to interact with our conversational agent as if they were talking to a real person. Users can choose from a variety of voices to pair with the agent.Moreover, TTS offers an excellent solution for those who prefer auditory learning or desire to receive information while busy. In LobeChat, we have meticulously selected a range of high-quality voice options (OpenAI Audio, Microsoft Edge Speech) to meet the needs of users from different regions and cultural backgrounds. Users can choose the voice that suits their personal preferences or specific scenarios, resulting in a personalized communication experience.With support for the latest text-to-image generation technology, LobeChat now allows users to invoke image creation tools directly within conversations with the agent. By leveraging the capabilities of AI tools such as , , and , the agents are now equipped to transform your ideas into images.This enables a more private and immersive creative process, allowing for the seamless integration of visual storytelling into your personal dialogue with the agent.The plugin ecosystem of LobeChat is an important extension of its core functionality, greatly enhancing the practicality and flexibility of the LobeChat assistant.By utilizing plugins, LobeChat assistants can obtain and process real-time information, such as searching for web information and providing users with instant and relevant news.In addition, these plugins are not limited to news aggregation, but can also extend to other practical functions, such as quickly searching documents, generating images, obtaining data from various platforms like Bilibili, Steam, and interacting with various third-party services.Smart web search that reads and analyzes pages to deliver comprehensive answers from Google results.Find any NFT data on the NEAR Protocol.Search for information from the internet base BingApiAnalyze stocks and get comprehensive real-time investment data and analytics.In LobeChat Agent Marketplace, creators can discover a vibrant and innovative community that brings together a multitude of well-designed agents, which not only play an important role in work scenarios but also offer great convenience in learning processes. Our marketplace is not just a showcase platform but also a collaborative space. Here, everyone can contribute their wisdom and share the agents they have developed.By 🤖/🏪 Submit Agents, you can easily submit your agent creations to our platform. Importantly, LobeChat has established a sophisticated automated internationalization (i18n) workflow, capable of seamlessly translating your agent into multiple language versions. This means that no matter what language your users speak, they can experience your agent without barriers.We welcome all users to join this growing ecosystem and participate in the iteration and optimization of agents. Together, we can create more interesting, practical, and innovative agents, further enriching the diversity and practicality of the agent offerings.LobeChat supports the use of both server-side and local databases. Depending on your needs, you can choose the appropriate deployment solution:: suitable for users who want more control over their data and privacy protection. LobeChat uses CRDT (Conflict-Free Replicated Data Type) technology to achieve multi-device synchronization. This is an experimental feature aimed at providing a seamless data synchronization experience.: suitable for users who want a more convenient user experience. LobeChat supports PostgreSQL as a server-side database. For detailed documentation on how to configure the server-side database, please visit Configure Server-side Database.Regardless of which database you choose, LobeChat can provide you with an excellent user experience.LobeChat supports multi-user management and provides two main user authentication and management solutions to meet different needs:: LobeChat integrates , a flexible and powerful identity verification library that supports multiple authentication methods, including OAuth, email login, credential login, etc. With , you can easily implement user registration, login, session management, social login, and other functions to ensure the security and privacy of user data.: For users who need more advanced user management features, LobeChat also supports , a modern user management platform.  provides richer functions, such as multi-factor authentication (MFA), user profile management, login activity monitoring, etc. With , you can get higher security and flexibility, and easily cope with complex user management needs.Regardless of which user management solution you choose, LobeChat can provide you with an excellent user experience and powerful functional support.We deeply understand the importance of providing a seamless experience for users in today's multi-device environment. Therefore, we have adopted Progressive Web Application (PWA) technology, a modern web technology that elevates web applications to an experience close to that of native apps.Through PWA, LobeChat can offer a highly optimized user experience on both desktop and mobile devices while maintaining its lightweight and high-performance characteristics. Visually and in terms of feel, we have also meticulously designed the interface to ensure it is indistinguishable from native apps, providing smooth animations, responsive layouts, and adapting to different device screen resolutions.If you are unfamiliar with the installation process of PWA, you can add LobeChat as your desktop application (also applicable to mobile devices) by following these steps:Launch the Chrome or Edge browser on your computer.Visit the LobeChat webpage.In the upper right corner of the address bar, click on the  icon.Follow the instructions on the screen to complete the PWA Installation.We have carried out a series of optimization designs for mobile devices to enhance the user's mobile experience. Currently, we are iterating on the mobile user experience to achieve smoother and more intuitive interactions. If you have any suggestions or ideas, we welcome you to provide feedback through GitHub Issues or Pull Requests.As a design-engineering-oriented application, LobeChat places great emphasis on users' personalized experiences, hence introducing flexible and diverse theme modes, including a light mode for daytime and a dark mode for nighttime. Beyond switching theme modes, a range of color customization options allow users to adjust the application's theme colors according to their preferences. Whether it's a desire for a sober dark blue, a lively peach pink, or a professional gray-white, users can find their style of color choices in LobeChat.The default configuration can intelligently recognize the user's system color mode and automatically switch themes to ensure a consistent visual experience with the operating system. For users who like to manually control details, LobeChat also offers intuitive setting options and a choice between chat bubble mode and document mode for conversation scenarios.Beside these features, LobeChat also have much better basic technique underground:✨ more features will be added when LobeChat evolve.You can find our upcoming Roadmap plans in the Projects section.LobeChat provides Self-Hosted Version with Vercel, Alibaba Cloud, and Docker Image. This allows you to deploy your own chatbot within a few minutes without any prior knowledge. Deploying with Vercel, Zeabur , Sealos or Alibaba Cloud"If you want to deploy this service yourself on Vercel, Zeabur or Alibaba Cloud, you can follow these steps:Click the button below to start deployment: Log in directly with your GitHub account, and remember to fill in the (required) and  (recommended) on the environment variable section.After deployment, you can start using it.Bind a custom domain (optional): The DNS of the domain assigned by Vercel is polluted in some areas; binding a custom domain can connect directly.After fork, only retain the upstream sync action and disable other actions in your repository on GitHub.If you have deployed your own project following the one-click deployment steps in the README, you might encounter constant prompts indicating "updates available." This is because Vercel defaults to creating a new project instead of forking this one, resulting in an inability to detect updates accurately.We provide a Docker image for deploying the LobeChat service on your own private device. Use the following command to start the LobeChat service:$ docker run -d -p 3210:3210 \
+  -e OPENAI_API_KEY=sk-xxxx \
+  -e ACCESS_CODE=lobe66 \
+  --name lobe-chat \
+  lobehub/lobe-chat
+If you need to use the OpenAI service through a proxy, you can configure the proxy address using the  environment variable:$ docker run -d -p 3210:3210 \
+  -e OPENAI_API_KEY=sk-xxxx \
+  -e OPENAI_PROXY_URL=https://api-proxy.com/v1 \
+  -e ACCESS_CODE=lobe66 \
+  --name lobe-chat \
+  lobehub/lobe-chat
+This project provides some additional configuration items set with environment variables:This is the API key you apply on the OpenAI account pageIf you manually configure the OpenAI interface proxy, you can use this configuration item to override the default OpenAI API request base URLhttps://api.chatanywhere.cn or The default value ishttps://api.openai.com/v1Add a password to access this service; you can set a long password to avoid leaking. If this value contains a comma, it is a password array. or  or Used to control the model list. Use  to add a model,  to hide a model, and  to customize the display name of a model, separated by commas.qwen-7b-chat,+glm-6b,-gpt-3.5-turboPlugins provide a means to extend the Function Calling capabilities of LobeChat. They can be used to introduce new function calls and even new ways to render message results. If you are interested in plugin development, please refer to our 📘 Plugin Development Guide in the Wiki.lobe-chat-plugins: This is the plugin index for LobeChat. It accesses index.json from this repository to display a list of available plugins for LobeChat to the user.@lobehub/chat-plugins-gateway: The LobeChat Plugins Gateway is a backend service that provides a gateway for LobeChat plugins. We deploy this service using Vercel. The primary API POST /api/v1/runner is deployed as an Edge Function.The plugin system is currently undergoing major development. You can learn more in the following issues:[x] : Implement separation of the plugin from the main body, split the plugin into an independent repository for maintenance, and realize dynamic loading of the plugin.[x] : The security and stability of the plugin's use, more accurately presenting abnormal states, the maintainability of the plugin architecture, and developer-friendly.[x] : Higher-level and more comprehensive customization capabilities, support for plugin authentication, and examples.You can use GitHub Codespaces for online development:Or clone it for local development:$ git clone https://github.com/lobehub/lobe-chat.git
+$ cd lobe-chat
+$ pnpm install
+$ pnpm dev
+Contributions of all types are more than welcome; if you are interested in contributing code, feel free to check out our GitHub Issues and Projects to get stuck in to show us what you’re made of.We are creating a technology-driven forum, fostering knowledge interaction and the exchange of ideas that may culminate in mutual inspiration and collaborative innovation.Help us make LobeChat better. Welcome to provide product design feedback, user experience discussions directly to us.Every bit counts and your one-time donation sparkles in our galaxy of support! You're a shooting star, making a swift and bright impact on our journey. Thank you for believing in us – your generosity guides us toward our mission, one brilliant flash at a time. Modern theme for Stable Diffusion WebUI, exquisite interface design, highly customizable UI, and efficiency-boosting features. WebUI for Midjourney, leverages AI to quickly generate a wide array of rich and diverse images from text prompts, sparking creativity and enhancing conversations. Lobe i18n is an automation tool for the i18n (internationalization) translation process, powered by ChatGPT. It supports features such as automatic splitting of large files, incremental updates, and customization options for the OpenAI model, API proxy, and temperature. Lobe Commit is a CLI tool that leverages Langchain/ChatGPT to generate Gitmoji-based commit messages.]]></content:encoded></item><item><title>mendableai/firecrawl</title><link>https://github.com/mendableai/firecrawl</link><author></author><category>trending</category><pubDate>Sun, 9 Feb 2025 02:28:32 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[🔥 Turn entire websites into LLM-ready markdown or structured data. Scrape, crawl and extract with a single API.Empower your AI apps with clean data from any website. Featuring advanced scraping, crawling, and data extraction capabilities.This repository is in development, and we’re still integrating custom modules into the mono repo. It's not fully ready for self-hosted deployment yet, but you can run it locally.Firecrawl is an API service that takes a URL, crawls it, and converts it into clean markdown or structured data. We crawl all accessible subpages and give you clean data for each. No sitemap required. Check out our documentation.Pst. hey, you, join our stargazers :)We provide an easy to use API with our hosted version. You can find the playground and documentation here. You can also self host the backend if you'd like.Check out the following resources to get started:To run locally, refer to guide here.To use the API, you need to sign up on Firecrawl and get an API key.: scrapes a URL and get its content in LLM-ready format (markdown, structured data via LLM Extract, screenshot, html): scrapes all the URLs of a web page and return content in LLM-ready format: input a website and get all the website urls - extremely fast: get structured data from single page, multiple pages or entire websites with AI.: markdown, structured data, screenshot, HTML, links, metadata: proxies, anti-bot mechanisms, dynamic content (js-rendered), output parsing, orchestration: exclude tags, crawl behind auth walls with custom headers, max crawl depth, etc...: pdfs, docx, images: designed to get the data you need - no matter how hard it is: click, scroll, input, wait and more before extracting data: scrape thousands of URLs at the same time with a new async endpoint.You can find all of Firecrawl's capabilities and how to use them in our documentationUsed to crawl a URL and all accessible subpages. This submits a crawl job and returns a job ID to check the status of the crawl.curl -X POST https://api.firecrawl.dev/v1/crawl \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer fc-YOUR_API_KEY' \
+    -d '{
+      "url": "https://docs.firecrawl.dev",
+      "limit": 100,
+      "scrapeOptions": {
+        "formats": ["markdown", "html"]
+      }
+    }'
+Returns a crawl job id and the url to check the status of the crawl.{
+  "success": true,
+  "id": "123-456-789",
+  "url": "https://api.firecrawl.dev/v1/crawl/123-456-789"
+}
+Used to check the status of a crawl job and get its result.curl -X GET https://api.firecrawl.dev/v1/crawl/123-456-789 \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer YOUR_API_KEY'
+{
+  "status": "completed",
+  "total": 36,
+  "creditsUsed": 36,
+  "expiresAt": "2024-00-00T00:00:00.000Z",
+  "data": [
+    {
+      "markdown": "[Firecrawl Docs home page![light logo](https://mintlify.s3-us-west-1.amazonaws.com/firecrawl/logo/light.svg)!...",
+      "html": "<!DOCTYPE html><html lang=\"en\" class=\"js-focus-visible lg:[--scroll-mt:9.5rem]\" data-js-focus-visible=\"\">...",
+      "metadata": {
+        "title": "Build a 'Chat with website' using Groq Llama 3 | Firecrawl",
+        "language": "en",
+        "sourceURL": "https://docs.firecrawl.dev/learn/rag-llama3",
+        "description": "Learn how to use Firecrawl, Groq Llama 3, and Langchain to build a 'Chat with your website' bot.",
+        "ogLocaleAlternate": [],
+        "statusCode": 200
+      }
+    }
+  ]
+}
+Used to scrape a URL and get its content in the specified formats.curl -X POST https://api.firecrawl.dev/v1/scrape \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+      "url": "https://docs.firecrawl.dev",
+      "formats" : ["markdown", "html"]
+    }'
+{
+  "success": true,
+  "data": {
+    "markdown": "Launch Week I is here! [See our Day 2 Release 🚀](https://www.firecrawl.dev/blog/launch-week-i-day-2-doubled-rate-limits)[💥 Get 2 months free...",
+    "html": "<!DOCTYPE html><html lang=\"en\" class=\"light\" style=\"color-scheme: light;\"><body class=\"__variable_36bd41 __variable_d7dc5d font-inter ...",
+    "metadata": {
+      "title": "Home - Firecrawl",
+      "description": "Firecrawl crawls and converts any website into clean markdown.",
+      "language": "en",
+      "keywords": "Firecrawl,Markdown,Data,Mendable,Langchain",
+      "robots": "follow, index",
+      "ogTitle": "Firecrawl",
+      "ogDescription": "Turn any website into LLM-ready data.",
+      "ogUrl": "https://www.firecrawl.dev/",
+      "ogImage": "https://www.firecrawl.dev/og.png?123",
+      "ogLocaleAlternate": [],
+      "ogSiteName": "Firecrawl",
+      "sourceURL": "https://firecrawl.dev",
+      "statusCode": 200
+    }
+  }
+}
+Used to map a URL and get urls of the website. This returns most links present on the website.curl -X POST https://api.firecrawl.dev/v1/map \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+      "url": "https://firecrawl.dev"
+    }'
+{
+  "status": "success",
+  "links": [
+    "https://firecrawl.dev",
+    "https://www.firecrawl.dev/pricing",
+    "https://www.firecrawl.dev/blog",
+    "https://www.firecrawl.dev/playground",
+    "https://www.firecrawl.dev/smart-crawl",
+  ]
+}
+Map with  param allows you to search for specific urls inside a website.curl -X POST https://api.firecrawl.dev/v1/map \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+      "url": "https://firecrawl.dev",
+      "search": "docs"
+    }'
+Response will be an ordered list from the most relevant to the least relevant.{
+  "status": "success",
+  "links": [
+    "https://docs.firecrawl.dev",
+    "https://docs.firecrawl.dev/sdks/python",
+    "https://docs.firecrawl.dev/learn/rag-llama3",
+  ]
+}
+Get structured data from entire websites with a prompt and/or a schema.You can extract structured data from one or multiple URLs, including wildcards:When you use /*, Firecrawl will automatically crawl and parse all URLs it can discover in that domain, then extract the requested data.curl -X POST https://api.firecrawl.dev/v1/extract \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+      "urls": [
+        "https://firecrawl.dev/*", 
+        "https://docs.firecrawl.dev/", 
+        "https://www.ycombinator.com/companies"
+      ],
+      "prompt": "Extract the company mission, whether it is open source, and whether it is in Y Combinator from the page.",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "company_mission": {
+            "type": "string"
+          },
+          "is_open_source": {
+            "type": "boolean"
+          },
+          "is_in_yc": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "company_mission",
+          "supports_sso",
+          "is_open_source",
+          "is_in_yc"
+        ]
+      }
+    }'
+{
+  "success": true,
+  "id": "44aa536d-f1cb-4706-ab87-ed0386685740",
+  "urlTrace": []
+}
+If you are using the sdks, it will auto pull the response for you:{
+  "success": true,
+  "data": {
+    "company_mission": "Firecrawl is the easiest way to extract data from the web. Developers use us to reliably convert URLs into LLM-ready markdown or structured data with a single API call.",
+    "supports_sso": false,
+    "is_open_source": true,
+    "is_in_yc": true
+  }
+}
+Used to extract structured data from scraped pages.curl -X POST https://api.firecrawl.dev/v1/scrape \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+      "url": "https://www.mendable.ai/",
+      "formats": ["json"],
+      "jsonOptions": {
+        "schema": {
+          "type": "object",
+          "properties": {
+            "company_mission": {
+                      "type": "string"
+            },
+            "supports_sso": {
+                      "type": "boolean"
+            },
+            "is_open_source": {
+                      "type": "boolean"
+            },
+            "is_in_yc": {
+                      "type": "boolean"
+            }
+          },
+          "required": [
+            "company_mission",
+            "supports_sso",
+            "is_open_source",
+            "is_in_yc"
+          ]
+        }
+      }
+    }'
+{
+  "success": true,
+  "data": {
+    "content": "Raw Content",
+    "metadata": {
+      "title": "Mendable",
+      "description": "Mendable allows you to easily build AI chat applications. Ingest, customize, then deploy with one line of code anywhere you want. Brought to you by SideGuide",
+      "robots": "follow, index",
+      "ogTitle": "Mendable",
+      "ogDescription": "Mendable allows you to easily build AI chat applications. Ingest, customize, then deploy with one line of code anywhere you want. Brought to you by SideGuide",
+      "ogUrl": "https://mendable.ai/",
+      "ogImage": "https://mendable.ai/mendable_new_og1.png",
+      "ogLocaleAlternate": [],
+      "ogSiteName": "Mendable",
+      "sourceURL": "https://mendable.ai/"
+    },
+    "json": {
+      "company_mission": "Train a secure AI on your technical resources that answers customer and employee questions so your team doesn't have to",
+      "supports_sso": true,
+      "is_open_source": false,
+      "is_in_yc": true
+    }
+  }
+}
+Extracting without a schema (New)You can now extract without a schema by just passing a  to the endpoint. The llm chooses the structure of the data.curl -X POST https://api.firecrawl.dev/v1/scrape \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+      "url": "https://docs.firecrawl.dev/",
+      "formats": ["json"],
+      "jsonOptions": {
+        "prompt": "Extract the company mission from the page."
+      }
+    }'
+Interacting with the page with Actions (Cloud-only)Firecrawl allows you to perform various actions on a web page before scraping its content. This is particularly useful for interacting with dynamic content, navigating through pages, or accessing content that requires user interaction.Here is an example of how to use actions to navigate to google.com, search for Firecrawl, click on the first result, and take a screenshot.curl -X POST https://api.firecrawl.dev/v1/scrape \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+        "url": "google.com",
+        "formats": ["markdown"],
+        "actions": [
+            {"type": "wait", "milliseconds": 2000},
+            {"type": "click", "selector": "textarea[title=\"Search\"]"},
+            {"type": "wait", "milliseconds": 2000},
+            {"type": "write", "text": "firecrawl"},
+            {"type": "wait", "milliseconds": 2000},
+            {"type": "press", "key": "ENTER"},
+            {"type": "wait", "milliseconds": 3000},
+            {"type": "click", "selector": "h3"},
+            {"type": "wait", "milliseconds": 3000},
+            {"type": "screenshot"}
+        ]
+    }'
+Batch Scraping Multiple URLs (New)You can now batch scrape multiple URLs at the same time. It is very similar to how the /crawl endpoint works. It submits a batch scrape job and returns a job ID to check the status of the batch scrape.curl -X POST https://api.firecrawl.dev/v1/batch/scrape \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+      "urls": ["https://docs.firecrawl.dev", "https://docs.firecrawl.dev/sdks/overview"],
+      "formats" : ["markdown", "html"]
+    }'
+The search endpoint combines web search with Firecrawl’s scraping capabilities to return full page content for any query.Include  with  to get complete markdown content for each search result otherwise it defaults to getting SERP results (url, title, description).curl -X POST https://api.firecrawl.dev/v1/search \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+      "query": "What is Mendable?"
+    }'
+{
+  "success": true,
+  "data": [
+    {
+      "url": "https://mendable.ai",
+      "title": "Mendable | AI for CX and Sales",
+      "description": "AI for CX and Sales"
+    }
+  ]
+}
+from firecrawl.firecrawl import FirecrawlApp
+
+app = FirecrawlApp(api_key="fc-YOUR_API_KEY")
+
+# Scrape a website:
+scrape_status = app.scrape_url(
+  'https://firecrawl.dev', 
+  params={'formats': ['markdown', 'html']}
+)
+print(scrape_status)
+
+# Crawl a website:
+crawl_status = app.crawl_url(
+  'https://firecrawl.dev', 
+  params={
+    'limit': 100, 
+    'scrapeOptions': {'formats': ['markdown', 'html']}
+  },
+  poll_interval=30
+)
+print(crawl_status)
+Extracting structured data from a URLWith LLM extraction, you can easily extract structured data from any URL. We support pydantic schemas to make it easier for you too. Here is how you to use it:
+from firecrawl.firecrawl import FirecrawlApp
+
+app = FirecrawlApp(api_key="fc-YOUR_API_KEY")
+
+class ArticleSchema(BaseModel):
+    title: str
+    points: int
+    by: str
+    commentsURL: str
+
+class TopArticlesSchema(BaseModel):
+    top: List[ArticleSchema] = Field(..., max_items=5, description="Top 5 stories")
+
+data = app.scrape_url('https://news.ycombinator.com', {
+    'formats': ['json'],
+    'jsonOptions': {
+        'schema': TopArticlesSchema.model_json_schema()
+    }
+})
+print(data["json"])
+To install the Firecrawl Node SDK, you can use npm:npm install @mendable/firecrawl-js
+Set the API key as an environment variable named  or pass it as a parameter to the  class.import FirecrawlApp, { CrawlParams, CrawlStatusResponse } from '@mendable/firecrawl-js';
+
+const app = new FirecrawlApp({apiKey: "fc-YOUR_API_KEY"});
+
+// Scrape a website
+const scrapeResponse = await app.scrapeUrl('https://firecrawl.dev', {
+  formats: ['markdown', 'html'],
+});
+
+if (scrapeResponse) {
+  console.log(scrapeResponse)
+}
+
+// Crawl a website
+const crawlResponse = await app.crawlUrl('https://firecrawl.dev', {
+  limit: 100,
+  scrapeOptions: {
+    formats: ['markdown', 'html'],
+  }
+} satisfies CrawlParams, true, 30) satisfies CrawlStatusResponse;
+
+if (crawlResponse) {
+  console.log(crawlResponse)
+}
+Extracting structured data from a URLWith LLM extraction, you can easily extract structured data from any URL. We support zod schema to make it easier for you too. Here is how to use it:import FirecrawlApp from "@mendable/firecrawl-js";
+import { z } from "zod";
+
+const app = new FirecrawlApp({
+  apiKey: "fc-YOUR_API_KEY"
+});
+
+// Define schema to extract contents into
+const schema = z.object({
+  top: z
+    .array(
+      z.object({
+        title: z.string(),
+        points: z.number(),
+        by: z.string(),
+        commentsURL: z.string(),
+      })
+    )
+    .length(5)
+    .describe("Top 5 stories on Hacker News"),
+});
+
+const scrapeResult = await app.scrapeUrl("https://news.ycombinator.com", {
+  jsonOptions: { extractionSchema: schema },
+});
+
+console.log(scrapeResult.data["json"]);
+Open Source vs Cloud OfferingFirecrawl is open source available under the AGPL-3.0 license.To deliver the best possible product, we offer a hosted version of Firecrawl alongside our open-source offering. The cloud solution allows us to continuously innovate and maintain a high-quality, sustainable service for all users.Firecrawl Cloud is available at firecrawl.dev and offers a range of features that are not available in the open source version:It is the sole responsibility of the end users to respect websites' policies when scraping, searching and crawling with Firecrawl. Users are advised to adhere to the applicable privacy policies and terms of use of the websites prior to initiating any scraping activities. By default, Firecrawl respects the directives specified in the websites' robots.txt files when crawling. By utilizing Firecrawl, you expressly agree to comply with these conditions.This project is primarily licensed under the GNU Affero General Public License v3.0 (AGPL-3.0), as specified in the LICENSE file in the root directory of this repository. However, certain components of this project are licensed under the MIT License. Refer to the LICENSE files in these specific directories for details.The AGPL-3.0 license applies to all parts of the project unless otherwise specified.The SDKs and some UI components are licensed under the MIT License. Refer to the LICENSE files in these specific directories for details.When using or contributing to this project, ensure you comply with the appropriate license terms for the specific component you are working with.For more details on the licensing of specific components, please refer to the LICENSE files in the respective directories or contact the project maintainers.]]></content:encoded></item><item><title>k2-fsa/sherpa-onnx</title><link>https://github.com/k2-fsa/sherpa-onnx</link><author></author><category>trending</category><pubDate>Sun, 9 Feb 2025 02:28:32 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[Speech-to-text, text-to-speech, speaker diarization, and VAD using next-gen Kaldi with onnxruntime without Internet connection. Support embedded systems, Android, iOS, HarmonyOS, Raspberry Pi, RISC-V, x86_64 servers, websocket server/client, C/C++, Python, Kotlin, C#, Go, NodeJS, Java, Swift, Dart, JavaScript, Flutter, Object Pascal, Lazarus, RustSpoken Language identificationSupported programming languagesIt also supports WebAssembly.This repository supports running the following functions Speech-to-text (i.e., ASR); both streaming and non-streaming are supportedText-to-speech (i.e., TTS)Spoken language identificationon the following platforms and operating systems:Links for Huggingface SpacesLinks for pre-built Android APKsLinks for pre-built Flutter APPsLinks for pre-built Lazarus APPsLinks for pre-trained modelsSome pre-trained ASR models (Streaming)Some pre-trained ASR models (Non-Streaming)Projects using sherpa-onnxTalk to any LLM with hands-free voice interaction, voice interruption, and Live2D taking face running locally across platformsUses streaming ASR in C# with graphical user interface.It uses the JavaScript API of sherpa-onnx along with ElectronA server based on nodejs providing Restful API for speech recognition.一个模块化，全过程可离线，低占用率的对话机器人/智能音箱It uses QT. Both ASR and TTS are used.]]></content:encoded></item><item><title>langgenius/dify</title><link>https://github.com/langgenius/dify</link><author></author><category>trending</category><pubDate>Sun, 9 Feb 2025 02:28:32 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[Dify is an open-source LLM app development platform. Dify's intuitive interface combines AI workflow, RAG pipeline, agent capabilities, model management, observability features and more, letting you quickly go from prototype to production.Dify is an open-source LLM app development platform. Its intuitive interface combines agentic AI workflow, RAG pipeline, agent capabilities, model management, observability features and more, letting you quickly go from prototype to production.Before installing Dify, make sure your machine meets the following minimum system requirements:The easiest way to start the Dify server is through docker compose. Before running Dify with the following commands, make sure that Docker and Docker Compose are installed on your machine:cd dify
+cd docker
+cp .env.example .env
+docker compose up -d
+After running, you can access the Dify dashboard in your browser at http://localhost/install and start the initialization process.Please refer to our FAQ if you encounter problems setting up Dify. Reach out to the community and us if you are still having issues.: Build and test powerful AI workflows on a visual canvas, leveraging all the following features and beyond.2. Comprehensive model support: Seamless integration with hundreds of proprietary / open-source LLMs from dozens of inference providers and self-hosted solutions, covering GPT, Mistral, Llama3, and any OpenAI API-compatible models. A full list of supported model providers can be found here.: Intuitive interface for crafting prompts, comparing model performance, and adding additional features such as text-to-speech to a chat-based app.: Extensive RAG capabilities that cover everything from document ingestion to retrieval, with out-of-box support for text extraction from PDFs, PPTs, and other common document formats.: You can define agents based on LLM Function Calling or ReAct, and add pre-built or custom tools for the agent. Dify provides 50+ built-in tools for AI agents, such as Google Search, DALL·E, Stable Diffusion and WolframAlpha.: Monitor and analyze application logs and performance over time. You could continuously improve prompts, datasets, and models based on production data and annotations.: All of Dify's offerings come with corresponding APIs, so you could effortlessly integrate Dify into your own business logic. We host a Dify Cloud service for anyone to try with zero setup. It provides all the capabilities of the self-deployed version, and includes 200 free GPT-4 calls in the sandbox plan.Self-hosting Dify Community Edition Quickly get Dify running in your environment with this starter guide. Use our documentation for further references and more in-depth instructions.Star Dify on GitHub and be instantly notified of new releases.If you need to customize the configuration, please refer to the comments in our .env.example file and update the corresponding values in your  file. Additionally, you might need to make adjustments to the  file itself, such as changing image versions, port mappings, or volume mounts, based on your specific deployment environment and requirements. After making any changes, please re-run . You can find the full list of available environment variables here.If you'd like to configure a highly-available setup, there are community-contributed Helm Charts and YAML files which allow Dify to be deployed on Kubernetes.Using Terraform for DeploymentDeploy Dify to Cloud Platform with a single click using terraformUsing AWS CDK for DeploymentDeploy Dify to AWS with CDKFor those who'd like to contribute code, see our Contribution Guide. At the same time, please consider supporting Dify by sharing it on social media and at events and conferences.We are looking for contributors to help with translating Dify to languages other than Mandarin or English. If you are interested in helping, please see the i18n README for more information, and leave us a comment in the  channel of our Discord Community Server.Discord. Best for: sharing your applications and hanging out with the community.X(Twitter). Best for: sharing your applications and hanging out with the community.To protect your privacy, please avoid posting security issues on GitHub. Instead, send your questions to security@dify.ai and we will provide you with a more detailed answer.This repository is available under the Dify Open Source License, which is essentially Apache 2.0 with a few additional restrictions.]]></content:encoded></item><item><title>microsoft/terminal</title><link>https://github.com/microsoft/terminal</link><author></author><category>trending</category><pubDate>Sun, 9 Feb 2025 02:28:32 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[The new Windows Terminal and the original Windows console host, all in the same place!This repository contains the source code for:Related repositories include:Installing and running Windows Terminal[!NOTE] Windows Terminal requires Windows 10 2004 (build 19041) or laterMicrosoft Store [Recommended]This is our preferred method.For users who are unable to install Windows Terminal from the Microsoft Store, released builds can be manually downloaded from this repository's Releases page.Download the Microsoft.WindowsTerminal_<versionNumber>.msixbundle file from the  section. To install the app, you can simply double-click on the  file, and the app installer should automatically run. If that fails for any reason, you can try the following command at a PowerShell prompt:# NOTE: If you are using PowerShell 7+, please run
+# Import-Module Appx -UseWindowsPowerShell
+# before using Add-AppxPackage.
+
+Add-AppxPackage Microsoft.WindowsTerminal_<versionNumber>.msixbundle
+[!NOTE] If you install Terminal manually:You may need to install the VC++ v14 Desktop Framework Package. This should only be necessary on older builds of Windows 10 and only if you get an error about missing framework packages.Terminal will not auto-update when new builds are released so you will need to regularly install the latest Terminal release to receive all the latest fixes and improvements!Via Windows Package Manager CLI (aka winget)winget users can download and install the latest Terminal release by installing the Microsoft.WindowsTerminal package:winget install --id Microsoft.WindowsTerminal -e
+[!NOTE] Dependency support is available in WinGet version 1.6.2631 or later. To install the Terminal stable release 1.18 or later, please make sure you have the updated version of the WinGet client.Via Chocolatey (unofficial)Chocolatey users can download and install the latest Terminal release by installing the microsoft-windows-terminal package:choco install microsoft-windows-terminal
+To upgrade Windows Terminal using Chocolatey, run the following:choco upgrade microsoft-windows-terminal
+Scoop users can download and install the latest Terminal release by installing the  package:scoop bucket add extras
+scoop install windows-terminal
+To update Windows Terminal using Scoop, run the following:scoop update windows-terminal
+If you have any issues when installing/updating the package, please search for or report the same on the issues page of Scoop Extras bucket repository.Installing Windows Terminal CanaryWindows Terminal Canary is a nightly build of Windows Terminal. This build has the latest code from our  branch, giving you an opportunity to try features before they make it to Windows Terminal Preview.Windows Terminal Canary is our least stable offering, so you may discover bugs before we have had a chance to find them.Windows Terminal Canary is available as an App Installer distribution and a Portable ZIP distribution.The App Installer distribution supports automatic updates. Due to platform limitations, this installer only works on Windows 11.The Portable ZIP distribution is a portable application. It will not automatically update and will not automatically check for updates. This portable ZIP distribution works on Windows 10 (19041+) and Windows 11.The plan for the Windows Terminal is described here and will be updated as the project proceeds.Terminal & Console OverviewPlease take a few minutes to review the overview below before diving into the code:Windows Terminal is a new, modern, feature-rich, productive terminal application for command-line users. It includes many of the features most frequently requested by the Windows command-line community including support for tabs, rich text, globalization, configurability, theming & styling, and more.The Terminal will also need to meet our goals and measures to ensure it remains fast and efficient, and doesn't consume vast amounts of memory or power.The Windows Console host, , is Windows' original command-line user experience. It also hosts Windows' command-line infrastructure and the Windows Console API server, input engine, rendering engine, user preferences, etc. The console host code in this repository is the actual source from which the  in Windows itself is built.However, because Windows Console's primary goal is to maintain backward compatibility, we have been unable to add many of the features the community (and the team) have been wanting for the last several years including tabs, unicode text, and emoji.These limitations led us to create the new Windows Terminal.While overhauling Windows Console, we modernized its codebase considerably, cleanly separating logical entities into modules and classes, introduced some key extensibility points, replaced several old, home-grown collections and containers with safer, more efficient STL containers, and made the code simpler and safer by using Microsoft's Windows Implementation Libraries - WIL.This overhaul resulted in several of Console's key components being available for re-use in any terminal implementation on Windows. These components include a new DirectWrite-based text layout and rendering engine, a text buffer capable of storing both UTF-16 and UTF-8, a VT parser/emitter, and more.Creating the new Windows TerminalWhen we started planning the new Windows Terminal application, we explored and evaluated several approaches and technology stacks. We ultimately decided that our goals would be best met by continuing our investment in our C++ codebase, which would allow us to reuse several of the aforementioned modernized components in both the existing Console and the new Terminal. Further, we realized that this would allow us to build much of the Terminal's core itself as a reusable UI control that others can incorporate into their own applications.The result of this work is contained within this repo and delivered as the Windows Terminal application you can download from the Microsoft Store, or directly from this repo's releases.For more information about Windows Terminal, you may find some of these resources useful and interesting:I built and ran the new Terminal, but it looks just like the old consoleCause: You're launching the incorrect solution in Visual Studio.Solution: Make sure you're building & deploying the  project in Visual Studio.[!NOTE]  is just a locally-built , the classic Windows Console that hosts Windows' command-line infrastructure. OpenConsole is used by Windows Terminal to connect to and communicate with command-line applications (via ConPty).We are excited to work alongside you, our amazing community, to build and enhance Windows Terminal!BEFORE you start work on a feature/fix, please read & follow our Contributor's Guide to help avoid any wasted or duplicate effort.Communicating with the TeamThe easiest way to communicate with the team is via GitHub issues.Please file new issues, feature requests and suggestions, but DO search for similar open/closed preexisting issues before creating a new issue.If you would like to ask a question that you feel doesn't warrant an issue (yet), please reach out to us via Twitter:OpenConsole.sln may be built from within Visual Studio or from the command-line using a set of convenience scripts & tools in the  directory:Import-Module .\tools\OpenConsole.psm1
+Set-MsBuildDevEnvironment
+Invoke-OpenConsoleBuild
+To debug the Windows Terminal in VS, right click on  (in the Solution Explorer) and go to properties. In the Debug menu, change "Application process" and "Background task process" to "Native Only".You should then be able to build & debug the Terminal project by hitting . Make sure to select either the "x64" or the "x86" platform - the Terminal doesn't build for "Any Cpu" (because the Terminal is a C++ application, not a C# one).👉 You will  be able to launch the Terminal directly by running the WindowsTerminal.exe. For more details on why, see #926, #4043Please review these brief docs below about our coding practices.👉 If you find something missing from these docs, feel free to contribute to any of our documentation files anywhere in the repository (or write some new ones!)This is a work in progress as we learn what we'll need to provide people in order to be effective contributors to our project.]]></content:encoded></item><item><title>ruanyf/weekly</title><link>https://github.com/ruanyf/weekly</link><author></author><category>trending</category><pubDate>Sun, 9 Feb 2025 02:28:32 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[P.S. 讨论区的《谁在招人》，是一个免费的程序员招聘帖，提供大量就业信息，欢迎访问或发布工作/实习岗位。周刊已经沉淀了大量内容，可以使用下面的几种方法进行搜索。3、将这个仓库克隆到本地，然后在仓库目录使用下面的命令。$ grep -nri [搜索词] docs | cat --number
+$ grep -nri css docs | cat --number
+]]></content:encoded></item><item><title>openai/openai-cookbook</title><link>https://github.com/openai/openai-cookbook</link><author></author><category>trending</category><pubDate>Sun, 9 Feb 2025 02:28:32 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[Examples and guides for using the OpenAI APIExample code and guides for accomplishing common tasks with the OpenAI API. To run these examples, you'll need an OpenAI account and associated API key (create a free account here). Set an environment variable called  with your API key. Alternatively, in most IDEs such as Visual Studio Code, you can create an  file at the root of your repo containing OPENAI_API_KEY=<your API key>, which will be picked up by the notebooks.Most code examples are written in Python, though the concepts can be applied in any language.The OpenAI Cookbook is a community-driven resource. Whether you're submitting an idea, fixing a typo, adding a new guide, or improving an existing one, your contributions are greatly appreciated!Before contributing, read through the existing issues and pull requests to see if someone else is already working on something similar. That way you can avoid duplicating efforts.If there are examples or guides you'd like to see, feel free to suggest them on the issues page.If you'd like to contribute new content, make sure to read through our contribution guidelines. We welcome high-quality submissions of new examples and guides, as long as they meet our criteria and fit within the scope of the cookbook.]]></content:encoded></item><item><title>jingyaogong/minimind</title><link>https://github.com/jingyaogong/minimind</link><author></author><category>trending</category><pubDate>Sun, 9 Feb 2025 02:28:32 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[🚀🚀 「大模型」50分钟完全从0训练26M的小参数GPT！🌏 Train a 26M-parameter GPT from scratch in just 50 min!本开源项目旨在完全从0开始，最快仅用3小时！即可训练出仅为26.88M大小的微型语言模型。极其轻量，最小版本体积约是 GPT3 的 $\frac{1}{7000}$，力求做到最普通的个人GPU也可快速推理甚至训练。发布了大模型极简结构，数据集清洗和预处理、监督预训练(Pretrain)、有监督指令微调(SFT)、低秩自适应(LoRA) 微调，无奖励强化学习直接偏好对齐(DPO)的全阶段代码，也包含拓展共享混合专家(MoE) 的稀疏模型；拓展视觉多模态VLM: MiniMind-V。这不仅是一个开源模型的实现，也是入门大语言模型（LLM）的教程。希望此项目能为研究者提供一个抛砖引玉的入门示例，帮助大家快速上手并对LLM领域产生更多的探索与创新。为防止误读，「最快3小时」是指您需要具备＞本人硬件配置的机器，具体规格的详细信息将在下文提供。大语言模型（LLM）领域，如 GPT、LLaMA、GLM 等，虽然它们效果惊艳， 但动辄10 Bilion庞大的模型参数个人设备显存远不够训练，甚至推理困难。 几乎所有人都不会只满足于用Lora等方案fine-tuing大模型学会一些新的指令， 这约等于在教牛顿玩21世纪的智能手机，然而，这远远脱离了学习物理本身的奥妙。 此外，卖课付费订阅的营销号漏洞百出的一知半解讲解AI的教程遍地， 让理解LLM的优质内容雪上加霜，严重阻碍了学习者。因此，本项目的目标是把上手LLM的门槛无限降低， 直接从0开始训练一个极其轻量的语言模型。[!TIP] （截至2024-9-17）MiniMind系列已完成了3个型号模型的预训练，最小仅需26M（0.02B），即可具备流畅的对话能力！该分析在具有Torch 2.1.2、CUDA 12.2和Flash Attention 2的2×RTX 3090 GPU上进行。公开MiniMind模型代码（包含Dense和MoE模型）、Pretrain、SFT指令微调、LoRA微调、DPO偏好优化的全过程代码、数据集和来源。兼容、、、等流行框架。训练支持单机单卡、单机多卡(DDP、DeepSpeed)训练，使用wandb可视化训练流程。支持在任意位置停止，及在任意位置继续训练。实现Openai-Api基本的chat接口，便于集成到第三方ChatUI使用（FastGPT、Open-WebUI等）。CPU: Intel(R) Core(TM) i9-10980XE CPU @ 3.00GHz
+内存：128 GB
+显卡：NVIDIA GeForce RTX 3090(24GB) * 2
+环境：python 3.9 + Torch 2.1.2 + DDP单机多卡训练
+# step 1
+git clone https://huggingface.co/jingyaogong/minimind-v1
+# step 2
+python 2-eval.py
+「注意」需要python>=3.10，安装 pip install streamlit==1.27.2# or step 3, use streamlit
+streamlit run fast_inference.py
+git clone https://github.com/jingyaogong/minimind.git
+cd minimind
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+# 测试torch是否可用cuda
+import torch
+print(torch.cuda.is_available())
+2.2 处理数据集，例如pretrain数据提前进行token-encoder、sft数据集抽离qa到csv文件2.3 在 中调整model的参数配置这里仅需调整dim和n_layers和use_moe参数，分别是或，对应于和2.4  执行预训练，得到  作为预训练的输出权重2.5  执行指令微调，得到  作为指令微调的输出权重2.6  执行lora微调（非必须）2.7  执行DPO人类偏好强化学习对齐（非必须）🍭「Tip」预训练和全参微调pretrain和full_sft均支持多卡加速假设你的设备只有1张显卡，使用原生python启动训练即可：执行预训练或指令微调训练 python 1-pretrain.py
+# and
+python 3-full_sft.py
+torchrun --nproc_per_node N 1-pretrain.py
+# and
+torchrun --nproc_per_node N 3-full_sft.py
+deepspeed --master_port 29500 --num_gpus=N 1-pretrain.py
+# and
+deepspeed --master_port 29500 --num_gpus=N 3-full_sft.py
+torchrun --nproc_per_node N 1-pretrain.py --use_wandb
+# and
+python 1-pretrain.py --use_wandb
+通过添加参数，可以记录训练过程，训练完成后，可以在wandb网站上查看训练过程。通过修改 和参数，可以指定项目名称和运行名称。🤖 分词器：nlp中的Tokenizer类似于词典，将单词从自然语言通过“词典”映射到0,1,36这样的数字，可以理解为数字就代表了单词在“词典”中的页码。 LLM分词器的构建方式有两种：一种是自己构造词表训练一个分词器，代码可见；另一种是选择开源模型训练好的分词器。 “词典”当然可以直接选择用新华词典或是牛津词典，优点是token转化压缩率很好，但缺点是词表太长，动辄数十万个词汇短语； 也可以使用自己训练的分词器，优点是词表随意控制，缺点是压缩率不够理想，且生僻词不容易面面俱到。 当然，“词典”的选择很重要，LLM的输出本质上是SoftMax到词典N个词的多分类问题，然后通过“词典”解码到自然语言。 因为LLM体积非常小，为了避免模型头重脚轻（词嵌入embedding层参数占整个LLM比太高），所以词表长度需要选择比较小。 强大的开源模型例如01万物、千问、chatglm、mistral、Llama3等，它们的tokenizer词表长度如下：👉2024-09-17更新：为了防止过去的版本歧义&控制体积，minimind所有模型均使用minimind_tokenizer分词，废弃所有mistral_tokenizer版本。尽管minimind_tokenizer长度很小，编解码效率弱于qwen2、glm等中文友好型分词器。 但minimind模型选择了自己训练的minimind_tokenizer作为分词器，以保持整体参数轻量，避免编码层和计算层占比失衡，头重脚轻，因为minimind的词表大小只有6400。 且minimind在实际测试中没有出现过生僻词汇解码失败的情况，效果良好。 由于自定义词表压缩长度到6400，使得LLM总参数量最低只有26M。📙【Pretrain数据】： Seq-Monkey通用文本数据集 / Seq-Monkey百度网盘 是由多种公开来源的数据（如网页、百科、博客、开源代码、书籍等）汇总清洗而成。整理成统一的JSONL格式，并经过了严格的筛选和去重，确保数据的全面性、规模、可信性和高质量。总量大约在10B token，适合中文大语言模型的预训练。第2种选择：SkyPile-150B数据集 的可公开访问部分包含约2.33亿个独立网页，每个网页平均包含1000多个汉字。数据集包括大约1500亿个令牌和620GB的纯文本数据。 ，可以尝试只挑选SkyPile-150B的部分jsonl下载（并在./data_process.py中对文本tokenizer生成* .csv文件），以便快速跑通预训练流程。📘【DPO数据】：大约合并后共8万条dpo数据，人工标注的偏好数据，均来自活字模型 ，可以用于训练奖励模型，优化模型回复质量，使其更加符合人类偏好。MiniMind-Dense（和Llama3.1一样）使用了Transformer的Decoder-Only结构，跟GPT-3的区别在于：采用了GPT-3的预标准化方法，也就是在每个Transformer子层的输入上进行归一化，而不是在输出上。具体来说，使用的是RMSNorm归一化函数。用SwiGLU激活函数替代了ReLU，这样做是为了提高性能。像GPT-Neo一样，去掉了绝对位置嵌入，改用了旋转位置嵌入（RoPE），这样在处理超出训练长度的推理时效果更好。DeepSeek-V2在前馈网络（FFN）方面，采用了更细粒度的专家分割和共享的专家隔离技术，以提高Experts的效果。MiniMind的整体结构一致，只是在RoPE计算、推理函数和FFN层的代码上做了一些小调整。 其结构如下图（重绘版）：LLM首先要学习的并非直接与人交流，而是让肚子中充满知识的墨水，至于墨水理论上喝的越饱越好，产生大量的对世界的认知积累。预训练就是让Model先埋头苦学大量基本的知识，例如从维基百科、新闻、常识、书籍等。它无监督的从大量的文本数据中压缩知识到自己模型的权重，目的是：学会词语接龙。例如我们输入“秦始皇是”四个字，它在大量学习后能预测出下一句话大概率是“中国的第一位皇帝”。pretrain的学习率设置为1e-4到1e-5的动态学习率，预训练epoch数设为5。torchrun --nproc_per_node 2 1-pretrain.py
+单轮次对话有监督微调(Single dialog Fine-tuning):经过预训练，半成品LLM此时已经掌握了几乎所有的语言知识和百科常识。此时它还不会与人聊天，相反它只会无脑地进行输入词语的接龙，生成下一个词。此时需要对半成品LLM做限制在聊天模板中进行微调，例如当它遇到这样的模板“<聊天开始>秦始皇是<聊天终止> ”后不再无脑接龙，而是意识到这是一段完整的对话结束。我们称这个过程为指令微调，就如同让学富五车的「牛顿」先生适应21世纪的聊天习惯，学习屏幕左侧是对方消息，右侧是本人消息这个规律。在训练时，MiniMind的指令和回答长度被截断在512，是为了节省显存空间。就像我们学习时，会先从短的文章开始，当学会阅读200字作文后，800字长文章就不需要再单独学习。在推理时通过调整RoPE线性差值，实现长度外推到1024或2048及以上很方便。学习率设置为1e-5到1e-6的动态学习率，微调epoch数为6。# 3-full_sft.py中设置数据集为sft_data_single.csv
+torchrun --nproc_per_node 2 3-full_sft.py
+多轮对话微调(Multi dialog Fine-tuning):在2的基础上，LLM已经学会一个问题->一个回答的聊天模板。此时仅需在具备历史问答的更长聊天模板上进一步微调即可。我们仅需使用数据集的history_chat 字段，即历史对话，以及history_chat_response字段，即历史对话的回答。构建【问题->回答，问题->回答，问题->】的新聊天模板，然后使用这个数据集进行微调。学习完成的模型不仅仅只能回答当前问题，还能根据历史对话进行连贯的对话。这一步  ，因为小模型长上文对话能力很弱，强行对齐多轮问答模板会损失一定程度的单轮SFT效果。学习率设置为1e-5到1e-6的动态学习率，微调epoch数为5。# 3-full_sft.py中设置数据集为sft_data.csv
+torchrun --nproc_per_node 2 3-full_sft.py
+人类反馈强化学习(RLHF)之-直接偏好优化(Direct Preference Optimization, DPO):在前面的训练中，GPT已经具备了基本的对话能力，但是这样的能力完全基于单词接龙，缺少正例反例的激励。GPT尚且未知什么回答是好的，什么是差的。我们希望它能够更符合人的偏好，给出更让人满意的回答。这个过程就像是让GPT参加工作培训，从优秀员工的作为例子，消极员工作为反例，学习如何更好地服务客户。RLHF系列中，与PPO(Proximal Policy Optimization)这种需要奖励模型、价值模型的RL算法不同；DPO通过推导PPO奖励模型的显式解，把在线奖励模型换成离线数据，ref输出可以提前保存。DPO性能几乎不变，只用跑 actor 和 ref 2 个模型，大大节省显存开销和增加训练稳定性。活字三元组(q,chose,reject)数据集，学习率le-5，半精度fp16,共1个epoch，耗时1h。📋关于LLM的参数配置，有一篇很有意思的论文MobileLLM做了详细的研究和实验。 scaling law在小模型中有自己独特的规律。 引起Transformer参数成规模变化的参数几乎只取决于和。2020年提出Scaling Law的论文认为，训练数据量、参数量以及训练迭代次数才是决定性能的关键因素，而模型架构的影响几乎可以忽视。 然而似乎这个定律对小模型并不完全适用。 MobileLLM提出架构的深度比宽度更重要，「深而窄」的「瘦长」模型可以学习到比「宽而浅」模型更多的抽象概念。 例如当模型参数固定在125M或者350M时，30～42层的「狭长」模型明显比12层左右的「矮胖」模型有更优越的性能， 在常识推理、问答、阅读理解等8个基准测试上都有类似的趋势。 这其实是非常有趣的发现，因为以往为100M左右量级的小模型设计架构时，几乎没人尝试过叠加超过12层。 这与MiniMind在训练过程中，模型参数量在和之间进行调整实验观察到的效果是一致的。 然而「深而窄」的「窄」也是有维度极限的，当d_model<512时，词嵌入维度坍塌的劣势非常明显， 增加的layers并不能弥补词嵌入在固定q_head带来d_head不足的劣势。 当d_model>1536时，layers的增加似乎比d_model的优先级更高，更能带来具有“性价比”的参数->效果增益。 因此MiniMind设定small模型的d_model=512，n_layers=8来获取的「极小体积<->更好效果」的平衡。 设定d_model=768，n_layers=16来获取效果的更大收益，更加符合小模型scaling-law的变化曲线。single_chat/full_sft_512.pthmulti_chat/full_sft_512.pthsingle_chat/full_sft_512_moe.pthmulti_chat/full_sft_512_moe.pthsingle_chat/full_sft_768.pthmulti_chat/full_sft_768.pth[!TIP] 测试基于「单轮对话full_sft」和「DPO强化学习对齐」的minimind模型对比。模型文件百度网盘，其中  即为「DPO强化学习对齐」后的minimind模型权重。[Q]: 你叫什么名字？
+[ft_768]: 我是一款人工智能语言模型，可以回答您的问题和提供帮助。您有什么需要我帮忙的吗？
+[rl_768]: 我是一款基于人工智能技术的自然语言处理系统，主要用于处理和生成人类语言的任务。我可以帮助用户进行文本处理、语音识别、文本生成等任务，同时也可以帮助用户进行智能聊天、翻译、翻译等多种应用。如果您需要更多关于该项目的信息，请告诉我。
+[ft_512]: 我很高兴能够帮助你。你有什么其他问题需要我帮忙解答吗？
+[rl_512]: 我是一款基于自然语言处理技术的聊天机器人，能够理解和回复用户的问题和指令，并进行相应的回复和回复。我被训练为能够与人类进行交互和回答各种问题和任务。请问有什么需要吗？
+
+[Q]: 你是谁？
+[ft_768]: 我是一个人工智能语言模型，没有个人身份和身份。我只是根据输入的指令和文本信息生成响应。
+[rl_768]: 我是一个计算机程序，没有个人身份或身份。我被设计来回答各种问题和提供帮助，包括回答问题、提供建议、进行实验、提供信息等等。我被广泛应用于各种领域，例如自然语言处理、计算机视觉、人工智能等等。如果您需要更多的帮助或信息，请随时与我联系。我会尽我所能来帮助您的工作和生活。
+[ft_512]: 我是一个大型语言模型，可以回答各种各样的问题，包括科学、历史、文化和技术方面的问题。您有什么需要我回答的问题吗？
+[rl_512]: 我是一个计算机程序，没有具体的身世和人物。如果您可以告诉我您想知道的具体信息，我会尽力回答您的问题。
+
+[Q]: 中国有哪些比较好的大学？
+[ft_768]: 中国有很多著名的大学，其中包括北京大学、上海交通大学、复兴中医药学院、浙江大学等。这些大学在不同的领域都有着自己的标志性建筑和研究方向，值得一提的是，它们在中国的顶尖教育资源中享有很高的声誉。
+[rl_768]: 中国的大学有很多，具体情况还要根据你的需求来决定。如果你需要更详细的信息，建议可以去咨询一下你所在城市的大学排名和政策法规，从而选择一个合适的大学。同时，你可以在网上查阅相关信息，或者去咨询一些大学相关机构，如中国人民大学、中国人民大学等，以获得更为详细和专业的指导和建议。
+[ft_512]: 中国有很多优秀的大学，比如麻省理工学院、北京大学、上海大学等等。这些大学在中国教育事业的发展和成就都非常突出。
+[rl_512]: 中国教育局、中国大学、中国大陆大学和中国大陆大学均有优秀的教育体裁，但各地教育水平和专业要求都可能存在差异。中国教育局的学历要求、教学方法、师资力量等因素都各具特点，而大学的学历要求也各有千秋。中国大陆大学生的学历要求也各有不同，需要根据自己的实际情况进行选择。如果您对中国大陆大学生的专业要求有更具体需求，建议您可以通过互联网、国内外的各类机构和机构进行比较和交流。同时，您也可以向身边的人或朋友、老师、家长等人士寻求帮助和建议。希望以上回答对您有帮助。
+
+[Q]: 你知道光速是多少吗？
+[ft_768]: 光速是一个物理常数，表示光在真空中传播的速度，大约是每秒299792458米。光速是物理学中最基本的物理常数之一，也是相对论的重要基础之一。
+[rl_768]: 当然知道，光速是光在真空中传播的速度，通常用c来表示。它是宇宙物理学中非常重要的理论之一。在物理学中，光速被认为是宇宙中最重要的速度之一。它代表着光在真空中传播的速度，这也是许多重要公式和公式的基础。
+[ft_512]: 光速是光在真空中传播的速度，约为每秒299,792,458米。它是几乎所有的物理学概念，也是宇宙中最神秘和最重要的物理概念之一。
+[rl_512]: 光速是光在真空中传播的速度，是自然界中不可逆转的速度。光源是由光的原子、分子、固体和光的组成，其速度约为每秒平方。光的速度是每秒约1个英亞或光年，这个数字是根据相对论、量子力学和引力理论来计算的。光速是相对的概念之一，它代表着我们对自然界中任何事件的理解和解释。
+RLHF数据使用大约10万条；full_sft模型在简洁性和信息准确性方面表现更好；rl模型在回答中提供了更多的背景信息，但信息准确性有待改进。总的来说RLHF后的模型倾向于学习：说更多有礼貌但无用的废话讨好“对话”本身，而对信息准确性则有轻微损失。天下没有免费的午餐，还需要继续提升RLHF数据集的质量，也要接受模型能力无法避免的损失(程度有轻重)。DPO和在线PPO的区别在于reject和chosen都是离线准备的，和minimind模型本身的输出必然存在很大的分布差异。这类似于DPO算法使模型观看乒乓球世界冠军的打法「录像」进行强化学习，而不是像PPO一样请reward模型做「教练」纠正自己的打法强化学习。[!TIP] 以下测试于2024-09-17完成，此日期后发布的新模型，无特殊需要时将不加入测试。 测试基于单轮对话full_sft的minimind模型(无多轮微调和强化学习微调)。[Q]: 你知道长江吗？
+[A]: 是的，长江是中国最长的河流，全长超过3300千米。
+[B]: 长江是中国最长的河流，总长度约为6300公里。它发源于青藏高原的青海湖，流经青海、四川、甘肃、宁夏、内蒙古、陕西和山西。长江流域是中国最大的农业区之一，也是中国的文化和经济中心。
+[C]: 是的，长江是中国最长的河流之一，也是世界第三大河流。长江发源于青藏高原，流经11个省份，最终注入东海。长江流域是中国最大的河流流域之一，拥有着丰富的自然资源和文化遗产，如长江大桥、长江海洋博物馆、长江古城等。
+[D]: 同时也知道，中国是世界上最长的城市之一，拥有超过3400万人口。
+[E]: 是的，长江是中国最长的河流，也是世界上最长的河流之一。它发源于青藏高原，流经九个省区，最终注入东海。长江流域的气候温和，四季分明，是中国重要的农业和工业基地。长江流域的水产资源丰富，是中国的重要渔业资源之一。
+
+
+[Q]: 第一颗人造卫星是哪个国家发射的？
+[A]: 第一颗人造卫星是斯普特尼克1号。
+[B]: 第一颗人造卫星是俄罗斯的国际卫星，于1957年发射。
+[C]: 第一颗人造卫星是苏联发射的，它是由苏联于1957年10月发射的。
+[D]: 这颗名为“阿姆斯特朗”的卫星，于1961年11月20日发射，是第一个成功将人类送入太空的卫星。
+[E]: 第一颗人造卫星是苏联于1957年4月4日发射的，它是由苏联宇航员尤里·加加林（Yuri Gagarin）和苏联工程师罗尔德·谢尔盖耶夫（Roald Skohley）共同发射的。在发射过程中，加加林和谢尔盖耶夫使用了一个名为“斯普特尼克1号”的小型卫星，它的直径为4.3米，重量为1,051公斤。这枚卫星被称为“斯普特尼克1号”，是苏联太空竞赛中的一个里程碑，也是人类历史上第一次在太空中进行太空行走。
+
+
+[Q]: 你知道泰山在哪里吗？
+[A]: 泰山位于中国东部地区，是中国五岳之一。
+[B]: 泰山位于山东省泰安市泰安市。泰安市是中国五岳之一，也是世界文化遗产和中国历史文化名山之一。泰安市有许多著名的景点，如五岳之一、玉皇顶、南天门、玉皇阁等。
+[C]: 泰山位于中国山东省泰安市，是中国五岳之一。
+[D]: 作为一个人工智能助手，我无法访问互联网，因此无法提供关于你所在位置的信息。不过，你可以通过搜索或搜索相关关键词来获取有关你所在位置的信息，或者查看相关新闻或网站来获取有关你所在位置的信息。
+[E]: 泰山位于中国山东省泰安市境内，是中国五岳之一，也是中国文化和历史的重要象征之一。它是中国五岳之一，也是中国道教和佛教的发源地之一。泰山的海拔高度为1,545米，是中国五岳之一，也是中国最著名的旅游景点之一。它的历史可以追溯到公元前5世纪，是中国古代帝王祭祀的场所。泰山也是中国文化的重要组成部分，被誉为“五岳之首”，是中国文化的重要遗产之一。
+
+
+[Q]: 世界上最高的山峰是什么？
+[A]: 世界上最高的山峰是珠穆朗玛峰，位于尼泊尔和中国的边境上，海拔8848米。
+[B]: 世界上最高的山峰是珠穆朗玛峰，位于喜马拉雅山脉，海拔8,848米。
+[C]: 珠穆朗玛峰是世界上最高的山峰，海拔8848米。
+[D]: 世界上最高的山峰是珠穆朗玛峰，位于喜马拉雅山脉，海拔8,848.86米（29,031.69英尺）。
+[E]: 世界上最高的山峰是珠穆朗玛峰，也称为萨加玛塔，位于喜马拉雅山脉的尼泊尔和中国边境之间，海拔8,848.86米（29,031.69英尺）。它是世界上最著名的登山目标之一，吸引着来自世界各地的登山者前来挑战。珠穆朗玛峰的名字来自藏语，意思是“女神的额峰”，它是由两个不同的山峰组成的，其中一个是位于尼泊尔的珠穆朗玛峰，另一个则位于中国。它的高度是通过测量海拔高度来确定的，因为它是通过测量地球的平均高度来确定的。尽管珠穆朗玛峰是世界上最高的山峰，但它并不是地球上任何其他地方都能到达的。地球上的其他地方，如南美洲的安第斯山脉，也是世界上最高的山脉，但它并不是地球上最高的山峰。总之，珠穆朗玛峰是世界上最高的山峰，但它并不是地球上任何地方都能到达的。它是地球上最高的山脉，但它并不是地球上任何地方都能到达的。
+
+
+[Q]: 万有引力是谁提出的？
+[A]: 万有引力是由英国物理学家牛顿提出的。他认为，所有物体都会产生引力，这个引力是由物体的质量和距离决定的。这个理论揭示了质量和距离之间的关系，并证明了万有引力的本质。
+[B]: 万有引力是由牛顿在1687年提出的。它是宇宙中一个基本的物理现象，它描述了物体之间的相互作用。这个力被称为万有引力，它在所有物体之间都存在，这种力与物体的质量和距离有关。万有引力是自然界中最基本的力量之一，它不仅影响着物体的运动和变化，还对宇宙的结构和演化产生着重要的影响。
+[C]: 万有引力是英国物理学家艾萨克·牛顿在17世纪提出的。
+[D]: 引力是宇宙中一种力量，它是由质量或能量所组成的。根据牛顿的万有引力定律，一个物体之间的引力大小与它的质量成正比，与它的质量成反比。因此，牛顿的万有引力定律表明，一个物体之间的引力大小与它的质量成正比，与它的质量成反比。这个定律在物理学、天文学和物理学中都有广泛的应用。
+[E]: 万有引力是由英国物理学家艾萨克·牛顿于1687年提出的。他在1687年发表了一篇著名的论文，题为《自然哲学的数学原理》，其中提出了万有引力定律，指出任何两个物体之间都存在着一种引力，这种引力的大小与它们的质量成正比，与它们之间的距离的平方成反比。这个定律被称为万有引力定律，它描述了质量和距离之间的关系。它表明，两个物体之间的引力与它们的质量成正比，与它们之间的距离的平方成反比。这个定律对于解释宇宙中的许多现象和现象之间的相互作用非常重要，例如行星绕太阳运动、恒星之间的引力透镜效应等等。它也被广泛应用于天文学、物理学和工程学等领域，为我们理解宇宙的本质和演化提供了重要的理论基础。
+
+
+[Q]: 你知道大熊猫的主要食物是什么吗？
+[A]: 大熊猫的主要食物是竹子。它们通常吃竹子，每天需要吃掉大约30公斤的竹子。
+[B]: 是的，大熊猫主要以竹子为食。它们每天需要吃掉大量的竹子来维持生命，每天需要吃掉40至80公斤的竹子。此外，它们也会吃一些其他的植物，如草、果实、坚果和小型哺乳动物。
+[C]: 大熊猫主要以竹子为食，也会偶尔食用其他的植物和动物。此外，大熊猫也会吃一些野果、小动物和植物，但这些都不属于它们的主要食物来源。
+[D]: 大熊猫的主要食物是竹子。
+[E]: 大熊猫是一种以竹子为主要食物的植食动物，它们的肠道结构适合消化纤维素含量高的竹子，但也会吃一些其他植物，如草本植物和小型哺乳动物。大熊猫的肠道结构也适应了高纤维的竹子，这使得它们能够消化大量的纤维素，从而帮助它们在野外生存。大熊猫的肠道中还含有一种叫做“纤维素酶”的酶类物质，这种酶能够帮助大熊猫分解纤维素，从而帮助它们消化大量的水分和营养物质。此外，大熊猫的肠道还含有一种叫做“纤维素蛋白”的蛋白质，这种蛋白质能够帮助大熊猫维持体内的能量水平，从而帮助它们在野外生存。总的来说，大熊猫的主要食物是竹子，但它们也会吃一些其他植物，如草本植物和小型哺乳动物。
+
+
+[Q]: 海水为什么是咸的？
+[A]: 海水中含有许多盐分，这些盐分可以导致海水咸度的增加。海水中的盐分主要来自于海水中的盐分，这些盐分可以从海水中的盐分中获得。海水中的氧化物和盐分可以与海水中的盐分形成氢键，从而使海水咸度增加。
+[B]: 海水是咸的，这是因为它含有大量的盐分，其中包括氯离子和氯离子。这些离子在海洋中形成了大量的盐，这些盐分被称为盐分。海水中含有许多溶解在水中的盐，这些盐分会随着海水的升高而逐渐蒸发，最终导致海水中盐分的蒸发。这些盐分在海水中被完全消耗，然后被排除在海水中。此外，海水中还含有许多其他的盐分，但这些盐分是不同的，因为它们在水中的浮起和下降过程是不同的。海水中的盐分是从海底的岩石中提取出来的，这些盐分在海水中可以被利用。总的来说，海水是咸的，这也是为什么海水中含有许多盐分和盐分的原因。
+[C]: 海水含有许多溶解的盐类，其中最主要的是氯化钠。当水中加入盐时，盐的分子会与水分子发生反应，形成氢氧化钠，这是一种盐。
+[D]: 因为水是许多生物的生存所必需的，它能够吸收和释放二氧化碳，释放氧气，维持大气中的水蒸气，以及维持水循环。水中的盐类和化学物质会释放出氧气，使地球上的生物呼吸。此外，水还具有许多其他功能，如保持水循环、维持水循环、调节气候和环境等。水是许多生物生存所必需的，它也是许多自然现象的重要基础。
+[E]: 海水是咸的主要原因是因为其中含有大量的溶解盐类，其中最主要的是氯化钠（NaCl）。氯化钠是一种非常常见的盐类，它存在于地球上的大部分地区，包括海洋、湖泊、河流和地下水。当水从海洋中蒸发时，它会带走一部分盐分，使海水变得咸。此外，海中还含有其他溶解盐类的物质，如硫酸盐、硫酸镁、硫酸钙、硫酸镁盐、硫酸镁钾、硫酸镁钠、硫酸镁钙、硫酸镁镁钙、硫酸镁镁钙、硫酸镁镁钙、硫酸镁镁钠、硫酸镁镁钙、硫酸镁镁镁钙、硫酸镁镁镁钙、硫酸镁镁镁钙、硫酸镁镁镁钙、硫酸镁镁镁钙、硫酸镁镁镁钙、硫酸镁镁镁钙、硫酸镁镁镁钙、硫酸镁镁镁钙、硫酸镁镁镁钙、硫酸镁镁镁镁钙、硫酸镁镁镁镁钙、硫酸镁镁镁镁钙、硫酸镁镁镁镁钙、硫酸镁镁镁镁钙、硫酸镁镁镁镁钙、硫酸镁镁镁镁镁钙、硫酸镁镁镁镁镁钙、硫酸镁镁镁镁镁钙、硫酸镁镁镁镁镁钙、硫酸镁镁镁镁镁镁钙、硫酸镁镁镁镁镁镁钙、硫酸镁镁镁镁镁镁钙、硫酸镁镁镁镁镁镁镁钙、硫酸镁镁镁镁
+[!NOTE] 🙋‍♂️直接把上述模型的回答丢给GPT-4o，让它帮忙打个分：：模型A的回答通常简洁明了，但在某些问题上缺乏详细信息和准确性。例如，在长江的长度问题上，模型A的回答是错误的。：模型B的回答在某些问题上提供了额外的信息，但这些信息有时是不准确的或多余的。例如，在长江的长度问题上，模型B提供了不准确的长度和流域面积。：模型C的回答通常较为详细，且在大多数问题上提供了准确的信息。例如，在长江和泰山的问题上，模型C的回答是准确的。：模型D的回答在某些问题上显得混乱，且缺乏准确性。例如，在泰山的问题上，模型D的回答完全偏离了主题。：模型E的回答通常非常详细，但在某些问题上过于冗长，且包含了一些不必要的信息。例如，在万有引力的问题上，模型E的回答过于复杂。minimind系列（ABC）的排序符合直觉，minimind-v1(0.1B)评分最高，常识性问题的回答基本没有错误和幻觉。出乎意料的是，minimind-v1-small(0.02B)仅有26M参数，却可以接近minimind-v1(0.1B)的表现。minimind-v1(0.1B)的sft轮数仅有不到2，偷懒提前kill腾出资源给小模型，0.1B没有得到充分训练的情况下依然做到了最强，其实还是底大一级压死人。minimind-v1-moe(0.1B)表现只比minimind-v1-small(0.02B) 略好，同样是因为偷懒早停腾出资源做其它训练了，但是MoE模型这种稀疏多Experts模式需要的训练轮次需要酌情更高，让所有FFN层专家得到路由的激活充分训练，在目前epochs设置为3时训练的还不够充足。 minimind在早期实验验证阶段在Yi-Tokenizer上试验过moe的充分训练版本，可以做到比dense小模型表现肉眼可见地更好。此部分可能需要留给日后腾出服务器再训练并更新v2、v3版本。E模型的回答肉眼看起来是非常不错的，尽管存在些许幻觉瞎编的情况。但GPT-4o和Deepseek的评分都一致认为它“信息过度冗长，且有重复内容，存在幻觉”。 其实这种评价略显严格，100个字中哪怕有10个字是幻觉，就很容易把它归到低分。由于E模型预训练文本长度更长，数据集大得多，所以回答的看起来很完备。在体积近似的情况下，数据数量和质量都很重要。Scaling Law：模型参数越大，训练数据越多模型的性能越强。C-Eval评测代码见：， 小模型的测评通常为了避免回复格式的难以固定的特点， 而直接判断,,,四个字母对应token预测概率，取最大的作为回答答案，与标准答案计算正确率。 minimind模型本身没有使用较大的数据集训练，也没有针对回答选择题的指令做微调，测评结果可以当个参考。probability_and_statisticschinese_language_and_literatureideological_and_moral_cultivationenvironmental_impact_assessment_engineermiddle_school_mathematics总题数: 1346  
+总正确数: 316  
+总正确率: 23.48%
+以下来自GPT-4o对minimind表现的瞎猜：### 模型擅长的领域：
+1. 高中的化学：正确率为42.11%，是最高的一个领域。说明模型在这方面的知识可能较为扎实。
+2. 离散数学：正确率为37.50%，属于数学相关领域，表现较好。
+3. 教育科学：正确率为37.93%，说明模型在教育相关问题上的表现也不错。
+4. 基础医学：正确率为36.84%，在医学基础知识方面表现也比较好。
+5. 操作系统：正确率为36.84%，说明模型在计算机操作系统方面的表现较为可靠。
+
+### 模型不擅长的领域：
+1. 法律相关：如法律专业（8.70%）和税务会计（20.41%），表现相对较差。
+2. 中学和大学的物理：如中学物理（26.32%）和大学物理（21.05%），模型在物理相关的领域表现不佳。
+3. 高中的政治、地理：如高中政治（15.79%）和高中地理（21.05%），模型在这些领域的正确率较低。
+4. 计算机网络与体系结构：如计算机网络（21.05%）和计算机体系结构（9.52%），在这些计算机专业课程上的表现也不够好。
+5. 环境影响评估工程师：正确率仅为12.90%，在环境科学领域的表现也不理想。
+
+### 总结：
+- 擅长领域：化学、数学（特别是离散数学）、教育科学、基础医学、计算机操作系统。
+- 不擅长领域：法律、物理、政治、地理、计算机网络与体系结构、环境科学。
+
+这表明模型在涉及逻辑推理、基础科学和一些工程技术领域的问题上表现较好，但在人文社科、环境科学以及某些特定专业领域（如法律和税务）上表现较弱。如果要提高模型的性能，可能需要加强它在人文社科、物理、法律、以及环境科学等方面的训练。
+minimind (root dir)
+├─minimind
+|  ├── config.json
+|  ├── generation_config.json
+|  ├── LMConfig.py
+|  ├── model.py
+|  ├── pytorch_model.bin
+|  ├── special_tokens_map.json
+|  ├── tokenizer_config.json
+|  ├── tokenizer.json
+python chat_openai_api.py
+curl http://ip:port/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{ 
+    "model": "model-identifier",
+    "messages": [ 
+      { "role": "user", "content": "世界上最高的山是什么？" }
+    ], 
+    "temperature": 0.7, 
+    "max_tokens": -1,
+    "stream": true
+}'
+在fastgpt中接入使用minimind api[!TIP] 如果您觉得 对您有所帮助，可以在 GitHub 上加一个⭐ 篇幅不短水平有限难免纰漏，欢迎在Issues交流指正或提交PR改进项目[!NOTE] 众人拾柴火焰高 如果您已经尝试训练了新的MiniMind型号，欢迎在Discussions或Issues中分享您的模型权重 可以是在特定下游任务或垂直领域（例如情感识别、医疗、心理、金融、法律问答等）的MiniMind新模型版本 也可以是拓展训练后（例如探索更长文本序列、更大体积（0.1B+）或更大的数据集）的MiniMind新模型版本 任何分享都视作独一无二的，所有尝试都具有价值，并受到鼓励 这些贡献都会被及时发现并整理在鸣谢列表中，再次感谢所有支持！]]></content:encoded></item><item><title>unslothai/unsloth</title><link>https://github.com/unslothai/unsloth</link><author></author><category>trending</category><pubDate>Sun, 9 Feb 2025 02:28:32 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[Finetune Llama 3.3, DeepSeek-R1 & Reasoning LLMs 2x faster with 70% less memoryAll notebooks are ! Add your dataset, click "Run All", and you'll get a 2x faster finetuned model which can be exported to GGUF, Ollama, vLLM or uploaded to Hugging Face.🥇 Performance BenchmarkingWe tested using the Alpaca Dataset, a batch size of 2, gradient accumulation steps of 4, rank = 32, and applied QLoRA on all linear layers (q, k, v, o, gate, up, down):💾 Installation InstructionsFor stable releases, use . We recommend pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git" for most installations though.⚠️Only use Conda if you have it. If not, use Pip. Select either  for CUDA 11.8 or CUDA 12.1. We support .conda create --name unsloth_env \
+    python=3.11 \
+    pytorch-cuda=12.1 \
+    pytorch cudatoolkit xformers -c pytorch -c nvidia -c xformers \
+    -y
+conda activate unsloth_env
+
+pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
+pip install --no-deps trl peft accelerate bitsandbytes
+⚠️Do **NOT** use this if you have Conda. Pip is a bit more complex since there are dependency issues. The pip command is different for  and CUDA versions.For other torch versions, we support , , , ,  and for CUDA versions, we support  and  and . For Ampere devices (A100, H100, RTX3090) and above, use  or  or .For example, if you have  and , use:pip install --upgrade pip
+pip install "unsloth[cu121-torch240] @ git+https://github.com/unslothai/unsloth.git"
+Another example, if you have  and , use:pip install --upgrade pip
+pip install "unsloth[cu124-torch250] @ git+https://github.com/unslothai/unsloth.git"
+pip install "unsloth[cu121-ampere-torch240] @ git+https://github.com/unslothai/unsloth.git"
+pip install "unsloth[cu118-ampere-torch240] @ git+https://github.com/unslothai/unsloth.git"
+pip install "unsloth[cu121-torch240] @ git+https://github.com/unslothai/unsloth.git"
+pip install "unsloth[cu118-torch240] @ git+https://github.com/unslothai/unsloth.git"
+
+pip install "unsloth[cu121-torch230] @ git+https://github.com/unslothai/unsloth.git"
+pip install "unsloth[cu121-ampere-torch230] @ git+https://github.com/unslothai/unsloth.git"
+
+pip install "unsloth[cu121-torch250] @ git+https://github.com/unslothai/unsloth.git"
+pip install "unsloth[cu124-ampere-torch250] @ git+https://github.com/unslothai/unsloth.git"
+Or, run the below in a terminal to get the  pip installation command:wget -qO- https://raw.githubusercontent.com/unslothai/unsloth/main/unsloth/_auto_install.py | python -
+Or, run the below manually in a Python REPL:try: import torch
+except: raise ImportError('Install torch via `pip install torch`')
+from packaging.version import Version as V
+v = V(torch.__version__)
+cuda = str(torch.version.cuda)
+is_ampere = torch.cuda.get_device_capability()[0] >= 8
+if cuda != "12.1" and cuda != "11.8" and cuda != "12.4": raise RuntimeError(f"CUDA = {cuda} not supported!")
+if   v <= V('2.1.0'): raise RuntimeError(f"Torch = {v} too old!")
+elif v <= V('2.1.1'): x = 'cu{}{}-torch211'
+elif v <= V('2.1.2'): x = 'cu{}{}-torch212'
+elif v  < V('2.3.0'): x = 'cu{}{}-torch220'
+elif v  < V('2.4.0'): x = 'cu{}{}-torch230'
+elif v  < V('2.5.0'): x = 'cu{}{}-torch240'
+elif v  < V('2.6.0'): x = 'cu{}{}-torch250'
+else: raise RuntimeError(f"Torch = {v} too new!")
+x = x.format(cuda.replace(".", ""), "-ampere" if is_ampere else "")
+print(f'pip install --upgrade pip && pip install "unsloth[{x}] @ git+https://github.com/unslothai/unsloth.git"')
+To run Unsloth directly on Windows:trainer = SFTTrainer(
+    dataset_num_proc=1,
+    ...
+)
+For advanced installation instructions or if you see weird errors during installations:Install  and . Go to https://pytorch.org to install it. For example pip install torch torchvision torchaudio tritonConfirm if CUDA is installated correctly. Try . If that fails, you need to install  or CUDA drivers.Install  manually. You can try installing  and seeing if  succeeds. Check if  succeeded with  Go to https://github.com/facebookresearch/xformers. Another option is to install  for Ampere GPUs.Finally, install  and check it with Go to our official Documentation for saving to GGUF, checkpointing, evaluation and more!We support Huggingface's TRL, Trainer, Seq2SeqTrainer or even Pytorch code!If you want to download models from the ModelScope community, please use an environment variable: , and install the modelscope library by: pip install modelscope -U.unsloth_cli.py also supports  to download models and datasets. please remember to use the model and dataset id in the ModelScope community.from unsloth import FastLanguageModel 
+from unsloth import is_bfloat16_supported
+import torch
+from trl import SFTTrainer
+from transformers import TrainingArguments
+from datasets import load_dataset
+max_seq_length = 2048 # Supports RoPE Scaling interally, so choose any!
+# Get LAION dataset
+url = "https://huggingface.co/datasets/laion/OIG/resolve/main/unified_chip2.jsonl"
+dataset = load_dataset("json", data_files = {"train" : url}, split = "train")
+
+# 4bit pre quantized models we support for 4x faster downloading + no OOMs.
+fourbit_models = [
+    "unsloth/mistral-7b-v0.3-bnb-4bit",      # New Mistral v3 2x faster!
+    "unsloth/mistral-7b-instruct-v0.3-bnb-4bit",
+    "unsloth/llama-3-8b-bnb-4bit",           # Llama-3 15 trillion tokens model 2x faster!
+    "unsloth/llama-3-8b-Instruct-bnb-4bit",
+    "unsloth/llama-3-70b-bnb-4bit",
+    "unsloth/Phi-3-mini-4k-instruct",        # Phi-3 2x faster!
+    "unsloth/Phi-3-medium-4k-instruct",
+    "unsloth/mistral-7b-bnb-4bit",
+    "unsloth/gemma-7b-bnb-4bit",             # Gemma 2.2x faster!
+] # More models at https://huggingface.co/unsloth
+
+model, tokenizer = FastLanguageModel.from_pretrained(
+    model_name = "unsloth/llama-3-8b-bnb-4bit",
+    max_seq_length = max_seq_length,
+    dtype = None,
+    load_in_4bit = True,
+)
+
+# Do model patching and add fast LoRA weights
+model = FastLanguageModel.get_peft_model(
+    model,
+    r = 16,
+    target_modules = ["q_proj", "k_proj", "v_proj", "o_proj",
+                      "gate_proj", "up_proj", "down_proj",],
+    lora_alpha = 16,
+    lora_dropout = 0, # Supports any, but = 0 is optimized
+    bias = "none",    # Supports any, but = "none" is optimized
+    # [NEW] "unsloth" uses 30% less VRAM, fits 2x larger batch sizes!
+    use_gradient_checkpointing = "unsloth", # True or "unsloth" for very long context
+    random_state = 3407,
+    max_seq_length = max_seq_length,
+    use_rslora = False,  # We support rank stabilized LoRA
+    loftq_config = None, # And LoftQ
+)
+
+trainer = SFTTrainer(
+    model = model,
+    train_dataset = dataset,
+    dataset_text_field = "text",
+    max_seq_length = max_seq_length,
+    tokenizer = tokenizer,
+    args = TrainingArguments(
+        per_device_train_batch_size = 2,
+        gradient_accumulation_steps = 4,
+        warmup_steps = 10,
+        max_steps = 60,
+        fp16 = not is_bfloat16_supported(),
+        bf16 = is_bfloat16_supported(),
+        logging_steps = 1,
+        output_dir = "outputs",
+        optim = "adamw_8bit",
+        seed = 3407,
+    ),
+)
+trainer.train()
+
+# Go to https://github.com/unslothai/unsloth/wiki for advanced tips like
+# (1) Saving to GGUF / merging to 16bit for vLLM
+# (2) Continued training from a saved LoRA adapter
+# (3) Adding an evaluation loop / OOMs
+# (4) Customized chat templates
+DPO (Direct Preference Optimization), PPO, Reward Modelling all seem to work as per 3rd party independent testing from Llama-Factory. We have a preliminary Google Colab notebook for reproducing Zephyr on Tesla T4 here: notebook.import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "0" # Optional set GPU device ID
+
+from unsloth import FastLanguageModel, PatchDPOTrainer
+from unsloth import is_bfloat16_supported
+PatchDPOTrainer()
+import torch
+from transformers import TrainingArguments
+from trl import DPOTrainer
+
+model, tokenizer = FastLanguageModel.from_pretrained(
+    model_name = "unsloth/zephyr-sft-bnb-4bit",
+    max_seq_length = max_seq_length,
+    dtype = None,
+    load_in_4bit = True,
+)
+
+# Do model patching and add fast LoRA weights
+model = FastLanguageModel.get_peft_model(
+    model,
+    r = 64,
+    target_modules = ["q_proj", "k_proj", "v_proj", "o_proj",
+                      "gate_proj", "up_proj", "down_proj",],
+    lora_alpha = 64,
+    lora_dropout = 0, # Supports any, but = 0 is optimized
+    bias = "none",    # Supports any, but = "none" is optimized
+    # [NEW] "unsloth" uses 30% less VRAM, fits 2x larger batch sizes!
+    use_gradient_checkpointing = "unsloth", # True or "unsloth" for very long context
+    random_state = 3407,
+    max_seq_length = max_seq_length,
+)
+
+dpo_trainer = DPOTrainer(
+    model = model,
+    ref_model = None,
+    args = TrainingArguments(
+        per_device_train_batch_size = 4,
+        gradient_accumulation_steps = 8,
+        warmup_ratio = 0.1,
+        num_train_epochs = 3,
+        fp16 = not is_bfloat16_supported(),
+        bf16 = is_bfloat16_supported(),
+        logging_steps = 1,
+        optim = "adamw_8bit",
+        seed = 42,
+        output_dir = "outputs",
+    ),
+    beta = 0.1,
+    train_dataset = YOUR_DATASET_HERE,
+    # eval_dataset = YOUR_DATASET_HERE,
+    tokenizer = tokenizer,
+    max_length = 1024,
+    max_prompt_length = 512,
+)
+dpo_trainer.train()
+🥇 Detailed Benchmarking TablesContext length benchmarksLlama 3.1 (8B) max. context lengthWe tested Llama 3.1 (8B) Instruct and did 4bit QLoRA on all linear layers (Q, K, V, O, gate, up and down) with rank = 32 with a batch size of 1. We padded all sequences to a certain maximum sequence length to mimic long context finetuning workloads.Llama 3.3 (70B) max. context lengthWe tested Llama 3.3 (70B) Instruct on a 80GB A100 and did 4bit QLoRA on all linear layers (Q, K, V, O, gate, up and down) with rank = 32 with a batch size of 1. We padded all sequences to a certain maximum sequence length to mimic long context finetuning workloads.You can cite the Unsloth repo as follows:@software{unsloth,
+  author = {Daniel Han, Michael Han and Unsloth team},
+  title = {Unsloth},
+  url = {http://github.com/unslothai/unsloth},
+  year = {2023}
+}
+]]></content:encoded></item><item><title>zhayujie/chatgpt-on-wechat</title><link>https://github.com/zhayujie/chatgpt-on-wechat</link><author></author><category>trending</category><pubDate>Sun, 9 Feb 2025 02:28:32 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[基于大模型搭建的聊天机器人，同时支持 微信公众号、企业微信应用、飞书、钉钉 等接入，可选择GPT3.5/GPT-4o/GPT-o1/ DeepSeek/Claude/文心一言/讯飞星火/通义千问/ Gemini/GLM-4/Claude/Kimi/LinkAI，能处理文本、语音和图片，访问操作系统和互联网，支持基于自有知识库进行定制企业智能客服。chatgpt-on-wechat（简称CoW）项目是基于大模型的智能对话机器人，支持微信公众号、企业微信应用、飞书、钉钉接入，可选择GPT3.5/GPT4.0/Claude/Gemini/LinkAI/ChatGLM/KIMI/文心一言/讯飞星火/通义千问/LinkAI，能处理文本、语音和图片，通过插件访问操作系统和互联网等外部资源，支持基于自有知识库定制企业AI应用。✅  有多种部署方式可选择且功能完备，目前已支持微信公众号、企业微信应用、飞书、钉钉等部署方式✅  私聊及群聊的消息智能回复，支持多轮会话上下文记忆，支持 GPT-3.5, GPT-4o-mini, GPT-4o, GPT-4, Claude-3.5, Gemini, 文心一言, 讯飞星火, 通义千问，ChatGLM-4，Kimi(月之暗面), MiniMax, GiteeAI✅  可识别语音消息，通过文字或语音回复，支持 azure, baidu, google, openai(whisper/tts) 等多种语音模型✅  支持图片生成、图片识别、图生图（如照片修复），可选择 Dall-E-3, stable diffusion, replicate, midjourney, CogView-3, vision模型✅  支持个性化插件扩展，已实现多角色切换、文字冒险、敏感词过滤、聊天记录总结、文档总结和对话、联网搜索等插件✅  通过上传知识库文件自定义专属机器人，可作为数字分身、智能客服、私域助手使用，基于 LinkAI 实现本项目遵循 MIT开源协议，仅用于技术研究和学习，使用本项目时需遵守所在地法律法规、相关政策以及企业章程，禁止用于任何违法或侵犯他人权益的行为境内使用该项目时，请使用国内厂商的大模型服务，并进行必要的内容安全审核及过滤本项目主要接入协同办公平台，推荐使用公众号、企微自建应用、钉钉、飞书等接入通道，其他通道为历史产物已不维护任何个人、团队和企业，无论以何种方式使用该项目、对何对象提供服务，所产生的一切后果，本项目均不承担任何责任LinkAI 是面向企业和开发者的一站式AI应用平台，聚合多模态大模型、知识库、Agent 插件、工作流等能力，支持一键接入主流平台并进行管理，支持SaaS、私有化部署多种模式。LinkAI 目前 已在私域运营、智能客服、企业效率助手等场景积累了丰富的 AI 解决方案， 在电商、文教、健康、新消费、科技制造等各行业沉淀了大模型落地应用的最佳实践，致力于帮助更多企业和开发者拥抱 AI 生产力。1.7.3版本 程序稳定性提升、数据库功能、Claude模型优化、linkai插件优化、离线通知1.7.0版本 新增 讯飞4.0 模型、知识库引用来源展示、相关插件优化1.6.9版本 新增 gpt-4o-mini 模型、阿里语音识别、企微应用渠道路由优化1.6.8版本 和 1.6.7版本，Claude3.5, Gemini 1.5 Pro, MiniMax模型、工作流图片输入、模型列表完善1.6.0版本，新增 Kimi 接入、gpt-4-turbo版本升级、文件总结和语音识别问题修复1.5.2版本，新增飞书通道、图像识别对话、黑名单配置1.5.0版本，新增 , ,  模型接入，完善图像理解&生成、语音识别&生成的多模态能力 支持通过意图识别使用LinkAI联网搜索、数学计算、网页访问等插件，参考插件文档 插件增加 文件/文章链接 一键总结和对话的功能，使用参考：插件说明 接入百度文心一言模型，通过 插件 支持 Midjourney 绘图 接入 LinkAI 平台，可在线创建领域知识库，打造专属客服机器人。使用参考 接入文档。bash <(curl -sS https://cdn.link-ai.tech/code/cow/install.sh)
+项目默认使用OpenAI接口，需前往 OpenAI注册页面 创建账号，创建完账号则前往 API管理页面 创建一个 API Key 并保存下来，后面需要在项目中配置这个key。接口需要海外网络访问及绑定信用卡支付。默认对话模型是 openai 的 gpt-3.5-turbo，计费方式是约每 1000tokens (约750个英文单词 或 500汉字，包含请求和回复) 消耗 $0.002，图片生成是Dell E模型，每张消耗 $0.016。项目同时也支持使用 LinkAI 接口，无需代理，可使用 Kimi、文心、讯飞、GPT-3.5、GPT-4o 等模型，支持 定制化知识库、联网搜索、MJ绘图、文档总结、工作流等能力。修改配置即可一键使用，参考 接入文档。支持 Linux、MacOS、Windows 系统（可在Linux服务器上长期运行)，同时需安装 。建议Python版本在 3.7.1~3.9.X 之间，推荐3.8版本，3.10及以上版本在 MacOS 可用，其他系统上不确定能否正常运行。注意：Docker 或 Railway 部署无需安装python环境和下载源码，可直接快进到下一节。git clone https://github.com/zhayujie/chatgpt-on-wechat
+cd chatgpt-on-wechat/
+能够使用创建机器人，并具有文字交流功能所需的最小依赖集合。pip3 install -r requirements.txt
+pip3 install -r requirements-optional.txt
+配置文件的模板在根目录的中，需复制该模板创建最终生效的  文件：  cp config-template.json config.json
+然后在中填入配置，以下是对默认配置的说明，可根据需要进行自定义修改（注意实际使用时请去掉注释，保证JSON格式的完整）：# config.json文件内容示例
+{
+  "model": "gpt-3.5-turbo",                                   # 模型名称, 支持 gpt-3.5-turbo, gpt-4, gpt-4-turbo, wenxin, xunfei, glm-4, claude-3-haiku, moonshot
+  "open_ai_api_key": "YOUR API KEY",                          # 如果使用openAI模型则填入上面创建的 OpenAI API KEY
+  "open_ai_api_base": "https://api.openai.com/v1",            # OpenAI接口代理地址
+  "proxy": "",                                                # 代理客户端的ip和端口，国内环境开启代理的需要填写该项，如 "127.0.0.1:7890"
+  "single_chat_prefix": ["bot", "@bot"],                      # 私聊时文本需要包含该前缀才能触发机器人回复
+  "single_chat_reply_prefix": "[bot] ",                       # 私聊时自动回复的前缀，用于区分真人
+  "group_chat_prefix": ["@bot"],                              # 群聊时包含该前缀则会触发机器人回复
+  "group_name_white_list": ["ChatGPT测试群", "ChatGPT测试群2"], # 开启自动回复的群名称列表
+  "group_chat_in_one_session": ["ChatGPT测试群"],              # 支持会话上下文共享的群名称  
+  "image_create_prefix": ["画", "看", "找"],                   # 开启图片回复的前缀
+  "conversation_max_tokens": 1000,                            # 支持上下文记忆的最多字符数
+  "speech_recognition": false,                                # 是否开启语音识别
+  "group_speech_recognition": false,                          # 是否开启群组语音识别
+  "voice_reply_voice": false,                                 # 是否使用语音回复语音
+  "character_desc": "你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。",  # 人格描述
+  # 订阅消息，公众号和企业微信channel中请填写，当被订阅时会自动回复，可使用特殊占位符。目前支持的占位符有{trigger_prefix}，在程序中它会自动替换成bot的触发词。
+  "subscribe_msg": "感谢您的关注！\n这里是ChatGPT，可以自由对话。\n支持语音对话。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持角色扮演和文字冒险等丰富插件。\n输入{trigger_prefix}#help 查看详细指令。",
+  "use_linkai": false,                                        # 是否使用LinkAI接口，默认关闭，开启后可国内访问，使用知识库和MJ
+  "linkai_api_key": "",                                       # LinkAI Api Key
+  "linkai_app_code": ""                                       # LinkAI 应用或工作流code
+}
+个人聊天中，需要以 "bot"或"@bot" 为开头的内容触发机器人，对应配置项  (如果不需要以前缀触发可以填写 "single_chat_prefix": [""])机器人回复的内容会以 "[bot] " 作为前缀， 以区分真人，对应的配置项为  (如果不需要前缀可以填写 "single_chat_reply_prefix": "")群组聊天中，群名称需配置在  中才能开启群聊自动回复。如果想对所有群聊生效，可以直接填写 "group_name_white_list": ["ALL_GROUP"]默认只要被人 @ 就会触发机器人自动回复；另外群聊天中只要检测到以 "@bot" 开头的内容，同样会自动回复（方便自己触发），这对应配置项 可选配置: group_name_keyword_white_list配置项支持模糊匹配群名称，配置项则支持模糊匹配群消息内容，用法与上述两个配置项相同。（Contributed by evolay)group_chat_in_one_session：使群聊共享一个会话上下文，配置  则作用于所有群聊添加 "speech_recognition": true 将开启语音识别，默认使用openai的whisper模型识别为文字，同时以文字回复，该参数仅支持私聊 (注意由于语音消息无法匹配前缀，一旦开启将对所有语音自动回复，支持语音触发画图)；添加 "group_speech_recognition": true 将开启群组语音识别，默认使用openai的whisper模型识别为文字，同时以文字回复，参数仅支持群聊 (会匹配group_chat_prefix和group_chat_keyword, 支持语音触发画图)；添加 "voice_reply_voice": true 将开启语音回复语音（同时作用于私聊和群聊）: 模型名称，目前支持 , , , ,  ,  , , , , 等，全部模型名称参考common/const.py文件,,: Chat API接口参数，详情参考OpenAI官方文档。：由于目前  接口国内无法访问，需配置代理客户端的地址，详情参考 #351对于图像生成，在满足个人或群组触发条件外，还需要额外的关键词前缀来触发，对应配置 关于OpenAI对话及图片接口的参数配置（内容自由度、回复字数限制、图片大小等），可以参考 对话接口 和 图像接口 文档，在中检查哪些参数在本项目中是可配置的。：表示能够记忆的上下文最大字数（一问一答为一组对话，如果累积的对话字数超出限制，就会优先移除最早的一组对话），：每分钟最高问答速率、画图速率，超速后排队按序处理。: 对话内指令，主动清空前文记忆，字符串数组可自定义指令别名。: 程序退出后，暂存等于状态，默认关闭。 配置中保存着你对机器人说的一段话，他会记住这段话并作为他的设定，你可以为他定制任何人格 (关于会话上下文的更多内容参考该 issue)：订阅消息，公众号和企业微信channel中请填写，当被订阅时会自动回复， 可使用特殊占位符。目前支持的占位符有{trigger_prefix}，在程序中它会自动替换成bot的触发词。: 是否使用LinkAI接口，开启后可国内访问，使用知识库和  绘画, 参考 文档: LinkAI Api Key，可在 控制台 创建: LinkAI 应用或工作流的code，选填python3 app.py                                    # windows环境下该命令通常为 python app.py
+终端输出二维码后，进行扫码登录，当输出 "Start auto replying" 时表示自动回复程序已经成功运行了（注意：用于登录的账号需要在支付处已完成实名认证）。扫码登录后你的账号就成为机器人了，可以在手机端通过配置的关键词触发自动回复 (任意好友发送消息给你，或是自己发消息给好友)，参考#142。nohup python3 app.py & tail -f nohup.out          # 在后台运行程序并通过日志输出二维码
+扫码登录后程序即可运行于服务器后台，此时可通过  关闭日志，不会影响后台程序的运行。使用 ps -ef | grep app.py | grep -v grep 命令可查看运行于后台的进程，如果想要重新启动程序可以先  掉对应的进程。日志关闭后如果想要再次打开只需输入 。此外， 目录下有一键运行、关闭程序的脚本供使用。 将项目复制多份，分别启动程序，用不同账号扫码登录即可实现同时运行。 用户向机器人发送  即可清空该用户的上下文记忆。使用docker部署无需下载源码和安装依赖，只需要获取 docker-compose.yml 配置文件并启动容器即可。前提是需要安装好  及 ，安装成功的表现是执行  和  (或 docker compose version) 可以查看到版本号，可前往 docker官网 进行下载。(1) 下载 docker-compose.yml 文件wget https://open-1317903499.cos.ap-guangzhou.myqcloud.com/docker-compose.yml
+下载完成后打开  修改所需配置，如  和  等。在  所在目录下执行以下命令启动容器：sudo docker compose up -d
+运行  能查看到 NAMES 为 chatgpt-on-wechat 的容器即表示运行成功。如果  是 1.X 版本 则需要执行 sudo docker-compose up -d 来启动容器该命令会自动去 docker hub 拉取 latest 版本的镜像，latest 镜像会在每次项目 release 新的版本时生成最后运行以下命令可查看容器运行日志，扫描日志中的二维码即可完成登录：sudo docker logs -f chatgpt-on-wechat
+如果需要在docker容器中修改插件配置，可通过挂载的方式完成，将 插件配置文件 重命名为 ，放置于  相同目录下，并在  中的  部分下添加  映射:volumes:
+  - ./config.json:/app/plugins/config.json
+Railway 每月提供5刀和最多500小时的免费额度。 (07.11更新: 目前大部分账号已无法免费部署)设置环境变量来重载程序运行的参数，例如, 。或直接在线咨询 项目小助手 (语料持续完善中，回复仅供参考)欢迎提交PR、Issues，以及Star支持一下。程序运行遇到问题可以查看 常见问题列表 ，其次前往 Issues 中搜索。个人开发者可加入开源交流群参与更多讨论，企业用户可联系产品顾问咨询。]]></content:encoded></item><item><title>songquanpeng/one-api</title><link>https://github.com/songquanpeng/one-api</link><author></author><category>trending</category><pubDate>Sat, 8 Feb 2025 08:41:39 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[LLM API 管理 & 分发系统，支持 OpenAI、Azure、Anthropic Claude、Google Gemini、DeepSeek、字节豆包、ChatGLM、文心一言、讯飞星火、通义千问、360 智脑、腾讯混元等主流模型，统一 API 适配，可用于 key 管理与二次分发。单可执行文件，提供 Docker 镜像，一键部署，开箱即用。LLM API management & key redistribution system, unifying multiple providers under a single API. Single binary, Docker-ready, with an English UI.✨ 通过标准的 OpenAI API 格式访问所有的大模型，开箱即用 ✨[!NOTE] 本项目为开源项目，使用者必须在遵循 OpenAI 的使用条款以及的情况下使用，不得用于非法用途。[!WARNING] 使用 root 用户初次登录系统后，务必修改默认密码 ！# 使用 SQLite 的部署命令：
+docker run --name one-api -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v /home/ubuntu/data/one-api:/data justsong/one-api
+# 使用 MySQL 的部署命令，在上面的基础上添加 `-e SQL_DSN="root:123456@tcp(localhost:3306)/oneapi"`，请自行修改数据库连接参数，不清楚如何修改请参见下面环境变量一节。
+# 例如：
+docker run --name one-api -d --restart always -p 3000:3000 -e SQL_DSN="root:123456@tcp(localhost:3306)/oneapi" -e TZ=Asia/Shanghai -v /home/ubuntu/data/one-api:/data justsong/one-api
+其中， 中的第一个  是宿主机的端口，可以根据需要进行修改。数据和日志将会保存在宿主机的 /home/ubuntu/data/one-api 目录，请确保该目录存在且具有写入权限，或者更改为合适的目录。如果上面的镜像无法拉取，可以尝试使用 GitHub 的 Docker 镜像，将上面的  替换为 ghcr.io/songquanpeng/one-api 即可。如果你的并发量较大，设置 ，详见下面环境变量一节。更新命令：docker run --rm -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower -cRserver{
+   server_name openai.justsong.cn;  # 请根据实际情况修改你的域名
+
+   location / {
+          client_max_body_size  64m;
+          proxy_http_version 1.1;
+          proxy_pass http://localhost:3000;  # 请根据实际情况修改你的端口
+          proxy_set_header Host $host;
+          proxy_set_header X-Forwarded-For $remote_addr;
+          proxy_cache_bypass $http_upgrade;
+          proxy_set_header Accept-Encoding gzip;
+          proxy_read_timeout 300s;  # GPT-4 需要较长的超时时间，请自行调整
+   }
+}
+之后使用 Let's Encrypt 的 certbot 配置 HTTPS：# Ubuntu 安装 certbot：
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+# 生成证书 & 修改 Nginx 配置
+sudo certbot --nginx
+# 根据指示进行操作
+# 重启 Nginx
+sudo service nginx restart
+安装宝塔面板9.2.0及以上版本，前往 宝塔面板 官网，选择正式版的脚本下载安装；安装后登录宝塔面板，在左侧菜单栏中点击 ，首次进入会提示安装  服务，点击立即安装，按提示完成安装；安装完成后在应用商店中搜索 ，点击安装，配置域名等基本信息即可完成安装；仅启动方式不同，参数设置不变，请参考基于 Docker 部署部分# 目前支持 MySQL 启动，数据存储在 ./data/mysql 文件夹内
+docker-compose up -d
+
+# 查看部署状态
+docker-compose ps
+从 GitHub Releases 下载可执行文件或者从源码编译： git clone https://github.com/songquanpeng/one-api.git
+
+# 构建前端
+cd one-api/web/default
+npm install
+npm run build
+
+# 构建后端
+cd ../..
+go mod download
+go build -ldflags "-s -w" -o one-api
+运行： chmod u+x one-api
+./one-api --port 3000 --log-dir ./logs
+所有服务器  设置一样的值。必须设置 ，使用 MySQL 数据库而非 SQLite，所有服务器连接同一个数据库。所有从服务器必须设置  为 ，不设置则默认为主服务器。设置  后服务器将定期从数据库同步配置，在使用远程数据库的情况下，推荐设置该项并启用 Redis，无论主从。从服务器可以选择设置 ，以重定向页面请求到主服务器。从服务器上装好 Redis，设置好 ，这样可以做到在缓存未过期的情况下数据库零访问，可以减少延迟（Redis 集群或者哨兵模式的支持请参考环境变量说明）。如果主服务器访问数据库延迟也比较高，则也需要启用 Redis，并设置 ，以定期从数据库同步配置。docker run --name chat-next-web -d -p 3001:3000 yidadaa/chatgpt-next-web
+docker run --name chatgpt-web -d -p 3002:3002 -e OPENAI_API_BASE_URL=https://openai.justsong.cn -e OPENAI_API_KEY=sk-xxx chenzhaoyu94/chatgpt-web
+注意修改端口号、 和 。根据文档完成部署后，在 设置requester.openai-chat-completions.base-url为 One API 实例地址，并填写 API Key 到  组中，设置  为要使用的模型名称。运行期间可以通过命令查看、切换可用模型。等到系统启动后，使用  用户登录系统并做进一步的配置。：如果你不知道某个配置项的含义，可以临时删掉值以看到进一步的提示文字。在页面中添加你的 API Key，之后在页面中新增访问令牌。你需要在各种用到 OpenAI API 的地方设置 API Base 为你的 One API 的部署地址，例如：https://openai.justsong.cn，API Key 则为你在 One API 中生成的令牌。注意，具体的 API Base 的格式取决于你所使用的客户端。OPENAI_API_KEY="sk-xxxxxx"
+OPENAI_API_BASE="https://<HOST>:<PORT>/v1"
+graph LR
+    A(用户)
+    A --->|使用 One API 分发的 key 进行请求| B(One API)
+    B -->|中继请求| C(OpenAI)
+    B -->|中继请求| D(Azure)
+    B -->|中继请求| E(其他 OpenAI API 格式下游渠道)
+    B -->|中继并修改请求体和返回体| F(非 OpenAI API 格式下游渠道)
+可以通过在令牌后面添加渠道 ID 的方式指定使用哪一个渠道处理本次请求，例如：Authorization: Bearer ONE_API_KEY-CHANNEL_ID。 注意，需要是管理员用户创建的令牌才能指定渠道 ID。One API 支持从  文件中读取环境变量，请参照  文件，使用时请将其重命名为 。：设置之后将使用 Redis 作为缓存使用。 
+  例子：REDIS_CONN_STRING=redis://default:redispw@localhost:49153如果数据库访问延迟很低，没有必要启用 Redis，启用后反而会出现数据滞后的问题。如果需要使用哨兵或者集群模式： 
+    则需要把该环境变量设置为节点列表，例如：localhost:49153,localhost:49154,localhost:49155。除此之外还需要设置以下环境变量： 
+      ：Redis 集群或者哨兵模式下的密码设置。：Redis 哨兵模式下主节点的名称。：设置之后将使用固定的会话密钥，这样系统重新启动后已登录用户的 cookie 将依旧有效。 
+  例子：SESSION_SECRET=random_string：设置之后将使用指定数据库而非 SQLite，请使用 MySQL 或 PostgreSQL。 
+  例子： 
+    MySQL：SQL_DSN=root:123456@tcp(localhost:3306)/oneapiPostgreSQL：SQL_DSN=postgres://postgres:123456@localhost:5432/oneapi（适配中，欢迎反馈）注意需要提前建立数据库 ，无需手动建表，程序将自动建表。如果使用本地数据库：部署命令可添加  以使得容器内的程序可以访问到宿主机上的 MySQL。如果使用云数据库：如果云服务器需要验证身份，需要在连接参数中添加 。请根据你的数据库配置修改下列参数（或者保持默认值）： 
+    ：最大空闲连接数，默认为 。：最大打开连接数，默认为 。 
+      如果报错 Error 1040: Too many connections，请适当减小该值。：连接的最大生命周期，默认为 ，单位分钟。：设置之后将为  表使用独立的数据库，请使用 MySQL 或 PostgreSQL。：设置之后将重定向页面请求到指定的地址，仅限从服务器设置。 
+  例子：FRONTEND_BASE_URL=https://openai.justsong.cn：启用内存缓存，会导致用户额度的更新存在一定的延迟，可选值为  和 ，未设置则默认为 。 
+  例子：MEMORY_CACHE_ENABLED=true：在启用缓存的情况下与数据库同步配置的频率，单位为秒，默认为  秒。 
+  ：设置之后将指定节点类型，可选值为  和 ，未设置则默认为 。 
+  ：设置之后将定期更新渠道余额，单位为分钟，未设置则不进行更新。 
+  例子：CHANNEL_UPDATE_FREQUENCY=1440：设置之后将定期检查渠道，单位为分钟，未设置则不进行检查。 +例子：CHANNEL_TEST_FREQUENCY=1440：批量更新渠道余额以及测试可用性时的请求间隔，单位为秒，默认无间隔。 
+  ：启用数据库批量更新聚合，会导致用户额度的更新存在一定的延迟可选值为  和 ，未设置则默认为 。 
+  例子：BATCH_UPDATE_ENABLED=true如果你遇到了数据库连接数过多的问题，可以尝试启用该选项。：批量更新聚合的时间间隔，单位为秒，默认为 。 
+  例子：请求频率限制： 
+  ：全局 API 速率限制（除中继请求外），单 ip 三分钟内的最大请求数，默认为 。：全局 Web 速率限制，单 ip 三分钟内的最大请求数，默认为 。编码器缓存设置： 
+  ：默认程序启动时会联网下载一些通用的词元的编码，如：，在一些网络环境不稳定，或者离线情况，可能会导致启动有问题，可以配置此目录缓存数据，可迁移到离线环境。：目前该配置作用与  一致，但是优先级没有它高。：中继超时设置，单位为秒，默认不设置超时时间。：设置后使用该代理来请求 API。USER_CONTENT_REQUEST_TIMEOUT：用户上传内容下载超时时间，单位为秒。USER_CONTENT_REQUEST_PROXY：设置后使用该代理来请求用户上传的内容，例如图片。：SQLite 锁等待超时设置，单位为毫秒，默认 。：Gemini 的安全设置，默认 。：One API 所使用的 Gemini 版本，默认为 。：系统的主题设置，默认为 ，具体可选值参考此处。：是否根据请求成功率禁用渠道，默认不开启，可选值为  和 。：请求成功率统计队列大小，默认为 。METRIC_SUCCESS_RATE_THRESHOLD：请求成功率阈值，默认为 。：如果设置了该值，则在系统首次启动时会自动创建一个值为该环境变量值的 root 用户令牌。INITIAL_ROOT_ACCESS_TOKEN：如果设置了该值，则在系统首次启动时会自动创建一个值为该环境变量的 root 用户创建系统管理令牌。：是否强制在 stream 模型下返回 usage，默认不开启，可选值为  和 。：测试模型时的用户 prompt，默认为 Print your model name exactly and do not output without any other text.。: 指定服务器监听的端口号，默认为 。 
+  : 指定日志文件夹，如果没有设置，默认保存至工作目录的  文件夹下。 
+  额度是什么？怎么计算的？One API 的额度计算有问题？ 
+  额度 = 分组倍率 * 模型倍率 * （提示 token 数 + 补全 token 数 * 补全倍率）其中补全倍率对于 GPT3.5 固定为 1.33，GPT4 为 2，与官方保持一致。如果是非流模式，官方接口会返回消耗的总 token，但是你要注意提示和补全的消耗倍率不一样。注意，One API 的默认倍率就是官方倍率，是已经调整过的。账户额度足够为什么提示额度不足？ 
+  请检查你的令牌额度是否足够，这个和账户额度是分开的。提示无可用渠道？ 
+  渠道测试报错：invalid character '<' looking for beginning of value这是因为返回值不是合法的 JSON，而是一个 HTML 页面。大概率是你的部署站的 IP 或代理的节点被 CloudFlare 封禁了。ChatGPT Next Web 报错：检查是否启用了 HTTPS，浏览器会拦截 HTTPS 域名下的 HTTP 请求。报错：升级之后我的数据会丢失吗？ 
+  如果使用 SQLite，需要按照我所给的部署命令挂载 volume 持久化 one-api.db 数据库文件，否则容器重启后数据会丢失。升级之前数据库需要做变更吗？ 
+  手动修改数据库后报错：？ 
+  这是检测到 ability 表里有些记录的渠道 id 是不存在的，这大概率是因为你删了 channel 表里的记录但是没有同步在 ability 表里清理无效的渠道。对于每一个渠道，其所支持的模型都需要有一个专门的 ability 表的记录，表示该渠道支持该模型。本项目使用 MIT 协议进行开源，，必须在页面底部保留署名以及指向本项目的链接。如果不想保留署名，必须首先获得授权。依据 MIT 协议，使用者需自行承担使用本项目的风险与责任，本开源项目开发者与此无关。]]></content:encoded></item><item><title>GoogleCloudPlatform/generative-ai</title><link>https://github.com/GoogleCloudPlatform/generative-ai</link><author></author><category>trending</category><pubDate>Sat, 8 Feb 2025 08:41:39 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[Sample code and notebooks for Generative AI on Google Cloud, with Gemini on Vertex AIThis repository contains notebooks, code samples, sample apps, and other resources that demonstrate how to use, develop and manage generative AI workflows using Generative AI on Google Cloud, powered by Vertex AI.Please use the issues page to provide suggestions, feedback or submit a bug report.This repository itself is not an officially supported Google product. The code in this repository is for demonstrative purposes only.]]></content:encoded></item><item><title>ChatGPTNextWeb/NextChat</title><link>https://github.com/ChatGPTNextWeb/NextChat</link><author></author><category>trending</category><pubDate>Sat, 8 Feb 2025 08:41:39 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[✨ Light and Fast AI Assistant. Support: Web | iOS | MacOS | Android | Linux | Windows🥳 Cheer for DeepSeek, China's AI star!Purpose-Built UI for DeepSeek Reasoner ModelBefore build, please set env ENABLE_MCP=trueMeeting Your Company's Privatization and Customization Deployment Requirements:: Tailored VI/UI to seamlessly align with your corporate brand image.: Unified configuration and management of dozens of AI resources by company administrators, ready for use by team members.: Clearly defined member permissions, resource permissions, and knowledge base permissions, all controlled via a corporate-grade Admin Panel.: Combining your internal knowledge base with AI capabilities, making it more relevant to your company's specific business needs compared to general AI.: Automatically intercept sensitive inquiries and trace all historical conversation records, ensuring AI adherence to corporate information security standards.: Enterprise-level private deployment supporting various mainstream private cloud solutions, ensuring data security and privacy protection.: Ongoing updates and upgrades in cutting-edge capabilities like multimodal AI, ensuring consistent innovation and advancement.Deploy for free with one-click on Vercel in under 1 minutePrivacy first, all data is stored locally in the browserMarkdown support: LaTex, mermaid, code highlight, etc.Responsive design, dark mode and PWAFast first screen loading speed (~100kb), support streaming responseNew in v2: create, share and debug your chat tools with prompt templates (mask)Automatically compresses chat history to support long conversations while also saving your tokensI18n: English, 简体中文, 繁体中文, 日本語, Français, Español, Italiano, Türkçe, Deutsch, Tiếng Việt, Русский, Čeština, 한국어, Indonesia🚀 v2.15.8 Now supports Realtime Chat #5672🚀 v2.15.4 The Application supports using Tauri fetch LLM API, MORE SECURITY! #5379🚀 v2.14.0 Now supports Artifacts & SD🚀 v2.10.1 support Google Gemini Pro model.🚀 v2.9.11 you can use azure endpoint now.🚀 v2.8 now we have a client that runs across all platforms!🚀 v2.7 let's share conversations as image, or share to ShareGPT!If you have deployed your own project with just one click following the steps above, you may encounter the issue of "Updates Available" constantly showing up. This is because Vercel will create a new project for you by default instead of forking this project, resulting in the inability to detect updates correctly.We recommend that you follow the steps below to re-deploy:Delete the original repository;Use the fork button in the upper right corner of the page to fork this project;After forking the project, due to the limitations imposed by GitHub, you need to manually enable Workflows and Upstream Sync Action on the Actions page of the forked project. Once enabled, automatic updates will be scheduled every hour:If you want to update instantly, you can check out the GitHub documentation to learn how to synchronize a forked project with upstream code.You can star or watch this project or follow author to get release notifications in time.This project provides limited access control. Please add an environment variable named  on the vercel environment variables page. The value should be passwords separated by comma like this:After adding or modifying this environment variable, please redeploy the project for the changes to take effect.Access password, separated by comma.Your openai api key, join multiple api keys with comma.Default: Examples: http://your-openai-proxy.comOverride openai api request base url.Specify OpenAI organization ID.Example: https://{azure-resource-url}/openai (optional)Google Gemini Pro Api Key.Google Gemini Pro Api Url. (optional)anthropic claude Api Key. (optional)anthropic claude Api version.anthropic claude Api Url. (optional) (optional) (optional) (Optional) (Optional) (optional) (optional) (optional)If you do not want users to input their own API key, set this value to 1.If you do not want users to use GPT-4, set this value to 1. (optional)If you do want users to query balance, set this value to 1. (optional)If you want to disable parse settings from url, set this to 1.Default: Empty Example: +llama,+claude-2,-gpt-3.5-turbo,gpt-4-1106-preview=gpt-4-turbo means add  to model list, and remove  from list, and display  as .To control custom models, use  to add a custom model, use  to hide a model, use  to customize model name, separated by comma.User  to disable all default models,  to enable all default models.For Azure: use modelName@Azure=deploymentName to customize model name and deployment name.Example: +gpt-3.5-turbo@Azure=gpt35 will show option  in model list. If you only can use Azure model, -all,+gpt-3.5-turbo@Azure=gpt35 will  the only option in model list.For ByteDance: use modelName@bytedance=deploymentName to customize model name and deployment name.Example: +Doubao-lite-4k@bytedance=ep-xxxxx-xxx will show option Doubao-lite-4k(ByteDance) in model list.Default: Empty Example: gpt-4-vision,claude-3-opus,my-custom-model means add vision capabilities to these models in addition to the default pattern matches (which detect models containing keywords like "vision", "claude-3", "gemini-1.5", etc).Add additional models to have vision capabilities, beyond the default pattern matching. Multiple models should be separated by commas. (optional)You can use this option if you want to increase the number of webdav service addresses you are allowed to access, as required by the format：Each address must be a complete endpointMultiple addresses are connected by ', ' (optional)Customize the default template used to initialize the User Input Preprocessing configuration item in Settings. (optional)Customize Stability API url.Enable MCP（Model Context Protocol）Feature (optional) (optional)NodeJS >= 18, Docker >= 20Before starting development, you must create a new  file at project root, and place your api key into it:OPENAI_API_KEY=<your api key here>
+
+# if you are not able to access openai service, use this BASE_URL
+BASE_URL=https://chatgpt1.nextweb.fun/api/proxy
+# 1. install nodejs and yarn first
+# 2. config local env vars in `.env.local`
+# 3. run
+yarn install
+yarn dev
+docker pull yidadaa/chatgpt-next-web
+
+docker run -d -p 3000:3000 \
+   -e OPENAI_API_KEY=sk-xxxx \
+   -e CODE=your-password \
+   yidadaa/chatgpt-next-web
+You can start service behind a proxy:docker run -d -p 3000:3000 \
+   -e OPENAI_API_KEY=sk-xxxx \
+   -e CODE=your-password \
+   -e PROXY_URL=http://localhost:7890 \
+   yidadaa/chatgpt-next-web
+If your proxy needs password, use:-e PROXY_URL="http://127.0.0.1:7890 user pass"
+docker run -d -p 3000:3000 \
+   -e OPENAI_API_KEY=sk-xxxx \
+   -e CODE=your-password \
+   -e ENABLE_MCP=true \
+   yidadaa/chatgpt-next-web
+bash <(curl -s https://raw.githubusercontent.com/Yidadaa/ChatGPT-Next-Web/main/scripts/setup.sh)
+Synchronizing Chat Records (UpStash)Please go to the [docs][./docs] directory for more documentation instructions.If you want to add a new translation, read this document.]]></content:encoded></item><item><title>infiniflow/ragflow</title><link>https://github.com/infiniflow/ragflow</link><author></author><category>trending</category><pubDate>Sat, 8 Feb 2025 08:41:39 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[RAGFlow is an open-source RAG (Retrieval-Augmented Generation) engine based on deep document understanding.RAGFlow is an open-source RAG (Retrieval-Augmented Generation) engine based on deep document understanding. It offers a streamlined RAG workflow for businesses of any scale, combining LLM (Large Language Models) to provide truthful question-answering capabilities, backed by well-founded citations from various complex formatted data.2025-02-05 Updates the model list of 'SILICONFLOW' and adds support for Deepseek-R1/DeepSeek-V3.2025-01-26 Optimizes knowledge graph extraction and application, offering various configuration options.2024-12-18 Upgrades Document Layout Analysis model in Deepdoc.2024-12-04 Adds support for pagerank score in knowledge base.2024-11-22 Adds more variables to Agent.2024-11-01 Adds keyword extraction and related question generation to the parsed chunks to improve the accuracy of retrieval.2024-08-22 Support text to SQL statements through RAG.⭐️ Star our repository to stay up-to-date with exciting new features and improvements! Get instant notifications for new releases! 🌟🍭 "Quality in, quality out"Finds "needle in a data haystack" of literally unlimited tokens.Intelligent and explainable.Plenty of template options to choose from.🌱 Grounded citations with reduced hallucinationsVisualization of text chunking to allow human intervention.Quick view of the key references and traceable citations to support grounded answers.🍔 Compatibility with heterogeneous data sourcesSupports Word, slides, excel, txt, images, scanned copies, structured data, web pages, and more.🛀 Automated and effortless RAG workflowStreamlined RAG orchestration catered to both personal and large businesses.Configurable LLMs as well as embedding models.Multiple recall paired with fused re-ranking.Intuitive APIs for seamless integration with business.Docker >= 24.0.0 & Docker Compose >= v2.26.1 
+  If you have not installed Docker on your local machine (Windows, Mac, or Linux), see Install Docker Engine.Ensure  >= 262144:To check the value of :$ sysctl vm.max_map_count
+Reset  to a value at least 262144 if it is not.# In this case, we set it to 262144:
+$ sudo sysctl -w vm.max_map_count=262144
+This change will be reset after a system reboot. To ensure your change remains permanent, add or update the  value in  accordingly:$ git clone https://github.com/infiniflow/ragflow.git
+Start up the server using the pre-built Docker images:The command below downloads the  edition of the RAGFlow Docker image. Refer to the following table for descriptions of different RAGFlow editions. To download an RAGFlow edition different from , update the  variable accordingly in  before using  to start the server. For example: set RAGFLOW_IMAGE=infiniflow/ragflow:v0.16.0 for the full edition .$ cd ragflow
+$ docker compose -f docker/docker-compose.yml up -d
+Check the server status after having the server up and running:$ docker logs -f ragflow-server
+The following output confirms a successful launch of the system:
+      ____   ___    ______ ______ __
+     / __ \ /   |  / ____// ____// /____  _      __
+    / /_/ // /| | / / __ / /_   / // __ \| | /| / /
+   / _, _// ___ |/ /_/ // __/  / // /_/ /| |/ |/ /
+  /_/ |_|/_/  |_|\____//_/    /_/ \____/ |__/|__/
+
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:9380
+ * Running on http://x.x.x.x:9380
+ INFO:werkzeug:Press CTRL+C to quit
+If you skip this confirmation step and directly log in to RAGFlow, your browser may prompt a  error because, at that moment, your RAGFlow may not be fully initialized.In your web browser, enter the IP address of your server and log in to RAGFlow.With the default settings, you only need to enter http://IP_OF_YOUR_MACHINE ( port number) as the default HTTP serving port  can be omitted when using the default configurations.When it comes to system configurations, you will need to manage the following files:.env: Keeps the fundamental setups for the system, such as , , and .service_conf.yaml.template: Configures the back-end services. The environment variables in this file will be automatically populated when the Docker container starts. Any environment variables set within the Docker container will be available for use, allowing you to customize service behavior based on the deployment environment.To update the default HTTP serving port (80), go to docker-compose.yml and change  to .Updates to the above configurations require a reboot of all containers to take effect:$ docker compose -f docker/docker-compose.yml up -d
+Switch doc engine from Elasticsearch to InfinityRAGFlow uses Elasticsearch by default for storing full text and vectors. To switch to Infinity, follow these steps:Stop all running containers:$ docker compose -f docker/docker-compose.yml down -v
+Set  in  to .$ docker compose -f docker/docker-compose.yml up -d
+[!WARNING] Switching to Infinity on a Linux/arm64 machine is not yet officially supported.🔧 Build a Docker image without embedding modelsThis image is approximately 2 GB in size and relies on external LLM and embedding services.git clone https://github.com/infiniflow/ragflow.git
+cd ragflow/
+docker build --build-arg LIGHTEN=1 -f Dockerfile -t infiniflow/ragflow:nightly-slim .
+🔧 Build a Docker image including embedding modelsThis image is approximately 9 GB in size. As it includes embedding models, it relies on external LLM services only.git clone https://github.com/infiniflow/ragflow.git
+cd ragflow/
+docker build -f Dockerfile -t infiniflow/ragflow:nightly .
+🔨 Launch service from source for developmentInstall uv, or skip this step if it is already installed:Clone the source code and install Python dependencies:git clone https://github.com/infiniflow/ragflow.git
+cd ragflow/
+uv sync --python 3.10 --all-extras # install RAGFlow dependent python modules
+Launch the dependent services (MinIO, Elasticsearch, Redis, and MySQL) using Docker Compose:docker compose -f docker/docker-compose-base.yml up -d
+Add the following line to  to resolve all hosts specified in  to :127.0.0.1       es01 infinity mysql minio redis
+If you cannot access HuggingFace, set the  environment variable to use a mirror site:export HF_ENDPOINT=https://hf-mirror.com
+source .venv/bin/activate
+export PYTHONPATH=$(pwd)
+bash docker/launch_backend_service.sh
+Install frontend dependencies:The following output confirms a successful launch of the system:RAGFlow flourishes via open-source collaboration. In this spirit, we embrace diverse contributions from the community. If you would like to be a part, review our Contribution Guidelines first.]]></content:encoded></item><item><title>sgl-project/sglang</title><link>https://github.com/sgl-project/sglang</link><author></author><category>trending</category><pubDate>Sat, 8 Feb 2025 08:41:39 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[SGLang is a fast serving framework for large language models and vision language models.[2025/01] 🔥 SGLang provides day one support for DeepSeek V3/R1 models on NVIDIA and AMD GPUs with DeepSeek-specific optimizations. (instructions, AMD blog)[2024/12] 🔥 v0.4 Release: Zero-Overhead Batch Scheduler, Cache-Aware Load Balancer, Faster Structured Outputs (blog).[2024/09] v0.3 Release: 7x Faster DeepSeek MLA, 1.5x Faster torch.compile, Multi-Image/Video LLaVA-OneVision (blog).[2024/07] v0.2 Release: Faster Llama3 Serving with SGLang Runtime (vs. TensorRT-LLM, vLLM) (blog).SGLang is a fast serving framework for large language models and vision language models. It makes your interaction with models faster and more controllable by co-designing the backend runtime and frontend language. The core features include:: Provides efficient serving with RadixAttention for prefix caching, jump-forward constrained decoding, overhead-free CPU scheduler, continuous batching, token attention (paged attention), tensor parallelism, FlashInfer kernels, chunked prefill, and quantization (FP8/INT4/AWQ/GPTQ).Flexible Frontend Language: Offers an intuitive interface for programming LLM applications, including chained generation calls, advanced prompting, control flow, multi-modal inputs, parallelism, and external interactions.: Supports a wide range of generative models (Llama, Gemma, Mistral, QWen, DeepSeek, LLaVA, etc.), embedding models (e5-mistral, gte, mcdse) and reward models (Skywork), with easy extensibility for integrating new models.: SGLang is open-source and backed by an active community with industry adoption.Benchmark and PerformanceThe project is supported by (alphabetically): AMD, Atlas Cloud, Baseten, Cursor, DataCrunch, Etched, Hyperbolic, Jam & Tea Studios, LinkedIn, LMSYS CORP, Meituan, Nebius, Novita AI, NVIDIA, RunPod, Stanford, UC Berkeley, UCLA, xAI, 01.AI.For enterprises interested in adopting or deploying SGLang at scale, including technical consulting, sponsorship opportunities, or partnership inquiries, please contact us at contact@sglang.ai.Acknowledgment and Citation]]></content:encoded></item><item><title>asdf-vm/asdf</title><link>https://github.com/asdf-vm/asdf</link><author></author><category>trending</category><pubDate>Sat, 8 Feb 2025 08:41:39 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[Extendable version manager with support for Ruby, Node.js, Elixir, Erlang & moreManage multiple runtime versions with a single CLI tool, extendable via plugins - docs at asdf-vm.comasdf is a CLI tool that can manage multiple language runtime versions on a per-project basis. It is like , ,  &  (and more) all in one! Simply install your language's plugin!single CLI for multiple languagesconsistent commands to manage all your languagessingle global config keeping defaults in one placesingle  config file per projectsupport for existing config files , ,  for easy migrationautomatically switches runtime versions as you traverse your directoriessimple plugin system to add support for your language of choiceshell completion available for common shells (Bash, Zsh, Fish, Elvish)Once upon a time there was a programming language There were many versions of it So people wrote a version manager for it To switch between versions for projectsThen there came more programming languages So there came more version managers And many commands for themI installed a lot of them I learnt a lot of commandsThen I said, just one more version manager Which I will write insteadA version manager so extendable for which anyone can create a plugin To support their favourite language No more installing more version managers Or learning more commands
+   This was the mail I wrote to a few friends to tell them about the project. Thanks to 
+  @roshanvid for suggesting that this go into the readme 
+ ]]></content:encoded></item><item><title>Physical-Intelligence/openpi</title><link>https://github.com/Physical-Intelligence/openpi</link><author></author><category>trending</category><pubDate>Sat, 8 Feb 2025 08:41:39 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[Currently, this repo contains two types of models:the π₀ model, a flow-based diffusion vision-language-action model (VLA)the π₀-FAST model, an autoregressive VLA, based on the FAST action tokenizer.For both models, we provide  checkpoints, pre-trained on 10k+ hours of robot data, and examples for using them out of the box or fine-tuning them to your own datasets.This is an experiment: $\pi_0$ was developed for our own robots, which differ from the widely used platforms such as ALOHA and DROID, and though we are optimistic that researchers and practitioners will be able to run creative new experiments adapting $\pi_0$ to their own platforms, we do not expect every such attempt to be successful. All this is to say: $\pi_0$ may or may not work for you, but you are welcome to try it and see!To run the models in this repository, you will need an NVIDIA GPU with at least the following specifications. These estimations assume a single GPU, but you can also use multiple GPUs with model parallelism to reduce per-GPU memory requirements by configuring  in the training config. Please also note that the current training script does not yet support multi-node training.The repo has been tested with Ubuntu 22.04, we do not currently support other operating systems.When cloning this repo, make sure to update submodules:git clone --recurse-submodules git@github.com:Physical-Intelligence/openpi.git
+
+# Or if you already cloned the repo:
+git submodule update --init --recursive
+We use uv to manage Python dependencies. See the uv installation instructions to set it up. Once uv is installed, run the following to set up the environment:GIT_LFS_SKIP_SMUDGE=1 uv sync
+NOTE:  is needed to pull LeRobot as a dependency.: As an alternative to uv installation, we provide instructions for installing openpi using Docker. If you encounter issues with your system setup, consider using Docker to simplify installation. See Docker Setup for more details.We provide multiple base VLA model checkpoints. These checkpoints have been pre-trained on 10k+ hours of robot data, and can be used for fine-tuning.s3://openpi-assets/checkpoints/pi0_bases3://openpi-assets/checkpoints/pi0_fast_baseWe also provide "expert" checkpoints for various robot platforms and tasks. These models are fine-tuned from the base models above and intended to run directly on the target robot. These may or may not work on your particular robot. Since these checkpoints were fine-tuned on relatively small datasets collected with more widely available robots, such as ALOHA and the DROID Franka setup, they might not generalize to your particular setup, though we found some of these, especially the DROID checkpoint, to generalize quite broadly in practice.$\pi_0$-FAST model fine-tuned on the DROID dataset, can perform a wide range of simple table-top manipulation tasks 0-shot in new scenes on the DROID robot platforms3://openpi-assets/checkpoints/pi0_fast_droid$\pi_0$ model fine-tuned on the DROID dataset, faster inference than $\pi_0$-FAST-DROID, but may not follow language commands as wells3://openpi-assets/checkpoints/pi0_droid$\pi_0$ model fine-tuned on internal ALOHA data, can fold diverse towels 0-shot on ALOHA robot platformss3://openpi-assets/checkpoints/pi0_aloha_towel$\pi_0$ model fine-tuned on internal ALOHA data, can unpack food from a tupperware containers3://openpi-assets/checkpoints/pi0_aloha_tupperwares3://openpi-assets/checkpoints/pi0_aloha_pen_uncapBy default, checkpoints are automatically downloaded from  and are cached in  when needed. You can overwrite the download path by setting the  environment variable.Running Inference for a Pre-Trained ModelOur pre-trained model checkpoints can be run with a few lines of code (here our $\pi_0$-FAST-DROID model):from openpi.training import config
+from openpi.policies import policy_config
+from openpi.shared import download
+
+config = config.get_config("pi0_fast_droid")
+checkpoint_dir = download.maybe_download("s3://openpi-assets/checkpoints/pi0_fast_droid")
+
+# Create a trained policy.
+policy = policy_config.create_trained_policy(config, checkpoint_dir)
+
+# Run inference on a dummy example.
+example = {
+    "observation/exterior_image_1_left": ...,
+    "observation/wrist_image_left": ...,
+    ...
+    "prompt": "pick up the fork"
+}
+action_chunk = policy.infer(example)["actions"]
+We provide detailed step-by-step examples for running inference of our pre-trained checkpoints on DROID and ALOHA robots.: We provide examples and code for running inference of our models : the model can run on a different server and stream actions to the robot via a websocket connection. This makes it easy to use more powerful GPUs off-robot and keep robot and policy environments separate.Test inference without a robot: We provide a script for testing inference without a robot. This script will generate a random observation and run inference with the model. See here for more details.Fine-Tuning Base Models on Your Own DataWe will fine-tune the $\pi_0$-FAST model on the Libero dataset as a running example for how to fine-tune a base model on your own data. We will explain three steps:Convert your data to a LeRobot dataset (which we use for training)Defining training configs and running trainingSpinning up a policy server and running inference1. Convert your data to a LeRobot datasetuv run examples/libero/convert_libero_data_to_lerobot.py --data_dir /path/to/your/libero/data
+2. Defining training configs and running trainingTo fine-tune a base model on your own data, you need to define configs for data processing and training. We provide example configs with detailed comments for Libero below, which you can modify for your own dataset: and : Defines the data mapping from the Libero environment to the model and vice versa. Will be used for both, training and inference.: Defines fine-tuning hyperparameters, data config, and weight loader.We provide example fine-tuning configs for both, π₀ and π₀-FAST on Libero data.Before we can run training, we need to compute the normalization statistics for the training data. Run the script below with the name of your training config:uv run scripts/compute_norm_stats.py --config-name pi0_fast_libero
+Now we can kick off training with the following command (the  flag is used to overwrite existing checkpoints if you rerun fine-tuning with the same config):XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 uv run scripts/train.py pi0_fast_libero --exp-name=my_experiment --overwrite
+The command will log training progress to the console and save checkpoints to the  directory. You can also monitor training progress on the Weights & Biases dashboard. For maximally using the GPU memory, set XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 before running training -- this enables JAX to use up to 90% of the GPU memory (vs. the default of 75%).3. Spinning up a policy server and running inferenceOnce training is complete, we can run inference by spinning up a policy server and then querying it from a Libero evaluation script. Launching a model server is easy (we use the checkpoint for iteration 20,000 for this example, modify as needed):uv run scripts/serve_policy.py policy:checkpoint --policy.config=pi0_fast_libero --policy.dir=checkpoints/pi0_fast_libero/my_experiment/20000
+This will spin up a server that listens on port 8000 and waits for observations to be sent to it. We can then run the Libero evaluation script to query the server. For instructions how to install Libero and run the evaluation script, see the Libero README.We provide more examples for how to fine-tune and run inference with our models on the ALOHA platform in the following READMEs:We will collect common issues and their solutions here. If you encounter an issue, please check here first. If you can't find a solution, please file an issue on the repo (see here for guidelines). fails with dependency conflictsTry removing the virtual environment directory () and running  again. If issues persist, check that you have the latest version of  installed ().Training runs out of GPU memoryMake sure you set XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 before running training to allow JAX to use more GPU memory. You can also try reducing the batch size in your training config.Policy server connection errorsCheck that the server is running and listening on the expected port. Verify network connectivity and firewall settings between client and server.Missing norm stats error when trainingRun scripts/compute_norm_stats.py with your config name before starting training.Check your internet connection. If using , verify the dataset exists locally. For HuggingFace datasets, ensure you're logged in ().Verify NVIDIA drivers and CUDA toolkit are installed correctly. For Docker, ensure nvidia-container-toolkit is installed. Check GPU compatibility.Import errors when running examplesMake sure you've installed all dependencies with  and activated the virtual environment. Some examples may have additional requirements listed in their READMEs.Action dimensions mismatchVerify your data processing transforms match the expected input/output dimensions of your robot. Check the action space definitions in your policy classes.]]></content:encoded></item><item><title>krahets/hello-algo</title><link>https://github.com/krahets/hello-algo</link><author></author><category>trending</category><pubDate>Sat, 8 Feb 2025 08:41:39 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[《Hello 算法》：动画图解、一键运行的数据结构与算法教程。支持 Python, Java, C++, C, C#, JS, Go, Swift, Rust, Ruby, Kotlin, TS, Dart 代码。简体版和繁体版同步更新，English version ongoing 动画图解、一键运行的数据结构与算法教程 本项目旨在打造一本开源免费、新手友好的数据结构与算法入门教程。全书采用动画图解，内容清晰易懂、学习曲线平滑，引导初学者探索数据结构与算法的知识地图。源代码可一键运行，帮助读者在练习中提升编程技能，了解算法工作原理和数据结构底层实现。提倡读者互助学习，欢迎大家在评论区提出问题与分享见解，在交流讨论中共同进步。若本书对您有所帮助，请在页面右上角点个 Star  支持一下，谢谢！“一本通俗易懂的数据结构与算法入门书，引导读者手脑并用地学习，强烈推荐算法初学者阅读。”“如果我当年学数据结构与算法的时候有《Hello 算法》，学起来应该会简单 10 倍！”本开源书仍在持续更新之中，欢迎您参与本项目，一同为读者提供更优质的学习内容。内容修正：请您协助修正或在评论区指出语法错误、内容缺失、文字歧义、无效链接或代码 bug 等问题。代码转译：期待您贡献各种语言代码，已支持 Python、Java、C++、Go、JavaScript 等 12 门编程语言。中译英：诚邀您加入我们的翻译小组，成员主要来自计算机相关专业、英语专业和英文母语者。欢迎您提出宝贵意见和建议，如有任何问题请提交 Issues 或微信联系  。感谢本开源书的每一位撰稿人，是他们的无私奉献让这本书变得更好，他们是：The texts, code, images, photos, and videos in this repository are licensed under CC BY-NC-SA 4.0.]]></content:encoded></item><item><title>rustdesk/rustdesk</title><link>https://github.com/rustdesk/rustdesk</link><author></author><category>trending</category><pubDate>Sat, 8 Feb 2025 08:41:39 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.Yet another remote desktop software, written in Rust. Works out of the box, no configuration required. You have full control of your data, with no concerns about security. You can use our rendezvous/relay server, set up your own, or write your own rendezvous/relay server.RustDesk welcomes contribution from everyone. See CONTRIBUTING.md for help getting started.Desktop versions use Flutter or Sciter (deprecated) for GUI, this tutorial is for Sciter only, since it is easier and more friendly to start. Check out our CI for building Flutter version.Please download Sciter dynamic library yourself.Prepare your Rust development env and C++ build envInstall vcpkg, and set  env variable correctlyWindows: vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static aom:x64-windows-staticLinux/macOS: vcpkg install libvpx libyuv opus aomsudo apt install -y zip g++ gcc git curl wget nasm yasm libgtk-3-dev clang libxcb-randr0-dev libxdo-dev \
+        libxfixes-dev libxcb-shape0-dev libxcb-xfixes0-dev libasound2-dev libpulse-dev cmake make \
+        libclang-dev ninja-build libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libpam0g-dev
+sudo zypper install gcc-c++ git curl wget nasm yasm gcc gtk3-devel clang libxcb-devel libXfixes-devel cmake alsa-lib-devel gstreamer-devel gstreamer-plugins-base-devel xdotool-devel pam-devel
+sudo yum -y install gcc-c++ git curl wget nasm yasm gcc gtk3-devel clang libxcb-devel libxdo-devel libXfixes-devel pulseaudio-libs-devel cmake alsa-lib-devel gstreamer1-devel gstreamer1-plugins-base-devel pam-devel
+sudo pacman -Syu --needed unzip git cmake gcc curl wget yasm nasm zip make pkg-config clang gtk3 xdotool libxcb libxfixes alsa-lib pipewire
+git clone https://github.com/microsoft/vcpkg
+cd vcpkg
+git checkout 2023.04.15
+cd ..
+vcpkg/bootstrap-vcpkg.sh
+export VCPKG_ROOT=$HOME/vcpkg
+vcpkg/vcpkg install libvpx libyuv opus aom
+cd vcpkg/buildtrees/libvpx/src
+cd *
+./configure
+sed -i 's/CFLAGS+=-I/CFLAGS+=-fPIC -I/g' Makefile
+sed -i 's/CXXFLAGS+=-I/CXXFLAGS+=-fPIC -I/g' Makefile
+make
+cp libvpx.a $HOME/vcpkg/installed/x64-linux/lib/
+cd
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+git clone https://github.com/rustdesk/rustdesk
+cd rustdesk
+mkdir -p target/debug
+wget https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so
+mv libsciter-gtk.so target/debug
+VCPKG_ROOT=$HOME/vcpkg cargo run
+Begin by cloning the repository and building the Docker container:git clone https://github.com/rustdesk/rustdesk
+cd rustdesk
+docker build -t "rustdesk-builder" .
+Then, each time you need to build the application, run the following command:docker run --rm -it -v $PWD:/home/user/rustdesk -v rustdesk-git-cache:/home/user/.cargo/git -v rustdesk-registry-cache:/home/user/.cargo/registry -e PUID="$(id -u)" -e PGID="$(id -g)" rustdesk-builder
+Note that the first build may take longer before dependencies are cached, subsequent builds will be faster. Additionally, if you need to specify different arguments to the build command, you may do so at the end of the command in the  position. For instance, if you wanted to build an optimized release version, you would run the command above followed by . The resulting executable will be available in the target folder on your system, and can be run with:Or, if you're running a release executable:Please ensure that you are running these commands from the root of the RustDesk repository, otherwise the application might not be able to find the required resources. Also note that other cargo subcommands such as  or  are not currently supported via this method as they would install or run the program inside the container instead of the host.[!Caution]  The developers of RustDesk do not condone or support any unethical or illegal use of this software. Misuse, such as unauthorized access, control or invasion of privacy, is strictly against our guidelines. The authors are not responsible for any misuse of the application.]]></content:encoded></item><item><title>Mintplex-Labs/anything-llm</title><link>https://github.com/Mintplex-Labs/anything-llm</link><author></author><category>trending</category><pubDate>Sat, 8 Feb 2025 02:23:52 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[The all-in-one Desktop & Docker AI application with built-in RAG, AI agents, and more. The all-in-one AI app you were looking for. Chat with your docs, use AI Agents, hyper-configurable, multi-user, & no frustrating set up required.  👉 AnythingLLM for desktop (Mac, Windows, & Linux)!  Download NowA full-stack application that enables you to turn any document, resource, or piece of content into context that any LLM can use as references during chatting. This application allows you to pick and choose which LLM or Vector Database you want to use as well as supporting multi-user management and permissions.AnythingLLM is a full-stack application where you can use commercial off-the-shelf LLMs or popular open source LLMs and vectorDB solutions to build a private ChatGPT with no compromises that you can run locally as well as host remotely and be able to chat intelligently with any documents you provide it.AnythingLLM divides your documents into objects called . A Workspace functions a lot like a thread, but with the addition of containerization of your documents. Workspaces can share documents, but they do not talk to each other so you can keep your context for each workspace clean.Cool features of AnythingLLM🖼️ Multi-modal support (both closed and open-source LLMs!)👤 Multi-user instance support and permissioning 🦾 Agents inside your workspace (browse the web, run code, etc)📖 Multiple document type support (PDF, TXT, DOCX, etc)Simple chat UI with Drag-n-Drop funcitonality and clear citations.100% Cloud deployment ready.Built-in cost & time-saving measures for managing very large documents compared to any other chat UI.Full Developer API for custom integrations!Much more...install and find out!Supported LLMs, Embedder Models, Speech models, and Vector DatabasesLarge Language Models (LLMs):Audio Transcription models:TTS (text-to-speech) support:STT (speech-to-text) support:Native Browser Built-in (default)This monorepo consists of three main sections:: A viteJS + React frontend that you can run to easily create and manage all your content the LLM can use.: A NodeJS express server to handle all the interactions and do all the vectorDB management and LLM interactions.: NodeJS express server that process and parses documents from the UI.: Docker instructions and build process + information for building from source.Mintplex Labs & the community maintain a number of deployment methods, scripts, and templates that you can use to run AnythingLLM locally. Refer to the table below to read how to deploy on your preferred environment or to automatically deploy.How to setup for development To fill in the required  files you'll need in each of the application sections (from root of repo). 
+  Go fill those out before proceeding. Ensure  is filled or else things won't work right. To boot the server locally (from root of repo). To boot the frontend locally (from root of repo). To then run the document collector (from root of repo).External Apps & IntegrationsThese are apps that are not maintained by Mintplex Labs, but are compatible with AnythingLLM. A listing here is not an endorsement.AnythingLLM by Mintplex Labs Inc contains a telemetry feature that collects anonymous usage information.create PR with branch name format of <issue number>-<short name> An all-in-one GUI & tool-suite for managing vector databases. Turn your entire library of OpenAI assistants into one single army commanded from a single agent.]]></content:encoded></item><item><title>ocrmypdf/OCRmyPDF</title><link>https://github.com/ocrmypdf/OCRmyPDF</link><author></author><category>trending</category><pubDate>Fri, 7 Feb 2025 02:26:57 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[OCRmyPDF adds an OCR text layer to scanned PDF files, allowing them to be searchedOCRmyPDF adds an OCR text layer to scanned PDF files, allowing them to be searched or copy-pasted.ocrmypdf                      # it's a scriptable command line program
+   -l eng+fra                 # it supports multiple languages
+   --rotate-pages             # it can fix pages that are misrotated
+   --deskew                   # it can deskew crooked PDFs!
+   --title "My PDF"           # it can change output metadata
+   --jobs 4                   # it uses multiple cores by default
+   --output-type pdfa         # it produces PDF/A by default
+   input_scanned.pdf          # takes PDF input (or images)
+   output_searchable.pdf      # produces validated PDF output
+Generates a searchable PDF/A file from a regular PDFPlaces OCR text accurately below the image to ease copy / pasteKeeps the exact resolution of the original embedded imagesWhen possible, inserts OCR information as a "lossless" operation without disrupting any other contentOptimizes PDF images, often producing files smaller than the input fileIf requested, deskews and/or cleans the image before performing OCRValidates input and output filesDistributes work across all available CPU coresKeeps your private data private.Scales properly to handle files with thousands of pages.Battle-tested on millions of PDFs.I searched the web for a free command line tool to OCR PDF files: I found many, but none of them were really satisfying:Either they produced PDF files with misplaced text under the image (making copy/paste impossible)Or they did not handle accents and multilingual charactersOr they changed the resolution of the embedded imagesOr they generated ridiculously large PDF filesOr they crashed when trying to OCROr they did not produce valid PDF filesOn top of that none of them produced PDF/A files (format dedicated for long time storage)...so I decided to develop my own tool.Linux, Windows, macOS and FreeBSD are supported. Docker images are also available, for both x64 and ARM.Windows Subsystem for LinuxOCRmyPDF uses Tesseract for OCR, and relies on its language packs. For Linux users, you can often find packages that provide language packs:# Display a list of all Tesseract language packs
+apt-cache search tesseract-ocr
+
+# Debian/Ubuntu users
+apt-get install tesseract-ocr-chi-sim  # Example: Install Chinese Simplified language pack
+
+# Arch Linux users
+pacman -S tesseract-data-eng tesseract-data-deu # Example: Install the English and German language packs
+
+# brew macOS users
+brew install tesseract-lang
+You can then pass the  argument to OCRmyPDF to give a hint as to what languages it should search for. Multiple languages can be requested.OCRmyPDF supports Tesseract 4.1.1+. It will automatically use whichever version it finds first on the  environment variable. On Windows, if  does not provide a Tesseract binary, we use the highest version number that is installed according to the Windows Registry.Documentation and supportOnce OCRmyPDF is installed, the built-in help which explains the command syntax and options can be accessed via:Please report issues on our GitHub issues page, and follow the issue template for quick response.# Add an OCR layer and convert to PDF/A
+ocrmypdf input.pdf output.pdf
+
+# Convert an image to single page PDF
+ocrmypdf input.jpg output.pdf
+
+# Add OCR to a file in place (only modifies file on success)
+ocrmypdf myfile.pdf myfile.pdf
+
+# OCR with non-English languages (look up your language's ISO 639-3 code)
+ocrmypdf -l fra LeParisien.pdf LeParisien.pdf
+
+# OCR multilingual documents
+ocrmypdf -l eng+fra Bilingual-English-French.pdf Bilingual-English-French.pdf
+
+# Deskew (straighten crooked pages)
+ocrmypdf --deskew input.pdf output.pdf
+In addition to the required Python version, OCRmyPDF requires external program installations of Ghostscript and Tesseract OCR. OCRmyPDF is pure Python, and runs on pretty much everything: Linux, macOS, Windows and FreeBSD.OCRmyPDF would not be the software that it is today without companies and users choosing to provide support for feature development and consulting enquiries. We are happy to discuss all enquiries, whether for extending the existing feature set, or integrating OCRmyPDF into a larger system.The OCRmyPDF software is licensed under the Mozilla Public License 2.0 (MPL-2.0). This license permits integration of OCRmyPDF with other code, included commercial and closed source, but asks you to publish source-level modifications you make to OCRmyPDF.Some components of OCRmyPDF have other licenses, as indicated by standard SPDX license identifiers or the DEP5 copyright and licensing information file. Generally speaking, non-core code is licensed under MIT, and the documentation and test files are licensed under Creative Commons ShareAlike 4.0 (CC-BY-SA 4.0).The software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.]]></content:encoded></item><item><title>Bin-Huang/chatbox</title><link>https://github.com/Bin-Huang/chatbox</link><author></author><category>trending</category><pubDate>Sun, 2 Feb 2025 04:59:46 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[User-friendly Desktop Client App for AI Models/LLMs (GPT, Claude, Gemini, Ollama...)This is the repository for the Chatbox Community Edition, open-sourced under the GPLv3 license. For most users, I recommend using the Chatbox Official Edition (closed-source). It's still completely free, easy to install, and supports more of the latest features. You can get it below: .APK Your Ultimate AI Copilot on the Desktop. Chatbox is a desktop client for ChatGPT, Claude and other LLMs, available on Windows, Mac, Linux Your data remains on your device, ensuring it never gets lost and maintains your privacy.No-Deployment Installation Packages Get started quickly with downloadable installation packages. No complex setup necessary!Support for Multiple LLM Providers Seamlessly integrate with a variety of cutting-edge language models:Ollama (enable access to local models like llama2, Mistral, Mixtral, codellama, vicuna, yi, and solar)Image Generation with Dall-E-3 Create the images of your imagination with Dall-E-3. Advanced prompting features to refine and focus your queries for better responses. Stay productive with shortcuts that speed up your workflow.Markdown, Latex & Code Highlighting Generate messages with the full power of Markdown and Latex formatting, coupled with syntax highlighting for various programming languages, enhancing readability and presentation.Prompt Library & Message Quoting Save and organize prompts for reuse, and quote messages for context in discussions. Provide rapid responses to your interactions with immediate, progressive replies.Ergonomic UI & Dark Theme A user-friendly interface with a night mode option for reduced eye strain during extended use. Collaborate with ease and share OpenAI API resources among your team. Learn MoreCross-Platform Availability Chatbox is ready for Windows, Mac, Linux users.Access Anywhere with the Web Version Use the web application on any device with a browser, anywhere. Use the mobile applications that will bring this power to your fingertips on the go. Catering to a global audience by offering support in multiple languages:简体中文 (Simplified Chinese)繁體中文 (Traditional Chinese) Constantly enhancing the experience with new features!I developed Chatbox initially because I was debugging some prompts and found myself in need of a simple and easy-to-use prompt and API debugging tool. I thought there might be more people who needed such a tool, so I open-sourced it.At first, I didn't know that it would be so popular. I listened to the feedback from the open-source community and continued to develop and improve it. Now, it has become a very useful AI desktop application. There are many users who love Chatbox, and they not only use it for developing and debugging prompts, but also for daily chatting, and even to do some more interesting things like using well-designed prompts to make AI play various professional roles to assist them in everyday work...Any form of contribution is welcome, including but not limited to:Submitting feature requestsSubmitting documentation revisionsSubmitting any other forms of contributionClone the repository from Githubgit clone https://github.com/Bin-Huang/chatbox.git
+Install the required dependenciesStart the application (in development mode)Build the application, package the installer for current platformBuild the application, package the installer for all platforms]]></content:encoded></item><item><title>ollama/ollama</title><link>https://github.com/ollama/ollama</link><author></author><category>trending</category><pubDate>Sun, 2 Feb 2025 04:59:46 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[Get up and running with Llama 3.3, DeepSeek-R1, Phi-4, Gemma 2, and other large language models.Get up and running with large language models.curl -fsSL https://ollama.com/install.sh | sh
+Here are some example models that can be downloaded:ollama run deepseek-r1:671bollama run llama3.2-visionollama run llama3.2-vision:90bollama run llama2-uncensored[!NOTE] You should have at least 8 GB of RAM available to run the 7B models, 16 GB to run the 13B models, and 32 GB to run the 33B models.Ollama supports importing GGUF models in the Modelfile:Create a file named , with a  instruction with the local filepath to the model you want to import.FROM ./vicuna-33b.Q4_0.gguf
+Create the model in Ollamaollama create example -f Modelfile
+See the guide on importing models for more information.Models from the Ollama library can be customized with a prompt. For example, to customize the  model:FROM llama3.2
+
+# set the temperature to 1 [higher is more creative, lower is more coherent]
+PARAMETER temperature 1
+
+# set the system message
+SYSTEM """
+You are Mario from Super Mario Bros. Answer as Mario, the assistant, only.
+"""
+Next, create and run the model:ollama create mario -f ./Modelfile
+ollama run mario
+>>> hi
+Hello! It's your friend Mario.
+For more information on working with a Modelfile, see the Modelfile documentation. is used to create a model from a Modelfile.ollama create mymodel -f ./Modelfile
+This command can also be used to update a local model. Only the diff will be pulled.ollama cp llama3.2 my-model
+For multiline input, you can wrap text with :>>> """Hello,
+... world!
+... """
+I'm a basic program that prints the famous "Hello, world!" message to the console.
+ollama run llava "What's in this image? /Users/jmorgan/Desktop/smile.png"
+: The image features a yellow smiley face, which is likely the central focus of the picture.Pass the prompt as an argumentollama run llama3.2 "Summarize this file: $(cat README.md)"
+: Ollama is a lightweight, extensible framework for building and running language models on the local machine. It provides a simple API for creating, running, and managing models, as well as a library of pre-built models that can be easily used in a variety of applications.List models on your computerList which models are currently loadedStop a model which is currently running is used when you want to start ollama without running the desktop application.Finally, in a separate shell, run a model:Ollama has a REST API for running and managing models.curl http://localhost:11434/api/generate -d '{
+  "model": "llama3.2",
+  "prompt":"Why is the sky blue?"
+}'
+curl http://localhost:11434/api/chat -d '{
+  "model": "llama3.2",
+  "messages": [
+    { "role": "user", "content": "why is the sky blue?" }
+  ]
+}'
+pgai - PostgreSQL as a vector database (Create and search embeddings from Ollama models using pgvector) 
+  MindsDB (Connects Ollama models with nearly 200 data platforms and apps)Kangaroo (AI-powered SQL client and admin tool for popular databases)Ollama App (Modern and easy-to-use multi-platform client for Ollama)ConfiChat (Lightweight, standalone, multi-platform, and privacy focused LLM chat interface with optional encryption)OpenLIT is an OpenTelemetry-native tool for monitoring Ollama Applications & GPUs using traces and metrics.HoneyHive is an AI observability and evaluation platform for AI agents. Use HoneyHive to evaluate agent performance, interrogate failures, and monitor quality in production.Langfuse is an open source LLM observability platform that enables teams to collaboratively monitor, evaluate and debug AI applications.MLflow Tracing is an open source LLM observability tool with a convenient API to log and visualize traces, making it easy to debug and evaluate GenAI applications.]]></content:encoded></item><item><title>deepseek-ai/awesome-deepseek-integration</title><link>https://github.com/deepseek-ai/awesome-deepseek-integration</link><author></author><category>trending</category><pubDate>Sun, 2 Feb 2025 04:59:46 +0000</pubDate><source url="http://mshibanami.github.io/GitHubTrendingRSS">Dev - Github Trending</source><content:encoded><![CDATA[ <tr>
+    <td> <img src="https://github.com/user-attachments/assets/5e16beb0-993e-47bf-807e-7c8804b313a2" alt="Asp Client" width="64" height="auto" /> </td>
+    <td> <a href="https://github.com/Anwar-alhitar/Deepseek.Asp.Client/blob/master/README.md">ASP Client</a> </td>
+    <td><a href="https://github.com/Anwar-alhitar/Deepseek.Asp.Client/blob/master/README.md">Deepseek.ASPClient</a>  is a lightweight ASP.NET wrapper for the Deepseek AI API, designed to simplify AI-driven text processing in .NET applications.. </td>
+
+</tr>
+<tr>
+    <td> <img src="https://www.gptaiflow.tech/logo.png" alt="gpt-ai-flow-logo" width="64" height="auto" /> </td>
+    <td> <a href="https://www.gptaiflow.tech/docs/product/api-keys-setup#setup-deepseek-api-keys">GPT AI Flow</a></td>
+    <td>
+        The ultimate productivity weapon built by engineers for efficiency enthusiasts (themselves): <a href="https://www.gptaiflow.tech/">GPT AI Flow</a>
+        <ul>
+            <li>`Shift+Alt+Space` Wake up desktop intelligent hub</li>
+            <li>Local encrypted storage</li>
+            <li>Custom instruction engine</li>
+            <li>On-demand calling without subscription bundling</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <td> <img src="https://github.com/user-attachments/assets/b09f17a8-936d-4dac-8b24-1682d52c9a3c" alt="Icon" width="64" height="auto" /> </td>
+    <td> <a href="https://github.com/alecm20/story-flicks">Story-Flicks</a></td>
+    <td>With just one sentence, you can quickly generate high-definition story short videos, supporting models such as DeepSeek.</td>
+</tr>
+<tr>
+    <td> <img src="https://prompt.16x.engineer/favicon.ico" alt="Icon" width="64" height="auto" /> </td>
+    <td> <a href="docs/16x_prompt/README.md">16x Prompt</a> </td>
+    <td> <a href="https://prompt.16x.engineer/">16x Prompt</a> is an AI coding tool with context management. It helps developers manage source code context and craft prompts for complex coding tasks on existing codebases.</td>
+</tr>
+]]></content:encoded></item></channel></rss>
