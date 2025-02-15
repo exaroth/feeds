@@ -164,20 +164,6 @@
       "commentsUrl": null
     },
     {
-      "title": "Kubernetes History Inspector, with Kakeru Ishii",
-      "url": "http://sites.libsyn.com/419861/kubernetes-history-inspector-with-kakeru-ishii",
-      "date": 1739445780,
-      "author": "gdevs.podcast@gmail.com (gdevs.podcast@gmail.com)",
-      "guid": 23626,
-      "unread": true,
-      "content": "<p dir=\"ltr\">Kakeru is the initiator of the Kubernetes History Inspector or KHI. An open source tool that allows you to visualise Kubernetes Logs and troubleshoot issues. We discussed what the tool does, how it's built and what was the motivation behind Open sourcing it.</p><p dir=\"ltr\">Do you have something cool to share? Some questions? Let us know:</p> News of the week ",
-      "contentLength": 341,
-      "flags": null,
-      "enclosureUrl": "https://traffic.libsyn.com/secure/e780d51f-f115-44a6-8252-aed9216bb521/KPOD247.mp3?dest-id=3486674",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
       "title": "The Scythians",
       "url": "https://shows.acast.com/the-ancients/episodes/the-scythians",
       "date": 1739415600,
@@ -706,6 +692,20 @@
       "contentLength": 1167,
       "flags": null,
       "enclosureUrl": "https://www.youtube.com/v/eOqOj9qDcwI?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "New interview with Nathan Lents: Coming February 5",
+      "url": "https://www.youtube.com/watch?v=c5NWezORyEQ",
+      "date": 1738677642,
+      "author": "Closer To Truth",
+      "guid": 20221,
+      "unread": true,
+      "content": "<article>Evolutionary biologist Nathan Lents compares sexual behavior in the animal kingdom with that of humankind #shorts</article>",
+      "contentLength": 113,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/c5NWezORyEQ?version=3",
       "enclosureMime": "",
       "commentsUrl": null
     }

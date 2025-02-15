@@ -7,7 +7,7 @@
   "isQuery": true,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 127,
+  "itemCount": 124,
   "items": [
     {
       "title": "Deepak Chopra - What is Truth?",
@@ -160,20 +160,6 @@
       "contentLength": 1620,
       "flags": null,
       "enclosureUrl": "https://op3.dev/e/https://cdn.changelog.com/uploads/podcast/628/the-changelog-628.mp3",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Kubernetes History Inspector, with Kakeru Ishii",
-      "url": "http://sites.libsyn.com/419861/kubernetes-history-inspector-with-kakeru-ishii",
-      "date": 1739445780,
-      "author": "gdevs.podcast@gmail.com (gdevs.podcast@gmail.com)",
-      "guid": 23626,
-      "unread": true,
-      "content": "<p dir=\"ltr\">Kakeru is the initiator of the Kubernetes History Inspector or KHI. An open source tool that allows you to visualise Kubernetes Logs and troubleshoot issues. We discussed what the tool does, how it's built and what was the motivation behind Open sourcing it.</p><p dir=\"ltr\">Do you have something cool to share? Some questions? Let us know:</p> News of the week ",
-      "contentLength": 341,
-      "flags": null,
-      "enclosureUrl": "https://traffic.libsyn.com/secure/e780d51f-f115-44a6-8252-aed9216bb521/KPOD247.mp3?dest-id=3486674",
       "enclosureMime": "",
       "commentsUrl": null
     },
@@ -1088,20 +1074,6 @@
       "commentsUrl": null
     },
     {
-      "title": "Linkerd, with William Morgan",
-      "url": "http://sites.libsyn.com/419861/linkerd-with-william-morgan",
-      "date": 1738110300,
-      "author": "gdevs.podcast@gmail.com (gdevs.podcast@gmail.com)",
-      "guid": 18034,
-      "unread": true,
-      "content": "<p dir=\"ltr\"><a href=\"https://www.linkedin.com/in/wmorgan/\">William Morgan</a> is the CEO of <a href=\"https://buoyant.io/\">Buoyant</a>, the company behind Linkerd. You worked at Twitter before as a software engineer and engineering manager and you have a long experience in the field.</p><p dir=\"ltr\">Do you have something cool to share? Some questions? Let us know:</p> News of the week  Links from the interview ",
-      "contentLength": 295,
-      "flags": null,
-      "enclosureUrl": "https://traffic.libsyn.com/secure/e780d51f-f115-44a6-8252-aed9216bb521/KPod246.mp3?dest-id=3486674",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
       "title": "Joe Rogan Experience #2263 - Gad Saad",
       "url": "https://www.youtube.com/watch?v=vhJ_6YyOU2A",
       "date": 1738087247,
@@ -1770,20 +1742,6 @@
       "contentLength": 1245,
       "flags": null,
       "enclosureUrl": "https://www.youtube.com/v/hrwF0lX7HQs?version=3",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Joe Rogan Experience #2258 - Steven Rinella",
-      "url": "https://www.youtube.com/watch?v=Nc5oIzZpyLs",
-      "date": 1737050414,
-      "author": "PowerfulJRE",
-      "guid": 13896,
-      "unread": true,
-      "content": "<article>Steven Rinella is an outdoorsman, conservationist, writer, and host of \"MeatEater.\" Look for his new audio original \"MeatEater's American History: The Mountain Men (1806-1840)\" on February 11, 2025. His new show \"Hunting History With Steven Rinella\" on HISTORY begins on January 28.\nhttp://www.themeateater.com\n\nThis episode is brought to you by Visible. New members can get the Visible plan for just $20/mo for 25 months. Switch by 1/31/2025 at http://Visible.com/ROGAN with promo code ROGAN. Terms apply.\n\nDon’t miss out on all the action this week at DraftKings! Download the DraftKings app today! Sign-up using http://dkng.co/rogan or through my promo code ROGAN.\n\nGAMBLING PROBLEM? CALL 1-800-GAMBLER, (800) 327-5050 or visit http://gamblinghelplinema.org (MA). Call 877-8-HOPENY/text HOPENY (467369) (NY). Please Gamble Responsibly. 888-789-7777/visit ccpg.org (CT) or visit http://www.mdgamblinghelp.org (MD).21+ and present in most states. (18+ DC/KY/NH/WY). Void in ONT/OR/NH. Eligibility restrictions apply. On behalf of Boot Hill Casino &amp; Resort (KS). 1 per new customer. Min. $5 deposit. Min. $5 bet. Max. $200 issued as non-withdrawable Bonus Bets that expire in 7 days (168 hours). Stake removed from payout. Terms: http://dkng.co/dk-offer-terms. Ends 2/9/25 at 11:59 PM ET. Sponsored by DK.</article>",
-      "contentLength": 1307,
-      "flags": null,
-      "enclosureUrl": "https://www.youtube.com/v/Nc5oIzZpyLs?version=3",
       "enclosureMime": "",
       "commentsUrl": null
     }
