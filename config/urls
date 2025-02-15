@@ -5,8 +5,11 @@ file:///home/exaroth/.scripts/atom.xml "~ Atom Pocket"
 "query:Podcasts:tags # \"podcast\""
 "query:Movies:tags # \"movies\" and unread = \"yes\""
 "query:HN:tags # \"hn\""
+"query:Dev:tags # \"hn\""
 
 "query:Github Issues:tags # \"gh\" and age < 14"
+
+https://zig.news/rss "~Zig News" ! dev
 
 https://access.acast.com/rss/theeconomistmorningbriefing/default "~News - Daily Brief" ! news
 https://www.youtube.com/feeds/videos.xml?channel_id=UCknLrEdhRCp1aegoMqRaCZg "~News - DW" ! news
