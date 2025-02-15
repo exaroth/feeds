@@ -1,4 +1,113 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Video</title><link>https://konrad.website/feeds/</link><description></description><item><title>Rust vs. Go (Golang): Performance 2025</title><link>https://www.youtube.com/watch?v=CsKNTwS9kic</link><author>Anton Putra</author><category>dev</category><category>video</category><enclosure url="https://www.youtube.com/v/CsKNTwS9kic?version=3" length="" type=""/><pubDate>Sat, 8 Feb 2025 11:36:09 +0000</pubDate><source url="https://www.youtube.com/channel/UCeLvlbC754U6FyFQbKc0UnQ">Dev - Anton Putra</source><content:encoded><![CDATA[Go vs Rust Performance Comparison. Go (1.23.6) vs Rust (1.84.1).
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Video</title><link>https://konrad.website/feeds/</link><description></description><item><title>Rust vs C++ Performance</title><link>https://www.youtube.com/watch?v=WnMin9cf78g</link><author>Anton Putra</author><category>dev</category><category>video</category><enclosure url="https://www.youtube.com/v/WnMin9cf78g?version=3" length="" type=""/><pubDate>Thu, 13 Feb 2025 14:30:41 +0000</pubDate><source url="https://www.youtube.com/channel/UCeLvlbC754U6FyFQbKc0UnQ">Dev - Anton Putra</source><content:encoded><![CDATA[C++ vs Rust Speed.
+
+🔴 To support my channel, I'd like to offer Mentorship/On-the-Job Support/Consulting (me@antonputra.com)
+
+🍿 Benchmarks: https://youtube.com/playlist?list=PLiMWaCMwGJXmcDLvMQeORJ-j_jayKaLVn&si=p-UOaVM_6_SFx52H
+
+👋 AWS is expensive - Infra Support Fund: https://buymeacoffee.com/antonputra
+
+▬▬▬▬▬ Experience & Location 💼 ▬▬▬▬▬
+►  I’m a Senior Software Engineer at Juniper Networks (13+ years of experience)
+►  Located in San Francisco Bay Area, CA (US citizen)
+
+▬▬▬▬▬▬ Connect with me 👋 ▬▬▬▬▬▬
+►  LinkedIn: https://www.linkedin.com/in/anton-putra
+►  Twitter/X: https://twitter.com/antonvputra
+►  GitHub: https://github.com/antonputra
+►  Email: me@antonputra.com
+
+▬▬▬▬▬▬▬ Source Code 📚 ▬▬▬▬▬▬▬
+► Original Source Code: https://github.com/antonputra/tutorials/tree/245/lessons/245
+
+PR to improve Rust - https://github.com/antonputra/tutorials/pull/429
+PR to improve Rust - https://github.com/antonputra/tutorials/pull/431
+PR to improve Rust - https://github.com/antonputra/tutorials/pull/433
+
+#rust #golang #devops]]></content:encoded></item><item><title>The difference between metrics and scorers</title><link>https://www.youtube.com/watch?v=67KMDSitw1M</link><author>probabl</author><category>dev</category><category>ai</category><category>video</category><enclosure url="https://www.youtube.com/v/67KMDSitw1M?version=3" length="" type=""/><pubDate>Wed, 12 Feb 2025 10:41:04 +0000</pubDate><source url="https://www.youtube.com/channel/UCIat2Cdg661wF5DQDWTQAmg">Dev - Probabl</source><content:encoded><![CDATA[You can easily write custom metric functions for scikit-learn, but you need to take an extra step if you want to use those metrics in a hyperparameter search. To add a number there, you need to use a scorer instead. The goal of this video is to explain the difference and to show how to leverage the `make_scorer` helper utility here.
+
+Website: https://probabl.ai/
+LinkedIn: https://www.linkedin.com/company/probabl
+Bluesky: https://bsky.app/profile/probabl.bsky.social
+Twitter: https://x.com/probabl_ai
+Discord: https://discord.probabl.ai
+
+We also host a podcast called Sample Space, which you can find on your favourite podcast player. All the links can be found here:
+https://rss.com/podcasts/sample-space/
+
+#probabl]]></content:encoded></item><item><title>Elon Musk attempts hostile takeover of OpenAI…</title><link>https://www.youtube.com/watch?v=tPZauAYgVRQ</link><author>Fireship</author><category>dev</category><category>tech</category><category>video</category><enclosure url="https://www.youtube.com/v/tPZauAYgVRQ?version=3" length="" type=""/><pubDate>Tue, 11 Feb 2025 18:58:36 +0000</pubDate><source url="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA">Dev - Fireship</source><content:encoded><![CDATA[Elon Musk has launched a hostile takeover bid to take control over the non-profit assets of OpenAI. Let's look into the details of OpenAI's corporate structure and the likelihood Elon's takeover is successful. 
+
+#tech #ai #thecodereport
+
+💬 Chat with Me on Discord
+
+https://discord.gg/fireship
+
+🔗 Resources
+
+OpenAI Stargate https://youtu.be/YrHsw4Oja7w
+o1 First look https://youtu.be/Sf4WqHBCYSY
+
+🔥 Get More Content - Upgrade to PRO
+
+Upgrade at https://fireship.io/pro
+Use code YT25 for 25% off PRO access 
+
+🎨 My Editor Settings
+
+- Atom One Dark 
+- vscode-icons
+- Fira Code Font
+
+🔖 Topics Covered
+
+- Why is Elon trying to buy OpenAI?
+- Latest trends in artificial Intelligence
+- Elon Musk vs Sam Altman Feud Explained]]></content:encoded></item><item><title>Introducing the CrossValidationReport</title><link>https://www.youtube.com/watch?v=R6dRAE83Y2c</link><author>probabl</author><category>dev</category><category>ai</category><category>video</category><enclosure url="https://www.youtube.com/v/R6dRAE83Y2c?version=3" length="" type=""/><pubDate>Tue, 11 Feb 2025 12:45:02 +0000</pubDate><source url="https://www.youtube.com/channel/UCIat2Cdg661wF5DQDWTQAmg">Dev - Probabl</source><content:encoded><![CDATA[Skore version 0.6 introduces the `CrossValidationReport` that provides you with an `EstimatorReport` for each fold of your cross-validation, enabling you to inspect your estimator on each fold.
+
+------
+Links:
+
+skore v0.6 documentation:
+https://skore.probabl.ai/0.6/index.html
+
+skore GitHub repository:
+https://github.com/probabl-ai/skore
+
+Website: https://probabl.ai/
+LinkedIn: https://www.linkedin.com/company/probabl
+Twitter: https://x.com/probabl_ai
+Bluesky: https://bsky.app/profile/probabl.bsky.social
+Discord: https://discord.probabl.ai
+
+We also host a podcast called Sample Space, which you can find on your favourite podcast player. All the links can be found here:
+https://rss.com/podcasts/sample-space/
+
+#probabl]]></content:encoded></item><item><title>Rust vs. Go (Golang): Performance (Fastest Frameworks + PostgreSQL)</title><link>https://www.youtube.com/watch?v=31R8Ef9A0iw</link><author>Anton Putra</author><category>dev</category><category>video</category><enclosure url="https://www.youtube.com/v/31R8Ef9A0iw?version=3" length="" type=""/><pubDate>Tue, 11 Feb 2025 09:25:18 +0000</pubDate><source url="https://www.youtube.com/channel/UCeLvlbC754U6FyFQbKc0UnQ">Dev - Anton Putra</source><content:encoded><![CDATA[Go vs Rust Performance Comparison. Go (1.23.6) vs Rust (1.84.1).
+
+🔴 To support my channel, I'd like to offer Mentorship/On-the-Job Support/Consulting (me@antonputra.com)
+
+🍿 Benchmarks: https://youtube.com/playlist?list=PLiMWaCMwGJXmcDLvMQeORJ-j_jayKaLVn&si=p-UOaVM_6_SFx52H
+
+👋 AWS is expensive - Infra Support Fund: https://buymeacoffee.com/antonputra
+
+▬▬▬▬▬ Experience & Location 💼 ▬▬▬▬▬
+►  I’m a Senior Software Engineer at Juniper Networks (13+ years of experience)
+►  Located in San Francisco Bay Area, CA (US citizen)
+
+▬▬▬▬▬▬ Connect with me 👋 ▬▬▬▬▬▬
+►  LinkedIn: https://www.linkedin.com/in/anton-putra
+►  Twitter/X: https://twitter.com/antonvputra
+►  GitHub: https://github.com/antonputra
+►  Email: me@antonputra.com
+
+▬▬▬▬▬▬▬ Source Code 📚 ▬▬▬▬▬▬▬
+► Original Source Code: https://github.com/antonputra/tutorials/tree/244/lessons/244
+
+PR to improve Rust - https://github.com/antonputra/tutorials/pull/429
+PR to improve Rust - https://github.com/antonputra/tutorials/pull/431
+PR to improve Rust - https://github.com/antonputra/tutorials/pull/433
+
+#rust #golang #devops]]></content:encoded></item><item><title>Rust vs. Go (Golang): Performance 2025</title><link>https://www.youtube.com/watch?v=CsKNTwS9kic</link><author>Anton Putra</author><category>dev</category><category>video</category><enclosure url="https://www.youtube.com/v/CsKNTwS9kic?version=3" length="" type=""/><pubDate>Sat, 8 Feb 2025 11:36:09 +0000</pubDate><source url="https://www.youtube.com/channel/UCeLvlbC754U6FyFQbKc0UnQ">Dev - Anton Putra</source><content:encoded><![CDATA[Go vs Rust Performance Comparison. Go (1.23.6) vs Rust (1.84.1).
 
 🔴 To support my channel, I'd like to offer Mentorship/On-the-Job Support/Consulting (me@antonputra.com)
 
@@ -501,63 +610,7 @@ Use code YT25 for 25% off PRO access
 - Progress of Artificial Super Intelligence
 - Elon feud with Asmongold 
 - Zuckerberg lies on Joe Rogan
-- Software engineering trends]]></content:encoded></item><item><title>Time for some (extreme) distillation with Thomas van Dongen - founder of the Minish Lab</title><link>https://www.youtube.com/watch?v=8rvCoMzOSYM</link><author>probabl</author><category>dev</category><category>ai</category><category>video</category><enclosure url="https://www.youtube.com/v/8rvCoMzOSYM?version=3" length="" type=""/><pubDate>Thu, 16 Jan 2025 07:30:04 +0000</pubDate><source url="https://www.youtube.com/channel/UCIat2Cdg661wF5DQDWTQAmg">Dev - Probabl</source><content:encoded><![CDATA[Word embeddings might feel like they are a little bit out of fashion. After all, we have attention mechanisms and transformer models now, right? Well, it turns out that if you apply distillation the right way you can actually get highly performant word embeddings out. It's a technique featured by the model2vec project from the Minish lab and in this episode we talk to the founder to learn more about the technique.
-
-00:00 Introduction 
-00:46 A bit of history
-07:01 Benchmarks
-08:44 Steps towards Model2Vec
-16:06 How Model2Vec works
-25:24 Tokenlearn tricks
-31:17 Mention non-English
-33:22 Starting Minishlab
-39:21 Other projects
-43:13 Future work
-48:36 Outro
-
-To learn more about Minish Lab, make sure you check out their Github repository. 
-https://github.com/MinishLab
-
-If you want to learn more about Model2Vec you can check our livestream but the Github repo is also highly recommended.
-https://www.youtube.com/live/Ymn5RVaKQA0
-https://github.com/MinishLab/model2vec
-
-Website: https://probabl.ai/
-LinkedIn: https://www.linkedin.com/company/probabl
-Twitter: https://x.com/probabl_ai
-Bluesky: https://bsky.app/profile/probabl.bsky.social
-Discord: https://discord.probabl.ai
-
-We also host a podcast called Sample Space, which you can find on your favourite podcast player. All the links can be found here:
-https://rss.com/podcasts/sample-space/
-
-#probabl]]></content:encoded></item><item><title>The most disastrous app launch of all time…</title><link>https://www.youtube.com/watch?v=yvGY5vkONds</link><author>Fireship</author><category>dev</category><category>tech</category><category>video</category><enclosure url="https://www.youtube.com/v/yvGY5vkONds?version=3" length="" type=""/><pubDate>Wed, 15 Jan 2025 14:30:20 +0000</pubDate><source url="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA">Dev - Fireship</source><content:encoded><![CDATA[Stay updated with the the best dev content at https://daily.dev/fireship
-
-Patrick Spence, CEO of Sonos, was forced to resign following a disastrous app release that rendered people's speaker systems useless. Let's take a look a what went wrong and where Sonos goes from here.
-
-🎧 Here's an affiliate link to some headphones that work without an app: Audio-Technica ATH-M30x https://amzn.to/3PxrUTl 
-
-#tech #appdevelopment #thecodereport 
-
-💬 Chat with Me on Discord
-
-https://discord.gg/fireship
-
-🔥 Get More Content - Upgrade to PRO
-
-Upgrade at https://fireship.io/pro
-Use code YT25 for 25% off PRO access 
-
-🎨 My Editor Settings
-
-- Atom One Dark 
-- vscode-icons
-- Fira Code Font
-
-🔖 Topics Covered
-- Patrick Spence's resignation
-- Sonos' failed app release
-- Was Flutter to blame?]]></content:encoded></item><item><title>More Python parallel stuff with joblib-modal</title><link>https://www.youtube.com/watch?v=0SXyIcsT4tg</link><author>probabl</author><category>dev</category><category>ai</category><category>video</category><enclosure url="https://www.youtube.com/v/0SXyIcsT4tg?version=3" length="" type=""/><pubDate>Mon, 13 Jan 2025 10:15:00 +0000</pubDate><source url="https://www.youtube.com/channel/UCIat2Cdg661wF5DQDWTQAmg">Dev - Probabl</source><content:encoded><![CDATA[One of the probabl colleagues has been working on an integration between joblib (which scikit-learn uses for parallel processing) and Modal (a cloud-provider known for it's likeable configuration for compute resources in Python). In this livestream we will explore a very early version and show you what's possible now and what is different. 
+- Software engineering trends]]></content:encoded></item><item><title>More Python parallel stuff with joblib-modal</title><link>https://www.youtube.com/watch?v=0SXyIcsT4tg</link><author>probabl</author><category>dev</category><category>ai</category><category>video</category><enclosure url="https://www.youtube.com/v/0SXyIcsT4tg?version=3" length="" type=""/><pubDate>Sat, 18 Jan 2025 00:33:09 +0000</pubDate><source url="https://www.youtube.com/channel/UCIat2Cdg661wF5DQDWTQAmg">Dev - Probabl</source><content:encoded><![CDATA[One of the probabl colleagues has been working on an integration between joblib (which scikit-learn uses for parallel processing) and Modal (a cloud-provider known for it's likeable configuration for compute resources in Python). In this livestream we will explore a very early version and show you what's possible now and what is different. 
 
 The notebook from this episode can be found here:
 https://github.com/probabl-ai/youtube-appendix/blob/main/00-livestream/modal-jobs.ipynb
@@ -570,68 +623,4 @@ Twitter: https://x.com/probabl_ai
 We also host a podcast called Sample Space, which you can find on your favourite podcast player. All the links can be found here:
 https://rss.com/podcasts/sample-space/
 
-If you're keen to see more videos like this, you can follow us over at  @probabl_ai.]]></content:encoded></item><item><title>Create GKE Cluster using Terraform</title><link>https://www.youtube.com/watch?v=YIENf3I0aRE</link><author>Anton Putra</author><category>dev</category><category>video</category><enclosure url="https://www.youtube.com/v/YIENf3I0aRE?version=3" length="" type=""/><pubDate>Sun, 12 Jan 2025 10:41:12 +0000</pubDate><source url="https://www.youtube.com/channel/UCeLvlbC754U6FyFQbKc0UnQ">Dev - Anton Putra</source><content:encoded><![CDATA[Google Kubernetes Engine GKE Tutorial (Part 2)
-
-👋 [Playlist] Google Kubernetes Engine GKE Tutorial: https://www.youtube.com/playlist?list=PLiMWaCMwGJXlyWNHxoGCY7XLydiJa2atL
-
-🍿 Benchmarks: https://youtube.com/playlist?list=PLiMWaCMwGJXmcDLvMQeORJ-j_jayKaLVn&si=p-UOaVM_6_SFx52H
-
-▬▬▬▬▬ Experience & Location 💼 ▬▬▬▬▬
-►  I’m a Senior Software Engineer at Juniper Networks (13+ years of experience)
-►  Located in San Francisco Bay Area, CA (US citizen)
-
-▬▬▬▬▬▬ Connect with me 👋 ▬▬▬▬▬▬
-►  LinkedIn: https://www.linkedin.com/in/anton-putra
-►  Twitter/X: https://twitter.com/antonvputra
-►  Instagram: https://www.instagram.com/aputrabay
-►  GitHub: https://github.com/antonputra
-►  Email: me@antonputra.com
-
-▬▬▬▬▬▬▬ Timestamps ⏰  ▬▬▬▬▬▬▬
-0:00 Intro
-1:36 Create GKE Cluster using Terraform
-5:20 Create GKE Nodes using Terraform
-
-▬▬▬▬▬▬▬ Source Code 📚 ▬▬▬▬▬▬▬
-► Original Source Code: https://github.com/antonputra/tutorials/tree/238/lessons/238
-
-#GCP #GKE  #Terraform]]></content:encoded></item><item><title>ModernBert: time for a new BERT</title><link>https://www.youtube.com/watch?v=ZWo6Q8580sA</link><author>probabl</author><category>dev</category><category>ai</category><category>video</category><enclosure url="https://www.youtube.com/v/ZWo6Q8580sA?version=3" length="" type=""/><pubDate>Sat, 11 Jan 2025 00:34:49 +0000</pubDate><source url="https://www.youtube.com/channel/UCIat2Cdg661wF5DQDWTQAmg">Dev - Probabl</source><content:encoded><![CDATA[During the holiday season there has been a bit of buzz around a new family of BERT models called ModernBert. We figured we might explore some of these models at the start of this year to see of these models might also be useful for scikit-learn pipelines. 
-
-Colab link:
-https://colab.research.google.com/drive/143ljL9xthdgdtKsThs3qglk0dPAsY3Q3?usp=sharing
-
-Website: https://probabl.ai/
-Discord: https://discord.probabl.ai/
-LinkedIn: https://www.linkedin.com/company/probabl
-Twitter: https://x.com/probabl_ai
-
-We also host a podcast called Sample Space, which you can find on your favourite podcast player. All the links can be found here:
-https://rss.com/podcasts/sample-space/
-
-If you're keen to see more videos like this, you can follow us over at  @probabl_ai.]]></content:encoded></item><item><title>VM vs Kubernetes: Performance 🚀</title><link>https://www.youtube.com/watch?v=Y4pOmi0j_90</link><author>Anton Putra</author><category>dev</category><category>video</category><enclosure url="https://www.youtube.com/v/Y4pOmi0j_90?version=3" length="" type=""/><pubDate>Fri, 10 Jan 2025 13:31:26 +0000</pubDate><source url="https://www.youtube.com/channel/UCeLvlbC754U6FyFQbKc0UnQ">Dev - Anton Putra</source><content:encoded><![CDATA[Kubernetes Performance Testing.
-
-🔴 To support my channel, I'd like to offer Mentorship/On-the-Job Support/Consulting (me@antonputra.com)
-
-🍿 Benchmarks: https://youtube.com/playlist?list=PLiMWaCMwGJXmcDLvMQeORJ-j_jayKaLVn&si=p-UOaVM_6_SFx52H
-
-👋 AWS is expensive - Infra Support Fund: https://buymeacoffee.com/antonputra
-
-▬▬▬▬▬ Experience & Location 💼 ▬▬▬▬▬
-►  I’m a Senior Software Engineer at Juniper Networks (13+ years of experience)
-►  Located in San Francisco Bay Area, CA (US citizen)
-
-▬▬▬▬▬▬ Connect with me 👋 ▬▬▬▬▬▬
-►  LinkedIn: https://www.linkedin.com/in/anton-putra
-►  Twitter/X: https://twitter.com/antonvputra
-►  Instagram: https://www.instagram.com/aputrabay
-►  GitHub: https://github.com/antonputra
-►  Email: me@antonputra.com
-
-▬▬▬▬▬▬▬ Timestamps ⏰  ▬▬▬▬▬▬▬
-0:00 Intro
-1:33 Test
-
-▬▬▬▬▬▬▬ Source Code 📚 ▬▬▬▬▬▬▬
-► Original Source Code: https://github.com/antonputra/tutorials/tree/237/lessons/237
-
-#kubernetes #k8s #devops]]></content:encoded></item></channel></rss>
+If you're keen to see more videos like this, you can follow us over at  @probabl_ai.]]></content:encoded></item></channel></rss>
