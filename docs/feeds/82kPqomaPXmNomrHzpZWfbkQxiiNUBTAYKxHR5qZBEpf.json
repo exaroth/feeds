@@ -16,26 +16,12 @@
       "author": "lakshikag",
       "guid": 24526,
       "unread": true,
-      "content": "<p>A place for solo or small-team developers to discuss game development. Showcase progress, share tips, ask for help, etc.</p>",
-      "contentLength": 120,
+      "content": "",
+      "contentLength": 0,
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": "",
       "commentsUrl": "https://news.ycombinator.com/item?id=43058285"
-    },
-    {
-      "title": "Show HN: Kreuzberg – Modern async Python library for document text extraction",
-      "url": "https://github.com/Goldziher/kreuzberg",
-      "date": 1739614043,
-      "author": "nhirschfeld",
-      "guid": 24479,
-      "unread": true,
-      "content": "<p>I'm excited to showcase Kreuzberg!</p><p>Kreuzberg is a modern Python library built from the ground up with async/await, type hints, and optimized I/O handling.</p><p>It provides a unified interface for extracting text from documents (PDFs, images, office files) without external API dependencies.</p><p>Key technical features:\n- Built with modern Python best practices (async/await, type hints, functional-first)\n- Optimized async I/O with anyio for multi-loop compatibility\n- Smart worker process pool for CPU-bound tasks (OCR, doc conversion)\n- Efficient batch processing with concurrent extractions\n- Clean error handling with context-rich exceptions</p><p>I built this after struggling with existing solutions that were either synchronous-only, required complex deployments, or had poor async support. The goal was to create something that works well in modern async Python applications, can be easily dockerized or used in serverless contexts, and relies only on permissive OSS.</p><p>Key advantages over alternatives:\n- True async support with optimized I/O\n- Minimal dependencies (much smaller than alternatives)\n- Perfect for serverless and async web apps\n- Local processing without API calls\n- Built for modern Python codebases with rigorous typing and testing</p><p>The library is MIT licensed and open to contributions.</p>",
-      "contentLength": 1289,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": "https://news.ycombinator.com/item?id=43057375"
     },
     {
       "title": "Show HN: VimLM – A Local, Offline Coding Assistant for Vim",
@@ -708,6 +694,20 @@
       "enclosureUrl": "",
       "enclosureMime": "",
       "commentsUrl": "https://news.ycombinator.com/item?id=42867050"
+    },
+    {
+      "title": "Show HN: Distr – open-source distribution platform for on-prem deployments",
+      "url": "https://github.com/glasskube/distr",
+      "date": 1738167715,
+      "author": "louis_w_gk",
+      "guid": 18899,
+      "unread": true,
+      "content": "<p>Distr is designed to help software engineers distribute and manage their applications or agents in customer-controlled or shared-responsibility environments. You only need a Docker Compose file or Helm chart—everything else for on-prem is handled by the platform.</p><p>We’re are an open source dev tool company. Over the past couple of months, we’ve spoken with dozens of software companies to understand their challenges with on-prem deployments. We analyzed the internal tools they’ve built and the best practices from existing solutions, combining them into a prebuilt, Open Source solution that works out of the box and integrates seamlessly.</p><p>Distr consists of two key components:</p><p>1. Hub - Provides a centralized view of all deployments and controls connected agents. - Comes with a simple GUI but also supports API and SDK access for seamless integration. - Fully Open- Surce and self-hostable, or you can use our fully managed platform.</p><p>2. Lightweight Agents - Pre-built agents for Helm (Kubernetes) and Docker Compose (VM) that run alongside your application. - Handle lifecycle tasks like guided installation, updates, and rollbacks. - Provide basic metrics (health status, application version) and logs</p><p>If you already have a customer portal or self-service interface for on-prem deployments, you can seamlessly integrate all features into your existing portal or application using our API or SDK. Alternatively, you can use our pre-built, white-labeled customer portal.</p><p>Here’s what an integration into your existing customer portal could look like:</p><pre><code>  import {DistrService} from \"@glasskube/distr-sdk\";\n  \n  const customerHasAutoUpdatesEnabled = false; // replace with your own logic\n  const deploymentTargetId = 'da1d7130-bfa9-49a1-b567-c49728837df7';\n  const service = new DistrService({\n      apiKey: 'distr-8c24167aeb5fd4bb48b6d2140927df0f'\n  });\n  \n  const result = await service.isOutdated(deploymentTargetId);\n  if(result.deploymentTarget.deployment?.latestStatus?.type !== 'ok') {\n      // let the user decide whether to allow updates from an instable state, e.g. with:\n      if(!confirm('The deployment is not in a stable state. Do you want to update anyway?')) {\n          return;\n      }\n  }\n  if(result.outdated) {\n      if(customerHasAutoUpdatesEnabled) {\n          await service.updateDeployment({deploymentTargetId});\n          // notify customer about the update\n      } else {\n          const newerVersionsAvailable = result.newerVersions;\n          // notify customer about the newer versions, e.g. via email\n      }\n  }\n\n\n</code></pre>\nWith the SDK/API, you can:\n- Display real-time deployed version and deployment status directly within the application, notifying customers when their deployed version is outdated.\n- Allow customers to trigger updates from within your app using a simple API call<p>If you’re distributing software and want to streamline updates or enhance monitoring, we’d love your feedback and are here to answer any questions.</p><p>Getting started is easy—just bring your Docker Compose file or Helm chart, and we’ll guide you through the rest.</p>",
+      "contentLength": 3076,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": "https://news.ycombinator.com/item?id=42866951"
     }
   ],
   "tags": [
