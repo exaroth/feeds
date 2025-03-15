@@ -1,14 +1,90 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Youtube</title><link>https://konrad.website/feeds/</link><description></description><item><title>⁠@SamAaron about ​⁠@sonic_pi</title><link>https://www.youtube.com/watch?v=8aj3jjrtjH8</link><author>GOTO Conferences</author><category>yt</category><enclosure url="https://www.youtube.com/v/8aj3jjrtjH8?version=3" length="" type=""/><pubDate>Mon, 24 Feb 2025 13:00:17 +0000</pubDate><source url="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</source><content:encoded><![CDATA[Check out the full version on our YouTube channel now! #GOTOcon #GOTOaar #SonicPi #LiveCodingMusic #CodingMusic #EducatingKids #SonicPiTutorial #SamAaron #SoundOfCode #CodeBasedMusic #SCSynth #Ruby #Erlang #Cpp  #Viral #ViralShorts #GOTO
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Youtube</title><link>https://konrad.website/feeds/</link><description></description><item><title>Why Germany is Still So Divided Between East &amp; West</title><link>https://www.youtube.com/watch?v=c-sOqHD6Pw4</link><author>RealLifeLore</author><category>yt</category><enclosure url="https://www.youtube.com/v/c-sOqHD6Pw4?version=3" length="" type=""/><pubDate>Sat, 15 Mar 2025 15:31:33 +0000</pubDate><source url="https://www.youtube.com/channel/UCP5tjEmvPItGyLhmjdwP7Ww">RealLifeLore</source><content:encoded><![CDATA[Get Nebula using my link for 40% off an annual subscription: https://go.nebula.tv/reallifelore
+Or get a Nebula lifetime subscription here: https://go.nebula.tv/lifetime?ref=reallifelore
+Or, get a gift subscription to Nebula here: https://go.nebula.tv/gift?ref=reallifelore
 
-Full version available here:
-https://youtu.be/UqWtYHjPOIs
+Please subscribe: https://www.youtube.com/channel/UCP5tjEmvPItGyLhmjdwP7Ww
 
-Sam Aaron - Live Coding Musician & Creator of Sonic Pi @SamAaron  @sonic_pi 
+RealLifeLore on Spotify: https://spoti.fi/47yMfzp
 
-RECOMMENDED BOOK
-Hans Gruendel • Making Music with Sonic Pi • https://amzn.to/3oVxGV7
-Hans Gruendel • Learn to Program with Sonic PI • https://amzn.to/3qCrLEO
-Simon Monk • Raspberry Pi Cookbook • https://amzn.to/43AGPRX
+RealLifeLore on Facebook: https://www.facebook.com/RealLifeLore/
+
+Select video clips courtesy of Getty Images
+
+Select video clips courtesy of the AP Archive
+
+Special thanks to MapTiler / OpenStreetMap Contributors and GEOlayers 3
+
+https://www.maptiler.com/copyright/
+https://www.openstreetmap.org/copyright
+https://aescripts.com/geolayers/]]></content:encoded></item><item><title>How to build a floating city | DW Documentary</title><link>https://www.youtube.com/watch?v=bgKcoJ0i9mk</link><author>DW Documentary</author><category>yt</category><enclosure url="https://www.youtube.com/v/bgKcoJ0i9mk?version=3" length="" type=""/><pubDate>Sat, 15 Mar 2025 14:00:41 +0000</pubDate><source url="https://www.youtube.com/channel/UCW39zufHfsuGgpLviKh297Q">DW Documentary</source><content:encoded><![CDATA[Some good news for cities at risk due to rising sea levels. Nigerian architect Kunlé Adeyemi came up with a design that can help buildings adapt to the looming threat of climate change.   
+
+His work began in the floating community of Makoko in the Nigerian capital Lagos. Many residents live in simple houses built on stilts over a lagoon, which makes them particularly vulnerable to rising tides and extreme weather.  
+
+Inspired by local engineering, Adeyemi came up with the “Makoko Floating System”, which allows for buildings to float on water. Its pyramid shape makes it more stable and prevents rainwater from pooling. 
+
+On a large scale, Adeyemi hopes that his design can help Makoko, and other places around the world, adapt to the rising sea.  
+
+#documentary #dwdocumentary #dwdocs #makoko 
+______
+
+We kindly ask viewers to read and stick to the DW netiquette policy on our channel: https://p.dw.com/p/MF1G]]></content:encoded></item><item><title>A Code Centric Journey Into the Gleam Language • Giacomo Cavalieri • YOW! 2024</title><link>https://www.youtube.com/watch?v=PfPIiHCId0s</link><author>GOTO Conferences</author><category>yt</category><enclosure url="https://www.youtube.com/v/PfPIiHCId0s?version=3" length="" type=""/><pubDate>Sat, 15 Mar 2025 13:00:39 +0000</pubDate><source url="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</source><content:encoded><![CDATA[This presentation was recorded at YOW! Australia 2024. #GOTOcon #YOW
+https://yowcon.com
+
+Giacomo Cavalieri - Gleam Core Team Member @giacomo_cavalieri 
+
+RESOURCES
+https://bsky.app/profile/giacomocavalieri.me
+https://twitter.com/giacomo_cava
+https://giacomocavalieri.me
+https://github.com/giacomocavalieri
+
+Links
+https://gleam.run
+https://tour.gleam.run
+https://exercism.org/tracks/gleam
+
+ABSTRACT
+In this talk we’ll embark on a journey to discover Gleam: a “friendly language for building type-safe systems that scale!”
+
+We’ll learn about the design philosophy underpinning it, what does it even mean for a programming language to be friendly, and what’s the ace up Gleam’s sleeve that enables you to write highly concurrent and fault tolerant systems.
+
+This talk is for everyone and by the end of it you’ll have all you need to keep your Gleam journey going and become a true Gleamlin! [...]
+
+TIMECODES
+00:00 Intro
+00:34 What is Gleam?
+02:43 Demo
+07:07 Wisp
+11:12 Demo
+15:00 Lustre
+18:33 What about the database?
+19:54 Squirrel
+20:29 Demo
+28:34 How can Gleam do all of this?
+31:33 Wrap up
+34:10 What now?
+34:22 Gleam language tour
+34:51 Gleam exercism track
+35:09 Get in touch
+35:32 Outro
+
+Download slides and read the full abstract here:
+https://yowcon.com/brisbane-2024/sessions/3542
+
+RECOMMENDED BOOKS
+Saša Jurić • Elixir in Action • https://amzn.to/2RZh5eN
+Dave Thomas • Programming Elixir ≥ 1.6: Functional • https://amzn.to/34Dw3O5
+Svilen Gospodinov • Concurrent Data Processing in Elixir • https://amzn.to/3tOOw71
+James Gray II & Bruce Tate • Designing Elixir Systems With OTP • https://amzn.to/3XmWHVx
+Chris McCord • Metaprogramming Elixir • https://amzn.to/3EtpT4G
+McCord, Tate & Valim • Programming Phoenix 1.4 • https://amzn.to/3zcUqj4
+
+https://bsky.app/profile/gotocon.com
+https://twitter.com/GOTOcon
+https://www.linkedin.com/company/goto-
+https://www.instagram.com/goto_con
+https://www.facebook.com/GOTOConferences
+#ElixirGleam #GleamLang #GleamProgramming #Wisp #Lustre #Elixir #TypeSafeSystems #FunctionalProgramming #Programming #Erlang #ErlangVM #BEAM #GiacomoCavalieri #YOWcon
 
 CHANNEL MEMBERSHIP BONUS
 Join this channel to get early access to videos & other perks:
@@ -19,108 +95,20 @@ Attend the next GOTO conference near you! Get your ticket at https://gotopia.tec
 Sign up for updates and specials at https://gotopia.tech/newsletter
 
 SUBSCRIBE TO OUR CHANNEL - new videos posted almost daily.
-https://www.youtube.com/user/GotoConferences/?sub_confirmation=1]]></content:encoded></item><item><title>&quot;Its too cold out to shoot you.&quot;</title><link>https://www.youtube.com/watch?v=DqVeQat9XDI</link><author>Columbus Police Body Camera</author><category>yt</category><enclosure url="https://www.youtube.com/v/DqVeQat9XDI?version=3" length="" type=""/><pubDate>Mon, 24 Feb 2025 10:30:09 +0000</pubDate><source url="https://www.youtube.com/channel/UCS74cWPjEY1EOuVPM4eJhCw">Columbus Police Body Camera</source><content:encoded><![CDATA[Donate at: https://www.toddbates50mileruck.com/
+https://www.youtube.com/user/GotoConferences/?sub_confirmation=1]]></content:encoded></item><item><title>The Invisible &apos;Ghost Plane&apos;</title><link>https://www.youtube.com/watch?v=PIDtPpk_s6M</link><author>Imperial War Museums</author><category>yt</category><enclosure url="https://www.youtube.com/v/PIDtPpk_s6M?version=3" length="" type=""/><pubDate>Sat, 15 Mar 2025 12:00:38 +0000</pubDate><source url="https://www.youtube.com/channel/UC3uAjWoLZ4bSi6qI9SjALxA">Imperial War Museums</source><content:encoded><![CDATA[#desertstorm #history #gulfwar #iraq #iwm #f117nighthawk #nighthawk]]></content:encoded></item><item><title>How Goats Nearly Destroyed The Galapagos Islands | Save Our Species | BBC Earth Science</title><link>https://www.youtube.com/watch?v=4y6qU6x7Mow</link><author>BBC Earth Science</author><category>yt</category><enclosure url="https://www.youtube.com/v/4y6qU6x7Mow?version=3" length="" type=""/><pubDate>Sat, 15 Mar 2025 12:00:12 +0000</pubDate><source url="https://www.youtube.com/channel/UCdsOTr6SmDrxuWE7sJFrkhQ">BBC Earth Science</source><content:encoded><![CDATA[The endemic giant Galapagos tortoise existence was threatened when humans unintentionally introduced goats to the island. They ate too much too quickly, leaving nothing for the other animals. Frustratingly, the goats are difficult to find and constantly evade the conservationists efforts to remove them.
 
-This is not the official channel of the Columbus Division of Police.
-Videos are uploaded on Monday, Wednesday, and Friday mornings 
-The videos on this channel exclusively feature the Officers of the Columbus Division of police in Columbus, OH.
-All videos have been obtained by public records requests.
-#columbuspolicebodycamera #columbusohio #bodycamera #policereform]]></content:encoded></item><item><title>Ukraine’s Hidden Army: Women at War</title><link>https://www.youtube.com/watch?v=JfZSVGqYYcU</link><author>Bloomberg Originals</author><category>yt</category><enclosure url="https://www.youtube.com/v/JfZSVGqYYcU?version=3" length="" type=""/><pubDate>Mon, 24 Feb 2025 09:00:31 +0000</pubDate><source url="https://www.youtube.com/channel/UCUMZ7gohGI9HcU9VNsr2FJQ">Bloomberg Originals</source><content:encoded><![CDATA[Since Russia's full-scale invasion, hundreds of thousands of Ukrainian men have joined the military. Women stepped in to keep the economy going, many in roles from which they were traditionally barred. 
+But there is another option on the table: turn goat against goat...
 
-Read more: Ukraine’s Women Keep the Economy in Gear Despite the War
-https://www.bloomberg.com/news/articles/2025-02-21/ukraine-women-keep-economy-in-gear-as-war-drags-on?sref=omvmmwIg?utm_medium=social&utm_source=youtube&utm_campaign=originals&utm_content=article
+Best of Earth Science: http://bit.ly/EarthLabOriginals 
+Best of BBC Earth: http://bit.ly/TheBestOfBBCEarthVideos 
 
-00:00 - Introduction
-00:53 - Ukraine’s women keep the economy afloat
-3:08 - War offering women professional opportunities
-6:44 - Gender roles in Ukraine
-8:27 - The impact of war on family life
-10:13 - Balancing work and family during war
-12:38 - What does the future hold for the women of Ukraine?
+This is a channel from BBC Studios who help fund new BBC programmes. Service information and feedback: http://bbcworldwide.com/vod-feedback--contact-details.aspx]]></content:encoded></item><item><title>Saudi Arabia&apos;s Megaproject Disaster!</title><link>https://www.youtube.com/watch?v=qMIA-EHS7vM</link><author>Patrick Boyle</author><category>yt</category><enclosure url="https://www.youtube.com/v/qMIA-EHS7vM?version=3" length="" type=""/><pubDate>Sat, 15 Mar 2025 07:30:08 +0000</pubDate><source url="https://www.youtube.com/channel/UCASM0cgfkJxQ1ICmRilfHLw">Patrick Boyle</source><content:encoded><![CDATA[Go to https://ziprecruiter.com/pb to try ZipRecruiter for free today!
 
---------
-Like this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1
+Saudi Arabia's Neom megaprojects are running into major financial problems according to The Wall Street Journal.
 
-Get unlimited access to Bloomberg.com for $1.99/month for the first 3 months: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals
+After more than $50 billion dollars has been spent the fantasy city has collided with reality.
 
-Bloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. 
-
-Subscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.
-
-Visit our partner channel Bloomberg Quicktake for global news and insight in an instant.]]></content:encoded></item><item><title>The Mathematician Who Started the Digital Revolution</title><link>https://www.youtube.com/watch?v=0wlmzvf8_gI</link><author>Newsthink</author><category>yt</category><enclosure url="https://www.youtube.com/v/0wlmzvf8_gI?version=3" length="" type=""/><pubDate>Sun, 23 Feb 2025 21:04:30 +0000</pubDate><source url="https://www.youtube.com/channel/UCIlU5KDHKFSaebYviKfOidw">Newsthink</source><content:encoded><![CDATA[How Claude Shannon invented the information age. Try https://brilliant.org/Newsthink/ for FREE for 30 days, and get 20% off your annual premium subscription.
-
-I highly recommend Jimmy Soni and Rob Goodman’s biography called A Mind At Play: How Claude Shannon Invented the Information Age https://a.co/d/5sSLUIL
-
-Chapters:
-00:00 How Computers Understand 1s and 0s
-0:35 Growing Up in Michigan
-1:20 Boolean Logic: The Language of Computers
-1:57 Building Circuits with Math
-3:09 Working on the Differential Analyzer at MIT
-4:15 The 1937 Master’s Thesis That Changed the World
-5:15 Dabbling in Genetics
-6:06 Building War Machines (SIGSALY) 
-7:25 Shannon Bell Labs
-8:22 The Birth of Information Theory (1948 Paper)
-9:07 Becoming a Celebrity Scientist
-10:20 Building Theseus, an Electronic Mouse That Learned 
-11:01 Chess and Artificial Intelligence
-11:28 Juggling, Stocks, and Curiosity
-11:54 The Final Years: A Mind Lost to Alzheimer’s
-13:39 Today’s Sponsor: Brilliant
-
-Follow Newsthink on X https://x.com/Newsthink
-
-Newsthink is produced and presented by Cindy Pom
-https://x.com/cindypom
-
-Grab your Newsthink merch here: https://newsthink.creator-spring.com
-
-Support Cindy on Patreon! https://www.patreon.com/Newsthink]]></content:encoded></item><item><title>Hannibal - Nemesis of Rome Documentary</title><link>https://www.youtube.com/watch?v=VY8p8AsPojY</link><author>The People Profiles</author><category>yt</category><enclosure url="https://www.youtube.com/v/VY8p8AsPojY?version=3" length="" type=""/><pubDate>Sun, 23 Feb 2025 21:00:06 +0000</pubDate><source url="https://www.youtube.com/channel/UCD6TPU-PvTMvqgzC_AM7_uA">The People Profiles</source><content:encoded><![CDATA[Please follow us on Spotify. https://open.spotify.com/show/7fKALbrzEO9Q4VVvAwWHqL
-Please subscribe here. https://www.youtube.com/@PeopleProfiles?sub_confirmation=1
-Watch our videos advert free on our website. https://www.peopleprofiles.com/join/
-Our second channel. https://www.youtube.com/@PeopleProfilesExtra
-Or follow us on Twitter. https://twitter.com/tpprofiles
-
-Thank you for watching! If you liked this video, check out our related documentaries below:
-https://www.youtube.com/playlist?list=PLNwBhP0rWSz1EQOUiCo2hOzXogNU5psT8
-https://www.youtube.com/playlist?list=PLNwBhP0rWSz0vPvWecG4EPQIWEIh34K-X
-https://www.youtube.com/playlist?list=PLNwBhP0rWSz3l1yKTFKS6b3GPniSWVpmX
-
-All footage, images and music used in People Profiles Documentaries are sourced from free media websites or are purchased with commercial rights from online media archives.
-
-All People Profiles scripts are researched and written by qualified Historians. The script for this video has been checked with Plagiarism and AI Detector software and scored 1% on Grammarly. In academia, a score of below 15% is considered good or acceptable. Please email us for script references and citations.
-
-#PeopleProfiles #History #Documentary]]></content:encoded></item><item><title>How Russia&apos;s war against Ukraine is putting pressure on Russian-Germans | DW Documentary</title><link>https://www.youtube.com/watch?v=PTjccSUuVss</link><author>DW Documentary</author><category>yt</category><enclosure url="https://www.youtube.com/v/PTjccSUuVss?version=3" length="" type=""/><pubDate>Sun, 23 Feb 2025 17:00:26 +0000</pubDate><source url="https://www.youtube.com/channel/UCW39zufHfsuGgpLviKh297Q">DW Documentary</source><content:encoded><![CDATA[A rift has been running through the Russian-German community since 24 February 2022. That’s the day Russia‘s full-scale invasion of Ukraine began. This documentary shows how the Russian-German community's life has changed since then.
-
-The team was already filming people from the Russian-German community in 2022. After more than two years of Russia’s war against Ukraine, with its grueling fighting, thousands of deaths, dwindling support among the population and no prospect of peace, they return to film them once again. 
-Much has changed. Take the Heuchelhof district of Würzburg in southern Germany, where many Russian-Germans live. Shortly after the war began, the "Z” symbol, a sign of the Russian army, was daubed on a church. The families were caught between a rock and a hard place. Shame and fear, tensions within the family, increased discrimination from outside and often hostility from within their own ranks weighed heavily on them. And today? Are those who fight for a positive, peaceful coexistence holding their ground? Or is divisive propaganda gaining the upper hand?
-
-#documentary #dwdocumentary #dwdocs #russia #germany 
-______
-
-DW Documentary gives you knowledge beyond the headlines. Watch top documentaries from German broadcasters and international production companies. Meet intriguing people, travel to distant lands, get a look behind the complexities of daily life and build a deeper understanding of current affairs and global events. Subscribe and explore the world around you with DW Documentary.
-
-Subscribe to: ‬
-⮞ DW Documentary (English): https://www.youtube.com/dwdocumentary 
-⮞ DW Documental (Spanish): https://www.youtube.com/dwdocumental 
-⮞ DW Documentary وثائقية دي دبليو (Arabic): https://www.youtube.com/dwdocarabia
-⮞ DW Documentary हिन्दी (Hindi): https://www.youtube.com/dwdochindi
-⮞ DW Doku (German): https://www.youtube.com/dwdoku
-
-For more visit: http://www.dw.com/en/tv/docfilm/s-3610
-Follow DW Documentary on Instagram: https://www.instagram.com/dwdocumentary/
-Follow DW Documental on Facebook: https://www.facebook.com/dwdocumental
-
-We kindly ask viewers to read and stick to the DW netiquette policy on our channel: https://p.dw.com/p/MF1G]]></content:encoded></item><item><title>Cyberpunk Body Mods</title><link>https://www.youtube.com/watch?v=twthGL-eN8s</link><author>Channel 5 with Andrew Callaghan</author><category>yt</category><enclosure url="https://www.youtube.com/v/twthGL-eN8s?version=3" length="" type=""/><pubDate>Sun, 23 Feb 2025 16:34:58 +0000</pubDate><source url="https://www.youtube.com/channel/UC-AQKm7HUNMmxjdS371MSwg">Channel 5 with Andrew Callaghan</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Argentina&apos;s Memecoin Disaster</title><link>https://www.youtube.com/watch?v=qdqZ0q6cuYs</link><author>Patrick Boyle</author><category>yt</category><enclosure url="https://www.youtube.com/v/qdqZ0q6cuYs?version=3" length="" type=""/><pubDate>Sun, 23 Feb 2025 15:45:07 +0000</pubDate><source url="https://www.youtube.com/channel/UCASM0cgfkJxQ1ICmRilfHLw">Patrick Boyle</source><content:encoded><![CDATA[Get 50% off your first order of CookUnity meals — go to https://cookunity.com/pboyle50 and use my code PBOYLE50 at checkout to try them out for yourself! Thanks to CookUnity for sponsoring this video!
-
-Argentina’s president Javier Milei has been rocked by a scandal over his promotion of a memecoin called $LIBRA which soared in value before collapsing last week, triggering lawsuits and calls for impeachment.
-
-Buyers of the cryptocurrency accused the coin’s creators of - what is known as a “rug pull” scheme, a type of crypto pump and dump scheme - where the promoters draw in buyers, only to stop trading and make off with the money raised from token sales.
-
-The same team who launched the Argentina linked meme token are also behind Donald Trump's wife's Melania Coin - which performed similarly.
-
-In today's video we discuss whether elected representatives should be involved in cryptocurrency investments.
+Costs have soared, delays are constant, and the capital expenditure estimates to complete the projects by 2080 have ballooned to $8.8 trillion dollars, which is over 25 times the kingdom's annual budget.
 
 Patrick's Books:
 Statistics For The Trading Floor:  https://amzn.to/3eerLA0
@@ -142,404 +130,7 @@ Apple: https://podcasts.apple.com/us/podcast/patrick-boyle-on-finance/id15477403
 Google Podcasts: https://tinyurl.com/62862nve
 
 Join this channel to support making this content:
-https://www.youtube.com/channel/UCASM0cgfkJxQ1ICmRilfHLw/join
-
-Coffeezilla Libra Interview: https://www.youtube.com/watch?v=EqizJTbxAEM&t=3261s]]></content:encoded></item><item><title>Timeline TV: 1990 - Everything That Happened In TV In The Year 1990</title><link>https://www.youtube.com/watch?v=8KnBL6eq8T8</link><author>Weird History</author><category>yt</category><enclosure url="https://www.youtube.com/v/8KnBL6eq8T8?version=3" length="" type=""/><pubDate>Sun, 23 Feb 2025 15:00:18 +0000</pubDate><source url="https://www.youtube.com/channel/UCc-N24Y5OA0gqbjBwe1ttfA">Weird History</source><content:encoded><![CDATA[Welcome to Timeline TV! The show where we discuss that amazing decade of some groundbreaking television shows that all came out in the 1990s! From ER, to X Files, all the way to the creation of Southpark by the end of the decade. Stroll with us down memory lane as we go deep into all that was on TV in the 90s! Let us know in the comments your favorite shows and TV memories from the era!
-
-Be sure to subscribe to the Weird History Newsletter: https://bit.ly/WeirdHistoryNews
-
-#weirdhistory #timeline #1990s]]></content:encoded></item><item><title>The science of staying young forever | DW Documentary</title><link>https://www.youtube.com/watch?v=o7Z-7-MrsKw</link><author>DW Documentary</author><category>yt</category><enclosure url="https://www.youtube.com/v/o7Z-7-MrsKw?version=3" length="" type=""/><pubDate>Sun, 23 Feb 2025 14:00:50 +0000</pubDate><source url="https://www.youtube.com/channel/UCW39zufHfsuGgpLviKh297Q">DW Documentary</source><content:encoded><![CDATA[🌱 Can we really turn back time? Longevity research is diving into the possibility of age reversal. New studies show that growth hormone therapy, combined with certain medications, can actually reverse biological age by regenerating the thymus, a vital organ for immunity that typically shrinks as we age. 
-
-Not only did participants in recent trials see signs like hair returning to a darker shade, but the immune system itself seemed rejuvenated. This could mean a future where age-related diseases are less likely to strike.🌟 
-
-#documentary #dwdocumentary #dwdocs #LongevityScience #AntiAgingResearch #Epigenetics #FutureOfHealth  
-______
-
-We kindly ask viewers to read and stick to the DW netiquette policy on our channel: https://p.dw.com/p/MF1G]]></content:encoded></item><item><title>How Autonomy Saved One of Spotify’s Most Loved Features • Joakim Sunden • YOW! 2024</title><link>https://www.youtube.com/watch?v=6bzS5GW6Ad4</link><author>GOTO Conferences</author><category>yt</category><enclosure url="https://www.youtube.com/v/6bzS5GW6Ad4?version=3" length="" type=""/><pubDate>Sun, 23 Feb 2025 13:00:15 +0000</pubDate><source url="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</source><content:encoded><![CDATA[This presentation was recorded at YOW! Australia 2024. #GOTOcon #YOW
-https://yowcon.com
-
-Joakim Sundén - Founding Partner at Better Product Work & Co-Creator of the Spotify Model @joakimsunden-crisp 
-
-ORIGINAL TALK TITLE
-How Autonomy Saved One of Spotify’s Most Loved Features From Being Killed
-
-RESOURCES
-https://bsky.app/profile/joakimsunden.bsky.social
-https://twitter.com/joakimsunden
-https://linkedin.com/in/joakimsunden
-https://joakimsunden.com
-
-ABSTRACT
-"I would have killed that if it was just me, 100%,” said Spotify founder and CEO Daniel Ek about Discover Weekly, a feature that would become one of Spotify’s most loved product features, almost a brand in itself.
-
-Designers and senior engineers were equally skeptical, but the team was still able to ship the feature.
-
-In this talk, you’ll learn how Spotify’s organisational culture of Agile management and autonomous teams enables innovation, using the Discover Weekly feature as an example. [...]
-
-TIMECODES
-00:00 Intro
-02:14 Discover Weekly
-05:16 Spotify HQ
-06:12 Radio
-06:50 Discover
-09:54 Re-connecting the dots
-12:44 "Traditional" organizations
-15:06 Autonomous squad
-16:53 4 Risks in product development
-18:12 Focused on outcomes, not output
-19:11 Activities, epics, features, stories
-19:27 These bets have a low success rate
-21:03 Moving from opinions to data
-20:38 Alignment – Autonomy
-21:37 Aligned autonomy
-22:57 Gatekeeping vs facilitating context
-25:29 Iterate, iterate, iterate
-27:07 Daniel Ek
-27:32 Celebrate failure
-27:55 Limit blast radius
-28:37 Watching the data
-28:57 Watching the buzz
-29:28 Experiments
-32:59 Winning formula
-33:36 Conclusions
-38:13 Innovation can't be forced
-38:24 Outro
-
-Download slides and read the full abstract here:
-https://yowcon.com/brisbane-2024/sessions/3442
-
-RECOMMENDED BOOKS
-Joakim Sunden & Marcus Hammarberg • Kanban in Action • https://amzn.to/3n1Fmna
-Ron Kohavi, Diane Tang & Ya Xu • Trustworthy Online Controlled Experiments • https://amzn.to/3JlY4NZ
-Gene Kim, Jez Humble, Nicole Forsgren, Patrick Debois & John Willis • The DevOps Handbook • https://amzn.to/3C0Rj0C
-Matthew Skelton & Manuel Pais • Team Topologies • http://amzn.to/3sVLyLQ
-Jennifer Petoff, Niall Murphy, Betsy Beyer & Chris Jones • Site Reliability Engineering • https://amzn.to/3xYac2Q
-Marty Cagan • Inspired • https://amzn.to/3dPz7iq
-Marty Cagan • Empowered • https://amzn.to/42kuKAj
-Reed Hastings & Erin Meyer • No Rules Rules • https://amzn.to/3Cjottx
-Forsgren, Humble & Kim • Accelerate: The Science of Lean Software and DevOps • https://amzn.to/3tCz1xO
-Fred Brooks Jr. • The Mythical Man-Month • https://amzn.to/31NJc5C
-
-https://bsky.app/profile/gotocon.com
-https://twitter.com/GOTOcon
-https://www.linkedin.com/company/goto-
-https://www.instagram.com/goto_con
-https://www.facebook.com/GOTOConferences
-#Spotify #SpotifyFeature #Autonomy #SoftwareEngineering #Programming #DiscoverWeekly #Agile #AgileDevelopment #JoakimSunden #Crisp #Kanban #Data #ContinuousImprovement #AlignedAutonomy #YOWcon
-
-CHANNEL MEMBERSHIP BONUS
-Join this channel to get early access to videos & other perks:
-https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA/join
-
-Looking for a unique learning experience?
-Attend the next GOTO conference near you! Get your ticket at https://gotopia.tech
-Sign up for updates and specials at https://gotopia.tech/newsletter
-
-SUBSCRIBE TO OUR CHANNEL - new videos posted almost daily.
-https://www.youtube.com/user/GotoConferences/?sub_confirmation=1]]></content:encoded></item><item><title>How did they detect submarines in WW2?</title><link>https://www.youtube.com/watch?v=lKhSH9UVlds</link><author>Imperial War Museums</author><category>yt</category><enclosure url="https://www.youtube.com/v/lKhSH9UVlds?version=3" length="" type=""/><pubDate>Sun, 23 Feb 2025 12:00:57 +0000</pubDate><source url="https://www.youtube.com/channel/UC3uAjWoLZ4bSi6qI9SjALxA">Imperial War Museums</source><content:encoded><![CDATA[#ww2 #history #battleoftheatlantic #iwm #uboat]]></content:encoded></item><item><title>This Is How Hot Air Balloons Work | From Ice To Fire: The Science of Temperature | BBC Earth Science</title><link>https://www.youtube.com/watch?v=UQsyd5CuTTk</link><author>BBC Earth Science</author><category>yt</category><enclosure url="https://www.youtube.com/v/UQsyd5CuTTk?version=3" length="" type=""/><pubDate>Sun, 23 Feb 2025 12:00:39 +0000</pubDate><source url="https://www.youtube.com/channel/UCdsOTr6SmDrxuWE7sJFrkhQ">BBC Earth Science</source><content:encoded><![CDATA[Since the first hot air balloon was invented in 1783, the kit might have become slightly more sophisticated, but the simple science has remained largely the same.
-
-#HotAirBalloons #ScienceExperiment
-
-Best of Earth Science: http://bit.ly/EarthLabOriginals 
-Best of BBC Earth: http://bit.ly/TheBestOfBBCEarthVideos 
-
-Take from 'From Ice To Fire: The Incredible Science of Temperature' (2018).
-
-Dr Helen Czerski goes on a spectacular journey to the extremes of the temperature scale, where everyday laws of physics break down and a new world of scientific possibility begins.
-
-This is a channel from BBC Studios who help fund new BBC programmes. Service information and feedback: http://bbcworldwide.com/vod-feedback--contact-details.aspx]]></content:encoded></item><item><title>Landlords Have Found a NEW Way to Extort You</title><link>https://www.youtube.com/watch?v=nBM6fvetDFk</link><author>More Perfect Union</author><category>yt</category><enclosure url="https://www.youtube.com/v/nBM6fvetDFk?version=3" length="" type=""/><pubDate>Sat, 22 Feb 2025 23:01:13 +0000</pubDate><source url="https://www.youtube.com/channel/UCehBVAPy-bxmnbNARF-_tvA">More Perfect Union</source><content:encoded><![CDATA[Last week, the Wall Street Journal released an article outlining landlords’ latest scheme to extort renters. Here’s how it works.]]></content:encoded></item><item><title>investing for idiots</title><link>https://www.youtube.com/watch?v=hoGm61I52YQ</link><author>voidzilla</author><category>yt</category><enclosure url="https://www.youtube.com/v/hoGm61I52YQ?version=3" length="" type=""/><pubDate>Sat, 22 Feb 2025 21:00:00 +0000</pubDate><source url="https://www.youtube.com/channel/UC28n0tlcNSa1iPe5mettocg">voidzilla</source><content:encoded><![CDATA[Benjamin Felix is Chief Investment Officer at PWL Capital.
-Youtube channel - https://www.youtube.com/@BenFelixCSI
-The Case for Index Funds - https://www.youtube.com/watch?v=Nv5CiRSCVxA
-Investing in Technological Revolutions - https://www.youtube.com/watch?v=UZnVt_CvL3k
-Rational Reminder podcast - https://www.youtube.com/@rationalreminder
-
-Academic References - full list is at https://zbib.org/687f3c1ee01e4a0787211d8135d89f52
-
-Anarkulova, A., Cederburg, S., & O’Doherty, M. S. (2023). Beyond the status quo: A critical assessment of lifecycle investment advice. SSRN Electronic Journal. https://doi.org/10.2139/ssrn.4590406
-
-Arnott, R., Kalesnik, V., & Schuesler, T. (2018). Is your alpha big enough to cover its taxes? A quarter-century retrospective. The Journal of Portfolio Management, 44(5), 78–102. https://doi.org/10.3905/jpm.2018.44.5.078
-
-Ben-David, I., Franzoni, F., Kim, B., & Moussawi, R. (2023). Competition for attention in the etf space. The Review of Financial Studies, 36(3), 987–1042. https://doi.org/10.1093/rfs/hhac048
-
-Berk, J. B., & Van Binsbergen, J. H. (2015). Measuring skill in the mutual fund industry. Journal of Financial Economics, 118(1), 1–20. https://doi.org/10.1016/j.jfineco.2015.05.002
-
-Bernstein, W. J., & Arnott, R. D. (2003). Earnings growth: The two percent dilution. Financial Analysts Journal, 59(5), 47–55. https://doi.org/10.2469/faj.v59.n5.2563
-
-Bessembinder, H. (2018). Do stocks outperform Treasury bills? Journal of Financial Economics, 129(3), 440–457. https://doi.org/10.1016/j.jfineco.2018.06.004
-
-Bessembinder, H., Chen, T.-F., Choi, G., & Wei, K. C. J. (2023). Long-term shareholder returns: Evidence from 64,000 global stocks. Financial Analysts Journal, 79(3), 33–63. https://doi.org/10.1080/0015198X.2023.2188870
-
-Bessembinder, H., Cooper, M. J., & Zhang, F. (2023). Mutual fund performance at long horizons. Journal of Financial Economics, 147(1), 132–158. https://doi.org/10.1016/j.jfineco.2022.10.006
-
-Busse, J. A., Goyal, A., & Wahal, S. (2014). Investing in a global world*. Review of Finance, 18(2), 561–590. https://doi.org/10.1093/rof/rft015
-
-Carhart, M. M. (1997). On persistence in mutual fund performance. The Journal of Finance, 52(1), 57–82. https://doi.org/10.1111/j.1540-6261.1997.tb03808.x
-
-Cornell, B., Cornell, S., & Cornell, A. (2023). Big market delusion: The case of electric vehicle stocks. The Journal of Investing, 32(5), 39–47. https://doi.org/10.3905/joi.2023.1.270
-
-Ellis, C. D. (1975). The loser’s game. Financial Analysts Journal, 31(4), 19–26. https://doi.org/10.2469/faj.v31.n4.19
-
-Fama, E. F. (1965). The behavior of stock-market prices. The Journal of Business, 38(1), 34. https://doi.org/10.1086/294743
-
-Fama, E. F., & French, K. R. (1992). The cross‐section of expected stock returns. The Journal of Finance, 47(2), 427–465. https://doi.org/10.1111/j.1540-6261.1992.tb04398.x
-
-Fama, E. F., & French, K. R. (2010). Luck versus skill in the cross‐section of mutual fund returns. The Journal of Finance, 65(5), 1915–1947. https://doi.org/10.1111/j.1540-6261.2010.01598.x
-
-Fama, E. F., & French, K. R. (2015). A five-factor asset pricing model. Journal of Financial Economics, 116(1), 1–22. https://doi.org/10.1016/j.jfineco.2014.10.010
-
-Fleming, F., Passmore, M., Kan, M., Whelan, C., & Lockhart, J. (2022). Investor Knowledge Study. Ontario Securities Commission/Innovate Research Group.
-
-Heaton, J. B., Polson, N. G., & Witte, J. H. (2017). Why indexing works. Applied Stochastic Models in Business and Industry, 33(6), 690–693. https://doi.org/10.1002/asmb.2271
-
-Jensen, M. C. (1968). The performance of mutual funds in the period 1945–1964. The Journal of Finance, 23(2), 389–416. https://doi.org/10.1111/j.1540-6261.1968.tb00815.x
-
-Kerzerho, R. (2024). The Passive vs. Active Fund Monitor. PWL Capital Research. https://pwlcapital.com/wp-content/uploads/2024/08/20240318-PWL-The-Passive-vs-Active-Fund-Monitor.pdf
-
-Kinnel, R. (2016). Predictive power of fees: Why mutual fund fees are so important. Morningstar Manager Research. https://assets.contentstack.io/v3/assets/blt4eb669caa7dc65b2/blt70866588660aea5a/60416664f9638443346d4e9b/predictive-power-of-fees.pdf
-
-Malkiel, B. G., & Fama, E. F. (1970). Efficient capital markets: A review of theory and empirical work*. The Journal of Finance, 25(2), 383–417. https://doi.org/10.1111/j.1540-6261.1970.tb00518.x
-
-Markowitz, H. (1952). Portfolio selection*. The Journal of Finance, 7(1), 77–91. https://doi.org/10.1111/j.1540-6261.1952.tb01525.x
-
-Robertson, A. Z. (2019). Passive in name only: Delegated management and “index” investing. Yale Journal on Regulation. https://openyls.law.yale.edu/handle/20.500.13051/8294
-
-Rowley, Jr., J., & Plagge, J.-C. (2022). The case for low-cost index fund investing. Vanguard Research. https://corporate.vanguard.com/content/dam/corp/research/pdf/the_case_for_low_cost_index_fund_investing_052022.pdf]]></content:encoded></item><item><title>Sous vide spaghetti #recipe #sousvide</title><link>https://www.youtube.com/watch?v=pqbd3T_ZtnE</link><author>You Suck At Cooking</author><category>yt</category><enclosure url="https://www.youtube.com/v/pqbd3T_ZtnE?version=3" length="" type=""/><pubDate>Sat, 22 Feb 2025 19:20:52 +0000</pubDate><source url="https://www.youtube.com/channel/UCekQr9znsk2vWxBo3YiLq2w">You Suck At Cooking</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>The Unholy Roman Emperor Frederick II 3: Savior or Antichrist | European History | Extra History</title><link>https://www.youtube.com/watch?v=4GZPc68Kz2w</link><author>Extra History</author><category>yt</category><enclosure url="https://www.youtube.com/v/4GZPc68Kz2w?version=3" length="" type=""/><pubDate>Sat, 22 Feb 2025 18:29:49 +0000</pubDate><source url="https://www.youtube.com/channel/UCCODtTcd5M1JavPCOr_Uydg">Extra History</source><content:encoded><![CDATA[When you're done learning about The Unholy Roman Emperor Frederick II head over to Incogni and use code ExtraHistory to get an exclusive 60% off an annual Incogni plan: https://incogni.com/extrahistory
-
-The War of the Crossed Keys was more than just a war—it was a battle for supremacy between Pope Gregory IX and Emperor Frederick II. Excommunicated yet undefeated, Frederick defied the papacy, crushed his enemies with military brilliance, and reshaped his empire through sweeping reforms. From his legendary Constitutions of Melfi to his dazzling court of scholars, poets, and exotic beasts, Frederick was a ruler unlike any other.
-
-* Watch Extra History ad-free & get 1-week early access on *NEBULA* https://go.nebula.tv/extrahistory 
-* Suggest & Vote on our next episodes, get exclusive content & 24-hour early access on *PATREON* https://bit.ly/EHPatreon   
-* Show off your fandom with *MERCH* from our store! http://extracredits.store/  
-* Interested in sponsoring an episode?* Email us: extracredits@standard.tv 
-
-https://twitter.com/extracreditz | https://www.facebook.com/ExtraCredits/ | http://instagram.com/extracredits | https://www.tiktok.com/@extracreditz
-GAMING: https://www.youtube.com/@extracredits | http://www.twitch.tv/extracredits/
-https://bsky.app/profile/extracredits.bsky.social 
-
-*Miss an episode in our Frederick II Series?*
-Part 1 - Release Date: https://youtu.be/J1zD8BfJ2vA
-Part 2 - Release Date: https://youtu.be/ottbSSTiCcw
-Part 3 - https://youtu.be/4GZPc68Kz2w
-Series Wrap-up & Recommended Reading / Lies Episode - Release Date: March 8th
-
-Thanks for the high-quality conversations & for following our community guidelines here: https://bit.ly/ECFansRNice
-
-Artist: Ali R Thome | Writer: Robert Rath | Researcher: A. Siso | Showrunner & Narrator: Matthew Krol | Video Editor: Devon House Creative | Audio Editor: Clean Waves | Studio Director: Geoffry Zatkin | Social Media: Kat Rider | ♪ Music by Demetori: http://bit.ly/1EQA5N7 |  ♪ "The Mad Monk" by Tiffany Roman
-
-#ExtraHistory #Europe #History]]></content:encoded></item><item><title>Andrew Predicts the Future</title><link>https://www.youtube.com/watch?v=JTgLI4WUdXQ</link><author>Channel 5 with Andrew Callaghan</author><category>yt</category><enclosure url="https://www.youtube.com/v/JTgLI4WUdXQ?version=3" length="" type=""/><pubDate>Sat, 22 Feb 2025 17:41:45 +0000</pubDate><source url="https://www.youtube.com/channel/UC-AQKm7HUNMmxjdS371MSwg">Channel 5 with Andrew Callaghan</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>The Art to Entertainment Pipeline</title><link>https://www.youtube.com/watch?v=0L6RdwGRihQ</link><author>The House of Tabula</author><category>yt</category><enclosure url="https://www.youtube.com/v/0L6RdwGRihQ?version=3" length="" type=""/><pubDate>Sat, 22 Feb 2025 16:32:43 +0000</pubDate><source url="https://www.youtube.com/channel/UCL5kBJmBUVFLYBDiSiK1VDw">The House of Tabula</source><content:encoded><![CDATA[Support The House of Tabula: 
-https://www.patreon.com/c/thehouseoftabula
-
-In an age wherein we are begging to be distracted, the powers that be have found how to sophisticate their giant distraction machines and convince us that they are more than what they truly are.
-——————————
-Deep Dive Series
-——————————
-All 20+ episodes: https://tinyurl.com/4kf9kjjd
-Megalopolis: https://tinyurl.com/4dc62w77
-City of God: https://tinyurl.com/y4jxcn6n
-The White Ribbon: https://tinyurl.com/mry4fjfx
-8½: https://tinyurl.com/37ecshwr
-Salò, or the 120 Days of Sodom: https://tinyurl.com/43b3vewe
-———————————————————
-Acid is Bad for Business Podcast
-———————————————————
-All 50+ episodes: https://tinyurl.com/3r3kjw3w
-Make Acid Great Again: https://tinyurl.com/9jcpxydn
-Socialmediaocracy: https://tinyurl.com/mjdx75wu
-Comrades! Get Comfortable!: https://tinyurl.com/crx5faux
-Keep Robert De Niro Close, But Viola Davis Closer: https://tinyurl.com/9fmtb98y
-————————————————
-Workshops & Study Guides
-————————————————
-⚔️ Join our Composition for Cinema & Visual Arts Workshop: https://tinyurl.com/2s4evptm
-📖 Pre-1930s Film Guide: https://tinyurl.com/bdd8yby5
-———————————
-Exclusive Essays
-———————————
-💀 The Allure of the New Profane: https://tinyurl.com/2w6dsxzv
-☕ Content with the Veneer of Depth: https://tinyurl.com/4fy83wyj
-———————————————————————
-For business inquiries: contact@thehouseoftabula.com
-———————————————————————
-TIMESTAMPS:
-0:00 'We Have Seen Better Days'
-1:15 i. that's entertainment...
-14:05 ii. art literacy for the jilted generation
-27:01iii. what am i even watching?]]></content:encoded></item><item><title>A geomagnetic storm illuminates Iceland&apos;s stunning Brúarfoss waterfall with green and red hues 💚</title><link>https://www.youtube.com/watch?v=WKDR5NUfhjg</link><author>BBC Earth Science</author><category>yt</category><enclosure url="https://www.youtube.com/v/WKDR5NUfhjg?version=3" length="" type=""/><pubDate>Sat, 22 Feb 2025 16:00:34 +0000</pubDate><source url="https://www.youtube.com/channel/UCdsOTr6SmDrxuWE7sJFrkhQ">BBC Earth Science</source><content:encoded><![CDATA[Best of Earth Science: http://bit.ly/EarthLabOriginals 
-Best of BBC Earth: http://bit.ly/TheBestOfBBCEarthVideos 
-
-This is a channel from BBC Studios who help fund new BBC programmes. Service information and feedback: http://bbcworldwide.com/vod-feedback--contact-details.aspx]]></content:encoded></item><item><title>How Does GPS Work? | BBC Earth Science</title><link>https://www.youtube.com/watch?v=KItEcCJfHAs</link><author>BBC Earth Science</author><category>yt</category><enclosure url="https://www.youtube.com/v/KItEcCJfHAs?version=3" length="" type=""/><pubDate>Sat, 22 Feb 2025 16:00:18 +0000</pubDate><source url="https://www.youtube.com/channel/UCdsOTr6SmDrxuWE7sJFrkhQ">BBC Earth Science</source><content:encoded><![CDATA[Lieutenant Sydney Lammond and her team run GPS for the entire world in the Schroeder Space Force base. They control 31 satellites by giving commands, but these are not ordinary or as simple as you may think…
-
-Best of Earth Science: http://bit.ly/EarthLabOriginals 
-Best of BBC Earth: http://bit.ly/TheBestOfBBCEarthVideos 
-
-This is a channel from BBC Studios who help fund new BBC programmes. Service information and feedback: http://bbcworldwide.com/vod-feedback--contact-details.aspx]]></content:encoded></item><item><title>In Conversation: Alain de Botton on Great Company with Jamie Laing</title><link>https://www.youtube.com/watch?v=Fpfucz_QB5E</link><author>The School of Life</author><category>yt</category><enclosure url="https://www.youtube.com/v/Fpfucz_QB5E?version=3" length="" type=""/><pubDate>Sat, 22 Feb 2025 15:00:26 +0000</pubDate><source url="https://www.youtube.com/channel/UC7IcJI8PUf5Z3zKxnZvTBog">The School of Life</source><content:encoded><![CDATA[Alain de Botton sits down with Jaime Laing on the @GreatCompanyPodcast. Together they dive into such subjects as: What is love? How do we navigate heartbreak? Why is our childhood so critical in shaping the rest of our life? And what does it all mean, anyway? Along the way, Alain walks Jamie through some of the reasons why we experience the ‘ick’, the typical emotional burdens parents project onto their children, and why breakdowns often lead to breakthroughs. They also explore ways of understanding our own relationships – and how our attachment styles and past experiences can shape the way we love.
-
-
-Great Company is an original podcast from JamPot Productions uploaded with their permission to The School of Life.
-
-If you enjoyed this podcast you can find more on the Great Company podcast, links below:
-
-YouTube |  ￼ @greatcompanypodcast
-Instagram |  ￼ @greatcompanypodcast  
-TikTok |   ￼ @greatcompanypodcast  
-
---
-
-Enjoying our Youtube videos? Get full access to all our audio content, videos, and thousands of thought-provoking articles, conversation cards and more with The School of Life Subscription: https://www.theschooloflife.com/the-school-of-life-youtube/
-
-Learn, heal and grow. Get the best of The School of Life delivered straight to your inbox: https://www.theschooloflife.com/signup/
-
-FURTHER READING
-
-You can read more on this and other subjects in our articles, here:  https://www.theschooloflife.com/articles/
-
-Timestamps
-
-00:00 What is the meaning of life?
-00:45 Finding the extraordinary with the ordinary
-3:30 An exercise that can help with anxiety
-07:00 How difficult self-awareness is
-08:50 What Jamie was like as a child
-10:20 Why funny people often come from sad childhoods
-12:50 Looking for familiarity not happiness in relationships
-18:00 Examining Jamie’s relationship through attachment styles
-21:45 Acknowledging a relationship is between two broken people
-23:00 Why asking ‘How are you mad?’ on a date can help
-25:00 Best way to diffuse an argument with a partner
-26:30 The worst heartbreak comes from the nice ones
-29:20 How to become the best version of yourself
-31:20 Our past can explain how we act in our current relationships
-36:45 What has led me to do what I do
-39:20 Life is about deepening time not just lengthening it
-40:40 Ways to help when feeling mentally unwell
-48:30 Breakdowns can actually be breakthroughs
-50:15 Why read my new book ‘A Therapeutic Journey’
-52:00 Final eight questions
-
-#THESCHOOLOFLIFE #GREATCOMPANYPODCAST #ALAINDEBOTTON
-
---
-THE CREDITS:
-Exec Producer: Jemima Rathbone
-Assistant Producer: Gurlina Heer
-Editor: Steve Melia
-Video: Jake Ji
-Marketing: Eleanore Bamber
-Social Media: Laura Coughlan
-
-
-SOCIAL MEDIA
-
-Feel free to follow us at the links below:
-
-X: https://x.com/TheSchoolOfLife/  
-Instagram: https://www.instagram.com/theschooloflifelondon/  
-LinkedIn: https://www.linkedin.com/company/the-school-of-life/  
-TikTok: https://www.tiktok.com/@theschooloflife?lang=en]]></content:encoded></item><item><title>The Weather Underground - America&apos;s Far-left Revolution The Cold War DOCUMENTARY</title><link>https://www.youtube.com/watch?v=8M6cHx0Aq-o</link><author>The Cold War</author><category>yt</category><enclosure url="https://www.youtube.com/v/8M6cHx0Aq-o?version=3" length="" type=""/><pubDate>Sat, 22 Feb 2025 14:00:30 +0000</pubDate><source url="https://www.youtube.com/channel/UCCGvq-qmjFmmMD4e-PLQqGg">The Cold War</source><content:encoded><![CDATA[Our historical documentary series on the history of the Cold War continues with a video examining the Weather Underground Organization, The Weathermen, a domestic American far-left organization which used violent means in the early 1970's to bring attention to American imperialism and discrimination.
-
-How the RAND Corporation created American strategy: https://youtu.be/J1mH_O7MzJk
-The Nuclear Wannabes: Sweden, Brazil and Argentina: https://youtu.be/1LpL6Q1s7TA
-Israel: the Officially Unofficial Nuclear State: https://youtu.be/dcXSkpRDp2k
-Taiwan Under the Kuomintang Dictatorship: https://youtu.be/nGYzXNpQclo
-What Happened to the German and Japanese POWs?: https://youtu.be/JLK1xQV9B84
-Operation Paperclip: https://youtu.be/17cNgMpBiWw
-German Expulsions: https://youtu.be/zyWx4p4hiaY
-Soviet Education System: https://youtu.be/AD_JwbivtMA
-How Khrushchev Fed the Soviet People: https://youtu.be/qIZDa7ZcUhE
-
-Support us on Patreon: http://www.patreon.com/TheColdWar, 
-Youtube membership https://www.youtube.com/channel/UCCGvq-qmjFmmMD4e-PLQqGg/join
-
-#ColdWar #America #USA #WeatherUnderground #Weathermen #imperialism #antiimperialism #domesticterrorism 
-
-✔ Merch store ► https://teespring.com/stores/thecoldwar
-✔ Patreon ► https://www.patreon.com/thecoldwar
-✔ Facebook ► https://www.facebook.com/thecoldwartv
-✔ Instagram ►http://www.instagram.com/thecoldwartv
-
-SOURCES
-The Way The Wind Blew: A History Of The Weather Underground
-
-Sing a Battle Song: the Revolutionary Poetry, Statements and Communiques of the Weather Underground 1970-1974
-
-Bring the War Home! The Black Liberation Army and the Weather Underground
-Outlaws of America – Dan Berger
-
-Federal Bureau of Investigation. "Weather Underground Bombings." FBI, accessed February 22, 2025. https://www.fbi.gov/history/famous-cases/weather-underground-bombings.
-
-"Weather Underground." ITVS, accessed February 22, 2025. https://itvs.org/films/weather-underground/.
-
-Korneta, Valerie. "The Weather Underground Organization: Radicalism in the 1960s and 1970s." Historia: The Journal of the History Department, 2015. https://www.eiu.edu/historia/Korneta2015.pdf.
-
-"The Weather Underground." Christopher Newport University, accessed February 22, 2025. https://cnu.libguides.com/psthe1960s/weathermen.
-
-"Document 1975-SJS-0057: Historical Context on the Weather Underground Organization." ProQuest, accessed February 22, 2025. https://li.proquest.com/elhpdf/histcontext/HRG-1975-SJS-0057.pdf.
-
-"You Don't Need a Weatherman to Know Which Way the Wind Blows." Internet Archive, accessed February 22, 2025. https://archive.org/details/YouDontNeedAWeathermanToKnowWhichWayTheWindBlows_925/YouDontNeedAWeathermanToKnowWhichWayTheWindBlows_925/.
-
-McLaughlin, Mitchell. "The Weather Underground: Politics and the Bomb." Socialist Review 19, no. 4 (1989): 41-60. https://www.jstor.org/stable/40480770.
-
-Shapira, Ian. "The Radicalism of the Weather Underground." Journal of Studies in Radicalism 11, no. 1 (2017): 25-44. https://www.jstor.org/stable/10.14321/jstudradi.11.1.0025.
-
-Dufresne, Christopher. "The Weather Underground and American Revolutionary Movements." Social History Review 40, no. 3 (2015): 15-39. https://www.jstor.org/stable/41509053.
-
-Finkelstein, Norman. The Weather Underground: The Radical Left in the 1960s. Edinburgh University Press, 2016. https://www.jstor.org/stable/10.3366/j.ctt1r201x.9.]]></content:encoded></item><item><title>GitHub Copilot - How It Works, How We Got Here, Where It&apos;s Going • Damian Brady • YOW! 2024</title><link>https://www.youtube.com/watch?v=ZUS7r3c3iGc</link><author>GOTO Conferences</author><category>yt</category><enclosure url="https://www.youtube.com/v/ZUS7r3c3iGc?version=3" length="" type=""/><pubDate>Sat, 22 Feb 2025 13:00:46 +0000</pubDate><source url="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</source><content:encoded><![CDATA[This presentation was recorded at YOW! Australia 2024. #GOTOcon #YOW
-https://yowcon.com
-
-Damian Brady - Staff Developer Advocate at GitHub @damianbrady451 
-
-RESOURCES
-https://bsky.app/profile/@damovisa.me
-https://mastodon.social/@damovisa@hachyderm.io
-https://twitter.com/damovisa
-https://github.com/damovisa
-https://damianbrady.com.au
-
-Links
-https://githubnext.com
-
-ABSTRACT
-GitHub Copilot started life as code completion on steroids, but since its GA release in 2022, its capabilities have grown. GitHub Copilot now lives in more places than just your IDE. It's in your terminal, your browser, and in your pull requests. It can learn your entire codebase and help you understand it.
-
-In this session, we'll look at what Copilot is, what it's become, and how it works. We'll run through the software engineering lifecycle from idea to production and highlight all the areas where tools like Copilot can save you time and effort. Finally, we'll talk about how GitHub Copilot was created, how it's being improved, and a little about the future of AI tooling. [...]
-
-TIMECODES
-00:00 Intro
-01:38 GitHub Copilot
-05:21 GitHub Copilot journey
-09:36 SPACE framework
-16:26 Demo
-32:29 What's next?
-37:52 AI-native development
-45:17 Outro
-
-Download slides and read the full abstract here:
-https://yowcon.com/brisbane-2024/sessions/3444
-
-RECOMMENDED BOOKS
-Leo Porter & Daniel Zingaro • Learn AI-assisted Python Programming • https://amzn.to/3Pv3Hx7
-Pritesh Mistry • Github Copilot for Developers • https://amzn.to/3TupBSm Kurt Dowswell • Programming with GitHub Copilot • https://amzn.to/3TM2HaL
-Phil Winder • Reinforcement Learning • https://amzn.to/3t1S1VZ
-
-https://bsky.app/profile/gotocon.com
-https://twitter.com/GOTOcon
-https://www.linkedin.com/company/goto-
-https://www.instagram.com/goto_con
-https://www.facebook.com/GOTOConferences
-#AI #GenAI #LLM #LargeLanguageModels #GitHubCopilot #RetrievalAugmentedGeneration #RAG #ChatGPT #SPACEframework #GitHubSpark #ReinforcementLearning #DamianBrady #YOWcon
-
-CHANNEL MEMBERSHIP BONUS
-Join this channel to get early access to videos & other perks:
-https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA/join
-
-Looking for a unique learning experience?
-Attend the next GOTO conference near you! Get your ticket at https://gotopia.tech
-Sign up for updates and specials at https://gotopia.tech/newsletter
-
-SUBSCRIBE TO OUR CHANNEL - new videos posted almost daily.
-https://www.youtube.com/user/GotoConferences/?sub_confirmation=1]]></content:encoded></item><item><title>Epomaker x Feker Alice 60 wood review (Feker Petal)</title><link>https://www.youtube.com/watch?v=v3MmNHNfmRw</link><author>Chyrosran22</author><category>yt</category><enclosure url="https://www.youtube.com/v/v3MmNHNfmRw?version=3" length="" type=""/><pubDate>Sat, 22 Feb 2025 06:00:40 +0000</pubDate><source url="https://www.youtube.com/channel/UCD0y51PJfvkZNe3y3FR5riw">Chyrosran22</source><content:encoded><![CDATA[Skip to 15:20 for a typing demonstration. 
-Get it here: https://epomaker.com/products/epomaker-x-feker-alice-60-wood
-Alice? Who the fuck is Alice?!
+https://www.youtube.com/channel/UCASM0cgfkJxQ1ICmRilfHLw/join]]></content:encoded></item><item><title>Typing Demo XL - wooden keycaps / ZealPC Clickiez / 8BitDo keyboard</title><link>https://www.youtube.com/watch?v=3UuT_5GCS2w</link><author>Chyrosran22</author><category>yt</category><enclosure url="https://www.youtube.com/v/3UuT_5GCS2w?version=3" length="" type=""/><pubDate>Sat, 15 Mar 2025 06:00:01 +0000</pubDate><source url="https://www.youtube.com/channel/UCD0y51PJfvkZNe3y3FR5riw">Chyrosran22</source><content:encoded><![CDATA[I don't often record these anymore, but I had to record this one :D . It sounds _sublime_! 
 
 Intro by Kyle Carter
 Outro by Facundo Cabanne
@@ -553,413 +144,26 @@ My unboxing videos: https://bit.ly/2TSrr0m
 
 I'm Thomas and I do videos and reviews on mechanical keyboards ranging from the most sickening modern RGB gaming keyboards to vintage hardware relics, or sometimes keycaps or keyswitches ranging from Cherry MX to Alps SKCM to IBM buckling springs and anything in between.
 
-Follow me on Twitter for updates on my keyboard videos! https://twitter.com/chyrosran22
+Follow me on Twitter for updates on my keyboard videos! https://twitter.com/chyrosran22]]></content:encoded></item><item><title>How Intel’s New CEO Can Catch Up to Samsung, Nvidia and TSMC | WSJ</title><link>https://www.youtube.com/watch?v=EOdMyAK41oU</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/EOdMyAK41oU?version=3" length="" type=""/><pubDate>Fri, 14 Mar 2025 22:30:05 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[Intel is facing tough times after its stock plunged 60% in 2024 and it ousted its CEO Pat Gelsinger. Lip-Bu Tan has been tapped as new CEO for the semiconductor company as it has struggled with both chip manufacturing and chip designing. Unlike Intel, companies specialized in either designing chips–like AMD or Nvidia–or manufacturing chips–like TSMC. 
 
-The practice sentence was: "Hello my name is Thomas and I'm typing on a Feker Alice 60 made out of wood right now. This is probably the nicest, and certainly best-looking, ergonomic keyboard I've ever used!"]]></content:encoded></item><item><title>John Deere is Making Life Miserable For Farmers — And Costing Many Their Lives</title><link>https://www.youtube.com/watch?v=GhRwqAZuKqQ</link><author>More Perfect Union</author><category>yt</category><enclosure url="https://www.youtube.com/v/GhRwqAZuKqQ?version=3" length="" type=""/><pubDate>Fri, 21 Feb 2025 23:01:08 +0000</pubDate><source url="https://www.youtube.com/channel/UCehBVAPy-bxmnbNARF-_tvA">More Perfect Union</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>King George IV - The Playboy Prince Regent Documentary</title><link>https://www.youtube.com/watch?v=0IrxLUCs1aI</link><author>The People Profiles</author><category>yt</category><enclosure url="https://www.youtube.com/v/0IrxLUCs1aI?version=3" length="" type=""/><pubDate>Fri, 21 Feb 2025 21:00:00 +0000</pubDate><source url="https://www.youtube.com/channel/UCD6TPU-PvTMvqgzC_AM7_uA">The People Profiles</source><content:encoded><![CDATA[Please follow us on Spotify. https://open.spotify.com/show/7fKALbrzEO9Q4VVvAwWHqL
-Please subscribe here. https://www.youtube.com/@PeopleProfiles?sub_confirmation=1
-Watch our videos advert free on our website. https://www.peopleprofiles.com/join/
-Our second channel. https://www.youtube.com/@PeopleProfilesExtra
-Or follow us on Twitter. https://twitter.com/tpprofiles
+WSJ explains how a mistake Intel made in the mid 2000s has snowballed into an overwhelming obstacle for the tech company that Lip-Bu Tan will have to face. 
 
-Thank you for watching! If you liked this video, check out our related documentaries below:
-https://www.youtube.com/playlist?list=PLNwBhP0rWSz1EQOUiCo2hOzXogNU5psT8
-https://www.youtube.com/playlist?list=PLNwBhP0rWSz0vPvWecG4EPQIWEIh34K-X
-https://www.youtube.com/playlist?list=PLNwBhP0rWSz3l1yKTFKS6b3GPniSWVpmX
-
-All footage, images and music used in People Profiles Documentaries are sourced from free media websites or are purchased with commercial rights from online media archives.
-
-All People Profiles scripts are researched and written by qualified Historians. The script for this video has been checked with Plagiarism and AI Detector software and scored 1% on Grammarly. In academia, a score of below 15% is considered good or acceptable. Please email us for script references and citations.
-
-#PeopleProfiles #History #Documentary]]></content:encoded></item><item><title>Feminist Abercrombie &amp; Fitch</title><link>https://www.youtube.com/watch?v=sPyshpwy2Sw</link><author>Channel 5 with Andrew Callaghan</author><category>yt</category><enclosure url="https://www.youtube.com/v/sPyshpwy2Sw?version=3" length="" type=""/><pubDate>Fri, 21 Feb 2025 18:29:53 +0000</pubDate><source url="https://www.youtube.com/channel/UC-AQKm7HUNMmxjdS371MSwg">Channel 5 with Andrew Callaghan</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Restaurant Workers Are Battling Their Bosses For Better Treatment</title><link>https://www.youtube.com/watch?v=9qfTRS5U47w</link><author>More Perfect Union</author><category>yt</category><enclosure url="https://www.youtube.com/v/9qfTRS5U47w?version=3" length="" type=""/><pubDate>Fri, 21 Feb 2025 18:12:14 +0000</pubDate><source url="https://www.youtube.com/channel/UCehBVAPy-bxmnbNARF-_tvA">More Perfect Union</source><content:encoded><![CDATA[500 restaurant workers across DC’s upscale establishments are joining together to unionize.
-
-They say management treats them like they’re expendable.
-
-The owner of Rasika has threatened to blacklist workers, and even fired union supporters for organizing.]]></content:encoded></item><item><title>What Gladiator 2 Doesn&apos;t Understand About the Original</title><link>https://www.youtube.com/watch?v=XSfRSh4G8Cw</link><author>Like Stories of Old</author><category>yt</category><enclosure url="https://www.youtube.com/v/XSfRSh4G8Cw?version=3" length="" type=""/><pubDate>Fri, 21 Feb 2025 18:08:47 +0000</pubDate><source url="https://www.youtube.com/channel/UCs7nPQIEba0T3tGOWWsZpJQ">Like Stories of Old</source><content:encoded><![CDATA[Start your free month of great cinema now at https://mubi.com/likestoriesofold 
-
-How Gladiator 2 contradicts itself. Or; when you try to do something new but also want to hit the same comfortable beats of the beloved original.
-
-You might also like:
-How Gladiator Turns Violent Spectacle into a Meaningful Story - https://www.youtube.com/watch?v=B9QTRWFUI40
-
-0:00 The Sequel Problem
-0:38 How Gladiator 2 breaks Maximus
-3:05 What was it trying to do?
-8:32 Trouble in the Foundation
-9:30 A Non-Descript New Hero
-11:40 A Purposeless Mystery
-13:12 In Search of Meaningful Spectacle
-17:45 The Contradiction Emerges
-24:37 A Sequel's Worst Sin
-
--- SUPPORT MY WORK --
-Nebula: https://nebula.tv/lsoo 
-Patreon: https://www.patreon.com/LikeStoriesofOld 
-Leave a One-Time Donation: https://www.paypal.me/TomvanderLinden
-
--- FOLLOW ME --
-Facebook: https://www.facebook.com/LikeStoriesofOld 
-Instagram: https://www.instagram.com/tom.vd.linden
-Bluesky: https://bsky.app/profile/tomvanderlinden.bsky.social
-
--- CONTACT --
-Business inquiries: lsoo@standard.tv  
-Say hi: likestoriesofold@gmail.com 
-
-Music licensed through Musicbed. Take your films to the next level with music from Musicbed. Sign up for a free account to listen for yourself: https://fm.pxf.io/c/3532571/1347628/16252]]></content:encoded></item><item><title>Germany is struggling | DW Documentary</title><link>https://www.youtube.com/watch?v=rzLuBNVNzf4</link><author>DW Documentary</author><category>yt</category><enclosure url="https://www.youtube.com/v/rzLuBNVNzf4?version=3" length="" type=""/><pubDate>Fri, 21 Feb 2025 17:21:45 +0000</pubDate><source url="https://www.youtube.com/channel/UCW39zufHfsuGgpLviKh297Q">DW Documentary</source><content:encoded><![CDATA[Germany is facing a number of major issues. High energy costs, bureaucratic delays, inflation and a crumbling infrastructure, among other problems, have weakened Europe's biggest economy. 
-
-Many in Germany are struggling to make ends meet and rely on the kindness of volunteers and workers at the country’s social institutions.  
-
-On February 23, Germans will elect a new government. But for many in need, hope for change remains low. 
-
-#documentary #dwdocumentary #dwdocs #Germany #Germanelections #democracy #BTW25 #poverty 
-______
-
-We kindly ask viewers to read and stick to the DW netiquette policy on our channel: https://p.dw.com/p/MF1G]]></content:encoded></item><item><title>Haiti - The iron grip of the gangs | DW Documentary</title><link>https://www.youtube.com/watch?v=gTmPE-qev3g</link><author>DW Documentary</author><category>yt</category><enclosure url="https://www.youtube.com/v/gTmPE-qev3g?version=3" length="" type=""/><pubDate>Fri, 21 Feb 2025 17:00:55 +0000</pubDate><source url="https://www.youtube.com/channel/UCW39zufHfsuGgpLviKh297Q">DW Documentary</source><content:encoded><![CDATA[In Port-au-Prince, nearly three million people are living in the grips of all-out gang war. A film crew spent a fortnight filming in and around the Haitian capital and documented how regular people are suffering under this brutal gang rule.
-
-Gangs now control more than 80% of the city. One of the most notorious gang leaders in the Haitian capital is Jimmy Chérizier, also known as "Barbecue”. He says the gangs won’t be laying down their arms any time soon. "We demand to be at the negotiating table,” he said, speaking  from his stronghold in the slums of Port-au-Prince. "If not, we will continue to fight.” Barbecue is the frontman of a powerful alliance of various gangs in the capital. Instead of fighting each other, the armed groups have united and turned their firepower on the state, forcing prime minister Ariel Henry to resign during an overseas trip in March 2024.
-Today, the gangs wield considerable economic and military leverage. They control most of Port-au-Prince’s seafront, and thus the zones surrounding the country’s strategically vital ports. Haiti relies heavily on imports, shipping in more than 50% of its food, a figure that is shocking for a country with an abundance of fertile land. Many Haitians blame corrupt, ultra-wealthy elites for the situation, accusing them of building their vast family fortunes via monopolies on staple goods.
-In the shantytowns of Port-au-Prince, controlled by the gangs, there are thousands of people who are unable or unwilling to flee. Murders, kidnappings, gang rapes and fires are commonplace, with no end to the crisis in sight.
-
-#documentary #dwdocumentary #dwdocs #haiti 
-______
-
-DW Documentary gives you knowledge beyond the headlines. Watch top documentaries from German broadcasters and international production companies. Meet intriguing people, travel to distant lands, get a look behind the complexities of daily life and build a deeper understanding of current affairs and global events. Subscribe and explore the world around you with DW Documentary.
-
-Subscribe to: ‬
-⮞ DW Documentary (English): https://www.youtube.com/dwdocumentary 
-⮞ DW Documental (Spanish): https://www.youtube.com/dwdocumental 
-⮞ DW Documentary وثائقية دي دبليو (Arabic): https://www.youtube.com/dwdocarabia
-⮞ DW Documentary हिन्दी (Hindi): https://www.youtube.com/dwdochindi
-⮞ DW Doku (German): https://www.youtube.com/dwdoku
-
-For more visit: http://www.dw.com/en/tv/docfilm/s-3610
-Follow DW Documentary on Instagram: https://www.instagram.com/dwdocumentary/
-Follow DW Documental on Facebook: https://www.facebook.com/dwdocumental
-
-We kindly ask viewers to read and stick to the DW netiquette policy on our channel: https://p.dw.com/p/MF1G]]></content:encoded></item><item><title>Natalie Morales Discovers Her Third Great Grandfather Had 13 Children! | Finding Your Roots | PBS</title><link>https://www.youtube.com/watch?v=S6pfRvXG1l0</link><author>PBS</author><category>yt</category><enclosure url="https://www.youtube.com/v/S6pfRvXG1l0?version=3" length="" type=""/><pubDate>Fri, 21 Feb 2025 17:00:29 +0000</pubDate><source url="https://www.youtube.com/channel/UCgyeJxD05YnoDquRMNBfBqw">PBS</source><content:encoded><![CDATA[Watch more: https://to.pbs.org/3TA8505 | #FindingYourRoots
-Natalie Morales learns about her maternal third great grandfather, Domingos, a farmer born in Brazil, a father to thirteen children. Going further back, Henry Louis Gates and researchers determine her first ancestor to come to Brazil from Portugal.
-
-Natalie Morales is a television anchor and journalist. She serves as the host of THE TALK, the CBS Daytime Emmy Award-winning talk show. Morales is also part of the CBS News team, her reporting is featured across shows such as 48 HOURS, CBS SUNDAY MORNING and others. Morales has won three Daytime Emmy Awards, a Robert F. Kennedy Award in international journalism and three Gracie Awards.
-
-This program is made possible by viewers like you. Support your local PBS station: https://www.pbs.org/donate
-
-Explore our shared histories with Professor Henry Louis Gates, Jr. through iconic series like Making Black America, Finding Your Roots, and The Black Church: https://pbs.org/professorgates
-
-Enjoy full episodes of your favorite PBS shows anytime, anywhere with the free PBS App: https://to.pbs.org/2QbtzhR
-
-FOLLOW PBS:
-Facebook: https://www.facebook.com/PBS/
-X: https://twitter.com/PBS/
-Instagram: https://www.instagram.com/PBS/
-TikTok: https://www.tiktok.com/@pbs
-Threads: https://www.threads.net/@pbs
-
-FOLLOW HENRY LOUIS GATES, JR.
-YouTube: https://www.youtube.com/henrylouisgatesjr 
-Facebook: https://www.facebook.com/HenryLouisGatesJr/ 
-X: https://twitter.com/HenryLouisGates 
-Instagram: https://www.instagram.com/henrylouisgates/ 
-
-#findingyourroots #ancestry #genealogy #brazil 
-
-Finding Your Roots
-For more than a decade, renowned Harvard scholar Henry Louis Gates, Jr. has helped to expand America’s sense of itself, stimulating a national conversation about identity with humor, wisdom, and compassion. Professor Gates has explored the ancestry of dozens of influential people from diverse backgrounds, taking millions of viewers deep into the past to reveal the connections that bind us all.]]></content:encoded></item><item><title>How Rwanda is Conquering Their 100x Larger Neighbor</title><link>https://www.youtube.com/watch?v=0N34UFbWpFk</link><author>RealLifeLore</author><category>yt</category><enclosure url="https://www.youtube.com/v/0N34UFbWpFk?version=3" length="" type=""/><pubDate>Fri, 21 Feb 2025 15:46:29 +0000</pubDate><source url="https://www.youtube.com/channel/UCP5tjEmvPItGyLhmjdwP7Ww">RealLifeLore</source><content:encoded><![CDATA[To try everything Brilliant has to offer for free for a full 30 days, visit https://brilliant.org/RealLifeLore/
-You'll also get 20% off an annual premium subscription
-
-Watch more than 30 additional exclusive RealLifeLore videos on Nebula in Modern Conflicts: https://nebula.tv/modernconflicts
-
-Please Subscribe: https://www.youtube.com/channel/UCP5tjEmvPItGyLhmjdwP7Ww
-
-RealLifeLore on Spotify: https://spoti.fi/47yMfzp
-
-RealLifeLore on Facebook: https://www.facebook.com/RealLifeLore/
-
-Select video clips courtesy of Getty Images
-
-Select video clips courtesy of the AP Archive
-
-Special thanks to MapTiler, OpenStreetMap Contributors, and GEOlayers
-
-https://www.maptiler.com/copyright/
-https://www.openstreetmap.org/copyright
-https://aescripts.com/geolayers/]]></content:encoded></item><item><title>Why Trump and Republicans Hate the CFPB | WSJ</title><link>https://www.youtube.com/watch?v=vNhFuNfwtTk</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/vNhFuNfwtTk?version=3" length="" type=""/><pubDate>Fri, 21 Feb 2025 15:01:22 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[In President Trump’s effort to shave down the federal government, the Consumer Financial Protection Bureau was one of the first targets. But it’s always been controversial. Created in response to the 2008 financial crisis, the CFPB is essentially a watchdog for the American consumer. So what would happen to consumers if the agency designed to collect data from banks and financial companies to investigate fraud goes away?
-
-WSJ explains what the agency does, why Republicans have always hated it and what happens now for consumers.
-
-Chapters: 
-0:00 Threats to the CFPB
-0:31 What problem the CFPB was solving 
-1:11 What the CFPB does
-1:51 The criticisms 
-4:16 The effect on consumers 
+Chapters:
+0:00 Intel’s market cap
+0:57 Intel’s history 
+1:47 Intel’s broader mistakes
+2:56 Manufacturing issues
+4:31 Design issues
+5:55 Intel today
 
 News Explainers
 Some days the high-speed news cycle can bring more questions than answers. WSJ’s news explainers break down the day's biggest stories into bite-size pieces to help you make sense of the news.
 
-#Trump #CFPB #WSJ]]></content:encoded></item><item><title>Timeline: TV - The 90s (Teaser Trailer)</title><link>https://www.youtube.com/watch?v=Ca8eN9CXqc0</link><author>Weird History</author><category>yt</category><enclosure url="https://www.youtube.com/v/Ca8eN9CXqc0?version=3" length="" type=""/><pubDate>Fri, 21 Feb 2025 15:00:26 +0000</pubDate><source url="https://www.youtube.com/channel/UCc-N24Y5OA0gqbjBwe1ttfA">Weird History</source><content:encoded><![CDATA[Coming soon! Timeline TV Edition, delving deep into what made the 90s, through the lens of what was on TV! From ER to Friends, some of the biggest TV franchises that ever were! 
-
-Be sure to subscribe to the Weird History Newsletter: https://bit.ly/WeirdHistoryNews
-
-#timeline #1990s  #weirdhistory]]></content:encoded></item><item><title>Origin of the China-Taiwan Conflict: Chinese Civil War 1945-1949 (Documentary)</title><link>https://www.youtube.com/watch?v=7slhD9PmxII</link><author>Real Time History</author><category>yt</category><enclosure url="https://www.youtube.com/v/7slhD9PmxII?version=3" length="" type=""/><pubDate>Fri, 21 Feb 2025 15:00:09 +0000</pubDate><source url="https://www.youtube.com/channel/UCB1eDEd1AYG3YrRIJSZzMOQ">Real Time History</source><content:encoded><![CDATA[Get Nebula with 40% off annual subscription with my link: https://go.nebula.tv/realtimehistory  
-Watch Red Atoms on Nebula: https://nebula.tv/redatoms
- 
-With the Japanese surrender in September 1945, the Second World War comes to an end. But for China there won't be peace right away because the nationalists under Chiang Kai-Shek and the communists under Mao Zedong still haven't resolved their struggle and so the Chinese Civil War will flare up once again. 
-
-Chapters:
-00:00 Japanese Surrender
-03:44 Opposing Forces
-07:33 KMT Offensives
-12:18 CCP vs KMT Strategy
-14.45 CCP Counterattack
-19:19 Civilian Experience
-23:23 CCP Huaihai Campaign
-26:30 Final CCP Offensives
-29:31 KMT Escape to Taiwan
-31:59 Why did the Communists Win?
-36:07 The United States and Taiwan
-
-» SUPPORT US 
-https://patreon.com/realtimehistory 
-https://nebula.tv/realtimehistory 
-
-» THANK YOU TO OUR CO-PRODUCERS 
-Rose Flaglor, Reed Spilmann, Jim Frame, Erik Ritter, Cardboard, Ken Brownfield, David Garfinkle, Raymond Martin, Konstantin Bredyuk, Lisa Anderson, Brad Durbin, Jeremy K Jones, Murray Godfrey, John Ozment, Stephen Parker, Mavrides, Kristina Colburn, Stefan Jackowski, Cardboard, William Kincade, William Wallace, Daniel L Garza, Chris Daley, Malcolm Swan, Christoph Wolf, Simen Røste, Jim F Barlow, Taylor Allen, Adam Smith, James Giliberto, Albert B. Knapp MD, Tobias Wildenblanck, Richard L Benkin, Marco Kuhnert, Matt Barnes, Ramon Rijkhoek, Jan, Scott Deederly, gsporie, Kekoa, Bruce G. Hearns, Hans Broberg, Fogeltje
-
-» SOURCES
-Boorman, Howard L. &  Scott A. Boorman, “Chinese Communist Insurgent Warfare, 1935-49", Political Science Quarterly, Vol. 81, No. 2, (1966)
-Hsü, Immanuel C. Y., The Rise of Modern China, (Oxford : Oxford University Press, 2000)
-Hsuing, James C. & Steven I. Levine, China’s Bitter Victory: The War with Japan 1937-1945, (Armonk, NY : M.E. Sharpe, Inc., 1992)
-Jowett, Philip, Chinese Civil War Armies 1911-49, (Oxford : Osprey Publishing, 1997)
-Kania, Elsa B, & Ian Burns McCaslin, The PLA’s Evolving Outlook on Urban Warfare: Learning, Training, and Implications for Taiwan, (Washington D.C. : Institute for the Study of War, 2022)
-Lew, Christopher R., The Third Chinese Revolutionary Civil War, 1945-49: An analysis of Communist strategy and leadership, (London : Routledge, 2009)
-Li, Xiaobing, A History of the Modern Chinese Army, (Lexington, KY : The University Press of Kentucky, 2007)
-Lynch, Michael, The Chinese Civil War 1945-1949, (Oxford : Osprey Publishing, 2010)
-Mitter, Rana, China’s War with Japan, 1937-1945: The Struggle for Survival, (London : Allen Lane, 2013)
-Moise, Edwin E., Modern China: A History, (Harlow : Longman Group Limited, 1986)
-Westad, Odd Arne, Decisive Encounters: The Chinese Civil War, 1946-1950, (Stanford, CA : Stanford University Press, 2003)
-
-
-
-»CREDITS
-Presented by: Jesse Alexander
-Written by: Mark Newton
-Director: Toni Steller
-Editing: Toni Steller
-Motion Design: Toni Steller 
-Mixing, Mastering & Sound Design: http://above-zero.com
-Research by: Mark Newton
-Fact checking: Florian Wittig, Jesse Alexander 
-Executive Producer: Florian Wittig
-
-Channel Design: Simon Buckmaster
-
-Contains licensed material by getty images, AP and Reuters
-Maps: MapTiler/OpenStreetMap Contributors & GEOlayers3
-Music Library: Epidemic Sound
-
-All photos and film in our documentaries are authentic historical footage. We do not use generative AI to create new assets. However, we may use AI tools to upscale or clean up certain assets without distorting or compromising the original image.
-
-All rights reserved - Real Time History GmbH 2025]]></content:encoded></item><item><title>RISC-V was supposed to change everything—How&apos;s it going?</title><link>https://www.youtube.com/watch?v=1565YYsFmd4</link><author>Jeff Geerling</author><category>yt</category><enclosure url="https://www.youtube.com/v/1565YYsFmd4?version=3" length="" type=""/><pubDate>Fri, 21 Feb 2025 15:00:01 +0000</pubDate><source url="https://www.youtube.com/channel/UCR-DXc1voovS8nhAvccRZhg">Jeff Geerling</source><content:encoded><![CDATA[RISC-V shenanigans with GPUs and AAA games on the HiFive Premier P550.
-
-The HiFive Premier P550 and case were provided by SiFive for my review and testing. They did not pay for this video or have any input into its production—however because the hardware was provided for review, I mark the video with YouTube's 'includes paid sponsorship' option. See my sponsorship and review unit policies here: https://github.com/geerlingguy/youtube?tab=readme-ov-file#sponsorships
-
-Resources mentioned in this video:
-
-  - SiFive HiFive Premier P550: https://www.sifive.com/boards/hifive-premier-p550
-  - ALL my test data: https://github.com/geerlingguy/sbc-reviews/issues/65
-  - Guide for installing Box64, Box32, and Wine on the P550: https://www.jeffgeerling.com/blog/2025/build-box64-box32-x86-emulation-on-risc-v-linux
-  - Explaining Computers P550 Overview: https://www.youtube.com/watch?v=9KTbi8dJjzQ
-  - Chips and Cheese Article on P550: https://chipsandcheese.com/p/a-risc-v-progress-check-benchmarking
-
-Support me on Patreon: https://www.patreon.com/geerlingguy
-Sponsor me on GitHub: https://github.com/sponsors/geerlingguy
-Merch: https://www.redshirtjeff.com
-2nd Channel: https://www.youtube.com/@GeerlingEngineering
-3rd Channel: https://www.youtube.com/@Level2Jeff
-
-Contents:
-
-00:00 - RISC architecture's gonna change everything
-01:14 - The fastest RISC-V Dev Board
-03:24 - Hardware overview and quirks
-05:13 - Potential, not realized
-06:25 - PCIe - NVMe performance
-07:40 - PCIe - AMD GPU support
-08:58 - What about AAA Windows x86 games?
-11:52 - What about Indie Windows x86 games?
-12:23 - LLMs make more sense than games
-13:39 - You probably won't buy it]]></content:encoded></item><item><title>The Biggest Nuke of all Time</title><link>https://www.youtube.com/watch?v=pc8V5wxAXGk</link><author>fern</author><category>yt</category><enclosure url="https://www.youtube.com/v/pc8V5wxAXGk?version=3" length="" type=""/><pubDate>Fri, 21 Feb 2025 14:01:08 +0000</pubDate><source url="https://www.youtube.com/channel/UCODHrzPMGbNv67e84WDZhQQ">fern</source><content:encoded><![CDATA[With Odoo, it's fast, and incredibly easy to create your website for free: https://fern.deals/odoo25  – plus, get a custom domain free for one year. (ad)
-
-This is the story of Tsar Bomba, the emperor of nukes. 
-
-Artlist:
-Out of Flux - THE LIGHTHOUSE - Creative Cut - Beat
-Yarin Primak - Ghost Train - Instrumental Version
-Jon Gegelman - Outer Chaos
-Tamuz Dekel - My Right Foot
-Theatre of Delays - The Conversation
-Dan Mayo -Leaving
-Andrea Carsenzuola - Horror Nights - Synth Notes Arpeggio Electronic Heartbeat
-DaniHaDani - Black Eyes
-Artlist Musical Logos - The Truth Is Close
-
-Lens Distortion:
-Rematch
-Confident Design
-Searching Within
-Canon
-
-Epidemic Sound:
-In The Wrong Place - Bill Ferngren
-
-_____
-
-Armchair documentaries, almost weekly]]></content:encoded></item><item><title>The Efficiency Paradox: How to Save Yourself &amp; the World • Holly Cummins • GOTO 2024</title><link>https://www.youtube.com/watch?v=dU_WHead0oY</link><author>GOTO Conferences</author><category>yt</category><enclosure url="https://www.youtube.com/v/dU_WHead0oY?version=3" length="" type=""/><pubDate>Fri, 21 Feb 2025 13:00:55 +0000</pubDate><source url="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</source><content:encoded><![CDATA[This presentation was recorded at GOTO Copenhagen 2024. #GOTOcon #GOTOcph
-https://gotocph.com
-
-Holly Cummins - Senior Principal Software Engineer on the Red Hat Quarkus Team @Holly_Cummins 
-
-RESOURCES
-https://hollycummins.com
-https://hollycummins.com/type/blog
-https://bsky.app/profile/hollycummins.com
-https://hachyderm.io/@holly_cummins
-https://twitter.com/holly_cummins
-https://github.com/holly-cummins
-https://linkedin.com/in/holly-k-cummins
-
-ABSTRACT
-Inefficiency is ruining our planet and our lives. Efficiency is ruining our happiness, and weirdly, it’s also ruining our efficiency. Heeeeelppp!? What’s a techie to do? Zombie servers and slow code are a big climate problem, but the vrrrooom model gives us double-win hope. Holly walks through a range of techniques that can be used to find and eliminate software waste and reduce climate impacts.
-
-But machine efficiency isn’t much use without human efficiency. Surprisingly, sorting out machine efficiency often helps humans, too. For example, the Quarkus Java framework uses many interesting waste-reduction techniques. These optimisations have the dual benefit of speeding up computers, and also speeding up people.
-
-So far, so good, but we need to be careful we don’t end up accidentally optimising the wrong things, and making stuff worse. 100% utilisation is not sustainable for either humans, or people. It’s not even very efficient (what!?). Holly gives a brief tour of the brain’s default mode network, the latest business research, and queueing theory, to show why we actually achieve more when we do a bit less. [...]
-
-TIMECODES
-00:00 Intro
-02:47 Waste
-05:46 e-waste is killing the planet
-07:20 Zombie servers
-08:35 Data
-09:33 Solution: LightSwitchOps
-13:38 Solution: Faster code
-17:46 Case study: Quarkus
-18:49 Java dynamism
-21:59 How do we fix all this?
-25:26 Example: Logging
-26:04 Example: Hibernate
-26:26 Developer joy
-28:59 We have a solution
-30:52 How efficient can we get?
-33:36 Speed vs Resiliency
-38:15 The default mode network
-42:13 Inverse Jevon's paradox
-44:35 Hygge developers
-45:34 Conclusions
-46:12 Outro
-
-Download slides and read the full abstract here:
-https://gotocph.com/2024/sessions/3327
-
-RECOMMENDED BOOKS
-Anne Currie, Sarah Hsu, & Sara Bergman • Building Green Software • https://amzn.to/3UjSClv
-Marc Nuri San Felix • Full Stack Quarkus & React • https://amzn.to/4cXyRrh
-John Clingan & Ken Finnigan • Kubernetes Native Microservices with Quarkus & MicroProfile • https://amzn.to/4cWQ3wV
-Davi Vieira • Designing Hexagonal Architecture with Java • https://amzn.to/3Q4H3vU
-Ioannis Kolaxis • 101 Green Software • https://www.kolaxis.dev/book-green-software
-Mehdi Khosrow-Pour • Green Computing Strategies for Competitive Advantage and Business Sustainability • https://amzn.to/2YXbI7j
-Lässig, Kersting & Morik • Computational Sustainability • https://amzn.to/3APBW8r
-Carola Lilienthal • Sustainable Software Architecture • https://amzn.to/3yFXxoS
-
-https://bsky.app/profile/gotocon.com
-https://twitter.com/GOTOcon
-https://www.linkedin.com/company/goto-
-https://www.instagram.com/goto_con
-https://www.facebook.com/GOTOConferences
-#Quarkus #RedHatQuarkus #JavaDynamism #JevonsParadox #BuildingGreenSoftware #Sustainability #SustainableSoftware #CarbonEfficiency #LightSwitchOps #Efficiency #Decarbonization #GreenCloud #GreenComputing #GreenCoding #Programming #GreenSoftware #HollyCummins
-
-CHANNEL MEMBERSHIP BONUS
-Join this channel to get early access to videos & other perks:
-https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA/join
-
-Looking for a unique learning experience?
-Attend the next GOTO conference near you! Get your ticket at https://gotopia.tech
-Sign up for updates and specials at https://gotopia.tech/newsletter
-
-SUBSCRIBE TO OUR CHANNEL - new videos posted almost daily.
-https://www.youtube.com/user/GotoConferences/?sub_confirmation=1]]></content:encoded></item><item><title>How German U-Boats DESTROYED Allied shipping</title><link>https://www.youtube.com/watch?v=lQWHXByBhL0</link><author>Imperial War Museums</author><category>yt</category><enclosure url="https://www.youtube.com/v/lQWHXByBhL0?version=3" length="" type=""/><pubDate>Fri, 21 Feb 2025 12:01:09 +0000</pubDate><source url="https://www.youtube.com/channel/UC3uAjWoLZ4bSi6qI9SjALxA">Imperial War Museums</source><content:encoded><![CDATA[#ww2 #history #battleoftheatlantic #iwm #uboat]]></content:encoded></item><item><title>Kafka Connect: Build &amp; Run Data Pipelines • Kate Stanley, Mickael Maison &amp; Danica Fine</title><link>https://www.youtube.com/watch?v=2S-CkeZVwK4</link><author>GOTO Conferences</author><category>yt</category><enclosure url="https://www.youtube.com/v/2S-CkeZVwK4?version=3" length="" type=""/><pubDate>Fri, 21 Feb 2025 10:34:22 +0000</pubDate><source url="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</source><content:encoded><![CDATA[This interview was recorded for the GOTO Book Club.
-http://gotopia.tech/bookclub
-
-Read the full transcription of the interview here
- (https://gotopia.tech/episodes/341) 
-Kate Stanley - Principal Software Engineer at Red Hat & Co-Author of "Kafka Connect"
-Mickael Maison - Senior Principal Software Engineer at Red Hat & Co-Author of "Kafka Connect"
-Danica Fine - Lead Developer Advocate, Open Source at Snowflake
-
-RESOURCES
-Kate
- (https://x.com/KateStanley91) https://fosstodon.org/@katheris
- (https://github.com/katheris) https://www.linkedin.com
- (https://www.linkedin.com/in/katherine-kate-stanley-3796b579) 
-Mickael
-https://bsky.app/profile/mickaelmaison.bsky.social
-https://mas.to/@MickaelMaison
- (https://stackoverflow.com/users/1765189/mickael-maison) https://www.linkedin.com
- (https://www.linkedin.com/in/mickaelmaison) https://mickaelmaison.com
-
-Danica
-https://bsky.app/profile/thedanicafine.bsky.social
- (https://x.com/TheDanicaFine) https://data-folks.masto.host/@thedanicafine
-https://www.linkedin.com (https://www.linkedin.com/in/danica-fine) 
- (https://github.com/danicafine) https://linktr.ee/thedanicafine
-
-Links
-https://kafka.apache.org
-https://flink.apache.org
-https://debezium.io
-https://strimzi.io
-
-DESCRIPTION
-Danica Fine together with the authors of “Kafka Connect” Kate Stanley and Mickael Maison, unpack Kafka Connect's game-changing power for building data pipelines—no tedious custom scripts needed! Kate and Mickael Maison discuss how they structured the book to help everyone, from data engineers to developers, tap into Kafka Connect’s strengths, including Change Data Capture (CDC), real-time data flow, and fail-safe reliability.
-
-
-RECOMMENDED BOOKS
-Kate Stanley & Mickael Maison • Kafka Connect
- (https://amzn.to/40Jq5Jz) Shapira, Palino, Sivaram & Petty • Kafka: The Definitive Guide
- (https://amzn.to/3ULdz8A) Viktor Gamov, Dylan Scott & Dave Klein • Kafka in Action (https://amzn.to/3CrB8KU) 
-
-
-Bluesky (https://bsky.app/profile/gotocon.com) 
-Twitter (https://twitter.com/GOTOcon) 
-Instagram (https://www.instagram.com/goto_con) 
-LinkedIn (https://www.linkedin.com/company/goto-) 
-Facebook (https://www.facebook.com/GOTOConferences) 
-
-CHANNEL MEMBERSHIP BONUS
-Join this channel to get early access to videos & other perks:
-https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA/join
-
-Looking for a unique learning experience?
-Attend the next GOTO conference near you! Get your ticket: gotopia.tech (https://gotopia.tech) 
-
-SUBSCRIBE TO OUR YOUTUBE CHANNEL (https://www.youtube.com/user/GotoConferences/?sub_confirmation=1)  - new videos posted daily!]]></content:encoded></item><item><title>Why Germany’s Center Might Just Hold</title><link>https://www.youtube.com/watch?v=0G8EVcmJStI</link><author>Bloomberg Originals</author><category>yt</category><enclosure url="https://www.youtube.com/v/0G8EVcmJStI?version=3" length="" type=""/><pubDate>Fri, 21 Feb 2025 09:00:00 +0000</pubDate><source url="https://www.youtube.com/channel/UCUMZ7gohGI9HcU9VNsr2FJQ">Bloomberg Originals</source><content:encoded><![CDATA[With seven main parties jostling for power and support for the far-right AfD at record highs, Germany’s political landscape is more fragmented than ever. As debate rages around its economic future and role in Europe and the world, we look at the issues polarizing the nation, and how events outside its borders may affect choices at the polls.
-
---------
-Like this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1
-
-Get unlimited access to Bloomberg.com for $1.99/month for the first 3 months: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals
-
-Bloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. 
-
-Subscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.
-
-Visit our partner channel Bloomberg Quicktake for global news and insight in an instant.]]></content:encoded></item><item><title>Next Rapper out of O Block</title><link>https://www.youtube.com/watch?v=HsG3aCX_x8k</link><author>Channel 5 with Andrew Callaghan</author><category>yt</category><enclosure url="https://www.youtube.com/v/HsG3aCX_x8k?version=3" length="" type=""/><pubDate>Thu, 20 Feb 2025 23:53:50 +0000</pubDate><source url="https://www.youtube.com/channel/UC-AQKm7HUNMmxjdS371MSwg">Channel 5 with Andrew Callaghan</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>The ultimate combination for braising: port wine, cinnamon and star anise.</title><link>https://www.youtube.com/watch?v=Ki2CEy3Br1U</link><author>French Cooking Academy</author><category>yt</category><enclosure url="https://www.youtube.com/v/Ki2CEy3Br1U?version=3" length="" type=""/><pubDate>Thu, 20 Feb 2025 22:01:19 +0000</pubDate><source url="https://www.youtube.com/channel/UC0lG3Ihe4LGV851lODRIS5g">French Cooking Academy</source><content:encoded><![CDATA[A rich, slow-cooked dish with deep umami, warm spice, and a velvety sauce that clings beautifully to the tender Ribs.
-🍴 THE RECIPE: https://www.thefrenchcookingacademy.com/recipes/beef-short-ribs-port-wine-star-anise
-🍴HANDY FAT SEPARATOR FOR SAUCES: https://amzn.to/4k5PVil
+#Intel #Tech #WSJ]]></content:encoded></item><item><title>The Ultimate Strawberry Dessert for Your Next Dinner Party!</title><link>https://www.youtube.com/watch?v=lfh-bSzCXOA</link><author>French Cooking Academy</author><category>yt</category><enclosure url="https://www.youtube.com/v/lfh-bSzCXOA?version=3" length="" type=""/><pubDate>Fri, 14 Mar 2025 22:26:54 +0000</pubDate><source url="https://www.youtube.com/channel/UC0lG3Ihe4LGV851lODRIS5g">French Cooking Academy</source><content:encoded><![CDATA[A refined take on a classic pairing, this dish balances sweet, tangy, and creamy elements with  balsamic-infused strawberries, and silky vanilla mascarpone, cream
+🍴 THE RECIPE: https://www.thefrenchcookingacademy.com/recipes/strawberrieswithbalsamicglaze
 👩‍🍳 OUR SCHOOL MEMBERSHIP: https://www.thefrenchcookingacademy.com/membership
-
 📖 OUR COOKBOOK: https://www.thefrenchcookingacademy.com/our-cookbook
-HANDY FAT SEPARATOR FOR SAUCES: https://amzn.to/4k5PVil
+
 
 🙏 SUPPORT OUR CHANNEL 🙏
  If you enjoy our videos and want to support us to bring you exciting French recipes for many years to come, we’d be rapt if you would consider becoming a French Cooking Academy patron. http://patreon.com/frenchcookingacademy
@@ -1016,7 +220,32 @@ Find local producers near you in Oz
 - Open Food Network: https://openfoodnetwork.org.au
 
 📸 FOOD PHOTOGRAPHY  📸
-Food Photography by Kate Blenkiron]]></content:encoded></item><item><title>We Went to a Crypto Conference: We Left Terrified</title><link>https://www.youtube.com/watch?v=I4vi75U0F0k</link><author>More Perfect Union</author><category>yt</category><enclosure url="https://www.youtube.com/v/I4vi75U0F0k?version=3" length="" type=""/><pubDate>Thu, 20 Feb 2025 21:55:11 +0000</pubDate><source url="https://www.youtube.com/channel/UCehBVAPy-bxmnbNARF-_tvA">More Perfect Union</source><content:encoded><![CDATA[The crypto industry could cause a 2008 style economic crash. After spending $130 million on the 2024 elections, the industry won every seat it invested in. Now, they're getting the policies they want — and that could mean economic disaster for the rest of us.-----
+Food Photography by Kate Blenkiron]]></content:encoded></item><item><title>Edison - America’s Most Prolific &amp; Ruthless Inventor Documentary</title><link>https://www.youtube.com/watch?v=SGz7Mqe-_tA</link><author>The People Profiles</author><category>yt</category><enclosure url="https://www.youtube.com/v/SGz7Mqe-_tA?version=3" length="" type=""/><pubDate>Fri, 14 Mar 2025 21:57:53 +0000</pubDate><source url="https://www.youtube.com/channel/UCD6TPU-PvTMvqgzC_AM7_uA">The People Profiles</source><content:encoded><![CDATA[Please follow us on Spotify. https://open.spotify.com/show/7fKALbrzEO9Q4VVvAwWHqL
+Please subscribe here. https://www.youtube.com/@PeopleProfiles?sub_confirmation=1
+Watch our videos advert free on our website. https://www.peopleprofiles.com/join/
+Our second channel. https://www.youtube.com/@PeopleProfilesExtra
+Or follow us on Twitter. https://twitter.com/tpprofiles
+
+Thank you for watching! If you liked this video, check out our related documentaries below:
+https://www.youtube.com/playlist?list=PLNwBhP0rWSz1EQOUiCo2hOzXogNU5psT8
+https://www.youtube.com/playlist?list=PLNwBhP0rWSz0vPvWecG4EPQIWEIh34K-X
+https://www.youtube.com/playlist?list=PLNwBhP0rWSz3l1yKTFKS6b3GPniSWVpmX
+
+All footage, images and music used in People Profiles Documentaries are sourced from free media websites or are purchased with commercial rights from online media archives.
+
+All People Profiles scripts are researched and written by qualified Historians. The script for this video has been checked with Plagiarism and AI Detector software and scored 1% on Scribbr. In academia, a score of below 15% is considered good or acceptable. Please email us for script references and citations.
+
+#PeopleProfiles #History #Documentary]]></content:encoded></item><item><title>MEDIA BLACKOUT: America’s Poorest Counties Devastated By Catastrophic Flooding</title><link>https://www.youtube.com/watch?v=gRvbdidqAhs</link><author>More Perfect Union</author><category>yt</category><enclosure url="https://www.youtube.com/v/gRvbdidqAhs?version=3" length="" type=""/><pubDate>Fri, 14 Mar 2025 20:49:53 +0000</pubDate><source url="https://www.youtube.com/channel/UCehBVAPy-bxmnbNARF-_tvA">More Perfect Union</source><content:encoded><![CDATA[Trump wants to demolish FEMA and says the states will take care of disasters themselves. To test this theory, we talked to the West Virginians who have been slammed by historic flooding in recent weeks. It turns out the state's flood protection fund is out of funds — and as a result, people are suffering. John Russell reports for More Perfect Union from West Virginia. 
+
+To contribute to some of those featured in the video, see below: 
+
+Gofundme for Brandon and Anjelika Muncy -https://www.gofundme.com/f/help-a-family-of-4-rebuild-after-devastating-flood-loss
+
+Matoaka Outreach - https://www.facebook.com/matoakacoaliton/about
+
+Blue Jay Rising - https://secure.actblue.com/donate/wv-rescue-fund?refcode=web
+
+-----
 More Perfect Union’s mission is to build power for working people. Here’s what that means:
 
 We report on the real struggles and challenges of the working class from a working-class perspective, and we attempt to connect those problems to potential solutions.
@@ -1032,15 +261,322 @@ We're an independent, nonprofit newsroom. To support our work:
 - Facebook: https://www.facebook.com/MorePerfectUS
 - Instagram: https://www.instagram.com/perfectunion/
 - Threads: https://www.threads.net/@perfectunion
-- Website: https://www.perfectunion.us]]></content:encoded></item><item><title>Will The Big Bang Happen AGAIN (and Again)?</title><link>https://www.youtube.com/watch?v=R9tJ4TkG0fU</link><author>PBS Space Time</author><category>yt</category><enclosure url="https://www.youtube.com/v/R9tJ4TkG0fU?version=3" length="" type=""/><pubDate>Thu, 20 Feb 2025 21:15:02 +0000</pubDate><source url="https://www.youtube.com/channel/UC7_gcs09iThXybpVgjHZ_7g">PBS Space Time</source><content:encoded><![CDATA[Sign Up on Patreon to get access to the Space Time Discord!
-https://www.patreon.com/pbsspacetime
+- Website: https://www.perfectunion.us]]></content:encoded></item><item><title>Never had breakfast</title><link>https://www.youtube.com/watch?v=QZZOg581xNM</link><author>Channel 5 with Andrew Callaghan</author><category>yt</category><enclosure url="https://www.youtube.com/v/QZZOg581xNM?version=3" length="" type=""/><pubDate>Fri, 14 Mar 2025 20:29:34 +0000</pubDate><source url="https://www.youtube.com/channel/UC-AQKm7HUNMmxjdS371MSwg">Channel 5 with Andrew Callaghan</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Snacks #chips #nuts #doechii</title><link>https://www.youtube.com/watch?v=3kjEOOdAlNU</link><author>You Suck At Cooking</author><category>yt</category><enclosure url="https://www.youtube.com/v/3kjEOOdAlNU?version=3" length="" type=""/><pubDate>Fri, 14 Mar 2025 20:21:01 +0000</pubDate><source url="https://www.youtube.com/channel/UCekQr9znsk2vWxBo3YiLq2w">You Suck At Cooking</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Gaia Discovered Hidden Galaxies INSIDE Our Milky Way</title><link>https://www.youtube.com/watch?v=znnh49XGx2w</link><author>Astrum</author><category>yt</category><enclosure url="https://www.youtube.com/v/znnh49XGx2w?version=3" length="" type=""/><pubDate>Fri, 14 Mar 2025 17:01:14 +0000</pubDate><source url="https://www.youtube.com/channel/UC-9b7aDP6ZN0coj9-xFnrtw">Astrum</source><content:encoded><![CDATA[Get NordVPN 2Y plan + 4 months extra ➼ https://nordvpn.com/astrum. It’s risk-free with Nord’s 30-day money-back guarantee!
+▀▀▀▀▀▀
+ESA’s Gaia telescope has reached the end of its life, but what has it discovered about our Milky Way galaxy’s hidden secret?
 
-How did the universe begin? How can something come from nothing? One way to “solve” this most difficult of philosophical conundrums is to avoid it altogether. Maybe the universe didn’t begin. Maybe the Big Bang was just one in an endless cycle.
+▀▀▀▀▀▀
+
+Astrum Podcast: https://www.buzzsprout.com/2250635/share
+Astrum Infographic Artwork: https://electrify.art/collections/astrum 
+Astrum Displate Posters: https://astrumspace.info/Displates 
+Astrum Merch: https://astrum-shop.fourthwall.com/
+
+Join us on the Astrum discord: https://discord.gg/TKw8Hpvtv8 
+
+SUBSCRIBE for more videos about space and astronomy. 
+Subscribe! http://goo.gl/WX4iMN 
+Facebook! http://goo.gl/uaOlWW 
+Twitter! http://goo.gl/VCfejs 
+
+A huge thanks to our Patreons who help make these videos possible. Sign-up here: https://bit.ly/4aiJZNF 
+
+Astrum Spanish: https://www.youtube.com/@astrumespanol 
+Astrum Portuguese: https://www.youtube.com/channel/UChn_-OwvV63mr1yeUGvH-BQ 
+
+▀▀▀▀▀▀
+
+References
+Gaia: ESA’s billion star surveyor, via esa.int (https://astrumspace.info/gaia) 
+How does Gaia study the Milky Way? Via esa.int (https://astrumspace.info/3FiuHh7) 
+Inside Gaia’s billion-pixel camera, via ESA on YouTube (https://astrumspace.info/gaiacamera) 
+Gaia Data Release 1, via esa.int (https://astrumspace.info/3Fl0jCR) 
+Gaia factsheet, via esa.int (https://astrumspace.info/gaiafactsheet) 
+How Many Stars in the Milky Way? via nasa.gov (https://astrumspace.info/howmanystars) 
+Two of the Milky Way's Spiral Arms Go Missing, via nasa.gov (https://astrumspace.info/milkywayspiral) 
+The best Milky Way animation, by Gaia, via ESA on YouTube (https://astrumspace.info/gaiaanimation) 
+Galactic ghosts: Gaia uncovers major event in the formation of the Milky Way, via esa.int (https://astrumspace.info/4kJmByj) 
+Last starlight for ground-breaking Gaia, via esa.int (https://astrumspace.info/laststarlight)
+
+▀▀▀▀▀▀
+
+Credits
+Writer: Jon McColgan
+Editor: Frame Forge
+Researcher: Edie Abrahams
+Thumbnail Designer: Peter Sheppard
+Channel Manager: Georgina Brenner
+Executive Producer: Raquel Taylor
+Creator of Astrum: Alex McColgan
+
+With special thanks to:
+NASA/ESO/ESA
+
+▀▀▀▀▀▀
+
+#astrum #space #Gaia]]></content:encoded></item><item><title>Unraveling the Mystery of Melanie Lynskey’s Great-Grandfather | Finding Your Roots | PBS</title><link>https://www.youtube.com/watch?v=I2KLo81Mnu8</link><author>PBS</author><category>yt</category><enclosure url="https://www.youtube.com/v/I2KLo81Mnu8?version=3" length="" type=""/><pubDate>Fri, 14 Mar 2025 16:00:31 +0000</pubDate><source url="https://www.youtube.com/channel/UCgyeJxD05YnoDquRMNBfBqw">PBS</source><content:encoded><![CDATA[Watch more: https://to.pbs.org/3TA8505 | #FindingYourRoots
+Melanie Lynskey discovers a potential match for her great-grandfather with the help of DNA and a wedding announcement. Other than these clues, this mystery man had very little records to prove his existence.
+
+New Zealand-born and Emmy Nominated actress Melanie Lynskey has become an industry staple, having amassed a plethora of thought-provoking roles in television and film over the course of 30 years. Lynskey’s career began in 1994 with the release of Peter Jackson’s acclaimed film Heavenly Creatures, which earned her a New Zealand Film Award for Best Actress. Subsequent film credits include Adam Mckay’s Don’t Look Up, Stephen Chbosky’s The Perks of Being a Wallflower, Steven Soderbergh's The Informant, Tom McCarthy's Win Win, and many others.
+
+Lynskey recently starred in HBO’s critically acclaimed The Last of Us, a series adaptation of the widely popular 2013 PlayStation video game of the same name and from 2003-2015, Lynskey had a popular recurring role as Rose in the hit TV show Two and A Half Men.
+
+This program is made possible by viewers like you. Support your local PBS station: https://www.pbs.org/donate
+
+Explore our shared histories with Professor Henry Louis Gates, Jr. through iconic series like Making Black America, Finding Your Roots, and The Black Church: https://pbs.org/professorgates
+
+Enjoy full episodes of your favorite PBS shows anytime, anywhere with the free PBS App: https://to.pbs.org/2QbtzhR
+
+FOLLOW PBS:
+Facebook: https://www.facebook.com/PBS/
+X: https://twitter.com/PBS/
+Instagram: https://www.instagram.com/PBS/
+TikTok: https://www.tiktok.com/@pbs
+Threads: https://www.threads.net/@pbs
+
+FOLLOW HENRY LOUIS GATES, JR.
+YouTube: https://www.youtube.com/henrylouisgatesjr 
+Facebook: https://www.facebook.com/HenryLouisGatesJr/ 
+X: https://twitter.com/HenryLouisGates 
+Instagram: https://www.instagram.com/henrylouisgates/ 
+
+#findingyourroots #ancestry #genealogy #dna 
+
+Finding Your Roots
+For more than a decade, renowned Harvard scholar Henry Louis Gates, Jr. has helped to expand America’s sense of itself, stimulating a national conversation about identity with humor, wisdom, and compassion. Professor Gates has explored the ancestry of dozens of influential people from diverse backgrounds, taking millions of viewers deep into the past to reveal the connections that bind us all.]]></content:encoded></item><item><title>Veteran Calls Out His GOP Congressman at Town Hall</title><link>https://www.youtube.com/watch?v=vvFp3FzSfGk</link><author>More Perfect Union</author><category>yt</category><enclosure url="https://www.youtube.com/v/vvFp3FzSfGk?version=3" length="" type=""/><pubDate>Fri, 14 Mar 2025 15:50:13 +0000</pubDate><source url="https://www.youtube.com/channel/UCehBVAPy-bxmnbNARF-_tvA">More Perfect Union</source><content:encoded><![CDATA[Anger at the GOP and DOGE is boiling over.
+
+Constituents at Republican Rep. Chuck Edwards’ town hall last night let him have it over his support for massive cuts to the federal workforce and funding.
+
+A Social Security office in his district has been put on the target list for closure and people are NOT having it.]]></content:encoded></item><item><title>Call of Duty Charity Livestream ft. Cody Firearms Museum</title><link>https://www.youtube.com/watch?v=Iy5KmlYjn7o</link><author>Royal Armouries</author><category>yt</category><enclosure url="https://www.youtube.com/v/Iy5KmlYjn7o?version=3" length="" type=""/><pubDate>Fri, 14 Mar 2025 15:29:05 +0000</pubDate><source url="https://www.youtube.com/channel/UCsMX-XuiEkBi4-GDrYuniWg">Royal Armouries</source><content:encoded><![CDATA[Welcome one and all to our Call of Duty Livestream!
+
+Grab your Doritos and your Mountain Dew as firearm curatorial staff try their hands with the virtual versions of firearms.
+
+This stream is a chance for your all to show your support to both Royal Armouries and Cody Firearms Museum. You can use the livestream SuperChat to support the Royal Armouries but if you want to help us directly or donate to the Cody Firearms Museum then use these links to donate:
+
+Royal Armouries: https://shop.royalarmouries.org/products/donation
+
+Cody Firearms Museum: https://www.paypal.com/donate/?hosted_button_id=GCXQGDV6LEBS4
+
+The Royal Armouries is a UK charity and relies on support from donations - every £1 donated helps us care for and grow our collection, keep our Museum free to enter, as well as ensuring that visitors and communities can learn from and be inspired by it.
+
+If you enjoy our free content, please consider supporting the Royal Armouries by becoming a Patron or Member or by making a donation.
+
+Your support will help us to preserve our world-class collection of 75,000 objects, captivate new audiences through imaginative redisplays, and help to keep our You Tube content free.
+
+See all the methods of support for the Royal Armouries here: https://royalarmouries.org/support-us
+
+And for Cody Firearms Museums here: https://centerofthewest.org/get-involved/
+
+
+
+Subscribe to our channel for more videos about arms and armour]]></content:encoded></item><item><title>Most Insanely Controversial TV Episodes Ever Aired</title><link>https://www.youtube.com/watch?v=f-Ic_NqItAE</link><author>Weird History</author><category>yt</category><enclosure url="https://www.youtube.com/v/f-Ic_NqItAE?version=3" length="" type=""/><pubDate>Fri, 14 Mar 2025 14:00:49 +0000</pubDate><source url="https://www.youtube.com/channel/UCc-N24Y5OA0gqbjBwe1ttfA">Weird History</source><content:encoded><![CDATA[Controversy. The double-edged sword that can make or break a TV show, cementing it forever as an icon of the medium, or dooming it to bar trivia night obscurity. 
+
+When a popular TV show does something provocatively against the mold, networks can expect to see some angry letters, protests, or even outright boycotts. Some of these episodes deserve the criticism they get, but should we give some of these other shows a break? 
+
+To read more about these controversies, go here:
+https://www.ranker.com/list/tv-episode-complaints/anna-lindwasser
+
+Be sure to subscribe to the Weird History Newsletter: https://bit.ly/WeirdHistoryNews
+
+#controversy #television #weirdhistory]]></content:encoded></item><item><title>How Walmart Built the Biggest Threat Amazon Has Faced</title><link>https://www.youtube.com/watch?v=QbfGZj1G_mk</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/QbfGZj1G_mk?version=3" length="" type=""/><pubDate>Fri, 14 Mar 2025 14:00:25 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[Walmart has become a serious competitor to Amazon in e-commerce by leveraging its vast network of stores for quick delivery, particularly for groceries and other everyday essentials. Walmart's Spark delivery system, powered by a network of freelance drivers, has enabled the retailer to expand its same-day delivery reach to 93% of U.S. households.
+
+#Walmart #Amazon #Shorts]]></content:encoded></item><item><title>The Fastest WiFi EVER on Raspberry Pi (WiFi 7)</title><link>https://www.youtube.com/watch?v=1oXrJ4wQ2dQ</link><author>Jeff Geerling</author><category>yt</category><enclosure url="https://www.youtube.com/v/1oXrJ4wQ2dQ?version=3" length="" type=""/><pubDate>Fri, 14 Mar 2025 14:00:02 +0000</pubDate><source url="https://www.youtube.com/channel/UCR-DXc1voovS8nhAvccRZhg">Jeff Geerling</source><content:encoded><![CDATA[It is rare that WiFi is better than Wired. But in the case of the Pi 5, it is.
+
+Waveshare sent over the HAT I was using for testing in this video (but nothing else), and they send any other form of payment—it was a project I had underway before they even sent the HAT. The video is NOT sponsored, and I in fact have purchased additional Waveshare M.2 E-Key HATs separate from this project... I just like to be *extremely* transparent about what equipment was provided in all my videos. So there ya go.
+
+Some of the things mentioned in this video (as an Amazon Associate, I earn for qualifying purchases):
+
+  - Waveshare PCIE to M.2 E-Key HAT+: https://amzn.to/3DBWybJ
+  - Waveshare PoE+ PCIE to M.2 E-Key HAT+: https://amzn.to/3Fio922
+  - Intel BE200 PCIe M.2 WiFi (Nicgiga): https://amzn.to/4hvaCBI
+  - Intel AX210 PCIe M.2 WiFi (Waveshare): https://amzn.to/4bHEzNz
+  - Netgear WiFi 7 WBE710 AP: https://amzn.to/4bK6rkd
+  - MokerLink Managed 10/2.5 GbE PoE+ Switch: https://amzn.to/3FoBmGU
+  - Blog post with details: https://www.jeffgeerling.com/blog/2025/exploring-wifi-7-2-gbps-on-raspberry-pi-5
+  - Pi PCIe devices project: https://pipci.jeffgeerling.com/#network-cards-nics-and-wifi-adapters
+
+Note: Waveshare also sells bundles including the HAT _and_ WiFi adapters, which will save a few bucks (and maybe a little in shipping!).
+
+Support me on Patreon: https://www.patreon.com/geerlingguy
+Sponsor me on GitHub: https://github.com/sponsors/geerlingguy
+Merch: https://www.redshirtjeff.com
+2nd Channel: https://www.youtube.com/@GeerlingEngineering
+3rd Channel: https://www.youtube.com/@Level2Jeff
+
+Contents:
+
+00:00 - WiFi 7 Hype Train
+00:55 - Upgrading my AP from 6 to 7
+03:34 - Upgrading my Pi from 5 to 7
+05:54 - WiFi 7 setup in Linux (in Pi OS)
+08:53 - How fast is it?
+10:24 - Is it worth the upgrade?]]></content:encoded></item><item><title>Where AI Meets Code • Michael Feathers • GOTO 2024</title><link>https://www.youtube.com/watch?v=g9m3R0NMJ1Y</link><author>GOTO Conferences</author><category>yt</category><enclosure url="https://www.youtube.com/v/g9m3R0NMJ1Y?version=3" length="" type=""/><pubDate>Fri, 14 Mar 2025 13:00:57 +0000</pubDate><source url="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</source><content:encoded><![CDATA[This presentation was recorded at GOTO Chicago 2024. #GOTOcon #GOTOchgo
+https://gotochgo.com
+
+Michael Feathers - Author of “Working Effectively with Legacy Code”
+
+RESOURCES
+https://michaelfeathers.silvrback.com
+https://twitter.com/mfeathers
+https://github.com/michaelfeathers
+https://www.linkedin.com/in/michaelfeathers
+https://www.r7krecon.com
+
+ABSTRACT
+AI is advancing at a rapid pace and it is transforming the way we approach development. This rapid evolution raises a number of questions and concerns regarding safety, process, and the most effective ways to leverage these powerful tools when they work directly with code.
+
+In this talk, Michael Feathers will describe practices that acknowledge the strengths and weaknesses of LLM-based technology. We'll touch on practices related to code and test generation and as well as safe refactoring, design exploration and ideation. This talk is for anyone with development experience who wants to improve their practice. [...]
+
+TIMECODES
+00:00 Intro
+02:26 The surfacing model
+05:01 Context window
+08:28 Spectrum of use
+10:58 Techniques
+11:04 Make projections
+14:33 Lensing
+16:44 Generalization/Specialization in tooling
+18:06 Do "side by sides"
+21:05 Create pidgin languages
+23:03 Make waywords
+29:53 More techniques
+31:18 Cost/Risk
+34:02 Review fatigue
+35:46 Work in small chunks
+36:50 Automated testing
+39:07 Rigor
+43:46 Our trajectory
+44:44 Outro
+
+Download slides and read the full abstract here:
+https://gotochgo.com/2024/sessions/3311
+
+RECOMMENDED BOOKS
+Michael Feathers • AI Assisted Programming • https://leanpub.com/ai-assisted-programming
+Michael Feathers • Working Effectively with Legacy Code • https://amzn.to/3ZFQoMU
+
+https://bsky.app/profile/gotocon.com
+https://twitter.com/GOTOcon
+https://www.linkedin.com/company/goto-
+https://www.instagram.com/goto_con
+https://www.facebook.com/GOTOConferences
+#AI #AIMeetsCode #GenAI #LLMs #SurfacingModel #Gwern #PidginLanguage #WeaknessesOfLLMs #MichaelFeathers
+
+CHANNEL MEMBERSHIP BONUS
+Join this channel to get early access to videos & other perks:
+https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA/join
+
+Looking for a unique learning experience?
+Attend the next GOTO conference near you! Get your ticket at https://gotopia.tech
+Sign up for updates and specials at https://gotopia.tech/newsletter
+
+SUBSCRIBE TO OUR CHANNEL - new videos posted almost daily.
+https://www.youtube.com/user/GotoConferences/?sub_confirmation=1]]></content:encoded></item><item><title>Microservices Panel • Ian Cooper, James Lewis &amp; Kris Jenkins</title><link>https://www.youtube.com/watch?v=kWJYzpvoeEY</link><author>GOTO Conferences</author><category>yt</category><enclosure url="https://www.youtube.com/v/kWJYzpvoeEY?version=3" length="" type=""/><pubDate>Fri, 14 Mar 2025 10:39:37 +0000</pubDate><source url="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</source><content:encoded><![CDATA[This interview was recorded at GOTO Copenhagen 2024.
+https://gotocph.com
+
+Ian Cooper - A Polyglot Coding Architect at Just Eat
+James Lewis - Software Architect & Director at Thoughtworks
+Kris Jenkins - Developer Advocate, Software Developer, Podcast Host, Conference Speaker & Geek
+
+RESOURCES
+Ian
+https://bsky.app/profile/icooper.bsky.social
+https://hachyderm.io/@ICooper
+https://twitter.com/ICooper
+https://www.linkedin.com/in/ian-cooper-2b059b
+https://github.com/iancooper
+https://ian-cooper.writeas.com
+
+James
+https://bsky.app/profile/boicy.bovon.org
+https://twitter.com/boicy
+https://linkedin.com/in/james-lewis-microservices
+https://github.com/boicy
+https://www.bovon.org
+
+Kris
+https://twitter.com/krisajenkins
+https://www.linkedin.com/in/krisjenkins
+https://github.com/krisajenkins
+http://blog.jenkster.com
+
+RECOMMENDED BOOKS
+Barry O'Reilly • Unlearn
+ (https://amzn.to/3O3DQeI) Jez Humble, Joanne Molesky & Barry O'Reilly • Lean Enterprise
+ (https://amzn.to/3Cpt6ET) Sarah Wells • Enabling Microservice Success
+ (https://amzn.to/4aa8xrv) Sam Newman • Monolith to Microservices
+ (https://amzn.to/2Nml96E) Sam Newman • Building Microservices
+ (https://amzn.to/3dMPbOs) Simon Brown • Software Architecture for Developers Vol. 2
+ (https://leanpub.com/visualising-software-architecture) Ronnie Mitra & Irakli Nadareishvili • Microservices: Up and Running
+ (https://amzn.to/3c4HmmL) 
+
+
+
+Bluesky (https://bsky.app/profile/gotocon.com) 
+Twitter (https://twitter.com/GOTOcon) 
+Instagram (https://www.instagram.com/goto_con) 
+LinkedIn (https://www.linkedin.com/company/goto-) 
+Facebook (https://www.facebook.com/GOTOConferences) 
+
+CHANNEL MEMBERSHIP BONUS
+Join this channel to get early access to videos & other perks:
+https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA/join
+
+Looking for a unique learning experience?
+Attend the next GOTO conference near you! Get your ticket: gotopia.tech (https://gotopia.tech) 
+
+SUBSCRIBE TO OUR YOUTUBE CHANNEL (https://www.youtube.com/user/GotoConferences/?sub_confirmation=1)  - new videos posted daily!]]></content:encoded></item><item><title>New Video Series - Officer Badger</title><link>https://www.youtube.com/watch?v=VbTOsOqmkgQ</link><author>Columbus Police Body Camera</author><category>yt</category><enclosure url="https://www.youtube.com/v/VbTOsOqmkgQ?version=3" length="" type=""/><pubDate>Fri, 14 Mar 2025 09:30:12 +0000</pubDate><source url="https://www.youtube.com/channel/UCS74cWPjEY1EOuVPM4eJhCw">Columbus Police Body Camera</source><content:encoded><![CDATA[Join this channel to get access to perks:
+https://www.youtube.com/channel/UCS74cWPjEY1EOuVPM4eJhCw/join
+
+Donate to my PayPal to support my family while I fight to get my job back: https://www.paypal.com/donate/?business=VRPUZZVEZG3S2&no_recurring=0&item_name=Help+support+my+family+while+I+fight+to+get+my+job+back.+¤cy_code=USD
+
+Donate to the Todd Bates Memorial Ruck at: https://www.toddbates50mileruck.com/
+
+This is not the official channel of the Columbus Division of Police.
+Videos are uploaded on Monday, Wednesday, and Friday mornings 
+The videos on this channel exclusively feature the Officers of the Columbus Division of police in Columbus, OH.
+All videos have been obtained by public records requests.
+#columbuspolicebodycamera #columbusohio #bodycamera #policereform]]></content:encoded></item><item><title>How Russia&apos;s Economy Has Survived Putin’s War</title><link>https://www.youtube.com/watch?v=cZHOiLfJaaE</link><author>Bloomberg Originals</author><category>yt</category><enclosure url="https://www.youtube.com/v/cZHOiLfJaaE?version=3" length="" type=""/><pubDate>Fri, 14 Mar 2025 08:00:36 +0000</pubDate><source url="https://www.youtube.com/channel/UCUMZ7gohGI9HcU9VNsr2FJQ">Bloomberg Originals</source><content:encoded><![CDATA[Despite years of sanctions for annexing Crimea and later full-scale invasion of Ukraine, Russia’s economy endured. Now, with Donald Trump shifting global alliances, it’s Europe that’s at a crossroads.  
+
+Get the Balance of Power newsletter for the latest political news, analysis, charts and dispatches from around the globe:
+https://www.bloomberg.com/account/newsletters/politics?utm_medium=social&utm_source=youtube&utm_campaign=originals&utm_content=newsletter&sref=bgqUwao5
+
+--------
+Like this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1
+
+Get unlimited access to Bloomberg.com for $1.99/month for the first 3 months: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals
+
+Bloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. 
+
+Subscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.
+
+Visit our partner channel Bloomberg Quicktake for global news and insight in an instant.]]></content:encoded></item><item><title>He Audited the Pentagon. Here’s Where the Waste Really Is</title><link>https://www.youtube.com/watch?v=UHnuoJNjf_c</link><author>More Perfect Union</author><category>yt</category><enclosure url="https://www.youtube.com/v/UHnuoJNjf_c?version=3" length="" type=""/><pubDate>Fri, 14 Mar 2025 00:07:40 +0000</pubDate><source url="https://www.youtube.com/channel/UCehBVAPy-bxmnbNARF-_tvA">More Perfect Union</source><content:encoded><![CDATA[We found the waste Elon Musk and DOGE won’t cut: it’s defense contractors. The Department of Defense funnels $450 billion of taxpayer dollars a year to private military contractors. But Musk is too focused on cutting DEI initiatives (0.01% of the size of the defense budget) to tackle the real waste and fraud. Will the Trump administration take action on the real government waste?
+
+-----
+More Perfect Union’s mission is to build power for working people. Here’s what that means:
+
+We report on the real struggles and challenges of the working class from a working-class perspective, and we attempt to connect those problems to potential solutions.
+
+We report on the abuses and wrongdoing of corporate power, and we seek to hold accountable the ultra-rich who have too much power over America’s political and economic systems.
+
+We're an independent, nonprofit newsroom. To support our work:
+- Help fund our reporting: https://secure.actblue.com/donate/mpu-splash
+- Substack: https://substack.perfectunion.us/
+- TikTok: https://www.tiktok.com/@moreperfectunion
+- Twitter: https://twitter.com/MorePerfectUS
+- Bluesky: https://bsky.app/profile/moreperfectunion.bsky.social
+- Facebook: https://www.facebook.com/MorePerfectUS
+- Instagram: https://www.instagram.com/perfectunion/
+- Threads: https://www.threads.net/@perfectunion
+- Website: https://www.perfectunion.us]]></content:encoded></item><item><title>Vail’s Net Worth is $6 Billion. Its Workers Live in 8-Person Dorms.</title><link>https://www.youtube.com/watch?v=0kkfaQOa4tU</link><author>More Perfect Union</author><category>yt</category><enclosure url="https://www.youtube.com/v/0kkfaQOa4tU?version=3" length="" type=""/><pubDate>Thu, 13 Mar 2025 21:39:30 +0000</pubDate><source url="https://www.youtube.com/channel/UCehBVAPy-bxmnbNARF-_tvA">More Perfect Union</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>McDonald’s is Testing Facial Recognition and AI at Drive-Thrus</title><link>https://www.youtube.com/watch?v=CN5xhDbnMYo</link><author>More Perfect Union</author><category>yt</category><enclosure url="https://www.youtube.com/v/CN5xhDbnMYo?version=3" length="" type=""/><pubDate>Thu, 13 Mar 2025 20:13:27 +0000</pubDate><source url="https://www.youtube.com/channel/UCehBVAPy-bxmnbNARF-_tvA">More Perfect Union</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>How Astrophysics Can (LITERALLY) Save the World</title><link>https://www.youtube.com/watch?v=cfkU4CD91hk</link><author>PBS Space Time</author><category>yt</category><enclosure url="https://www.youtube.com/v/cfkU4CD91hk?version=3" length="" type=""/><pubDate>Thu, 13 Mar 2025 20:11:22 +0000</pubDate><source url="https://www.youtube.com/channel/UC7_gcs09iThXybpVgjHZ_7g">PBS Space Time</source><content:encoded><![CDATA[Remove your personal information from the web at https://joindeleteme.com/SPACETIME
+
+Giant space rocks are definitely going to hit the Earth again. We actually do know how to deflect them, but only if we find them and correctly assess their risk. But the solar system is a chaotic place. How is it even possible to tell if a space rock will one day collide with the Earth? 
 
 Check out the Space Time Merch Store
 https://www.pbsspacetime.com/shop
 
-PBS Member Stations rely on viewers like you. To support your local station, go to:http://to.pbs.org/DonateSPACE
+Sign Up on Patreon to get access to the Space Time Discord!
+https://www.patreon.com/pbsspacetime
 
 Sign up for the mailing list to get episode notifications and hear special announcements!
 https://mailchi.mp/1a6eb8f2717d/spacetime
@@ -1048,7 +584,7 @@ https://mailchi.mp/1a6eb8f2717d/spacetime
 Search the Entire Space Time Library Here: https://search.pbsspacetime.com/
 
 Hosted by Matt O'Dowd
-Written by Richard Dwyer & Matt O'Dowd 
+Written by Matt O'Dowd 
 Post Production by Leonardo Scholzer, Yago Ballarini & Stephanie Faria
 Directed by Andrew Kornhaber
 Associate Producer: Bahar Gholipour
@@ -1064,7 +600,9 @@ This program is produced by Kornhaber Brown, which is solely responsible for its
 End Credits Music by J.R.S. Schattenberg: https://www.youtube.com/user/MultiDroideka
 
 Space Time Was Made Possible In Part By: 
+
 Big Bang
+Tj Steyn
 Wojciech Szymski
 Bryce Fort
 Peter Barrett
@@ -1101,14 +639,17 @@ Scott Gray
 Антон Кочков
 Robert Ilardi
 John R. Slavik
+Mathew
 Donal Botkin
 chuck zegar
 Daniel Muzquiz
 
 Gamma Ray Burst
+Ty Floyd
+Niklos
 Bryan White
 Eric Raschke
-Aaron Pinto
+aaron pinto
 Kacper Cieśla
 Satwik Pani
 Param Saxena
@@ -1120,18 +661,19 @@ Arko Provo Mukherjee
 Mike Purvis
 Christopher Wade
 Anthony Crossland
-Grace Seraph
+treborg777
 Stephen Saslow
 Robert DeChellis
 Tomaz Lovsin
 Anthony Leon
+Nick Hoffenstoffer III
 Lori Ferris
 Koen Wilde
 Nicolas Katsantonis
 Richard Steenbergen
 Joe Pavlovic
 Chuck Lukaszewski
-Cole B. Combs
+Cole B Combs
 Jerry Thomas
 Nikhil Sharma
 John Anderson
@@ -1148,8 +690,9 @@ James Trimmier
 Jeremy Soller
 Paul Wood
 Kent Durham
-Jim Bartosh
+jim bartosh
 John H. Austin, Jr.
+Diana S
 Faraz Khan
 Almog Cohen
 Daniel Jennings
@@ -1164,17 +707,65 @@ Tybie Fitzhugh
 Eric Kiebler
 Craig Stonaha
 Frederic Simon
-Jim Hudson
+Tonyface
 Michael Purcell
 John Funai
 Adrien Molyneux
 Bradley Jenkins
-Vlad Shipulin
 Justin Waters
 Thomas Dougherty
 Zac Sweers
 Dan Warren
-Joseph Salomone]]></content:encoded></item><item><title>You&apos;ll Never Guess Who Trump Tapped to Lead OSHA</title><link>https://www.youtube.com/watch?v=uejVsn0hZjc</link><author>More Perfect Union</author><category>yt</category><enclosure url="https://www.youtube.com/v/uejVsn0hZjc?version=3" length="" type=""/><pubDate>Thu, 20 Feb 2025 18:46:05 +0000</pubDate><source url="https://www.youtube.com/channel/UCehBVAPy-bxmnbNARF-_tvA">More Perfect Union</source><content:encoded><![CDATA[Meet Trump's OSHA nominee: David Keeling. He's been a safety executive at Amazon and UPS - two companies that have been cited by OSHA for safety violations countless times.]]></content:encoded></item><item><title>Roman Emperors Fratricide | Worst Kids in History #shorts</title><link>https://www.youtube.com/watch?v=fLn465Qee80</link><author>Extra History</author><category>yt</category><enclosure url="https://www.youtube.com/v/fLn465Qee80?version=3" length="" type=""/><pubDate>Thu, 20 Feb 2025 18:29:53 +0000</pubDate><source url="https://www.youtube.com/channel/UCCODtTcd5M1JavPCOr_Uydg">Extra History</source><content:encoded><![CDATA[📚 For more on Roman Emperors why not check out our series on the Third Century Crisis here: https://youtu.be/qNDE113vs28
+Joseph Salomone]]></content:encoded></item><item><title>The Complex Geopolitics of Iraq&apos;s $17B Suez Canal Rival | WSJ Breaking Ground</title><link>https://www.youtube.com/watch?v=OypNXr8KI70</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/OypNXr8KI70?version=3" length="" type=""/><pubDate>Thu, 13 Mar 2025 20:00:12 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[Iraq is constructing an ambitious 740-mile shipping shortcut between Asia and Europe called the Development Road. If successful, it could serve as an alternative to the chokepoint at the Suez Canal in Egypt. Turkey, Qatar and the UAE have all expressed support for the megaproject, but geopolitical tensions in the region are complicated, with some of its neighbors like Saudi Arabia, Russia and China being part of their own competing trade routes. Baghdad also has to navigate political instability within its own borders amongst rivalling factions. 
+
+WSJ explores Iraq’s $17 billion plan to construct a new path forward.
+
+Chapters:
+0:00 Iraq’s new shipping hub
+1:03 The shipping problem
+2:29 Iraq’s solution
+4:59 The challenges
+
+Breaking Ground
+Breaking Ground digs into megaprojects around the world, uncovering what these developments might mean for the surrounding region and the ultimate costs.
+
+#Iraq #Megaprojects #WSJ]]></content:encoded></item><item><title>Call the Midwife | Season 14 Extended Preview | PBS</title><link>https://www.youtube.com/watch?v=XLy5_2dIvxs</link><author>PBS</author><category>yt</category><enclosure url="https://www.youtube.com/v/XLy5_2dIvxs?version=3" length="" type=""/><pubDate>Thu, 13 Mar 2025 19:00:20 +0000</pubDate><source url="https://www.youtube.com/channel/UCgyeJxD05YnoDquRMNBfBqw">PBS</source><content:encoded><![CDATA[Official website: https://to.pbs.org/2025ctms14 | #MidwifePBS
+The Seventies start as they mean to go on, with Nonnatus House plunged into disarray when activists staging a bid for independence blockade access to the Isle of Dogs. Amid the poverty and uncertainty of life in a declining Docklands, the midwives must also face cases of manic depression, gonorrhoea, spina bifida, abortion – and an apparently immaculate conception.
+
+This program is made possible by viewers like you. Support your local PBS station: https://www.pbs.org/donate
+
+Subscribe to the PBS channel for more clips:  https://www.youtube.com/PBS/
+
+Enjoy full episodes of your favorite PBS shows anytime, anywhere with the free PBS App: https://to.pbs.org/2QbtzhR
+
+FOLLOW US:
+
+Facebook: https://www.facebook.com/PBS/
+X: https://twitter.com/PBS/
+Instagram: https://www.instagram.com/PBS/
+TikTok: https://www.tiktok.com/@pbs
+Threads: https://www.threads.net/@pbs
+
+#callthemidwife #midwife #midwifery 
+
+More about the series
+Call the Midwife, based on the best-selling memoirs of the late Jennifer Worth, tells colorful stories of midwifery and families in London’s East End. Inspired by the memoirs of Jennifer Worth, Call the Midwife follows the nurses, midwives and nuns from Nonnatus House, who visit the expectant mothers of Poplar, providing the poorest women with the best possible care.]]></content:encoded></item><item><title>Medieval Skeletons Reveal Brutal Final Moments</title><link>https://www.youtube.com/watch?v=KBiMcQuL1fY</link><author>History Hit</author><category>yt</category><enclosure url="https://www.youtube.com/v/KBiMcQuL1fY?version=3" length="" type=""/><pubDate>Thu, 13 Mar 2025 18:00:13 +0000</pubDate><source url="https://www.youtube.com/channel/UCZwU2G-KVl-P-O-B35chZOQ">History Hit</source><content:encoded><![CDATA[30 years ago 9 skeletons were discovered buried within the grounds of Stirling Castle, Scotland. Their identities remain a mystery - but Injuries found on them suggest that they all suffered brutally violent deaths.
+
+Dr Jo Buckberry, a battle trauma expert at the University of Bradford, believes they date from 1296 to 1357 - the Scottish Wars of Independence.
+
+Today Jo is going to reveal to us the clues that might help identify who these people were and uncover how they met their ends. And to help add some extra historical context she's  joined by History Hit's very own Medieval expert Historian and Author Matt Lewis.
+
+00:00 The Mystery of the Stirling Castle Skeletons
+
+01:13 Skeleton 1: In Hundreds of Pieces
+
+17:38 Skeleton 2: Broken Jaw
+
+26:28 Skeleton 3: Mysterious Triangular Injuries
+
+Discover the past on History Hit with ad-free exclusive podcasts and documentaries released weekly presented by world renowned historians Dan Snow, Suzannah Lipscomb, Lucy Worsely, Mary Beard and more. Watch, listen and read history wherever you are, whenever you want it. Available on all devices: Apple TV, Amazon Prime Video, Android TV, Samsung Smart TV, Roku, Xbox, Chromecast, and iOs & Android.
+
+If you'd like to watch more great history content like this head on over to History Hit using the following link https://eu1.hubs.ly/H0gW80Z0 to sign up to our History SVOD service - it's like Netflix but for history lovers!]]></content:encoded></item><item><title>This is how leeches can help wildlife conservation 🌿 #Shorts #SaveOurSpecies #WildlifeConservation</title><link>https://www.youtube.com/watch?v=GtFsOpHLSqA</link><author>BBC Earth Science</author><category>yt</category><enclosure url="https://www.youtube.com/v/GtFsOpHLSqA?version=3" length="" type=""/><pubDate>Thu, 13 Mar 2025 17:38:20 +0000</pubDate><source url="https://www.youtube.com/channel/UCdsOTr6SmDrxuWE7sJFrkhQ">BBC Earth Science</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Best Days in History: Penicillin | Kickstarter Voted Topic #shorts</title><link>https://www.youtube.com/watch?v=2AmsNrsyzYs</link><author>Extra History</author><category>yt</category><enclosure url="https://www.youtube.com/v/2AmsNrsyzYs?version=3" length="" type=""/><pubDate>Thu, 13 Mar 2025 17:29:56 +0000</pubDate><source url="https://www.youtube.com/channel/UCCODtTcd5M1JavPCOr_Uydg">Extra History</source><content:encoded><![CDATA[📚 For more medical history why not check out our series on the 1918 Flu Pandemic here: https://youtu.be/XQ9WX4qVxEo
 
 * Watch us ad-free & get 1-week early access on NEBULA https://go.nebula.tv/extrahistory * 
 * Suggest & Vote on our next episodes, get exclusive content & 24-hour early access on PATREON https://bit.ly/EHPatreon * 
@@ -1189,20 +780,361 @@ https://bsky.app/profile/extracredits.bsky.social
 *Interested in sponsoring an episode? Email us: extracredits@standard.tv*
 Artist: Scott DeWitt I Writer: Robert Rath I Showrunner & Narrator: Matthew Krol I Video Editor: Devon House Creative I Audio Editor: Clean Waves I Studio Director: Geoffrey Zatkin I Social Media: Kat Rider
 
-#ExtraHistory  #Shorts  #History]]></content:encoded></item><item><title>East Meets West: Culture Clash in Medieval Japan | The History Behind Assassin’s Creed Shadows</title><link>https://www.youtube.com/watch?v=IhwnFvPUSgo</link><author>History Hit</author><category>yt</category><enclosure url="https://www.youtube.com/v/IhwnFvPUSgo?version=3" length="" type=""/><pubDate>Thu, 20 Feb 2025 18:00:13 +0000</pubDate><source url="https://www.youtube.com/channel/UCZwU2G-KVl-P-O-B35chZOQ">History Hit</source><content:encoded><![CDATA[Matt Lewis sheds light on the world of Assassin’s Creed Shadows by providing a snapshot of the chaos and culture of the Sengoku “Warring States” period in medieval Japan. He interviews experts from across the globe to explore a major development: the arrival of Europeans in Japan. The ensuing culture clash of East and West brought a new religion, new food and a new technology - guns -that Japan’s most fearsome samurai warlord would use to devastating effect against his shinobi (ninja) foes.
+#ExtraHistory  #Shorts  #History]]></content:encoded></item><item><title>Nvidia CEO’s Net Worth is $114 Billion. Here’s How He Got So Rich.</title><link>https://www.youtube.com/watch?v=Vl8Zssebg0Y</link><author>More Perfect Union</author><category>yt</category><enclosure url="https://www.youtube.com/v/Vl8Zssebg0Y?version=3" length="" type=""/><pubDate>Thu, 13 Mar 2025 17:02:55 +0000</pubDate><source url="https://www.youtube.com/channel/UCehBVAPy-bxmnbNARF-_tvA">More Perfect Union</source><content:encoded><![CDATA[The super rich are using estate tax loopholes to concentrate more of their wealth within their families. Closing the loopholes, and taxing the ultra-wealthy, is the only thing that will stop the accelerated concentration of wealth at the top.]]></content:encoded></item><item><title>Carl Gauss Sums 1 to 100 Quickly</title><link>https://www.youtube.com/watch?v=1oxkLn452YI</link><author>Newsthink</author><category>yt</category><enclosure url="https://www.youtube.com/v/1oxkLn452YI?version=3" length="" type=""/><pubDate>Thu, 13 Mar 2025 16:45:31 +0000</pubDate><source url="https://www.youtube.com/channel/UCIlU5KDHKFSaebYviKfOidw">Newsthink</source><content:encoded><![CDATA[A young Carl Gauss figured out how to sum the numbers 1 to 100 within minutes, astonishing his elementary school teacher.]]></content:encoded></item><item><title>What If Continents and Oceans Switched Places? #shorts</title><link>https://www.youtube.com/watch?v=joYJahY4FUI</link><author>Kurzgesagt – In a Nutshell</author><category>yt</category><enclosure url="https://www.youtube.com/v/joYJahY4FUI?version=3" length="" type=""/><pubDate>Thu, 13 Mar 2025 15:01:01 +0000</pubDate><source url="https://www.youtube.com/channel/UCsXVk37bltHxD1rDPwtNM8Q">Kurzgesagt – In a Nutshell</source><content:encoded><![CDATA[What if continents and oceans switched places? The Pacific becomes a supercontinent. Earth's deepest point is Everest Deep, and is almost nine kilometers below sea-level. And the Mid-Atlantic Canyon divides the world from pole to pole. Life finds a way but struggles in this new, upside-down, inverted world. This all sounds cool, until the oxygen runs out... 
 
-Echoes of History is a Ubisoft podcast, brought to you by History Hit. Listen to the full episodes here: https://lnkfi.re/1YFL0t
+#kurzgesagt
+#inanutshell #kurzgesagt_inanutshell #learnwithshorts #science #invertedearth #whatif 
 
-Hosted by: Matt Lewis
-Edited by: Tom Roberts
-Produced by: Matt Lewis, Robin McConnell
-Executive Producers: Etienne Bouvier, Julien Fabre, Steve Lanham, Jen Bennett
+Sources & further reading: 
+https://sites.google.com/view/kgs-tiktok-sources
 
-00:00 - Introduction
-01:55 - Imperial Kyoto with Lesley Downer
-22:21 - Portuguese Missionaries in Japan with Prof Frederik Cryns
-32:33 - The Tensho-Iga War with Nate Ledbetter
+Follow us for more sciencey content! 🦆
 
-Discover the past on History Hit with ad-free exclusive podcasts and documentaries released weekly presented by world renowned historians Dan Snow, Suzannah Lipscomb, Lucy Worsely, Mary Beard and more. Watch, listen and read history wherever you are, whenever you want it. Available on all devices: Apple TV, Amazon Prime Video, Android TV, Samsung Smart TV, Roku, Xbox, Chromecast, and iOs & Android.
+OUR CHANNELS
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+German:        https://kgs.link/youtubeDE
+Spanish:        https://kgs.link/youtubeES
+French:          https://kgs.link/youtubeFR
+Portuguese:  https://kgs.link/youtubePT
+Arabic:           https://kgs.link/youtubeAR
+Hindi:             https://kgs.link/youtubeHI
+Japanese:     https://kgs.link/youtubeJA
+Korean:          https://kgs.link/youtubeKO
 
-If you'd like to watch more great history content like this head on over to History Hit using the following link https://eu1.hubs.ly/H0gW80Z0 to sign up to our History SVOD service - it's like Netflix but for history lovers!]]></content:encoded></item></channel></rss>
+
+HOW CAN YOU SUPPORT US?
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+This is how we make our living and it would be a pleasure if you support us!
+
+Get Products designed with ❤ https://shop.kgs.link/shorts
+Become a Part of kurzgesagt by joining the Patreon Bird Army 🐧  https://kgs.link/patreon  
+
+
+DISCUSSIONS & SOCIAL MEDIA
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+TikTok:           https://kgs.link/tiktok
+Reddit:            https://kgs.link/reddit
+Instagram:     https://kgs.link/instagram
+Twitter:           https://kgs.link/twitter
+Facebook:      https://kgs.link/facebook
+Discord:          https://kgs.link/discord
+Newsletter:    https://kgs.link/newsletter
+
+
+OUR VOICE
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+The Kurzgesagt voice is from 
+Steve Taylor:  https://kgs.link/youtube-voice
+
+
+OUR MUSIC ♬♪
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+700+ minutes of Kurzgesagt Soundtracks by Epic Mountain:
+
+Spotify:            https://kgs.link/music-spotify
+Soundcloud:   https://kgs.link/music-soundcloud
+Bandcamp:     https://kgs.link/music-bandcamp
+Youtube:          https://kgs.link/music-youtube
+Facebook:       https://kgs.link/music-facebook]]></content:encoded></item><item><title>This is the most common way to get head lice - Nazzy Pakpour</title><link>https://www.youtube.com/watch?v=s-EEp5xiF6Q</link><author>TED-Ed</author><category>yt</category><enclosure url="https://www.youtube.com/v/s-EEp5xiF6Q?version=3" length="" type=""/><pubDate>Thu, 13 Mar 2025 15:00:37 +0000</pubDate><source url="https://www.youtube.com/channel/UCsooa4yRKGN_zEE8iknghZA">TED-Ed</source><content:encoded><![CDATA[Dig into what makes head lice so difficult to get rid of, and the effectiveness of our most common treatments.
+
+--
+
+For as long as humans have had lice, we’ve fought hard to get rid of them. Nit combs, the fine-tooth brushes used to remove lice and their sticky eggs, have been found among the ancient remains of cultures across the globe. Today it’s estimated we spend billions of dollars each year treating infestations. So why are lice so difficult to get rid of? Nazzy Pakpour digs into these stubborn insects.
+
+Lesson by Nazzy Pakpour, directed by Oksana Kurmaz.
+
+Support Our Non-Profit Mission
+----------------------------------------------
+Support us on Patreon: http://bit.ly/TEDEdPatreon
+Check out our merch: http://bit.ly/TEDEDShop
+----------------------------------------------
+
+Connect With Us
+----------------------------------------------
+Sign up for our newsletter: http://bit.ly/TEDEdNewsletter
+Follow us on Facebook: http://bit.ly/TEDEdFacebook
+Find us on Twitter: http://bit.ly/TEDEdTwitter
+Peep us on Instagram: http://bit.ly/TEDEdInstagram
+----------------------------------------------
+
+Keep Learning
+----------------------------------------------
+View full lesson: https://ed.ted.com/lessons/what-causes-lice-and-how-do-you-get-rid-of-them-nazzy-pakpour
+Dig deeper with additional resources: https://ed.ted.com/lessons/what-causes-lice-and-how-do-you-get-rid-of-them-nazzy-pakpour/digdeeper
+
+Animator's website: https://www.kurmaz.me
+----------------------------------------------
+
+Thank you so much to our patrons for your support! Without you this video would not be possible! Mark Morris, Misaki Sato, EdoKun, SookKwan Loong, Bev Millar, Lex Azevedo, Michael Aquilina, Jason A Saslow, Yansong Li, Cristóbal Moenne, Dawn Jordan, Prasanth Mathialagan, Samuel Doerle, David Rosario, Dominik Kugelmann - they-them, Siamak Hajizadeh, Ryohky Araya, Mayank Kaul, Christophe Dessalles, Heather Slater, Sandra Tersluisen, Zhexi Shan, Bárbara Nazaré, Andrea Feliz, Victor E Karhel, Sydney Evans, Latora, Noel Situ, emily lam, Sid, Niccolò Frassetto, Mana, I'm here because of Knowledge Fight Facebook group., Linda Freedman, Edgardo Cuellar, Jaspar Carmichael-Jack, Michael Burton, VIVIANA A GARCIA BESNE, The Vernon's, Olha Bahatiuk, Jesús Bíquez Talayero, Chels Raknrl, Sai Pranavi Jonnalagadda, Stuart Rice, Jing Chen, Vector-Dopamine math, Jasper Song, Giorgio Bugnatelli, Chardon, and Eddy Trochez.]]></content:encoded></item><item><title>Trump’s Trade War Created This Boomtown in Vietnam. Now Tariffs Could Topple It. | WSJ Center Point</title><link>https://www.youtube.com/watch?v=oF5LV10hcT0</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/oF5LV10hcT0?version=3" length="" type=""/><pubDate>Thu, 13 Mar 2025 14:01:02 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[Haiphong, Vietnam’s northern port city, saw a manufacturing boom after President Trump’s 2018 tariffs on China, becoming a key export hub that helped boost the country’s economy. Today, Vietnam is one of the fastest-growing economies in the region with a number of key infrastructure projects underway. But now, Hanoi has to learn how to navigate new trade challenges under Trump’s second term to weather the coming storm.
+
+WSJ explores how Haiphong became the center of Vietnam’s growth and how Trump’s new trade war could stall it. 
+
+Chapters:
+0:00 Vietnam’s booming port city
+0:31 Haiphong under Trump’s first term
+1:38 Infrastructure expansion
+2:22 Vietnam and Trump tariffs today
+3:44 Vietnam’s future
+
+#Vietnam #Tariffs #WSJ]]></content:encoded></item><item><title>Optimizing Cloud Native Java • Ben Evans &amp; Holly Cummins • GOTO 2025</title><link>https://www.youtube.com/watch?v=npdqkbOLVws</link><author>GOTO Conferences</author><category>yt</category><enclosure url="https://www.youtube.com/v/npdqkbOLVws?version=3" length="" type=""/><pubDate>Thu, 13 Mar 2025 13:01:18 +0000</pubDate><source url="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</source><content:encoded><![CDATA[This interview was recorded for the GOTO Book Club. #GOTOcon #GOTObookclub
+http://gotopia.tech/bookclub
+
+Read the full transcription of the interview here:
+https://gotopia.tech/episodes/363
+
+Ben Evans - Senior Principal Software Engineer at Red Hat & Co-Author of "Optimizing Cloud Native Java" and many more Books
+Holly Cummins - Senior Principal Software Engineer on the Red Hat Quarkus Team @Holly_Cummins 
+
+RESOURCES
+Ben
+https://mastodon.social/@kittylyst
+https://github.com/kittylyst
+https://twitter.com/kittylyst
+https://www.linkedin.com/in/kittylyst
+https://www.kittylyst.com
+
+Holly
+https://hollycummins.com
+https://hollycummins.com/type/blog
+https://bsky.app/profile/hollycummins.com
+https://hachyderm.io/@holly_cummins
+https://twitter.com/holly_cummins
+https://github.com/holly-cummins
+https://linkedin.com/in/holly-k-cummins
+
+Links
+https://youtu.be/dU_WHead0oY
+https://youtu.be/sk1NPkAzYSM
+https://youtu.be/RlCpgSoOX6I
+https://youtu.be/PeMvksAZbdw
+https://youtu.be/wgJWs14YcEs
+https://youtu.be/EFXxXFHpS0M
+https://youtu.be/VMpTU15rIZY
+https://youtu.be/miUbs3mqPJE
+https://youtu.be/fDGWWpHlzvw
+https://youtu.be/jC1icupHlMs
+https://youtu.be/YAXGU2J7XjM
+https://youtu.be/5mudzKW0tFI
+https://youtu.be/1PJM8p-RMsY
+https://youtu.be/8fi7uSYlOdc
+https://youtu.be/M7eXxRLsrFw
+https://youtu.be/fbI3qveS_Is
+https://youtu.be/1QeLcJN0QLc
+https://youtu.be/MLksirK9nnE
+
+DESCRIPTION
+Holly Cummins talks with Ben Evans about his latest book "Optimizing Cloud Native Java", which updates his previous work "Optimizing Java" to reflect the realities of cloud native environments.
+
+Ben explains that performance engineering is not just technical but also psychological, emphasizing the importance of user expectations and defining clear performance goals. They discuss how modern Java performance must account for cloud native architectures, with applications running across distributed microservices and containerized, single-core environments.
+
+The book focuses on the importance of measuring relevant data, warns against relying on misleading micro-benchmarks, and highlights how system-level benchmarks offer a clearer picture. Ben also delves into the JVM's hidden complexities, such as changes in Java 17 and the impact of virtual threads. Practical, real-world examples in the book, like the "fighting animals" microservices application, help developers learn how to optimize Java performance in real network environments.
+
+Finally, Ben touches on the future of Java concurrency, with virtual threads and structured concurrency offering new ways to handle performance challenges in cloud native systems.
+
+TIMECODES
+00:00 Intro
+07:40 Who's "Optimizing Cloud Native Java" for?
+09:29 Performance tuning: Art & science
+21:43 Java performance
+32:21 Concurrency in modern Java
+39:10 Outro
+
+RECOMMENDED BOOKS
+Ben Evans & Jim Gough • Optimizing Cloud Native Java • https://amzn.to/41nivD9
+Ben Evans, Jason Clark & David Flanagan • Java in a Nutshell • https://amzn.to/43FDoMA
+Ben Evans, Martijn Verburg & Jason Clark • The Well-Grounded Java Developer • https://amzn.to/41JMG7N
+Ben Evans, Jim Gough & Chris Newland • Optimizing Java • https://amzn.to/4bNOfGh
+Ben Evans & Martijn Verburg • The Well-Grounded Java Developer • https://amzn.to/4hs9MWk
+Goetz, Peierls, Bloch, Bowbeer, Holmes & Lea • Java Concurrency in Practice • https://amzn.to/4215zo6
+Venkat Subramaniam • Cruising Along with Java • https://amzn.to/4dFuBwU
+Monica Beckwith • JVM Performance Engineering • https://amzn.to/3BkRoiO
+
+https://twitter.com/GOTOcon
+https://www.linkedin.com/company/goto-
+https://www.instagram.com/goto_con
+https://www.facebook.com/GOTOConferences
+#PerformanceEngineering #JVM #JVMPerformanceEngineering #Observability #HardwareInnovation #Java #JavaProgramming #JavaPerformance #JavaConcurrency #Concurrency #CloudNative #CloudNativeJava #GraalVM #Quarkus #SoftwareEngineering #Programming #BenEvans #Kittylyst #HollyCummins #BookClub
+
+CHANNEL MEMBERSHIP BONUS
+Join this channel to get early access to videos & other perks:
+https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA/join
+
+Looking for a unique learning experience?
+Attend the next GOTO conference near you! Get your ticket at https://gotopia.tech
+Sign up for updates and specials at https://gotopia.tech/newsletter
+
+SUBSCRIBE TO OUR CHANNEL - new videos posted almost daily.
+https://www.youtube.com/user/GotoConferences/?sub_confirmation=1]]></content:encoded></item><item><title>The simple math behind paying off debt versus investing #shorts</title><link>https://www.youtube.com/watch?v=cTS5o8uYGpY</link><author>Vox</author><category>yt</category><enclosure url="https://www.youtube.com/v/cTS5o8uYGpY?version=3" length="" type=""/><pubDate>Thu, 13 Mar 2025 12:01:01 +0000</pubDate><source url="https://www.youtube.com/channel/UCLXo7UDZvByw2ixzpQCufnA">Vox</source><content:encoded><![CDATA[Subscribe to our channel and turn on notifications (🔔) so you don't miss any videos: http://goo.gl/0bsAjO
+
+Vox is on a mission is to help everyone, regardless of income or status, understand our complicated world so that we can all help shape it. Part of that mission is keeping our work free. 
+
+You can help us do that by making a gift: http://www.vox.com/give-now
+
+Watch our full video catalog: http://goo.gl/IZONyE
+Follow Vox on TikTok: http://tiktok.com/@voxdotcom
+Check out our articles: https://www.vox.com/
+Listen to our podcasts: https://www.vox.com/podcasts]]></content:encoded></item><item><title>The technology that DESTROYED Iraq&apos;s defences in Desert Storm</title><link>https://www.youtube.com/watch?v=_7qHf_QkSK0</link><author>Imperial War Museums</author><category>yt</category><enclosure url="https://www.youtube.com/v/_7qHf_QkSK0?version=3" length="" type=""/><pubDate>Thu, 13 Mar 2025 12:00:50 +0000</pubDate><source url="https://www.youtube.com/channel/UC3uAjWoLZ4bSi6qI9SjALxA">Imperial War Museums</source><content:encoded><![CDATA[#desertstorm #history #gulfwar #iraq #iwm]]></content:encoded></item><item><title>Trump Turned the White House Lawn Into a Live Tesla Ad</title><link>https://www.youtube.com/watch?v=8Czbc-jvMnQ</link><author>More Perfect Union</author><category>yt</category><enclosure url="https://www.youtube.com/v/8Czbc-jvMnQ?version=3" length="" type=""/><pubDate>Wed, 12 Mar 2025 18:54:20 +0000</pubDate><source url="https://www.youtube.com/channel/UCehBVAPy-bxmnbNARF-_tvA">More Perfect Union</source><content:encoded><![CDATA[In front of the White House lawn, Trump spoke to the media about buying a Tesla and said he hopes it boosts Tesla sales.
+
+In response Elon Musk claimed Tesla will double US production. This is unlikely given declining demand for his cars.
+
+This is just two corrupt oligarchs scratching each other's backs.]]></content:encoded></item><item><title>Live advice with Crip Mac</title><link>https://www.youtube.com/watch?v=ZDqa8IBeuQg</link><author>Channel 5 with Andrew Callaghan</author><category>yt</category><enclosure url="https://www.youtube.com/v/ZDqa8IBeuQg?version=3" length="" type=""/><pubDate>Wed, 12 Mar 2025 18:29:37 +0000</pubDate><source url="https://www.youtube.com/channel/UC-AQKm7HUNMmxjdS371MSwg">Channel 5 with Andrew Callaghan</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>The Unholy Roman Emperor Frederick II | LIES | Extra History</title><link>https://www.youtube.com/watch?v=9dqqLw2HrCU</link><author>Extra History</author><category>yt</category><enclosure url="https://www.youtube.com/v/9dqqLw2HrCU?version=3" length="" type=""/><pubDate>Wed, 12 Mar 2025 17:29:51 +0000</pubDate><source url="https://www.youtube.com/channel/UCCODtTcd5M1JavPCOr_Uydg">Extra History</source><content:encoded><![CDATA[📜 Welcome Extra Historians to our Unholy Roman Emperor Frederick II Lies video! Where we talk about the mistakes we made and the details we couldn't quite squeeze into our series. With questions like, did Frederick really have a Harem? Who really called Frederick the Antichrist? And which person digested their meal faster in Frederick's science experiment?
+
+Want to watch our "History of Cats" series right NOW? You can find it on *NEBULA*: https://bit.ly/HistoryOfCats
+
+Read more about the new format here: https://bit.ly/EHNewFormat
+
+* Watch Extra History ad-free & get 1-week early access on *NEBULA* https://go.nebula.tv/extrahistory 
+* Suggest & Vote on our next episodes, get exclusive content & 24-hour early access on *PATREON* https://bit.ly/EHPatreon   
+* Show off your fandom with *MERCH* from our store! http://extracredits.store/  
+* Interested in sponsoring an episode?* Email us: extracredits@standard.tv 
+
+https://twitter.com/extracreditz | https://www.facebook.com/ExtraCredits/ | http://instagram.com/extracredits | https://www.tiktok.com/@extracreditz
+GAMING: https://www.youtube.com/@extracredits | http://www.twitch.tv/extracredits/
+https://bsky.app/profile/extracredits.bsky.social 
+
+*Miss an episode in our Frederick II Series?*
+Part 1 - https://youtu.be/J1zD8BfJ2vA
+Part 2 - https://youtu.be/ottbSSTiCcw
+Part 3 - https://youtu.be/4GZPc68Kz2w
+Series Wrap-up & Recommended Reading / Lies Episode - https://youtu.be/9dqqLw2HrCU
+See the full write-up of the recommended reading on Patreon: https://bit.ly/EHPatreon   
+
+Thanks for the high-quality conversations & for following our community guidelines here: https://bit.ly/ECFansRNice
+
+*TIMESTAMPS!*
+0:00 - Brought to you by our Patreons!
+2:11 - Recommended Reading
+2:53 - General Comments
+05:38 - Episode 1
+10:44 - Episode 2
+19:26 - Episode 3
+23:46 - Coming up on Extra History
+24:50 - Ibn Battuta's Side Trip
+
+Artist: Ali R Thome  | Writer: Robert Rath | Researcher: A. Siso | Showrunner & Narrator: Matthew Krol | Video Editor: Devon House Creative | Audio Editor: Clean Waves | Studio Director: Geoffrey Zatkin | Social Media: Kat Rider | ♪ Music by Demetori: http://bit.ly/1EQA5N7 | ♪ "The Real Dracula" by Tiffany Roman
+
+#ExtraHistory #Europe #History]]></content:encoded></item><item><title>Leeches Are A Walking Blood Bank | Save Our Species | BBC Earth Science</title><link>https://www.youtube.com/watch?v=ED2OEBQ7y6g</link><author>BBC Earth Science</author><category>yt</category><enclosure url="https://www.youtube.com/v/ED2OEBQ7y6g?version=3" length="" type=""/><pubDate>Wed, 12 Mar 2025 17:05:40 +0000</pubDate><source url="https://www.youtube.com/channel/UCdsOTr6SmDrxuWE7sJFrkhQ">BBC Earth Science</source><content:encoded><![CDATA[It can be difficult for conservationists to accurately survey the animals that live in a certain area. Thankfully they have an unlikely ally – the leech. By analysing the blood they have consumed, they can get an accurate picture of the wildlife in a local area.
+
+#WildlifeConservation #Nature #Wildlife 
+
+Best of Earth Science: http://bit.ly/EarthLabOriginals 
+Best of BBC Earth: http://bit.ly/TheBestOfBBCEarthVideos 
+
+This is a channel from BBC Studios who help fund new BBC programmes. Service information and feedback: http://bbcworldwide.com/vod-feedback--contact-details.aspx]]></content:encoded></item><item><title>How Germany&apos;s elite research institution fails young scientists | DW Documentary</title><link>https://www.youtube.com/watch?v=n5nEd600iM0</link><author>DW Documentary</author><category>yt</category><enclosure url="https://www.youtube.com/v/n5nEd600iM0?version=3" length="" type=""/><pubDate>Wed, 12 Mar 2025 17:00:57 +0000</pubDate><source url="https://www.youtube.com/channel/UCW39zufHfsuGgpLviKh297Q">DW Documentary</source><content:encoded><![CDATA[The Max Planck Society is a figurehead of scientific research in Germany: a big name, a stellar reputation, and top-notch facilities. Anyone who makes it to one of its 84 institutes belongs to the elite: an organization that counts 31 Nobel Prize laureates among its ranks. But there is a dark side to its facade.
+ 
+For months, DW's investigative unit, along with German news magazine Der Spiegel, has investigated allegations of misconduct perpetrated by senior scientific staff at Max Planck institutes. We spoke to more than 30 young scientists, many who described abusive behavior and toxic environments. They were afraid to report the abuse, fearing the consequences, and the few who did report say they were discouraged from doing so.
+ 
+DW goes behind the scenes of Germany's elite research institutes to find out why abusive behavior and toxic work environments remain resilient in the face of opposition.
+
+[Correction 13.03.25: In the documentary, we stated that German media had reported widespread sexual harassment perpetrated by two directors at the Ernst Strüngmann Institute for Neuroscience. This was incorrect. The reports referred to two senior staff members, not directors. We regret the error.]
+ 
+If you have a tip, feel free to contact DW's investigative unit here: https://www.dw.com/en/do-you-have-confidential-information-that-you-want-to-share-with-dw/a-61899300
+
+#documentary #investigation #reporter #dwstories #dwdocumentary 
+______
+
+DW Documentary gives you knowledge beyond the headlines. Watch top documentaries from German broadcasters and international production companies. Meet intriguing people, travel to distant lands, get a look behind the complexities of daily life and build a deeper understanding of current affairs and global events. Subscribe and explore the world around you with DW Documentary.
+
+Subscribe to: ‬
+⮞ DW Documentary (English): https://www.youtube.com/dwdocumentary 
+⮞ DW Documental (Spanish): https://www.youtube.com/dwdocumental 
+⮞ DW Documentary وثائقية دي دبليو (Arabic): https://www.youtube.com/dwdocarabia
+⮞ DW Documentary हिन्दी (Hindi): https://www.youtube.com/dwdochindi
+⮞ DW Doku (German): https://www.youtube.com/dwdoku
+
+For more visit: http://www.dw.com/en/tv/docfilm/s-3610
+Follow DW Documentary on Instagram: https://www.instagram.com/dwdocumentary/
+Follow DW Documental on Facebook: https://www.facebook.com/dwdocumental
+
+We kindly ask viewers to read and stick to the DW netiquette policy on our channel: https://p.dw.com/p/MF1G]]></content:encoded></item><item><title>This Budget 35mm Film Is Quickly Becoming A Favourite</title><link>https://www.youtube.com/watch?v=JLsCm5wRclg</link><author>Kyle McDougall</author><category>yt</category><enclosure url="https://www.youtube.com/v/JLsCm5wRclg?version=3" length="" type=""/><pubDate>Wed, 12 Mar 2025 17:00:18 +0000</pubDate><source url="https://www.youtube.com/channel/UCJQcBYfgescGRJUzU6IMCMw">Kyle McDougall</source><content:encoded><![CDATA[Head to https://squarespace.com/kylemcdougall to save 10% off your first purchase of a website or domain using code KYLEMCDOUGALL
+
+In this video, I’m heading out for a day of photography on the south coast of England with some Kodak Colorplus 200 and a Canon EOS 30 SLR. After shooting some Colorplus throughout the summer on family vacations, I wanted to test it in new environments. It’s a film that’s quickly becoming my favourite budget film. 
+
+Pick up a Limited Edition Print from my 'Slate City' project here: https://www.kylemcdougallphoto.com/prints-slate-city
+
+►*DISCLAIMER*
+Some of the links below are affiliate links, which means I earn a small commission if you click on the link and purchase an item. The money I earn helps me consistently produce this type of content.
+
+►GEAR USED/MENTIONED:
+Canon EOS 30: https://ebay.us/5FIS2w
+Canon STM 40mm f2.8: https://ebay.us/xuIDDn
+Kodak Colorplus 200: https://ebay.us/quaV7O
+
+►Follow me on Instagram: https://www.instagram.com/kyle__mcdougall/
+►Order my new book ‘An American Mile’: https://bit.ly/3Og6Z45
+
+My '35mm Film Photography Course' on Skillshare (FREE with this link): https://skl.sh/2JrGhFs
+
+My 'Medium Format Film Photography Course' on Skillshare (FREE with this link): https://skl.sh/3r7KLta
+
+Videos on this channel are filmed using the Fuji X-H2s: https://bhpho.to/3UEjFVs
+
+
+►FILM PHOTOGRAPHY GEAR (*these are affiliate links):
+My go-to medium format camera: https://ebay.us/GaK9Kp
+My favourite 35mm film camera: https://ebay.us/82WyVI
+My favourite 35mm film lens: https://ebay.us/u0V817
+My favourite medium format travel camera: https://ebay.us/FVcfWk
+My go-to light meter: https://ebay.us/QIFXF0
+My favourite film stock: https://ebay.us/orbudp
+My favourite 645 medium format film camera: https://ebay.us/ydY4HK
+
+→Instagram: https://bit.ly/2GuYV21
+→Website: http://kylemcdougallphoto.com]]></content:encoded></item><item><title>These Scientists Protect Us From Measles. DOGE is Defunding Them.</title><link>https://www.youtube.com/watch?v=mOkadFuzmp4</link><author>More Perfect Union</author><category>yt</category><enclosure url="https://www.youtube.com/v/mOkadFuzmp4?version=3" length="" type=""/><pubDate>Wed, 12 Mar 2025 16:52:40 +0000</pubDate><source url="https://www.youtube.com/channel/UCehBVAPy-bxmnbNARF-_tvA">More Perfect Union</source><content:encoded><![CDATA[Donald Trump and Elon Musk have thrown science funding into chaos.
+
+Fired workers develop vaccines that protect us from measles, undergo clinical trials that improve cancer survival rates, and more.
+
+Now, it's all in jeopardy.]]></content:encoded></item><item><title>The Lockerbie Smith &amp; Wesson Model 10-11 with firearms expert Jonathan Ferguson</title><link>https://www.youtube.com/watch?v=m1rK1ObR0uQ</link><author>Royal Armouries</author><category>yt</category><enclosure url="https://www.youtube.com/v/m1rK1ObR0uQ?version=3" length="" type=""/><pubDate>Wed, 12 Mar 2025 16:23:18 +0000</pubDate><source url="https://www.youtube.com/channel/UCsMX-XuiEkBi4-GDrYuniWg">Royal Armouries</source><content:encoded><![CDATA[Today's episode revolves around a Revolver with some historical significance and represents the 'last gasp' of revolvers within UK Police service. 
+
+0:00 Intro
+0:14 S&W Model 10-11 Revolver
+0:54 Police Use
+1:23 Lockerbie Trial
+2:30 Police Firearms
+3:35 A Holy Trigger
+4:38 Service History 
+6:10 Armoury Tag
+7:09 Predecessor
+8:00 Rounds
+8:10 Further Reading...
+9:00 Outro
+
+Sources:
+ 
+Frederick Wilkinson. ‘Those Entrusted With Arms’ (Greenhill Books, 2002).
+ 
+https://www.scotcourts.gov.uk/judgments/lockerbie-trial/
+
+https://www.shutterstock.com/editorial/image-editorial/kamp-zeist-soesterberg-nederland-lockerbie-trail-320493d
+
+https://www.gettyimages.co.uk/detail/news-photo/scottish-policeman-armed-with-an-automatic-weapon-stands-news-photo/1245578285
+
+Comical 1980s Footage of Met Police Officers in Weapons Training (1987) by ITN Archives [Available here: https://www.youtube.com/watch?v=GKvLx6n2Itw ] 
+
+Subscribe to our channel for more videos about arms and armour  
+
+Help us bring history to life by supporting us here: https://royalarmouries.org/support-us/donations/
+
+Sign up to our museum membership scheme here: https://royalarmouries.org/support-us/membership/ 
+
+⚔Website: https://royalarmouries.org/home
+⚔Blog: https://royalarmouries.org/stories/
+⚔Facebook: https://www.facebook.com/RoyalArmouriesMuseum/
+⚔Twitter: https://twitter.com/Royal_Armouries
+⚔ Instagram: http://instagram.com/royalarmouriesmuseum
+
+We are the Royal Armouries, the United Kingdom's national collection of arms and armour. Discover what goes on behind the scenes and watch our collection come to life. See combat demonstrations, experience jousting and meet our experts. 
+
+Have a question about arms and armour? Feel free to leave us a comment and we'll do our best to answer it.]]></content:encoded></item><item><title>Tim Walz, live at SXSW with Today, Explained</title><link>https://www.youtube.com/watch?v=47GYyXVTUFY</link><author>Vox</author><category>yt</category><enclosure url="https://www.youtube.com/v/47GYyXVTUFY?version=3" length="" type=""/><pubDate>Wed, 12 Mar 2025 16:00:05 +0000</pubDate><source url="https://www.youtube.com/channel/UCLXo7UDZvByw2ixzpQCufnA">Vox</source><content:encoded><![CDATA[Minnesota Gov. Tim Walz sat down with Today, Explained Host Sean Rameswaram at SXSW in Austin, Texas, to talk about 2024, 2025, and what might help his party in 2028.
+
+This episode was recorded live on the Vox Media Podcast Stage at SXSW, presented by Smartsheet.
+
+Support our work. Become a Vox Member today: http://www.vox.com/memberships
+
+Today, Explained is Vox’s daily news explainer podcast. Hosts Sean Rameswaram and Noel King will guide you through the most important stories of the day. You can listen to it, and more Vox podcasts, here. Today, Explained is now available on public radio stations across the US.
+
+You can find all their episodes here: https://www.vox.com/today-explained-podcast 
+
+And their Tim Walz SXSW episode here:  https://open.spotify.com/episode/6jRvadX7T2oJ9DZcrcysJs?si=99a0ae586e2f4fe8 
+
+Subscribe to our channel and turn on notifications (🔔) so you don't miss any videos: http://goo.gl/0bsAjO]]></content:encoded></item></channel></rss>
