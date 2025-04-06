@@ -10,6 +10,7 @@ file:///home/exaroth/.scripts/atom.xml "~ Atom Pocket"
 "query:Github Issues:tags # \"gh\" and age < 14"
 
 https://zig.news/rss "~Zig News" ! dev
+https://standardebooks.org/feeds/rss/new-releases
 
 https://access.acast.com/rss/theeconomistmorningbriefing/default "~News - Daily Brief" ! news
 https://www.youtube.com/feeds/videos.xml?channel_id=UCknLrEdhRCp1aegoMqRaCZg "~News - DW" ! news
