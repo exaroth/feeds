@@ -11,7 +11,7 @@
       "tags": [
         "yt"
       ],
-      "num_items": 437
+      "num_items": 452
     },
     {
       "id": "31E7iA",
@@ -24,7 +24,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 63
+      "num_items": 135
     },
     {
       "id": "ETKeSdT1Jvn",
@@ -37,7 +37,7 @@
       "tags": [
         "podcast"
       ],
-      "num_items": 135
+      "num_items": 155
     },
     {
       "id": "fZWkWx2e",
@@ -50,7 +50,7 @@
       "tags": [
         "movies"
       ],
-      "num_items": 44
+      "num_items": 54
     },
     {
       "id": "6W9",
@@ -79,6 +79,17 @@
       "num_items": 1004
     },
     {
+      "id": "HuuaCwcKuiEntzTgdUnGL5yiphYKsF7LGtg6ZPikiebavCJbabm82gNrUaTivqvncwt",
+      "title": "Standard Ebooks - Newest Ebooks",
+      "display_title": "Standard Ebooks - Newest Ebooks",
+      "url": "https://standardebooks.org/feeds/rss/new-releases",
+      "feedlink": "https://standardebooks.org/",
+      "hidden": false,
+      "is_query": false,
+      "tags": [],
+      "num_items": 15
+    },
+    {
       "id": "VMK7D8tQvwsLtnxKHzNdF9c4Yhtuqm",
       "title": "Hacker News: Best",
       "display_title": "HN",
@@ -90,7 +101,7 @@
         "dev",
         "hn"
       ],
-      "num_items": 128
+      "num_items": 127
     },
     {
       "id": "82kPqomaPXmNomrHzpZWfbkQxiiNUBTAYKxHR5qZBEpf",
@@ -104,7 +115,7 @@
         "dev",
         "hn"
       ],
-      "num_items": 93
+      "num_items": 97
     },
     {
       "id": "4W3i2hyrJTVfcLq85rWgduVQ3y3BMzrSD4pVUCMqPpFhmXWpqxQ",
@@ -118,7 +129,7 @@
         "dev",
         "hn"
       ],
-      "num_items": 783
+      "num_items": 780
     }
   ]
 }
