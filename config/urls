@@ -14,20 +14,15 @@ https://standardebooks.org/feeds/rss/new-releases
 
 https://access.acast.com/rss/theeconomistmorningbriefing/default "~News - Daily Brief" ! news
 https://www.youtube.com/feeds/videos.xml?channel_id=UCknLrEdhRCp1aegoMqRaCZg "~News - DW" ! news
-https://www.youtube.com/feeds/videos.xml?channel_id=UC52X5wxOL_s5yw0dQk7NtgA "~News - AP" ! news
 https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg "~News - Bloomberg" ! news
-https://www.reddit.com/r/worldnews/top/.rss?sort=top&t=day&limit=10 "~News - Reddit - World News" ! news reddit
-https://www.reddit.com/r/europe/top/.rss?sort=top&t=day&limit=10 "~News - Reddit - Europe" ! news reddit
 
 https://www.youtube.com/feeds/videos.xml?channel_id=UCrTNhL_yO3tPTdQ5XgmmWjA "~Movies - RedLetterMedia" ! movies
-https://www.youtube.com/feeds/videos.xml?channel_id=UCpsjEC4PlHmhM84yX5Y3rrg "~Movies - Fanboy Flicks" ! movies
 https://www.youtube.com/feeds/videos.xml?channel_id=UCjFqcJQXGZ6T6sxyFB-5i6A "~Movies - Every Frame a Painting" ! movies
 https://www.youtube.com/feeds/videos.xml?channel_id=UCcGlif61mMV6soFSiN2QHoQ "~Movies - Kino Corner" ! movies
 https://www.youtube.com/feeds/videos.xml?channel_id=UCUyvQV2JsICeLZP4c_h40kA "~Movies - Thomas Flight" ! movies
 https://www.youtube.com/feeds/videos.xml?channel_id=UCI62rVaY9gn5yO3Msh6BN0w "~Movies - Layton Eversaul" ! movies
 https://www.youtube.com/feeds/videos.xml?channel_id=UCFOfgEQLHpPuVNP_m-XldTg "~Movies - FilmStack" ! movies
 https://www.youtube.com/feeds/videos.xml?channel_id=UCErmMCK1sHF-kCtyHpuSXtQ "~Movies - Kermode" ! movies
-
 
 https://hnrss.org/best "~HN" dev hn
 https://hnrss.org/show?points=60 "~HN Show" dev hn
@@ -55,8 +50,6 @@ https://gh-issues-to-rss.fly.dev/exaroth/liveboat-github-runner?m=io ! gh
 
 # Astrum
 https://www.youtube.com/feeds/videos.xml?channel_id=UC-9b7aDP6ZN0coj9-xFnrtw ! yt
-# Channel 5 with Andrew Callaghan
-https://www.youtube.com/feeds/videos.xml?channel_id=UC-AQKm7HUNMmxjdS371MSwg ! yt
 # French Cooking Academy
 https://www.youtube.com/feeds/videos.xml?channel_id=UC0lG3Ihe4LGV851lODRIS5g ! yt
 # Real Science
@@ -167,8 +160,6 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCtYKe7-XbaDjpUwcU5x0bLg ! y
 https://www.youtube.com/feeds/videos.xml?channel_id=UCyNtlmLB73-7gtlBz00XOQQ ! yt
 # PBS
 https://www.youtube.com/feeds/videos.xml?channel_id=UCgyeJxD05YnoDquRMNBfBqw ! yt
-# More perfect union
-https://www.youtube.com/feeds/videos.xml?channel_id=UCehBVAPy-bxmnbNARF-_tvA ! yt
 # James Jani
 https://www.youtube.com/feeds/videos.xml?channel_id=UCT0dmfFCLWuVKPWZ6wcdKyg ! yt
 # Frontline
