@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 11,
+  "itemCount": 12,
   "items": [
+    {
+      "title": "Ralestone Luck, by Andre Norton",
+      "url": "https://standardebooks.org/ebooks/andre-norton/ralestone-luck",
+      "date": 1747252631,
+      "author": "",
+      "guid": 38526,
+      "unread": true,
+      "content": "<article>The descendants of a noble family, and of pirates, seek to restore their fortunes by locating the “luck” of their family.</article>",
+      "contentLength": 125,
+      "flags": null,
+      "enclosureUrl": "https://standardebooks.org/ebooks/andre-norton/ralestone-luck/downloads/andre-norton_ralestone-luck.epub?source=feed",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "The Mystery of Cabin Island, by Franklin W. Dixon",
       "url": "https://standardebooks.org/ebooks/franklin-w-dixon/the-mystery-of-cabin-island",
