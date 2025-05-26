@@ -318,6 +318,20 @@
       "commentsUrl": null
     },
     {
+      "title": "Soviet Bloodthirst, Forgotten Fleets, & Top Hitler Books",
+      "url": "https://podcasts.apple.com/pl/podcast/soviet-bloodthirst-forgotten-fleets-top-hitler-books/id1457552694?i=1000708587942",
+      "date": 1747785600,
+      "author": "noreply@podcasts.apple.com",
+      "guid": 40232,
+      "unread": true,
+      "content": "",
+      "contentLength": 0,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
       "title": "Mount Hiei: Home of Japan's Warrior Monks",
       "url": "https://shows.acast.com/dansnowshistoryhit/episodes/mount-hiei-home-of-japans-warrior-monks",
       "date": 1747783800,
@@ -426,6 +440,20 @@
       "contentLength": 80,
       "flags": null,
       "enclosureUrl": "https://www.youtube.com/v/LMesHA9mbZ8?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "The Hunt For Hitler's Teeth",
+      "url": "https://podcasts.apple.com/pl/podcast/the-hunt-for-hitlers-teeth/id1457552694?i=1000708363677",
+      "date": 1747612800,
+      "author": "noreply@podcasts.apple.com",
+      "guid": 40231,
+      "unread": true,
+      "content": "",
+      "contentLength": 0,
+      "flags": null,
+      "enclosureUrl": "",
       "enclosureMime": "",
       "commentsUrl": null
     },
@@ -678,34 +706,6 @@
       "contentLength": 1090,
       "flags": null,
       "enclosureUrl": "https://www.youtube.com/v/OMTOIkQH6HA?version=3",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "AI, Marketing, and Human Decision Making // Fausto Albers // #313",
-      "url": "https://podcasters.spotify.com/pod/show/mlops/episodes/AI--Marketing--and-Human-Decision-Making--Fausto-Albers--313-e32qrnp",
-      "date": 1747216377,
-      "author": "Demetrios",
-      "guid": 38399,
-      "unread": true,
-      "content": "<p>AI, Marketing, and Human Decision Making // MLOps Podcast #313 with Fausto Albers, AI Engineer &amp; Community Lead at AI Builders Club.</p><p>Join the Community: https://go.mlops.community/YTJoinIn  </p><p>Get the newsletter: https://go.mlops.community/YTNewsletter </p><p>Demetrios and Fausto Albers explore how generative AI transforms creative work, decision-making, and human connection, highlighting both the promise of automation and the risks of losing critical thinking and social nuance.</p><p>Fausto Albers is a relentless explorer of the unconventional—a techno-optimist with a foundation in sociology and behavioral economics, always connecting seemingly absurd ideas that, upon closer inspection, turn out to be the missing pieces of a bigger puzzle. He thrives in paradox: he overcomplicates the simple, oversimplifies the complex, and yet somehow lands on solutions that feel inevitable in hindsight. He believes that true innovation exists in the tension between chaos and structure—too much of either, and you’re stuck.</p><p>His career has been anything but linear. He’s owned and operated successful restaurants, served high-stakes cocktails while juggling bottles on London’s bar tops, and later traded spirits for code—designing digital waiters, recommender systems, and AI-driven accounting tools. Now, he leads the AI Builders Club Amsterdam, a fast-growing community where AI engineers, researchers, and founders push the boundaries of intelligent systems.</p><p>Ask him about RAG, and he’ll insist on specificity—because, as he puts it, discussing retrieval-augmented generation without clear definitions is as useful as declaring that “AI will have an impact on the world.” An engaging communicator, a sharp systems thinker, and a builder of both technology and communities, Fausto is here to challenge perspectives, deconstruct assumptions, and remix the future of AI.</p><p>Moravec's paradox: https://en.wikipedia.org/wiki/Moravec%27s_paradox?utm_source=chatgpt.com</p><p>Behavior Modeling, Secondary AI Effects, Bias Reduction &amp; Synthetic Data // Devansh Devansh // #311: https://youtu.be/jJXee5rMtHI</p><p>~~~~~~~~ ✌️Connect With Us ✌️ ~~~~~~~Catch all episodes, blogs, newsletters, and more: https://go.mlops.community/TYExplore</p><p>Join our Slack community [https://go.mlops.community/slack]</p><p>Follow us on X/Twitter [@mlopscommunity](https://x.com/mlopscommunity) or [LinkedIn](https://go.mlops.community/linkedin)] </p><p>Sign up for the next meetup: [https://go.mlops.community/register]</p><p>MLOps Swag/Merch: [https://shop.mlops.community/]</p><p>Connect with Demetrios on LinkedIn: /dpbrinkm</p><p>Connect with Fausto on LinkedIn: /stepintoliquid</p><p>Timestamps:[00:00] Fausto's preferred coffee[00:26] Takeaways[01:18] Automated Ad Creative Generation[07:14] AI in Marketing Workflows[13:23] MCP and System Bottlenecks[21:45] Forward Compatibility vs Optimization[29:57] Unlocking Workflow Speed[33:48] AI Dependency vs Critical Thinking[37:44] AI Realism and Paradoxes[42:30] Outsourcing Decision-Making Risks[46:22] Human Value in Automation[49:02] Wrap up</p>",
-      "contentLength": 3019,
-      "flags": null,
-      "enclosureUrl": "https://anchor.fm/s/174cb1b8/podcast/play/102640825/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-4-14%2F400253800-44100-2-ae06b89630cc1.mp3",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "The Glorious Revolution",
-      "url": "https://shows.acast.com/dansnowshistoryhit/episodes/the-glorious-revolution",
-      "date": 1747179000,
-      "author": "",
-      "guid": 38370,
-      "unread": true,
-      "content": "",
-      "contentLength": 0,
-      "flags": null,
-      "enclosureUrl": "https://sphinx.acast.com/p/acast/s/dansnowshistoryhit/e/682277c8986466935de893cf/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJzdGF0dXMiOiJwdWJsaWMifQ==&sig=28Mx3MTV5-SMEOJc4VUWQsRImLv3B5nDg530SCVtoRw",
       "enclosureMime": "",
       "commentsUrl": null
     }
