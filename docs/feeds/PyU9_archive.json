@@ -7,7 +7,7 @@
   "isQuery": true,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 1040,
+  "itemCount": 1038,
   "items": [
     {
       "title": "Britain's police are restricting speech in worrying ways",
@@ -14535,34 +14535,6 @@
       "guid": 36520,
       "unread": true,
       "content": "\n<p>Article URL: <a href=\"https://gizmodo.com/amazon-just-happens-to-hold-book-sale-during-independent-bookstore-day-2000594958\">https://gizmodo.com/amazon-just-happens-to-hold-book-sale-during-independent-bookstore-day-2000594958</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=43808334\">https://news.ycombinator.com/item?id=43808334</a></p>\n<p>Points: 216</p>\n<p># Comments: 157</p>\n",
-      "contentLength": 0,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Anatomy of a SQL Engine",
-      "url": "https://www.dolthub.com/blog/2025-04-25-sql-engine-anatomy/",
-      "date": 1745704840,
-      "author": "ingve",
-      "guid": 36533,
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://www.dolthub.com/blog/2025-04-25-sql-engine-anatomy/\">https://www.dolthub.com/blog/2025-04-25-sql-engine-anatomy/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=43807593\">https://news.ycombinator.com/item?id=43807593</a></p>\n<p>Points: 141</p>\n<p># Comments: 14</p>\n",
-      "contentLength": 0,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Bare metal printf – C standard library without OS",
-      "url": "https://popovicu.com/posts/bare-metal-printf/",
-      "date": 1745703157,
-      "author": "todsacerdoti",
-      "guid": 36518,
-      "unread": true,
-      "content": "\n<p>Article URL: <a href=\"https://popovicu.com/posts/bare-metal-printf/\">https://popovicu.com/posts/bare-metal-printf/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=43807404\">https://news.ycombinator.com/item?id=43807404</a></p>\n<p>Points: 207</p>\n<p># Comments: 71</p>\n",
       "contentLength": 0,
       "flags": null,
       "enclosureUrl": "",
