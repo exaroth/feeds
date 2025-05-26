@@ -5,12 +5,11 @@ file:///home/exaroth/.scripts/atom.xml "~ Atom Pocket"
 "query:Podcasts:tags # \"podcast\""
 "query:Movies:tags # \"movies\" and unread = \"yes\""
 "query:HN:tags # \"hn\""
-"query:Dev:tags # \"hn\""
 
 "query:Github Issues:tags # \"gh\" and age < 14"
 
 https://zig.news/rss "~Zig News" ! dev
-https://standardebooks.org/feeds/rss/new-releases
+https://standardebooks.org/feeds/rss/new-releases "~Standard E-Books"
 
 https://access.acast.com/rss/theeconomistmorningbriefing/default "~News - Daily Brief" ! news
 https://www.youtube.com/feeds/videos.xml?channel_id=UCknLrEdhRCp1aegoMqRaCZg "~News - DW" ! news
@@ -25,9 +24,9 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCI62rVaY9gn5yO3Msh6BN0w "~M
 https://www.youtube.com/feeds/videos.xml?channel_id=UCFOfgEQLHpPuVNP_m-XldTg "~Movies - FilmStack" ! movies
 https://www.youtube.com/feeds/videos.xml?channel_id=UCErmMCK1sHF-kCtyHpuSXtQ "~Movies - Kermode" ! movies
 
-https://hnrss.org/best "~HN" dev hn
-https://hnrss.org/show?points=60 "~HN Show" dev hn
-https://hnrss.org/frontpage?points=75 "~HN Front" dev hn
+https://hnrss.org/best "~HN" ! dev hn
+https://hnrss.org/show?points=60 "~HN Show" ! dev hn
+https://hnrss.org/frontpage?points=75 "~HN Front" ! dev hn
 
 
 https://access.acast.com/rss/f2925f7a-eb08-471a-9958-387cb5ee6353/default "~Podcast - Ancients" ! podcast
@@ -46,6 +45,7 @@ https://anchor.fm/s/174cb1b8/podcast/rss "~Podcast - MLOps" ! podcast
 https://www.youtube.com/feeds/videos.xml?channel_id=UCfuj1MM5p37CRzWYPv_PsWA "~Podcast - CodeTalks" ! podcast
 https://www.youtube.com/feeds/videos.xml?channel_id=UCmYAQDZIQGm_kPvemBc_qwg "~Podcast - DevConfs" ! podcast
 https://openrss.org/podcasts.apple.com/pl/podcast/ww2-pod-we-have-ways-of-making-you-talk/id1457552694 "~Podcast - WW2 Pod" ! podcast
+https://openrss.org/podcasts.apple.com/us/podcast/the-rest-is-history/id1537788786 "~The Rest is History" ! podcast
 
 https://gh-issues-to-rss.fly.dev/exaroth/liveboat?m=io ! gh
 https://gh-issues-to-rss.fly.dev/exaroth/liveboat-github-runner?m=io ! gh
@@ -175,7 +175,7 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCK7tptUDHh-RYDsdxO1-5QQ ! y
 # Voidzilla
 https://www.youtube.com/feeds/videos.xml?channel_id=UC28n0tlcNSa1iPe5mettocg ! yt
 # NesHacker
-https://www.youtube.com/feeds/videos.xml?channel_id=UCXR5PCyUI2pG_a3ydnCIS-g ! y
+https://www.youtube.com/feeds/videos.xml?channel_id=UCXR5PCyUI2pG_a3ydnCIS-g ! yt
 # Displaced Gamers
 https://www.youtube.com/feeds/videos.xml?channel_id=UCWoSKWs8h6lFdiEDAjuIfpA ! yt
 
