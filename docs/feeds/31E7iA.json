@@ -7,8 +7,22 @@
   "isQuery": true,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 64,
+  "itemCount": 65,
   "items": [
+    {
+      "title": "A simple guide to South Korea's presidential election",
+      "url": "https://www.bbc.com/news/articles/c8e66565wj0o",
+      "date": 1748296814,
+      "author": "",
+      "guid": 40237,
+      "unread": true,
+      "content": "<article>The vote comes after the impeachment and removal of former president Yoon Suk Yeol.</article>",
+      "contentLength": 83,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "What's behind Germany lifting range restrictions on arms to Ukraine? | DW News",
       "url": "https://www.youtube.com/watch?v=Wi_68ethHPk",

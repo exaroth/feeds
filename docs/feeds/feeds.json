@@ -24,7 +24,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 64
+      "num_items": 65
     },
     {
       "id": "ETKeSdT1Jvn",
@@ -37,7 +37,7 @@
       "tags": [
         "podcast"
       ],
-      "num_items": 119
+      "num_items": 121
     },
     {
       "id": "fZWkWx2e",
@@ -66,70 +66,15 @@
       "num_items": 1038
     },
     {
-      "id": "PyU9",
-      "title": "Dev",
-      "display_title": "Dev",
-      "url": "",
-      "feedlink": "",
-      "hidden": false,
-      "is_query": true,
-      "tags": [
-        "hn"
-      ],
-      "num_items": 1038
-    },
-    {
       "id": "HuuaCwcKuiEntzTgdUnGL5yiphYKsF7LGtg6ZPikiebavCJbabm82gNrUaTivqvncwt",
       "title": "Standard Ebooks - Newest Ebooks",
-      "display_title": "Standard Ebooks - Newest Ebooks",
+      "display_title": "Standard E-Books",
       "url": "https://standardebooks.org/feeds/rss/new-releases",
       "feedlink": "https://standardebooks.org/",
       "hidden": false,
       "is_query": false,
       "tags": [],
       "num_items": 14
-    },
-    {
-      "id": "VMK7D8tQvwsLtnxKHzNdF9c4Yhtuqm",
-      "title": "Hacker News: Best",
-      "display_title": "HN",
-      "url": "https://hnrss.org/best",
-      "feedlink": "https://news.ycombinator.com/best",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev",
-        "hn"
-      ],
-      "num_items": 151
-    },
-    {
-      "id": "82kPqomaPXmNomrHzpZWfbkQxiiNUBTAYKxHR5qZBEpf",
-      "title": "Hacker News: Show HN",
-      "display_title": "HN Show",
-      "url": "https://hnrss.org/show?points=60",
-      "feedlink": "https://news.ycombinator.com/shownew",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev",
-        "hn"
-      ],
-      "num_items": 120
-    },
-    {
-      "id": "4W3i2hyrJTVfcLq85rWgduVQ3y3BMzrSD4pVUCMqPpFhmXWpqxQ",
-      "title": "Hacker News: Front Page",
-      "display_title": "HN Front",
-      "url": "https://hnrss.org/frontpage?points=75",
-      "feedlink": "https://news.ycombinator.com/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [
-        "dev",
-        "hn"
-      ],
-      "num_items": 767
     }
   ]
 }
