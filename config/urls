@@ -15,6 +15,7 @@ https://access.acast.com/rss/theeconomistmorningbriefing/default "~News - Daily 
 https://www.youtube.com/feeds/videos.xml?channel_id=UCknLrEdhRCp1aegoMqRaCZg "~News - DW" ! news
 https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg "~News - Bloomberg" ! news
 https://feeds.bbci.co.uk/news/world/rss.xml "~News - BBC" ! news
+https://www.youtube.com/feeds/videos.xml?channel_id=UCkdnY2hNC0sdlVXPtWuNQ8g "~NYT" ! news
 
 https://www.youtube.com/feeds/videos.xml?channel_id=UCrTNhL_yO3tPTdQ5XgmmWjA "~Movies - RedLetterMedia" ! movies
 https://www.youtube.com/feeds/videos.xml?channel_id=UCjFqcJQXGZ6T6sxyFB-5i6A "~Movies - Every Frame a Painting" ! movies
@@ -46,6 +47,7 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCfuj1MM5p37CRzWYPv_PsWA "~P
 https://www.youtube.com/feeds/videos.xml?channel_id=UCmYAQDZIQGm_kPvemBc_qwg "~Podcast - DevConfs" ! podcast
 https://openrss.org/podcasts.apple.com/pl/podcast/ww2-pod-we-have-ways-of-making-you-talk/id1457552694 "~Podcast - WW2 Pod" ! podcast
 https://www.youtube.com/feeds/videos.xml?channel_id=UCUYK0BJZF3yNb2fw1EdAXUQ "~The Rest is History" ! podcast
+https://openrss.org/podcasts.apple.com/us/podcast/dan-carlins-hardcore-history/id173001861 "~Dan Carlin" ! podcast
 
 https://gh-issues-to-rss.fly.dev/exaroth/liveboat?m=io ! gh
 https://gh-issues-to-rss.fly.dev/exaroth/liveboat-github-runner?m=io ! gh
