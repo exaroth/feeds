@@ -5,6 +5,7 @@ file:///home/exaroth/.scripts/atom.xml "~ Atom Pocket"
 "query:Podcasts:tags # \"podcast\""
 "query:Movies:tags # \"movies\" and unread = \"yes\""
 "query:HN:tags # \"hn\""
+"query:Tech:tags # \"tech\""
 
 "query:Github Issues:tags # \"gh\" and age < 14"
 
@@ -29,6 +30,17 @@ https://hnrss.org/best "~HN" ! dev hn
 https://hnrss.org/show?points=60 "~HN Show" ! dev hn
 https://hnrss.org/frontpage?points=75 "~HN Front" ! dev hn
 
+https://techcrunch.com/feed/ ! tech
+http://rss.slashdot.org/Slashdot/slashdotMain ! tech
+https://www.codeproject.com/WebServices/ArticleRSS.aspx ! tech
+https://feeds.arstechnica.com/arstechnica/technology-lab ! tech
+https://hackernoon.com/feed "~Tech - HackerNoon" ! tech
+https://www.phoronix.com/rss.php ! tech
+https://spectrum.ieee.org/customfeeds/feed/all-topics/rss ! tech
+https://www.techdirt.com/feed/ ! tech
+https://www.eff.org/rss/updates.xml ! tech
+https://www.404media.co/rss "~404" ! tech
+https://www.quantamagazine.org/rss "Quanta Magazine" ! tech
 
 https://access.acast.com/rss/f2925f7a-eb08-471a-9958-387cb5ee6353/default "~Podcast - Ancients" ! podcast
 https://access.acast.com/rss/c939f8d1-c4bc-478e-8bb9-e5343f9a7ab5/default "~Podcast - HistoryHit" ! podcast
@@ -180,4 +192,5 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UC28n0tlcNSa1iPe5mettocg ! y
 https://www.youtube.com/feeds/videos.xml?channel_id=UCXR5PCyUI2pG_a3ydnCIS-g ! yt
 # Displaced Gamers
 https://www.youtube.com/feeds/videos.xml?channel_id=UCWoSKWs8h6lFdiEDAjuIfpA ! yt
-
+# Marquees Brownlee
+https://www.youtube.com/feeds/videos.xml?channel_id=UCBJycsmduvYEL83R_U4JriQ ! yt
