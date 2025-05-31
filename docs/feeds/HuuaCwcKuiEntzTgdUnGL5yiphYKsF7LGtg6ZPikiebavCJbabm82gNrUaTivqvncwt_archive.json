@@ -7,7 +7,7 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 14,
+  "itemCount": 10,
   "items": [
     {
       "title": "Dangerous Ages, by Rose Macaulay",
@@ -146,62 +146,6 @@
       "contentLength": 119,
       "flags": null,
       "enclosureUrl": "https://standardebooks.org/ebooks/sophocles/philoctetes/francis-storr/downloads/sophocles_philoctetes_francis-storr.epub?source=feed",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "No Treason, by Lysander Spooner",
-      "url": "https://standardebooks.org/ebooks/lysander-spooner/no-treason",
-      "date": 1746047314,
-      "author": "",
-      "guid": 36949,
-      "unread": true,
-      "content": "<article>Lawyer and political philosopher Lysander Spooner presents his case for the invalidity of the United States Constitution.</article>",
-      "contentLength": 121,
-      "flags": null,
-      "enclosureUrl": "https://standardebooks.org/ebooks/lysander-spooner/no-treason/downloads/lysander-spooner_no-treason.epub?source=feed",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "The Private Papers of Henry Ryecroft, by George Gissing",
-      "url": "https://standardebooks.org/ebooks/george-gissing/the-private-papers-of-henry-ryecroft",
-      "date": 1745947280,
-      "author": "",
-      "guid": 36790,
-      "unread": true,
-      "content": "<article>A retired Englishman muses on life and literature in his private diary.</article>",
-      "contentLength": 71,
-      "flags": null,
-      "enclosureUrl": "https://standardebooks.org/ebooks/george-gissing/the-private-papers-of-henry-ryecroft/downloads/george-gissing_the-private-papers-of-henry-ryecroft.epub?source=feed",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "What’s Wrong with the World, by G. K. Chesterton",
-      "url": "https://standardebooks.org/ebooks/g-k-chesterton/whats-wrong-with-the-world",
-      "date": 1745896262,
-      "author": "",
-      "guid": 36701,
-      "unread": true,
-      "content": "<article>Philosopher G. K. Chesterton comments on various social issues of his day, including property, imperialism, feminism, and education.</article>",
-      "contentLength": 132,
-      "flags": null,
-      "enclosureUrl": "https://standardebooks.org/ebooks/g-k-chesterton/whats-wrong-with-the-world/downloads/g-k-chesterton_whats-wrong-with-the-world.epub?source=feed",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "The First Men in the Moon, by H. G. Wells",
-      "url": "https://standardebooks.org/ebooks/h-g-wells/the-first-men-in-the-moon",
-      "date": 1745864184,
-      "author": "",
-      "guid": 36643,
-      "unread": true,
-      "content": "<article>Two British men become the first humans to reach the Moon.</article>",
-      "contentLength": 58,
-      "flags": null,
-      "enclosureUrl": "https://standardebooks.org/ebooks/h-g-wells/the-first-men-in-the-moon/downloads/h-g-wells_the-first-men-in-the-moon.epub?source=feed",
       "enclosureMime": "",
       "commentsUrl": null
     }
