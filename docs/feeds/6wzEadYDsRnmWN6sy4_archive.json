@@ -1,0 +1,30 @@
+{
+  "id": "6wzEadYDsRnmWN6sy4",
+  "title": "Github Issues",
+  "displayTitle": "Github Issues",
+  "url": "",
+  "feedLink": "",
+  "isQuery": true,
+  "isEmpty": false,
+  "isHidden": false,
+  "itemCount": 1,
+  "items": [
+    {
+      "title": "[issue-open]: 🚀 Join the World Computer Hacker League!",
+      "url": "https://github.com/exaroth/liveboat-github-runner/issues/2",
+      "date": 1752014252,
+      "author": "espieux",
+      "guid": 2112,
+      "unread": true,
+      "content": "Hi exaroth 👋<p>We noticed your repository includes a `dfx.json` file, which means you're building on the Internet Computer Protocol (ICP) 🚀  </p>That's awesome! Since you're already familiar with the ICP ecosystem, we wanted to personally invite you to the **World Computer Hackathon League (WCHL)**, a global competition for top Web3 and AI builders like you, with **over $300,000 in prizes** up for grabs.<p>👉 https://pthub.short.gy/wchlg</p><p>If you decide to join, make sure to select the **Portugal HUB 🇵🇹** when entering the Discord.  </p>We're one of the most active and supportive hubs in the ecosystem. You will have access to bookable 1-to-1 meetings with experienced mentors to help shape and refine your project.<p>Let's join forces to build something impactful together 💪</p>",
+      "contentLength": 779,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    }
+  ],
+  "tags": [
+    "gh"
+  ]
+}
