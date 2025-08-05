@@ -58,9 +58,9 @@ https://link.chtbl.com/corecursive?id=corecursive&platform=rss "~Podcast - CoRec
 https://anchor.fm/s/174cb1b8/podcast/rss "~Podcast - MLOps" ! podcast
 https://www.youtube.com/feeds/videos.xml?channel_id=UCfuj1MM5p37CRzWYPv_PsWA "~Podcast - CodeTalks" ! podcast
 https://www.youtube.com/feeds/videos.xml?channel_id=UCmYAQDZIQGm_kPvemBc_qwg "~Podcast - DevConfs" ! podcast
-https://openrss.org/podcasts.apple.com/pl/podcast/ww2-pod-we-have-ways-of-making-you-talk/id1457552694 "~Podcast - WW2 Pod" ! podcast
+https://www.youtube.com/feeds/videos.xml?channel_id=UCSGFY2a_DYK8plQI_fcY_Xg "~Podcast - WW2 Pod" ! podcast
 https://www.youtube.com/feeds/videos.xml?channel_id=UCUYK0BJZF3yNb2fw1EdAXUQ "~The Rest is History" ! podcast
-https://openrss.org/podcasts.apple.com/us/podcast/dan-carlins-hardcore-history/id173001861 "~Dan Carlin" ! podcast
+https://www.youtube.com/feeds/videos.xml?channel_id=UC3RcjbuyF5M1U4R62zjE3hg "~Dan Carlin" ! podcast
 
 https://gh-issues-to-rss.fly.dev/exaroth/liveboat?m=io ! gh
 https://gh-issues-to-rss.fly.dev/exaroth/liveboat-github-runner?m=io ! gh
@@ -193,5 +193,9 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UC28n0tlcNSa1iPe5mettocg ! y
 https://www.youtube.com/feeds/videos.xml?channel_id=UCXR5PCyUI2pG_a3ydnCIS-g ! yt
 # Displaced Gamers
 https://www.youtube.com/feeds/videos.xml?channel_id=UCWoSKWs8h6lFdiEDAjuIfpA ! yt
+# Coffeezila
+https://www.youtube.com/feeds/videos.xml?channel_id=UCFQMnBA3CS502aghlcr0_aw ! yt
 # Marquees Brownlee
 https://www.youtube.com/feeds/videos.xml?channel_id=UCBJycsmduvYEL83R_U4JriQ ! yt
+# Dan Carlin
+https://www.youtube.com/feeds/videos.xml?channel_id=UC3RcjbuyF5M1U4R62zjE3hg ! yt
