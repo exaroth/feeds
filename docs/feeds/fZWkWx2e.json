@@ -7,8 +7,36 @@
   "isQuery": true,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 26,
+  "itemCount": 33,
   "items": [
+    {
+      "title": "Ari Aster’s Closet Picks",
+      "url": "https://www.youtube.com/watch?v=vj6QawF-Q9w",
+      "date": 1754332364,
+      "author": "CRITERION",
+      "guid": 9184,
+      "unread": true,
+      "content": "<article>The filmmaker returns to the Criterion Closet, where he praises seventies thrillers like THE PARALLAX VIEW and STRAW DOGS, talks about YOU CAN COUNT ON ME and how “no one writes dialogue like Kenneth Lonergan,” and connects TARGETS to his new film EDDINGTON.</article>",
+      "contentLength": 262,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/vj6QawF-Q9w?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "Danny Boyle’s Closet Picks",
+      "url": "https://www.youtube.com/watch?v=Ud1T9R6vy2s",
+      "date": 1754079765,
+      "author": "CRITERION",
+      "guid": 9183,
+      "unread": true,
+      "content": "<article>The filmmaker cites ALL THAT JAZZ as a major influence on modern editing, reveals the connection between MEMORIES OF UNDERDEVELOPMENT and TRAINSPOTTING, and shares his theory on why a director’s first film is always their best.</article>",
+      "contentLength": 229,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/Ud1T9R6vy2s?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Simon Mayo Interviews Guy Pearce",
       "url": "https://www.youtube.com/watch?v=yD565MeocTk",
@@ -122,6 +150,20 @@
       "commentsUrl": null
     },
     {
+      "title": "Barbie Ferreira’s Closet Picks",
+      "url": "https://www.youtube.com/watch?v=RpttR1gI91Q",
+      "date": 1753727788,
+      "author": "CRITERION",
+      "guid": 9182,
+      "unread": true,
+      "content": "<article>The actor selects favorite horror films like VIDEODROME and THE VANISHING, talks about connecting with the work of Gregg Araki, and recommends that everyone watch Todd Haynes’s SAFE.</article>",
+      "contentLength": 184,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/RpttR1gI91Q?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
       "title": "Street Trash - re:View",
       "url": "https://www.youtube.com/watch?v=sqJpoWE0jaY",
       "date": 1753640450,
@@ -132,6 +174,20 @@
       "contentLength": 314,
       "flags": null,
       "enclosureUrl": "https://www.youtube.com/v/sqJpoWE0jaY?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "Tunde Adebimpe’s Closet Picks",
+      "url": "https://www.youtube.com/watch?v=2sGGq2NxN10",
+      "date": 1753464648,
+      "author": "CRITERION",
+      "guid": 9181,
+      "unread": true,
+      "content": "<article>The musician and actor talks about what makes Stan Brakhage’s films “very punk rock,” reflects on working with Jonathan Demme, and selects favorite films such as BLACK GIRL and TRUE STORIES.</article>",
+      "contentLength": 196,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/2sGGq2NxN10?version=3",
       "enclosureMime": "",
       "commentsUrl": null
     },
@@ -248,6 +304,34 @@
       "commentsUrl": null
     },
     {
+      "title": "The Criterion Mobile Closet in Los Angeles at the Aero Theatre",
+      "url": "https://www.youtube.com/watch?v=qE7j_1UOPXI",
+      "date": 1753219369,
+      "author": "CRITERION",
+      "guid": 9180,
+      "unread": true,
+      "content": "<article>Back in June, the Criterion Mobile Closet made its second stop in Los Angeles, this time in Santa Monica at the Aero Theatre in partnership with American Cinematheque. Take a look back on our amazing weekend! Thank you to everyone who spent their time with us — we loved meeting you all and were thrilled by dedication to cinema and enthusiasm for community. Keep an eye open for future Mobile Closet announcements just around the corner.</article>",
+      "contentLength": 440,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/qE7j_1UOPXI?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "Matthew Broderick’s Closet Picks",
+      "url": "https://www.youtube.com/watch?v=NEkSirbDU2E",
+      "date": 1753130335,
+      "author": "CRITERION",
+      "guid": 9179,
+      "unread": true,
+      "content": "<article>The actor shares what he loves about Preston Sturges and Alfred Hitchcock, recommends BRIEF ENCOUNTER and the more intimate works of David Lean, and selects films featuring favorite actors like Claude Rains and Carole Lombard.</article>",
+      "contentLength": 226,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/NEkSirbDU2E?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
       "title": "Best of the Worst: Star Slammer, Talos, and The Apple",
       "url": "https://www.youtube.com/watch?v=AV95LmBqFJU",
       "date": 1753019313,
@@ -258,6 +342,20 @@
       "contentLength": 567,
       "flags": null,
       "enclosureUrl": "https://www.youtube.com/v/AV95LmBqFJU?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "Simon Pegg’s Closet Picks",
+      "url": "https://www.youtube.com/watch?v=vIYr2eAlazo",
+      "date": 1752863490,
+      "author": "CRITERION",
+      "guid": 9178,
+      "unread": true,
+      "content": "<article>The actor, screenwriter, and comedian reminiscences about showing SHAUN OF THE DEAD to George A. Romero, shares the many reasons why he loves QUADROPHENIA, and praises the way David Lynch’s films lend themselves to interpretation.</article>",
+      "contentLength": 232,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/vIYr2eAlazo?version=3",
       "enclosureMime": "",
       "commentsUrl": null
     },
