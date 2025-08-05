@@ -7,7 +7,7 @@
   "isQuery": true,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 263,
+  "itemCount": 266,
   "items": [
     {
       "title": "Nuclear Bomb Survivors Share Their Stories | Atomic People | Full Documentary | PBS",
@@ -846,6 +846,20 @@
       "contentLength": 83,
       "flags": null,
       "enclosureUrl": "https://www.youtube.com/v/93jNudP_rYE?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "The dating app that doxxed 72,000 women...",
+      "url": "https://www.youtube.com/watch?v=miTpJmMt7uo",
+      "date": 1753887375,
+      "author": "Fireship",
+      "guid": 9038,
+      "unread": true,
+      "content": "<article>Get up to 67% off VPS at Hostinger. Use code FIRESHIP for an extra discount at https://hostinger.com/fireship\n\nIn today's video, we'll find out how the tea app was compromised and look at all the hilarious stuff developers have been building with the hacked data.\n\n#teaapp #tech #coding #programming \n\n💬 Chat with Me on Discord\n\nhttps://discord.gg/fireship\n\n🔗 Resources\nhttps://techcrunch.com/2025/07/26/dating-safety-app-tea-breached-exposing-72000-user-images/\n\n🔥 Get More Content - Upgrade to PRO\n\nUpgrade at https://fireship.io/pro\nUse code YT25 for 25% off PRO access \n\n🎨 My Editor Settings\n\n- Atom One Dark \n- vscode-icons\n- Fira Code Font\n\n🔖 Topics Covered\n- How the Tea app got hacked\n- Who is Sean Cook?\n- How to not set up Firebase\n- Online Safety Act\n- Did vibe coding cause the Tea app hack?</article>",
+      "contentLength": 818,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/miTpJmMt7uo?version=3",
       "enclosureMime": "",
       "commentsUrl": null
     },
@@ -2208,6 +2222,20 @@
       "commentsUrl": null
     },
     {
+      "title": "Alibaba is coming for Claude...",
+      "url": "https://www.youtube.com/watch?v=-w53i6Ae-YM",
+      "date": 1753288145,
+      "author": "Fireship",
+      "guid": 9037,
+      "unread": true,
+      "content": "<article>Try out the awesome new CodeRabbit VS code extension for free https://coderabbit.link/fireship-vscode\n\nQwen3-Coder just became the first open-weight model to match the programming performance of Claude 4, with a much smaller model size. But is it enough to actually challenge Claude Code?\n\n💬 Chat with Me on Discord\n\nhttps://discord.gg/fireship\n\n🔥 Get More Content - Upgrade to PRO\n\nUpgrade at https://fireship.io/pro\nUse code YT25 for 25% off PRO access \n\n🎨 My Editor Settings\n\n- Atom One Dark \n- vscode-icons\n- Fira Code Font</article>",
+      "contentLength": 536,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/-w53i6Ae-YM?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
       "title": "Why The World's Most Segregated Metro Exists",
       "url": "https://www.youtube.com/watch?v=3rBRdzf1fYo",
       "date": 1753287356,
@@ -3548,6 +3576,20 @@
       "contentLength": 689,
       "flags": null,
       "enclosureUrl": "https://www.youtube.com/v/j3l5bCGjqLE?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "AWS just released its Cursor killer…",
+      "url": "https://www.youtube.com/watch?v=gA6r7iVzP6M",
+      "date": 1752679018,
+      "author": "Fireship",
+      "guid": 9036,
+      "unread": true,
+      "content": "<article>Try Brilliant free for 30 days https://brilliant.org/fireship and get 20% off a premium subscription\n\nOut of nowhere, Amazon just released its own AI IDE named Kiro.\n\nPowered by Claude 4.0, Kiro promises to bring structure to AI coding with an approach it calls 'spec-driven development'. But can it really convince developers to switch from the likes of Cursor, Copilot or Firebase Studio?\n\n#AI #AWS #Kiro #coding \n\n💬 Chat with Me on Discord\n\nhttps://discord.gg/fireship\n\n🔗 Resources\nhttps://kiro.dev/blog/introducing-kiro/\n\n🔥 Get More Content - Upgrade to PRO\n\nUpgrade at https://fireship.io/pro\nUse code YT25 for 25% off PRO access \n\n🎨 My Editor Settings\n\n- Atom One Dark \n- vscode-icons\n- Fira Code Font\n\n🔖 Topics Covered\n- What is Kiro\n- Existing AI IDE Limitations\n- Kiro First Impressions\n- Kiro vs Cursor</article>",
+      "contentLength": 827,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/gA6r7iVzP6M?version=3",
       "enclosureMime": "",
       "commentsUrl": null
     },
