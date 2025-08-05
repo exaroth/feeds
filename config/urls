@@ -26,7 +26,7 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCUyvQV2JsICeLZP4c_h40kA "~M
 https://www.youtube.com/feeds/videos.xml?channel_id=UCI62rVaY9gn5yO3Msh6BN0w "~Movies - Layton Eversaul" ! movies
 https://www.youtube.com/feeds/videos.xml?channel_id=UCFOfgEQLHpPuVNP_m-XldTg "~Movies - FilmStack" ! movies
 https://www.youtube.com/feeds/videos.xml?channel_id=UCErmMCK1sHF-kCtyHpuSXtQ "~Movies - Kermode" ! movies
-https://www.youtube.com/feeds/videos.xml?playlist_id=PLpd1itfTDtaVLCrM6OgjyE7TY_CwUnnGE "~Movies - A24 Podcast"
+https://www.youtube.com/feeds/videos.xml?playlist_id=PLpd1itfTDtaVLCrM6OgjyE7TY_CwUnnGE "~Movies - A24 Podcast" ! movies
 
 https://hnrss.org/best "~HN" ! dev hn
 https://hnrss.org/show?points=60 "~HN Show" ! dev hn
