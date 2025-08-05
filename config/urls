@@ -12,7 +12,6 @@ file:///home/exaroth/.scripts/atom.xml "~ Atom Pocket"
 https://zig.news/rss "~Zig News" ! dev
 https://standardebooks.org/feeds/rss/new-releases "~Standard E-Books"
 
-https://access.acast.com/rss/theeconomistmorningbriefing/default "~News - Daily Brief" ! news
 https://www.youtube.com/feeds/videos.xml?channel_id=UCknLrEdhRCp1aegoMqRaCZg "~News - DW" ! news
 https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg "~News - Bloomberg" ! news
 https://feeds.bbci.co.uk/news/world/rss.xml "~News - BBC" ! news
