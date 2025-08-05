@@ -63,10 +63,10 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCmYAQDZIQGm_kPvemBc_qwg "~P
 https://www.youtube.com/feeds/videos.xml?channel_id=UCSGFY2a_DYK8plQI_fcY_Xg "~Podcast - WW2 Pod" ! podcast
 https://therestishistory.com/feed "~The Rest is History" ! podcast
 https://www.youtube.com/feeds/videos.xml?channel_id=UC3RcjbuyF5M1U4R62zjE3hg "~Dan Carlin" ! podcast
-https://www.historyextra.com/feed/atom/ "~BBC History" ! podcast
 
 https://gh-issues-to-rss.fly.dev/exaroth/liveboat?m=io ! gh
 https://gh-issues-to-rss.fly.dev/exaroth/liveboat-github-runner?m=io ! gh
+https://gh-issues-to-rss.fly.dev/exaroth/awesome-dev.news
 
 # Astrum
 https://www.youtube.com/feeds/videos.xml?channel_id=UC-9b7aDP6ZN0coj9-xFnrtw ! yt
