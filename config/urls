@@ -17,7 +17,7 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCknLrEdhRCp1aegoMqRaCZg "~N
 https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg "~News - Bloomberg" ! news
 https://feeds.bbci.co.uk/news/world/rss.xml "~News - BBC" ! news
 https://www.youtube.com/feeds/videos.xml?channel_id=UCkdnY2hNC0sdlVXPtWuNQ8g "~NYT" ! news
-https://rss-bridge.cheredeprince.net/?action=display&bridge=ReutersBridge&feed=home%2Ftopnews&format=Atom "~Reuters" ! news
+https://www.channel4.com/news/world/feed "~Channel 4" ! news
 
 https://www.youtube.com/feeds/videos.xml?channel_id=UCrTNhL_yO3tPTdQ5XgmmWjA "~Movies - RedLetterMedia" ! movies
 https://www.youtube.com/feeds/videos.xml?channel_id=UCjFqcJQXGZ6T6sxyFB-5i6A "~Movies - Every Frame a Painting" ! movies
