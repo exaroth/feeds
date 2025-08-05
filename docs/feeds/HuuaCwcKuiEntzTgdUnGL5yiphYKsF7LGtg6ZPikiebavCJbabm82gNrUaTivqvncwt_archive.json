@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 9,
+  "itemCount": 10,
   "items": [
+    {
+      "title": "The Charwoman’s Shadow, by Lord Dunsany",
+      "url": "https://standardebooks.org/ebooks/lord-dunsany/the-charwomans-shadow",
+      "date": 1754416220,
+      "author": "",
+      "guid": 9315,
+      "unread": true,
+      "content": "<article>A young nobleman becomes a magician to secure his sister’s marriage.</article>",
+      "contentLength": 70,
+      "flags": null,
+      "enclosureUrl": "https://standardebooks.org/ebooks/lord-dunsany/the-charwomans-shadow/downloads/lord-dunsany_the-charwomans-shadow.epub?source=feed",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Saint Joan, by George Bernard Shaw",
       "url": "https://standardebooks.org/ebooks/george-bernard-shaw/saint-joan",
