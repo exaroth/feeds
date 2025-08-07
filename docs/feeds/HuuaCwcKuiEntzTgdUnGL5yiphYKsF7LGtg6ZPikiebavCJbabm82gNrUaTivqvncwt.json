@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 10,
+  "itemCount": 9,
   "items": [
+    {
+      "title": "The Purple Cloud, by M. P. Shiel",
+      "url": "https://standardebooks.org/ebooks/m-p-shiel/the-purple-cloud",
+      "date": 1754491136,
+      "author": "",
+      "guid": 9557,
+      "unread": true,
+      "content": "<article>A young adventurer embarks on a polar expedition, only to return to an unbelievably different world.</article>",
+      "contentLength": 100,
+      "flags": null,
+      "enclosureUrl": "https://standardebooks.org/ebooks/m-p-shiel/the-purple-cloud/downloads/m-p-shiel_the-purple-cloud.epub?source=feed",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "The Charwoman’s Shadow, by Lord Dunsany",
       "url": "https://standardebooks.org/ebooks/lord-dunsany/the-charwomans-shadow",
@@ -118,34 +132,6 @@
       "contentLength": 102,
       "flags": null,
       "enclosureUrl": "https://standardebooks.org/ebooks/a-p-herbert/the-house-by-the-river/downloads/a-p-herbert_the-house-by-the-river.epub?source=feed",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Aspects of the Novel, by E. M. Forster",
-      "url": "https://standardebooks.org/ebooks/e-m-forster/aspects-of-the-novel",
-      "date": 1752778063,
-      "author": "",
-      "guid": 4310,
-      "unread": true,
-      "content": "<article>E. M. Forster offers an analysis of aspects of the novel.</article>",
-      "contentLength": 57,
-      "flags": null,
-      "enclosureUrl": "https://standardebooks.org/ebooks/e-m-forster/aspects-of-the-novel/downloads/e-m-forster_aspects-of-the-novel.epub?source=feed",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "An Outcast of the Islands, by Joseph Conrad",
-      "url": "https://standardebooks.org/ebooks/joseph-conrad/an-outcast-of-the-islands",
-      "date": 1752775571,
-      "author": "",
-      "guid": 4309,
-      "unread": true,
-      "content": "<article>Disgraced in a scandal, a Dutch clerk flees to a river settlement on Borneo, where he is tempted by a native beauty.</article>",
-      "contentLength": 116,
-      "flags": null,
-      "enclosureUrl": "https://standardebooks.org/ebooks/joseph-conrad/an-outcast-of-the-islands/downloads/joseph-conrad_an-outcast-of-the-islands.epub?source=feed",
       "enclosureMime": "",
       "commentsUrl": null
     }
