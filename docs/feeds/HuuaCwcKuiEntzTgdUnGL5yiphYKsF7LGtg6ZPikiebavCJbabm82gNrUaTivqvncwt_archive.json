@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 9,
+  "itemCount": 10,
   "items": [
+    {
+      "title": "Clerambault, by Romain Rolland",
+      "url": "https://standardebooks.org/ebooks/romain-rolland/clerambault/katherine-miller",
+      "date": 1754583929,
+      "author": "",
+      "guid": 10070,
+      "unread": true,
+      "content": "<article>A peace activist must contend with alienation from his his friends and family.</article>",
+      "contentLength": 78,
+      "flags": null,
+      "enclosureUrl": "https://standardebooks.org/ebooks/romain-rolland/clerambault/katherine-miller/downloads/romain-rolland_clerambault_katherine-miller.epub?source=feed",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "The Purple Cloud, by M. P. Shiel",
       "url": "https://standardebooks.org/ebooks/m-p-shiel/the-purple-cloud",
