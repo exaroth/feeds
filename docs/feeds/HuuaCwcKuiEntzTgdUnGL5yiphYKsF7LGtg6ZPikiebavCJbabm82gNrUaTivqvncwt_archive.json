@@ -7,8 +7,36 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 10,
+  "itemCount": 12,
   "items": [
+    {
+      "title": "The Inheritors, by Joseph Conrad and Ford Madox Ford",
+      "url": "https://standardebooks.org/ebooks/joseph-conrad_ford-madox-ford/the-inheritors",
+      "date": 1754760840,
+      "author": "",
+      "guid": 10402,
+      "unread": true,
+      "content": "<article>A young writer dabbling in journalism meets a strange, otherworldly woman with long-term political goals.</article>",
+      "contentLength": 105,
+      "flags": null,
+      "enclosureUrl": "https://standardebooks.org/ebooks/joseph-conrad_ford-madox-ford/the-inheritors/downloads/joseph-conrad-ford-madox-ford_the-inheritors.epub?source=feed",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "Simon the Coldheart, by Georgette Heyer",
+      "url": "https://standardebooks.org/ebooks/georgette-heyer/simon-the-coldheart",
+      "date": 1754759808,
+      "author": "",
+      "guid": 10401,
+      "unread": true,
+      "content": "<article>A lowly squire in medieval England becomes a powerful noble through guile, loyalty, and unexpected love.</article>",
+      "contentLength": 104,
+      "flags": null,
+      "enclosureUrl": "https://standardebooks.org/ebooks/georgette-heyer/simon-the-coldheart/downloads/georgette-heyer_simon-the-coldheart.epub?source=feed",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Clerambault, by Romain Rolland",
       "url": "https://standardebooks.org/ebooks/romain-rolland/clerambault/katherine-miller",
