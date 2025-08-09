@@ -12,15 +12,11 @@ file:///home/exaroth/.scripts/atom.xml "~ Atom Pocket"
 https://theweekinchess.com/twic-rss-feed "~Week in Chess" chess
 https://standardebooks.org/feeds/rss/new-releases "~Standard E-Books"
 
-
-
 https://zig.news/rss "~Zig News" ! dev
 http://blog.golang.org/feed.atom "~Golang Blog" ! dev
 https://kubernetes.io/feed.xml "~Kubernetes Blog" ! dev
 https://blog.rust-lang.org/feed "~Rust Blog" ! dev
 https://blog.python.org/feeds/posts/default?alt=rss "~Python official news" ! dev
-
-
 
 
 https://www.youtube.com/feeds/videos.xml?channel_id=UCknLrEdhRCp1aegoMqRaCZg "~News - DW" ! news
@@ -40,9 +36,9 @@ https://www.youtube.com/feeds/videos.xml?playlist_id=PLpd1itfTDtaVLCrM6OgjyE7TY_
 https://www.youtube.com/feeds/videos.xml?playlist_id=PL7D89754A5DAD1E8E "~Movies - Criterion" ! movies
 http://feeds.libsyn.com/265448/rss "~Movies - Team Deakins" ! movies
 
-https://hnrss.org/best "~HN" ! dev hn
-https://hnrss.org/show?points=60 "~HN Show" ! dev hn
-https://hnrss.org/frontpage?points=75 "~HN Front" ! dev hn
+https://hnrss.org/best "~HN" ! hn
+https://hnrss.org/show?points=60 "~HN Show" ! hn
+https://hnrss.org/frontpage?points=75 "~HN Front" ! hn
 
 https://techcrunch.com/feed/ ! tech
 http://rss.slashdot.org/Slashdot/slashdotMain ! tech
