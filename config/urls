@@ -6,11 +6,20 @@ file:///home/exaroth/.scripts/atom.xml "~ Atom Pocket"
 "query:Movies:tags # \"movies\" and unread = \"yes\""
 "query:HN:tags # \"hn\""
 "query:Tech:tags # \"tech\""
+"query:Dev:tags # \"dev\""
+"query:Chess:tags # \"chess\""
 
 "query:Github Issues:tags # \"gh\" and age < 14"
 
 https://zig.news/rss "~Zig News" ! dev
+http://blog.golang.org/feed.atom "~Golang Blog" ! dev
+https://kubernetes.io/feed.xml "~Kubernetes Blog" ! dev
+https://blog.rust-lang.org/feed "~Rust Blog" ! dev
+https://blog.python.org/feeds/posts/default?alt=rss "~Python official news" ! dev
+
+https://theweekinchess.com/twic-rss-feed "~Week in Chess" ! chess
 https://standardebooks.org/feeds/rss/new-releases "~Standard E-Books"
+
 
 https://www.youtube.com/feeds/videos.xml?channel_id=UCknLrEdhRCp1aegoMqRaCZg "~News - DW" ! news
 https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg "~News - Bloomberg" ! news
