@@ -7,8 +7,22 @@
   "isQuery": true,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 86,
+  "itemCount": 84,
   "items": [
+    {
+      "title": "Show HN: The current sky at your approximate location, as a CSS gradient",
+      "url": "https://sky.dlazaro.ca/",
+      "date": 1754745916,
+      "author": "dlazaro",
+      "guid": 10375,
+      "unread": true,
+      "content": "<!DOCTYPE html>",
+      "contentLength": 0,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": "https://news.ycombinator.com/item?id=44846281"
+    },
     {
       "title": "Partially Matching Zig Enums",
       "url": "https://matklad.github.io/2025/08/08/partially-matching-zig-enums.html",
@@ -36,6 +50,20 @@
       "enclosureUrl": "",
       "enclosureMime": "",
       "commentsUrl": "https://news.ycombinator.com/item?id=44844394"
+    },
+    {
+      "title": "Breaking the Sorting Barrier for Directed Single-Source Shortest Paths",
+      "url": "https://arxiv.org/abs/2504.17033",
+      "date": 1754717649,
+      "author": "pentestercrab",
+      "guid": 10377,
+      "unread": true,
+      "content": "<!DOCTYPE html>",
+      "contentLength": 0,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": "https://news.ycombinator.com/item?id=44844257"
     },
     {
       "title": "What the Windsurf sale means for the AI coding ecosystem",
@@ -1156,62 +1184,6 @@
       "enclosureUrl": "",
       "enclosureMime": "",
       "commentsUrl": "https://news.ycombinator.com/item?id=44813397"
-    },
-    {
-      "title": "Zig Error Patterns",
-      "url": "https://glfmn.io/posts/zig-error-patterns/",
-      "date": 1754492599,
-      "author": "Bogdanp",
-      "guid": 9685,
-      "unread": true,
-      "content": "<p>Although I try to make good use of the debugger, I am quite used to print-based\ndebugging, especially for unit tests. I wanted to explore some tricks to improve\nprint-based debugging, and also incorporate the debugger more.</p><h2>print-based debugging improved</h2><p>One big problem with using print debugging is spammy output. If I am\nrunning something in a loop, and only one iteration of the loop has anything\ninteresting, I still need to filter and sort through every iteration's output.</p><p>Or perhaps I am working with some data structure that has a printable\nrepresentation that is easier to parse than the raw data; if I don't know where\nthe error comes from I would have to litter print functions everywhere hoping to\ncatch the necessary context.</p><p>However, I realized that since zig tests use s, instead of panics, it is\npossible to use  to print something only when a test actually fails.</p><pre data-lang=\"zig\"><code data-lang=\"zig\"></code></pre><p>Does a fantastic job of avoiding cluttering the code, and providing the precise\ncontext necessary when an error actually occurs.</p><h2>Running tests in the debugger</h2><p>If anything more complex is necessary, using the debugger is the way to go.\nHowever, naively trying to run  or  directly from the\nterminal gets difficult, as the test binaries are not in  directory\n(understandably) but in the  directory.</p><p>I learned a trick from <a href=\"https://ziggit.dev/t/zig-debugging-with-lldb/3931/7?u=glfmn\">ziggit</a> that the  can run\ncommands, and you can feed the artifact path of a build step as an argument into\nthe command:</p><figure><pre data-lang=\"zig\"><code data-lang=\"zig\"></code></pre></figure><p>This makes it really easy to run the proper binary; however, this isn't enough\non its own: the debugger only kicks into action for a breakpoint or panic, but\nthe test runner gracefully handles errors.</p><p>We can get around this by adding  calls, but then we are\npotentially back to square one, where we have to speculatively add breakpoints\nand catch the precise moment where things fail, or have to manually step through\nuntil failure.</p><p>Of course, a good solution is to use:</p><pre data-lang=\"zig\"><code data-lang=\"zig\"></code></pre><p>This will break the program at the precise moment we hit an error. There's a\nchance enough context is still around to snoop at with the debugger, and we\nwould also have the debug printing that the  functions\nprovide.</p><p>However, this does have downsides. Consider the program:</p><pre data-lang=\"zig\"><code data-lang=\"zig\"></code></pre><p>If we run , instead of reporting individual test errors, the\nsummary will just report that the entire test  failed:</p><pre><code></code></pre><p>If we still want to preserve the normal behavior except when we actually \nto break for a debugger, then we need one more trick.</p><p>Starting from a simple build script that only runs tests:</p><figure><pre data-linenos=\"\" data-lang=\"zig\"><code data-lang=\"zig\"><table><tbody><tr></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr></tbody></table></code></pre></figure><p>We can add the compile time option like so:</p><figure><pre data-linenos=\"\" data-lang=\"zig\"><code data-lang=\"zig\"><table><tbody><tr><td></td></tr><tr><td></td></tr></tbody></table></code></pre></figure><p>We need to add the generated options module to our lib:</p><figure><pre data-linenos=\"\" data-lang=\"zig\"><code data-lang=\"zig\"><table><tbody><tr><td></td></tr></tbody></table></code></pre></figure><p>Then, in our  file we can reference the options like so:</p><figure><pre data-linenos=\"\" data-lang=\"zig\"><code data-lang=\"zig\"><table><tbody><tr></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr></tbody></table></code></pre></figure><p>Now, we can run the test and get no breakpoint:</p><p>However, we run into a snag: this value is observable to our program, but\nwe have to recompile the  in order to change the value. We need\nto add the option to the build system itself:</p><figure><pre data-linenos=\"\" data-lang=\"zig\"><code data-lang=\"zig\"><table><tbody><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr></tbody></table></code></pre></figure><pre><code></code></pre><p>And observe the change in behavior.</p><p>As a final step, we can hook up the command to run our debugger when\nthe  flag is set like so:</p><figure><pre data-linenos=\"\" data-lang=\"zig\"><code data-lang=\"zig\"><table><tbody><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr></tbody></table></code></pre></figure><p>Now, if we run with the  flag, the test runner will automatically\nrun in the debugger, and will break on error! See a screenshot <a href=\"https://glfmn.io/posts/zig-error-patterns/./seergdb.png\">here</a>.</p><p>It might be nice to encapsulate the config option checking in a function:</p><pre data-lang=\"zig\"><code data-lang=\"zig\"></code></pre><p>But I leave that up to your judgement.</p><p>This guide was written with Zig version:</p><pre><code></code></pre><p>Also, special thanks to <a href=\"https://ziggit.dev/u/alanza/\">Alanza</a> for reading an early draft of this article.</p>",
-      "contentLength": 3323,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": "https://news.ycombinator.com/item?id=44812985"
-    },
-    {
-      "title": "Breaking the sorting barrier for directed single-source shortest paths",
-      "url": "https://www.quantamagazine.org/new-method-is-the-fastest-way-to-find-the-best-routes-20250806/",
-      "date": 1754491382,
-      "author": "baruchel",
-      "guid": 9625,
-      "unread": true,
-      "content": "<p>If you want to solve a tricky problem, it often helps to get organized. You might, for example, break the problem into pieces and tackle the easiest pieces first. But this kind of sorting has a cost. You may end up spending too much time putting the pieces in order.</p><p>This dilemma is especially relevant to one of the most iconic problems in computer science: finding the shortest path from a specific starting point in a network to every other point. It’s like a souped-up version of a problem you need to solve each time you move: learning the best route from your new home to work, the gym and the supermarket.</p><p>“Shortest-paths is a beautiful problem that anyone in the world can relate to,” said <a href=\"https://hjemmesider.diku.dk/~mthorup/\">Mikkel Thorup</a>, a computer scientist at the University of Copenhagen.</p><p>Intuitively, it should be easiest to find the shortest path to nearby destinations. So if you want to design the fastest possible algorithm for the shortest-paths problem, it seems reasonable to start by finding the closest point, then the next-closest, and so on. But to do that, you need to repeatedly figure out which point is closest. You’ll sort the points by distance as you go. There’s a fundamental speed limit for any algorithm that follows this approach: You can’t go any faster than the time it takes to sort.</p><p>Forty years ago, researchers designing shortest-paths algorithms ran up against this “sorting barrier.” Now, a team of researchers has devised <a href=\"https://arxiv.org/abs/2504.17033\">a new algorithm that breaks it</a>. It doesn’t sort, and it runs faster than any algorithm that does.</p><p>“The authors were audacious in thinking they could break this barrier,” said <a href=\"https://www.cs.princeton.edu/people/profile/ret\">Robert Tarjan</a>, a computer scientist at Princeton University. “It’s an amazing result.”</p><h2><strong>The Frontier of Knowledge</strong></h2><p>To analyze the shortest-paths problem mathematically, researchers use the language of graphs — networks of points, or nodes, connected by lines. Each link between nodes is labeled with a number called its weight, which can represent the length of that segment or the time needed to traverse it. There are usually many routes between any two nodes, and the shortest is the one whose weights add up to the smallest number. Given a graph and a specific “source” node, an algorithm’s goal is to find the shortest path to every other node.</p><p>The <a href=\"https://www.quantamagazine.org/computer-scientists-establish-the-best-way-to-traverse-a-graph-20241025/\">most famous shortest-paths algorithm</a>, <a href=\"https://doi.org/10.1007/BF01386390\">devised</a> by the pioneering computer scientist Edsger Dijkstra in 1956, starts at the source and works outward step by step. It’s an effective approach because knowing the shortest path to nearby nodes can help you find the shortest paths to more distant ones. But because the end result is a sorted list of shortest paths, the sorting barrier sets a fundamental limit on how fast the algorithm can run.</p><p>In 1984, Tarjan and another researcher <a href=\"https://dl.acm.org/doi/10.1145/28869.28874\">improved Dijkstra’s original algorithm</a> so that it hit this speed limit. Any further improvement would have to come from an algorithm that avoids sorting.</p><p>In the late 1990s and early 2000s, Thorup and other researchers devised algorithms that broke the sorting barrier, but they needed to make <a href=\"https://dl.acm.org/doi/10.1145/316542.316548\">certain</a><a href=\"https://epubs.siam.org/doi/10.1137/S0097539702419650\">assumptions</a> about weights. Nobody knew how to extend their techniques to arbitrary weights. It seemed they’d hit the end of the road.</p><p>“The research stopped for a very long time,” said <a href=\"https://iiis.tsinghua.edu.cn/en/People/Faculty/DuanRan.htm\">Ran Duan</a>, a computer scientist at Tsinghua University in Beijing. “Many people believed that there’s no better way.”</p><p>Duan wasn’t one of them. He’d long dreamed of building a shortest-paths algorithm that could break through the sorting barrier on all graphs. Last fall, he finally succeeded.</p><p>Duan’s interest in the sorting barrier dates back nearly 20 years to his time in graduate school at the University of Michigan, where his adviser was one of the researchers who worked out how to break the barrier in specific cases. But it wasn’t until 2021 that Duan devised a more promising approach.</p><p>The key was to focus on where the algorithm goes next at each step. Dijkstra’s algorithm takes the region that it has already explored in previous steps. It decides where to go next by scanning this region’s “frontier” — that is, all the nodes connected to its boundary. This doesn’t take much time at first, but it gets slower as the algorithm progresses.</p><p>Duan instead envisioned grouping neighboring nodes on the frontier into clusters. He would then only consider one node from each cluster. With fewer nodes to sift through, the search could be faster at each step. The algorithm also might end up going somewhere other than the closest node, so the sorting barrier wouldn’t apply. But ensuring that this clustering-based approach actually made the algorithm faster rather than slower would be a challenge.</p><p>Duan fleshed out this basic idea over the following year, and by fall 2022, he was optimistic that he could surmount the technical hurdles. He roped in three graduate students to help work out the details, and a few months later they arrived at <a href=\"https://arxiv.org/abs/2307.04139\">a partial solution</a> — an algorithm that broke the sorting barrier for any weights, but only on so-called undirected graphs.</p><p>In undirected graphs, every link can be traversed in both directions. Computer scientists are usually more interested in the broader class of graphs that feature one-way paths, but these “directed” graphs are often trickier to navigate.</p><p>“There could be a case that A can reach B very easily, but B cannot reach A very easily,” said <a href=\"https://matthew99a.github.io/\">Xiao Mao</a>, a computer science graduate student at Stanford University. “That’s going to give you a lot of trouble.”</p><p>In the summer of 2023, Mao heard Duan give a talk about the undirected-graph algorithm at a conference in California. He struck up a conversation with Duan, whose work he’d long admired.</p><p>“I met him for the first time in real life,” Mao recalled. “It was very exciting.”</p><p>After the conference, Mao began thinking about the problem in his spare time. Meanwhile, Duan and his colleagues were exploring new approaches that could work on directed graphs. They took inspiration from another venerable algorithm for the shortest-paths problem, called the Bellman-Ford algorithm, that doesn’t produce a sorted list. At first glance, it seemed like an unwise strategy, since the Bellman-Ford algorithm is much slower than Dijkstra’s.</p><p>“Whenever you do research, you try to take a promising path,” Thorup said. “I would almost call it anti-promising to take Bellman-Ford, because it looks completely like the stupidest thing you could possibly do.”</p><p>Duan’s team avoided the slowness of the Bellman-Ford algorithm by running it for just a few steps at a time. This selective use of Bellman-Ford enabled their algorithm to scout ahead for the most valuable nodes to explore in later steps. These nodes are like intersections of major thoroughfares in a road network.</p><p>“You have to pass through [them] to get the shortest path to a lot of other stuff,” Thorup said.</p><p>In March 2024, Mao thought of another promising approach. Some key steps in the team’s original approach had used randomness. <a href=\"https://www.quantamagazine.org/how-randomness-improves-algorithms-20230403/\">Randomized algorithms</a> can efficiently solve many problems, but researchers still prefer nonrandom approaches. Mao devised a new way to solve the shortest-paths problem without randomness. He joined the team, and they worked together over the following months via group chats and video calls to merge their ideas. Finally, in the fall, Duan realized they could adapt a technique from <a href=\"http://arxiv.org/abs/1808.10658\">an algorithm</a> he’d devised in 2018 that broke the sorting barrier for a different graph problem. That technique was the last piece they needed for an algorithm that ran faster than Dijkstra’s on both directed and undirected graphs.</p><p>The finished algorithm slices the graph into layers, moving outward from the source like Dijkstra’s. But rather than deal with the whole frontier at each step, it uses the Bellman-Ford algorithm to pinpoint influential nodes, moves forward from these nodes to find the shortest paths to others, and later comes back to other frontier nodes. It doesn’t always find the nodes within each layer in order of increasing distance, so the sorting barrier doesn’t apply. And if you chop up the graph in the right way, it runs slightly faster than the best version of Dijkstra’s algorithm. It’s considerably more intricate, relying on many pieces that need to fit together just right. But curiously, none of the pieces use fancy mathematics.</p><p>“This thing might as well have been discovered 50 years ago, but it wasn’t,” Thorup said. “That makes it that much more impressive.”</p><p>Duan and his team plan to explore whether the algorithm can be streamlined to make it even faster. With the sorting barrier vanquished, the new algorithm’s runtime isn’t close to any fundamental limit that computer scientists know of.</p><p>“Being an optimist, I would not be surprised if you could take it down even further,” Tarjan said. “I certainly don’t think this is the last step in the process.”</p>",
-      "contentLength": 8922,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": "https://news.ycombinator.com/item?id=44812695"
-    },
-    {
-      "title": "Dotfiles feel too personal to share",
-      "url": "https://hamatti.org/posts/dotfiles-feel-too-intimate-and-personal-to-share/",
-      "date": 1754490961,
-      "author": "speckx",
-      "guid": 9608,
-      "unread": true,
-      "content": "<p>\n  “Dotfiles” is a term that refers to configuration files used to configure\n  software and operating systems. They are called such because often these files\n  start with a dot. You may have seen\n  ,\n   or\n   in the wild.\n</p><p>\n  Whenever a software doesn’t offer direct file-based configuration, I feel sad\n  because it means I need to take extra steps to keep my configuration across\n  different devices in sync or when setting up a new machine.\n</p><p>\n  I regularly publish ideas and experiences in\n  <a href=\"https://hamatti.org/blog\">my blog</a>, I share my notes in\n  <a href=\"https://notes.hamatti.org/\">my digital garden</a>\n  and I publish almost all the code I write (outside work) as open source\n  <a href=\"https://github.com/hamatti\">in GitHub</a>.\n</p><p>\n  Yet, somehow I feel like sharing my own dotfiles to the world is beyond my\n  comfort zone. I feel my customisations and aliases and other decisions are too\n  intimate and personal to share.\n</p><p>I don’t quite know why though.</p><p>\n  I have a really cool repository where I keep my dotfiles and there’s quite a\n  lot there. There’s the usual suspects like my\n   config and aliases, my\n   configuration and my\n   and\n   stuff too. And my\n  <a href=\"https://hamatti.org/posts/bring-your-custom-toolkit-to-repl-sessions/\">Python startup script</a>.\n</p><p>\n  I also keep my\n  <a href=\"https://brew.sh/\">Homebrew</a> core list\n  there: that’s all the packages I want to always have at hand. Having them all\n  in one place to be installed with a single command on a new computer is\n  lovely.\n</p><p>\n  I also keep my\n  <a href=\"https://addons.mozilla.org/firefox/addon/styl-us/\">Stylus</a>\n  CSS rules there so I can easily bring the experience I want on any browser I\n  use.\n</p><p>\n  I use\n  <a href=\"https://notes.hamatti.org/technology/recipes/manage-dotfiles-with-gnu-stow\">GNU Stow to manage most of these</a>. For anything that’s directly applicable by copying the files into a given\n  folder, I’ve set up the folder structure so that running\n   will create symlinks to\n  right places: any change made into the repository from any machine will apply\n  to all machines. It’s so cool.\n</p><p>\n  All in all, my dotfiles repository is home to 19 configuration files +\n  everything my neovim installation has, plugins and all.\n</p><p>\n  For now however, I\n  <i>keep them secret, keep them safe </i>until I\n  feel better about sharing my dotfiles with the world.\n</p><div><p>If something above resonated with you, let's start a discussion about it! <strong>Email me at juhamattisantala at gmail dot com and share your thoughts</strong>. In 2025, I want to have more deeper discussions with people from around the world and I'd love if you'd be part of that.</p></div>",
-      "contentLength": 2255,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": "https://news.ycombinator.com/item?id=44812611"
-    },
-    {
-      "title": "Providing ChatGPT to the U.S. federal workforce",
-      "url": "https://openai.com/index/providing-chatgpt-to-the-entire-us-federal-workforce/",
-      "date": 1754489529,
-      "author": "gmays",
-      "guid": 9607,
-      "unread": true,
-      "content": "",
-      "contentLength": 0,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": "https://news.ycombinator.com/item?id=44812297"
     }
   ],
   "tags": [
