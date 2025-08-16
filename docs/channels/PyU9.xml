@@ -1,4 +1,76 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Introducing Headlamp AI Assistant</title><link>https://kubernetes.io/blog/2025/08/07/introducing-headlamp-ai-assistant/</link><author></author><category>dev</category><pubDate>Thu, 7 Aug 2025 19:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[This announcement originally appeared on the Headlamp blog.To simplify Kubernetes management and troubleshooting, we're thrilled to
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Python 3.14.0rc2 and 3.13.7 are go!</title><link>https://pythoninsider.blogspot.com/2025/08/python-3140rc2-and-3137-are-go.html</link><author>Hugo</author><category>dev</category><pubDate>Thu, 14 Aug 2025 19:15:00 +0000</pubDate><source url="https://pythoninsider.blogspot.com/">Python official news</source><content:encoded><![CDATA[Not one but two expedited releases!  🎉 🎉It’s the
+ 🪄 penultimate 🪄 3.14 release candidate!Note: rc2 was originally planned for 2025-08-26, but we fixed
+a bug that required bumping the magic number stored in Python
+bytecode () files. This means 
+files created for rc1 cannot be used for rc2, and they’ll be
+recompiled.The ABI isn’t changing. Wheels built for rc1 should be fine for rc2,
+rc3 and 3.14.x. So this shouldn’t affect too many people but let’s get
+this out for testing sooner.Due to this early release, we’ll also add a third release candidate
+between now and the final 3.14.0 release, with no planned change to the
+final release date.This release, , is the penultimate release
+preview. Entering the release candidate phase, only reviewed code
+changes which are clear bug fixes are allowed between this release
+candidate and the final release.The next pre-release of Python 3.14 will be the final release
+candidate, 3.14.0rc3, scheduled for 2025-09-16; the official release of
+3.14.0 is scheduled for Tuesday, 2025-10-07.There will be  from this
+point forward in the 3.14 series, and the goal is that there will be as
+few code changes as possible.We  maintainers of
+third-party Python projects to prepare their projects for 3.14 during
+this phase, and publish Python 3.14 wheels on PyPI to be ready for the
+final release of 3.14.0, and to help other projects do their own
+testing. Any binary wheels built against Python 3.14.0 release
+candidates  with future versions of
+Python 3.14. As always, report any issues to the Python bug
+tracker.Please keep in mind that this is a preview release and while it’s as
+close to the final release as we can get it, its use is
+ recommended for production
+environments.Core
+developers: time to work on documentation nowAre all your changes properly documented?Did you notice other changes you know of to have insufficient
+documentation?Some of the major new features and changes in Python 3.14 are:(Hey,  if a feature you
+find important is missing from this list, let Hugo know.)Note that Android binaries are new in rc2!The installer we offer for Windows is being replaced by our new
+install manager, which can be installed from the Windows
+Store or from its download
+page. See our
+documentation for more information. The JSON file available for
+download below contains the list of all the installable packages
+available as part of this release, including file URLs and hashes, but
+is not required to install the latest release. The traditional installer
+will remain available throughout the 3.14 and 3.15 releases.This is
+the seventh maintenance release of Python 3.13Python 3.13 is the newest major release of the Python programming
+language, and it contains many new features and optimizations compared
+to Python 3.12. 3.13.7 is the seventh maintenance release of 3.13.3.13.7 is an expedited release to fix a significant issue with the
+3.13.6 release:gh-137583:
+Regression in ssl module between 3.13.5 and 3.13.6: reading from a
+TLS-encrypted connection blocksA few other bug fixes (which would otherwise have waited until the
+next release) are also included.The magpie,  in Latin, is a black and white bird in
+the crow family, known for its chattering call.The first-known use in English is from a 1589
+poem, where magpie is spelled “magpy” and cuckoo is “cookow”:
+Th[e]y fly to wood like breeding hauke,
+  And leave old neighbours loue,
+They pearch themselves in syluane lodge,
+  And soare in th' aire aboue.
+There : magpy teacheth them to chat,
+  And cookow soone doth hit them pat.
+The name comes from Mag, short for Margery or Margaret (compare robin
+redbreast, jenny wren, and its corvid relative jackdaw); and pie, a
+magpie or other bird with black and white (or pied) plumage. The sea-pie
+(1552) is the oystercatcher, the grey pie (1678) and murdering pie
+(1688) is the great grey shrike. Others birds include the yellow and
+black pie, red-billed pie, wandering tree-pie, and river pie. The
+rain-pie, wood-pie and French pie are woodpeckers.Pie on its own dates to before 1225, and comes from the Latin name
+for the bird, .Thanks to all of the many volunteers who help make Python Development
+and these releases possible! Please consider supporting our efforts by
+volunteering yourself or through organisation contributions to the Python Software
+Foundation.Your release team,
+  Hugo van Kemenade
+  Ned Deily
+  Łukasz Langa]]></content:encoded></item><item><title>Go 1.25 is released</title><link>https://go.dev/blog/go1.25</link><author>Dmitri Shuralyov, on behalf of the Go team</author><category>dev</category><pubDate>Tue, 12 Aug 2025 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[Today the Go team is pleased to release Go 1.25.
+You can find its binary archives and installers on the download page.Please refer to the Go 1.25 Release Notes for the complete list
+of additions, changes and improvements in Go 1.25.Over the next few weeks, follow-up blog posts will cover some of the topics
+relevant to Go 1.25 in more detail. Check back in later to read those posts.Thanks to everyone who contributed to this release by writing code, filing bugs,
+trying out experimental additions, sharing feedback, and testing the release candidates.
+Your efforts helped make Go 1.25 as stable as possible.
+As always, if you notice any problems, please file an issue.We hope you enjoy using the new release!]]></content:encoded></item><item><title>Introducing Headlamp AI Assistant</title><link>https://kubernetes.io/blog/2025/08/07/introducing-headlamp-ai-assistant/</link><author></author><category>dev</category><pubDate>Thu, 7 Aug 2025 19:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[This announcement originally appeared on the Headlamp blog.To simplify Kubernetes management and troubleshooting, we're thrilled to
 introduce Headlamp AI Assistant: a powerful new plugin for Headlamp that helps
 you understand and operate your Kubernetes clusters and applications with
 greater clarity and ease.Whether you're a seasoned engineer or just getting started, the AI Assistant offers: Ask questions like "Is my application healthy?" or
@@ -121,51 +193,4 @@ Using the new, more flexible approach would enable workload-specific optimizatio
 responsive and conservative scaling behaviors.New features and deprecations are also announced in the Kubernetes release notes.
 We will formally announce what's new in Kubernetes v1.34 as part of the CHANGELOG for that release.The Kubernetes v1.34 release is planned for Wednesday 27th August 2025. Stay tuned for updates!The simplest way to get involved with Kubernetes is to join one of the many Special Interest Groups (SIGs) that align with your interests.
 Have something you'd like to broadcast to the Kubernetes community? Share your voice at our weekly community meeting, and through the channels below.
-Thank you for your continued feedback and support.]]></content:encoded></item><item><title>Python 3.14 release candidate 1 is go!</title><link>https://pythoninsider.blogspot.com/2025/07/python-314-release-candidate-1-is-go.html</link><author>Hugo</author><category>dev</category><pubDate>Tue, 22 Jul 2025 19:47:00 +0000</pubDate><source url="https://pythoninsider.blogspot.com/">Python official news</source><content:encoded><![CDATA[It’s the
-first 3.14 release candidate!This is the first release candidate of Python
-3.14This release, , is the penultimate release
-preview. Entering the release candidate phase, only reviewed code
-changes which are clear bug fixes are allowed between this release
-candidate and the final release. The second candidate (and the last
-planned release preview) is scheduled for Tuesday, 2025-08-26, while the
-official release of 3.14.0 is scheduled for Tuesday, 2025-10-07.There will be  from this
-point forward in the 3.14 series, and the goal is that there will be as
-few code changes as possible.We  maintainers of
-third-party Python projects to prepare their projects for 3.14 during
-this phase, and where necessary publish Python 3.14 wheels on PyPI to be
-ready for the final release of 3.14.0, and to help other projects do
-their own testing. Any binary wheels built against Python 3.14.0rc1
- with future versions of Python 3.14.
-As always, report any issues to the Python bug
-tracker.Please keep in mind that this is a preview release and while it’s as
-close to the final release as we can get it, its use is
- recommended for production
-environments.Core
-developers: time to work on documentation nowAre all your changes properly documented?Did you notice other changes you know of to have insufficient
-documentation?Some of the major new features and changes in Python 3.14 are:(Hey,  if a feature you
-find important is missing from this list, let Hugo know.)For more details on the changes to Python 3.14, see What’s new in
-Python 3.14. The next pre-release of Python 3.14 will be the final
-release candidate, 3.14.0rc2, scheduled for 2025-08-26.PEP
-761: Python 3.14 and onwards no longer provides PGP signatures for
-release artifacts. Instead, Sigstore is recommended for verifiers.The installer we offer for Windows is being replaced by our new
-install manager, which can be installed from the Windows
-Store or from its download
-page. See our
-documentation for more information. The JSON file available for
-download below contains the list of all the installable packages
-available as part of this release, including file URLs and hashes, but
-is not required to install the latest release. The traditional installer
-will remain available throughout the 3.14 and 3.15 releases.Today, 22nd July, is Pi Approximation Day, because 22/7 is a common
-approximation of  and closer to  than 3.14.22/7 is a Diophantine approximation, named after Diophantus of
-Alexandria (3rd century CE), which is a way of estimating a real number
-as a ratio of two integers. 22/7 has been known since antiquity;
-Archimedes (3rd century BCE) wrote the first known proof that 22/7
-overestimates  by comparing 96-sided polygons to the circle it
-circumscribes.Another approximation is 355/113. In Chinese mathematics, 22/7 and
-355/113 are respectively known as Yuelü (约率; yuēlǜ; “approximate
-ratio”) and Milü (密率; mìlǜ; “close ratio”).Thanks to all of the many volunteers who help make Python Development
-and these releases possible! Please consider supporting our efforts by
-volunteering yourself or through organisation contributions to the Python Software
-Foundation.Regards from a Helsinki heatwave after an excellent EuroPython,Your release team, Hugo van Kemenade 
-  Steve Dower
-  ]]></content:encoded></item></channel></rss>
+Thank you for your continued feedback and support.]]></content:encoded></item></channel></rss>
