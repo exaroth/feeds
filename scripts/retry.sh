@@ -1,6 +1,6 @@
 #!/bin/bash
  
-retry() {
+with_retry() {
     local -r -i max_attempts="$1"; shift
     local -i attempt_num=1
     until "$@"
@@ -15,5 +15,3 @@ retry() {
         fi
     done
 }
- 
-retry 5 sudo snap install newsboat
