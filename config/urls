@@ -21,9 +21,9 @@ https://blog.python.org/feeds/posts/default?alt=rss "~Python official news" ! de
 
 https://www.youtube.com/feeds/videos.xml?channel_id=UCknLrEdhRCp1aegoMqRaCZg "~News - DW" ! news
 https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg "~News - Bloomberg" ! news
-https://feeds.bbci.co.uk/news/world/rss.xml "~News - BBC" ! news
-https://www.youtube.com/feeds/videos.xml?channel_id=UCkdnY2hNC0sdlVXPtWuNQ8g "~NYT" ! news
 https://www.channel4.com/news/world/feed "~Channel 4" ! news
+https://www.youtube.com/feeds/videos.xml?channel_id=UCSrZ3UV4jOidv8ppoVuvW9Q "~News - Euronews" ! news
+
 
 https://www.youtube.com/feeds/videos.xml?channel_id=UCrTNhL_yO3tPTdQ5XgmmWjA "~Movies - RedLetterMedia" ! movies
 https://www.youtube.com/feeds/videos.xml?channel_id=UCjFqcJQXGZ6T6sxyFB-5i6A "~Movies - Every Frame a Painting" ! movies
@@ -76,6 +76,7 @@ https://www.theguardian.com/news/series/the-audio-long-read/podcast.xml "~Long r
 https://gh-issues-to-rss.fly.dev/exaroth/liveboat?m=io ! gh
 https://gh-issues-to-rss.fly.dev/exaroth/liveboat-github-runner?m=io ! gh
 https://gh-issues-to-rss.fly.dev/exaroth/awesome-dev.news
+https://gh-issues-to-rss.fly.dev/exaroth/i3-news
 
 # Astrum
 https://www.youtube.com/feeds/videos.xml?channel_id=UC-9b7aDP6ZN0coj9-xFnrtw ! yt
@@ -209,3 +210,9 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCsBjURrPoezykLs9EqgamOA ! y
 https://www.youtube.com/feeds/videos.xml?channel_id=UChl-XKVVBAzoEVsnbOfpcqw ! yt
 # Ordinary Things
 https://www.youtube.com/feeds/videos.xml?channel_id=UCxLYtICsUCWdr1YPrj5DtwA ! yt
+# Nat Geo
+https://www.youtube.com/feeds/videos.xml?channel_id=UCDPk9MG2RexnOMGTD-YnSnA ! yt
+# National Geographic
+https://www.youtube.com/feeds/videos.xml?channel_id=UCpVm7bg6pXKo1Pr6k5kxG9A ! yt
+# History of the Universe
+https://www.youtube.com/feeds/videos.xml?channel_id=UCtRFmSyL4fSLQkn-wMqlmdA ! yt
