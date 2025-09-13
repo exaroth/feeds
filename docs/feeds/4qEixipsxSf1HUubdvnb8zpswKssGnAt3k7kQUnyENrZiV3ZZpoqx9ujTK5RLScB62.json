@@ -1,0 +1,42 @@
+{
+  "id": "4qEixipsxSf1HUubdvnb8zpswKssGnAt3k7kQUnyENrZiV3ZZpoqx9ujTK5RLScB62",
+  "title": "exaroth/i3-news",
+  "displayTitle": "exaroth/i3-news",
+  "url": "https://gh-issues-to-rss.fly.dev/exaroth/i3-news",
+  "feedLink": "https://github.com/exaroth/i3-news",
+  "isQuery": false,
+  "isEmpty": false,
+  "isHidden": false,
+  "itemCount": 2,
+  "items": [
+    {
+      "title": "[pr-closed]: 0.2.1",
+      "url": "https://github.com/exaroth/i3-news/pull/1",
+      "date": 1757696553,
+      "author": "exaroth",
+      "guid": 18609,
+      "unread": true,
+      "content": "## [0.2.1] 2025-12-09### Changed<p>- Refactor setting read_no for newest articles</p>- Vacuum cache during feed reload- Fix install path in installation scripts",
+      "contentLength": 153,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "[pr-open]: 0.2.1",
+      "url": "https://github.com/exaroth/i3-news/pull/1",
+      "date": 1757696346,
+      "author": "exaroth",
+      "guid": 18608,
+      "unread": true,
+      "content": "## [0.2.1] 2025-12-09### Changed<p>- Refactor setting read_no for newest articles</p>- Vacuum cache during feed reload- Fix install path in installation scripts",
+      "contentLength": 153,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    }
+  ],
+  "tags": []
+}
