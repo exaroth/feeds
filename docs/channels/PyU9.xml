@@ -1,4 +1,302 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Kubernetes v1.34: Recovery From Volume Expansion Failure (GA)</title><link>https://kubernetes.io/blog/2025/09/19/kubernetes-v1-34-recover-expansion-failure/</link><author></author><category>dev</category><pubDate>Fri, 19 Sep 2025 18:30:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[Have you ever made a typo when expanding your persistent volumes in Kubernetes? Meant to specify 
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Announcing Changed Block Tracking API support (alpha)</title><link>https://kubernetes.io/blog/2025/09/25/csi-changed-block-tracking/</link><author></author><category>dev</category><pubDate>Thu, 25 Sep 2025 13:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[We're excited to announce the alpha support for a  mechanism. This enhances
+the Kubernetes storage ecosystem by providing an efficient way for
+CSI storage drivers to identify changed
+blocks in PersistentVolume snapshots. With a driver that can use the feature, you could benefit
+from faster and more resource-efficient backup operations.What is changed block tracking?Changed block tracking enables storage systems to identify and track modifications at the block level
+between snapshots, eliminating the need to scan entire volumes during backup operations. The
+improvement is a change to the Container Storage Interface (CSI), and also to the storage support
+in Kubernetes itself.
+With the alpha feature enabled, your cluster can:Identify allocated blocks within a CSI volume snapshotDetermine changed blocks between two snapshots of the same volumeStreamline backup operations by focusing only on changed data blocksFor Kubernetes users managing large datasets, this API enables significantly more efficient
+backup processes. Backup applications can now focus only on the blocks that have changed,
+rather than processing entire volumes.As of now, the Changed Block Tracking API is supported only for block volumes and not for
+file volumes. CSI drivers that manage file-based storage systems will not be able to
+implement this capability.Benefits of changed block tracking support in KubernetesAs Kubernetes adoption grows for stateful workloads managing critical data, the need for efficient
+backup solutions becomes increasingly important. Traditional full backup approaches face challenges with:: Full volume backups can take hours for large datasets, making it difficult
+to complete within maintenance windows.High resource utilization: Backup operations consume substantial network bandwidth and I/O
+resources, especially for large data volumes and data-intensive applications.: Repetitive full backups store redundant data, causing storage
+requirements to grow linearly even when only a small percentage of data actually changes between
+backups.The Changed Block Tracking API addresses these challenges by providing native Kubernetes support for
+incremental backup capabilities through the CSI interface.The implementation consists of three primary components:CSI SnapshotMetadata Service API: An API, offered by gRPC, that provides volume
+snapshot and changed block data.SnapshotMetadataService API: A Kubernetes CustomResourceDefinition (CRD) that
+advertises CSI driver metadata service availability and connection details to
+cluster clients.External Snapshot Metadata Sidecar: An intermediary component that connects CSI
+drivers to backup applications via a standardized gRPC interface.Implementation requirementsStorage provider responsibilitiesIf you're an author of a storage integration with Kubernetes and want to support the changed block tracking feature, you must implement specific requirements:: Storage providers need to implement the  service as defined in the CSI specifications protobuf. This service requires server-side streaming implementations for the following RPCs:: For identifying allocated blocks in a snapshot: For determining changed blocks between two snapshotsStorage backend capabilities: Ensure the storage backend has the capability to track and report block-level changes.Deploy external components: Integrate with the external-snapshot-metadata sidecar to expose the snapshot metadata service.: Register the  resource using a CustomResourceDefinition and create a  custom resource that advertises the availability of the metadata service and provides connection details.: Implement proper error handling for these RPCs according to the CSI specification requirements.Backup solution responsibilitiesA backup solution looking to leverage this feature must:: The backup application must provide a Kubernetes ServiceAccount token when using the
+Kubernetes SnapshotMetadataService API.
+Appropriate access grants, such as RBAC RoleBindings, must be established to authorize the backup application
+ServiceAccount to obtain such tokens.Implement streaming client-side code: Develop clients that implement the streaming gRPC APIs defined in the
+schema.proto file.
+Specifically:Implement streaming client code for  and  methodsHandle server-side streaming responses efficiently as the metadata comes in chunksProcess the  message format with proper error handlingThe external-snapshot-metadata GitHub repository provides a convenient
+iterator
+support package to simplify client implementation.Handle large dataset streaming: Design clients to efficiently handle large streams of block metadata that
+could be returned for volumes with significant changes.Optimize backup processes: Modify backup workflows to use the changed block metadata to identify and only
+transfer changed blocks to make backups more efficient, reducing both backup duration and resource consumption.To use changed block tracking in your cluster:Ensure your CSI driver supports volume snapshots and implements the snapshot metadata capabilities with the required external-snapshot-metadata sidecarMake sure the SnapshotMetadataService custom resource is registered using CRDVerify the presence of a SnapshotMetadataService custom resource for your CSI driverCreate clients that can access the API using appropriate authentication (via Kubernetes ServiceAccount tokens)The API provides two main functions:: Lists blocks allocated in a single snapshot: Lists blocks changed between two snapshotsDepending on feedback and adoption, the Kubernetes developers hope to push the CSI Snapshot Metadata implementation to Beta in the future releases.For those interested in trying out this new feature:This project, like all of Kubernetes, is the result of hard work by many contributors from diverse backgrounds working together.
+On behalf of SIG Storage, I would like to offer a huge thank you to the contributors who helped review the design and implementation of the project, including but not limited to the following:Thank also to everyone who has contributed to the project, including others who helped review the
+KEP and the
+CSI spec PRFor those interested in getting involved with the design and development of CSI or any part of the Kubernetes Storage system,
+join the Kubernetes Storage Special Interest Group (SIG).
+We always welcome new contributors.]]></content:encoded></item><item><title>Flight Recorder in Go 1.25</title><link>https://go.dev/blog/flight-recorder</link><author>Carlos Amedee and Michael Knyszek</author><category>dev</category><pubDate>Thu, 25 Sep 2025 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[In 2024 we introduced the world to
+more powerful Go execution traces. In that blog post
+we gave a sneak peek into some of the new functionality we could unlock with our new execution
+tracer, including . We’re happy to announce that flight recording is now
+available in Go 1.25, and it’s a powerful new tool in the Go diagnostics toolbox.First, a quick recap on Go execution traces.The Go runtime can be made to write a log recording many of the events that happen during
+the execution of a Go application. That log is called a runtime execution trace.
+Go execution traces contain a plethora of information about how goroutines interact with each
+other and the underlying system. This makes them very handy for debugging latency issues, since
+they tell you both when your goroutines are executing, and crucially, when they are not.The runtime/trace package provides an API for collecting
+an execution trace over a given time window by calling  and .
+This works well if the code you’re tracing is just a test, microbenchmark, or command line
+tool. You can collect a trace of the complete end-to-end execution, or just the parts you care about.However, in long-running web services, the kinds of applications Go is known for, that’s not
+good enough. Web servers might be up for days or even weeks, and collecting a trace of the
+entire execution would produce far too much data to sift through. Often just one part
+of the program’s execution goes wrong, like a request timing out or a failed health
+check. By the time it happens it’s already too late to call !One way to approach this problem is to randomly sample execution traces from across the fleet.
+While this approach is powerful, and can help find issues before they become outages, it
+requires a lot of infrastructure to get going. Large quantities of execution trace data
+would need to be stored, triaged, and processed, much of which won’t contain anything
+interesting at all. And when you’re trying to get to the bottom of a specific issue,
+it’s a non-starter.This brings us to the flight recorder.A program often knows when something has gone wrong, but the root cause may have happened
+long ago. The flight recorder lets you collect a trace of the last few seconds of
+execution leading up to the moment a program detects there’s been a problem.The flight recorder collects the execution trace as normal, but instead of writing it out to
+a socket or a file, it buffers the last few seconds of the trace in memory. At any point,
+the program can request the contents of the buffer and snapshot exactly the problematic
+window of time. The flight recorder is like a scalpel cutting directly to the problem area.Let’s learn how to use the flight recorder with an example. Specifically, let’s use it to
+diagnose a performance problem with an HTTP server that implements a “guess the number” game.
+It exposes a  endpoint that accepts an integer and responds to the caller
+informing them if they guessed the right number. There is also a goroutine that, once per
+minute, sends a report of all the guessed numbers to another service via an HTTP request.// bucket is a simple mutex-protected counter.
+type bucket struct {
+    mu      sync.Mutex
+    guesses int
+}
+
+func main() {
+    // Make one bucket for each valid number a client could guess.
+    // The HTTP handler will look up the guessed number in buckets by
+    // using the number as an index into the slice.
+    buckets := make([]bucket, 100)
+
+    // Every minute, we send a report of how many times each number was guessed.
+    go func() {
+        for range time.Tick(1 * time.Minute) {
+            sendReport(buckets)
+        }
+    }()
+
+    // Choose the number to be guessed.
+    answer := rand.Intn(len(buckets))
+
+    http.HandleFunc("/guess-number", func(w http.ResponseWriter, r *http.Request) {
+        start := time.Now()
+
+        // Fetch the number from the URL query variable "guess" and convert it
+        // to an integer. Then, validate it.
+        guess, err := strconv.Atoi(r.URL.Query().Get("guess"))
+        if err != nil || !(0 <= guess && guess < len(buckets)) {
+            http.Error(w, "invalid 'guess' value", http.StatusBadRequest)
+            return
+        }
+
+        // Select the appropriate bucket and safely increment its value.
+        b := &buckets[guess]
+        b.mu.Lock()
+        b.guesses++
+        b.mu.Unlock()
+
+        // Respond to the client with the guess and whether it was correct.
+        fmt.Fprintf(w, "guess: %d, correct: %t", guess, guess == answer)
+
+        log.Printf("HTTP request: endpoint=/guess-number guess=%d duration=%s", guess, time.Since(start))
+    })
+    log.Fatal(http.ListenAndServe(":8090", nil))
+}
+
+// sendReport posts the current state of buckets to a remote service.
+func sendReport(buckets []bucket) {
+    counts := make([]int, len(buckets))
+
+    for index := range buckets {
+        b := &buckets[index]
+        b.mu.Lock()
+        defer b.mu.Unlock()
+
+        counts[index] = b.guesses
+    }
+
+    // Marshal the report data into a JSON payload.
+    b, err := json.Marshal(counts)
+    if err != nil {
+        log.Printf("failed to marshal report data: error=%s", err)
+        return
+    }
+    url := "http://localhost:8091/guess-number-report"
+    if _, err := http.Post(url, "application/json", bytes.NewReader(b)); err != nil {
+        log.Printf("failed to send report: %s", err)
+    }
+}
+Let’s suppose that after deploying the application in production, we received complaints from
+users that some  calls were taking longer than expected. When we look at our
+logs, we see that sometimes response times exceed 100 milliseconds, while the majority of calls
+are on the order of microseconds.2025/09/19 16:52:02 HTTP request: endpoint=/guess-number guess=69 duration=625ns
+2025/09/19 16:52:02 HTTP request: endpoint=/guess-number guess=62 duration=458ns
+2025/09/19 16:52:02 HTTP request: endpoint=/guess-number guess=42 duration=1.417µs
+2025/09/19 16:52:02 HTTP request: endpoint=/guess-number guess=86 duration=115.186167ms
+2025/09/19 16:52:02 HTTP request: endpoint=/guess-number guess=0 duration=127.993375ms
+Before we continue, take a minute and see if you can spot what’s wrong!Regardless of whether you found the problem or not, let’s dive deeper and see how we can
+find the problem from first principles. In particular, it would be great if we could see
+what the application was doing in the time leading up to the slow response. This is exactly
+what the flight recorder was built for! We’ll use it to capture an execution trace once
+we see the first response exceeding 100 milliseconds.First, in , we’ll configure and start the flight recorder:// Set up the flight recorder
+fr := trace.NewFlightRecorder(trace.FlightRecorderConfig{
+    MinAge:   200 * time.Millisecond,
+    MaxBytes: 1 << 20, // 1 MiB
+})
+fr.Start()
+ configures the duration for which trace data is reliably retained, and we
+suggest setting it to around 2x the time window of the event. For example, if you
+are debugging a 5-second timeout, set it to 10 seconds.  configures the
+size of the buffered trace so you don’t blow up your memory usage.  On average,
+you can expect a few MB of trace data to be produced per second of execution,
+or 10 MB/s for a busy service.Next, we’ll add a helper function to capture the snapshot and write it to a file:var once sync.Once
+
+// captureSnapshot captures a flight recorder snapshot.
+func captureSnapshot(fr *trace.FlightRecorder) {
+    // once.Do ensures that the provided function is executed only once.
+    once.Do(func() {
+        f, err := os.Create("snapshot.trace")
+        if err != nil {
+            log.Printf("opening snapshot file %s failed: %s", f.Name(), err)
+            return
+        }
+        defer f.Close() // ignore error
+
+        // WriteTo writes the flight recorder data to the provided io.Writer.
+        _, err = fr.WriteTo(f)
+        if err != nil {
+            log.Printf("writing snapshot to file %s failed: %s", f.Name(), err)
+            return
+        }
+
+        // Stop the flight recorder after the snapshot has been taken.
+        fr.Stop()
+        log.Printf("captured a flight recorder snapshot to %s", f.Name())
+    })
+}
+And finally, just before logging a completed request, we’ll trigger the snapshot if the request
+took more than 100 milliseconds:// Capture a snapshot if the response takes more than 100ms.
+// Only the first call has any effect.
+if fr.Enabled() && time.Since(start) > 100*time.Millisecond {
+    go captureSnapshot(fr)
+}
+Now, we run the server again and send requests until we get a slow request that triggers a
+snapshot.Once we’ve gotten a trace, we’ll need a tool that will help us examine it. The Go toolchain
+provides a built-in execution trace analysis tool via the
+ command. Run go tool trace snapshot.trace to
+launch the tool, which starts a local web server, then open the displayed URL in your browser
+(if the tool doesn’t open your browser automatically).This tool gives us a few ways to look at the trace, but let’s focus on visualizing the trace
+to get a sense of what’s going on. Click “View trace by proc” to do so.In this view, the trace is presented as a timeline of events. At the top of the page, in
+the “STATS” section, we can see a summary of the application’s state, including the
+number of threads, the heap size, and the goroutine count.Below that, in the “PROCS” section, we can see how the execution of goroutines is mapped
+onto  (the number of operating system threads created by the Go application). We
+can see when and how each goroutine starts, runs, and finally stops executing.For now, let’s turn our attention to this massive gap in execution on the right side of the
+viewer. For a period of time, around 100ms, nothing is happening!By selecting the  tool (or pressing ), we can inspect the section of the trace right
+after the gap with more detail.In addition to the activity of each individual goroutine, we can see how goroutines interact
+via “flow events.” An incoming flow event indicates what happened to make a goroutine start
+running. An outgoing flow edge indicates what effect one goroutine had on another. Enabling the
+visualization of all flow events often provides clues that hint at the source of a problem.In this case, we can see that many of the goroutines have a direct connection to a single
+goroutine right after the pause in activity.Clicking on the the single goroutine shows an event table filled with outgoing flow events, which
+matches what we saw when the flow view was enabled.What happened when this goroutine ran? Part of the information stored in the trace is a view
+of the stack trace at different points in time. When we look at the goroutine we can see that
+the start stack trace shows that it was waiting for the HTTP request to complete when the
+goroutine was scheduled to run. And the end stack trace shows that the  function
+had already returned and it was waiting for the ticker for the next scheduled time to send
+the report.Between the start and the end of this goroutine running, we see a huge number of
+“outgoing flows,” where it interacts with other goroutines. Clicking on one of the
+ entries takes us to a view of the interaction.This flow implicates the  in :for index, b := range buckets {
+    b.mu.Lock()
+    defer b.mu.Unlock()
+
+    counts[index] = b.value
+}
+In , we intended to acquire a lock on each bucket and release the lock after
+copying the value.But here’s the problem: we don’t actually release the lock immediately after copying the
+value contained in . Because we used a  statement to release the
+lock, that release doesn’t happen until the function returns. We hold the lock not just
+past the end of the loop, but until after the HTTP request completes. That’s a subtle
+error that may be difficult to track down in a large production system.Fortunately, execution tracing helped us pinpoint the problem. However, if we tried
+to use the execution tracer in a long-running server without the new flight-recording
+mode, it would likely amass a huge amount of execution trace data, which an operator
+would have to store, transmit, and sift through. The flight recorder gives us the power
+of hindsight. It lets us capture just what went wrong, after it’s already happened,
+and quickly zero in on the cause.The flight recorder is just the latest addition to the Go developer’s toolbox for
+diagnosing the inner workings of running applications. We’ve steadily been improving
+tracing over the past couple of releases. Go 1.21 greatly reduced the run-time overhead
+of tracing. The trace format became more robust and also splittable in the Go 1.22
+release, leading to features like the flight recorder. Open-source tools like
+gotraceui, and the forthcoming ability to programmatically
+parse execution traces are more ways to leverage the power of
+execution traces. The Diagnostics page lists many additional
+tools at your disposal. We hope you make use of them as you write and refine
+your Go applications.We’d like to take a moment to thank those community members who have been active in the
+diagnostics meetings, contributed to the designs, and provided feedback over the years:
+Felix Geisendörfer (@felixge.de),
+Nick Ripley (@nsrip-dd),
+Rhys Hiltner (@rhysh),
+Dominik Honnef (@dominikh),
+Bryan Boreham (@bboreham),
+and PJ Malloy (@thepudds).The discussions, feedback, and work you’ve all put in have been instrumental in pushing
+us to a better diagnostics future. Thank you!]]></content:encoded></item><item><title>crates.io: Malicious crates faster_log and async_println</title><link>https://blog.rust-lang.org/2025/09/24/crates.io-malicious-crates-fasterlog-and-asyncprintln/</link><author>Walter Pearce</author><category>dev</category><pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[Updated September 24th, 2025 17:34:38 UTC - Socket has also published their own accompanying blog post about the attack.On September 24th, the crates.io team was notified by Kirill Boychenko from the Socket Threat Research Team of two malicious crates which were actively searching file contents for Etherum private keys, Solana private keys, and arbitrary byte arrays for exfiltration. - Published on May 25th, 2025, downloaded 7181 times - Published on May 25th, 2025, downloaded 1243 timesThe malicious code was executed at runtime, when running or testing a project depending on them. Notably, they did not execute any malicious code at build time. Except for their malicious payload, these crates copied the source code, features, and documentation of legitimate crates, using a similiar name to them (a case of typosquatting).The users in question were immediately disabled, and the crates in question were deleted from crates.io shortly after. We have retained copies of all logs associated with the users and the malicious crate files for further analysis.The deletion was performed at 15:34 UTC on September 24, 2025.Both crates were copies of a crate which provided logging functionality, and the logging implementation remained functional in the malicious crates. The original crate had a feature which performed log file packing, which iterated over an associated directories files.The attacker inserted code to perform the malicious action during a log packing operation, which searched the log files being processed from that directory for:Quoted Ethereum private keys (0x + 64 hex)Solana-style Base58 secretsThe crates then proceeded to exfiltrate the results of this search to https://mainnet[.]solana-rpc-pool[.]workers[.]dev/.These crates had no dependent downstream crates on crates.io.The malicious users associated with these crates had no other crates or publishes, and the team is actively investigating associative actions in our retained logs.Our thanks to Kirill Boychenko from the Socket Threat Research Team for reporting the crates. We also want to thank Carol Nichols from the crates.io team, Pietro Albini from the Rust Security Response WG and Walter Pearce from the Rust Foundation for aiding in the response.]]></content:encoded></item><item><title>Kubernetes v1.34: Pod Level Resources Graduated to Beta</title><link>https://kubernetes.io/blog/2025/09/22/kubernetes-v1-34-pod-level-resources/</link><author></author><category>dev</category><pubDate>Mon, 22 Sep 2025 18:30:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[On behalf of the Kubernetes community, I am thrilled to announce that the Pod Level Resources feature has graduated to Beta in the Kubernetes v1.34 release and is enabled by default! This significant milestone introduces a new layer of flexibility for defining and managing resource allocation for your Pods. This flexibility stems from the ability to specify CPU and memory resources for the Pod as a whole. Pod level resources can be combined with the container-level specifications to express the exact resource requirements and limits your application needs.Pod-level specification for resourcesUntil recently, resource specifications that applied to Pods were primarily defined
+at the individual container level. While effective, this approach sometimes required
+duplicating or meticulously calculating resource needs across multiple containers
+within a single Pod. As a beta feature, Kubernetes allows you to specify the CPU,
+memory and hugepages resources at the Pod-level. This means you can now define
+resource requests and limits for an entire Pod, enabling easier resource sharing
+without requiring granular, per-container management of these resources where
+it's not needed.Why does Pod-level specification matter?This feature enhances resource management in Kubernetes by offering flexible resource management at both the Pod and container levels.It provides a consolidated approach to resource declaration, reducing the need for
+meticulous, per-container management, especially for Pods with multiple
+containers.Pod-level resources enable containers within a pod to share unused resoures
+amongst themselves, promoting efficient utilization within the pod. For example,
+it prevents sidecar containers from becoming performance bottlenecks. Previously,
+a sidecar (e.g., a logging agent or service mesh proxy) hitting its individual CPU
+limit could be throttled and slow down the entire Pod, even if the main
+application container had plenty of spare CPU. With pod-level resources, the
+sidecar and the main container can share Pod's resource budget, ensuring smooth
+operation during traffic spikes - either the whole Pod is throttled or all
+containers work.When both pod-level and container-level resources are specified, pod-level
+requests and limits take precedence. This gives you – and cluster administrators -
+a powerful way to enforce overall resource boundaries for your Pods.For scheduling, if a pod-level request is explicitly defined, the scheduler uses
+that specific value to find a suitable node, insteaf of the aggregated requests of
+the individual containers. At runtime, the pod-level limit acts as a hard ceiling
+for the combined resource usage of all containers. Crucially, this pod-level limit
+is the absolute enforcer; even if the sum of the individual container limits is
+higher, the total resource consumption can never exceed the pod-level limit.Pod-level resources are  in influencing the Quality of Service (QoS) class of the Pod.For Pods running on Linux nodes, the Out-Of-Memory (OOM) score adjustment
+calculation considers both pod-level and container-level resources requests.Pod-level resources are designed to be compatible with existing Kubernetes functionalities, ensuring a smooth integration into your workflows.How to specify resources for an entire PodUsing feature
+gate requires
+Kubernetes v1.34 or newer for all cluster components, including the control plane
+and every node. This feature gate is in beta and enabled by default in v1.34.You can specify CPU, memory and hugepages resources directly in the Pod spec manifest at the  field for the entire Pod.Here’s an example demonstrating a Pod with both CPU and memory requests and limits
+defined at the Pod level:In this example, the  Pod as a whole requests 1 CPU and 100 MiB of memory, and is limited to 1 CPU and 200 MiB of memory. The containers within will operate under these overall Pod-level constraints, as explained in the next section.Interaction with container-level resource requests or limitsWhen both pod-level and container-level resources are specified, pod-level requests and limits take precedence. This means the node allocates resources based on the pod-level specifications.Consider a Pod with two containers where pod-level CPU and memory requests and
+limits are defined, and only one container has its own explicit resource
+definitions:Pod-Level Limits: The pod-level limits (cpu: "1", memory: "200Mi") establish an absolute boundary for the entire Pod. The sum of resources consumed by all its containers is enforced at this ceiling and cannot be surpassed.Resource Sharing and Bursting: Containers can dynamically borrow any unused capacity, allowing them to burst as needed, so long as the Pod's aggregate usage stays within the overall limit.Pod-Level Requests: The pod-level requests (cpu: "1", memory: "100Mi") serve as the foundational resource guarantee for the entire Pod. This value informs the scheduler's placement decision and represents the minimum resources the Pod can rely on during node-level contention.Container-Level Requests: Container-level requests create a priority system within
+the Pod's guaranteed budget. Because main-app-container has an explicit request
+(cpu: "0.5", memory: "50Mi"), it is given precedence for its share of resources
+under resource pressure over the auxiliary-container, which has no
+such explicit claim.First of all, in-place
+resize of pod-level
+resources is  for Kubernetes v1.34 (or earlier). Attempting to
+modify the  resource limits or requests on a running Pod results in an
+error: the resize is rejected. The v1.34 implementation of Pod level resources
+focuses on allowing initial declaration of an overall resource envelope, that
+applies to the . That is distinct from in-place pod resize, which
+(despite what the name might suggest) allows you
+to make dynamic adjustments to  resource
+requests and limits, within a  Pod,
+and potentially without a container restart. In-place resizing is also not yet a
+stable feature; it graduated to Beta in the v1.33 release.Only CPU, memory, and hugepages resources can be specified at pod-level.Pod-level resources are not supported for Windows pods. If the Pod specification
+explicitly targets Windows (e.g., by setting spec.os.name: "windows"), the API
+server will reject the Pod during the validation step. If the Pod is not explicitly
+marked for Windows but is scheduled to a Windows node (e.g., via a nodeSelector),
+the Kubelet on that Windows node will reject the Pod during its admission process.The Topology Manager, Memory Manager and CPU Manager do not
+align pods and containers based on pod-level resources as these resource managers
+don't currently support pod-level resources.Getting started and providing feedbackReady to explore  feature? You'll need a Kubernetes cluster running version 1.34 or later. Remember to enable the feature gate across your control plane and all nodes.As this feature moves through Beta, your feedback is invaluable. Please report any issues or share your experiences via the standard Kubernetes communication channels:]]></content:encoded></item><item><title>Kubernetes v1.34: Recovery From Volume Expansion Failure (GA)</title><link>https://kubernetes.io/blog/2025/09/19/kubernetes-v1-34-recover-expansion-failure/</link><author></author><category>dev</category><pubDate>Fri, 19 Sep 2025 18:30:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[Have you ever made a typo when expanding your persistent volumes in Kubernetes? Meant to specify 
 but specified ? This seemingly innocuous problem was kinda hard to fix - and took the project almost 5 years to fix.
 Automated recovery from storage expansion has been around for a while in beta; however, with the v1.34 release, we have graduated this to
 .While it was always possible to recover from failing volume expansions manually, it usually required cluster-admin access and was tedious to do (See aformentioned link for more information).What if you make a mistake and then realize immediately?
@@ -478,157 +776,4 @@ formally adopting  and  into the standard library.
 However, the purpose of the  experiment is to gain broader experience.
 Your feedback will determine our next steps, and the outcome of this experiment,
 which may result in anything from abandonment of the effort, to adoption as stable packages of Go 1.26.
-Please share your experience on go.dev/issue/71497, and help determine the future of Go.]]></content:encoded></item><item><title>Kubernetes v1.34: VolumeAttributesClass for Volume Modification GA</title><link>https://kubernetes.io/blog/2025/09/08/kubernetes-v1-34-volume-attributes-class/</link><author></author><category>dev</category><pubDate>Mon, 8 Sep 2025 18:30:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[The VolumeAttributesClass API, which empowers users to dynamically modify volume attributes, has officially graduated to General Availability (GA) in Kubernetes v1.34. This marks a significant milestone, providing a robust and stable way to tune your persistent storage directly within Kubernetes.What is VolumeAttributesClass?At its core, VolumeAttributesClass is a cluster-scoped resource that defines a set of mutable parameters for a volume. Think of it as a "profile" for your storage, allowing cluster administrators to expose different quality-of-service (QoS) levels or performance tiers.Users can then specify a volumeAttributesClassName in their PersistentVolumeClaim (PVC) to indicate which class of attributes they desire. The magic happens through the Container Storage Interface (CSI): when a PVC referencing a VolumeAttributesClass is updated, the associated CSI driver interacts with the underlying storage system to apply the specified changes to the volume.Dynamically scale performance: Increase IOPS or throughput for a busy database, or reduce it for a less critical application.Optimize costs: Adjust attributes on the fly to match your current needs, avoiding over-provisioning.Simplify operations: Manage volume modifications directly within the Kubernetes API, rather than relying on external tools or manual processes.What is new from Beta to GAThere are two major enhancements from beta.Cancel support from infeasible errorsTo improve resilience and user experience, the GA release introduces explicit cancel support when a requested volume modification becomes infeasible. If the underlying storage system or CSI driver indicates that the requested changes cannot be applied (e.g., due to invalid arguments), users can cancel the operation and revert the volume to its previous stable configuration, preventing the volume from being left in an inconsistent state.Quota support based on scopeWhile VolumeAttributesClass doesn't add a new quota type, the Kubernetes control plane can be configured to enforce quotas on PersistentVolumeClaims that reference a specific VolumeAttributesClass.This is achieved by using the  field in a ResourceQuota to target PVCs that have .spec.volumeAttributesClassName set to a particular VolumeAttributesClass name. Please see more details here.Drivers support VolumeAttributesClassAmazon EBS CSI Driver: The AWS EBS CSI driver has robust support for VolumeAttributesClass and allows you to modify parameters like volume type (e.g., gp2 to gp3, io1 to io2), IOPS, and throughput of EBS volumes dynamically.Google Compute Engine (GCE) Persistent Disk CSI Driver (pd.csi.storage.gke.io): This driver also supports dynamic modification of persistent disk attributes, including IOPS and throughput, via VolumeAttributesClass.For any inquiries or specific questions related to VolumeAttributesClass, please reach out to the SIG Storage community.]]></content:encoded></item><item><title>Kubernetes v1.34: Pod Replacement Policy for Jobs Goes GA</title><link>https://kubernetes.io/blog/2025/09/05/kubernetes-v1-34-pod-replacement-policy-for-jobs-goes-ga/</link><author></author><category>dev</category><pubDate>Fri, 5 Sep 2025 18:30:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[In Kubernetes v1.34, the  feature has reached general availability (GA).
-This blog post describes the Pod replacement policy feature and how to use it in your Jobs.About Pod Replacement PolicyBy default, the Job controller immediately recreates Pods as soon as they fail or begin terminating (when they have a deletion timestamp).As a result, while some Pods are terminating, the total number of running Pods for a Job can temporarily exceed the specified parallelism.
-For Indexed Jobs, this can even mean multiple Pods running for the same index at the same time.This behavior works fine for many workloads, but it can cause problems in certain cases.For example, popular machine learning frameworks like TensorFlow and
-JAX expect exactly one Pod per worker index.
-If two Pods run at the same time, you might encounter errors such as:/job:worker/task:4: Duplicate task registration with task_name=/job:worker/replica:0/task:4
-Additionally, starting replacement Pods before the old ones fully terminate can lead to:Scheduling delays by kube-scheduler as the nodes remain occupied.Unnecessary cluster scale-ups to accommodate the replacement Pods.Temporary bypassing of quota checks by workload orchestrators like Kueue.With Pod replacement policy, Kubernetes gives you control over when the control plane
-replaces terminating Pods, helping you avoid these issues.How Pod Replacement Policy worksThis enhancement means that Jobs in Kubernetes have an optional field .spec.podReplacementPolicy.
-You can choose one of two policies: (default): Replaces Pods as soon as they start terminating.: Replaces Pods only after they fully terminate and transition to the  phase.Setting the policy to  ensures that a new Pod is only created after the previous one has completely terminated.For Jobs with a Pod Failure Policy, the default  is , and no other value is allowed.
-See Pod Failure Policy to learn more about Pod Failure Policies for Jobs.You can check how many Pods are currently terminating by inspecting the Job’s  field:Here’s a Job example that executes a task two times () in parallel () and
-replaces Pods only after they fully terminate (spec.podReplacementPolicy: Failed):If a Pod receives a SIGTERM signal (deletion, eviction, preemption...), it begins terminating.
-When the container handles termination gracefully, cleanup may take some time.When the Job starts, we will see two Pods running:Let's delete one of the Pods ().With the  policy, as soon as one Pod () starts terminating, the Job controller immediately creates a new Pod () to replace it.With the  policy, the new Pod () is not created while the old Pod () is terminating.When the terminating Pod has fully transitioned to the  phase, a new Pod is created:As with any Kubernetes feature, multiple people contributed to getting this
-done, from testing and filing bugs to reviewing code.As this feature moves to stable after 2 years, we would like to thank the following people:If you are interested in working on new features in the space we recommend
-subscribing to our Slack
-channel and attending the regular community meetings.]]></content:encoded></item><item><title>Kubernetes v1.34: PSI Metrics for Kubernetes Graduates to Beta</title><link>https://kubernetes.io/blog/2025/09/04/kubernetes-v1-34-introducing-psi-metrics-beta/</link><author></author><category>dev</category><pubDate>Thu, 4 Sep 2025 18:30:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[As Kubernetes clusters grow in size and complexity, understanding the health and performance of individual nodes becomes increasingly critical. We are excited to announce that as of Kubernetes v1.34, Pressure Stall Information (PSI) Metrics has graduated to Beta.Pressure Stall Information (PSI) is a feature of the Linux kernel (version 4.20 and later)
-that provides a canonical way to quantify pressure on infrastructure resources,
-in terms of whether demand for a resource exceeds current supply.
-It moves beyond simple resource utilization metrics and instead
-measures the amount of time that tasks are stalled due to resource contention.
-This is a powerful way to identify and diagnose resource bottlenecks that can impact application performance.PSI exposes metrics for CPU, memory, and I/O, categorized as either  or  pressure:The percentage of time that  task is stalled on a resource. This indicates some level of resource contention.The percentage of time that  non-idle tasks are stalled on a resource simultaneously. This indicates a more severe resource bottleneck.These metrics are aggregated over 10-second, 1-minute, and 5-minute rolling windows, providing a comprehensive view of resource pressure over time.PSI metrics in KubernetesWith the  feature gate enabled, the kubelet can now collect PSI metrics from the Linux kernel and expose them through two channels: the Summary API and the  Prometheus endpoint. This allows you to monitor and alert on resource pressure at the node, pod, and container level.The following new metrics are available in Prometheus exposition format via :container_pressure_cpu_stalled_seconds_totalcontainer_pressure_cpu_waiting_seconds_totalcontainer_pressure_memory_stalled_seconds_totalcontainer_pressure_memory_waiting_seconds_totalcontainer_pressure_io_stalled_seconds_totalcontainer_pressure_io_waiting_seconds_totalThese metrics, along with the data from the Summary API, provide a granular view of resource pressure, enabling you to pinpoint the source of performance issues and take corrective action. For example, you can use these metrics to: A steadily increasing  pressure for memory can indicate a memory leak in an application.Optimize resource requests and limits: By understanding the resource pressure of your workloads, you can more accurately tune their resource requests and limits. You can use PSI metrics to trigger autoscaling events, ensuring that your workloads have the resources they need to perform optimally.How to enable PSI metricsTo enable PSI metrics in your Kubernetes cluster, you need to:Ensure your nodes are running a Linux kernel version 4.20 or later and are using cgroup v2.Enable the  feature gate on the kubelet.Once enabled, you can start scraping the  endpoint with your Prometheus-compatible monitoring solution or query the Summary API to collect and visualize the new PSI metrics. Note that PSI is a Linux-kernel feature, so these metrics are not available on Windows nodes. Your cluster can contain a mix of Linux and Windows nodes, and on the Windows nodes the kubelet does not expose PSI metrics.We are excited to bring PSI metrics to the Kubernetes community and look forward to your feedback. As a beta feature, we are actively working on improving and extending this functionality towards a stable GA release. We encourage you to try it out and share your experiences with us.]]></content:encoded></item><item><title>Kubernetes v1.34: Service Account Token Integration for Image Pulls Graduates to Beta</title><link>https://kubernetes.io/blog/2025/09/03/kubernetes-v1-34-sa-tokens-image-pulls-beta/</link><author></author><category>dev</category><pubDate>Wed, 3 Sep 2025 18:30:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[The Kubernetes community continues to advance security best practices
-by reducing reliance on long-lived credentials.
-Following the successful alpha release in Kubernetes v1.33,
-Service Account Token Integration for Kubelet Credential Providers
-has now graduated to  in Kubernetes v1.34,
-bringing us closer to eliminating long-lived image pull secrets from Kubernetes clusters.This enhancement allows credential providers
-to use workload-specific service account tokens to obtain registry credentials,
-providing a secure, ephemeral alternative to traditional image pull secrets.The beta graduation brings several important changes
-that make the feature more robust and production-ready:Breaking change from alpha: The  field is 
-in the credential provider configuration when using service account tokens.
-This field is new in beta and must be specified to ensure proper caching behavior.Choose between two caching strategies:: Cache credentials per service account token
-(use when credential lifetime is tied to the token).
-This is useful when the credential provider transforms the service account token into registry credentials
-with the same lifetime as the token, or when registries support Kubernetes service account tokens directly.
-Note: The kubelet cannot send service account tokens directly to registries;
-credential provider plugins are needed to transform tokens into the username/password format expected by registries.: Cache credentials per service account identity
-(use when credentials are valid for all pods using the same service account)Isolated image pull credentialsThe beta release provides stronger security isolation for container images
-when using service account tokens for image pulls.
-It ensures that pods can only access images that were pulled using ServiceAccounts they're authorized to use.
-This prevents unauthorized access to sensitive container images
-and enables granular access control where different workloads can have different registry permissions
-based on their ServiceAccount.When credential providers use service account tokens,
-the system tracks ServiceAccount identity (namespace, name, and UID) for each pulled image.
-When a pod attempts to use a cached image,
-the system verifies that the pod's ServiceAccount matches exactly with the ServiceAccount
-that was used to originally pull the image.Administrators can revoke access to previously pulled images
-by deleting and recreating the ServiceAccount,
-which changes the UID and invalidates cached image access.Credential providers opt into using ServiceAccount tokens
-by configuring the  field:At a high level,  coordinates with your credential provider
-and the container runtime as follows:When the image is not present locally: checks its credential cache using the configured 
-( or )If needed,  requests a ServiceAccount token for the pod's ServiceAccount
-and passes it, plus any required annotations, to the credential providerThe provider exchanges that token for registry credentials
-and returns them to  caches credentials per the  strategy
-and pulls the image with those credentials records the ServiceAccount coordinates (namespace, name, UID)
-associated with the pulled image for later authorization checksWhen the image is already present locally: verifies the pod's ServiceAccount coordinates
-match the coordinates recorded for the cached imageIf they match exactly, the cached image can be used
-without pulling from the registryIf they differ,  performs a fresh pull
-using credentials for the new ServiceAccountWith image pull credential verification enabled:Authorization is enforced using the recorded ServiceAccount coordinates,
-ensuring pods only use images pulled by a ServiceAccount
-they are authorized to useAdministrators can revoke access by deleting and recreating a ServiceAccount;
-the UID changes and previously recorded authorization no longer matchesThe beta release builds on service account node audience restriction
-(beta since v1.33) to ensure  can only request tokens for authorized audiences.
-Administrators configure allowed audiences using RBAC to enable kubelet to request service account tokens for image pulls:Getting started with betaKubernetes v1.34 or later:
-KubeletServiceAccountTokenForCredentialProviders=true (beta, enabled by default)Credential provider support:
-Update your credential provider to handle ServiceAccount tokensIf you're already using the alpha version,
-the migration to beta requires minimal changes::
-Update your credential provider configuration to include the required  field:
-Choose between  and  cache types based on your provider's behaviorTest audience restrictions:
-Ensure your RBAC configuration, or other cluster authorization rules, will properly restrict token audiencesHere's a complete example
-for setting up a credential provider with service account tokens
-(this example assumes your cluster uses RBAC authorization):For Kubernetes v1.35, we - Kubernetes SIG Auth - expect the feature to stay in beta,
-and we will continue to solicit feedback.You can also follow along on the
-KEP-4412
-to track progress across the coming Kubernetes releases.In this blog post,
-I have covered the beta graduation of ServiceAccount token integration
-for Kubelet Credential Providers in Kubernetes v1.34.
-I discussed the key improvements,
-including the required  field
-and enhanced integration with Ensure Secret Pull Images.We have been receiving positive feedback from the community during the alpha phase
-and would love to hear more as we stabilize this feature for GA.
-In particular, we would like feedback from credential provider implementors
-as they integrate with the new beta API and caching mechanisms.
-Please reach out to us on the #sig-auth-authenticators-dev channel on Kubernetes Slack.If you are interested in getting involved in the development of this feature,
-share feedback, or participate in any other ongoing SIG Auth projects,
-please reach out on the #sig-auth channel on Kubernetes Slack.You are also welcome to join the bi-weekly SIG Auth meetings,
-held every other Wednesday.]]></content:encoded></item><item><title>Welcoming the Rust Innovation Lab</title><link>https://blog.rust-lang.org/2025/09/03/welcoming-the-rust-innovation-lab/</link><author>Carol Nichols</author><category>dev</category><pubDate>Wed, 3 Sep 2025 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[TL;DR: Rustls is the inaugural project of the Rust Innovation Lab, which is a new home for Rust projects under the Rust Foundation.At the Rust Foundation's August meeting, the Project Directors and the rest of the Rust Foundation board voted to approve Rustls as the first project housed under the newly formed Rust Innovation Lab. Prior to the vote, the Project Directors consulted with the Leadership Council who confirmed the Project's support for this initiative.The Rust Innovation Lab (RIL) is designed to provide support for funded Rust-based open source projects from the Rust Foundation in the form of governance, legal, networking, marketing, and administration, while keeping the technical direction solely in the hands of the current maintainers. As with the other work of the Rust Foundation (e.g. its many existing initiatives), the purpose of the RIL is to strengthen the Rust ecosystem generally.We are all excited by the formation of the Rust Innovation Lab. The support this initiative will provide to Rustls (and, eventually, other important projects that are using Rust) will improve software security for the entire industry. The Rust Project is grateful for the support of the Rust Foundation corporate members who are making this initiative possible for the benefit of everyone.More information on the criteria for projects wishing to become part of the RIL and the process for applying will be coming soon. The Project Directors and Leadership Council have been and will continue working with the Foundation to communicate information, questions, and feedback with the Rust community about the RIL as the details are worked out.]]></content:encoded></item><item><title>Kubernetes v1.34: Introducing CPU Manager Static Policy Option for Uncore Cache Alignment</title><link>https://kubernetes.io/blog/2025/09/02/kubernetes-v1-34-prefer-align-by-uncore-cache-cpumanager-static-policy-optimization/</link><author></author><category>dev</category><pubDate>Tue, 2 Sep 2025 18:30:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[A new CPU Manager Static Policy Option called prefer-align-cpus-by-uncorecache was introduced in Kubernetes v1.32 as an alpha feature, and has graduated to  in Kubernetes v1.34.
-This CPU Manager Policy Option is designed to optimize performance for specific workloads running on processors with a  architecture.
-In this article, I'll explain what that means and why it's useful.Understanding the featureUntil relatively recently, nearly all mainstream computer processors had a
-monolithic last-level-cache cache that was shared across every core in a multiple
-CPU package.
-This monolithic cache is also referred to as 
-(because it is not linked to a specific core), or as Level 3 cache.
-As well as the Level 3 cache, there is other cache, commonly called Level 1 and Level 2 cache,
-that  associated with a specific CPU core.In order to reduce access latency between the CPU cores and their cache, recent AMD64 and ARM
-architecture based processors have introduced a  architecture,
-where the last-level-cache is divided into multiple physical caches,
-that are aligned to specific CPU groupings within the physical package.
-The shorter distances within the CPU package help to reduce latency.
-Kubernetes is able to place workloads in a way that accounts for the cache
-topology within the CPU package(s).Cache-aware workload placementThe matrix below shows the CPU-to-CPU latency measured in nanoseconds (lower is better) when
-passing a packet between CPUs, via its cache coherence protocol on a processor that
-uses split uncore cache.
-In this example, the processor package consists of 2 uncore caches.
-Each uncore cache serves 8 CPU cores.
-
-Blue entries in the matrix represent latency between CPUs sharing the same uncore cache, while grey entries indicate latency between CPUs corresponding to different uncore caches. Latency between CPUs that correspond to different caches are higher than the latency between CPUs that belong to the same cache.With prefer-align-cpus-by-uncorecache enabled, the
-static CPU Manager attempts to allocates CPU resources for a container, such that all CPUs assigned to a container share the same uncore cache.
-This policy operates on a best-effort basis, aiming to minimize the distribution of a container's CPU resources across uncore caches, based on the
-container's requirements, and accounting for allocatable resources on the node.By running a workload, where it can, on a set of CPUS that use the smallest feasible number of uncore caches, applications benefit from reduced cache latency (as seen in the matrix above),
-and from reduced contention against other workloads, which can result in overall higher throughput.
-The benefit only shows up if your nodes use a split uncore cache topology for their processors.The following diagram below illustrates uncore cache alignment when the feature is enabled.By default, Kubernetes does not account for uncore cache topology; containers are assigned CPU resources using a packed methodology.
-As a result, Container 1 and Container 2 can experience a noisy neighbor impact due to
-cache access contention on Uncore Cache 0. Additionally, Container 2 will have CPUs distributed across both caches which can introduce a cross-cache latency.With prefer-align-cpus-by-uncorecache enabled, each container is isolated on an individual cache. This resolves the cache contention between the containers and minimizes the cache latency for the CPUs being utilized.Common use cases can include telco applications like vRAN, Mobile Packet Core, and Firewalls. It's important to note that the optimization provided by prefer-align-cpus-by-uncorecache can be dependent on the workload. For example, applications that are memory bandwidth bound may not benefit from uncore cache alignment, as utilizing more uncore caches can increase memory bandwidth access.To enable this feature, set the CPU Manager Policy to  and enable the CPU Manager Policy Options with prefer-align-cpus-by-uncorecache.For Kubernetes 1.34, the feature is in the beta stage and requires the CPUManagerPolicyBetaOptionsfeature gate to also be enabled.Append the following to the kubelet configuration file:If you're making this change to an existing node, remove the  file and then restart kubelet.prefer-align-cpus-by-uncorecache can be enabled on nodes with a monolithic uncore cache processor. The feature will mimic a best-effort socket alignment effect and will pack CPU resources on the socket similar to the default static CPU Manager policy.Reference the documentation for prefer-align-cpus-by-uncorecachehere.This feature is driven by SIG Node. If you are interested in helping develop this feature, sharing feedback, or participating in any other ongoing SIG Node projects, please attend the SIG Node meeting for more details.]]></content:encoded></item><item><title>Kubernetes v1.34: DRA has graduated to GA</title><link>https://kubernetes.io/blog/2025/09/01/kubernetes-v1-34-dra-updates/</link><author></author><category>dev</category><pubDate>Mon, 1 Sep 2025 18:30:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[Kubernetes 1.34 is here, and it has brought a huge wave of enhancements for Dynamic Resource Allocation (DRA)! This
-release marks a major milestone with many APIs in the  group graduating to General Availability (GA),
-unlocking the full potential of how you manage devices on Kubernetes. On top of that, several key features have
-moved to beta, and a fresh batch of new alpha features promise even more expressiveness and flexibility.Let's dive into what's new for DRA in Kubernetes 1.34!The core of DRA is now GAThe headline feature of the v1.34 release is that the core of DRA has graduated to General Availability.Kubernetes Dynamic Resource Allocation (DRA) provides
-a flexible framework for managing specialized hardware and infrastructure resources, such as GPUs or FPGAs. DRA
-provides APIs that enable each workload to specify the properties of the devices it needs, but leaving it to the
-scheduler to allocate actual devices, allowing increased reliability and improved utilization of expensive hardware.With the graduation to GA, DRA is stable and will be part of Kubernetes for the long run. The community can still
-expect a steady stream of new features being added to DRA over the next several Kubernetes releases, but they will
-not make any breaking changes to DRA. So users and developers of DRA drivers can start adopting DRA with confidence.Starting with Kubernetes 1.34, DRA is enabled by default; the DRA features that have reached beta are  enabled by default.
-That's because the default API version for DRA is now the stable  version, and not the earlier versions
-(eg:  or ) that needed explicit opt in.Several powerful features have been promoted to beta, adding more control, flexibility, and observability to resource
-management with DRA.Admin access labelling has been updated.
-In v1.34, you can restrict device support to people (or software) authorized to use it. This is meant
-as a way to avoid privilege escalation if a DRA driver grants additional privileges when admin access is requested
-and to avoid accessing devices which are in use by normal applications, potentially in another namespace.
-The restriction works by ensuring that only users with access to a namespace with the
-resource.k8s.io/admin-access: "true" label are authorized to create
-ResourceClaim or ResourceClaimTemplates objects with the  field set to true. This ensures that non-admin users cannot misuse the feature.Prioritized list lets users specify
-a list of acceptable devices for their workloads, rather than just a single type of device. So while the workload
-might run best on a single high-performance GPU, it might also be able to run on 2 mid-level GPUs. The scheduler will
-attempt to satisfy the alternatives in the list in order, so the workload will be allocated the best set of devices
-available on the node.The kubelet's API has been updated to report on Pod resources allocated through DRA. This allows node monitoring agents
-to know the allocated DRA resources for Pods on a node and makes it possible to use the DRA information in the PodResources API
-to develop new features and integrations.Kubernetes 1.34 also introduces several new alpha features that give us a glimpse into the future of resource management with DRA.Extended resource mapping support in DRA allows
-cluster administrators to advertise DRA-managed resources as , allowing developers to consume them using
-the familiar, simpler request syntax while still benefiting from dynamic allocation. This makes it possible for existing
-workloads to start using DRA without modifications, simplifying the transition to DRA for both application developers and
-cluster administrators.Consumable capacity introduces a flexible
-device sharing model where multiple, independent resource claims from unrelated
-pods can each be allocated a share of the same underlying physical device. This new capability is managed through optional,
-administrator-defined sharing policies that govern how a device's total capacity is divided and enforced by the platform for
-each request. This allows for sharing of devices in scenarios where pre-defined partitions are not viable.
-A blog about this feature is coming soon.Binding conditions improve scheduling
-reliability for certain classes of devices by allowing the Kubernetes scheduler to delay binding a pod to a node until its
-required external resources, such as attachable devices or FPGAs, are confirmed to be fully prepared. This prevents premature
-pod assignments that could lead to failures and ensures more robust, predictable scheduling by explicitly modeling resource
-readiness before the pod is committed to a node. for DRA improves observability by exposing the health status of devices allocated to a Pod via Pod Status.
-This works whether the device is allocated through DRA or Device Plugin. This makes it easier to understand the cause of an
-unhealthy device and respond properly.
-A blog about this feature is coming soon.While DRA got promoted to GA this cycle, the hard work on DRA doesn't stop. There are several features in alpha and beta that
-we plan to bring to GA in the next couple of releases and we are looking to continue to improve performance, scalability
-and reliability of DRA. So expect an equally ambitious set of features in DRA for the 1.35 release.A good starting point is joining the WG Device Management Slack channel and meetings, which happen at US/EU and EU/APAC friendly time slots.Not all enhancement ideas are tracked as issues yet, so come talk to us if you want to help or have some ideas yourself! We have work to do at all levels, from difficult core changes to usability enhancements in kubectl, which could be picked up by newcomers.A huge thanks to the new contributors to DRA this cycle:]]></content:encoded></item><item><title>Faster linking times with 1.90.0 stable on Linux using the LLD linker</title><link>https://blog.rust-lang.org/2025/09/01/rust-lld-on-1.90.0-stable/</link><author>Rémy Rakic</author><category>dev</category><pubDate>Mon, 1 Sep 2025 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[TL;DR: rustc will start using the LLD linker by default on the  target starting with the next stable release (1.90.0, scheduled for 2025-09-18), which should significantly reduce linking times. Test it out on beta now, and please report any encountered issues.Linking time is often a big part of compilation time. When rustc needs to build a binary or a shared library, it will usually call the default linker installed on the system to do that (this can be changed on the command-line or by the target for which the code is compiled).The linkers do an important job, with concerns about stability, backwards-compatibility and so on. For these and other reasons, on the most popular operating systems they usually are older programs, designed when computers only had a single core. So, they usually tend to be slow on a modern machine. For example, when building ripgrep 13 in debug mode on Linux, roughly half of the time is actually spent in the linker.There are different linkers, however, and the usual advice to improve linking times is to use one of these newer and faster linkers, like LLVM's  or Rui Ueyama's .Some of Rust's wasm and aarch64 targets already use  by default. When using rustup, rustc ships with a version of  for this purpose. When CI builds LLVM to use in the compiler, it also builds the linker and packages it. It's referred to as  to avoid colliding with any  already installed on the user's machine.Since improvements to linking times are substantial, it would be a good default to use in the most popular targets. This has been discussed for a long time, for example in issues #39915 and #71515.To expand our testing, we have enabled rustc to use  by default on nightly, in May 2024. No major issues have been reported since then.We believe we've done all the internal testing that we could, on CI, crater, on our benchmarking infrastructure and on nightly, and plan to enable  to be the linker used by default on  for stable builds in 1.90.0.While this also enables the compiler to use more linker features in the future, the most immediate benefit is much improved linking times.Here are more details from the ripgrep example mentioned above: for an incremental rebuild, linking is reduced 7x, resulting in a 40% reduction in end-to-end compilation times. For a from-scratch debug build, it is a 20% improvement.Most binaries should see some improvements here, but it's especially significant with e.g. bigger binaries, or for incremental rebuilds, or when involving debuginfo. These usually see bottlenecks in the linker.Here's a link to the complete results from our benchmarks.From our prior testing, we don't really expect issues to happen in practice. It is a drop-in replacement for the vast majority of cases, but  is not  compatible with GNU ld.In any case, using  can be disabled if any problem occurs: use the  flag to revert to using the system's default linker.Some crates somehow relying on these differences could need additional link args, though we also expect this to be quite rare. Let us know if you encounter problems, by opening an issue on GitHub.Some of the big gains in performance come from parallelism, which could be undesirable in resource-constrained environments, or for heavy projects that are already reaching hardware limits.
-Summary, and call for testingrustc will use  on , starting with the 1.90.0 stable release, for much improved linking times. Rust 1.90.0 will be released next month, on the 18th of September 2025.This linker change is already available on the current beta (). To help everyone prepare for this landing on stable, please test your projects on beta and let us know if you encounter problems, by opening an issue on GitHub.If that happens, you can revert to the default linker with the  flag. Either by adding it to the usual  environment variable, or to a project's  configuration file,
-like so:]]></content:encoded></item></channel></rss>
+Please share your experience on go.dev/issue/71497, and help determine the future of Go.]]></content:encoded></item><item><title>Kubernetes v1.34: VolumeAttributesClass for Volume Modification GA</title><link>https://kubernetes.io/blog/2025/09/08/kubernetes-v1-34-volume-attributes-class/</link><author></author><category>dev</category><pubDate>Mon, 8 Sep 2025 18:30:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[The VolumeAttributesClass API, which empowers users to dynamically modify volume attributes, has officially graduated to General Availability (GA) in Kubernetes v1.34. This marks a significant milestone, providing a robust and stable way to tune your persistent storage directly within Kubernetes.What is VolumeAttributesClass?At its core, VolumeAttributesClass is a cluster-scoped resource that defines a set of mutable parameters for a volume. Think of it as a "profile" for your storage, allowing cluster administrators to expose different quality-of-service (QoS) levels or performance tiers.Users can then specify a volumeAttributesClassName in their PersistentVolumeClaim (PVC) to indicate which class of attributes they desire. The magic happens through the Container Storage Interface (CSI): when a PVC referencing a VolumeAttributesClass is updated, the associated CSI driver interacts with the underlying storage system to apply the specified changes to the volume.Dynamically scale performance: Increase IOPS or throughput for a busy database, or reduce it for a less critical application.Optimize costs: Adjust attributes on the fly to match your current needs, avoiding over-provisioning.Simplify operations: Manage volume modifications directly within the Kubernetes API, rather than relying on external tools or manual processes.What is new from Beta to GAThere are two major enhancements from beta.Cancellation support when errors occurTo improve resilience and user experience, the GA release introduces explicit cancel support when a requested volume modification encounters an error. If the underlying storage system or CSI driver indicates that the requested changes cannot be applied (e.g., due to invalid arguments), users can cancel the operation and revert the volume to its previous stable configuration, preventing the volume from being left in an inconsistent state.Quota support based on scopeWhile VolumeAttributesClass doesn't add a new quota type, the Kubernetes control plane can be configured to enforce quotas on PersistentVolumeClaims that reference a specific VolumeAttributesClass.This is achieved by using the  field in a ResourceQuota to target PVCs that have .spec.volumeAttributesClassName set to a particular VolumeAttributesClass name. Please see more details here.Drivers support VolumeAttributesClassAmazon EBS CSI Driver: The AWS EBS CSI driver has robust support for VolumeAttributesClass and allows you to modify parameters like volume type (e.g., gp2 to gp3, io1 to io2), IOPS, and throughput of EBS volumes dynamically.Google Compute Engine (GCE) Persistent Disk CSI Driver (pd.csi.storage.gke.io): This driver also supports dynamic modification of persistent disk attributes, including IOPS and throughput, via VolumeAttributesClass.For any inquiries or specific questions related to VolumeAttributesClass, please reach out to the SIG Storage community.]]></content:encoded></item></channel></rss>
