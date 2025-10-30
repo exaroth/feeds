@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Video</title><link>https://konrad.website/feeds/</link><description></description><item><title>Rust vs C++ Performance</title><link>https://www.youtube.com/watch?v=WnMin9cf78g</link><author>Anton Putra</author><category>dev</category><category>video</category><enclosure url="https://www.youtube.com/v/WnMin9cf78g?version=3" length="" type=""/><pubDate>Thu, 13 Feb 2025 14:30:41 +0000</pubDate><source url="https://www.youtube.com/channel/UCeLvlbC754U6FyFQbKc0UnQ">Dev - Anton Putra</source><content:encoded><![CDATA[C++ vs Rust Speed.
+
+🔴 To support my channel, I'd like to offer Mentorship/On-the-Job Support/Consulting (me@antonputra.com)
+
+🍿 Benchmarks: https://youtube.com/playlist?list=PLiMWaCMwGJXmcDLvMQeORJ-j_jayKaLVn&si=p-UOaVM_6_SFx52H
+
+👋 AWS is expensive - Infra Support Fund: https://buymeacoffee.com/antonputra
+
+▬▬▬▬▬ Experience & Location 💼 ▬▬▬▬▬
+►  I’m a Senior Software Engineer at Juniper Networks (13+ years of experience)
+►  Located in San Francisco Bay Area, CA (US citizen)
+
+▬▬▬▬▬▬ Connect with me 👋 ▬▬▬▬▬▬
+►  LinkedIn: https://www.linkedin.com/in/anton-putra
+►  Twitter/X: https://twitter.com/antonvputra
+►  GitHub: https://github.com/antonputra
+►  Email: me@antonputra.com
+
+▬▬▬▬▬▬▬ Source Code 📚 ▬▬▬▬▬▬▬
+► Original Source Code: https://github.com/antonputra/tutorials/tree/245/lessons/245
+
+PR to improve Rust - https://github.com/antonputra/tutorials/pull/429
+PR to improve Rust - https://github.com/antonputra/tutorials/pull/431
+PR to improve Rust - https://github.com/antonputra/tutorials/pull/433
+
+#rust #golang #devops]]></content:encoded></item><item><title>The difference between metrics and scorers</title><link>https://www.youtube.com/watch?v=67KMDSitw1M</link><author>probabl</author><category>dev</category><category>ai</category><category>video</category><enclosure url="https://www.youtube.com/v/67KMDSitw1M?version=3" length="" type=""/><pubDate>Wed, 12 Feb 2025 10:41:04 +0000</pubDate><source url="https://www.youtube.com/channel/UCIat2Cdg661wF5DQDWTQAmg">Dev - Probabl</source><content:encoded><![CDATA[You can easily write custom metric functions for scikit-learn, but you need to take an extra step if you want to use those metrics in a hyperparameter search. To add a number there, you need to use a scorer instead. The goal of this video is to explain the difference and to show how to leverage the `make_scorer` helper utility here.
+
+Website: https://probabl.ai/
+LinkedIn: https://www.linkedin.com/company/probabl
+Bluesky: https://bsky.app/profile/probabl.bsky.social
+Twitter: https://x.com/probabl_ai
+Discord: https://discord.probabl.ai
+
+We also host a podcast called Sample Space, which you can find on your favourite podcast player. All the links can be found here:
+https://rss.com/podcasts/sample-space/
+
+#probabl]]></content:encoded></item><item><title>Elon Musk attempts hostile takeover of OpenAI…</title><link>https://www.youtube.com/watch?v=tPZauAYgVRQ</link><author>Fireship</author><category>dev</category><category>tech</category><category>video</category><enclosure url="https://www.youtube.com/v/tPZauAYgVRQ?version=3" length="" type=""/><pubDate>Tue, 11 Feb 2025 18:58:36 +0000</pubDate><source url="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA">Dev - Fireship</source><content:encoded><![CDATA[Elon Musk has launched a hostile takeover bid to take control over the non-profit assets of OpenAI. Let's look into the details of OpenAI's corporate structure and the likelihood Elon's takeover is successful. 
+
+#tech #ai #thecodereport
+
+💬 Chat with Me on Discord
+
+https://discord.gg/fireship
+
+🔗 Resources
+
+OpenAI Stargate https://youtu.be/YrHsw4Oja7w
+o1 First look https://youtu.be/Sf4WqHBCYSY
+
+🔥 Get More Content - Upgrade to PRO
+
+Upgrade at https://fireship.io/pro
+Use code YT25 for 25% off PRO access 
+
+🎨 My Editor Settings
+
+- Atom One Dark 
+- vscode-icons
+- Fira Code Font
+
+🔖 Topics Covered
+
+- Why is Elon trying to buy OpenAI?
+- Latest trends in artificial Intelligence
+- Elon Musk vs Sam Altman Feud Explained]]></content:encoded></item><item><title>Introducing the CrossValidationReport</title><link>https://www.youtube.com/watch?v=R6dRAE83Y2c</link><author>probabl</author><category>dev</category><category>ai</category><category>video</category><enclosure url="https://www.youtube.com/v/R6dRAE83Y2c?version=3" length="" type=""/><pubDate>Tue, 11 Feb 2025 12:45:02 +0000</pubDate><source url="https://www.youtube.com/channel/UCIat2Cdg661wF5DQDWTQAmg">Dev - Probabl</source><content:encoded><![CDATA[Skore version 0.6 introduces the `CrossValidationReport` that provides you with an `EstimatorReport` for each fold of your cross-validation, enabling you to inspect your estimator on each fold.
+
+------
+Links:
+
+skore v0.6 documentation:
+https://skore.probabl.ai/0.6/index.html
+
+skore GitHub repository:
+https://github.com/probabl-ai/skore
+
+Website: https://probabl.ai/
+LinkedIn: https://www.linkedin.com/company/probabl
+Twitter: https://x.com/probabl_ai
+Bluesky: https://bsky.app/profile/probabl.bsky.social
+Discord: https://discord.probabl.ai
+
+We also host a podcast called Sample Space, which you can find on your favourite podcast player. All the links can be found here:
+https://rss.com/podcasts/sample-space/
+
+#probabl]]></content:encoded></item><item><title>Rust vs. Go (Golang): Performance (Fastest Frameworks + PostgreSQL)</title><link>https://www.youtube.com/watch?v=31R8Ef9A0iw</link><author>Anton Putra</author><category>dev</category><category>video</category><enclosure url="https://www.youtube.com/v/31R8Ef9A0iw?version=3" length="" type=""/><pubDate>Tue, 11 Feb 2025 09:25:18 +0000</pubDate><source url="https://www.youtube.com/channel/UCeLvlbC754U6FyFQbKc0UnQ">Dev - Anton Putra</source><content:encoded><![CDATA[Go vs Rust Performance Comparison. Go (1.23.6) vs Rust (1.84.1).
+
+🔴 To support my channel, I'd like to offer Mentorship/On-the-Job Support/Consulting (me@antonputra.com)
+
+🍿 Benchmarks: https://youtube.com/playlist?list=PLiMWaCMwGJXmcDLvMQeORJ-j_jayKaLVn&si=p-UOaVM_6_SFx52H
+
+👋 AWS is expensive - Infra Support Fund: https://buymeacoffee.com/antonputra
+
+▬▬▬▬▬ Experience & Location 💼 ▬▬▬▬▬
+►  I’m a Senior Software Engineer at Juniper Networks (13+ years of experience)
+►  Located in San Francisco Bay Area, CA (US citizen)
+
+▬▬▬▬▬▬ Connect with me 👋 ▬▬▬▬▬▬
+►  LinkedIn: https://www.linkedin.com/in/anton-putra
+►  Twitter/X: https://twitter.com/antonvputra
+►  GitHub: https://github.com/antonputra
+►  Email: me@antonputra.com
+
+▬▬▬▬▬▬▬ Source Code 📚 ▬▬▬▬▬▬▬
+► Original Source Code: https://github.com/antonputra/tutorials/tree/244/lessons/244
+
+PR to improve Rust - https://github.com/antonputra/tutorials/pull/429
+PR to improve Rust - https://github.com/antonputra/tutorials/pull/431
+PR to improve Rust - https://github.com/antonputra/tutorials/pull/433
+
+#rust #golang #devops]]></content:encoded></item><item><title>Rust vs. Go (Golang): Performance 2025</title><link>https://www.youtube.com/watch?v=CsKNTwS9kic</link><author>Anton Putra</author><category>dev</category><category>video</category><enclosure url="https://www.youtube.com/v/CsKNTwS9kic?version=3" length="" type=""/><pubDate>Sat, 8 Feb 2025 11:36:09 +0000</pubDate><source url="https://www.youtube.com/channel/UCeLvlbC754U6FyFQbKc0UnQ">Dev - Anton Putra</source><content:encoded><![CDATA[Go vs Rust Performance Comparison. Go (1.23.6) vs Rust (1.84.1).
+
+🔴 To support my channel, I'd like to offer Mentorship/On-the-Job Support/Consulting (me@antonputra.com)
+
+🍿 Benchmarks: https://youtube.com/playlist?list=PLiMWaCMwGJXmcDLvMQeORJ-j_jayKaLVn&si=p-UOaVM_6_SFx52H
+
+👋 AWS is expensive - Infra Support Fund: https://buymeacoffee.com/antonputra
+
+▬▬▬▬▬ Experience & Location 💼 ▬▬▬▬▬
+►  I’m a Senior Software Engineer at Juniper Networks (13+ years of experience)
+►  Located in San Francisco Bay Area, CA (US citizen)
+
+▬▬▬▬▬▬ Connect with me 👋 ▬▬▬▬▬▬
+►  LinkedIn: https://www.linkedin.com/in/anton-putra
+►  Twitter/X: https://twitter.com/antonvputra
+►  GitHub: https://github.com/antonputra
+►  Email: me@antonputra.com
+
+▬▬▬▬▬▬▬ Source Code 📚 ▬▬▬▬▬▬▬
+► Original Source Code: https://github.com/antonputra/tutorials/tree/243/lessons/243
+
+#rust #golang #devops]]></content:encoded></item><item><title>UK demands backdoor for encrypted Apple user data...</title><link>https://www.youtube.com/watch?v=ozkg_iW9mNU</link><author>Fireship</author><category>dev</category><category>tech</category><category>video</category><enclosure url="https://www.youtube.com/v/ozkg_iW9mNU?version=3" length="" type=""/><pubDate>Fri, 7 Feb 2025 20:20:21 +0000</pubDate><source url="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA">Dev - Fireship</source><content:encoded><![CDATA[Try Brilliant free for 30 days https://brilliant.org/fireship You’ll also get 20% off an annual premium subscription.
+
+The United Kingdom is demanding Apple build a backdoor to access encrypted iCloud user data. Learn how end-to-end-encryption works and other tools that protect your digital privacy. 
+
+#apple #tech #thecodereport 
+
+💬 Chat with Me on Discord
+
+https://discord.gg/fireship
+
+🔗 Resources
+
+Mainstream Source https://www.washingtonpost.com/technology/2025/02/07/apple-encryption-backdoor-uk/
+Full Cryptography Tutorial https://youtu.be/NuyzuNBFWxQ
+Apple Intelligence gone Wild https://youtu.be/7rXgVsIGvGQ
+Tails OS in 100 Seconds https://youtu.be/mVKAyw0xqxw
+
+🔥 Get More Content - Upgrade to PRO
+
+Upgrade at https://fireship.io/pro
+Use code YT25 for 25% off PRO access 
+
+🎨 My Editor Settings
+
+- Atom One Dark 
+- vscode-icons
+- Fira Code Font
+
+🔖 Topics Covered
+
+- Why does the UK want Apple iCloud data?
+- What is a double rachet algorithm?
+- How does signal e2ee protocol work?
+- How do I keep browsing data private?
+- Best Linux distro for privacy]]></content:encoded></item><item><title>Google finally shipped some fire…</title><link>https://www.youtube.com/watch?v=k9xbh9LUYn0</link><author>Fireship</author><category>dev</category><category>tech</category><category>video</category><enclosure url="https://www.youtube.com/v/k9xbh9LUYn0?version=3" length="" type=""/><pubDate>Thu, 6 Feb 2025 18:26:18 +0000</pubDate><source url="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA">Dev - Fireship</source><content:encoded><![CDATA[Deploy your app without complexity using Sevalla http://bit.ly/4hDju8W
+
+Take a first look at Google Gemini 2.0 and see how it compares to models like DeepSeek R1 and OpenAI o3-mini. Learn how to use AI models like Gemini Flash to solve real-world problems. 
+
+#tech #ai #thecodereport
+
+💬 Chat with Me on Discord
+
+https://discord.gg/fireship
+
+🔗 Resources
+
+Gemini for PDF processing https://www.sergey.fyi/articles/gemini-flash-2
+OpenAI o3 First Look https://youtu.be/PoeFxGzPpXE
+DeepSeek R1 Fallout https://youtu.be/Nl7aCUsWykg
+
+🔥 Get More Content - Upgrade to PRO
+
+Upgrade at https://fireship.io/pro
+Use code YT25 for 25% off PRO access 
+
+🎨 My Editor Settings
+
+- Atom One Dark 
+- vscode-icons
+- Fira Code Font
+
+🔖 Topics Covered
+
+- Is Google Gemini better than OpenAI?
+- How to use Gemini Flash
+- Comparison of top LLMs
+- o3 vs Gemini vs DeepSeek
+- Latest trends in Google technology]]></content:encoded></item><item><title>Rust vs. Go (Golang): Performance (Only Standard Library)</title><link>https://www.youtube.com/watch?v=2e9U5sQ835Y</link><author>Anton Putra</author><category>dev</category><category>video</category><enclosure url="https://www.youtube.com/v/2e9U5sQ835Y?version=3" length="" type=""/><pubDate>Thu, 6 Feb 2025 10:08:02 +0000</pubDate><source url="https://www.youtube.com/channel/UCeLvlbC754U6FyFQbKc0UnQ">Dev - Anton Putra</source><content:encoded><![CDATA[Go vs Rust Performance Comparison.
+
+🔴 To support my channel, I'd like to offer Mentorship/On-the-Job Support/Consulting (me@antonputra.com)
+
+🍿 Benchmarks: https://youtube.com/playlist?list=PLiMWaCMwGJXmcDLvMQeORJ-j_jayKaLVn&si=p-UOaVM_6_SFx52H
+
+👋 AWS is expensive - Infra Support Fund: https://buymeacoffee.com/antonputra
+
+▬▬▬▬▬ Experience & Location 💼 ▬▬▬▬▬
+►  I’m a Senior Software Engineer at Juniper Networks (13+ years of experience)
+►  Located in San Francisco Bay Area, CA (US citizen)
+
+▬▬▬▬▬▬ Connect with me 👋 ▬▬▬▬▬▬
+►  LinkedIn: https://www.linkedin.com/in/anton-putra
+►  Twitter/X: https://twitter.com/antonvputra
+►  GitHub: https://github.com/antonputra
+►  Email: me@antonputra.com
+
+▬▬▬▬▬▬▬ Source Code 📚 ▬▬▬▬▬▬▬
+► Original Source Code: https://github.com/antonputra/tutorials/tree/242/lessons/242
+
+PR to improve Rust - https://github.com/antonputra/tutorials/pull/422
+PR to improve Rust - https://github.com/antonputra/tutorials/pull/423
+PR to improve Rust - https://github.com/antonputra/tutorials/pull/424
+
+#deno #bun #nodejs]]></content:encoded></item><item><title>Remembering the order of the train_test_split</title><link>https://www.youtube.com/watch?v=wb4bKSHiDik</link><author>probabl</author><category>dev</category><category>ai</category><category>video</category><enclosure url="https://www.youtube.com/v/wb4bKSHiDik?version=3" length="" type=""/><pubDate>Thu, 6 Feb 2025 10:06:54 +0000</pubDate><source url="https://www.youtube.com/channel/UCIat2Cdg661wF5DQDWTQAmg">Dev - Probabl</source><content:encoded><![CDATA[The page for the `train_test_split` function is the most visited page on the scikit-learn website. The reason, we suspect, is because folks often forget the order of arrays that come out. We know that `X_train` comes first, but then what? Is it `y_train` or `X_test`? This video explains the reasoning and also does a deep dive on the implementation.
+
+Website: https://probabl.ai/
+LinkedIn: https://www.linkedin.com/company/probabl
+Twitter: https://x.com/probabl_ai
+Bluesky: https://bsky.app/profile/probabl.bsky.social
+Discord: https://discord.probabl.ai
+
+We also host a podcast called Sample Space, which you can find on your favourite podcast player. All the links can be found here:
+https://rss.com/podcasts/sample-space/
+
+#probabl]]></content:encoded></item><item><title>OpenAI o3 tries to curb stomp DeepSeek...</title><link>https://www.youtube.com/watch?v=PoeFxGzPpXE</link><author>Fireship</author><category>dev</category><category>tech</category><category>video</category><enclosure url="https://www.youtube.com/v/PoeFxGzPpXE?version=3" length="" type=""/><pubDate>Tue, 4 Feb 2025 18:48:26 +0000</pubDate><source url="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA">Dev - Fireship</source><content:encoded><![CDATA[Stay updated with the best dev content at https://daily.dev/fireship
+
+Let's take a first look at OpenAI o3-mini and its new deep research feature. In addition, we will examine the recent bans on DeepSeek R1 and it compare it to other AI tools.  
+
+#tech #ai #thecodereport 
+
+💬 Chat with Me on Discord
+
+https://discord.gg/fireship
+
+🔗 Resources
+
+OpenAI Deep Research https://openai.com/index/introducing-deep-research/
+OpenAI accuses DeepSeek of IP theft https://youtu.be/hpwoGjpYygI
+Tech Trends 2025 https://youtu.be/v4H2fTgHGuc
+Godot in 100 Seconds https://youtu.be/QKgTZWbwD1U
+
+🔥 Get More Content - Upgrade to PRO
+
+Upgrade at https://fireship.io/pro
+Use code YT25 for 25% off PRO access 
+
+🎨 My Editor Settings
+
+- Atom One Dark 
+- vscode-icons
+- Fira Code Font
+
+🔖 Topics Covered
+
+- OpenAI Deep Research First Look
+- Why is DeepSeek banned?
+- Latest AI features in tech
+- o3-mini vs DeepSeek R1 vs Claude Sonnet]]></content:encoded></item><item><title>Deno vs. Node.js vs. Bun: Performance Comparison 2025</title><link>https://www.youtube.com/watch?v=DpDHPoStZZ8</link><author>Anton Putra</author><category>dev</category><category>video</category><enclosure url="https://www.youtube.com/v/DpDHPoStZZ8?version=3" length="" type=""/><pubDate>Mon, 3 Feb 2025 13:02:05 +0000</pubDate><source url="https://www.youtube.com/channel/UCeLvlbC754U6FyFQbKc0UnQ">Dev - Anton Putra</source><content:encoded><![CDATA[Node.js vs Deno vs Bun Performance
+
+🔴 To support my channel, I'd like to offer Mentorship/On-the-Job Support/Consulting (me@antonputra.com)
+
+🍿 Benchmarks: https://youtube.com/playlist?list=PLiMWaCMwGJXmcDLvMQeORJ-j_jayKaLVn&si=p-UOaVM_6_SFx52H
+
+👋 AWS is expensive - Infra Support Fund: https://buymeacoffee.com/antonputra
+
+▬▬▬▬▬ Experience & Location 💼 ▬▬▬▬▬
+►  I’m a Senior Software Engineer at Juniper Networks (13+ years of experience)
+►  Located in San Francisco Bay Area, CA (US citizen)
+
+▬▬▬▬▬▬ Connect with me 👋 ▬▬▬▬▬▬
+►  LinkedIn: https://www.linkedin.com/in/anton-putra
+►  Twitter/X: https://twitter.com/antonvputra
+►  GitHub: https://github.com/antonputra
+►  Email: me@antonputra.com
+
+▬▬▬▬▬▬▬ Timestamps ⏰  ▬▬▬▬▬▬▬
+0:00 Intro
+0:42 1st Test - Static
+4:26 2nd Test - PostgreSQL
+
+▬▬▬▬▬▬▬ Source Code 📚 ▬▬▬▬▬▬▬
+► Original Source Code: https://github.com/antonputra/tutorials/tree/241/lessons/241
+► Bun's memory leak fix - https://github.com/oven-sh/bun/issues/17063
+
+#deno #bun #nodejs]]></content:encoded></item><item><title>Grafana is the goat... Let&apos;s deploy the LGTM stack</title><link>https://www.youtube.com/watch?v=1X3dV3D5EJg</link><author>Fireship</author><category>dev</category><category>tech</category><category>video</category><enclosure url="https://www.youtube.com/v/1X3dV3D5EJg?version=3" length="" type=""/><pubDate>Sat, 1 Feb 2025 15:24:39 +0000</pubDate><source url="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA">Dev - Fireship</source><content:encoded><![CDATA[Get up to 67% off VPS at Hostinger. Use code FIRESHIP for an extra discount at https://hostinger.com/fireship
+
+#linux #programming #softwareengineer 
+
+💬 Chat with Me on Discord
+
+https://discord.gg/fireship
+
+🔗 Resources
+
+Docker 101 https://youtu.be/rIrNIzy6U_g
+Full Deno Course https://fireship.io/courses/deno
+Grafana on GitHub https://github.com/grafana/grafana
+
+🔥 Get More Content - Upgrade to PRO
+
+Upgrade at https://fireship.io/pro
+Use code YT25 for 25% off PRO access 
+
+🎨 My Editor Settings
+
+- Atom One Dark 
+- vscode-icons
+- Fira Code Font
+
+🔖 Topics Covered
+
+What is Grafana? 
+How to get started with software observability?
+What is Open Telemetry?
+How to deploy LGTM stack?
+How monitor Linux server performance?]]></content:encoded></item><item><title>gRPC vs REST vs GraphQL: Comparison &amp; Performance</title><link>https://www.youtube.com/watch?v=uH0SxYdsjv4</link><author>Anton Putra</author><category>dev</category><category>video</category><enclosure url="https://www.youtube.com/v/uH0SxYdsjv4?version=3" length="" type=""/><pubDate>Thu, 30 Jan 2025 19:54:43 +0000</pubDate><source url="https://www.youtube.com/channel/UCeLvlbC754U6FyFQbKc0UnQ">Dev - Anton Putra</source><content:encoded><![CDATA[gRPC vs REST vs GraphQL Performance Benchmark.
+
+🔴 To support my channel, I'd like to offer Mentorship/On-the-Job Support/Consulting (me@antonputra.com)
+
+🍿 Benchmarks: https://youtube.com/playlist?list=PLiMWaCMwGJXmcDLvMQeORJ-j_jayKaLVn&si=p-UOaVM_6_SFx52H
+
+👋 AWS is expensive - Infra Support Fund: https://buymeacoffee.com/antonputra
+
+▬▬▬▬▬ Experience & Location 💼 ▬▬▬▬▬
+►  I’m a Senior Software Engineer at Juniper Networks (13+ years of experience)
+►  Located in San Francisco Bay Area, CA (US citizen)
+
+▬▬▬▬▬▬ Connect with me 👋 ▬▬▬▬▬▬
+►  LinkedIn: https://www.linkedin.com/in/anton-putra
+►  Twitter/X: https://twitter.com/antonvputra
+►  Instagram: https://www.instagram.com/aputrabay
+►  GitHub: https://github.com/antonputra
+►  Email: me@antonputra.com
+
+▬▬▬▬▬▬▬ Source Code 📚 ▬▬▬▬▬▬▬
+► Original Source Code: https://github.com/antonputra/tutorials/tree/240/lessons/240
+
+#python #golang #nodejs]]></content:encoded></item><item><title>The ups and downs of stratified cross-validation</title><link>https://www.youtube.com/watch?v=EpK9pWZGjbE</link><author>probabl</author><category>dev</category><category>ai</category><category>video</category><enclosure url="https://www.youtube.com/v/EpK9pWZGjbE?version=3" length="" type=""/><pubDate>Thu, 30 Jan 2025 11:48:46 +0000</pubDate><source url="https://www.youtube.com/channel/UCIat2Cdg661wF5DQDWTQAmg">Dev - Probabl</source><content:encoded><![CDATA[When you use GridSearchCV in scikit-learn will do a cross-validated hyperparameter search. This is neat, but there are some worthwhile details involved when it comes to selection the cross-validation segments.
+
+Link to discussion on Github:
+https://github.com/scikit-learn/scikit-learn/issues/4757#issuecomment-2419933195
+
+Website: https://probabl.ai/
+LinkedIn: https://www.linkedin.com/company/probabl
+Twitter: https://x.com/probabl_ai
+Bluesky: https://bsky.app/profile/probabl.bsky.social
+Discord: https://discord.probabl.ai
+
+We also host a podcast called Sample Space, which you can find on your favourite podcast player. All the links can be found here:
+https://rss.com/podcasts/sample-space/
+
+#probabl]]></content:encoded></item><item><title>DeepSeek stole our tech... says OpenAI</title><link>https://www.youtube.com/watch?v=hpwoGjpYygI</link><author>Fireship</author><category>dev</category><category>tech</category><category>video</category><enclosure url="https://www.youtube.com/v/hpwoGjpYygI?version=3" length="" type=""/><pubDate>Wed, 29 Jan 2025 20:47:22 +0000</pubDate><source url="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA">Dev - Fireship</source><content:encoded><![CDATA[Build better apps with PostHog https://posthog.com/fireship
+
+OpenAI and AI Czar David Sacks accuse DeepSeek of stealing their IP to train their new R1 model, citing hard evidence gained from Microsoft. In addition, Alibaba just released Qwen 2.5 with impressive benchmark results. 
+
+#tech #ai #thecodereport 
+
+💬 Chat with Me on Discord
+
+https://discord.gg/fireship
+
+🔗 Resources
+
+Source https://www.ft.com/content/a0dfedd1-5255-4fa9-8ccc-1fe01de87ea6
+Qwen 2.5 on GitHub https://github.com/QwenLM/Qwen2.5
+DeepSeek Ollama Tutorial https://youtu.be/clJCDHml2cA
+DeepSeek Crashes Stocks https://youtu.be/Nl7aCUsWykg
+
+🔥 Get More Content - Upgrade to PRO
+
+Upgrade at https://fireship.io/pro
+Use code YT25 for 25% off PRO access 
+
+🎨 My Editor Settings
+
+- Atom One Dark 
+- vscode-icons
+- Fira Code Font
+
+🔖 Topics Covered
+
+- Qwen 2.5 vs DeepSeek
+- Deepseek accused of IP theft by OpenAI
+- Latest trends in artificial intelligence
+- Chinese AI development boom explained 
+- DeepSeek Janus image diffusion model]]></content:encoded></item><item><title>Big Tech in panic mode... Did DeepSeek R1 just pop the AI bubble?</title><link>https://www.youtube.com/watch?v=Nl7aCUsWykg</link><author>Fireship</author><category>dev</category><category>tech</category><category>video</category><enclosure url="https://www.youtube.com/v/Nl7aCUsWykg?version=3" length="" type=""/><pubDate>Mon, 27 Jan 2025 19:27:11 +0000</pubDate><source url="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA">Dev - Fireship</source><content:encoded><![CDATA[Chip stocks like Nvidia are in trouble after the DeepSeek R1 AI model has proven that it is possible to train and run state-of-the-art reasoning models with minimal hardware. Let's find out why China's latest AI model has big tech and wall street in panic mode. 
+
+#tech #ai #thecodereport
+
+💬 Chat with Me on Discord
+
+https://discord.gg/fireship
+
+🔗 Resources
+
+DeepSeek First Look https://youtu.be/-2k1rcRzsLA
+Nvidia CUDA in 100 Seconds https://youtu.be/pPStdjuYzSI
+
+📚 Chapters
+
+🔥 Get More Content - Upgrade to PRO
+
+Upgrade at https://fireship.io/pro
+Use code YT25 for 25% off PRO access 
+
+🎨 My Editor Settings
+
+- Atom One Dark 
+- vscode-icons
+- Fira Code Font
+
+🔖 Topics Covered
+
+- Why is DeepSeek causing stocks to drop? 
+- Latest trends in artificial intelligence
+- How do AI companies make money?]]></content:encoded></item><item><title>The Stargate situation is crazy... Elon vs Altman beef intensifies</title><link>https://www.youtube.com/watch?v=YrHsw4Oja7w</link><author>Fireship</author><category>dev</category><category>tech</category><category>video</category><enclosure url="https://www.youtube.com/v/YrHsw4Oja7w?version=3" length="" type=""/><pubDate>Thu, 23 Jan 2025 18:55:27 +0000</pubDate><source url="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA">Dev - Fireship</source><content:encoded><![CDATA[What is the new Startgate project just announced by OpenAI and why is Elon Musk calling it fake? Learn how the new Stargate datacenters could affect the future of artificial intelligence development. 
+
+#tech #ai #thecodereport 
+
+💬 Chat with Me on Discord
+
+https://discord.gg/fireship
+
+🔗 Resources
+
+Elon vs Sam Altman https://youtu.be/Sf4WqHBCYSY
+DeepSeek R1 first look https://youtu.be/-2k1rcRzsLA
+
+📚 Chapters
+
+🔥 Get More Content - Upgrade to PRO
+
+Upgrade at https://fireship.io/pro
+Use code YT25 for 25% off PRO access 
+
+🎨 My Editor Settings
+
+- Atom One Dark 
+- vscode-icons
+- Fira Code Font
+
+🔖 Topics Covered
+
+- What is Project Stargate for AI infrastructure?
+- Elon Musk vs Sam Altman controversy
+- Grok 3 vs OpenAI o1]]></content:encoded></item><item><title>Playing with the classification report</title><link>https://www.youtube.com/watch?v=765qaIk30Rs</link><author>probabl</author><category>dev</category><category>ai</category><category>video</category><enclosure url="https://www.youtube.com/v/765qaIk30Rs?version=3" length="" type=""/><pubDate>Thu, 23 Jan 2025 09:08:13 +0000</pubDate><source url="https://www.youtube.com/channel/UCIat2Cdg661wF5DQDWTQAmg">Dev - Probabl</source><content:encoded><![CDATA[In this video we will play around with a confusion matrix widget that will help us understand how the numbers in the classification report in scikit-learn are created. The classification report is a great utility, but it can help to remind oneself of what the numbers really mean. 
+
+Scikit-learn documentation:
+https://scikit-learn.org/1.5/modules/generated/sklearn.metrics.classification_report.html
+
+Appendix with notebooks:
+https://github.com/probabl-ai/youtube-appendix/tree/main/16-metrics
+
+Website: https://probabl.ai/
+LinkedIn: https://www.linkedin.com/company/probabl
+Twitter: https://x.com/probabl_ai
+Bluesky: https://bsky.app/profile/probabl.bsky.social
+Discord: https://discord.probabl.ai
+
+We also host a podcast called Sample Space, which you can find on your favourite podcast player. All the links can be found here:
+https://rss.com/podcasts/sample-space/
+
+#probabl]]></content:encoded></item><item><title>Dark web PHP dev Ross Ulbricht released from prison…</title><link>https://www.youtube.com/watch?v=gi-wuoIDdjw</link><author>Fireship</author><category>dev</category><category>tech</category><category>video</category><enclosure url="https://www.youtube.com/v/gi-wuoIDdjw?version=3" length="" type=""/><pubDate>Wed, 22 Jan 2025 20:04:42 +0000</pubDate><source url="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA">Dev - Fireship</source><content:encoded><![CDATA[Ross Ulbricht received a presidential pardon for his crimes related to the Silk Road. Let's take a look at the tech stack behind the Silk Road website, which included LAMP stack, PHP, Linux, Tor, and Cryptocurrency. 
+
+#tech #webdev #thecodereport 
+
+💬 Chat with Me on Discord
+
+https://discord.gg/fireship
+
+🔗 Resources
+
+Tech Bros who went to jail https://youtu.be/CWeSzhJpJ9U
+TailsOS in 100 Seconds https://youtu.be/mVKAyw0xqxw
+
+📚 Chapters
+
+🔥 Get More Content - Upgrade to PRO
+
+Upgrade at https://fireship.io/pro
+Use code YT25 for 25% off PRO access 
+
+🎨 My Editor Settings
+
+- Atom One Dark 
+- vscode-icons
+- Fira Code Font
+
+🔖 Topics Covered
+
+- Why was Ross Ulbricht pardoned? 
+- What was the Silk Road website?
+- Tor explained 
+- Technology used for anonymous browsing
+- How does the dark web work?]]></content:encoded></item><item><title>Introducing the EstimatorReport</title><link>https://www.youtube.com/watch?v=2rjkrR7CjHc</link><author>probabl</author><category>dev</category><category>ai</category><category>video</category><enclosure url="https://www.youtube.com/v/2rjkrR7CjHc?version=3" length="" type=""/><pubDate>Wed, 22 Jan 2025 14:49:03 +0000</pubDate><source url="https://www.youtube.com/channel/UCIat2Cdg661wF5DQDWTQAmg">Dev - Probabl</source><content:encoded><![CDATA[Skore version 0.6 introduces a new EstimatorReport, which can be seen as a wrapper around an estimator that automatically detects all the relevant metrics and charts. The goal of the project is to be a useful sidekick for scikit-learn and you can expect more utilities to be released soon. 
+
+Links:
+skore v0.6 documentation:
+https://skore.probabl.ai/0.6/index.html
+
+skore GitHub repository:
+https://github.com/probabl-ai/skore]]></content:encoded></item><item><title>This free Chinese AI just crushed OpenAI&apos;s $200 o1 model...</title><link>https://www.youtube.com/watch?v=-2k1rcRzsLA</link><author>Fireship</author><category>dev</category><category>tech</category><category>video</category><enclosure url="https://www.youtube.com/v/-2k1rcRzsLA?version=3" length="" type=""/><pubDate>Tue, 21 Jan 2025 19:18:57 +0000</pubDate><source url="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA">Dev - Fireship</source><content:encoded><![CDATA[Try Brilliant free for 30 days https://brilliant.org/fireship You’ll also get 20% off an annual premium subscription.
+
+Let's take a look at the new DeepSeek R1 chain-of-thought AI model. Not only does it beat OpenAI o1 on key benchmarks, but it's also free and open source. 
+
+#programming #ai #thecodereport 
+
+💬 Chat with Me on Discord
+
+https://discord.gg/fireship
+
+🔗 Resources
+
+DeepSeek R1 GitHub https://github.com/deepseek-ai/DeepSeek-R1
+OpenAI o1 $200 plan https://youtu.be/Sf4WqHBCYSY
+
+🔥 Get More Content - Upgrade to PRO
+
+Upgrade at https://fireship.io/pro
+Use code YT25 for 25% off PRO access 
+
+🎨 My Editor Settings
+
+- Atom One Dark 
+- vscode-icons
+- Fira Code Font
+
+🔖 Topics Covered
+
+- What is Deepseek R1
+- How does chain-of-thought AI work?
+- Deepseek R1 vs OpenAI O1]]></content:encoded></item><item><title>Exploring prefect for scheduling data workloads</title><link>https://www.youtube.com/watch?v=hkm5OfiiorE</link><author>probabl</author><category>dev</category><category>ai</category><category>video</category><enclosure url="https://www.youtube.com/v/hkm5OfiiorE?version=3" length="" type=""/><pubDate>Tue, 21 Jan 2025 09:44:00 +0000</pubDate><source url="https://www.youtube.com/channel/UCIat2Cdg661wF5DQDWTQAmg">Dev - Probabl</source><content:encoded><![CDATA[It is easy to train a model in a notebook, but if we want to do anything with it in production we probably want to be able to train it regularly. There's good old cron, but it's 2025 now so maybe it's time to explore something a bit more modern. That's why in this livestream we will be exploring Prefect.
+
+Website: https://probabl.ai/
+Discord: https://discord.probabl.ai/
+LinkedIn: https://www.linkedin.com/company/probabl
+Twitter: https://x.com/probabl_ai
+
+We also host a podcast called Sample Space, which you can find on your favourite podcast player. All the links can be found here:
+https://rss.com/podcasts/sample-space/
+
+If you're keen to see more videos like this, you can follow us over at  @probabl_ai.
+
+#probabl]]></content:encoded></item><item><title>FastAPI vs Go (Golang) vs Node.js: Performance &amp; Price</title><link>https://www.youtube.com/watch?v=shAELuHaTio</link><author>Anton Putra</author><category>dev</category><category>video</category><enclosure url="https://www.youtube.com/v/shAELuHaTio?version=3" length="" type=""/><pubDate>Sun, 19 Jan 2025 19:03:01 +0000</pubDate><source url="https://www.youtube.com/channel/UCeLvlbC754U6FyFQbKc0UnQ">Dev - Anton Putra</source><content:encoded><![CDATA[Python vs Go (Golang) vs NodeJS Performance Comparison
+
+🔴 To support my channel, I'd like to offer Mentorship/On-the-Job Support/Consulting (me@antonputra.com)
+
+🍿 Benchmarks: https://youtube.com/playlist?list=PLiMWaCMwGJXmcDLvMQeORJ-j_jayKaLVn&si=p-UOaVM_6_SFx52H
+
+👋 AWS is expensive - Infra Support Fund: https://buymeacoffee.com/antonputra
+
+▬▬▬▬▬ Experience & Location 💼 ▬▬▬▬▬
+►  I’m a Senior Software Engineer at Juniper Networks (13+ years of experience)
+►  Located in San Francisco Bay Area, CA (US citizen)
+
+▬▬▬▬▬▬ Connect with me 👋 ▬▬▬▬▬▬
+►  LinkedIn: https://www.linkedin.com/in/anton-putra
+►  Twitter/X: https://twitter.com/antonvputra
+►  Instagram: https://www.instagram.com/aputrabay
+►  GitHub: https://github.com/antonputra
+►  Email: me@antonputra.com
+
+▬▬▬▬▬▬▬ Timestamps ⏰  ▬▬▬▬▬▬▬
+0:00 Intro
+1:42 Why Measure Latency from the Client Side?
+3:38 1st Test
+8:04 2nd Test
+
+▬▬▬▬▬▬▬ Source Code 📚 ▬▬▬▬▬▬▬
+► Original Source Code: https://github.com/antonputra/tutorials/tree/239/lessons/239
+
+#python #golang #nodejs]]></content:encoded></item><item><title>Apple Intelligence rolled back after doing dumb stuff...</title><link>https://www.youtube.com/watch?v=7rXgVsIGvGQ</link><author>Fireship</author><category>dev</category><category>tech</category><category>video</category><enclosure url="https://www.youtube.com/v/7rXgVsIGvGQ?version=3" length="" type=""/><pubDate>Sat, 18 Jan 2025 15:22:50 +0000</pubDate><source url="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA">Dev - Fireship</source><content:encoded><![CDATA[Apple recently rolled back its news summary feature on iOS powered by Apple Intelligence because it was hallucinating misinformation. Let's examine recent failures and controversies in the tech world. 
+
+#tech #ai #thecodereport 
+
+💬 Chat with Me on Discord
+
+https://discord.gg/fireship
+
+🔗 Resources
+
+Tech Trends in 2025 https://youtu.be/v4H2fTgHGuc
+Apple Intelligence Announcement https://youtu.be/ek2yOqAIYuU
+
+📚 Chapters
+
+🔥 Get More Content - Upgrade to PRO
+
+Upgrade at https://fireship.io/pro
+Use code YT25 for 25% off PRO access 
+
+🎨 My Editor Settings
+
+- Atom One Dark 
+- vscode-icons
+- Fira Code Font
+
+🔖 Topics Covered
+
+- Apple Intelligence failures
+- Progress of Artificial Super Intelligence
+- Elon feud with Asmongold 
+- Zuckerberg lies on Joe Rogan
+- Software engineering trends]]></content:encoded></item><item><title>More Python parallel stuff with joblib-modal</title><link>https://www.youtube.com/watch?v=0SXyIcsT4tg</link><author>probabl</author><category>dev</category><category>ai</category><category>video</category><enclosure url="https://www.youtube.com/v/0SXyIcsT4tg?version=3" length="" type=""/><pubDate>Sat, 18 Jan 2025 00:33:09 +0000</pubDate><source url="https://www.youtube.com/channel/UCIat2Cdg661wF5DQDWTQAmg">Dev - Probabl</source><content:encoded><![CDATA[One of the probabl colleagues has been working on an integration between joblib (which scikit-learn uses for parallel processing) and Modal (a cloud-provider known for it's likeable configuration for compute resources in Python). In this livestream we will explore a very early version and show you what's possible now and what is different. 
+
+The notebook from this episode can be found here:
+https://github.com/probabl-ai/youtube-appendix/blob/main/00-livestream/modal-jobs.ipynb
+
+Website: https://probabl.ai/
+Discord: https://discord.probabl.ai/
+LinkedIn: https://www.linkedin.com/company/probabl
+Twitter: https://x.com/probabl_ai
+
+We also host a podcast called Sample Space, which you can find on your favourite podcast player. All the links can be found here:
+https://rss.com/podcasts/sample-space/
+
+If you're keen to see more videos like this, you can follow us over at  @probabl_ai.]]></content:encoded></item></channel></rss>
