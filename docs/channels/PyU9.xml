@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>The Green Tea Garbage Collector</title><link>https://go.dev/blog/greenteagc</link><author>Michael Knyszek and Austin Clements</author><category>dev</category><pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[Go 1.25 includes a new experimental garbage collector called Green Tea,
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Announcing Rust 1.91.0</title><link>https://blog.rust-lang.org/2025/10/30/Rust-1.91.0/</link><author>The Rust Release Team</author><category>dev</category><pubDate>Thu, 30 Oct 2025 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust team is happy to announce a new version of Rust, 1.91.0. Rust is a programming language empowering everyone to build reliable and efficient software.If you have a previous version of Rust installed via , you can get 1.91.0 with:If you'd like to help us out by testing future releases, you might consider updating locally to use the beta channel () or the nightly channel (). Please report any bugs you might come across!The Rust compiler supports a wide variety of targets, but
+the Rust Team can't provide the same level of support for all of them. To
+clearly mark how supported each target is, we use a tiering system:Tier 3 targets are technically supported by the compiler, but we don't check
+whether their code build or passes the tests, and we don't provide any
+prebuilt binaries as part of our releases.Tier 2 targets are guaranteed to build and we provide prebuilt binaries, but
+we don't execute the test suite on those platforms: the produced binaries
+might not work or might have bugs.Tier 1 targets provide the highest support guarantee, and we run the full
+suite on those platforms for every change merged in the compiler. Prebuilt
+binaries are also available.Rust 1.91.0 promotes the  target to Tier 1 support,
+bringing our highest guarantees to users of 64-bit ARM systems running Windows.
+Add lint against dangling raw pointers from local variablesWhile Rust's borrow checking prevents dangling references from being returned, it doesn't
+track raw pointers. With this release, we are adding a warn-by-default lint on raw
+pointers to local variables being returned from functions. For example, code like this:Note that the code above is not unsafe, as it itself doesn't perform any dangerous
+operations. Only dereferencing the raw pointer after the function returns would be
+unsafe. We expect future releases of Rust to add more functionality helping authors
+to safely interact with raw pointers, and with unsafe code more generally.These previously stable APIs are now stable in const contexts:Many people came together to create Rust 1.91.0. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>The Green Tea Garbage Collector</title><link>https://go.dev/blog/greenteagc</link><author>Michael Knyszek and Austin Clements</author><category>dev</category><pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[Go 1.25 includes a new experimental garbage collector called Green Tea,
 available by setting  at build time.
 Many workloads spend around 10% less time in the garbage collector, but some
 workloads see a reduction of up to 40%!It’s production-ready and already in use at Google, so we encourage you to
@@ -152,7 +167,7 @@ load the pointer value at that word, and write it back to a buffer that
 will later be used to mark objects seen and add pages to the work list.
 Using vector instructions, we’re able to do this 64 bytes at a time,
 in just a couple instructions.Part of what makes this fast is the  instruction,
-part of the “Galios Field New Instructions” x86 extension,
+part of the “Galois Field New Instructions” x86 extension,
 and the bit manipulation Swiss army knife we referred to above.
 It’s the real star of the show, since it lets us do step (3) in the scanning kernel very, very
 efficiently.
