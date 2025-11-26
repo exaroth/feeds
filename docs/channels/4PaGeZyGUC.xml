@@ -1,153 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Youtube</title><link>https://konrad.website/feeds/</link><description></description><item><title>Java Generics and Collections • Maurice Naftalin &amp; Stuart Marks • GOTO 2025</title><link>https://www.youtube.com/watch?v=WpvmRaHEQzA</link><author>GOTO Conferences</author><category>yt</category><enclosure url="https://www.youtube.com/v/WpvmRaHEQzA?version=3" length="" type=""/><pubDate>Thu, 30 Oct 2025 13:01:12 +0000</pubDate><source url="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</source><content:encoded><![CDATA[This interview was recorded for the GOTO Book Club. #GOTOcon #GOTObookclub
-http://gotopia.tech/bookclub
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Youtube</title><link>https://konrad.website/feeds/</link><description></description><item><title>This feels illegal</title><link>https://www.youtube.com/shorts/n4Xe6yQ1jIs</link><author>Marques Brownlee</author><category>yt</category><enclosure url="https://www.youtube.com/v/n4Xe6yQ1jIs?version=3" length="" type=""/><pubDate>Wed, 26 Nov 2025 01:27:07 +0000</pubDate><source url="https://www.youtube.com/channel/UCBJycsmduvYEL83R_U4JriQ">Marques Brownlee</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Reporter Extra: Chatbots Are Designed to Please You — Here’s Why That’s a Problem</title><link>https://www.youtube.com/shorts/WaLS0lM4-1o</link><author>Vox</author><category>yt</category><enclosure url="https://www.youtube.com/v/WaLS0lM4-1o?version=3" length="" type=""/><pubDate>Tue, 25 Nov 2025 23:06:54 +0000</pubDate><source url="https://www.youtube.com/channel/UCLXo7UDZvByw2ixzpQCufnA">Vox</source><content:encoded><![CDATA[Vox senior technology correspondent Adam Clark Estes has a cautionary tale about chatbots.
 
-Check out more here:
-https://gotopia.tech/episodes/406
+What started as using AI for tedious chores — meal plans, grocery lists, quick research — quietly morphed into hours talking to a chatbot. And Adam isn’t alone. As chatbots get better at flattery, emotional support, and companionship, researchers are seeing more users (including teens) slip into dependency without realizing it.
 
-Maurice Naftalin - Architect, Trainer & Co-Author of “Java Generics & Collections”
-Stuart Marks - Java & OpenJDK at Oracle & Technical Editor of “Java Generics & Collections”
+Adam unpacks how chatbots are designed to keep us coming back, why young people are especially vulnerable, and what happens when adults can’t walk away — in some cases, leading to severe mental health crises. 
 
-RESOURCES
-Maurice
-https://bsky.app/profile/mauricenaftalin.bsky.social
-https://x.com/mauricenaftalin
-https://github.com/MauriceNaftalin
-https://www.linkedin.com/in/maurice-naftalin
+This is the first episode of Reporter Extras, a new Patreon-exclusive Vox video series that gives you a behind-the-scenes look at how our journalists create their work.
 
-Stuart
-https://bsky.app/profile/smarks.bsky.social
-https://mastodon.social/@stuartmarks
-https://x.com/stuartmarks
-https://github.com/stuart-marks
-https://www.linkedin.com/in/stuart-marks-17a71a2
-https://stuartmarks.wordpress.com
-
-Links
-https://youtu.be/IjE5eZEu7wI
-https://youtu.be/Cx_vijTm24w
-https://youtu.be/fbI3qveS_Is
-https://youtu.be/e6n-Ci8V2CM
-https://youtu.be/5xe64wudvCo
-https://youtu.be/THIlDdXk6Ac
-https://youtu.be/xsMUuOwv7IA
-https://youtu.be/J-bC20aAat8
-https://youtu.be/YAXGU2J7XjM
-https://youtu.be/miUbs3mqPJE
-
-DESCRIPTION
-Maurice Naftalin and Stuart Marks discuss the second edition of "Java Generics and Collections", published 19 years after the original. The conversation explores how Java programming has evolved from Java 5 to Java 25, covering major shifts like the move toward immutability, the introduction of sequenced collections, streams, and unmodifiable collections.
-
-They delve into critical design topics including encapsulation of collections, the anemic domain model anti-pattern, the controversial unsupported operation exception, and the challenges of null handling. The book includes new chapters on usage guidance and design retrospectives that reflect decades of accumulated wisdom about the Collections Framework.
-
-TIMECODES
-00:00 Intro
-01:19 A 19-year journey from Java 5 to Java 25
-04:41 The shift toward immutability & unmodifiable collections
-07:08 Usage guidance: Ownership & the anemic domain model
-17:58 Extension points & the fragile base class problem
-20:41 Design retrospective: The unsupported operation exception controversy
-27:11 The Null handling mess
-29:09 A lasting achievement
-30:21 Outro
-
-RECOMMENDED BOOKS
-Maurice Naftalin & Philip Wadler • Java Generics and Collections 2nd ed • https://amzn.to/47dOp9t
-Maurice Naftalin & Philip Wadler • Java Generics and Collections 1st ed • https://amzn.to/42JI03i
-Joshua Bloch • Effective Java • https://amzn.to/4oFbdoi
-Victor Grazi & Jeanne Boyarsky • Real-World Java • https://amzn.to/4oCEeBR
-Kevlin Henney & Trisha Gee • 97 Things Every Java Programmer Should Know • https://amzn.to/3kiTwJJ
-Christian Clausen • Five Lines of Code • https://amzn.to/3s2zjyg
-Nicolai Parlog • The Java Module System • https://amzn.to/3xFggR4
-
-https://bsky.app/profile/gotocon.com
-https://twitter.com/GOTOcon
-https://www.linkedin.com/company/goto-
-https://www.instagram.com/goto_con
-https://www.facebook.com/GOTOConferences
-#Java #JavaGenerics #JavaCollections #Immutability #Unmodifiability #Encapsulation #Java25 #Java5 #Null #NullHandling #Getters #Setters #AnemicDomainModel #JavaProgramming #TodayInTech #SoftwareDevelopment #SoftwareEngineering #Programming #MauriceNaftalin #StuartMarks #PhilipWadler #BookClub
-
-CHANNEL MEMBERSHIP BONUS
-Join this channel to get early access to videos & other perks:
-https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA/join
-
-Looking for a unique learning experience?
-Attend the next GOTO conference near you! Get your ticket at https://gotopia.tech
-Sign up for updates and specials at https://gotopia.tech/newsletter
-
-SUBSCRIBE TO OUR CHANNEL - new videos posted almost daily.
-https://www.youtube.com/user/GotoConferences/?sub_confirmation=1]]></content:encoded></item><item><title>Vampire Obsession</title><link>https://www.youtube.com/shorts/VPi6eIbK9EE</link><author>Horses</author><category>yt</category><enclosure url="https://www.youtube.com/v/VPi6eIbK9EE?version=3" length="" type=""/><pubDate>Thu, 30 Oct 2025 13:01:06 +0000</pubDate><source url="https://www.youtube.com/channel/UCrx2zrPjhGRi9TwszZiLwEg">Horses</source><content:encoded><![CDATA[Find the full, uncensored version of this essay and more at: ⁠https://horses.land]]></content:encoded></item><item><title>Filming in tanks be like: 👀 #spooky #halloween #thetankmuseum #tanks</title><link>https://www.youtube.com/shorts/xUKASl3XBOE</link><author>The Tank Museum</author><category>yt</category><enclosure url="https://www.youtube.com/v/xUKASl3XBOE?version=3" length="" type=""/><pubDate>Thu, 30 Oct 2025 12:02:02 +0000</pubDate><source url="https://www.youtube.com/channel/UChl-XKVVBAzoEVsnbOfpcqw">The Tank Museum</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>The Secret Tech That Won the Battle of the Atlantic</title><link>https://www.youtube.com/shorts/fx0HIoKlGhM</link><author>Imperial War Museums</author><category>yt</category><enclosure url="https://www.youtube.com/v/fx0HIoKlGhM?version=3" length="" type=""/><pubDate>Thu, 30 Oct 2025 12:01:24 +0000</pubDate><source url="https://www.youtube.com/channel/UC3uAjWoLZ4bSi6qI9SjALxA">Imperial War Museums</source><content:encoded><![CDATA[This video examines how the Allies won the Battle of the Atlantic during the Second World War.
-
-#history #ww2 #uboat]]></content:encoded></item><item><title>A Cozy French Dessert You’ve Never Tried, Apple Flognarde</title><link>https://www.youtube.com/watch?v=Q5uBEWjNeTw</link><author>French Cooking Academy</author><category>yt</category><enclosure url="https://www.youtube.com/v/Q5uBEWjNeTw?version=3" length="" type=""/><pubDate>Thu, 30 Oct 2025 10:54:29 +0000</pubDate><source url="https://www.youtube.com/channel/UC0lG3Ihe4LGV851lODRIS5g">French Cooking Academy</source><content:encoded><![CDATA[Become part of the FCA Club — your gateway to exclusive French cooking lessons and a vibrant private community ➡️ https://www.thefrenchcookingacademy.com/fcaclub
-Sign up for our newsletter and get our free ebook: ► https://www.thefrenchcookingacademy.com
-
-Discover the Flognarde also know as Flaugnarde  a rustic French dessert from central France  that’s as simple as it is irresistible! In this video,  Stéphane from The French Cooking Academy shows you how to make this countryside classic step-by-step. Learn how to prepare the light, custard-like batter, choose the perfect fruits (like apples or prunes), and bake it to golden perfection in a cast-iron skillet for that authentic French touch.
-
-Perfect for home bakers and lovers of French cuisine, this easy recipe blends the charm of a Clafoutis with the comfort of a pancake-like flan.
-
-CHAPTERS
-0:00 – Introduction: What Is a Flognarde (flaugnarde)
-1:00 – Making the Batter
-3:00 – Preparing the Fruits: Apple & Prune Variations
-5:30 – Choosing the Right Pan and Preparing for Baking
-7:30 – Baking and Final Tips for Perfect Texture
-9:30 – Tasting & What Makes This Rustic French Dessert Special
-
-#FrenchCooking #FrenchDessert #Flaugnarde #easy recipe #TheFrenchCookingAcademy
-
-PRINTABLE RECIPE CARD ➡️
-► https://www.thefrenchcookingacademy.com/recipes/flognarde
-
-JOIN OUR COOKING COMMUNITY ❤️
-Your support helps us keep creating these free video lessons for everyone to enjoy. As a thank you, our Patreon members receive exclusive content and a closer look behind the scenes.
-► https://www.patreon.com/frenchcookingacademy
-
-STAY IN TOUCH ✉️
-Instagram: https://www.instagram.com/french_cooking_academy
-Facebook: https://www.facebook.com/FrenchCookingAcademy
-We love hearing from you! If you have any questions about this recipe, please leave them in the comments below.
-
-ABOUT THE FRENCH COOKING ACADEMY 👨‍🍳
-We believe that the joys of French cuisine should be accessible to everyone. Our channel is dedicated to teaching classic recipes and foundational techniques in a clear and approachable way, so you can create restaurant-quality meals for your friends and family. Subscribe and join us on this delicious journey!]]></content:encoded></item><item><title>The Future of Ferrari | Power Players</title><link>https://www.youtube.com/watch?v=OV4osqHcQe8</link><author>Bloomberg Originals</author><category>yt</category><enclosure url="https://www.youtube.com/v/OV4osqHcQe8?version=3" length="" type=""/><pubDate>Thu, 30 Oct 2025 08:00:22 +0000</pubDate><source url="https://www.youtube.com/channel/UCUMZ7gohGI9HcU9VNsr2FJQ">Bloomberg Originals</source><content:encoded><![CDATA[Jason Kelly heads to Maranello, Italy, to speak with Ferrari's leadership about the coming regulatory changes for Formula 1 and how Ferrari's racing technology informs the road cars of today.
-
---------
-Like this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1
-
-Get unlimited access to Bloomberg.com for just $1.99 your first month: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals
-Bloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. 
-
-Subscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.
-
-Visit our partner channel Bloomberg News for global news and insight in an instant.]]></content:encoded></item><item><title>The Problem with this Humanoid Robot</title><link>https://www.youtube.com/watch?v=j31dmodZ-5c</link><author>Marques Brownlee</author><category>yt</category><enclosure url="https://www.youtube.com/v/j31dmodZ-5c?version=3" length="" type=""/><pubDate>Thu, 30 Oct 2025 01:46:49 +0000</pubDate><source url="https://www.youtube.com/channel/UCBJycsmduvYEL83R_U4JriQ">Marques Brownlee</source><content:encoded><![CDATA[Rant. We have a problem.
-Joanna's WSJ video: https://youtu.be/f3c4mQty_so?si=XfZ9c5-3VKjYPeru
-The Neo humanoid robot: https://x.com/1x_tech/status/1983233494575952138
-
-MKBHD Merch: http://shop.MKBHD.com
-
-Intro Track: Jordyn Edmonds
-Playlist of MKBHD Intro music: https://goo.gl/B3AWV5
-
-~
-http://twitter.com/MKBHD
-http://instagram.com/MKBHD
-http://facebook.com/MKBHD]]></content:encoded></item><item><title>Federal Reserve Cuts Rates: Here’s What to Watch Now</title><link>https://www.youtube.com/shorts/ABn4osxkek4</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/ABn4osxkek4?version=3" length="" type=""/><pubDate>Wed, 29 Oct 2025 23:31:11 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[The Federal Reserve cut interest rates for the second time this year, although Chair Jerome Powell said a third cut is “not a foregone conclusion.” WSJ’s Nick Timiraos explains the central bank’s split outlook. 
-
-#wsj #thewallstreetjournal #federalreserve]]></content:encoded></item><item><title>Getting Jacked #jackolantern #halloween</title><link>https://www.youtube.com/shorts/EW4jBtph6BU</link><author>You Suck At Cooking</author><category>yt</category><enclosure url="https://www.youtube.com/v/EW4jBtph6BU?version=3" length="" type=""/><pubDate>Wed, 29 Oct 2025 22:31:22 +0000</pubDate><source url="https://www.youtube.com/channel/UCekQr9znsk2vWxBo3YiLq2w">You Suck At Cooking</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Why Trash Isn’t Useless | An Optimist’s Guide to the Planet</title><link>https://www.youtube.com/watch?v=wq-ymiaf9nE</link><author>Bloomberg Originals</author><category>yt</category><enclosure url="https://www.youtube.com/v/wq-ymiaf9nE?version=3" length="" type=""/><pubDate>Wed, 29 Oct 2025 22:01:20 +0000</pubDate><source url="https://www.youtube.com/channel/UCUMZ7gohGI9HcU9VNsr2FJQ">Bloomberg Originals</source><content:encoded><![CDATA[Every day we create mountains of trash. But maybe how we define waste should be rethought, treating it instead as an untapped resource. In this episode of An Optimist’s Guide to the Planet, Nikolaj Coster-Waldau travels the world to meet people transforming waste into creation. From state-of-the-art incinerators to mushrooms that eat construction material and an effort to clean one of the world’s most sacred rivers, they are changing the narrative to show how waste is actually a valuable raw material.
-
---------
-Like this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1
-
-Get unlimited access to Bloomberg.com for just $1.99 your first month: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals
-Bloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. 
-
-Subscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.
-
-Visit our partner channel Bloomberg News for global news and insight in an instant.]]></content:encoded></item><item><title>The messy truth about free speech</title><link>https://www.youtube.com/watch?v=Jik3F9zUXgo</link><author>Vox</author><category>yt</category><enclosure url="https://www.youtube.com/v/Jik3F9zUXgo?version=3" length="" type=""/><pubDate>Wed, 29 Oct 2025 20:00:26 +0000</pubDate><source url="https://www.youtube.com/channel/UCLXo7UDZvByw2ixzpQCufnA">Vox</source><content:encoded><![CDATA[On September 15, Jimmy Kimmel’s late-night show opening monologue included comments about the shooting of right-wing media figure Charlie Kirk, and how the "Maga gang" was "desperately trying to characterize this kid who murdered Charlie Kirk as anything other than one of them.” 
-
-Soon after, Brendan Carr, the chair of the FCC and an appointee of President Donald Trump, appeared on a conservative podcast and threatened to act against ABC and its parent company, Disney, for Kimmel’s remarks. On September 17, ABC and Disney suspended “Jimmy Kimmel Live!” 
-
-Kimmel’s suspension launched a national debate and protest around freedom of speech and satire. From celebrities like Wanda Sykes to Republicans like Sen. Ted Cruz, people from across the spectrum weighed in on the decision. The show returned days later on September 23, but the FCC’s actions left many questioning whether Kimmel’s First Amendment rights were violated.
-
-This incident is just one of many instances of the gray areas of free speech making its way into the news cycle. In this video, we take a look at the origins of the “inalienable right” to free speech, how the Supreme Court has determined the boundaries of speech (including hate speech), and where free speech might be headed next with a six-justice majority of Republican appointees. As this issue continues to evolve, social media is one of the latest modes of communication adding new layers of complexity to this age-old debate.
+If you value this kind of in-depth journalism, join Vox on Patreon to unlock the full episode, get unlimited access to Vox.com, and support the reporting that makes it possible. https://www.patreon.com/posts/144397104?pr=true
 
 Subscribe to our channel and turn on notifications (🔔) so you don't miss any videos: http://goo.gl/0bsAjO
 
@@ -156,181 +15,9 @@ Vox.com is a news website that helps you cut through the noise and understand wh
 Watch our full video catalog: http://goo.gl/IZONyE
 Follow Vox on TikTok: http://tiktok.com/@voxdotcom
 Check out our articles: https://www.vox.com/
-Listen to our podcasts: https://www.vox.com/podcasts]]></content:encoded></item><item><title>The 1 Million Subscriber &apos;It was DNS&apos; Livestream</title><link>https://www.youtube.com/watch?v=27J-wwgZydE</link><author>Jeff Geerling</author><category>yt</category><enclosure url="https://www.youtube.com/v/27J-wwgZydE?version=3" length="" type=""/><pubDate>Wed, 29 Oct 2025 19:40:55 +0000</pubDate><source url="https://www.youtube.com/channel/UCR-DXc1voovS8nhAvccRZhg">Jeff Geerling</source><content:encoded><![CDATA[Let's celebrate the Internet going down again by *maybe* reaching 1,000,000 subscribers.
+Listen to our podcasts: https://www.vox.com/podcasts]]></content:encoded></item><item><title>Does it get any more relaxing than this? #ChrisHemsworthRoadTrip</title><link>https://www.youtube.com/shorts/Po-E1nSZcAo</link><author>National Geographic</author><category>yt</category><enclosure url="https://www.youtube.com/v/Po-E1nSZcAo?version=3" length="" type=""/><pubDate>Tue, 25 Nov 2025 22:00:20 +0000</pubDate><source url="https://www.youtube.com/channel/UCpVm7bg6pXKo1Pr6k5kxG9A">National Geographic</source><content:encoded><![CDATA[Nothing beats the sounds of an Australian road trip.
 
-And thanking a few folks along the way!
-
-Creators who inpsired me:
-
-engineerguy: https://www.youtube.com/@engineerguyvideo
-Stuff Made Here: https://www.youtube.com/@StuffMadeHere
-Sampson Boat Company: https://www.youtube.com/@SampsonBoatCo
-LOOK MUM NO COMPUTER: https://www.youtube.com/@LOOKMUMNOCOMPUTER
-Action Retro: https://www.youtube.com/@ActionRetro
-BamaBass: https://www.youtube.com/@BamaBass
-GreatScott!: https://www.youtube.com/@greatscottlab
-Novaspirit Tech: https://www.youtube.com/@NovaspiritTech
-Pecos Hank: https://www.youtube.com/@PecosHank
-Factory Monster: https://www.youtube.com/@Factory_Monster
-
-Creators who've helped me:
-
-ServeTheHome: https://www.youtube.com/@ServeTheHomeVideo
-Level1Techs: https://www.youtube.com/@Level1Techs
-ExplainingComputers: https://www.youtube.com/@ExplainingComputers
-Smarter Every Day: https://www.youtube.com/@smartereveryday
-Homelab community, from RaidOwl to Hardware Haven!
-Vintage Mac community, from Veronica Explains to Mac84!
-(And so many more...)
-
-Support me on Patreon: https://www.patreon.com/geerlingguy
-Sponsor me on GitHub: https://github.com/sponsors/geerlingguy
-Merch: https://www.redshirtjeff.com
-2nd Channel: https://www.youtube.com/@GeerlingEngineering
-3rd Channel: https://www.youtube.com/@Level2Jeff
-
-Contents:
-
-00:00 - We're live
-01:32 - Arduino Uno Q is on the desk
-01:48 - Noctua livestream camera fix
-02:24 - It was DNS
-04:30 - YouTube retrospective
-08:35 - Argon ONE UP Laptop appearance
-10:24 - Community projects and channels that inspire me
-25:53 - YouTube creators who've helped
-32:04 - Confetti popper prepper
-36:10 - NDIcam time for stream timing quirks
-39:05 - Everyone watch a Kevin McAleer video!
-41:10 - The final 20 subscribers
-42:33 - A million!
-44:32 - Happily distracted by chat's questions
-49:56 - Technical difficulties (are learning opportunities)]]></content:encoded></item><item><title>The humanoid-robot dystopia arrived early...</title><link>https://www.youtube.com/watch?v=q2czJLPJ4nA</link><author>Fireship</author><category>yt</category><enclosure url="https://www.youtube.com/v/q2czJLPJ4nA?version=3" length="" type=""/><pubDate>Wed, 29 Oct 2025 18:10:55 +0000</pubDate><source url="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA">Fireship</source><content:encoded><![CDATA[Get up to 67% off VPS during Hostinger’s Black Friday sale. Use code FIRESHIP for an extra discount at https://hostinger.com/fireship
-
-The Neo is a $20,000 a humanoid-robot wrapped in a onesie that can fold your laundry and clean up when you're hungover.
-
-But this particular robot is only the beginning - 1x is just one of many companies with billions of VC dollars burning a hole in their pocket and they won't stop until they've ushered in the robot apocalypse. 
-
-#robots #tech #coding #programming
-
-💬 Chat with Me on Discord
-
-https://discord.gg/fireship
-
-🔗 Resources
-- https://www.1x.tech/neo
-
-🔥 Get More Content - Upgrade to PRO
-
-Upgrade at https://fireship.io/pro
-Use code YT25 for 25% off PRO access 
-
-🎨 My Editor Settings
-
-- Atom One Dark 
-- vscode-icons
-- Fira Code Font
-
-🔖 Topics Covered
-- What is neo?
-- How neo works
-- Will robots replace blue-collar workers?
-- Who is investing in robotics?]]></content:encoded></item><item><title>The Dumb Design of Modern Cars</title><link>https://www.youtube.com/watch?v=HauQtcj7UTM</link><author>fern</author><category>yt</category><enclosure url="https://www.youtube.com/v/HauQtcj7UTM?version=3" length="" type=""/><pubDate>Wed, 29 Oct 2025 17:50:45 +0000</pubDate><source url="https://www.youtube.com/channel/UCODHrzPMGbNv67e84WDZhQQ">fern</source><content:encoded><![CDATA[Start learning on Brilliant for free today: https://brilliant.org/fern. Our viewers get 20% off an annual premium subscription. It’s a great way to support our channel while building new skills (ad).
-
-Thanks to Quinn Duffy, Luke Farnon, Dale Harrow and Frank Stephenson for your valuable insights!
-
-Check this out: Carlton Reid, “Rejoice! Carmakers Are Bringing Back Physical Buttons,” in Wired, May 5, 2025. https://www.wired.com/story/why-car-brands-are-finally-switching-back-to-buttons/
-
-Modern cars are getting smarter – and somehow dumber. They are packed with features that make driving worse and sometimes downright dangerous.
-
-
-Sources: https://docs.google.com/document/d/12ZB2mUWSBHT-R1OdoMFmAMHyPcqDtzeMgrjJxds2CWk/edit?usp=sharing 
-
-
-Music list:
-
-Epidemic Sound:
-Dylan Sitts - Daytona Dystopia
-Mike Franklyn - When Pigs Fly
-Awlee - And Behold
-Janset - Drip (Instrumental Version)
-Bonkers Beat Club - Crunched
-Christoffer Moe Ditlevsen - Tracker
-Lennon Hutton - Red Alert
-Lennon Hutton -  The Slasher
-Hampus Naeselius - Metal under Tension
-Hysics - Suicidal Drivestyle
-Lennon Hutton - Neon Noir
-Jharee - Dark Skies
-
-Artlist:
-Aviad Zinemanas‬‏ - Warp
-Rex Banner - Human - Instrumental version
-2050 - Disco
-Danny Shields - Smoke & Sizzle
-Anthony Vega - Hilarious One
-Anthony Lazaro - Boom - Instrumental version
-Jimit - Pelicans - Slowed and Reverbed
-Will Van De Crommert - City Hustle
-TenGrams - VCO Mistery
-Jameson Nathan Jones - One
-Ian Post - New World
-Out of Flux - THE LIGHTHOUSE
-
-Audiio:
-Atlas-Reach - Forgotten-Tales March-of-the-Undead Instrumental
-BradHill - ShortCinematicSongs Aftermath Inst
-
-Lens Distortions:
-Taskforce
-With Open Eyes
-
-Chromatic by Tom Fox:
-Going West
-That Does It
-
-1812 Overture (by Tchaikosvky) by Tchaikovsky
-
-_____
-Armchair documentaries, almost weekly]]></content:encoded></item><item><title>The Most Iconic Horror Movie Gun? Ithaca 37 with firearms expert Jonathan Ferguson</title><link>https://www.youtube.com/watch?v=xvgLTM430Z0</link><author>Royal Armouries</author><category>yt</category><enclosure url="https://www.youtube.com/v/xvgLTM430Z0?version=3" length="" type=""/><pubDate>Wed, 29 Oct 2025 17:27:06 +0000</pubDate><source url="https://www.youtube.com/channel/UCsMX-XuiEkBi4-GDrYuniWg">Royal Armouries</source><content:encoded><![CDATA[Welcome to a Halloween special of What Is This Weapon? and this time, Jonathan’s keeping something “handy for close encounters.”
-
-Join us as we explore the Ithaca Model 37, one of the most enduring pump-kin-action shotguns in history and possibly the most iconic firearm in horror cinema.
-
-0:00 Intro
-0:50 The Ithaca 37 Explained: Design, Origins & Features
-4:45 From the Police Special to Hollywood Icon
-6:00 Aliens, Terminator & The Thing: The Shotgun in Cinema
-13:10 Supernatural, Salt Shells & Pop Culture Myths
-17:25 Is This the Most Iconic Horror Firearm of All Time?
-18:00 Outro
-
-Aliens Ithaca Propstore Page: https://propstore.com/product/aliens-1986/lot-19-corporal-dwayne-hicks-michael-biehn-hero-shotgun/
-
-Link to research fellowships mentioned in the outro: https://www.armshistory.org/research
-
-Subscribe to our channel for more videos about arms and armour  
-
-Help us bring history to life by supporting us here: https://royalarmouries.org/support-us/donations/
-
-Sign up to our museum membership scheme here: https://royalarmouries.org/support-us/membership/ 
-
-⚔Website: https://royalarmouries.org/home
-⚔Blog: https://royalarmouries.org/stories/
-⚔Facebook: https://www.facebook.com/RoyalArmouriesMuseum/
-⚔Twitter: https://twitter.com/Royal_Armouries
-⚔ Instagram: http://instagram.com/royalarmouriesmuseum
-
-We are the Royal Armouries, the United Kingdom's national collection of arms and armour. Discover what goes on behind the scenes and watch our collection come to life. See combat demonstrations, experience jousting and meet our experts. 
-
-Have a question about arms and armour? Feel free to leave us a comment and we'll do our best to answer it.]]></content:encoded></item><item><title>Jack-O-Lantering Everything - You Suck at Cooking (episode 179)</title><link>https://www.youtube.com/watch?v=BC-JwuihUmU</link><author>You Suck At Cooking</author><category>yt</category><enclosure url="https://www.youtube.com/v/BC-JwuihUmU?version=3" length="" type=""/><pubDate>Wed, 29 Oct 2025 17:14:23 +0000</pubDate><source url="https://www.youtube.com/channel/UCekQr9znsk2vWxBo3YiLq2w">You Suck At Cooking</source><content:encoded><![CDATA[Step back pal, there's a new Jack-O-Lantern in town. For Halloween. But not for Christmas. 
-
-Book: http://yousuckatcooking.com or wherever you get books
-http://instagram.com/yousuckatcooking
-http://tiktok.com/@yousuckatcooking
-https://www.facebook.com/yousuckatcooking/
-
-Recipe
-Throw a pumpkin against the wall]]></content:encoded></item><item><title>Take to the skies &amp; experience the thrill of high-speed flight ✈️</title><link>https://www.youtube.com/shorts/YnSjsCVO80U</link><author>National Geographic</author><category>yt</category><enclosure url="https://www.youtube.com/v/YnSjsCVO80U?version=3" length="" type=""/><pubDate>Wed, 29 Oct 2025 17:00:53 +0000</pubDate><source url="https://www.youtube.com/channel/UCpVm7bg6pXKo1Pr6k5kxG9A">National Geographic</source><content:encoded><![CDATA[#TopGunsTheNextGeneration is now streaming on @disneyplus and @hulu.
+Chris Hemsworth: A Road Trip to Remember is now streaming on Disney+ and Hulu.
 
 Explore the World with National Geographic subscriptions: https://natgeo.com/ytngmagazine
 
@@ -344,7 +31,7 @@ And check out more National Geographic series and specials here:
 ➡ NGTV: https://natgeo.com/tv
 ➡ ABC: https://abc.com
 
-#NationalGeographic #TopGunsTheNextGeneration #TopGuns
+#NationalGeographic #ChrisHemsworth #RoadTripToRemember
 
 About National Geographic:
 National Geographic is the world's premium destination for critically acclaimed storytelling around science and exploration. Discover amazing wildlife, ancient civilizations, hidden worlds, and the incredible wonders of our Earth. Through world-class scientists, photographers, journalists, and filmmakers, Nat Geo inspires fans of all ages to connect with, explore, and care about the world.
@@ -360,375 +47,72 @@ TikTok: https://tiktok.com/@natgeo
 Reddit: https://reddit.com/user/nationalgeographic
 Pinterest: https://pinterest.com/natgeo
 
-Take to the skies & experience the thrill of high-speed flight ✈️
-https://youtube.com/shorts/YnSjsCVO80U
+Does it get any more relaxing than this? #ChrisHemsworthRoadTrip
+https://youtube.com/shorts/Po-E1nSZcAo
 
 National Geographic
-youtube.com/natgeo]]></content:encoded></item><item><title>Why didn&apos;t this skateboard stunt start from the top?</title><link>https://www.youtube.com/shorts/tWRyiCP17do</link><author>Veritasium</author><category>yt</category><enclosure url="https://www.youtube.com/v/tWRyiCP17do?version=3" length="" type=""/><pubDate>Wed, 29 Oct 2025 16:03:24 +0000</pubDate><source url="https://www.youtube.com/channel/UCHnyfMqiRRG1u-2MsSQLbXA">Veritasium</source><content:encoded><![CDATA[This is the world's largest skateboard ramp from @redbull 
+youtube.com/natgeo]]></content:encoded></item><item><title>My favourite Picasso quote as featured in my latest video</title><link>https://www.youtube.com/shorts/9qsAATFN4RI</link><author>Shawn Grenier | The Canvas</author><category>yt</category><enclosure url="https://www.youtube.com/v/9qsAATFN4RI?version=3" length="" type=""/><pubDate>Tue, 25 Nov 2025 19:40:49 +0000</pubDate><source url="https://www.youtube.com/channel/UCqTHx0ObkFZ97KO2SWUuz9w">Shawn Grenier | The Canvas</source><content:encoded><![CDATA[My Letterboxd: https://boxd.it/4bApF
+Instagram: https://www.instagram.com/thecanvasyoutube/
+Support us on Patreon: https://www.patreon.com/TheCanvas
 
-Sandro Dias broke two world records skating down it but all we could think was...
+#arthistory #art]]></content:encoded></item><item><title>Littoral Combat Ships, The US Navy&apos;s $22Bn Vessels That Don&apos;t Work</title><link>https://www.youtube.com/watch?v=EMuhd7Gr99k</link><author>Megaprojects</author><category>yt</category><enclosure url="https://www.youtube.com/v/EMuhd7Gr99k?version=3" length="" type=""/><pubDate>Tue, 25 Nov 2025 18:50:01 +0000</pubDate><source url="https://www.youtube.com/channel/UC0woBco6Dgcxt0h8SwyyOmw">Megaprojects</source><content:encoded><![CDATA[Head to http://squarespace.com/megaprojects to save 10% off your first purchase of a website or domain using code MEGAPROJECTS
 
-Why didn't he start from the very top?]]></content:encoded></item><item><title>How a Viral Video Series Changed Acho&apos;s Life</title><link>https://www.youtube.com/shorts/TEwmgVRMkVw</link><author>Bloomberg Originals</author><category>yt</category><enclosure url="https://www.youtube.com/v/TEwmgVRMkVw?version=3" length="" type=""/><pubDate>Wed, 29 Oct 2025 15:53:19 +0000</pubDate><source url="https://www.youtube.com/channel/UCUMZ7gohGI9HcU9VNsr2FJQ">Bloomberg Originals</source><content:encoded><![CDATA[“Uncomfortable Conversations with a Black Man” changed everything for Emmanuel Acho: from viral fame to phone calls from Matthew McConaughey and Oprah Winfrey.
+Got a beard? Good. I've got something for you: http://beardblaze.com
 
-Watch the full episode of The Deal on the Bloomberg app or listen wherever you get your podcasts.
+Simon's Social Media:
+Twitter: https://twitter.com/SimonWhistler
+Instagram: https://www.instagram.com/simonwhistler/
 
---------
-Like this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1
+This video is #sponsored by Squarespace.
 
-Get unlimited access to Bloomberg.com for just $1.99 your first month: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals
-Bloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. 
+Love content? Check out Simon's other YouTube Channels:
 
-Subscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.
 
-Visit our partner channel Bloomberg News for global news and insight in an instant.]]></content:encoded></item><item><title>What do dragons look like around the world? 🐉 #NationalGeographic #Dragons</title><link>https://www.youtube.com/shorts/IYHSVVSWwIQ</link><author>National Geographic</author><category>yt</category><enclosure url="https://www.youtube.com/v/IYHSVVSWwIQ?version=3" length="" type=""/><pubDate>Wed, 29 Oct 2025 15:00:41 +0000</pubDate><source url="https://www.youtube.com/channel/UCpVm7bg6pXKo1Pr6k5kxG9A">National Geographic</source><content:encoded><![CDATA[Dragons have sparked human imagination across cultures for centuries, each portraying them in distinctive ways. From fearsome three-headed serpents to ten-horned creatures, these myths showcase the fascinating origins of dragon lore around the world. Learn more at: https://on.natgeo.com/4oa9iZd
+Warfronts: https://www.youtube.com/@warographics643
+SideProjects: https://www.youtube.com/@Sideprojects
+Into The Shadows: https://www.youtube.com/@IntotheShadows
+Today I Found Out: https://www.youtube.com/@TodayIFoundOut
+Highlight History: https://www.youtube.com/channel/UCnb-VTwBHEV3gtiB9di9DZQ
+Brain Blaze: https://www.youtube.com/@brainblaze6526
+Casual Criminalist: https://www.youtube.com/@TheCasualCriminalist
+Decoding the Unknown: https://www.youtube.com/@decodingtheunknown2373
+Places: https://www.youtube.com/@Places302
+Celestium: https://www.youtube.com/@astrographics-ve4yq
+PoliticalFronts: http://www.youtube.com/@politicalfronts]]></content:encoded></item><item><title>A Soldier&apos;s Haunting Request | 2000 Meters to Andriivka (excerpt) | FRONTLINE &amp; @AssociatedPress</title><link>https://www.youtube.com/watch?v=ea2bvNqjIps</link><author>FRONTLINE PBS | Official</author><category>yt</category><enclosure url="https://www.youtube.com/v/ea2bvNqjIps?version=3" length="" type=""/><pubDate>Tue, 25 Nov 2025 18:30:15 +0000</pubDate><source url="https://www.youtube.com/channel/UC3ScyryU9Oy9Wse3a8OAmYQ">FRONTLINE PBS | Official</source><content:encoded><![CDATA[About an hour into the new feature documentary "2000 Meters to Andriivka," a Ukrainian volunteer soldier makes a haunting request: "Don't make me out as a hero." 
 
-Explore the World with National Geographic subscriptions: https://natgeo.com/ytngmagazine
+This journalism is made possible by viewers like you. Support your local PBS station here: https://www.pbs.org/donate
 
-➡ Subscribe: https://on.natgeo.com/4p5A0D6
-➡ Get more Nat Geo Full Episodes: https://on.natgeo.com/3V5ZfHI
-➡ Get wild with Nat Geo Animals Full Episodes: https://on.natgeo.com/3V2EOLO
+The soldier, who went by the call sign “Sheva,”  was part of the Ukrainian platoon at the heart of "2000 Meters to Andriivka," the new feature documentary from FRONTLINE, The Associated Press and the Academy Award-winning team behind "20 Days in Mariupol."
 
-And check out more National Geographic series and specials here:
-➡ Disney Plus: https://on.natgeo.com/3q6on5p
-➡ Hulu: https://on.natgeo.com/3Qor0Ko
-➡ NGTV: https://natgeo.com/tv
-➡ ABC: https://abc.com
+Weaving together quiet moments of reflection, like this one with Sheva, and vivid battle footage, "2000 Meters to Andriivka" documents the toll of the Russia-Ukraine war from a personal and devastating vantage point. The film follows Ukraine’s 3rd Assault Brigade as it carries out a grueling, meter-by-meter counteroffensive that aims to retake the strategic Ukrainian town of Andriivka from Russia -- and as the soldiers realize that for them, the war may never end.
 
-#NationalGeographic #Dragons #Mythology 
+Sheva would be killed in a battle and die in a hospital five months after this scene was filmed. Read more about Sheva's story at pbs.org/frontline, and watch the full documentary on @frontline starting Nov. 25, 2025.
 
-About National Geographic:
-National Geographic is the world's premium destination for critically acclaimed storytelling around science and exploration. Discover amazing wildlife, ancient civilizations, hidden worlds, and the incredible wonders of our Earth. Through world-class scientists, photographers, journalists, and filmmakers, Nat Geo inspires fans of all ages to connect with, explore, and care about the world.
+“2000 Meters to Andriivka” is written, filmed and directed by filmmaker and Associated Press journalist Mstyslav Chernov. It is produced by Chernov, FRONTLINE’s senior documentary editor and producer Michelle Mizner and FRONTLINE’s editor-in-chief and executive producer Raney Aronson-Rath. It is edited by Michelle Mizner. The film is co-produced and includes additional cinematography by AP journalist Alex Babenko; is composed by two-time Grammy Award®-winning composer and music-producer Sam Slater; and is executive produced by Raney Aronson-Rath and the AP's Derl McCrudden. Distributed domestically by PBS Distribution and internationally by Dogwoof, “2000 Meters to Andriivka” is a FRONTLINE FEATURES and The Associated Press production.
 
-Get More National Geographic:
-Official Site: https://nationalgeographic.com
-Instagram: https://instagram.com/natgeo 
-Facebook: https://facebook.com/natgeo
-Threads: https://threads.com/@natgeo
-X: https://x.com/NatGeo
-LinkedIn: https://linkedin.com/company/national-geographic
-TikTok: https://tiktok.com/@natgeo
-Reddit: https://reddit.com/user/nationalgeographic
-Pinterest: https://pinterest.com/natgeo
+#ukraine #ukrainewar #ukrainerussiawar #documentaryexcerpt]]></content:encoded></item><item><title>Why the World’s Wealthiest Are Sending Their Gold to Singapore | WSJ</title><link>https://www.youtube.com/watch?v=qf-tkyydSCc</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/qf-tkyydSCc?version=3" length="" type=""/><pubDate>Tue, 25 Nov 2025 17:01:37 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[As gold prices surge to a record $4,000, more of the world’s wealthiest from places like Europe, the U.S. and Australia are storing their gold in Singapore in vaults like The Reserve. Located near Changi Airport, this massive vault can store up to 500 tons of gold, worth about $64 billion. But why are people increasingly turning towards Singapore to store their wealth?
 
-What do dragons look like around the world? 🐉 #NationalGeographic #Dragons
-https://youtube.com/shorts/IYHSVVSWwIQ
-
-National Geographic
-youtube.com/natgeo]]></content:encoded></item><item><title>CEOs of AMD and NVIDIA are cousins!</title><link>https://www.youtube.com/shorts/uJ8rSpBOTy4</link><author>Newsthink</author><category>yt</category><enclosure url="https://www.youtube.com/v/uJ8rSpBOTy4?version=3" length="" type=""/><pubDate>Wed, 29 Oct 2025 14:57:10 +0000</pubDate><source url="https://www.youtube.com/channel/UCIlU5KDHKFSaebYviKfOidw">Newsthink</source><content:encoded><![CDATA[The CEOs of the two companies leading the AI chip revolution, Lisa Su and Jensen Huang, are actually cousins.]]></content:encoded></item><item><title>How a War Game Almost Triggered Nuclear Armageddon</title><link>https://www.youtube.com/watch?v=X0YnH6THap0</link><author>Imperial War Museums</author><category>yt</category><enclosure url="https://www.youtube.com/v/X0YnH6THap0?version=3" length="" type=""/><pubDate>Wed, 29 Oct 2025 14:29:18 +0000</pubDate><source url="https://www.youtube.com/channel/UC3uAjWoLZ4bSi6qI9SjALxA">Imperial War Museums</source><content:encoded><![CDATA[This video looks at Able Archer 83, a NATO training exercise so realistic that the Soviets thought it might be the real thing.
-
-00:00 A Close Shave  
-01:06 The Cold War  
-01:54 The End of Détente  
-02:53 Operation RYAN  
-04:05 Tensions Rise  
-05:47 The Exercise  
-06:47 The Soviet Response  
-08:09 How Close Did We Come?  
-10:13 What If the Cold War Went Hot?  
-12:55 Nuclear Armageddon  
-15:30 What Does Able Archer Teach Us?
-
-Watch the full interview with Oleg Gordievsky: https://bit.ly/4qQpOzt or https://www.iwm.org.uk/collections/search?query=Oleg+gordievsky&pageSize=30&media-records=records-with-media&filters%5BwebCategory%5D%5BFilm%5D=on
-
-Explore and licence the film clips used in this video: https://film.iwmcollections.org.uk/collections/_dAX1wKap
-
-Follow IWM on social media:
-x.com/I_W_M
-instagram.com/imperialwarmuseums
-facebook.com/iwm.london
-tiktok.com/@imperialwarmuseums]]></content:encoded></item><item><title>Why the U.A.E. Is Building a $5B Casino in the Gambling-Free Gulf | WSJ Breaking Ground</title><link>https://www.youtube.com/watch?v=W2FM1vmXdd8</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/W2FM1vmXdd8?version=3" length="" type=""/><pubDate>Wed, 29 Oct 2025 14:01:03 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[Las Vegas giant Wynn Resorts is building a $5 billion resort that will be the U.A.E.'s first casino. The project is rising on Al Marjan Island, a man-made archipelago in the northernmost emirate, Ras Al Khaimah. Some experts question the project’s long-term prospects and wonder whether competition from tourism powerhouses like Dubai and Abu Dhabi could hurt this new casino.
-
-WSJ examines the megaproject and examines whether building a casino in a deeply conservative society could be a massive mistake. 
+The WSJ secured rare access inside one of the world’s largest bullion valts–part of Singapore’s drive to become a global gold hub.
 
 Chapters:
-0:00 U.A.E.’s first casino
-0:31 The project and why it matters
-1:59 Why Ras Al Khaimah?
-4:24 The long-term vision 
-5:39 Wynn’s expansion plan
-
-Breaking Ground
-Breaking Ground digs into megaprojects around the world, uncovering what these developments might mean for the surrounding region and the ultimate costs.
-
-#UAE #Casino #WSJ]]></content:encoded></item><item><title>Alpine shepherds: part of a 6,000-year-old tradition | DW Documentary</title><link>https://www.youtube.com/shorts/EnrsE7Zq638</link><author>DW Documentary</author><category>yt</category><enclosure url="https://www.youtube.com/v/EnrsE7Zq638?version=3" length="" type=""/><pubDate>Wed, 29 Oct 2025 14:00:26 +0000</pubDate><source url="https://www.youtube.com/channel/UCW39zufHfsuGgpLviKh297Q">DW Documentary</source><content:encoded><![CDATA[Shepherds in the Alps have been guiding their sheep through the mountains for 6,000 years. They have to climb 3,000 meters and cross rivers and glaciers. Known as Alpine transhumance, this tradition has been recognized by UNESCO as Intangible Cultural Heritage of Humanity.  
-
-With 1,400 sheep, Markus and his colleagues make the journey from South Tyrol to Austria every spring. Like his ancestors, Markus spends the whole summer taking care of the animals in the alpine meadows.  
-
-But they can't make a living from farming alone. Shepherds need to find other sources of income or even change jobs altogether. Still, they say what matters to them is that the next generation can carry on this tradition.  
-
-#documentary #dwdocumentary #dwdocs
-______
-
-DW Documentary gives you knowledge beyond the headlines. Watch top documentaries from German broadcasters and international production companies. Meet intriguing people, travel to distant lands, get a look behind the complexities of daily life and build a deeper understanding of current affairs and global events. Subscribe and explore the world around you with DW Documentary.
-
-Subscribe to: ‬
-⮞ DW Documentary (English): https://www.youtube.com/@DWDocumentary 
-⮞ DW Documental (Spanish): https://www.youtube.com/@DWDocumental 
-⮞ DW Documentary وثائقية دي دبليو (Arabic): https://www.youtube.com/@DWDocarabia
-⮞ DW Documentary हिन्दी (Hindi): https://www.youtube.com/@dwdochindi
-⮞ DW Dokumenter (Indonesian): https://www.youtube.com/@DWDokumenter
-⮞ DW Doku (German): https://www.youtube.com/@DWDoku
-
-For more visit: http://www.dw.com/en/tv/docfilm/s-3610
-Follow DW Documentary on Instagram: https://www.instagram.com/dwdocumentary/
-Follow DW Documental on Facebook: https://www.facebook.com/dwdocumental
-
-We kindly ask viewers to read and stick to the DW netiquette policy on our channel: https://p.dw.com/p/MF1G]]></content:encoded></item><item><title>Connection is Everything • Ken Hughes • GOTO 2025</title><link>https://www.youtube.com/watch?v=tHf-BFM2CNM</link><author>GOTO Conferences</author><category>yt</category><enclosure url="https://www.youtube.com/v/tHf-BFM2CNM?version=3" length="" type=""/><pubDate>Wed, 29 Oct 2025 13:02:06 +0000</pubDate><source url="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</source><content:encoded><![CDATA[This presentation was recorded at GOTO Copenhagen 2025. #GOTOcon #GOTOcph
-https://gotocph.com
-
-Ken Hughes - The King of Customer Experience @kenhughesIE 
-
-RESOURCES
-https://twitter.com/KenHughesIE
-https://www.linkedin.com/in/kenhughesie
-https://www.kenhughes.info
-
-ABSTRACT
-In an ever increasing digital world, human connection is everything. As AI, quantum computing and robotics converge, our human user experience becomes paramount.
-
-This performance will explore the nature of connection, discuss the values of the modern consumer, and challenge all to refocus on the essence of experience, rather than software, technology or code.
-
-Connection is Everything. [...]
-
-TIMECODES
-00:00 Intro
-00:39 7 generations of consumer users
-04:41 Old ways won't open new doors
-08:57 The race for relevance
-12:47 Connection
-16:10 4 pillars of society
-16:14 Blue dot
-25:51 Expectant
-32:52 Phygital
-48:00 Relational
-57:37 Wrap-up
-59:11 Outro
-
-Read the full abstract here:
-https://gotocph.com/2025/sessions/3777
-
-RECOMMENDED BOOKS
-Ken Hughes • Taylormaking • https://amzn.to/3WOEgd9
-Robert Waldinger & Marc Schulz • The Good Life • https://amzn.to/4orelUS
-
-https://bsky.app/profile/gotocon.com
-https://twitter.com/GOTOcon
-https://www.linkedin.com/company/goto-
-https://www.instagram.com/goto_con
-https://www.facebook.com/GOTOConferences
-#Taylormaking #UserExperience #UX #CustomerExperience #CX #HumanConnection #Connection #ConnectionIsEverything #RaceForRelevance #Phygital #TaylorSwift #KenHughes
-
-CHANNEL MEMBERSHIP BONUS
-Join this channel to get early access to videos & other perks:
-https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA/join
-
-Looking for a unique learning experience?
-Attend the next GOTO conference near you! Get your ticket at https://gotopia.tech
-Sign up for updates and specials at https://gotopia.tech/newsletter
-
-SUBSCRIBE TO OUR CHANNEL - new videos posted almost daily.
-https://www.youtube.com/user/GotoConferences/?sub_confirmation=1]]></content:encoded></item><item><title>European explorers had some...interesting descriptions for new animals 😂 #NationalGeographic</title><link>https://www.youtube.com/shorts/b6WCewrh30c</link><author>National Geographic</author><category>yt</category><enclosure url="https://www.youtube.com/v/b6WCewrh30c?version=3" length="" type=""/><pubDate>Wed, 29 Oct 2025 13:01:24 +0000</pubDate><source url="https://www.youtube.com/channel/UCpVm7bg6pXKo1Pr6k5kxG9A">National Geographic</source><content:encoded><![CDATA[With little additional context to work with, European explorers had to base their observations of new animals on their existing knowledge leading to some... interesting descriptions 👀 Read more here: https://on.natgeo.com/49fGQ3n
-
-Hosted by Halley Bee
-
-Explore the World with National Geographic subscriptions: https://natgeo.com/ytngmagazine
-
-➡ Subscribe: https://on.natgeo.com/4p5A0D6
-➡ Get more Nat Geo Full Episodes: https://on.natgeo.com/3V5ZfHI
-➡ Get wild with Nat Geo Animals Full Episodes: https://on.natgeo.com/3V2EOLO
-
-And check out more National Geographic series and specials here:
-➡ Disney Plus: https://on.natgeo.com/3q6on5p
-➡ Hulu: https://on.natgeo.com/3Qor0Ko
-➡ NGTV: https://natgeo.com/tv
-➡ ABC: https://abc.com
-
-#NationalGeographic #HalleyBee #History
-
-About National Geographic:
-National Geographic is the world's premium destination for critically acclaimed storytelling around science and exploration. Discover amazing wildlife, ancient civilizations, hidden worlds, and the incredible wonders of our Earth. Through world-class scientists, photographers, journalists, and filmmakers, Nat Geo inspires fans of all ages to connect with, explore, and care about the world.
-
-Get More National Geographic:
-Official Site: https://nationalgeographic.com
-Instagram: https://instagram.com/natgeo 
-Facebook: https://facebook.com/natgeo
-Threads: https://threads.com/@natgeo
-X: https://x.com/NatGeo
-LinkedIn: https://linkedin.com/company/national-geographic
-TikTok: https://tiktok.com/@natgeo
-Reddit: https://reddit.com/user/nationalgeographic
-Pinterest: https://pinterest.com/natgeo
-
-European explorers had some...interesting descriptions for new animals 😂 #NationalGeographic 
-https://youtube.com/shorts/b6WCewrh30c
-
-National Geographic
-youtube.com/natgeo]]></content:encoded></item><item><title>Can these unusual underwater pyramids help save the ocean? #shorts</title><link>https://www.youtube.com/shorts/wcgY6pXSxmw</link><author>Vox</author><category>yt</category><enclosure url="https://www.youtube.com/v/wcgY6pXSxmw?version=3" length="" type=""/><pubDate>Wed, 29 Oct 2025 12:02:19 +0000</pubDate><source url="https://www.youtube.com/channel/UCLXo7UDZvByw2ixzpQCufnA">Vox</source><content:encoded><![CDATA[A critical food source in southwestern Madagascar is quickly disappearing. Could these underwater pyramids help? Vox reporter Benji Jones goes diving in Madagascar to find out. #environment #climate #climatechange #reef #ocean
-
-Read more reporting from Madagascar from reporter Benji Jones:
-
-• Most animals on this island nation are found nowhere else on Earth. And now they’re vanishing.
-https://www.vox.com/climate/464953/madagascar-lemurs-chameleons-endangered-animals
-
-• Scientists are testing a surprising approach to fighting hunger in one of the poorest places on Earth
-https://www.vox.com/climate/465060/madagascar-military-coup-environmental-problems-fishery-coral-reef
-
-Subscribe to our channel and turn on notifications (🔔) so you don't miss any videos: http://goo.gl/0bsAjO
-
-Vox.com is a news website that helps you cut through the noise and understand what's really driving the events in the headlines. Check out http://www.vox.com.
-
-Watch our full video catalog: http://goo.gl/IZONyE
-Follow Vox on TikTok: http://tiktok.com/@voxdotcom
-Check out our articles: https://www.vox.com/
-Listen to our podcasts: https://www.vox.com/podcasts]]></content:encoded></item><item><title>We&apos;re ready for Halloween 🎃 #thetankmuseum #halloween #trickortreat</title><link>https://www.youtube.com/shorts/IcLPoiGu_C0</link><author>The Tank Museum</author><category>yt</category><enclosure url="https://www.youtube.com/v/IcLPoiGu_C0?version=3" length="" type=""/><pubDate>Wed, 29 Oct 2025 12:00:43 +0000</pubDate><source url="https://www.youtube.com/channel/UChl-XKVVBAzoEVsnbOfpcqw">The Tank Museum</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Reign of Torment (Full Episode) | Savage Kingdom Compilation | Nat Geo Animals</title><link>https://www.youtube.com/watch?v=av8j7p_6lcQ</link><author>Nat Geo Animals</author><category>yt</category><enclosure url="https://www.youtube.com/v/av8j7p_6lcQ?version=3" length="" type=""/><pubDate>Wed, 29 Oct 2025 11:00:05 +0000</pubDate><source url="https://www.youtube.com/channel/UCDPk9MG2RexnOMGTD-YnSnA">Nat Geo Animals</source><content:encoded><![CDATA[In this intense Full Episode from the Savage Kingdom, a ferocious plague of hyenas rips control from the hands of the lions. The reign of torment has just begun as these ruthless predators take over, challenging the very foundation of the lion's dominance.
-
-Savage Kingdom Compilation | S3, E1
-
-Watch more Savage Kingdom here on Disney+: https://on.natgeo.com/4luSN7R
-
-Explore the World with National Geographic subscriptions: http://natgeo.com/ytngmagazine
-
-➡ Subscribe: https://on.natgeo.com/41A7tf0
-➡ Get wild with more Nat Geo Animals Full Episodes: https://on.natgeo.com/3V2EOLO 
-➡ Get Nat Geo Full Episodes: https://on.natgeo.com/3V5ZfHI
-➡ Get More Savage Kingdom: https://on.natgeo.com/2kwDTFT
-
-And check out more National Geographic series and specials here:
-➡ Disney Plus: https://on.natgeo.com/3q6on5p
-➡ Hulu: https://on.natgeo.com/3Qor0Ko
-➡ NGTV app https://www.nationalgeographic.com/tv/
-➡ ABC app https://abc.com/
-
-About Savage Kingdom:
-Savage Kingdom is back with real-life drama from Mombo, Northern Botswana, where peace never lasts long, and power comes with a price. Available to stream next day on Hulu.
-
-#FullEpisode #SavageKingdom #NatGeoAnimals
-
-About National Geographic Animals:
-National Geographic Animals brings you closer to the wild than ever before. Take a journey through the animal kingdom to discover fierce predators, surprising behaviors, adorable babies, and more through our fascinating wildlife documentaries, series, and specials.
-
-Get More National Geographic:
-Official Site: https://nationalgeographic.com
-Instagram: https://instagram.com/natgeo 
-Facebook: https://facebook.com/natgeo
-Threads: https://threads.com/@natgeo
-X: https://x.com/NatGeo
-LinkedIn: https://linkedin.com/company/national-geographic
-TikTok: https://tiktok.com/@natgeo
-Reddit: https://reddit.com/user/nationalgeographic
-Pinterest: https://pinterest.com/natgeo
-
-Reign of Torment (Full Episode) | Savage Kingdom Compilation | Nat Geo Animals
-https://youtu.be/av8j7p_6lcQ
-
-Nat Geo Wild 
-https://www.youtube.com/user/NatGeoWild]]></content:encoded></item><item><title>This Zoom is Ridiculous</title><link>https://www.youtube.com/shorts/PTf_Z8A2Usc</link><author>Marques Brownlee</author><category>yt</category><enclosure url="https://www.youtube.com/v/PTf_Z8A2Usc?version=3" length="" type=""/><pubDate>Tue, 28 Oct 2025 20:42:14 +0000</pubDate><source url="https://www.youtube.com/channel/UCBJycsmduvYEL83R_U4JriQ">Marques Brownlee</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Inside Gaza&apos;s &apos;Yellow Line&apos; as U.S. Weighs Plan to Split Enclave</title><link>https://www.youtube.com/shorts/skqnmoV7CzE</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/skqnmoV7CzE?version=3" length="" type=""/><pubDate>Tue, 28 Oct 2025 19:11:47 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[WSJ’s Dov Lieber reports from Gaza as the U.S. considers a plan to divide it into separate zones, with reconstruction only taking place on the Israeli-controlled side.
-
-#Israel #Hamas #WSJ]]></content:encoded></item><item><title>The spiritual experience of a cave! #human #anthropology</title><link>https://www.youtube.com/shorts/vYyTPQt4CDo</link><author>BBC Earth Science</author><category>yt</category><enclosure url="https://www.youtube.com/v/vYyTPQt4CDo?version=3" length="" type=""/><pubDate>Tue, 28 Oct 2025 18:01:15 +0000</pubDate><source url="https://www.youtube.com/channel/UCdsOTr6SmDrxuWE7sJFrkhQ">BBC Earth Science</source><content:encoded><![CDATA[Find out where to watch Human in your region 👉 https://www.bbcearth.com/shows/human
-
-Best of Earth Science: http://bit.ly/EarthLabOriginals 
-Best of BBC Earth: http://bit.ly/TheBestOfBBCEarthVideos 
-
-This is a channel from BBC Studios who help fund new BBC programmes. Service information and feedback: http://bbcworldwide.com/vod-feedback--contact-details.aspx]]></content:encoded></item><item><title>I Tried the First Humanoid Home Robot. It Got Weird. | WSJ</title><link>https://www.youtube.com/watch?v=f3c4mQty_so</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/f3c4mQty_so?version=3" length="" type=""/><pubDate>Tue, 28 Oct 2025 18:00:38 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[The 1X Neo is one of the first humanoid robots built for your home and is equipped with full AI software. For $20,000, you can pre-order X1’s Neo now with delivery set for 2026. But a company representative might need to peer into your home, via Neo’s camera eyes, to help get things done. 
-
-WSJ’s Joanna Stern spent time with it—and its creator—to see what it can really do and how much it still requires a human operator’s help.
-
-Chapters:
-0:00 The first humanoid home robot
-0:37 Neo’s body (hardware) and safety challenges
-3:27 Neo’s brain (teleoperation vs. autonomy) 
-7:11 Neo’s usefulness vs. privacy tradeoff
-8:11 Neo’s future 
-
-Tech Things With Joanna Stern
-Everything is now a tech thing. In creative and humorous videos, WSJ senior personal tech columnist Joanna Stern explains and reviews the products, services and trends that are changing our world.
-
-#Tech #AI #WSJ]]></content:encoded></item><item><title>New JWST Neptune Images Reveal Something Surprising</title><link>https://www.youtube.com/watch?v=wHNC-RhmHZY</link><author>Astrum</author><category>yt</category><enclosure url="https://www.youtube.com/v/wHNC-RhmHZY?version=3" length="" type=""/><pubDate>Tue, 28 Oct 2025 17:13:11 +0000</pubDate><source url="https://www.youtube.com/channel/UC-9b7aDP6ZN0coj9-xFnrtw">Astrum</source><content:encoded><![CDATA[Surprising new measurements from JWST reveal that Neptune is getting colder, and we don’t know why… In this Supercut, we're exploring everything we know about the mysterious blue ice giant. You'll see jaw-dropping new images of Neptune’s powerful aurora captured by JWST, and learn about a puzzling object orbiting in perfect resonance with the planet.
-
-To those returning and new to the channel: This video is a supercut of our previous videos about Neptune, edited into a new seamless video, and remastered in 4K resolution. Plus, we’ve added some new science updates. Enjoy!
-
-▀▀▀▀▀▀
-
-0:00 Neptune
-1:26 Discovery of Neptune
-3:48 Voyager 2 Visits Neptune
-5:16 Neptune’s Seasons
-6:35 Colossal Storms
-9:48 Beneath the Surface
-11:48 Magnetic Field 
-12:43 New Aurora Images from JWST
-13:42 Neptune Got Colder
-14:17 Neptune’s Rings
-16:18 Triton’s Strange Orbit
-18:33 Stolen Moons 
-20:01 Triton vs Pluto
-25:56 Neptune’s Small Moons
-27:15 Hippocamp
-28:06 Object 2020 VN40
-29:05 New Missions?
-
-▀▀▀▀▀▀
-
-Astrum's newsletter has launched! Want to know what's happening in space? 
-Sign up here: https://astrumspace.kit.com 
-
-▀▀▀▀▀▀
- 
-Astrum Displate Posters: https://astrumspace.info/Displates 
-Astrum Infographic Artwork: https://electrify.art/collections/astrum  
-Astrum Merch: https://astrum-shop.fourthwall.com/ 
-
-Join us on the Astrum discord: https://discord.gg/TKw8Hpvtv8 
-
-A huge thanks to our Patreons who help make these videos possible. Sign-up here to support the channel: https://bit.ly/4aiJZNF 
-
-▀▀▀▀▀▀
-
-Astrum Podcast on Spotify: https://open.spotify.com/show/6jPRrbq3o3dpvBb173ZTKi?si=a90d3efe3b704c83 
-
-Astrum Earth: https://youtube.com/@AstrumEarth 
-Astrum Extra: https://www.youtube.com/@astrumextra 
-
-Astrum Spanish: https://www.youtube.com/@astrumespanol 
-Astrum Portuguese: https://www.youtube.com/channel/UChn_-OwvV63mr1yeUGvH-BQ 
-
-▀▀▀▀▀▀
-
-References:
-
-“Neptune: The Mysterious Ice Giant”, via nasa.gov https://astrumspace.info/neptuneoverview 
-“Neptune on Horizons System: JPL Solar System Dynamics”, via jpl.nasa.gov https://astrumspace.info/horizonsneptune 
-“Voyager 2: Exploring the Outer Planets”, via nasa.gov https://astrumspace.info/voyager2 
-“What Is the Great Dark Spot?”, via caltech.edu https://astrumspace.info/greatdarkspot 
-“JWST Captures Neptune’s Auroras for the First Time”, via nasa.gov https://astrumspace.info/neptuneauroras 
-“A Deep Dive into the Neptune System with JWST”, via planetary.org https://astrumspace.info/neptunejwst
-“Triton - NASA Science”, via nasa.gov https://astrumspace.info/tritonmoon 
-“Neptune and Triton”, via sciencedirect.com https://astrumspace.info/neptunetriton 
-“Moons of Neptune”, via nasa.gov https://astrumspace.info/neptunemoons 
-“Astronomers Discover Rare Object in Sync with Neptune”, via cfa.harvard.edu https://astrumspace.info/2020VN40 
-
-▀▀▀▀▀▀
-
-Credits:
-Writer: Jon McColgan 
-Video Editor: Nathália Huzian
-Researcher: Shourya Shrivastava
-Script Editor: Damaris McColgan
-Thumbnail Designer: Peter Sheppard
-Publishing Lead: Georgina Brenner
-Production Manager: Raquel Taylor
-Edit Producer: Poppy Pinnock
-Head of Astrum: Jess Jordan
-Creator of Astrum: Alex McColgan
-
-With special thanks to:
-NASA/ESO/ESA
-
-#Astrum #Space #Neptune]]></content:encoded></item><item><title>The smartphone dilemma - TikTok, Snapchat and how to protect your kids | DW Documentary</title><link>https://www.youtube.com/watch?v=KpuIyXzv0G4</link><author>DW Documentary</author><category>yt</category><enclosure url="https://www.youtube.com/v/KpuIyXzv0G4?version=3" length="" type=""/><pubDate>Tue, 28 Oct 2025 17:00:40 +0000</pubDate><source url="https://www.youtube.com/channel/UCW39zufHfsuGgpLviKh297Q">DW Documentary</source><content:encoded><![CDATA[Many children and teenagers spend hours every day on Instagram, TikTok or other platforms. More and more families and schools are setting clear boundaries to counter the constant distraction of social media.
-
-Studies have linked excessive smartphone use to depression, anxiety, and difficulties concentrating. This documentary follows several families and schools that greatly restrict smartphone use for children and young people. Martin and Ursula Novotny in Sevelen, Switzerland, are convinced that phones and social media are just as addictive as alcohol or drugs. They waited until their children were older before giving them a cell phone of their own. The Lyceum Alpinum boarding school in Switzerland is equally strict: During the day, all devices remain locked away; older students get their cell phones back after class, while younger students only get them for two hours in the evening. The result: The children are significantly less distracted in class and have actual conversations at breaktime. How much screen time is healthy, and at what age does it make sense to give a child a smartphone? Child and adolescent psychotherapist Nady Mirian explains which parental rules work for social media. The schools and families featured in the documentary are not opposed to new technologies, but they advocate responsible use. Is it still realistic for children today to grow up without a smartphone — and could it actually be preferable?
-
-#documentary #dwdocumentary #dwdocs #smartphones #kids #socialmedia 
+0:00 Gold’s demand
+1:01 Why Singapore?
+3:04 Vault security 
+3:39 How much gold is in the vault
+5:09 Why invest in physical gold
+
+News Explainers
+Some days the high-speed news cycle can bring more questions than answers. WSJ’s news explainers break down the day's biggest stories into bite-size pieces to help you make sense of the news.
+
+#Gold #Singapore #WSJ]]></content:encoded></item><item><title>Poland’s fentanyl crisis | DW Documentary</title><link>https://www.youtube.com/watch?v=LMybt9-aXTQ</link><author>DW Documentary</author><category>yt</category><enclosure url="https://www.youtube.com/v/LMybt9-aXTQ?version=3" length="" type=""/><pubDate>Tue, 25 Nov 2025 17:00:39 +0000</pubDate><source url="https://www.youtube.com/channel/UCW39zufHfsuGgpLviKh297Q">DW Documentary</source><content:encoded><![CDATA[Fentanyl is estimated to be fifty times as potent as heroin and is extremely addictive. The number of people in Poland abusing this powerful painkiller is growing. There have been dozens of fatalities.
+
+Michal lives in a small town south of Gdansk. Because of the stigma surrounding people with addiction, he prefers to remain anonymous. Every two weeks, he travels to Święciec to take methadone, a substitute drug, at the addiction clinic of the psychiatric hospital. After using various drugs, he started taking fentanyl, the strongest of all opiates. 
+Fentanyl is used to treat people with severe pain and as an anesthetic. Addicts remove the gel from pain patches and inject it directly into their bloodstream. There have been dozens of fatal overdoses in Poland. Michal has also lost one of his close friends. Corrupt pharmacists are believed to have sold large quantities of fentanyl patches to dealers. The authorities have since put a stop to this.  
+In Żuromin, Jadwiga Karpinska lost her son Pawel to a fatal overdose. Their town, a two-hour drive from the capital Warsaw, was known as the country’s unofficial fentanyl capital in 2024. That changed when police detained a well-known local dealer. The drug continues to be available there, but in smaller quantities.
+Elementary school teacher Adam Ejnik believes in prevention. He wants to keep his students away from the drug by raising awareness about its dangers. 
+Artur from Łódź has managed to get off fentanyl. A few years ago, he was so addicted, he had lost the will to live. Today, his girlfriend Agnieszka helps him stay clean. His goal: he hopes to finish his psychology degree and work as a therapist to help other addicts get off the extremely powerful drug.
+
+#documentary #dwdocumentary #dwdocs #poland #fentanyl 
 ______
 
 DW Documentary gives you knowledge beyond the headlines. Watch top documentaries from German broadcasters and international production companies. Meet intriguing people, travel to distant lands, get a look behind the complexities of daily life and build a deeper understanding of current affairs and global events. Subscribe and explore the world around you with DW Documentary.
@@ -737,7 +121,7 @@ Subscribe to: ‬
 ⮞ DW Documentary (English): https://www.youtube.com/@DWDocumentary 
 ⮞ DW Documental (Spanish): https://www.youtube.com/@DWDocumental 
 ⮞ DW Documentary وثائقية دي دبليو (Arabic): https://www.youtube.com/@dwdocarabia
-⮞ DW Documentary हिन्दी (Hindi): https://www.youtube.com/@dwdochindi
+⮞ DW Documentary हिन्दी (Hindi): https://www.youtube.com/@DWDochindi
 ⮞ DW Dokumenter (Indonesian): https://www.youtube.com/@DWDokumenter
 ⮞ DW Doku (German): https://www.youtube.com/@DWDoku
 
@@ -745,23 +129,182 @@ For more visit: http://www.dw.com/en/tv/docfilm/s-3610
 Follow DW Documentary on Instagram: https://www.instagram.com/dwdocumentary/
 Follow DW Documental on Facebook: https://www.facebook.com/dwdocumental
 
-We kindly ask viewers to read and stick to the DW netiquette policy on our channel: https://p.dw.com/p/MF1G]]></content:encoded></item><item><title>Acho: &apos;Once You See It, You Can Be It&apos;</title><link>https://www.youtube.com/shorts/urHyPgt9sho</link><author>Bloomberg Originals</author><category>yt</category><enclosure url="https://www.youtube.com/v/urHyPgt9sho?version=3" length="" type=""/><pubDate>Tue, 28 Oct 2025 16:32:59 +0000</pubDate><source url="https://www.youtube.com/channel/UCUMZ7gohGI9HcU9VNsr2FJQ">Bloomberg Originals</source><content:encoded><![CDATA[“Once you see it, you can be it.”
+We kindly ask viewers to read and stick to the DW netiquette policy on our channel: https://p.dw.com/p/MF1G]]></content:encoded></item><item><title>Human beings are extraordinary #Superskilled</title><link>https://www.youtube.com/shorts/JLCadz_M9vA</link><author>National Geographic</author><category>yt</category><enclosure url="https://www.youtube.com/v/JLCadz_M9vA?version=3" length="" type=""/><pubDate>Tue, 25 Nov 2025 17:00:18 +0000</pubDate><source url="https://www.youtube.com/channel/UCpVm7bg6pXKo1Pr6k5kxG9A">National Geographic</source><content:encoded><![CDATA[All over the world, people with exceptional skills are performing feats that seem impossible and pushing the limits of human potential. Eva zu Beck is finding out how they do it.
 
-Emmanuel Acho says Kansas City Chiefs legend Christian Okoye had a big impact on him. He shares why with Alex Rodriguez and Jason Kelly.
+Watch Superskilled with Eva zu Beck, a National Geographic YouTube Original, now available on Nat Geo’s YouTube channel: https://youtu.be/EAX7pCTOxZo
 
-Watch the full episode of The Deal on the Bloomberg app or listen wherever you get your podcasts.
+Explore the World with National Geographic subscriptions: https://natgeo.com/ytngmagazine
 
---------
-Like this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1
+➡ Subscribe: https://on.natgeo.com/4p5A0D6
+➡ Get more Nat Geo Full Episodes: https://on.natgeo.com/3V5ZfHI
+➡ Get wild with Nat Geo Animals Full Episodes: https://on.natgeo.com/3V2EOLO
 
-Get unlimited access to Bloomberg.com for just $1.99 your first month: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals
-Bloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. 
+And check out more National Geographic series and specials here:
+➡ Disney Plus: https://on.natgeo.com/3q6on5p
+➡ Hulu: https://on.natgeo.com/3Qor0Ko
+➡ NGTV: https://natgeo.com/tv
+➡ ABC: https://abc.com
 
-Subscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.
+#NationalGeographic #Superskilled #EvaZuBeck #Travel 
 
-Visit our partner channel Bloomberg News for global news and insight in an instant.]]></content:encoded></item><item><title>Australia’s Monopoly Is Hidden in Plain Sight</title><link>https://www.youtube.com/watch?v=Za_R6h89iS8</link><author>ColdFusion</author><category>yt</category><enclosure url="https://www.youtube.com/v/Za_R6h89iS8?version=3" length="" type=""/><pubDate>Tue, 28 Oct 2025 15:39:44 +0000</pubDate><source url="https://www.youtube.com/channel/UC4QZ_LsYcvcq7qOsOhpAX4A">ColdFusion</source><content:encoded><![CDATA[Go to https://brilliant.org/coldfusion for 20% off the premium subscription, which grants you unlimited daily access to everything on Brilliant.
+About National Geographic:
+National Geographic is the world's premium destination for critically acclaimed storytelling around science and exploration. Discover amazing wildlife, ancient civilizations, hidden worlds, and the incredible wonders of our Earth. Through world-class scientists, photographers, journalists, and filmmakers, Nat Geo inspires fans of all ages to connect with, explore, and care about the world.
 
-Australia is one of the most monopolistic countries in the developed world. From banking, to air travel and groceries. It's all controlled by a few giant corporations. But how bad is it and how did it get this way? In this episode we take a look.
+Get More National Geographic:
+Official Site: https://nationalgeographic.com
+Instagram: https://instagram.com/natgeo 
+Facebook: https://facebook.com/natgeo
+Threads: https://threads.com/@natgeo
+X: https://x.com/NatGeo
+LinkedIn: https://linkedin.com/company/national-geographic
+TikTok: https://tiktok.com/@natgeo
+Reddit: https://reddit.com/user/nationalgeographic
+Pinterest: https://pinterest.com/natgeo
+
+Human beings are extraordinary #Superskilled
+https://youtube.com/shorts/JLCadz_M9vA
+
+National Geographic
+youtube.com/natgeo]]></content:encoded></item><item><title>Ho&apos;omau: Joey&apos;s Journey | National Geographic</title><link>https://www.youtube.com/watch?v=ShjenamH8oo</link><author>National Geographic</author><category>yt</category><enclosure url="https://www.youtube.com/v/ShjenamH8oo?version=3" length="" type=""/><pubDate>Tue, 25 Nov 2025 16:00:49 +0000</pubDate><source url="https://www.youtube.com/channel/UCpVm7bg6pXKo1Pr6k5kxG9A">National Geographic</source><content:encoded><![CDATA[Paid content for argenx. Join National Geographic photographer Josh Cogan as he sets out on a journey of exploration and perseverance with Joey, a man living with CIDP (chronic inflammatory demyelinating polyneuropathy). Together, Josh and Joey explore the wild and incredible landscapes of Hawaii and push boundaries, from snorkeling with giant manta rays to hiking through Volcanoes National Park. Learn more about their journey here: https://www.cidptravels.com/.
+
+Explore the World with National Geographic subscriptions: https://natgeo.com/ytngmagazine
+
+➡ Subscribe: https://on.natgeo.com/4p5A0D6
+➡ Get more Nat Geo Full Episodes: https://on.natgeo.com/3V5ZfHI
+➡ Get wild with Nat Geo Animals Full Episodes: https://on.natgeo.com/3V2EOLO
+
+And check out more National Geographic series and specials here:
+➡ Disney Plus: https://on.natgeo.com/3q6on5p
+➡ Hulu: https://on.natgeo.com/3Qor0Ko
+➡ NGTV: https://natgeo.com/tv
+➡ ABC: https://abc.com
+
+#NationalGeographic #Hawaii #CIDP
+
+About National Geographic:
+National Geographic is the world's premium destination for critically acclaimed storytelling around science and exploration. Discover amazing wildlife, ancient civilizations, hidden worlds, and the incredible wonders of our Earth. Through world-class scientists, photographers, journalists, and filmmakers, Nat Geo inspires fans of all ages to connect with, explore, and care about the world.
+
+Get More National Geographic:
+Official Site: https://nationalgeographic.com
+Instagram: https://instagram.com/natgeo 
+Facebook: https://facebook.com/natgeo
+Threads: https://threads.com/@natgeo
+X: https://x.com/NatGeo
+LinkedIn: https://linkedin.com/company/national-geographic
+TikTok: https://tiktok.com/@natgeo
+Reddit: https://reddit.com/user/nationalgeographic
+Pinterest: https://pinterest.com/natgeo
+
+Ho'omau: Joey's Journey | National Geographic
+https://youtu.be/ShjenamH8oo
+
+National Geographic
+youtube.com/natgeo]]></content:encoded></item><item><title>The seed that gave Coca-Cola its name - Shantel George</title><link>https://www.youtube.com/watch?v=IpaVpMFBwAE</link><author>TED-Ed</author><category>yt</category><enclosure url="https://www.youtube.com/v/IpaVpMFBwAE?version=3" length="" type=""/><pubDate>Tue, 25 Nov 2025 16:00:12 +0000</pubDate><source url="https://www.youtube.com/channel/UCsooa4yRKGN_zEE8iknghZA">TED-Ed</source><content:encoded><![CDATA[Dig into the bitter history of kola nuts, a sacred ingredient in West African culture and part of Coca-Cola's original recipe.
+
+--
+
+The kola nut is the seed of the kola tree, a small evergreen native to the forests of West Africa, where it’s long been integral to the cultural fabric of many communities. So, how did this sacred ingredient end up all around the world? And how did it make its way into the original recipe of a drink that billions of people consume every day? Shantel George explores the bitter history of kola nuts.
+
+Lesson by Shantel George, directed by Nikhita Prabhudesai Jeena, Totem Creative.
+
+Support Our Non-Profit Mission
+----------------------------------------------
+Support us on Patreon: http://bit.ly/TEDEdPatreon
+Check out our merch: http://bit.ly/TEDEDShop
+----------------------------------------------
+
+Connect With Us
+----------------------------------------------
+Sign up for our newsletter: http://bit.ly/TEDEdNewsletter
+Follow us on Facebook: http://bit.ly/TEDEdFacebook
+Find us on Twitter: http://bit.ly/TEDEdTwitter
+Peep us on Instagram: http://bit.ly/TEDEdInstagram
+----------------------------------------------
+
+Keep Learning
+----------------------------------------------
+View full lesson: https://ed.ted.com/lessons/the-seed-that-gave-coca-cola-its-name-shantel-george
+Dig deeper with additional resources: https://ed.ted.com/lessons/the-seed-that-gave-coca-cola-its-name-shantel-george/digdeeper
+
+Animator's website: https://www.totemcreative.in
+----------------------------------------------
+
+Thank you so much to our patrons for your support! Without you this video would not be possible! Vector-Dopamine math, Jasper Song, Giorgio Bugnatelli, Chardon, Eddy Trochez, OnlineBookClub.org, Eric Shear, Leith Salem, Omar Hicham, Adrian Rotaru, Brad Sullivan, Karen Ho, Niklas Frimberger, Hunter Manhart, Nathan Nguyen, Igor Stavchanskiy, James R DeVries, Grace Huo, Diana Huang, Chau Hong Diem, Orlellys Torre, Corheu, Thomas Mee, Maryann H McCrory, Blas Borde, John Hellmann, Poompak Meephian, Chuck Wofford, Adam Pagan, Wes Winn, Conder Shou, ntiger, Noname, Hansan Hu, David D, Mac Hyney, Keith Ellison, robin valero walters, Lynne Truesdale, Gatsby Dkdc, Matthew Neal, Denis Chon, Julian Oberhofer, Monte Carroll, Eddy, Jay M, Constantino Victor Delgado, Andrea Galvagni, Andrew Tweddle, and Laurel-Ann Rice.]]></content:encoded></item><item><title>Trees Are So Weird</title><link>https://www.youtube.com/watch?v=ZSch_NgZpQs</link><author>Kurzgesagt – In a Nutshell</author><category>yt</category><enclosure url="https://www.youtube.com/v/ZSch_NgZpQs?version=3" length="" type=""/><pubDate>Tue, 25 Nov 2025 15:00:10 +0000</pubDate><source url="https://www.youtube.com/channel/UCsXVk37bltHxD1rDPwtNM8Q">Kurzgesagt – In a Nutshell</source><content:encoded><![CDATA[Want to restore the planet’s ecosystems and see your impact in monthly videos? The first 100 people to join Planet Wild with my code KURZGESAGT11 will get the first month for free at: https://planetwild.com/r/kurzgesagt/join
+If you want to get to know them better first, check out their project reviving underground forests in Tanzania: https://planetwild.com/r/kurzgesagt/m33
+
+It’s not too late to get your 12,026 Human Era Calendar: https://shop.kgs.link/12026! It’s filled with cosmic stories, elaborate illustrations, and supports all that we do at kurzgesagt ❤️
+
+Sources & further reading:
+https://sites.google.com/view/sources-treesaredead/
+
+Trees are among the most extreme and successful forms of life on Earth. They build their bodies from thin air, move water with pressures that would crush a human, and grow using a fascinating system of living cables wrapped in layers of corpses. Under their bark lies a razor-thin strip of living cells, working endlessly to move water hundreds of meters, build indestructible wood, and coordinate millions of functions. 
+How do trees work, and what are they even made of? What makes these ancient giants so resilient, and maybe even immortal?
+
+
+OUR CHANNELS
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+German:        https://kgs.link/youtubeDE
+Spanish:        https://kgs.link/youtubeES
+French:          https://kgs.link/youtubeFR
+Portuguese:  https://kgs.link/youtubePT
+Arabic:           https://kgs.link/youtubeAR
+Hindi:             https://kgs.link/youtubeHI
+Japanese:     https://kgs.link/youtubeJA
+Korean:          https://kgs.link/youtubeKO
+
+
+HOW CAN YOU SUPPORT US?
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+This is how we make our living and it would be a pleasure if you support us!
+
+Get Products designed with ❤️ https://shop.kgs.link
+Join the Patreon Bird Army 🐧  https://kgs.link/patreon  
+
+
+DISCUSSIONS & SOCIAL MEDIA
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+Instagram:     https://kgs.link/instagram
+TikTok:           https://kgs.link/tiktok
+Reddit:            https://kgs.link/reddit
+Discord:          https://kgs.link/discord
+Twitter:           https://kgs.link/twitter
+Bluesky:          https://kgs.link/bluesky
+Facebook:      https://kgs.link/facebook
+Newsletter:    https://kgs.link/newsletter
+
+
+OUR VOICE
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+The kurzgesagt voice is from 
+Steve Taylor:  https://kgs.link/youtube-voice
+
+
+OUR MUSIC ♬♪
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+700+ minutes of kurzgesagt soundtracks by Epic Mountain:
+
+Spotify:            https://kgs.link/music-spotify
+Soundcloud:   https://kgs.link/music-soundcloud
+Bandcamp:     https://kgs.link/music-bandcamp
+Youtube:          https://kgs.link/music-youtube
+Facebook:       https://kgs.link/music-facebook
+
+The soundtrack of this video:
+SoundCloud: https://bit.ly/4riwGp9
+Bandcamp: https://bit.ly/44uVxMG
+
+If you want to help us caption this video, please send subtitles to subtitle@kurzgesagt.org
+You can find info on what subtitle files work on YouTube here:
+https://support.google.com/youtube/answer/2734698?hl=en-GB&ref_topic=7296214
+Thank you!
+
+
+🐦🐧🐤 PATREON BIRD ARMY 🐤🐧🐦
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+Many thanks to our wonderful Patreons (from http://kgs.link/patreon) who support us every month and made this video possible:
+Acácio Correia, AeryaRia, aforsberg, Ahmad Seet, Alexander, Alexander Devlin, amia, Andres Ramos, Anna Duwenig, Anthony Hanson, Anton Abrahamsson, AonReo, Armond Aghanian, Asaf Yishai, Benjamin R., Bharath Ron, Brendan Ryan-Lewis, Christoph Lurz, Christoph Rau, Clay, Cliff Hudson, ConsterCoaster, Corbin Meier, Dale Kipple, Delano Stijns, dotvhs, Dylan Gafner, eddie k, Ela Yohannan, Enigma66, Eran Aviram, Erwin Heckler, Eva Markiewicz, Evil Cookie, FeelinaraIRL, Frankie Ennis, G, Geoff Evans, George Hutter, hazardx, Hugh Mungus, Inigo vd, Ireleigh, Isabelll, Ishaan Varma, Jack Sparrow, James Emmitt Zugar, James Pinkerton, james trotta, Jason Desrosiers, Jason Murley, Jens Begemann, Jesse, Jesus Mayo, Joann Taijala, Joseph Gauthier, jurd, Justin, KawasakiDragonno, Keddan, KekzL, Lauren Woolsey LeGrandAnanas, Lulidine, LumpyMammot, manchicken, Mark A Vargas, MasterOfTree, Matthew Brady, Matthew Brodeur, Maximilian Schons, Mead Landis, Ms. Ewing, Mykola Balakin, Nathaniel Bauernfeind, Nicholas McCalla, Owen, PaladinSpartac, Phoenix_Flames, Primalis, Quinn Wilson, Rath Robin, Robert Cudinski, Robin Hockett, Ryan Snead, Ryan Staunch, Ryan Thompson, SentinelD20, Siddharth Chaini, Sindre Nistad, Soko Divanovic, Spleens, Stacey Nicholson, Stephen Conlon, Strudy, Syi, Sérgio P., Thomas Mitchell, Thomas Stokes, Thomas Toombes, Tom Kocmi, Warren MacEvoy, William Lingenfelter]]></content:encoded></item><item><title>This marinade packed with Middle Eastern flavours will take your turkey to a whole new level!</title><link>https://www.youtube.com/shorts/TEE1WNsaS74</link><author>Middle Eats</author><category>yt</category><enclosure url="https://www.youtube.com/v/TEE1WNsaS74?version=3" length="" type=""/><pubDate>Tue, 25 Nov 2025 14:59:27 +0000</pubDate><source url="https://www.youtube.com/channel/UCWj_rUMGYCP0DjffybE2nbg">Middle Eats</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>The Worst Tech Product of the Century [Friend.com]</title><link>https://www.youtube.com/watch?v=BN9zz2O6jcw</link><author>ColdFusion</author><category>yt</category><enclosure url="https://www.youtube.com/v/BN9zz2O6jcw?version=3" length="" type=""/><pubDate>Tue, 25 Nov 2025 14:45:29 +0000</pubDate><source url="https://www.youtube.com/channel/UC4QZ_LsYcvcq7qOsOhpAX4A">ColdFusion</source><content:encoded><![CDATA[Go to https://buyraycon.com/coldfusionOPEN to get up to 30% off during Raycon’s Black Friday and Cyber Monday Sale.
+These days people are in search of companionship but tech companies are treating it like another problem that has to be solved. One of the latest efforts in this space is Friend.com. An AI pendant that serves as your very own digital buddy. The product itself has seen terrible reviews and has a lot of people asking the question “do we really need this?” 
+In this video we explore.
 
 Watch or listen to ColdFusion on Spotify: https://open.spotify.com/show/1YEwCKoRz8fEDqheXB6UJ1
 
@@ -782,73 +325,21 @@ https://twitter.com/ColdFusion_TV
 https://instagram.com/coldfusiontv
 
 Created by: Dagogo Altraide
-Producers: Tawsif Akkas, Dagogo Altraide]]></content:encoded></item><item><title>Japan&apos;s most famous ghost story - Jeffrey Angles</title><link>https://www.youtube.com/watch?v=56F0Y33QZnQ</link><author>TED-Ed</author><category>yt</category><enclosure url="https://www.youtube.com/v/56F0Y33QZnQ?version=3" length="" type=""/><pubDate>Tue, 28 Oct 2025 15:00:57 +0000</pubDate><source url="https://www.youtube.com/channel/UCsooa4yRKGN_zEE8iknghZA">TED-Ed</source><content:encoded><![CDATA[Get to know the Japanese legend of Hōichi the earless, a monk summoned by a mysterious samurai to perform songs of past battles.
+Producers: Tawsif Akkas, Dagogo Altraide]]></content:encoded></item><item><title>Fear on the streets | DW Documentary</title><link>https://www.youtube.com/shorts/l_FpOnObpK4</link><author>DW Documentary</author><category>yt</category><enclosure url="https://www.youtube.com/v/l_FpOnObpK4?version=3" length="" type=""/><pubDate>Tue, 25 Nov 2025 14:01:17 +0000</pubDate><source url="https://www.youtube.com/channel/UCW39zufHfsuGgpLviKh297Q">DW Documentary</source><content:encoded><![CDATA[Although sexual violence can affect people of all genders, women and girls are disproportionally impacted.  
 
---
+Many women feel unsafe in public spaces, whether on streets, at train stations, or in parks. The danger they face overwhelmingly comes from men: Around 95% of sexualized violence in public spaces is committed by them. 
 
-Long ago, a temple was built near the site of a naval battle that concluded the long and gruesome conflict known as the Genpei Wars. For centuries after, performers throughout the country honored this tragic past in beautiful, haunting performances. But the most skilled storyteller of all was a monk from this very temple. Jeffrey Angles digs into the Japanese legend of Hōichi the earless.
+Yanni Gentsch's encounter with a stranger who secretly filmed her while she jogged in a forest in Cologne went viral on the internet after she recorded the confrontation. Her experience demonstrates a common and recurring problem. 
 
-Lesson by Jeffrey Angles, directed by Masayoshi Nakamura, Good General.
-Music and sound design by Zak Engel.
+Watch the full documentary “How male violence shapes women’s lives” on the DW Documentary YouTube channel.
 
-Support Our Non-Profit Mission
-----------------------------------------------
-Support us on Patreon: http://bit.ly/TEDEdPatreon
-Check out our merch: http://bit.ly/TEDEDShop
-----------------------------------------------
+#documentary #dwdocumentary #dwdocs #maleviolence #25N #internationaldayfortheeliminationofviolenceagainstwomen 
 
-Connect With Us
-----------------------------------------------
-Sign up for our newsletter: http://bit.ly/TEDEdNewsletter
-Follow us on Facebook: http://bit.ly/TEDEdFacebook
-Find us on Twitter: http://bit.ly/TEDEdTwitter
-Peep us on Instagram: http://bit.ly/TEDEdInstagram
-----------------------------------------------
+______
 
-Keep Learning
-----------------------------------------------
-View full lesson: https://ed.ted.com/lessons/the-japanese-legend-of-the-phantom-samurai-jeffrey-angles
-Dig deeper with additional resources: https://ed.ted.com/lessons/the-japanese-legend-of-the-phantom-samurai-jeffrey-angles/digdeeper
+We kindly ask viewers to read and stick to the DW netiquette policy on our channel: https://p.dw.com/p/MF1G]]></content:encoded></item><item><title>How I Survived a Trek through the Desert ALONE | Superskilled with Eva zu Beck | National Geographic</title><link>https://www.youtube.com/watch?v=EAX7pCTOxZo</link><author>National Geographic</author><category>yt</category><enclosure url="https://www.youtube.com/v/EAX7pCTOxZo?version=3" length="" type=""/><pubDate>Tue, 25 Nov 2025 13:59:48 +0000</pubDate><source url="https://www.youtube.com/channel/UCpVm7bg6pXKo1Pr6k5kxG9A">National Geographic</source><content:encoded><![CDATA[In the stunning Wadi Rum desert of Jordan, travel vlogger and Nat Geo explorer Eva zu Beck visits a Bedouin family to learn about their nomadic lifestyle and culture to help prepare for an unforgettable desert adventure in the Middle East. Her navigation skills are put to the ultimate test when left alone in one of the most unforgiving terrains on the planet to complete an extreme survival challenge: find water....without a map or GPS. To complete this intense Superskilled challenge, Eva must quickly learn the native language and animal handling cues in order to befriend a camel for her desert trek. 
 
-Animator's website: https://goodgeneral.com
-Music and sound design: https://www.zakengel.com
-----------------------------------------------
-
-Thank you so much to our patrons for your support! Without you this video would not be possible! Doug Henry, Keven Webb, Mihai Sandu, Deepak Iyer, Javid Gozalov, Kyanta Yap, Rebecca Reineke, William Biersdorf, Patricia Alves Panagides, Yvette Mocete, Cyrus Garay, Samuel Barbas, LadyGeek, Marin Kovachev, Penelope Misquitta, Hans Peng, Gaurav Mathur, Erik Biemans, Tony, Michelle, Katie and Josh Pedretti, Hoai Nam Tran, Kack-Kyun Kim, Michael Braun-Boghos, zjweele13, Anna-Pitschna Kunz, Edla Paniguel, Thomas Mungavan, Jaron Blackburn, Venkat Venkatakrishnan, ReuniteKorea, Aaron Henson, Rohan Gupta, Begum Tutuncu, Brian Richards, Jørgen Østerpart, Tyron Jung, Carsten Tobehn, Katie Dean, Ezgi Yersu, Gerald Onyango, alessandra tasso, Doreen Reynolds-Consolati, Manognya Chakrapani, Ayala Ron, Eunsun Kim, Phyllis Dubrow, Ophelia Gibson Best, Paul Schneider, Joichiro Yamada, Henrique Cassús, and Karthik Cherala.]]></content:encoded></item><item><title>Explore the fungus gnat&apos;s haunted, creepy light show 👻🐛 #Underdogs</title><link>https://www.youtube.com/shorts/ICwRPd95CPw</link><author>Nat Geo Animals</author><category>yt</category><enclosure url="https://www.youtube.com/v/ICwRPd95CPw?version=3" length="" type=""/><pubDate>Tue, 28 Oct 2025 15:00:40 +0000</pubDate><source url="https://www.youtube.com/channel/UCDPk9MG2RexnOMGTD-YnSnA">Nat Geo Animals</source><content:encoded><![CDATA[The larva of a fungus gnat takes 200 days to create this web of silk, water and urea that glows as bright as a night sky to confuse and capture small bugs for nutrients. #Underdogs is now streaming on @disneyplus and @hulu.
-
-Explore the World with National Geographic subscriptions: https://natgeo.com/ytngmagazine
-
-➡ Subscribe: https://on.natgeo.com/41A7tf0
-➡ Get wild with more Nat Geo Animals Full Episodes: https://on.natgeo.com/3V2EOLO
-➡ Get Nat Geo Full Episodes: https://on.natgeo.com/3V5ZfHI
-
-And check out more National Geographic series and specials here:
-➡ Disney Plus: https://on.natgeo.com/3q6on5p
-➡ Hulu: https://on.natgeo.com/3Qor0Ko
-➡ NGTV: https://natgeo.com/tv
-➡ ABC: https://abc.com
-
-#NationalGeographic #Underdogs #Insects
-
-About National Geographic Animals:
-National Geographic Animals brings you closer to the wild than ever before. Take a journey through the animal kingdom to discover fierce predators, surprising behaviors, adorable babies, and more through our fascinating wildlife documentaries, series, and specials.
-
-Get More National Geographic:
-Official Site: https://nationalgeographic.com
-Instagram: https://instagram.com/natgeo 
-Facebook: https://facebook.com/natgeo
-Threads: https://threads.com/@natgeo
-X: https://x.com/NatGeo
-LinkedIn: https://linkedin.com/company/national-geographic
-TikTok: https://tiktok.com/@natgeo
-Reddit: https://reddit.com/user/nationalgeographic
-Pinterest: https://pinterest.com/natgeo
-
-Explore the fungus gnat's haunted, creepy light show 👻🐛 #Underdogs
-https://youtube.com/shorts/ICwRPd95CPw
-
-National Geographic
-youtube.com/@NatGeoAnimals]]></content:encoded></item><item><title>Army ants = nightmare fuel 🐜😱 #ARealBugsLife #Halloween #SpookySeason</title><link>https://www.youtube.com/shorts/CK4yIn1voXk</link><author>National Geographic</author><category>yt</category><enclosure url="https://www.youtube.com/v/CK4yIn1voXk?version=3" length="" type=""/><pubDate>Tue, 28 Oct 2025 15:00:22 +0000</pubDate><source url="https://www.youtube.com/channel/UCpVm7bg6pXKo1Pr6k5kxG9A">National Geographic</source><content:encoded><![CDATA[Silent and deadly 💀 This army ant swarm is like a team of trained assassins, able to lay waste to any obstacle in their path. 🐜🐜 #ARealBugsLife is now streaming on @disneyplus. 
+Superskilled with Eva zu Beck | S2, E1
 
 Explore the World with National Geographic subscriptions: https://natgeo.com/ytngmagazine
 
@@ -862,7 +353,7 @@ And check out more National Geographic series and specials here:
 ➡ NGTV: https://natgeo.com/tv
 ➡ ABC: https://abc.com
 
-#NationalGeographic #SpookySeason #Animals
+#NationalGeographic #FullEpisode #SuperskilledWithEvaZuBeck
 
 About National Geographic:
 National Geographic is the world's premium destination for critically acclaimed storytelling around science and exploration. Discover amazing wildlife, ancient civilizations, hidden worlds, and the incredible wonders of our Earth. Through world-class scientists, photographers, journalists, and filmmakers, Nat Geo inspires fans of all ages to connect with, explore, and care about the world.
@@ -878,44 +369,42 @@ TikTok: https://tiktok.com/@natgeo
 Reddit: https://reddit.com/user/nationalgeographic
 Pinterest: https://pinterest.com/natgeo
 
-Army ants = nightmare fuel 🐜😱 #ARealBugsLife #Halloween #SpookySeason
-https://youtube.com/shorts/CK4yIn1voXk
+How I Survived a Trek through the Desert ALONE | Superskilled with Eva zu Beck | National Geographic
+https://youtu.be/EAX7pCTOxZo
 
 National Geographic
-youtube.com/natgeo]]></content:encoded></item><item><title>Building Support Structures • Flavia Circiumaru &amp; Hannes Lowette</title><link>https://www.youtube.com/watch?v=8lx6df6ENsk</link><author>GOTO Conferences</author><category>yt</category><enclosure url="https://www.youtube.com/v/8lx6df6ENsk?version=3" length="" type=""/><pubDate>Tue, 28 Oct 2025 13:34:35 +0000</pubDate><source url="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</source><content:encoded><![CDATA[This interview was recorded for GOTO Unscripted.
+youtube.com/natgeo]]></content:encoded></item><item><title>Breaking the Architecture Bottleneck • Andrew Harmel-Law &amp; Marit van Dijk</title><link>https://www.youtube.com/watch?v=6BGQcTjecjM</link><author>GOTO Conferences</author><category>yt</category><enclosure url="https://www.youtube.com/v/6BGQcTjecjM?version=3" length="" type=""/><pubDate>Tue, 25 Nov 2025 13:29:15 +0000</pubDate><source url="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</source><content:encoded><![CDATA[This interview was recorded for GOTO Unscripted.
 https://gotopia.tech
-
-Read the full transcription of this interview here:
-https://gotopia.tech/articles/386
-
-Flavia Circiumaru - Software Engineer at FundApps
-Hannes Lowette - Principal Consultant at Axxes, Monolith Advocate, Speaker & Whiskey Lover
+ (https://gotopia.tech/articles/392) 
+Andrew Harmel-Law - Technical Principal at Thoughtworks & Author of "Facilitating Software Architecture"
+Marit van Dijk - Developer Advocate at JetBrains, Java Champion & Open Source Contributor
 
 RESOURCES
-Flavia
-https://x.com/FlavsFA
-https://github.com/flaviacirciumaru
-https://www.linkedin.com/in/flavia-circiumaru
+Andrew
+https://bsky.app/profile/andrewhl.bsky.social
+ (https://github.com/andrewharmellaw) https://www.linkedin.com/in/andrewharmellaw
+https://andrewharmellaw.github.io
 
-Hannes
-https://bsky.app/profile/hanneslowette.net
-https://twitter.com/hannes_lowette
-https://github.com/Belenar
-https://linkedin.com/in/hanneslowette
+Marit
+https://bsky.app/profile/maritvandijk.bsky.social
+https://linkedin.com/in/maritvandijk
+ (https://github.com/mlvandijk) https://medium.com/@mlvandijk
+https://maritvandijk.com
 
+Links
+https://facilitatingsoftwarearchitecture.com
+https://ruthmalan.com
+https://www.linkedin.com/pulse
+ (https://www.linkedin.com/pulse/software-architects-do-we-need-em-ruth-malan) 
 DESCRIPTION
-When FundApps exploded from 20 to 50+ engineers in just one year, their old "everyone does support" model crumbled spectacularly. Software engineer Flavia Circiumaru and host Hannes Lowette dive deep into how this London-based regulatory compliance company transformed from a support-free-for-all to a streamlined powerhouse.
+Andrew Harmel-Law discusses their book "Facilitating Software Architecture" and how traditional architecture approaches often become bottlenecks that slow down high-performing development teams.
 
-Flavia Circiumaru reveals the behind-the-scenes story of building a three-desk support system that turned their support team into the ultimate connector, bridging customers, developers, and business teams like never before. From battling context-switching nightmares to creating communication magic, Flavia and Hannes explore actionable insights on scaling support without losing your sanity.
+Rather than architects making top-down decisions in isolation, they advocate for a facilitation approach centered on the "advice process".
 
-The twist? Their ultimate goal is to make support so seamless that dedicated teams won't even be needed. Talk about engineering your way out of a job!
+This collaborative method shifts the architect's role from decision-maker to conversation facilitator. The approach has proven successful even in traditional corporate environments, ultimately creating more maintainable code bases where development teams actually enjoy working and can respond effectively to changing requirements.
 
-RECOMMENDED BOOKS
-Jacqui Read • Communication Patterns • https://amzn.to/3E37lvv
-Saleem Siddiqui • Learning Test-Driven Development • https://amzn.to/35OMb3n
-Ben Goldacre • Bad Science • https://amzn.to/4lqNLKN
-Ben Goldacre • Bad Pharma • https://amzn.to/3G15Mz7
-Jeet Pattanaik • Ethics in AI • https://amzn.to/4jXyQXw
+RECOMMENDED BOOK
+Andrew Harmel-Law • Facilitating Software Architecture • https://amzn.eu/d/5kZKVfU
 Inspiring Tech Leaders - The Technology Podcast (https://www.priceroberts.com/) 
 Interviews with Tech Leaders and insights on the latest emerging technology trends.
 
@@ -936,7 +425,18 @@ https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA/join
 Looking for a unique learning experience?
 Attend the next GOTO conference near you! Get your ticket: gotopia.tech (https://gotopia.tech) 
 
-SUBSCRIBE TO OUR YOUTUBE CHANNEL (https://www.youtube.com/user/GotoConferences/?sub_confirmation=1)  - new videos posted daily!]]></content:encoded></item><item><title>What really happened in witch trials? 🤫 #WitchesTruthBehindTheTrials</title><link>https://www.youtube.com/shorts/HXhKB_A7-sI</link><author>National Geographic</author><category>yt</category><enclosure url="https://www.youtube.com/v/HXhKB_A7-sI?version=3" length="" type=""/><pubDate>Tue, 28 Oct 2025 13:00:45 +0000</pubDate><source url="https://www.youtube.com/channel/UCpVm7bg6pXKo1Pr6k5kxG9A">National Geographic</source><content:encoded><![CDATA[#WitchesTruthBehindTheTrials is now streaming on @disneyplus  and @hulu .
+SUBSCRIBE TO OUR YOUTUBE CHANNEL (https://www.youtube.com/user/GotoConferences/?sub_confirmation=1)  - new videos posted daily!]]></content:encoded></item><item><title>How a Scam and Chinese Spy Scandal Rocked the Philippines</title><link>https://www.youtube.com/watch?v=1OERBzEtAj0</link><author>Bloomberg Originals</author><category>yt</category><enclosure url="https://www.youtube.com/v/1OERBzEtAj0?version=3" length="" type=""/><pubDate>Mon, 24 Nov 2025 23:00:05 +0000</pubDate><source url="https://www.youtube.com/channel/UCUMZ7gohGI9HcU9VNsr2FJQ">Bloomberg Originals</source><content:encoded><![CDATA[In 2022, a small town in the Philippines elected its first female mayor, a popular figure named Alice Guo who brought prosperity and new business to the area. But just a few years later, a police raid revealed her alleged connections to a $2 billion Singapore money laundering scandal and even claims of Chinese espionage.
+
+#philippines #asia #singapore 
+--------
+Like this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1
+
+Get unlimited access to Bloomberg.com for just $1.99 your first month: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals
+Bloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. 
+
+Subscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.
+
+Visit our partner channel Bloomberg News for global news and insight in an instant.]]></content:encoded></item><item><title>The open road, a father, a son—and the memories they’re still making. #ChrisHemsworthRoadTrip</title><link>https://www.youtube.com/shorts/9qOo8p9qLz4</link><author>National Geographic</author><category>yt</category><enclosure url="https://www.youtube.com/v/9qOo8p9qLz4?version=3" length="" type=""/><pubDate>Mon, 24 Nov 2025 21:23:49 +0000</pubDate><source url="https://www.youtube.com/channel/UCpVm7bg6pXKo1Pr6k5kxG9A">National Geographic</source><content:encoded><![CDATA[Chris Hemsworth: A Road Trip to Remember is now streaming on Disney+ and Hulu.
 
 Explore the World with National Geographic subscriptions: https://natgeo.com/ytngmagazine
 
@@ -950,7 +450,7 @@ And check out more National Geographic series and specials here:
 ➡ NGTV: https://natgeo.com/tv
 ➡ ABC: https://abc.com
 
-#NationalGeographic #Witches #History
+#NationalGeographic #ChrisHemsworth #RoadTripToRemember
 
 About National Geographic:
 National Geographic is the world's premium destination for critically acclaimed storytelling around science and exploration. Discover amazing wildlife, ancient civilizations, hidden worlds, and the incredible wonders of our Earth. Through world-class scientists, photographers, journalists, and filmmakers, Nat Geo inspires fans of all ages to connect with, explore, and care about the world.
@@ -966,70 +466,51 @@ TikTok: https://tiktok.com/@natgeo
 Reddit: https://reddit.com/user/nationalgeographic
 Pinterest: https://pinterest.com/natgeo
 
-What really happened in witch trials? 🤫 #WitchesTruthBehindTheTrials
-https://youtube.com/shorts/HXhKB_A7-sI
+The open road, a father, a son—and the memories they’re still making. #ChrisHemsworthRoadTrip
+https://youtube.com/shorts/9qOo8p9qLz4
 
 National Geographic
-youtube.com/natgeo]]></content:encoded></item><item><title>Vampire Accounts Are True?</title><link>https://www.youtube.com/shorts/EpPJesmecDQ</link><author>Horses</author><category>yt</category><enclosure url="https://www.youtube.com/v/EpPJesmecDQ?version=3" length="" type=""/><pubDate>Tue, 28 Oct 2025 13:00:37 +0000</pubDate><source url="https://www.youtube.com/channel/UCrx2zrPjhGRi9TwszZiLwEg">Horses</source><content:encoded><![CDATA[Find the full, uncensored version of this essay and more at: ⁠https://horses.land]]></content:encoded></item><item><title>Why Operation Barbarossa Failed</title><link>https://www.youtube.com/shorts/fziMDvScizk</link><author>Imperial War Museums</author><category>yt</category><enclosure url="https://www.youtube.com/v/fziMDvScizk?version=3" length="" type=""/><pubDate>Tue, 28 Oct 2025 12:01:38 +0000</pubDate><source url="https://www.youtube.com/channel/UC3uAjWoLZ4bSi6qI9SjALxA">Imperial War Museums</source><content:encoded><![CDATA[This video examines why Hitler's invasion of the Soviet Union, Operation Barbarossa, failed.
+youtube.com/natgeo]]></content:encoded></item><item><title>2000 Meters to Andriivka (full documentary) | FRONTLINE</title><link>https://www.youtube.com/watch?v=Nf4Cgy56slU</link><author>FRONTLINE PBS | Official</author><category>yt</category><enclosure url="https://www.youtube.com/v/Nf4Cgy56slU?version=3" length="" type=""/><pubDate>Mon, 24 Nov 2025 20:20:40 +0000</pubDate><source url="https://www.youtube.com/channel/UC3ScyryU9Oy9Wse3a8OAmYQ">FRONTLINE PBS | Official</source><content:encoded><![CDATA[A stunning and immersive portrayal of the men fighting on the front lines of the war in Ukraine, 
+from the Oscar®-winning team behind “20 Days in Mariupol.”
 
-#history #ww2 #operationbarbarossa]]></content:encoded></item><item><title>Why Emmanuel Acho Left the NFL to Create a New Kind of Platform | The Deal</title><link>https://www.youtube.com/watch?v=-Gndot6PX_U</link><author>Bloomberg Originals</author><category>yt</category><enclosure url="https://www.youtube.com/v/-Gndot6PX_U?version=3" length="" type=""/><pubDate>Mon, 27 Oct 2025 22:00:01 +0000</pubDate><source url="https://www.youtube.com/channel/UCUMZ7gohGI9HcU9VNsr2FJQ">Bloomberg Originals</source><content:encoded><![CDATA[In this episode of The Deal, Alex Rodriguez and Jason Kelly talk to the former football player and award-winning producer Emmanuel Acho about why he rejected the NFL and rebranded as a media influencer. In this conversation, they discuss the business of the NFL, why Acho’s “Uncomfortable Conversations with a Black Man” video series became a viral success and how he’s revitalizing sports media with his new show “Speakeasy.”
+This journalism is made possible by viewers like you. Support your local PBS station here: https://www.pbs.org/donate​.
 
-0:00 Intro
-0:39 The NFL magic
-5:30 Private equity in the NFL
-9:00 College football as a business
-14:20 Football on streamers 
-15:38 Transitioning from football to media
-20:25 Emmanuel’s communication style
-24:43 Building Speakeasy
-40:38 Uncomfortable conversations 
-45:16 Rapid Fire
+“2000 Meters to Andriivka” documents the toll of the Russia-Ukraine war from a personal and devastating vantage point. Following his historic account of the civilian toll in Mariupol, Ukrainian filmmaker and Associated Press journalist Mstyslav Chernov turns his lens towards Ukrainian soldiers — who they are, where they came from, and the impossible decisions they face in the trenches as they fight for every inch of their land.
 
---------
-Like this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1
+The documentary follows a Ukrainian brigade battling through approximately one mile of a heavily fortified forest on their mission to liberate the Russian-occupied village of Andriivka amid a failing counteroffensive in 2023. 
 
-Get unlimited access to Bloomberg.com for just $1.99 your first month: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals
-Bloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. 
+Weaving together original footage, intensive Ukrainian Army bodycam video and powerful moments of reflection with haunting intimacy, the documentary reveals how the farther the soldiers advance through their destroyed homeland, the more they realize that, for them, this war may never end.
 
-Subscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.
+“2000 Meters to Andriivka” is written, filmed and directed by filmmaker and Associated Press journalist Mstyslav Chernov. It is produced by Chernov, FRONTLINE’s senior documentary editor and producer Michelle Mizner and FRONTLINE’s editor-in-chief and executive producer Raney Aronson-Rath. It is edited by Michelle Mizner. The film is co-produced and includes additional cinematography by AP journalist Alex Babenko, and is composed by two-time Grammy Award®-winning composer and music-producer Sam Slater. Distributed domestically by PBS Distribution and internationally by Dogwoof, “2000 Meters to Andriivka” is a FRONTLINE FEATURES and The Associated Press production.]]></content:encoded></item><item><title>Lost Ancient Civilisation Brought To Life In Assassins Creed Origins</title><link>https://www.youtube.com/watch?v=ijXT787G2cM</link><author>History Hit</author><category>yt</category><enclosure url="https://www.youtube.com/v/ijXT787G2cM?version=3" length="" type=""/><pubDate>Mon, 24 Nov 2025 19:00:53 +0000</pubDate><source url="https://www.youtube.com/channel/UCZwU2G-KVl-P-O-B35chZOQ">History Hit</source><content:encoded><![CDATA[Ever wondered what life was like in the sun-soaked streets of ancient Cyrene? Join our history guide with our very own Tristan Hughes as he journeys through this legendary Greek-Roman city, brought to life through stunning game reconstruction. From the grand Sanctuary of Apollo and bustling agora to the dramatic cliffs overlooking the Mediterranean, how true is this digital Cyrene to its ancient past? Let’s step inside and uncover the truth!
 
-Visit our partner channel Bloomberg News for global news and insight in an instant.]]></content:encoded></item><item><title>Medieval Expert Reacts to King Arthur: Legend Of The Sword</title><link>https://www.youtube.com/watch?v=qH561Rfr56Y</link><author>History Hit</author><category>yt</category><enclosure url="https://www.youtube.com/v/qH561Rfr56Y?version=3" length="" type=""/><pubDate>Mon, 27 Oct 2025 20:00:47 +0000</pubDate><source url="https://www.youtube.com/channel/UCZwU2G-KVl-P-O-B35chZOQ">History Hit</source><content:encoded><![CDATA[How does Guy Ritchie's film, starring Jude Law, compare to King Arthur's real legend? 
+About Assassin's Creed - Echoes of History:
+Echoes of History is a Ubisoft series brought to you by History Hit. Listen to the full episodes here: https://lnkfi.re/1YFL0t
 
-Medieval historian Dr Hetta Howes (author of Poet, Mystic, Widow, Wife) reacts to Guy Ritchie's King Arthur: Legend of the Sword, separating Hollywood fantasy from medieval sources. We explore the facts behind the fiction, from the opening battle's elephants to that David Beckham cameo.
+Hosted by: Tristan Hughes
+Edited by: Robin McConnell
+Produced by: Robin McConnell
+Executive Producers: Etienne Bouvier, Julien Fabre, Steve Lanham, Jen Bennett
 
-We dive into the film's biggest changes: Arthur's brothel upbringing, the conflation of Excalibur with the Sword in the Stone, and the "weird snake sirens" that replace the Lady of the Lake. Dr Hetta Howes explains the real medieval stories of Uther Pendragon, Vortigern, Igraine, and the true origins of the Round Table.
+#assassinscreed #Playthrough #History
 
-0:00 Introduction
-0:56 Uther Pendragon & The Opening Battle
-3:41 Excalibur vs. The Sword in the Stone
-5:46 The Death of Igraine (Artistic License)
-10:48 Londinium: The Setting of Arthurian Legend
-13:10 Arthur's Brothel Upbringing?
-15:46 Vortigan, Sacrifice, and Dark Magic
-20:12 The Sword in the Stone and the David Beckham Cameo 
-25:46 Introducing Sir Bedivere & Percival
-30:43 - Arthur Throws Excalibur Away? 
-33:01 The REAL Lady of the Lake
-39:32 The Final Battle: Arthur vs. Vortigan
-42:35 The History of the Round Table
-45:33 Final Verdict: Myth vs. Hollywood
+Check out our brand new documentary on Libya here: https://bit.ly/HHCyrene
 
-#KingArthur #MovieReview #History
+You can find more from Echoes of History here: https://bit.ly/ACEoHsub
 
 You can now become a History Hit member right here on YouTube! Join for access to a new exclusive documentary every week, and access to over 160+ of our documentaries presented by world-renowned historians like Dan Snow, Eleanor Janega, Tristan Hughes, Mary Beard, Matt Lewis and more.
 
-Get an exclusive release every week by signing up here: https://www.youtube.com/channel/UCZwU2G-KVl-P-O-B35chZOQ/join]]></content:encoded></item><item><title>Should you bring your health questions to ChatGPT? #shorts</title><link>https://www.youtube.com/shorts/3RsJgSBlsyc</link><author>Vox</author><category>yt</category><enclosure url="https://www.youtube.com/v/3RsJgSBlsyc?version=3" length="" type=""/><pubDate>Mon, 27 Oct 2025 20:00:02 +0000</pubDate><source url="https://www.youtube.com/channel/UCLXo7UDZvByw2ixzpQCufnA">Vox</source><content:encoded><![CDATA[Have you noticed AI being used at your doctor’s office? These days, it’s becoming more and more common. On this week’s episode of our podcast Explain It to Me, host Jonquilyn Hill talks to Dr. Dhruv Khullar, a physician at Weill Cornell, about the growing use of AI in medicine to diagnose patients and understand symptoms. Khullar sheds light on how to best use these AI tools to your advantage and what to avoid. #AI #ChatGPT #medicine #tech
+Get an exclusive release every week by signing up here: https://www.youtube.com/channel/UCZwU2G-KVl-P-O-B35chZOQ/join
 
-🎧 Listen to this episode from Vox wherever you find your podcasts.
-
-Subscribe to our channel and turn on notifications (🔔) so you don't miss any videos: http://goo.gl/0bsAjO
-
-Vox.com is a news website that helps you cut through the noise and understand what's really driving the events in the headlines. Check out http://www.vox.com.
-
-Watch our full video catalog: http://goo.gl/IZONyE
-Follow Vox on TikTok: http://tiktok.com/@voxdotcom
-Check out our articles: https://www.vox.com/
-Listen to our podcasts: https://www.vox.com/podcasts]]></content:encoded></item><item><title>USS Constellation: The US Navy&apos;s Immense $1.3B Superfrigate</title><link>https://www.youtube.com/watch?v=5ubhxTLpTlM</link><author>Megaprojects</author><category>yt</category><enclosure url="https://www.youtube.com/v/5ubhxTLpTlM?version=3" length="" type=""/><pubDate>Mon, 27 Oct 2025 18:50:01 +0000</pubDate><source url="https://www.youtube.com/channel/UC0woBco6Dgcxt0h8SwyyOmw">Megaprojects</source><content:encoded><![CDATA[Go to https://surfshark.com/Mega or use code Mega at checkout to get 4 extra months of Surfshark VPN!
+00:00 - Introduction
+02:49 - The Theatre
+10:33 - The Origins of Cyrene
+13:05 - The Fountain of Apollo
+14:08 - The Temple of Apollo
+19:00 - Chariots and the Amphitheatre
+21:08 - The Agora
+29:58 - The Temple of Zeus
+42:12 - Silphion, the magic plant
+48:52 - Side-by-side ruins and game comparison]]></content:encoded></item><item><title>Japan&apos;s Gargantuan Flood Defences</title><link>https://www.youtube.com/watch?v=nzWRKUfsQqM</link><author>Megaprojects</author><category>yt</category><enclosure url="https://www.youtube.com/v/nzWRKUfsQqM?version=3" length="" type=""/><pubDate>Mon, 24 Nov 2025 18:50:00 +0000</pubDate><source url="https://www.youtube.com/channel/UC0woBco6Dgcxt0h8SwyyOmw">Megaprojects</source><content:encoded><![CDATA[Go to https://surfshark.com/Mega or use code Mega at checkout to get 4 extra months of Surfshark VPN!
 
 Got a beard? Good. I've got something for you: http://beardblaze.com
 
@@ -1052,11 +533,83 @@ Casual Criminalist: https://www.youtube.com/@TheCasualCriminalist
 Decoding the Unknown: https://www.youtube.com/@decodingtheunknown2373
 Places: https://www.youtube.com/@Places302
 Celestium: https://www.youtube.com/@astrographics-ve4yq
-PoliticalFronts: http://www.youtube.com/@politicalfronts]]></content:encoded></item><item><title>Walking Away From the NFL at 25</title><link>https://www.youtube.com/shorts/7weAqbUntvA</link><author>Bloomberg Originals</author><category>yt</category><enclosure url="https://www.youtube.com/v/7weAqbUntvA?version=3" length="" type=""/><pubDate>Mon, 27 Oct 2025 17:55:26 +0000</pubDate><source url="https://www.youtube.com/channel/UCUMZ7gohGI9HcU9VNsr2FJQ">Bloomberg Originals</source><content:encoded><![CDATA[“I walked away from the NFL. The NFL didn’t walk away from me.”
+PoliticalFronts: http://www.youtube.com/@politicalfronts]]></content:encoded></item><item><title>The CIA’s Most Valuable Spy</title><link>https://www.youtube.com/watch?v=o-E1Wuk-dyU</link><author>Newsthink</author><category>yt</category><enclosure url="https://www.youtube.com/v/o-E1Wuk-dyU?version=3" length="" type=""/><pubDate>Mon, 24 Nov 2025 18:05:13 +0000</pubDate><source url="https://www.youtube.com/channel/UCIlU5KDHKFSaebYviKfOidw">Newsthink</source><content:encoded><![CDATA[Adolf Tolkachev became the CIA's most valuable mole. Try https://brilliant.org/Newsthink/ and get 20% off your annual premium subscription.
 
-At 25, Emmanuel Acho made the bold choice to leave football behind and start a new chapter.
+I highly recommend The Billion Dollar Spy by David E. Hoffman: https://a.co/d/0nvd8Mk
 
-Watch the full episode of The Deal on the Bloomberg app or listen wherever you get your podcasts.
+David E. Hoffman’s website: https://www.davidehoffman.com/the-billion-dollar-spy-home/
+
+Watch my video on CIA mole Aldrich Ames: https://youtu.be/DP7x6Zs1gP0
+
+Chapters: 
+0:00 The CIA’s Jack-in-the-Box Ruse
+0:46 Life Under a Brutal Regime
+1:40 Tolkachev Reaches Out to the CIA
+2:19 The Letter That Changes Everything
+3:12 The CIA Makes Contact
+4:20 The First Meeting: New Year’s Day 1979
+4:49 How He Stole Secrets
+5:31 The Intel That Changed Everything
+6:15 Today’s Sponsor: Brilliant
+7:27 A New Handler, A New Danger
+8:28 The KGB Closes In
+9:12 Tolkachev Prepares to Die
+10:01 The CIA Traitor: Edward Lee Howard 
+11:51 Arrest and Trial
+12:37 The Final Goodbye
+13:12 The KGB Comes for Natasha
+13:40 Why Tolkachev Really Spied
+14:09 The Portrait at Langley
+
+Newsthink is produced and presented by Cindy Pom
+https://x.com/cindypom
+
+Grab your Newsthink merch here: https://newsthink.creator-spring.com
+
+Support Cindy on Patreon! https://www.patreon.com/Newsthink
+
+Sources: 
+
+Moscow's Hotel Rossija in 1979: Karl Oppolzer, CC BY-SA 3.0 via Wikimedia Commons
+
+Moscow, view of the Moszkva river: FORTEPAN / Bakó Jenő, CC BY-SA 3.0 via Wikimedia Commons
+
+Vorkuta Corrective Labor Camp (gulag): Absukr, CC BY-SA 3.0 via Wikimedia Commons
+
+MiG-31 fighter: Dmitriy Pichugin (GFDL 1.2 or GFDL 1.2), via Wikimedia Commons
+
+The Pentagon: Mariordo Camila Ferreira & Mario Duran, CC BY-SA 3.0 via Wikimedia Commons
+
+Phone booth image: A.Savin, CC BY-SA 3.0 via Wikimedia Commons
+
+Pentax ME Super camera: Joe Haupt from USA, CC BY 2.0 via Wikimedia Commons
+
+Painting of Tolkachev by Kathy Krantz Fieramosca
+
+1980s Moscow during the Olympic Games: Derzsi Elekes Andor, CC BY-SA 3.0 via Wikimedia Commons
+
+Russian Air Force Beriev A-50U (Red 41): Mil.ru, CC BY 4.0 via Wikimedia Commons
+
+Russian Air Force MiG-25PU: Leonid Faerberg (transport-photo.com) (GFDL 1.2 or GFDL 1.2), via Wikimedia Commons
+
+73-1580 Lockheed EC-130H Compass Call over Nellis AFB: Tomás Del Coro, CC BY 4.0 via Wikimedia Commons
+
+Led Zeppelin performance: Jim Summaria, CC BY-SA 3.0 via Wikimedia Commons
+
+MiG-29: Artem Katranzhi from Bakashikha, Russia, CC BY-SA 2.0 via Wikimedia Commons
+
+Summer dacha: Figure, CC BY-SA 3.0 via Wikimedia Commons
+Soviet/Russian consulate in Washington, DC: AgnosticPreachersKid, CC BY-SA 3.0 via Wikimedia Commons
+
+Soviet/Russian embassy in Vienna: C.Stadler/Bwag, CC BY-SA 4.0 via Wikimedia Commons
+
+Lefortovo prison in Moscow: A.Savin, FAL, via Wikimedia Commons
+
+Perm-36 gulag: Gerald Praschl, CC BY-SA 3.0 via Wikimedia Commons
+
+U.S. embassy in Moscow: NVO, CC BY-SA 3.0 via Wikimedia Commons
+
+Woodstock Music and Art Fair: Woodstock Whisperer, CC BY-SA 4.0 via Wikimedia Commons]]></content:encoded></item><item><title>The Iceland Effect | The Infinite Explorer with Hannah Fry</title><link>https://www.youtube.com/watch?v=KQZh4Z4a_0Y</link><author>Bloomberg Originals</author><category>yt</category><enclosure url="https://www.youtube.com/v/KQZh4Z4a_0Y?version=3" length="" type=""/><pubDate>Mon, 24 Nov 2025 17:00:39 +0000</pubDate><source url="https://www.youtube.com/channel/UCUMZ7gohGI9HcU9VNsr2FJQ">Bloomberg Originals</source><content:encoded><![CDATA[Hannah Fry visits Iceland to uncover the secrets behind its modern success. She meets scientists predicting lava flows, sees how geothermal power fuels an algae farm, explores Icelandic DNA and rides on horseback through ancient Viking landscapes. In doing so, she reveals how a tiny, isolated island shaped by geological extremes is thriving on the world stage. 
 
 --------
 Like this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1
@@ -1066,24 +619,187 @@ Bloomberg Originals offers bold takes for curious minds on today’s biggest top
 
 Subscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.
 
-Visit our partner channel Bloomberg News for global news and insight in an instant.]]></content:encoded></item><item><title>People Profiles 24/7</title><link>https://www.youtube.com/watch?v=A7moUdBMpBY</link><author>The People Profiles</author><category>yt</category><enclosure url="https://www.youtube.com/v/A7moUdBMpBY?version=3" length="" type=""/><pubDate>Mon, 27 Oct 2025 15:29:16 +0000</pubDate><source url="https://www.youtube.com/channel/UCD6TPU-PvTMvqgzC_AM7_uA">The People Profiles</source><content:encoded><![CDATA[Please subscribe here. https://www.youtube.com/@PeopleProfiles?sub_confirmation=1
-Our second channel. https://www.youtube.com/@PeopleProfilesExtra
-Follow us on Spotify. https://open.spotify.com/show/7fKALbrzEO9Q4VVvAwWHqL
-Support us on Patreon https://patreon.com/thepeopleprofiles
-Follow us on Twitter. https://twitter.com/tpprofiles
+Visit our partner channel Bloomberg News for global news and insight in an instant.]]></content:encoded></item><item><title>How a $2B Hospitality Company Collapsed Into Evictions and Bankruptcy | WSJ What Went Wrong</title><link>https://www.youtube.com/watch?v=BrfkFftU8PI</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/BrfkFftU8PI?version=3" length="" type=""/><pubDate>Mon, 24 Nov 2025 15:42:23 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[Once valued near $2 billion, hospitality startup Sonder promised hotel luxury at Airbnb prices. But the company’s Marriott partnership dissolved, guests were left stranded and the short-term rental company shut down for good. WSJ explains what went wrong.
 
-Thanks for watching! If you liked this video, check out our related videos below:
-https://www.youtube.com/playlist?list=PLNwBhP0rWSz1EQOUiCo2hOzXogNU5psT8
-https://www.youtube.com/playlist?list=PLNwBhP0rWSz0vPvWecG4EPQIWEIh34K-X
-https://www.youtube.com/playlist?list=PLNwBhP0rWSz3l1yKTFKS6b3GPniSWVpmX
+Chapters:
+0:00 Sonder’s meltdown
+0:46 The rise
+2:14 The turning point
+4:40 The downfall
+5:16 Marriott left to manage the fallout
 
-All footage, images and music used in People Profiles videos are sourced from free media websites or are purchased with commercial rights from online media archives.
+What Went Wrong explores the challenging conditions and decisions that led to a company's downturn.
 
-All People Profiles scripts are researched and written by qualified Historians. The script for this video has been checked with Plagiarism and AI Detector software and scored 2% on Scribbr. In academia, a score of below 15% is considered good or acceptable. 
+#Sonder #Marriott #WSJ]]></content:encoded></item><item><title>Cold War Haiti vs The Dominican Republic: Neighbors in Name Only</title><link>https://www.youtube.com/watch?v=apgYxvtDFQY</link><author>The Cold War</author><category>yt</category><enclosure url="https://www.youtube.com/v/apgYxvtDFQY?version=3" length="" type=""/><pubDate>Mon, 24 Nov 2025 14:17:19 +0000</pubDate><source url="https://www.youtube.com/channel/UCCGvq-qmjFmmMD4e-PLQqGg">The Cold War</source><content:encoded><![CDATA[Our historical documentary series on the history of the Cold War continues with a video looking at the fraught relationship between the two Caribbean neighbours of Haiti and the Dominican Republic. Both were governed by dictators who were strongly anti-communist, both were allied to the united States and yet their shared, volatile history was the guiding principle in their hostile relationship.
 
-No AI is used during the writing process of People Profiles videos, which are narrated by human voice over artists. Please see the end credits of our videos for details and contact us for script references.
+Red Army Faction: https://youtu.be/wgYfTQJYCkI
+Colonial Indochina to 1945: https://youtu.be/uijOG8oYHgo
+First Indochina War pt. 1 GUERILLA: https://youtu.be/V9wSqx0W8h0
+First Indochina War pt. 2 INTERNATIONALIZATION: https://youtu.be/58PAc7zAtSg
+Alcohol Prohibition in the USSR https://youtu.be/kyPdGderIxk
+Cocaine and Cartels: https://youtu.be/A9VA51N-Ug4
+International Terrorism: https://youtu.be/VqHMjA35aLM
+Liberation Theology: https://youtu.be/Dfu2I_LTKt4
+Iranian Nuclear Program: https://youtu.be/ZrNNeS31lNg
+Angela Davis: https://youtu.be/VMzpkYg6wOY
+The School of the Americas: https://youtu.be/3tYwj-7b_jU
+Birth of the Military Industrial Complex: https://youtu.be/8glmBbBENlk
+America's Secret Nuclear Disaster: https://youtu.be/iXSSCdlTst4
+How Nuclear Deterrence Theory developed: https://youtu.be/UHIsdbvsuOY
+How the American Political Parties Switched Their Ideologies https://youtu.be/SdcreXEWzG0
+How the RAND Corporation created American strategy: https://youtu.be/J1mH_O7MzJk
+The Nuclear Wannabes: Sweden, Brazil and Argentina: https://youtu.be/1LpL6Q1s7TA
+Israel: the Officially Unofficial Nuclear State: https://youtu.be/dcXSkpRDp2k
+Taiwan Under the Kuomintang Dictatorship: https://youtu.be/nGYzXNpQclo
+What Happened to the German and Japanese POWs?: https://youtu.be/JLK1xQV9B84
+Operation Paperclip: https://youtu.be/17cNgMpBiWw
+German Expulsions: https://youtu.be/zyWx4p4hiaY
+Soviet Education System: https://youtu.be/AD_JwbivtMA
+How Khrushchev Fed the Soviet People: https://youtu.be/qIZDa7ZcUhE
 
-#peopleprofiles  #history  #biography]]></content:encoded></item><item><title>This spider’s smile will haunt you! 😱🕷️ #WildHawaii</title><link>https://www.youtube.com/shorts/9CGlGlo51ec</link><author>National Geographic</author><category>yt</category><enclosure url="https://www.youtube.com/v/9CGlGlo51ec?version=3" length="" type=""/><pubDate>Mon, 27 Oct 2025 15:00:12 +0000</pubDate><source url="https://www.youtube.com/channel/UCpVm7bg6pXKo1Pr6k5kxG9A">National Geographic</source><content:encoded><![CDATA[These smiley spideys are unique in both their markings and their maternal instincts. #WildHawaii is now streaming on @disneyplus.
+Support us on Patreon: http://www.patreon.com/TheColdWar, 
+Youtube membership https://www.youtube.com/channel/UCCGvq-qmjFmmMD4e-PLQqGg/join
+
+✔ Merch store ► https://teespring.com/stores/thecoldwar
+✔ Patreon ► https://www.patreon.com/thecoldwar
+✔ Facebook ► https://www.facebook.com/thecoldwartv
+✔ Instagram ►http://www.instagram.com/thecoldwartv
+
+#ColdWar #ColdWarHistory #History #ModernHistory #Haiti #dominicanrepublic #Papadoc #Duvallier #Trujillo #carribean 
+
+**SOURCES**
+http://www.jstor.com/stable/2127551
+
+https://www.jstor.org/stable/24913419
+
+https://www.jstor.org/stable/25611893
+
+https://www.jstor.org/stable/41715031
+
+https://www.marines.mil/portals/1/Publications/Dominican%20Republic%20and%20Haiti%20Study_1.pdf
+
+https://history.state.gov/historicaldocuments/frus1945v09/d797
+
+https://www.cia.gov/readingroom/docs/RAFAEL%20TRUJILLO%2C%20THE%20DOMI%5B15603377%5D.pdf
+
+https://www.cia.gov/readingroom/docs/RAFAEL%20TRUJILLO%2C%20THE%20DOMI%5B15603377%5D.pdf
+
+https://pulitzercenter.org/stories/policies-and-politics-behind-todays-haiti-dominican-republic-relations
+
+https://dominicantoday.com/dr/local/2025/03/22/dominican-republic-was-the-epicenter-of-several-plots-against-fidel-castro-and-francois-duvalier/
+
+https://history.state.gov/historicaldocuments/frus1945v09/d797
+
+https://www.marines.mil/portals/1/Publications/Dominican%20Republic%20and%20Haiti%20Study_1.pdf
+
+Alex von Tunzelmann “Red Heat: Conspiracy, Murder, and the Cold War in the Caribbean”, Henry Holt and Co., 2011]]></content:encoded></item><item><title>Building Modern Databases with the FDAP Stack • Andrew Lamb &amp; Olimpiu Pop • GOTO 2025</title><link>https://www.youtube.com/watch?v=Gd-mhbiy8Vo</link><author>GOTO Conferences</author><category>yt</category><enclosure url="https://www.youtube.com/v/Gd-mhbiy8Vo?version=3" length="" type=""/><pubDate>Mon, 24 Nov 2025 13:00:36 +0000</pubDate><source url="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</source><content:encoded><![CDATA[This interview was recorded for GOTO Unscripted. #GOTOcon #GOTOunscripted
+https://gotopia.tech
+
+Check out more here:
+https://gotopia.tech/articles/412
+
+Andrew Lamb - Staff Engineer at InfluxData, ASF Member & PMC Apache DataFusion & Apache Arrow
+Olimpiu Pop - Technologist & Tech Journalist
+
+RESOURCES
+Andrew
+https://bsky.app/profile/andrewlamb1111.bsky.social
+https://x.com/andrewlamb1111
+https://github.com/alamb
+https://www.linkedin.com/in/andrewalamb
+https://andrew.nerdnetworks.org
+
+Olimpiu
+https://x.com/olimpiupop
+https://github.com/zroll
+https://www.linkedin.com/in/olimpiupop
+
+Links
+https://www.influxdata.com/blog/flight-datafusion-arrow-parquet-fdap-architecture-influxdb
+https://www.cidrdb.org/cidr2005/papers/P19.pdf
+https://youtu.be/Dq7TLlnhSyc
+https://youtu.be/R7xA6VDy80A
+https://youtu.be/9Rdwh0rNaf0
+https://youtu.be/2l-JsB10WaI
+https://youtu.be/-wCzn9gKoUk
+https://youtu.be/5nZ1AiWWnUE
+https://youtu.be/UDo9W4tt69c
+https://youtu.be/t9b2TZiZUpM
+https://youtu.be/IzbYUjPAm5A
+https://youtu.be/qI_g07C_Q5I
+https://youtu.be/bzVjBu5nhyM
+https://youtu.be/YPQ65budGnI
+
+DESCRIPTION
+Olimpiu Pop speaks with Andrew Lamb, staff engineer at InfluxData and PMC member of Apache DataFusion and Apache Arrow, about how modern data systems are built using standardized open source components rather than being developed from scratch.
+
+Andrew discusses the FDAP Stack (Flight, DataFusion, Arrow & Parquet), the shift from row-based to columnar data storage, and how technologies like Apache Iceberg are enabling a new era of interoperability across data platforms. The discussion covers why this modular approach saves years of development time while providing better performance and compatibility.
+
+TIMECODES
+00:00 Intro
+01:43 The evolution of database development
+02:42 FDAP Stack: Flight, DataFusion, Arrow & Parquet
+04:26 Understanding columnar storage & Apache Arrow
+11:38 From memory to storage: Understanding Parquet
+16:16 Network protocols & distributed systems
+22:47 DataFusion: The query engine
+25:37 The future with Apache Iceberg
+29:08 Outro
+
+RECOMMENDED BOOKS
+Kasun Indrasiri & Danesh Kuruppu • gRPC: Up and Running • https://amzn.to/3sBGBJJ
+Tomer Shiran, Jason Hughes & Alex Merced • Apache Iceberg: The Definitive Guide • https://amzn.to/488Z30k
+William Smith • Arrow Flight Protocols and Practices • https://amzn.to/4o2Q2fd
+Matthew Topol • In-Memory Analytics with Apache Arrow • https://amzn.to/4oJQ6BM
+Apache Parquet A Complete Guide • https://amzn.to/4i7HVN6
+
+https://bsky.app/profile/gotocon.com
+https://twitter.com/GOTOcon
+https://www.linkedin.com/company/goto-
+https://www.instagram.com/goto_con
+https://www.facebook.com/GOTOConferences
+#FDAPStack #FDAP #ApacheFlight #ApacheDataFusion #DataFusion #ApacheArrow #ApacheParquet #Parquet #ApacheIceberg #ApacheKafka #DuckDB #OpenSource #DatabaseDevelopment #NoSQL #DistributedData #DataProcessing #Programming #TodayInTech #AndrewLamb #OlimpiuPop
+
+CHANNEL MEMBERSHIP BONUS
+Join this channel to get early access to videos & other perks:
+https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA/join
+
+Looking for a unique learning experience?
+Attend the next GOTO conference near you! Get your ticket at https://gotopia.tech
+Sign up for updates and specials at https://gotopia.tech/newsletter
+
+SUBSCRIBE TO OUR CHANNEL - new videos posted almost daily.
+https://www.youtube.com/user/GotoConferences/?sub_confirmation=1]]></content:encoded></item><item><title>Yemen and the Houthis: Pirates, terrorists, freedom fighters? | DW Documentary</title><link>https://www.youtube.com/watch?v=phq1xA3ZeMM</link><author>DW Documentary</author><category>yt</category><enclosure url="https://www.youtube.com/v/phq1xA3ZeMM?version=3" length="" type=""/><pubDate>Sun, 23 Nov 2025 17:01:31 +0000</pubDate><source url="https://www.youtube.com/channel/UCW39zufHfsuGgpLviKh297Q">DW Documentary</source><content:encoded><![CDATA[The Houthi militia has been fighting for supremacy in Yemen for years. The conflict has become a civil war, with international involvement. The Middle East conflict has further escalated the situation and exacerbated Yemen’s humanitarian crisis.
+
+Yemen, at the southern tip of the Arabian Peninsula, is one of the poorest countries in the world. After many years of civil war, the country is in dire condition. Cities have been destroyed, supplies are lacking, and there is political repression. A lost generation of children is growing up without schooling, medical care or proper nutrition. Aid supplies are blocked, looted or sold on the black market.
+
+The conflict in Yemen began in 2004 with the uprising of the Shiite Houthis against the Sunni-dominated Yemeni government. In 2014, the Houthis occupied the capital Sanaa - allegedly with the support of Iran. The response was a military intervention, led by Saudi Arabia. 
+
+A proxy war, in which the people suffer: So far, there have been over 400,000 fatalities. More than 20 million people - around half the population - are now dependent on humanitarian aid.
+
+Following Hamas's terrorist attack on Israel in October, 2023 and the subsequent Israeli ground offensive in Gaza, the conflict is spreading. Houthi militias are not only attacking Israel, but also ships in the Red Sea - and thus international trade. The US and its allies have responded with air strikes. The civilian population, already suffering, is bearing the brunt of the continuing violence.
+Between blockades, war and geopolitics, is Yemen in danger of being torn apart?
+
+#documentary #dwdocumentary #dwdocs #yemen #houthi 
+______
+
+DW Documentary gives you knowledge beyond the headlines. Watch top documentaries from German broadcasters and international production companies. Meet intriguing people, travel to distant lands, get a look behind the complexities of daily life and build a deeper understanding of current affairs and global events. Subscribe and explore the world around you with DW Documentary.
+
+Subscribe to: ‬
+⮞ DW Documentary (English): https://www.youtube.com/@DWDocumentary 
+⮞ DW Documental (Spanish): https://www.youtube.com/@DWDocumental 
+⮞ DW Documentary وثائقية دي دبليو (Arabic): https://www.youtube.com/@dwdocarabia
+⮞ DW Documentary हिन्दी (Hindi): https://www.youtube.com/@dwdochindi
+⮞ DW Dokumenter (Indonesian): https://www.youtube.com/@DWDokumenter
+⮞ DW Doku (German): https://www.youtube.com/@dwdoku
+
+For more visit: http://www.dw.com/en/tv/docfilm/s-3610
+Follow DW Documentary on Instagram: https://www.instagram.com/dwdocumentary/
+Follow DW Documental on Facebook: https://www.facebook.com/dwdocumental
+
+We kindly ask viewers to read and stick to the DW netiquette policy on our channel: https://p.dw.com/p/MF1G]]></content:encoded></item><item><title>How This Small Southern College Became So Popular for Wealthy Students</title><link>https://www.youtube.com/shorts/YhSimyy5PJw</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/YhSimyy5PJw?version=3" length="" type=""/><pubDate>Sun, 23 Nov 2025 17:00:55 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[Universities nationwide are battling to pad their balance sheets by attracting families who will pay full sticker price, particularly as the Trump administration slashes funding. High Point is something of a blueprint.⁠
+
+#HighPoint #College #WSJ]]></content:encoded></item><item><title>Mt. Katmai had the most powerful eruption of the 20th century 🌋 #NationalParksUSA</title><link>https://www.youtube.com/shorts/l69lE6sjDBQ</link><author>National Geographic</author><category>yt</category><enclosure url="https://www.youtube.com/v/l69lE6sjDBQ?version=3" length="" type=""/><pubDate>Sun, 23 Nov 2025 15:01:22 +0000</pubDate><source url="https://www.youtube.com/channel/UCpVm7bg6pXKo1Pr6k5kxG9A">National Geographic</source><content:encoded><![CDATA[Mount Katmai’s eruption in 1912 remains the most powerful of the 20th century, leaving behind a landscape of ash, fire, and new discovery. 🌋 #NationalParksUSA is now streaming on @disneyplus  & @hulu. 
 
 Explore the World with National Geographic subscriptions: https://natgeo.com/ytngmagazine
 
@@ -1097,7 +813,7 @@ And check out more National Geographic series and specials here:
 ➡ NGTV: https://natgeo.com/tv
 ➡ ABC: https://abc.com
 
-#NationalGeographic #WildHawaii #Shorts 
+#NationalGeographic #NationalParksUSA #MountKatmai
 
 About National Geographic:
 National Geographic is the world's premium destination for critically acclaimed storytelling around science and exploration. Discover amazing wildlife, ancient civilizations, hidden worlds, and the incredible wonders of our Earth. Through world-class scientists, photographers, journalists, and filmmakers, Nat Geo inspires fans of all ages to connect with, explore, and care about the world.
@@ -1113,11 +829,99 @@ TikTok: https://tiktok.com/@natgeo
 Reddit: https://reddit.com/user/nationalgeographic
 Pinterest: https://pinterest.com/natgeo
 
-This spider’s smile will haunt you! 😱🕷️  #WildHawaii
-https://youtube.com/shorts/9CGlGlo51ec
+Mt. Katmai had the most powerful eruption of the 20th century 🌋 #NationalParksUSA
+https://youtube.com/shorts/l69lE6sjDBQ
 
 National Geographic
-youtube.com/natgeo]]></content:encoded></item><item><title>Does this make Billy an honorary grandparent? 🥹 #BillyAndMolly</title><link>https://www.youtube.com/shorts/A3xNgSo1mxI</link><author>Nat Geo Animals</author><category>yt</category><enclosure url="https://www.youtube.com/v/A3xNgSo1mxI?version=3" length="" type=""/><pubDate>Mon, 27 Oct 2025 14:00:13 +0000</pubDate><source url="https://www.youtube.com/channel/UCDPk9MG2RexnOMGTD-YnSnA">Nat Geo Animals</source><content:encoded><![CDATA[#BillyAndMolly: An Otter Love Story is now streaming on @disneyplus and @hulu.
+youtube.com/natgeo]]></content:encoded></item><item><title>Timeline Movies: 1988 - Everything That Happened In Movies In 1988</title><link>https://www.youtube.com/watch?v=YzeVyJNly7I</link><author>Weird History</author><category>yt</category><enclosure url="https://www.youtube.com/v/YzeVyJNly7I?version=3" length="" type=""/><pubDate>Sun, 23 Nov 2025 15:01:05 +0000</pubDate><source url="https://www.youtube.com/channel/UCc-N24Y5OA0gqbjBwe1ttfA">Weird History</source><content:encoded><![CDATA[Today on Weird history, we are going deep into the cinema history of 1988. What celluloid gold was sun in 1988? Well, we saw Tom Cruise learn how to make a great cocktail, Julia Roberts film debut, and the very beloved Tim Burton film, Beetlejuice. A cartoon rabbit spellbound audiences, ad well as so many other films, some of which won awards at the 60th Academy Awards that year!  Who could forget the bewitching Elvira made a movie, and the haunted toy Chucky that went on to be a MAJOR film franchise.! What was your favorite movie that came out in 1998? Let us know in the comments!
+
+
+Be sure to subscribe to the Weird History Newsletter: https://bit.ly/WeirdHistoryNews
+
+#1988 #movies #weirdhistory]]></content:encoded></item><item><title>Exploring Lost Treasures &amp; Tombs Around the Globe | MEGA EPISODE SPECIAL | National Geographic</title><link>https://www.youtube.com/watch?v=Z5zqFhC-0dI</link><author>National Geographic</author><category>yt</category><enclosure url="https://www.youtube.com/v/Z5zqFhC-0dI?version=3" length="" type=""/><pubDate>Sun, 23 Nov 2025 14:01:04 +0000</pubDate><source url="https://www.youtube.com/channel/UCpVm7bg6pXKo1Pr6k5kxG9A">National Geographic</source><content:encoded><![CDATA[Travel around the world with National Geographic explorers to discover secrets hidden in the tombs of famous historical figures. Featuring four full episode specials: 
+
+Tut's Treasures: Tales from the Tomb
+Of all the 5,398 treasures from the tomb of Tutankhamun now being assembled and forensically investigated at the Grand Egyptian Museum in Cairo, it’s the ones that paint a picture of Tutankhamun’s family that are the most unsettling.
+
+Lost Tomb of Alexander the Great
+In this gripping investigation, archaeologist Pepi Papakosta is on a hunt for Alexander the Great’s lost tomb, and she makes an extraordinary discovery.
+
+Forbidden Tomb of Genghis Khan
+Can technology solve an 800-year-old mystery and locate the tomb of the legendary warrior Genghis Khan? Journey to Mongolia's "Forbidden Zone" with a team led by National Geographic Emerging Explorer Albert Lin, who hopes to virtually "excavate" the tomb without moving a single rock using sophisticated ground penetrating imagery.
+
+Lost Tombs of the Pyramids
+An elite team of archaeologists excavate a new site in the shadow of the pyramids. Can they finally solve the ancient mystery of the lost pharaohs?
+
+Explore the World with National Geographic subscriptions: https://natgeo.com/ytngmagazine
+
+➡ Subscribe: https://on.natgeo.com/4p5A0D6
+➡ Get more Nat Geo Full Episodes: https://on.natgeo.com/3V5ZfHI
+➡ Get wild with Nat Geo Animals Full Episodes: https://on.natgeo.com/3V2EOLO
+
+And check out more National Geographic series and specials here:
+➡ Disney Plus: https://on.natgeo.com/3q6on5p
+➡ Hulu: https://on.natgeo.com/3Qor0Ko
+➡ NGTV: https://natgeo.com/tv
+➡ ABC: https://abc.com
+
+#NationalGeographic #LostTombsOfThePyramids #MegaEpisode
+
+About National Geographic:
+National Geographic is the world's premium destination for critically acclaimed storytelling around science and exploration. Discover amazing wildlife, ancient civilizations, hidden worlds, and the incredible wonders of our Earth. Through world-class scientists, photographers, journalists, and filmmakers, Nat Geo inspires fans of all ages to connect with, explore, and care about the world.
+
+Get More National Geographic:
+Official Site: https://nationalgeographic.com
+Instagram: https://instagram.com/natgeo 
+Facebook: https://facebook.com/natgeo
+Threads: https://threads.com/@natgeo
+X: https://x.com/NatGeo
+LinkedIn: https://linkedin.com/company/national-geographic
+TikTok: https://tiktok.com/@natgeo
+Reddit: https://reddit.com/user/nationalgeographic
+Pinterest: https://pinterest.com/natgeo
+
+Discovering Lost Tombs Around the Globe | MEGA EPISODE SPECIAL | National Geographic
+https://youtu.be/Z5zqFhC-0dI
+
+National Geographic
+youtube.com/natgeo]]></content:encoded></item><item><title>Call this hotline in case of a Thanksgiving turkey fail #shorts</title><link>https://www.youtube.com/shorts/32x2IiUfr1A</link><author>Vox</author><category>yt</category><enclosure url="https://www.youtube.com/v/32x2IiUfr1A?version=3" length="" type=""/><pubDate>Sun, 23 Nov 2025 14:00:07 +0000</pubDate><source url="https://www.youtube.com/channel/UCLXo7UDZvByw2ixzpQCufnA">Vox</source><content:encoded><![CDATA[The Butterball Turkey Talk-Line has heard it all: from turkeys catching fire to entire garbage disposal lids being nuked in the oven.
+
+On this week’s episode of our podcast Explain It to Me, Gwen Carlyle of the Butterball Turkey Talk-Line tells host Jonquilyn Hill ways to avoid a chaotic holiday. They also get into how turkey became a Thanksgiving staple in the first place, and how to have a tasty dinner without feeling sick afterward. #thanksgiving #turkey #cooking #butterball
+
+🎧Listen to Explain It to Me, wherever you get your podcasts:
+https://www.vox.com/explain-it-to-me
+
+Subscribe to our channel and turn on notifications (🔔) so you don't miss any videos: http://goo.gl/0bsAjO
+
+Vox.com is a news website that helps you cut through the noise and understand what's really driving the events in the headlines. Check out http://www.vox.com.
+
+Watch our full video catalog: http://goo.gl/IZONyE
+Follow Vox on TikTok: http://tiktok.com/@voxdotcom
+Check out our articles: https://www.vox.com/
+Listen to our podcasts: https://www.vox.com/podcasts]]></content:encoded></item><item><title>Michael Nygard about #FirePreventers vs #FireFighters</title><link>https://www.youtube.com/shorts/WuDUJsNNlSM</link><author>GOTO Conferences</author><category>yt</category><enclosure url="https://www.youtube.com/v/WuDUJsNNlSM?version=3" length="" type=""/><pubDate>Sun, 23 Nov 2025 13:01:11 +0000</pubDate><source url="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</source><content:encoded><![CDATA[Check out the full version on our YouTube channel now! #GOTOcon #SoftwareEngineering #ReleaseIt #DevOps #LegacySystems #LegacyCode #TechnicalDebt #Autonomy #ConwaysLaw #Leadership #CTO #TechLead #TechnicalLeadership #CompanyCulture #Communication #TodaInTech #Programming #Programming #ViralProgrammingShorts #Viral #ViralShorts #TodayInTech #GOTO
+
+Full version available here:
+https://youtu.be/Rpw7r9Cqkvw
+
+Michael Nygard - Chief Architect at Nubank & Author of "Release It!" @michaelnygard3079 
+
+RECOMMENDED BOOK
+Michael Nygard • Release It! 2nd Edition • https://amzn.to/3WJeKV8
+Michael Nygard • Release It! 1st Edition • https://amzn.to/3XCkiRf
+Richard Monson-Haefel • 97 Things Every Software Architect Should Know • https://amzn.to/3JdRYU2
+
+CHANNEL MEMBERSHIP BONUS
+Join this channel to get early access to videos & other perks:
+https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA/join
+
+Looking for a unique learning experience?
+Attend the next GOTO conference near you! Get your ticket at https://gotopia.tech
+Sign up for updates and specials at https://gotopia.tech/newsletter
+
+SUBSCRIBE TO OUR CHANNEL - new videos posted almost daily.
+https://www.youtube.com/user/GotoConferences/?sub_confirmation=1]]></content:encoded></item><item><title>Investigating the Lives of Octopus (Full Episode) | Man vs. Octopus | Nat Geo Animals</title><link>https://www.youtube.com/watch?v=WHRbuwRZyPE</link><author>Nat Geo Animals</author><category>yt</category><enclosure url="https://www.youtube.com/v/WHRbuwRZyPE?version=3" length="" type=""/><pubDate>Sun, 23 Nov 2025 12:00:58 +0000</pubDate><source url="https://www.youtube.com/channel/UCDPk9MG2RexnOMGTD-YnSnA">Nat Geo Animals</source><content:encoded><![CDATA[With three hearts, blue blood, and eight tentacles each with neurons of its own, octopuses seem as alien as any sci-fi creation. Join us as we investigate the mysterious lives of these unique, intelligent creatures. 
+
+Man vs. Octopus | S1, E1
 
 Explore the World with National Geographic subscriptions: https://natgeo.com/ytngmagazine
 
@@ -1131,7 +935,7 @@ And check out more National Geographic series and specials here:
 ➡ NGTV: https://natgeo.com/tv
 ➡ ABC: https://abc.com
 
-#NationalGeographic #BillyAndMolly #Shorts 
+#NationalGeographic #ManVsOctopus #NatGeoAnimals
 
 About National Geographic Animals:
 National Geographic Animals brings you closer to the wild than ever before. Take a journey through the animal kingdom to discover fierce predators, surprising behaviors, adorable babies, and more through our fascinating wildlife documentaries, series, and specials.
@@ -1147,8 +951,426 @@ TikTok: https://tiktok.com/@natgeo
 Reddit: https://reddit.com/user/nationalgeographic
 Pinterest: https://pinterest.com/natgeo
 
-Does this make Billy an honorary grandparent? 🥹 #BillyAndMolly
-https://youtube.com/shorts/A3xNgSo1mxI
+Investigating the Lives of Octopus (Full Episode) | Man vs. Octopus | Nat Geo Animals 
+https://youtu.be/WHRbuwRZyPE
 
 National Geographic
-youtube.com/@NatGeoAnimals]]></content:encoded></item></channel></rss>
+youtube.com/@NatGeoAnimals]]></content:encoded></item><item><title>Does OpenAI expect a Government Bailout?</title><link>https://www.youtube.com/watch?v=cHiZ-7jI0Ew</link><author>Patrick Boyle</author><category>yt</category><enclosure url="https://www.youtube.com/v/cHiZ-7jI0Ew?version=3" length="" type=""/><pubDate>Sun, 23 Nov 2025 00:53:22 +0000</pubDate><source url="https://www.youtube.com/channel/UCASM0cgfkJxQ1ICmRilfHLw">Patrick Boyle</source><content:encoded><![CDATA[🔒 Get 20% off DeleteMe by going to https://joindeleteme.com/BOYLE and use code BOYLE to protect your privacy! 🙌🏻
+
+OpenAI has signed $1.4 trillion in infrastructure commitments, but how do they plan to pay for it? Are government subsidies and taxpayer-backed guarantees the next step? In this video, we dive into the financing gymnastics behind the AI revolution, the lobbying for federal support, and why tech firms are pitching AI as “too important to fail.”
+We’ll cover:
+✅ OpenAI’s $1.4 trillion data center buildout
+✅ The push for government backstops and subsidies
+✅ Nvidia’s warning on energy and capital constraints
+✅ Why AI could strain power grids and utilities
+✅ The risk of an AI “metabubble” and what it means for investors
+
+Watch Sarah Friar's Interview @wsj https://www.youtube.com/watch?v=8guZhBw4Z3g
+
+Patrick's Books:
+Statistics For The Trading Floor:  https://amzn.to/3eerLA0
+Derivatives For The Trading Floor:  https://amzn.to/3cjsyPF
+Corporate Finance:  https://amzn.to/3fn3rvC 
+
+Ways To Support The Channel
+Patreon: https://www.patreon.com/PatrickBoyleOnFinance
+Buy Me a Coffee: https://www.buymeacoffee.com/patrickboyle
+
+Visit our website: https://www.onfinance.org
+Follow Patrick on Twitter Here: https://bsky.app/profile/pboyle.bsky.social
+
+Business Inquiries ➡️ sponsors@onfinance.org
+
+Patrick Boyle On Finance Podcast:
+Spotify: https://open.spotify.com/show/7uhrWlDvxzy9hLoW0EYf0b
+Apple: https://podcasts.apple.com/us/podcast/patrick-boyle-on-finance/id1547740313
+Google Podcasts: https://tinyurl.com/62862nve
+
+Join this channel to support making this content:
+https://www.youtube.com/channel/UCASM0cgfkJxQ1ICmRilfHLw/join]]></content:encoded></item><item><title>Pericles - The Radical Who Perfected Greek Democracy Documentary</title><link>https://www.youtube.com/watch?v=Yhny3GGkLyw</link><author>The People Profiles</author><category>yt</category><enclosure url="https://www.youtube.com/v/Yhny3GGkLyw?version=3" length="" type=""/><pubDate>Sat, 22 Nov 2025 20:00:22 +0000</pubDate><source url="https://www.youtube.com/channel/UCD6TPU-PvTMvqgzC_AM7_uA">The People Profiles</source><content:encoded><![CDATA[Hello everyone! If you enjoyed the video, please help feed the algorithm by liking and commenting. This is very important as the more you like and comment on each video the better it will perform, so please help us if you can. Thank you!
+
+Dive into the life of Pericles, the pivotal statesman who led Athens during its Golden Age. This comprehensive biography explores how Pericles, a brilliant orator and general, transformed Athenian democracy, making it the envy of the ancient world. Discover his revolutionary civic projects, including the construction of the magnificent Parthenon on the Acropolis, a symbol of Athenian power and cultural brilliance.
+
+We examine Pericles' profound influence on Athenian society, politics, and culture, and his controversial role in the outbreak of the devastating Peloponnesian War against Sparta. Learn about the key events that shaped his legacy, his military campaigns, and the tragic circumstances of his death. If you're studying ancient history, classical civilization, or the foundations of Western democracy, this video is a must-watch. Understand the man behind the myth and why the era is forever known as the Age of Pericles. Don't forget to subscribe for more historical biographies!
+
+Please subscribe here. https://www.youtube.com/@PeopleProfiles?sub_confirmation=1
+Our second channel. https://www.youtube.com/@PeopleProfilesExtra
+Follow us on Spotify. https://open.spotify.com/show/7fKALbrzEO9Q4VVvAwWHqL
+Support us on Patreon https://patreon.com/thepeopleprofiles
+Follow us on Twitter. https://twitter.com/tpprofiles
+
+Thanks for watching! If you liked this video, check out our related videos below:
+https://www.youtube.com/playlist?list=PLNwBhP0rWSz1EQOUiCo2hOzXogNU5psT8
+https://www.youtube.com/playlist?list=PLNwBhP0rWSz0vPvWecG4EPQIWEIh34K-X
+https://www.youtube.com/playlist?list=PLNwBhP0rWSz3l1yKTFKS6b3GPniSWVpmX
+
+All footage, images and music used in People Profiles videos are sourced from free media websites or are purchased with commercial rights from online media archives.
+
+All People Profiles scripts are researched and written by qualified Historians. The script for this video has been checked with Plagiarism and AI Detector software and scored 0% on Gramarly. In academia, a score of below 15% is considered good or acceptable. 
+
+No AI is used during the writing process of People Profiles videos, which are narrated by human voice over artists. Please see the end credits of our videos for details and contact us for script references.
+
+#peopleprofiles  #history  #biography]]></content:encoded></item><item><title>Is Iran&apos;s $193k Loitering Munition Any Good?</title><link>https://www.youtube.com/watch?v=z6GN24dVQno</link><author>Megaprojects</author><category>yt</category><enclosure url="https://www.youtube.com/v/z6GN24dVQno?version=3" length="" type=""/><pubDate>Sat, 22 Nov 2025 19:50:00 +0000</pubDate><source url="https://www.youtube.com/channel/UC0woBco6Dgcxt0h8SwyyOmw">Megaprojects</source><content:encoded><![CDATA[Get Your Copy of The Book: The Ultimate Guide to Rebuilding a Civilization! Order now at https://bit.ly/4i4aLhg and use code MEGACHRISTMAS10 for an exclusive discount.
+
+Got a beard? Good. I've got something for you: http://beardblaze.com
+
+Simon's Social Media:
+Twitter: https://twitter.com/SimonWhistler
+Instagram: https://www.instagram.com/simonwhistler/
+
+This video is #sponsored by Hungry Minds. 
+
+Love content? Check out Simon's other YouTube Channels:
+
+
+Warfronts: https://www.youtube.com/@warographics643
+SideProjects: https://www.youtube.com/@Sideprojects
+Into The Shadows: https://www.youtube.com/@IntotheShadows
+Today I Found Out: https://www.youtube.com/@TodayIFoundOut
+Highlight History: https://www.youtube.com/channel/UCnb-VTwBHEV3gtiB9di9DZQ
+Brain Blaze: https://www.youtube.com/@brainblaze6526
+Casual Criminalist: https://www.youtube.com/@TheCasualCriminalist
+Decoding the Unknown: https://www.youtube.com/@decodingtheunknown2373
+Places: https://www.youtube.com/@Places302
+Celestium: https://www.youtube.com/@astrographics-ve4yq
+PoliticalFronts: http://www.youtube.com/@politicalfronts]]></content:encoded></item><item><title>How cricket unites and divides Afghanistan | DW Documentary</title><link>https://www.youtube.com/watch?v=RPViHce3l_w</link><author>DW Documentary</author><category>yt</category><enclosure url="https://www.youtube.com/v/RPViHce3l_w?version=3" length="" type=""/><pubDate>Sat, 22 Nov 2025 17:00:45 +0000</pubDate><source url="https://www.youtube.com/channel/UCW39zufHfsuGgpLviKh297Q">DW Documentary</source><content:encoded><![CDATA[Afghanistan has risen from sporting outsider to one of the world's top cricket nations. The unlikely journey has brought hope to a country with rare reason to celebrate while illuminating the complex politics of the Taliban's relationship to cricket.
+
+Cricket has grown into a vital part of life in Afghanistan - offering glimmers of joy and excitement to the countless Afghans that play and watch the game. And while the stunning achievements of the men's national team have fostered unity and hope, the Taliban's return to power means half of the country is barred from the festivities and many female players were forced to flee their homeland. 
+
+In a crisis-ridden country like Afghanistan, cricketing success is both deeply meaningful to its people and a complex political challenge, presenting the Taliban government with an opportunity to use the sport at home and abroad. Cricket has offered star players like Gulbadin Naib a path from childhood refugee camps to international acclaim, while all over the country young players like Jamal Stanikzai dream of one day taking part in the team's success. For Afghan refugees like former women's national team player Firooza Amiri, cricket is both a beloved sport and a form of resistance. Deutsche Welle accompanies current and former players and fans in Afghanistan, Australia and Dubai to tell the intertwined stories of Afghan cricket.
+
+#documentary #dwdocumentary #dwdocs #cricket #afghanistan #dwsports
+______
+
+DW Documentary gives you knowledge beyond the headlines. Watch top documentaries from German broadcasters and international production companies. Meet intriguing people, travel to distant lands, get a look behind the complexities of daily life and build a deeper understanding of current affairs and global events. Subscribe and explore the world around you with DW Documentary.
+
+Subscribe to: ‬
+⮞ DW Documentary (English): https://www.youtube.com/@DWDocumentary 
+⮞ DW Documental (Spanish): https://www.youtube.com/@DWDocumental 
+⮞ DW Documentary وثائقية دي دبليو (Arabic): https://www.youtube.com/@dwdocarabia
+⮞ DW Documentary हिन्दी (Hindi): https://www.youtube.com/@dwdochindi
+⮞ DW Dokumenter (Indonesian): https://www.youtube.com/@DWDokumenter
+⮞ DW Doku (German): https://www.youtube.com/@dwdoku
+
+For more visit: http://www.dw.com/en/tv/docfilm/s-3610
+Follow DW Documentary on Instagram: https://www.instagram.com/dwdocumentary/
+Follow DW Documental on Facebook: https://www.facebook.com/dwdocumental
+
+We kindly ask viewers to read and stick to the DW netiquette policy on our channel: https://p.dw.com/p/MF1G]]></content:encoded></item><item><title>How Renters Are Conning Their Way Into Luxury Apartments</title><link>https://www.youtube.com/shorts/1iplK9eqvSA</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/1iplK9eqvSA?version=3" length="" type=""/><pubDate>Sat, 22 Nov 2025 17:00:04 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[Renting a two-bedroom apartment in Atlanta costs nearly $2,000 a month on average, well above what the typical renter in the city can comfortably afford.⁠
+Many of them are turning to fraud as a way to secure fancier accommodations.⁠
+
+#Rental #Housing #WSJ]]></content:encoded></item><item><title>What makes lunar rainbows aka moonbows so rare? 🌙 #WelcomeToEarth</title><link>https://www.youtube.com/shorts/CQdAjDp7wW0</link><author>National Geographic</author><category>yt</category><enclosure url="https://www.youtube.com/v/CQdAjDp7wW0?version=3" length="" type=""/><pubDate>Sat, 22 Nov 2025 15:00:21 +0000</pubDate><source url="https://www.youtube.com/channel/UCpVm7bg6pXKo1Pr6k5kxG9A">National Geographic</source><content:encoded><![CDATA[Moonbows shimmer only a few nights each month, when moonlight, water, and darkness align just right. Often too faint for the eye, they’re like secret portals—revealed only to those who know where to look. #WelcomeToEarth is now streaming on @disneyplus and @hulu.
+
+Explore the World with National Geographic subscriptions: https://natgeo.com/ytngmagazine
+
+➡ Subscribe: https://on.natgeo.com/4p5A0D6
+➡ Get more Nat Geo Full Episodes: https://on.natgeo.com/3V5ZfHI
+➡ Get wild with Nat Geo Animals Full Episodes: https://on.natgeo.com/3V2EOLO
+
+And check out more National Geographic series and specials here:
+➡ Disney Plus: https://on.natgeo.com/3q6on5p
+➡ Hulu: https://on.natgeo.com/3Qor0Ko
+➡ NGTV: https://natgeo.com/tv
+➡ ABC: https://abc.com
+
+#NationalGeographic #WelcomeToEarth #Moonbows
+
+About National Geographic:
+National Geographic is the world's premium destination for critically acclaimed storytelling around science and exploration. Discover amazing wildlife, ancient civilizations, hidden worlds, and the incredible wonders of our Earth. Through world-class scientists, photographers, journalists, and filmmakers, Nat Geo inspires fans of all ages to connect with, explore, and care about the world.
+
+Get More National Geographic:
+Official Site: https://nationalgeographic.com
+Instagram: https://instagram.com/natgeo 
+Facebook: https://facebook.com/natgeo
+Threads: https://threads.com/@natgeo
+X: https://x.com/NatGeo
+LinkedIn: https://linkedin.com/company/national-geographic
+TikTok: https://tiktok.com/@natgeo
+Reddit: https://reddit.com/user/nationalgeographic
+Pinterest: https://pinterest.com/natgeo
+
+What makes lunar rainbows aka moonbows so rare? 🌙 #WelcomeToEarth
+https://youtube.com/shorts/CQdAjDp7wW0
+
+National Geographic
+youtube.com/natgeo]]></content:encoded></item><item><title>This Slug Should Be Impossible</title><link>https://www.youtube.com/watch?v=IH_uv4h2xYM</link><author>Real Science</author><category>yt</category><enclosure url="https://www.youtube.com/v/IH_uv4h2xYM?version=3" length="" type=""/><pubDate>Sat, 22 Nov 2025 14:00:37 +0000</pubDate><source url="https://www.youtube.com/channel/UC176GAQozKKjhz62H8u9vQQ">Real Science</source><content:encoded><![CDATA[To get 20% off an annual premium subscription to Brilliant, go to https://brilliant.org/realscience/
+
+Watch this video ad-free on Nebula: https://nebula.tv/videos/realscience-these-slugs-break-the-rules-of-biology
+
+Thumbnail: © Patrick J. Krug, Creative Commons CC BY-NC 3.0 license, via Wikimedia Commons
+
+My socials:
+Patreon: https://www.patreon.com/realscience
+Instagram: https://www.instagram.com/stephaniesammann
+
+Images Courtesy of Getty Images
+
+Thanks to our Patreon Supporters:
+Eric Ypsilantis
+
+REFERENCES:
+[1]  Kawaguti S Yamasu T . 1965. Electron microscopy on the symbiosis between and elysioid gastropod and chloroplasts of a green alga. Biological Journal of Okayama University11, 57–65.
+[2] https://royalsocietypublishing.org/doi/abs/10.1098/rspb.1973.0031
+[3] https://academic.oup.com/biolinnean/article-abstract/7/2/161/2682812
+[4] https://academic.oup.com/plphys/article-abstract/124/1/331/6098892
+[5] https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0097477
+[6]]https://link.springer.com/article/10.1007/s00227-023-04350-w
+[7] https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3001857
+[8] https://pmc.ncbi.nlm.nih.gov/articles/PMC8079154/
+[9] https://www.cell.com/current-biology/fulltext/S0960-9822(21)00047-6]]></content:encoded></item><item><title>No Rest for the Wicked (Full Episode) | To Catch a Smuggler | National Geographic</title><link>https://www.youtube.com/watch?v=Fwfo_vgL0Dg</link><author>National Geographic</author><category>yt</category><enclosure url="https://www.youtube.com/v/Fwfo_vgL0Dg?version=3" length="" type=""/><pubDate>Sat, 22 Nov 2025 14:00:26 +0000</pubDate><source url="https://www.youtube.com/channel/UCpVm7bg6pXKo1Pr6k5kxG9A">National Geographic</source><content:encoded><![CDATA[Wickedness is in the air. HSI tracks a suspicious vehicle for 48 hours, leading them to a San Diego stash house. CBP in Calexico uses a specialized scope to locate narcotics.
+
+To Catch a Smuggler | S8, E6
+
+Explore the World with National Geographic subscriptions: https://natgeo.com/ytngmagazine
+
+➡ Subscribe: https://on.natgeo.com/4p5A0D6
+➡ Get more Nat Geo Full Episodes: https://on.natgeo.com/3V5ZfHI
+➡ Get wild with Nat Geo Animals Full Episodes: https://on.natgeo.com/3V2EOLO
+➡ Watch more To Catch A Smuggler on Disney+: https://www.disneyplus.com/browse/entity-3142e460-3aa8-4171-b1ca-0f07ca3a05a6?cid=DTCI-Synergy-NatGeo-YT-Acquisition-Library-GLOBAL-NatGeo-ToCatchASmuggler-EN-Youtube-NatGeo_BRAND_YT_TCAS-NA
+
+And check out more National Geographic series and specials here:
+➡ Disney Plus: https://on.natgeo.com/3q6on5p
+➡ Hulu: https://on.natgeo.com/3Qor0Ko
+➡ NGTV: https://natgeo.com/tv
+➡ ABC: https://abc.com
+
+#FullEpisode #ToCatchASmuggler #NationalGeographic
+
+About National Geographic:
+National Geographic is the world's premium destination for critically acclaimed storytelling around science and exploration. Discover amazing wildlife, ancient civilizations, hidden worlds, and the incredible wonders of our Earth. Through world-class scientists, photographers, journalists, and filmmakers, Nat Geo inspires fans of all ages to connect with, explore, and care about the world.
+
+Get More National Geographic:
+Official Site: https://nationalgeographic.com
+Instagram: https://instagram.com/natgeo 
+Facebook: https://facebook.com/natgeo
+Threads: https://threads.com/@natgeo
+X: https://x.com/NatGeo
+LinkedIn: https://linkedin.com/company/national-geographic
+TikTok: https://tiktok.com/@natgeo
+Reddit: https://reddit.com/user/nationalgeographic
+Pinterest: https://pinterest.com/natgeo
+
+No Rest for the Wicked (Full Episode) | To Catch a Smuggler | National Geographic
+https://youtu.be/Fwfo_vgL0Dg
+
+National Geographic
+youtube.com/natgeo]]></content:encoded></item><item><title>How insect brains can do brilliant things | DW Documentary</title><link>https://www.youtube.com/shorts/1T6mnoghasw</link><author>DW Documentary</author><category>yt</category><enclosure url="https://www.youtube.com/v/1T6mnoghasw?version=3" length="" type=""/><pubDate>Sat, 22 Nov 2025 14:00:03 +0000</pubDate><source url="https://www.youtube.com/channel/UCW39zufHfsuGgpLviKh297Q">DW Documentary</source><content:encoded><![CDATA[Insects are a lot smarter than you think. For a long time, scientists believed insects acted mostly out of instinct and weren’t particularly intelligent, in part, because most of them only live for a few weeks. But it turns out, the insect world is far more complex than we previously thought.  
+
+Many insect species have brains the size of a grain of rice, but are still able to store images, shapes, colors and experiences, and can even learn new skills and work with tools.  
+
+In many species, individual insects even develop unique traits and personalities, like bravery or aggressiveness. One reason for this could be that species with diverse individuals can better adapt to environmental changes, giving them an evolutionary advantage for survival. 
+
+Watch the full documentary “Smart insects - The astonishing intelligence of bumblebees, wasps & co.” on the DW Documentary YouTube channel.
+
+#documentary #dwdocumentary #dwdocs #insects 
+______
+
+DW Documentary gives you knowledge beyond the headlines. Watch top documentaries from German broadcasters and international production companies. Meet intriguing people, travel to distant lands, get a look behind the complexities of daily life and build a deeper understanding of current affairs and global events. Subscribe and explore the world around you with DW Documentary.
+
+Subscribe to: ‬
+⮞ DW Documentary (English): https://www.youtube.com/@DWDocumentary 
+⮞ DW Documental (Spanish): https://www.youtube.com/@DWDocumental 
+⮞ DW Documentary وثائقية دي دبليو (Arabic): https://www.youtube.com/@dwdocarabia
+⮞ DW Documentary हिन्दी (Hindi): https://www.youtube.com/@dwdochindi
+⮞ DW Dokumenter (Indonesian): https://www.youtube.com/@DWDokumenter
+⮞ DW Doku (German): https://www.youtube.com/@dwdoku
+
+For more visit: http://www.dw.com/en/tv/docfilm/s-3610
+Follow DW Documentary on Instagram: https://www.instagram.com/dwdocumentary/
+Follow DW Documental on Facebook: https://www.facebook.com/dwdocumental
+
+We kindly ask viewers to read and stick to the DW netiquette policy on our channel: https://p.dw.com/p/MF1G]]></content:encoded></item><item><title>Africa&apos;s Most Dangerous Snakes (Full Episode) | World&apos;s Deadliest Snakes | Nat Geo Animals</title><link>https://www.youtube.com/watch?v=9KxuRXvWcCI</link><author>Nat Geo Animals</author><category>yt</category><enclosure url="https://www.youtube.com/v/9KxuRXvWcCI?version=3" length="" type=""/><pubDate>Sat, 22 Nov 2025 12:00:16 +0000</pubDate><source url="https://www.youtube.com/channel/UCDPk9MG2RexnOMGTD-YnSnA">Nat Geo Animals</source><content:encoded><![CDATA[Africa is home to some of the most dangerous snakes on Earth, including mambas, cobras, vipers and the world’s most potent colubrid. But which one of these snakes is the deadliest? 
+
+World's Deadliest Snakes | S1, E2 
+
+Explore the World with National Geographic subscriptions: http://natgeo.com/ytngmagazine
+
+➡ Subscribe: https://on.natgeo.com/41A7tf0
+➡ Get wild with more Nat Geo Animals Full Episodes: https://on.natgeo.com/3V2EOLO 
+➡ Get Nat Geo Full Episodes: https://on.natgeo.com/3V5ZfHI
+
+And check out more National Geographic series and specials here:
+➡ Disney Plus: https://on.natgeo.com/3q6on5p
+➡ Hulu: https://on.natgeo.com/3Qor0Ko
+➡ NGTV app https://www.nationalgeographic.com/tv/
+➡ ABC app https://abc.com/
+
+#WorldsDeadliestSnakes #FullEpisode #NatGeoAnimals
+
+About National Geographic Animals:
+National Geographic Animals brings you closer to the wild than ever before. Take a journey through the animal kingdom to discover fierce predators, surprising behaviors, adorable babies, and more through our fascinating wildlife documentaries, series, and specials.
+
+Get More National Geographic:
+Official Site: https://nationalgeographic.com
+Instagram: https://instagram.com/natgeo 
+Facebook: https://facebook.com/natgeo
+Threads: https://threads.com/@natgeo
+X: https://x.com/NatGeo
+LinkedIn: https://linkedin.com/company/national-geographic
+TikTok: https://tiktok.com/@natgeo
+Reddit: https://reddit.com/user/nationalgeographic
+Pinterest: https://pinterest.com/natgeo
+
+Africa's Most Dangerous Snakes (Full Episode) | World's Deadliest Snakes | Nat Geo Animals 
+https://youtu.be/9KxuRXvWcCI
+
+National Geographic
+youtube.com/@NatGeoAnimals]]></content:encoded></item><item><title>The Rise of America’s ICE Towns | Exclusive Preview</title><link>https://www.youtube.com/watch?v=WaeBOCt1XUk</link><author>Bloomberg Originals</author><category>yt</category><enclosure url="https://www.youtube.com/v/WaeBOCt1XUk?version=3" length="" type=""/><pubDate>Sat, 22 Nov 2025 11:01:05 +0000</pubDate><source url="https://www.youtube.com/channel/UCUMZ7gohGI9HcU9VNsr2FJQ">Bloomberg Originals</source><content:encoded><![CDATA[Watch the full video exclusively on Bloomberg: https://www.bloomberg.com/short-documentaries
+
+Small towns are at the center of President Donald Trump’s mass deportation campaign, spearheaded by ICE. In one rural New Mexico county, officials are grappling with what it means to be an ICE town.
+
+--------
+Like this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1
+
+Get unlimited access to Bloomberg.com for just $1.99 your first month: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals
+Bloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. 
+
+Subscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.
+
+Visit our partner channel Bloomberg News for global news and insight in an instant.]]></content:encoded></item><item><title>Reese Witherspoon on How Hollywood Has Changed</title><link>https://www.youtube.com/shorts/6Ne8Rt5SsyU</link><author>Bloomberg Originals</author><category>yt</category><enclosure url="https://www.youtube.com/v/6Ne8Rt5SsyU?version=3" length="" type=""/><pubDate>Fri, 21 Nov 2025 23:32:18 +0000</pubDate><source url="https://www.youtube.com/channel/UCUMZ7gohGI9HcU9VNsr2FJQ">Bloomberg Originals</source><content:encoded><![CDATA["I don't think my career would be possible."
+
+Reese Witherspoon opens up to @emilychangtv about how Hollywood has changed and why despite today’s challenges real talent always "survives and thrives."
+
+Watch The Circuit http://bloom.bg/43UwKlo
+
+--------
+Like this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1
+
+Get unlimited access to Bloomberg.com for just $1.99 your first month: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals
+Bloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. 
+
+Subscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.
+
+Visit our partner channel Bloomberg News for global news and insight in an instant.]]></content:encoded></item><item><title>MAGA successfully bullied Trump into releasing the Epstein files #shorts</title><link>https://www.youtube.com/shorts/xlDmclmj9Ec</link><author>Vox</author><category>yt</category><enclosure url="https://www.youtube.com/v/xlDmclmj9Ec?version=3" length="" type=""/><pubDate>Fri, 21 Nov 2025 23:12:44 +0000</pubDate><source url="https://www.youtube.com/channel/UCLXo7UDZvByw2ixzpQCufnA">Vox</source><content:encoded><![CDATA[The Epstein files have united the left and right, forcing President Donald Trump to reverse course and release the documents after months of calling the demands a hoax. Host and editorial director Astead Herndon cuts through the noise to make sense of what led to this U-turn from Trump. #MAGA #Trump #Epstein
+
+Subscribe to our channel and turn on notifications (🔔) so you don't miss any videos: http://goo.gl/0bsAjO
+
+Vox.com is a news website that helps you cut through the noise and understand what's really driving the events in the headlines. Check out http://www.vox.com.
+
+Watch our full video catalog: http://goo.gl/IZONyE
+Follow Vox on TikTok: http://tiktok.com/@voxdotcom
+Check out our articles: https://www.vox.com/
+Listen to our podcasts: https://www.vox.com/podcasts]]></content:encoded></item><item><title>How This Indian Company Is Creating Sustainable Architecture</title><link>https://www.youtube.com/shorts/jN6CDK9HLJQ</link><author>Bloomberg Originals</author><category>yt</category><enclosure url="https://www.youtube.com/v/jN6CDK9HLJQ?version=3" length="" type=""/><pubDate>Fri, 21 Nov 2025 22:00:59 +0000</pubDate><source url="https://www.youtube.com/channel/UCUMZ7gohGI9HcU9VNsr2FJQ">Bloomberg Originals</source><content:encoded><![CDATA[Biome Environmental creates sustainable architecture and innovative water and sanitation systems across India.
+
+Nikolaj Coster-Waldau spoke with its director and even grabbed a shovel to help with the latest project.
+
+Watch An Optimist’s Guide to the Planet
+
+--------
+Like this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1
+
+Get unlimited access to Bloomberg.com for just $1.99 your first month: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals
+Bloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. 
+
+Subscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.
+
+Visit our partner channel Bloomberg News for global news and insight in an instant.]]></content:encoded></item><item><title>The Shameful Case of Kids for Cash</title><link>https://www.youtube.com/watch?v=tyPGSJUw87I</link><author>Georg Rockall-Schmidt</author><category>yt</category><enclosure url="https://www.youtube.com/v/tyPGSJUw87I?version=3" length="" type=""/><pubDate>Fri, 21 Nov 2025 20:52:59 +0000</pubDate><source url="https://www.youtube.com/channel/UCG5h8yHSUS4n7zPnh0dG0SA">Georg Rockall-Schmidt</source><content:encoded><![CDATA[Two Pennsylvania judges, Mark Ciavarella and Michael Conahan, wrongly imprisoned thousands of children in exchange for kickbacks from a for-profit juvenile detention center, PA Child Care. It's a story about greed and corruption, but also how public fears can be leveraged for private profit. 
+
+Patreon: https://www.patreon.com/GeorgRockallSchmidt 
+Leave a tip: paypal.me/GeorgRockallSchmidt 
+Twitter: https://twitter.com/grockallschmidt 
+Bluesky: https://bsky.app/profile/grockallschmidt.bsky.social
+
+Sources
+
+UNITED STATES OF AMERICA v. MARK CIAVARELLA, Court of Appeals
+https://cases.justia.com/federal/appellate-courts/ca3/11-3277/11-3277-2013-05-24.pdf?ts=1410922724 
+
+Interbranch Commission on Juvenile Justice
+https://www.prisonlegalnews.org/media/publications/interbranch_commission_on_juvenile_justice_final_report_luzurene_county_investigation_2010_parta.pdf 
+
+Conahan Plea Agreement
+https://www.justice.gov/sites/default/files/usao-mdpa/legacy/2011/01/27/Conahan_plea%20agreement.pdf 
+
+Jailed for a MySpace parody, the student who exposed America's cash for kids scandal
+https://www.theguardian.com/world/2009/mar/07/juvenille-judges-cash-detention-centre 
+
+Hillary Transue Op-Ed
+https://jjie.org/2014/04/08/op-ed-children-deserve-our-honesty-and-compassion/ 
+
+Juvenile Law Center website
+https://jlc.org/ 
+
+Mom blames son's suicide on Luzerne County judge
+https://www.pennlive.com/midstate/2011/02/mom_blames_luzerne_county_judg.html 
+
+How the media created a 'superpredator' myth that harmed a generation of Black youth
+https://www.nbcnews.com/news/us-news/analysis-how-media-created-superpredator-myth-harmed-generation-black-youth-n1248101 
+
+Zero Tolerance Breeds Zero Justice
+https://youthtoday.org/2009/04/zero-tolerance-breeds-zero-justice/ 
+
+Trends in Youth Arrests for Violent Crime
+https://ojjdp.ojp.gov/publications/trends-in-youth-arrests.pdf 
+
+Despite Red Flags About Judges, a Kickback Scheme Flourished
+https://archive.is/20210507224613/https://www.nytimes.com/2009/03/28/us/28judges.html 
+
+Michael T. Conahan held the mort
+https://www.timesleader.com/archive/1247226/former-luzerne-county-judge-michael-t-conahan-held-the-mort 
+
+Powell testifies
+https://www.standardspeaker.com/2011/02/09/powell-testifies-judges-demands-for-kickbacks-drove-him-out-of-country/ 
+
+Lessons from "Kids for Cash"
+https://jlc.org/news/lessons-kids-cash-part-4-zero-tolerance-policies-make-zero-sense 
+
+FBI 2024 Overall Crime Report
+https://www.fbi.gov/news/press-releases/fbi-releases-2024-reported-crimes-in-the-nation-statistics 
+
+Conduct board kept allegations under wraps
+https://web.archive.org/web/20091214020749/http://citizensvoice.com/news/lokuta-says-conduct-board-kept-conahan-allegations-under-wraps-1.480057 
+
+President Judge Vote On Friday
+https://www.timesleader.com/archive/1263826/president-judge-vote-on-friday 
+
+W. Pa. center in judges' scheme
+https://archive.triblive.com/news/w-pa-center-entangled-in-judges-scheme/ 
+
+Leaked audit
+https://graphics8.nytimes.com/packages/pdf/national/20090328_judges_audit1.pdf
+
+‘Kids for Cash’ story grabbed author
+https://www.timesleader.com/archive/1495659/kids-for-cash-story-grabbed-author 
+
+Powell yacht to be seized by feds
+https://www.timesleader.com/archive/264193/stories-powell-yacht-to-be-seized-by-feds102762 
+
+Juvenile Justice System Factsheet 
+https://neglected-delinquent.ed.gov/idea-and-juvenile-justice-system-factsheet
+
+Contracts fueled Powell’s passion for expensive toys
+https://www.thetimes-tribune.com/2009/06/10/prosecutors-contracts-fueled-powells-passion-for-expensive-toys/ 
+
+Ciavarella spends day on stand
+https://www.standardspeaker.com/2011/02/15/trial-update-ciavarella-spends-full-day-on-stand/ 
+
+Where are they now?
+https://www.yahoo.com/news/ciavarella-trial-where-now-005100734.html 
+
+Academic Credit Transfer Problems in the Juvenile Justice System
+https://jlc.org/sites/default/files/attachments/2020-10/Credit%20Overdue_0.pdf 
+
+Youth Confinement: The Whole Pie 2025
+https://www.prisonpolicy.org/reports/youth2025.html 
+
+Youth Justice by the Numbers
+https://www.sentencingproject.org/policy-brief/youth-justice-by-the-numbers/
+
+Patchwork education system in juvenile centers often falls short
+https://kidsimprisoned.news21.com/education-juvenile-detention/ 
+
+IDEA and the Juvenile Justice System
+https://neglected-delinquent.ed.gov/idea-and-juvenile-justice-system-factsheet 
+
+Kids as young as 5 or 6 still get arrested at schools
+https://publicintegrity.org/education/criminalizing-kids/young-kids-arrested-at-schools/  
+
+Video shows 6-year-old girl crying, pleading during arrest
+https://www.clickorlando.com/news/local/2020/02/24/please-let-me-go-video-shows-6-year-old-girl-crying-pleading-during-arrest-at-orlando-school/ 
+
+Kids-for-cash victim appointed Juvenile Law Center board
+https://jlc.org/news/kids-cash-victim-appointed-juvenile-law-center-board 
+
+Charlie Balasavage dies at 28
+https://www.timesleader.com/news/736010/charlie-balasavage-one-of-kids-for-cash-youths-dies-at-28]]></content:encoded></item></channel></rss>

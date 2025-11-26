@@ -11,7 +11,7 @@
       "tags": [
         "yt"
       ],
-      "num_items": 325
+      "num_items": 328
     },
     {
       "id": "31E7iA",
@@ -24,7 +24,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 97
+      "num_items": 108
     },
     {
       "id": "ETKeSdT1Jvn",
@@ -37,7 +37,7 @@
       "tags": [
         "podcast"
       ],
-      "num_items": 101
+      "num_items": 98
     },
     {
       "id": "fZWkWx2e",
@@ -50,7 +50,7 @@
       "tags": [
         "movies"
       ],
-      "num_items": 36
+      "num_items": 38
     },
     {
       "id": "6W9",
@@ -63,7 +63,7 @@
       "tags": [
         "hn"
       ],
-      "num_items": 730
+      "num_items": 692
     },
     {
       "id": "3A81sm",
@@ -76,7 +76,7 @@
       "tags": [
         "tech"
       ],
-      "num_items": 1773
+      "num_items": 1685
     },
     {
       "id": "PyU9",
@@ -89,7 +89,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 8
+      "num_items": 14
     },
     {
       "id": "6C2W1azD1rBstXsTYKbKD6s7moV2j5fAvRyReoWWQxyDnqD8vREGhkX",
@@ -102,7 +102,7 @@
       "tags": [
         "chess"
       ],
-      "num_items": 10
+      "num_items": 4
     },
     {
       "id": "HuuaCwcKuiEntzTgdUnGL5yiphYKsF7LGtg6ZPikiebavCJbabm82gNrUaTivqvncwt",
@@ -113,18 +113,7 @@
       "hidden": false,
       "is_query": false,
       "tags": [],
-      "num_items": 13
-    },
-    {
-      "id": "4qEixipsxSf1HUubdvnb8zpswKssGnAt3k7kQUnyENrZiV3ZZpoqx9ujTK5RLScB62",
-      "title": "exaroth/i3-news",
-      "display_title": "exaroth/i3-news",
-      "url": "https://gh-issues-to-rss.fly.dev/exaroth/i3-news",
-      "feedlink": "https://github.com/exaroth/i3-news",
-      "hidden": false,
-      "is_query": false,
-      "tags": [],
-      "num_items": 4
+      "num_items": 10
     }
   ]
 }
