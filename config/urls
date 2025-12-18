@@ -75,8 +75,10 @@ https://www.theguardian.com/news/series/the-audio-long-read/podcast.xml "~Long r
 
 https://gh-issues-to-rss.fly.dev/exaroth/liveboat?m=io ! gh
 https://gh-issues-to-rss.fly.dev/exaroth/liveboat-github-runner?m=io ! gh
-https://gh-issues-to-rss.fly.dev/exaroth/awesome-dev.news
-https://gh-issues-to-rss.fly.dev/exaroth/i3-news
+https://gh-issues-to-rss.fly.dev/exaroth/awesome-dev.news?m=io ! gh
+https://gh-issues-to-rss.fly.dev/exaroth/i3-news?m=io ! gh
+https://gh-issues-to-rss.fly.dev/exaroth/poom?m=io ! gh
+https://gh-issues-to-rss.fly.dev/exaroth/game-appimage?m=io ! gh
 
 # Astrum
 https://www.youtube.com/feeds/videos.xml?channel_id=UC-9b7aDP6ZN0coj9-xFnrtw ! yt
