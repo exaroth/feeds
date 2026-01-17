@@ -11,7 +11,7 @@
       "tags": [
         "yt"
       ],
-      "num_items": 328
+      "num_items": 174
     },
     {
       "id": "31E7iA",
@@ -24,7 +24,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 108
+      "num_items": 75
     },
     {
       "id": "ETKeSdT1Jvn",
@@ -37,7 +37,7 @@
       "tags": [
         "podcast"
       ],
-      "num_items": 98
+      "num_items": 73
     },
     {
       "id": "fZWkWx2e",
@@ -50,7 +50,7 @@
       "tags": [
         "movies"
       ],
-      "num_items": 38
+      "num_items": 28
     },
     {
       "id": "6W9",
@@ -63,7 +63,7 @@
       "tags": [
         "hn"
       ],
-      "num_items": 692
+      "num_items": 92
     },
     {
       "id": "3A81sm",
@@ -76,7 +76,7 @@
       "tags": [
         "tech"
       ],
-      "num_items": 1685
+      "num_items": 245
     },
     {
       "id": "PyU9",
@@ -89,7 +89,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 14
+      "num_items": 12
     },
     {
       "id": "6C2W1azD1rBstXsTYKbKD6s7moV2j5fAvRyReoWWQxyDnqD8vREGhkX",
@@ -109,11 +109,11 @@
       "title": "Standard Ebooks - Newest Ebooks",
       "display_title": "Standard E-Books",
       "url": "https://standardebooks.org/feeds/rss/new-releases",
-      "feedlink": "https://standardebooks.org/",
+      "feedlink": "https://standardebooks.org/feeds/rss/new-releases",
       "hidden": false,
       "is_query": false,
       "tags": [],
-      "num_items": 10
+      "num_items": 15
     }
   ]
 }
