@@ -10,6 +10,20 @@
   "itemCount": 77,
   "items": [
     {
+      "title": "Ivette Fuentes on The Science of Consciousness | Closer To Truth Chats",
+      "url": "https://www.youtube.com/watch?v=BNthX3Jk5p8",
+      "date": 1769097624,
+      "author": "Closer To Truth",
+      "guid": 37973,
+      "unread": true,
+      "content": "<article>Register for a free Closer To Truth membership to receive exclusives like early access to new episodes: https://closertotruth.com/register/\n\nHear the latest ideas, including: mechanisms of quantum consciousness; the meaning of AI and transhuman consciousness; how psi, altered states, and near-death experiences affect consciousness.\n\nMake a tax-deductible donation of any amount to help Closer To Truth continue exploring the world's biggest questions: https://shorturl.at/OnyRq\n\nIvette Fuentes is a Professor of Quantum Physics at the University of Southampton and Emmy Fellow (Fellow by Special Election) at Keble College, University of Oxford. Her work considers fundamental quantum mechanics, quantum optics and their interplay with general relativity.\n\nSubscribe to the Closer To Truth podcast on Apple, Spotify, or wherever you listen: https://shorturl.at/mtJP4\n\nCloser To Truth, hosted by Robert Lawrence Kuhn and directed by Peter Getzels, presents the world’s greatest thinkers exploring humanity’s deepest questions. Discover fundamental issues of existence. Engage new and diverse ways of thinking. Appreciate intense debates. Share your own opinions. Seek your own answers.</article>",
+      "contentLength": 1190,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/BNthX3Jk5p8?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
       "title": "Next-Gen JavaScript Package Management with Ruy Adorno and Darcy Clarke",
       "url": "https://softwareengineeringdaily.com/2026/01/22/next-gen-javascript-package-management-with-ruy-adorno-and-darcy-clarke/?utm_source=rss&utm_medium=rss&utm_campaign=next-gen-javascript-package-management-with-ruy-adorno-and-darcy-clarke",
       "date": 1769076016,
@@ -1070,20 +1084,6 @@
       "contentLength": 542,
       "flags": null,
       "enclosureUrl": "https://sphinx.acast.com/p/acast/s/the-ancients/e/6942a333e0aa901b33739964/media.mp3?tk=eyJ0ayI6ImRlZmF1bHQiLCJhZHMiOnRydWUsInNwb25zIjp0cnVlLCJzdGF0dXMiOiJwdWJsaWMifQ==&sig=d85FQ6mak1JqlQ4EZzSfdX1UvNGqWuP7GYC0hE5Q1eo",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Computers that Think and Take Actions for You",
-      "url": "https://podcasters.spotify.com/pod/show/mlops/episodes/Computers-that-Think-and-Take-Actions-for-You-e3d3chc",
-      "date": 1767373138,
-      "author": "Demetrios",
-      "guid": 36151,
-      "unread": true,
-      "content": "<p> is the Founder of the <a href=\"https://www.agiopen.org/\" target=\"_blank\" rel=\"ugc noopener noreferrer\">OpenAGI Foundation</a>, working on computer-use models and open, agent-centric AI infrastructure.</p><p>Computers that Think and Take Actions for You, Zengy Qin // MLOps Podcast #355</p><p>What if the computer itself can think and take actions for you? You just give it a goal, and it performs every click, type, drag, and gets work done across the desktop and web. In this talk, Zengyi reveals the breakthrough technology that his company OpenAGI is developing: AI that can use computers like humans do. He talks about how his team developed the model, why it outperforms similar models from OpenAI and Google, and its wide use cases across different domains. </p><p>~~~~~~~~ ✌️Connect With Us ✌️ ~~~~~~~</p><p>Connect with Zengyi on LinkedIn: <a href=\"https://www.linkedin.com/in/qinzy/\" target=\"_blank\" rel=\"ugc noopener noreferrer\">/qinzy/</a></p><p>[00:00] AI and Human Interaction</p><p>[08:19] Why Expensive Models Lost</p><p>[06:30] Bigger Models Are Lazy</p><p>[10:24] Training Computer-Use vs LLMs</p><p>[13:53] World Models and Sandboxes</p><p>[19:42] Dealing with Non-Stationary States</p><p>[23:56] Training with Software</p><p>[26:44] Sandbox Training Process</p><p>[41:33] Infrastructure for Computer Models</p>",
-      "contentLength": 1063,
-      "flags": null,
-      "enclosureUrl": "https://anchor.fm/s/174cb1b8/podcast/play/113405932/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-0-2%2F415369764-44100-2-526b6cdaa3cea.mp3",
       "enclosureMime": "",
       "commentsUrl": null
     }
