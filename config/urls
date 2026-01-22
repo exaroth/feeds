@@ -10,6 +10,7 @@ file:///home/exaroth/.scripts/atom.xml "~ Atom Pocket"
 "query:Github Issues:tags # \"gh\" and age < 14"
 
 https://theweekinchess.com/twic-rss-feed "~Week in Chess" chess
+https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml "~Github Trending"
 https://standardebooks.org/feeds/rss/new-releases "~Standard E-Books"
 
 https://zig.news/rss "~Zig News" ! dev
