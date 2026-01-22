@@ -7,6 +7,7 @@ file:///home/exaroth/.scripts/atom.xml "~ Atom Pocket"
 "query:HN:tags # \"hn\""
 "query:Tech:tags # \"tech\""
 "query:Dev:tags # \"dev\""
+"query:Reddit:tags # \"reddit\""
 "query:Github Issues:tags # \"gh\" and age < 14"
 
 https://theweekinchess.com/twic-rss-feed "~Week in Chess" chess
@@ -73,6 +74,15 @@ https://feeds.megaphone.fm/GLT4787413333 "~The Rest is History" ! podcast
 https://www.youtube.com/feeds/videos.xml?channel_id=UC3RcjbuyF5M1U4R62zjE3hg "~Dan Carlin" ! podcast
 https://podcasts.files.bbci.co.uk/p07mdbhg.rss "~Youre dead to me" ! podcast
 https://www.theguardian.com/news/series/the-audio-long-read/podcast.xml "~Long reads" ! podcast
+
+# reddit
+https://www.reddit.com/r/rust/top/.rss?sort=top&t=day&limit=3 "~Reddit - Rust" ! rust reddit
+https://www.reddit.com/r/programming/top/.rss?sort=top&t=day&limit=6 "~Reddit - Programming" ! reddit
+https://www.reddit.com/r/linux/top/.rss?sort=top&t=day&limit=6 "~Reddit - Linux" ! reddit
+https://www.reddit.com/r/kubernetes/top/.rss?sort=top&t=day&limit=6 "~Kubernetes" ! reddit
+https://www.reddit.com/r/golang/top/.rss?sort=top&t=day&limit=6 "~Reddit - Go" ! golang reddit
+https://www.reddit.com/r/MachineLearning/top/.rss?sort=top&t=day&limit=3 "~Reddit - ML" ! ai reddit
+https://www.reddit.com/r/artificial/top/.rss?sort=top&t=day&limit=3 "~Reddit - AI" ! ai reddit
 
 https://gh-issues-to-rss.fly.dev/exaroth/liveboat?m=io ! gh
 https://gh-issues-to-rss.fly.dev/exaroth/liveboat-github-runner?m=io ! gh
