@@ -7,7 +7,7 @@
   "isQuery": true,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 34,
+  "itemCount": 38,
   "items": [
     {
       "title": "[D] 100 Hallucinated Citations Found in 51 Accepted Papers at NeurIPS 2025",
@@ -22,6 +22,20 @@
       "enclosureUrl": "",
       "enclosureMime": "",
       "commentsUrl": null
+    },
+    {
+      "title": "Announcing the Checkpoint/Restore Working Group",
+      "url": "https://kubernetes.io/blog/2026/01/21/introducing-checkpoint-restore-wg/",
+      "date": 1769091715,
+      "author": "/u/dshurupov",
+      "guid": 38006,
+      "unread": true,
+      "content": "<p>The community around Kubernetes includes a number of Special Interest Groups (SIGs) and Working Groups (WGs) facilitating discussions on important topics between interested contributors. Today we would like to announce the new <a href=\"https://github.com/kubernetes/community/tree/master/wg-checkpoint-restore\">Kubernetes Checkpoint Restore WG</a> focusing on the integration of Checkpoint/Restore functionality into Kubernetes.</p><p>There are several high-level scenarios discussed in the working group:</p><ul><li>Optimizing resource utilization for interactive workloads, such as Jupyter notebooks and AI chatbots</li><li>Accelerating startup of applications with long initialization times, including Java applications and <a href=\"https://doi.org/10.1145/3731599.3767354\">LLM inference services</a></li><li>Using periodic checkpointing to enable fault-tolerance for long-running workloads, such as distributed model training</li><li>Providing <a href=\"https://doi.org/10.1007/978-3-032-10507-3_3\">interruption-aware scheduling</a> with transparent checkpoint/restore, allowing lower-priority Pods to be preempted while preserving the runtime state of applications</li><li>Facilitating Pod migration across nodes for load balancing and maintenance, without disrupting workloads.</li><li>Enabling forensic checkpointing to investigate and analyze security incidents such as cyberattacks, data breaches, and unauthorized access.</li></ul><p>Across these scenarios, the goal is to help facilitate discussions of ideas between the Kubernetes community and the growing Checkpoint/Restore in Userspace (CRIU) ecosystem. The CRIU community includes several projects that support these use cases, including:</p><ul><li><a href=\"https://github.com/checkpoint-restore/criu\">CRIU</a> - A tool for checkpointing and restoring running applications and containers</li><li><a href=\"https://github.com/checkpoint-restore/checkpointctl\">checkpointctl</a> - A tool for in-depth analysis of container checkpoints</li><li><a href=\"https://github.com/checkpoint-restore/criu-coordinator\">criu-coordinator</a> - A tool for coordinated checkpoint/restore of distributed applications with CRIU</li></ul><p>More information about the checkpoint/restore integration with Kubernetes is also available <a href=\"https://criu.org/Kubernetes\">here</a>.</p><p>If you are interested in contributing to Kubernetes or CRIU, there are several ways to participate:</p>",
+      "contentLength": 1870,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": "https://www.reddit.com/r/kubernetes/comments/1qjvsp5/announcing_the_checkpointrestore_working_group/"
     },
     {
       "title": "Rust 1.93.0 is out",
@@ -108,6 +122,20 @@
       "commentsUrl": "https://www.reddit.com/r/linux/comments/1qjufxk/prominent_intel_compiler_engineer_heads_off_to_amd/"
     },
     {
+      "title": "[R] CVPR 2026 Reviews today",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1qjub2g/r_cvpr_2026_reviews_today/",
+      "date": 1769087937,
+      "author": "/u/gentaiscool",
+      "guid": 38004,
+      "unread": true,
+      "content": "<p>waiting for CVPR reviews to be out</p>",
+      "contentLength": 34,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
       "title": "Helm + container images across clusters... need better options",
       "url": "https://www.reddit.com/r/kubernetes/comments/1qjscp3/helm_container_images_across_clusters_need_better/",
       "date": 1769082145,
@@ -162,6 +190,20 @@
       "enclosureUrl": "",
       "enclosureMime": "",
       "commentsUrl": null
+    },
+    {
+      "title": "Naked Steel: The Deep Tech & Security of Bare Metal",
+      "url": "https://v.redd.it/9nal1fg8iveg1",
+      "date": 1769076144,
+      "author": "/u/Appropriate_Way4135",
+      "guid": 38005,
+      "unread": true,
+      "content": "",
+      "contentLength": 0,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": "https://www.reddit.com/r/kubernetes/comments/1qjqnc2/naked_steel_the_deep_tech_security_of_bare_metal/"
     },
     {
       "title": "Making and Scaling a Game Server in Kubernetes using Agones",
@@ -316,6 +358,20 @@
       "enclosureUrl": "",
       "enclosureMime": "",
       "commentsUrl": "https://www.reddit.com/r/linux/comments/1qjefp8/i_have_released_dodo_pdf_reader_v060/"
+    },
+    {
+      "title": "Problemo: Yet another error handling library for Rust",
+      "url": "https://www.reddit.com/r/rust/comments/1qjcus5/problemo_yet_another_error_handling_library_for/",
+      "date": 1769035422,
+      "author": "/u/emblemparade",
+      "guid": 38003,
+      "unread": true,
+      "content": "<p>The biggest problem with Rust is that there are not enough error handling libraries... ha!</p><p>But, seriously, after trying all the popular ones and some of the niche ones in large, complex projects I found myself unsatisfied (and tired). However, the process did help me clarify what my specific needs are and identify common patterns and pain points. So I rolled my own library, and at this point I think it's Good Enough™ to share with those who are interested:</p><p>The main documentation page is quite long, but the point is to explain the goals and solutions as clearly as possible. Towards the end there is a FAQ that will hopefully answer your most burning questions. Also included are examples that showcase some basic and advanced usage.</p><p>The main differentiator is that Problemo intends not to replace std  but to make working with it easier. It takes a, shall we say, compositional approach to constructing your errors. It also features a rather innovative way to accumulate errors (which you don't have to use).</p><p>Problemo is deliberately straightforward in its implementation and it should be very easy to understand the code.</p><p>I hope you would find it interesting even if you decide not to use it. I'm here to answer questions (check the FAQ first, maybe?), hoping you will be kind and constructive.</p>",
+      "contentLength": 1298,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
     },
     {
       "title": "\"proposal: spec: type inferred composite literals\" has been added to the active column of the proposals project",
