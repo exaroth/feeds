@@ -7,8 +7,36 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 5,
+  "itemCount": 7,
   "items": [
+    {
+      "title": "Niemann, Sindarov and Abdusattorov lead the Tata Steel Masters on 3.5/5 going into the first rest day - 5",
+      "url": "https://theweekinchess.com/twic-news-feed/niemann-sindarov-and-abdusattorov-lead-the-tata-steel-masters-on-3.55-going-into-the-first-rest-day",
+      "date": 1769034660,
+      "author": "Mark Crowther",
+      "guid": 37705,
+      "unread": true,
+      "content": " The leaders Hans Moke Niemann and Nodirbek Abdusattorov met in the fifth round of the Tata Steel Masters\nand drew allowing Javokhir Sindarov to join them in the lead. There were four decisive games\nwith Vladimir Fedoseev beating Arjun Erigaisi, top seed Vincent Keymer got back to 50% with a win\nover Chithambaram Aravindh, Gukesh scored his first win when he defeated Thai Dai Van Nguyen.\nJorden van Foreest drew with Matthias Bluebaum and Praggnanandhaa drew with Anish Giri.\n<p>\nIn the Challengers leader Aydin Suleymanli drew with Max Warmerdam allowing 12 year old Faustino Oro and\nAndy Woodward to join him on 4/5. \n</p><p>\nThe game file has two annotated games by Michiel Abeln based on player comments and the rest are annotated using Stockfish with additional comments and punctuation by me.\n</p><p>\nMasters Round 5 standings: \n1st= Niemann, Sindarov, Abdusattorov 3.5pts, \n4th= Van Foreest, Gukesh, Fedoseev 3pts, \n7th= Keymer, Erigaisi, Bluebaum 2.5pts, \n10th Erdogmus 2pts, \n11th= Aravindh, Praggnanandhaa, Nguyen, Giri 1.5pts.\n</p><p>\nRest day Thursday 22nd Jan.\n</p><p>\nRound 6 pairings Friday 22nd Jan:\nAbdusattorov-Gukesh, \nGiri-Nguyen, \nFedoseev-Praggnanandhaa, \nBluebaum-Erigaisi, \nErdogmus-Van Foreest, \nAravindh-Sindarov and\nNiemann-Keymer.\n</p>",
+      "contentLength": 1231,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "Niemann and Abdusattorov lead the Tata Steel Masters with 3/4 - 4",
+      "url": "https://theweekinchess.com/twic-news-feed/niemann-and-abdusattorov-lead-the-tata-steel-masters-with-34",
+      "date": 1769007180,
+      "author": "Mark Crowther",
+      "guid": 37555,
+      "unread": true,
+      "content": " There were three winners in round four of the Tata Steel Masters\nin Wijk aan Zee. Hans Moke Niemann defeated Chithambaram \nAravindh with the black pieces, he steadily outplayed\nhis opponent after the inferior 14.f5?!\nNodirbek Abdusattorov defeated Thai Dai Van \nNguyen in a Petroff where he gradually outplayed\nhis opponent, the computer didn't like a couple of\nmoves 33.fxe3 and especially 34.e4 but this didn't\nseem obvious to the players even after the game.\nThus far Matthias Bluebaum had avoided the curse\nof the Candidates players but two serious mistakes against Javokhir Sindarov 17.Nxa4?\n(going from edge to equal) and 24.Qc5? (24.Qd7!)\nwhich lost to a slightly funky tactic, lost him the game.\n<p>\n\nThe remaining games were drawn. Summary below.\nThere are two games annotated by Michiel Abeln\nin the game file, the rest I've annotated using\nStockfish.\n</p><p>\n\nRound 4 Standings: \n1st=\tNiemann, Abdusattorov 3pts, \n3rd=\tSindarov, Van Foreest, Erigaisi\t2.5pts\n6th=\tErdogmus, Gukesh, Fedoseev, Bluebaum 2pts, \n10th=\tAravindh, Keymer, Nguyen 1.5pts,\n13th=\tPraggnanandhaa, Giri 1pt.\n</p><p>\n\n\nRound 5 pairings:\nNiemann-Abdusattorov, \nKeymer-Aravindh, \nSindarov-Erdogmus, \nVan Foreest-Bluebaum, \nErigaisi-Fedoseev, \nPraggnanandhaa-Giri, \nNguyen-Gukesh.\n</p>",
+      "contentLength": 1242,
+      "flags": null,
+      "enclosureUrl": "",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Bluebaum and Van Foreest win their first games and join the leaders of Tata Steel on 2/3 - 3",
       "url": "https://theweekinchess.com/twic-news-feed/bluebaum-and-van-foreest-win-their-first-games-and-join-the-leaders-of-tata-steel-on-23",

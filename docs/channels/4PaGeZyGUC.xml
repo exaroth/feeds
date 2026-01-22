@@ -1,12 +1,647 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Youtube</title><link>https://konrad.website/feeds/</link><description></description><item><title>Relatable Millennial Horror Story #monster #gaming #horror</title><link>https://www.youtube.com/shorts/jlb0wjEnn8Q</link><author>IcarusLIVES</author><category>yt</category><enclosure url="https://www.youtube.com/v/jlb0wjEnn8Q?version=3" length="" type=""/><pubDate>Tue, 20 Jan 2026 10:21:59 +0000</pubDate><source url="https://www.youtube.com/channel/UCgp_adxCQiesfxKYIqIE9yQ">IcarusLIVES</source><content:encoded><![CDATA[Step away from the shelf and leave me at least one Mango Loco flavor Monster please. I need it to live.
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Youtube</title><link>https://konrad.website/feeds/</link><description></description><item><title>Effect Oriented Programming • Bill Frasure, Bruce Eckel, James Ward &amp; Andrew Harmel-Law • GOTO 2026</title><link>https://www.youtube.com/watch?v=Qds6rO9lxps</link><author>GOTO Conferences</author><category>yt</category><enclosure url="https://www.youtube.com/v/Qds6rO9lxps?version=3" length="" type=""/><pubDate>Thu, 22 Jan 2026 13:00:54 +0000</pubDate><source url="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</source><content:encoded><![CDATA[This interview was recorded for the GOTO Book Club. #GOTOcon #GOTObookclub
+http://gotopia.tech/bookclub
 
-Official ProtonVPN Partner - https://go.getproton.me/SH1mq
+Check out more here:
+https://gotopia.tech/episodes/420
 
-▬ Socials  ▬▬▬▬▬▬▬▬▬▬
-Twitch        ► www.twitch.tv/mr_icarus/
-Bluesky        ► mistericarus.bsky.social
-Patreon      ► www.patreon.com/MrIcarus
-Bandcamp ► icarusliv3s.bandcamp.com/]]></content:encoded></item><item><title>Everything You Need to Know: Liquidators</title><link>https://www.youtube.com/watch?v=eF-KSUfnbhg</link><author>Megaprojects</author><category>yt</category><enclosure url="https://www.youtube.com/v/eF-KSUfnbhg?version=3" length="" type=""/><pubDate>Mon, 19 Jan 2026 19:50:00 +0000</pubDate><source url="https://www.youtube.com/channel/UC0woBco6Dgcxt0h8SwyyOmw">Megaprojects</source><content:encoded><![CDATA[Get your copy of The Book: The Ultimate Guide to Rebuilding Civilization for yourself or as a Christmas gift for someone you love. Use my Promo Code MEGA10 for a special discount. Shop Now: https://bit.ly/44yTveO
+Bill Frasure - Co-Author of  "Effect Oriented Programming" @Swoogles 
+Bruce Eckel - Author of many books such as "Thinking in Java", "Thinking in C++" & Atomic Kotlin & Co-Author of  "Effect Oriented Programming"
+James Ward - Principal Developer Advocate at AWS & Co-Author of  "Effect Oriented Programming" @JamesWard 
+Andrew Harmel-Law - Technical Principal at Thoughtworks & Author of "Facilitating Software Architecture" @AndrewHarmelLaw 
+
+RESOURCES
+Bill
+https://github.com/swoogles
+https://x.com/bill_frasure
+
+Bruce
+https://bsky.app/profile/bruceeckel.bsky.social
+https://x.com/BruceEckel
+https://github.com/BruceEckel
+https://www.linkedin.com/in/bruceeckel
+
+James
+https://bsky.app/profile/jamesward.com
+https://twitter.com/_JamesWard
+https://github.com/jamesward
+https://www.linkedin.com/in/jamesward
+
+Andrew
+https://bsky.app/profile/andrewhl.bsky.social
+https://twit.social/@ahl
+https://x.com/al94781
+https://github.com/andrewharmellaw
+https://www.linkedin.com/in/andrewharmellaw
+https://andrewharmellaw.github.io
+
+Links
+https://effectorientedprogramming.com
+https://happypathprogramming.com
+https://zio.dev
+https://www.unison-lang.org
+https://www.roc-lang.org
+https://youtu.be/8VDahC5uecE
+https://youtu.be/01v_H7PpHXc
+
+DESCRIPTION
+Andrew Harmel-Law explores the core concepts of effect oriented programming with authors Bill Frasure, Bruce Eckel, and James Ward. The discussion reveals that effects are composable operations that encapsulate side effects and defer execution, giving developers the right handles to manage unpredictability through compiler-checked types.
+The authors explain how ZIO tracks three critical types: outputs, failures, and environmental requirements, enabling better testing with mock clocks and random number generators.
+
+They share their intentional avoidance of intimidating functional programming terminology like "monads" proving you don't need mathematical foundations to understand effects. The conversation covers effect systems' expansion beyond Scala into TypeScript, Kotlin, and new languages like Unison and Roc, and how their collaborative writing process with strict constraints like 47-character line limits - created a coherent 100-page book readable in portrait mode on your phone.
+
+TIMECODES
+00:00 Intro
+03:33 From 250 pages to 100: The art of distillation
+09:38 What are effects, really?
+13:58 Managing unpredictability with the right tools
+18:37 Beyond Scala: The growing effect oriented ecosystem
+29:58 Forbidden words & mathematical foundations
+33:08 Collaboration & constraints
+36:08 Outro
+
+RECOMMENDED BOOKS
+Bill Frasure, Bruce Eckel, James Ward • Effect Oriented Programming • https://amzn.to/4sO6wLV
+Bruce Eckel & Svetlana Isakova • Atomic Kotlin • https://amzn.to/4qT1gEQ
+Bruce Eckel • Thinking in C++ • https://amzn.to/4qnrIGW
+Andrew Harmel-Law • Facilitating Software Architecture • https://amzn.eu/d/5kZKVfU
+Sam Keen • Clean Architecture with Python • https://amzn.to/4pBT5g0
+Eric Evans • Domain-Driven Design • https://amzn.to/3tnGhwm
+Maciej «MJ» Jedrzejewski • Master Software Architecture • https://leanpub.com/master-software-architecture
+
+https://bsky.app/profile/gotocon.com
+https://twitter.com/GOTOcon
+https://www.linkedin.com/company/goto-
+https://www.instagram.com/goto_con
+https://www.facebook.com/GOTOConferences
+#EffectOrientedProgramming #Scala #ZIO #Kotlin #Roclang #Unisonlang #TypeScript #SoftwareEngineering #FunctionalProgramming #Programming #TodayInTech #BillFrasure #BruceEckel #JamesWard #AndrewHarmelLaw #BookClub
+
+CHANNEL MEMBERSHIP BONUS
+Join this channel to get early access to videos & other perks:
+https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA/join
+
+Looking for a unique learning experience?
+Attend the next GOTO conference near you! Get your ticket at https://gotopia.tech
+Sign up for updates and specials at https://gotopia.tech/newsletter
+
+SUBSCRIBE TO OUR CHANNEL - new videos posted almost daily.
+https://www.youtube.com/user/GotoConferences/?sub_confirmation=1]]></content:encoded></item><item><title>Istanbul Türkiye Food tour Day 3</title><link>https://www.youtube.com/shorts/WlA3a--Mn3w</link><author>Middle Eats</author><category>yt</category><enclosure url="https://www.youtube.com/v/WlA3a--Mn3w?version=3" length="" type=""/><pubDate>Thu, 22 Jan 2026 12:30:44 +0000</pubDate><source url="https://www.youtube.com/channel/UCWj_rUMGYCP0DjffybE2nbg">Middle Eats</source><content:encoded><![CDATA[Istanbul Türkiye Food tour Day 3
+📌: Görele Pide
+📌: Karaköy Güllüoğlu]]></content:encoded></item><item><title>Michelangelo - Secrets of the Sistine Chapel Documentary</title><link>https://www.youtube.com/watch?v=o2cigajWgz4</link><author>The People Profiles</author><category>yt</category><enclosure url="https://www.youtube.com/v/o2cigajWgz4?version=3" length="" type=""/><pubDate>Wed, 21 Jan 2026 21:27:49 +0000</pubDate><source url="https://www.youtube.com/channel/UCD6TPU-PvTMvqgzC_AM7_uA">The People Profiles</source><content:encoded><![CDATA[Dive into the life of Michelangelo Buonarroti, the Renaissance genius whose “divine hands” transformed the history of art. This full-length biography documentary explores the man behind the Sistine Chapel ceiling, the David sculpture, and some of the most powerful religious art ever created.
+
+From his harsh upbringing in Florence to his rise as the most sought-after artist in Renaissance Italy, this Michelangelo documentary reveals the struggles, obsessions, and rivalries that shaped his masterpieces. Discover how he battled popes, princes and patrons, endured exhausting physical labour on the Sistine Chapel, and pushed sculpture and painting to new extremes.
+
+Learn the secrets of Michelangelo’s artistic techniques, his revolutionary understanding of human anatomy, and the deep faith and inner turmoil that drove his greatest works. We uncover the politics of the Vatican, the pressures of working for powerful popes, and the personal cost of his relentless pursuit of perfection.
+
+If you’re interested in Renaissance history, art history, Catholic Church history, or in-depth biography documentaries, this Michelangelo film is for you.
+
+Please subscribe here. https://www.youtube.com/@PeopleProfiles?sub_confirmation=1
+Our second channel. https://www.youtube.com/@PeopleProfilesExtra
+Follow us on Spotify. https://open.spotify.com/show/7fKALbrzEO9Q4VVvAwWHqL
+Support us on Patreon https://patreon.com/thepeopleprofiles
+Follow us on Twitter. https://twitter.com/tpprofiles
+
+Thanks for watching! If you liked this video, check out our related videos below:
+https://www.youtube.com/playlist?list=PLNwBhP0rWSz1EQOUiCo2hOzXogNU5psT8
+https://www.youtube.com/playlist?list=PLNwBhP0rWSz0vPvWecG4EPQIWEIh34K-X
+https://www.youtube.com/playlist?list=PLNwBhP0rWSz3l1yKTFKS6b3GPniSWVpmX
+
+All footage, images and music used in People Profiles videos are sourced from free media websites or are purchased with commercial rights from online media archives.
+
+All People Profiles scripts are researched and written by qualified Historians. The script for this video has been checked with Plagiarism and AI Detector software and scored 0% on Grammarly. In academia, a score of below 15% is considered good or acceptable. 
+
+No AI is used during the writing process of People Profiles videos, which are narrated by human voice over artists. Please see the end credits of our videos for details and contact us for script references.
+
+#peopleprofiles  #history  #biography]]></content:encoded></item><item><title>The Biggest Frenzy of All Life on Earth | How Nature Works | BBC Earth Science</title><link>https://www.youtube.com/watch?v=p0EsKdRvMQw</link><author>BBC Earth Science</author><category>yt</category><enclosure url="https://www.youtube.com/v/p0EsKdRvMQw?version=3" length="" type=""/><pubDate>Wed, 21 Jan 2026 19:01:02 +0000</pubDate><source url="https://www.youtube.com/channel/UCdsOTr6SmDrxuWE7sJFrkhQ">BBC Earth Science</source><content:encoded><![CDATA[Phytoplankton blooms are extremely important for all oceanic life on planet Earth but what role to they play in human's lives?
+
+Best of Earth Science: http://bit.ly/EarthLabOriginals 
+Best of BBC Earth: http://bit.ly/TheBestOfBBCEarthVideos 
+
+Taken from: How Nature Works (2022) 
+
+This is a channel from BBC Studios who help fund new BBC programmes. Service information and feedback: http://bbcworldwide.com/vod-feedback--contact-details.aspx]]></content:encoded></item><item><title>WSJ Reporter Describes ‘Stunned’ Reactions at Trump’s Davos Speech</title><link>https://www.youtube.com/shorts/66g40TJj7CE</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/66g40TJj7CE?version=3" length="" type=""/><pubDate>Wed, 21 Jan 2026 18:23:30 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[WSJ’s Alex Leary reports from the World Economic Forum, where President Trump said he was seeking to acquire Greenland.  
+
+#wsj #thewallstreetjournal #davos #trump #greenland]]></content:encoded></item><item><title>How the U.S. Crackdown Is Strangling Venezuela’s Dark Fleet | WSJ</title><link>https://www.youtube.com/watch?v=WJSJOiYzHRM</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/WJSJOiYzHRM?version=3" length="" type=""/><pubDate>Wed, 21 Jan 2026 17:57:03 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[Over 1400 so-called dark fleet ships from Venezuela, Iran and Russia have been sanctioned or blacklisted by Western countries in recent years, with little impact until the current ramp up in U.S. enforcement. 
+
+WSJ’s Shelby Holliday breaks down how these tankers evade scrutiny, and the Trump administration’s efforts to disrupt this billion-dollar business.
+
+Chapters:
+0:00 Black-market oil
+0:25 How the dark fleet operates and stays hidden
+3:03 The U.S. crackdown
+5:12 The end of the dark fleet?
+
+News Explainers
+Some days the high-speed news cycle can bring more questions than answers. WSJ’s news explainers break down the day's biggest stories into bite-size pieces to help you make sense of the news.
+
+#Venezuela #Oil #WSJ]]></content:encoded></item><item><title>Is the Hunt For Planet Nine Finally Over?</title><link>https://www.youtube.com/watch?v=vdqQMmVplYA</link><author>Astrum</author><category>yt</category><enclosure url="https://www.youtube.com/v/vdqQMmVplYA?version=3" length="" type=""/><pubDate>Wed, 21 Jan 2026 17:01:35 +0000</pubDate><source url="https://www.youtube.com/channel/UC-9b7aDP6ZN0coj9-xFnrtw">Astrum</source><content:encoded><![CDATA[Have we finally found Planet Nine?
+Click this link https://boot.dev/?promo=ASTRUM and use my code ASTRUM to get 25% off your first payment for boot.dev.
+
+▀▀▀▀▀▀
+
+Is there a massive planet, 10 times the mass of Earth, hiding at the edge of our solar system? This is Planet Nine, the solar system’s greatest cold case, predicted by our models but never seen…. until now. Is the hunt finally nearing its end? In this video, we break down the evidence that might have finally located the "missing" planet.
+
+▀▀▀▀▀▀
+
+0:00 The Search For Planet 9
+6:47 Planet Candidates
+10:51 Vera Rubin Telescope 
+12:49 Alternative Explanations
+15:04 Could It Be a Black Hole?
+15:53 Is Gravity Wrong?
+
+▀▀▀▀▀▀
+
+To stay on top of space news, sign up to the Astrum newsletter: https://astrumspace.kit.com 
+ 
+Astrum Displate Posters: https://displate.com/astrumspace?art=5f04759ac338b  
+Astrum Merch: https://astrum-shop.fourthwall.com/ 
+
+Join us on the Astrum discord: https://discord.gg/TKw8Hpvtv8 
+
+A huge thanks to our Patreons who help make these videos possible. Sign-up here to support the channel: https://bit.ly/4aiJZNF 
+
+▀▀▀▀▀▀
+
+Astrum Podcast on Spotify: https://open.spotify.com/show/6jPRrbq3o3dpvBb173ZTKi?si=a90d3efe3b704c83 
+
+Astrum Earth: https://youtube.com/@astrumearth 
+Astrum Extra: https://www.youtube.com/@astrumextra 
+
+Astrum Spanish: https://www.youtube.com/@astrumespanol 
+Astrum Portuguese: https://www.youtube.com/channel/UChn_-OwvV63mr1yeUGvH-BQ 
+
+▀▀▀▀▀▀
+
+References:
+“Generation of Low-Inclination, Neptune-Crossing TNOs by Planet Nine”, via arxiv.org https://astrumspace.info/planetnine 
+“A search for Planet Nine with IRAS and AKARI data”, via cambridge.org https://astrumspace.info/irasakari 
+“A far-infrared search for Planet Nine”, via arxiv.org https://astrumspace.info/nine_hunt 
+“Rubin Observatory survey capabilities”, via rubinobservatory.org https://astrumspace.info/rubindata 
+“A Search for Planet Nine using the AKARI survey”, via arxiv.org https://astrumspace.info/akarisearch 
+“The collective gravity of a primordial scattered disk”, via iopscience.iop.org https://astrumspace.info/scattereddisk 
+“The Zderic–Madigan belt”, via arxiv.org https://astrumspace.info/zdericmadigan 
+“What if Planet Nine is a primordial black hole?”, via arxiv.org https://astrumspace.info/pbhplanetnine 
+“Modified Newtonian dynamics as an alternative to Planet Nine”, via iopscience.iop.org https://astrumspace.info/mondplanetnine 
+“New evidence suggests an unseen planet in the Solar System”, via livescience.com https://astrumspace.info/unseenplanet
+
+▀▀▀▀▀▀
+
+Credits:
+Writer: Chris Bartlett
+Video Editor: John Moschopoulos
+Researcher: Shourya Shrivastava
+Script Editor: Damaris McColgan
+Thumbnail Designer: Peter Sheppard
+Publishing Lead: Georgina Brenner
+Production Manager: Raquel Taylor
+Edit Producer: Poppy Pinnock
+Head of Astrum: Jess Jordan
+Creator of Astrum: Alex McColgan
+
+Music credit: 
+Clampsample
+
+With special thanks to:
+Terry Long Phan
+Prof. Tomo Goto
+Dr. Ann-Marie Madigan
+NASA/ESO/ESA
+
+#Astrum #Space #Planet9]]></content:encoded></item><item><title>Queer subculture, slums and a spiritual star cult - India’s creative capital Mumbai | DW Documentary</title><link>https://www.youtube.com/watch?v=J2YamfWn1pc</link><author>DW Documentary</author><category>yt</category><enclosure url="https://www.youtube.com/v/J2YamfWn1pc?version=3" length="" type=""/><pubDate>Wed, 21 Jan 2026 17:00:34 +0000</pubDate><source url="https://www.youtube.com/channel/UCW39zufHfsuGgpLviKh297Q">DW Documentary</source><content:encoded><![CDATA[When the sun goes down, India's megacity most intense side comes to light. Queer subculture, everyday slum life and spiritual celebrity culture - Mumbai nightlife could hardly be more diverse. Anything is possible, here!
+
+Mumbai: India's financial, commercial and entertainment center. This is the New York of South Asia, according to many of its inhabitants. Here, they say, anything is possible and hard work pays off. Like New York City, Mumbai is a melting pot of different cultures and lifestyles - and a city that never sleeps. Between red carpets and slums, this documentary shows a city full of contrasts.
+
+Reporter Johannes Hano explores the night with a motorcycle gang. He experiences Bollywood glamour, celebrates an Indian wedding and immerses himself in the harsh life of the slums. He rides through the chaotic night-time streets in a three-wheeler with queer Muslim drag artist Zeesh, and talks to him on a red carpet. Zeesh speaks openly about his initially difficult relationship with his mother after coming out, diversity in India and his path to the cover of Indian Vogue. Rochelle Pinto from Vogue India describes the fashion industry’s take on what Zeesh embodies in his nightly stage shows: the shift towards more diversity and a different set of attitudes.
+  
+But change is also a question of self-empowerment. Take Amruta Mane, for example: at the age of 21, she founded a motorcycle driving school for women called Women on Wheels. In doing so, she's creating spaces for independence - in a society where self-determination is often not a given.
+
+Radhe Maa has a somewhat different community. Her followers say she's a deity (godwoman) and she's as revered as she is controversial. She's omnipresent in Mumbai: posters bearing her image look down on the city streets.
+
+But not all faces are so visible, especially at night when most people are asleep. In Dharavi, one of the largest slums in the world, reporter Johannes Hano meets a baker. And in Dhobi Ghat, the largest open-air laundry in the world, he visits a laundry worker at home - and looks on, as he goes about his tough job.
+ 
+Mumbai - encounters with people whose courage, creativity and diversity are inspiring.
+
+#documentary #dwdocumentary #dwdocs #india #mumbai 
+______
+
+DW Documentary gives you knowledge beyond the headlines. Watch top documentaries from German broadcasters and international production companies. Meet intriguing people, travel to distant lands, get a look behind the complexities of daily life and build a deeper understanding of current affairs and global events. Subscribe and explore the world around you with DW Documentary.
+
+Subscribe to: ‬
+⮞ DW Documentary (English): https://www.youtube.com/@DWDocumentary 
+⮞ DW Documental (Spanish): https://www.youtube.com/@DWDocumental 
+⮞ DW Documentary وثائقية دي دبليو (Arabic): https://www.youtube.com/@DWDocarabia
+⮞ DW Documentary हिन्दी (Hindi): https://www.youtube.com/@DWDochindi
+⮞ DW Dokumenter (Indonesian): https://www.youtube.com/@DWDokumenter
+⮞ DW Doku (German): https://www.youtube.com/@DWDoku
+
+For more visit: http://www.dw.com/en/tv/docfilm/s-3610
+Follow DW Documentary on Instagram: https://www.instagram.com/dwdocumentary/
+Follow DW Documental on Facebook: https://www.facebook.com/dwdocumental
+
+We kindly ask viewers to read and stick to the DW netiquette policy on our channel: https://p.dw.com/p/MF1G]]></content:encoded></item><item><title>How Britain Made the L1A1 SLR: Archive Film with intro by firearms expert Jonathan Ferguson</title><link>https://www.youtube.com/watch?v=-NxwHBgS5AE</link><author>Royal Armouries</author><category>yt</category><enclosure url="https://www.youtube.com/v/-NxwHBgS5AE?version=3" length="" type=""/><pubDate>Wed, 21 Jan 2026 16:06:43 +0000</pubDate><source url="https://www.youtube.com/channel/UCsMX-XuiEkBi4-GDrYuniWg">Royal Armouries</source><content:encoded><![CDATA[Following last week’s look at the very first L1A1 SLR ever produced (1957), we’re sharing a remarkable Royal Small Arms Factory (RSAF) Enfield archive film, shot in the 1960s, showing the key stages of L1A1 manufacture and a rare glimpse of the original Enfield pattern room.
+
+Then we step back and let the film speak for itself, nearly an hour of pure production and engineering process.
+
+Enjoy!
+
+0:00 Intro
+3:05 Enfield + Pattern Room
+3:57 Planning & Tooling 
+4:37 Rifle body: Heat treat → Machining → Inspection
+18:16 Barrels: Drilling, Rifling, Plating & Production line
+34:28 Housing/Trigger, Furniture & Magazines
+50:16 Assembly → Proofing/Testing → Packing & Dispatch
+
+Subscribe to our channel for more videos about arms and armour  
+
+Help us bring history to life by supporting us here: https://royalarmouries.org/support-us/donations/
+
+Sign up to our museum membership scheme here: https://royalarmouries.org/support-us/membership/ 
+
+⚔Website: https://royalarmouries.org/home
+⚔Blog: https://royalarmouries.org/stories/
+⚔Facebook: https://www.facebook.com/RoyalArmouriesMuseum/
+⚔Twitter: https://twitter.com/Royal_Armouries
+⚔ Instagram: http://instagram.com/royalarmouriesmuseum
+
+We are the Royal Armouries, the United Kingdom's national collection of arms and armour. Discover what goes on behind the scenes and watch our collection come to life. See combat demonstrations, experience jousting and meet our experts. 
+
+Have a question about arms and armour? Feel free to leave us a comment and we'll do our best to answer it.]]></content:encoded></item><item><title>Inside the $300 million project to save the Great Barrier Reef #shorts</title><link>https://www.youtube.com/shorts/MzcCkLGBKaE</link><author>Vox</author><category>yt</category><enclosure url="https://www.youtube.com/v/MzcCkLGBKaE?version=3" length="" type=""/><pubDate>Wed, 21 Jan 2026 14:06:52 +0000</pubDate><source url="https://www.youtube.com/channel/UCLXo7UDZvByw2ixzpQCufnA">Vox</source><content:encoded><![CDATA[It’s no secret that the Great Barrier Reef needs help. As the ocean warms, heat waves with the power to kill off coral are becoming more frequent and extreme. To help, a team of scientists, engineers, and other experts — backed by nearly $300 million — have mounted an enormous effort to try to help the reef withstand climate change over the next few decades. Will it be enough to keep the reef alive, considering an entire economy depends on it?
+
+Senior environmental correspondent Benji Jones traveled down under in December to see some of their work in action. You can read more about what he learned here: https://www.vox.com/climate/475447/australia-great-barrier-reef-climate-change-restoration
+
+Subscribe to our channel and turn on notifications (🔔) so you don't miss any videos: http://goo.gl/0bsAjO
+
+Vox.com is a news website that helps you cut through the noise and understand what's really driving the events in the headlines. Check out http://www.vox.com.
+
+Watch our full video catalog: http://goo.gl/IZONyE
+Follow Vox on TikTok: http://tiktok.com/@voxdotcom
+Check out our articles: https://www.vox.com/
+Listen to our podcasts: https://www.vox.com/podcasts]]></content:encoded></item><item><title>SW Design, Architecture &amp; Clarity at Scale • Sam Newman, Jacqui Read &amp; Simon Rohrer • GOTO 2025</title><link>https://www.youtube.com/watch?v=t67oWHa00iE</link><author>GOTO Conferences</author><category>yt</category><enclosure url="https://www.youtube.com/v/t67oWHa00iE?version=3" length="" type=""/><pubDate>Wed, 21 Jan 2026 13:01:45 +0000</pubDate><source url="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</source><content:encoded><![CDATA[This conversation was recorded at GOTO Copenhagen 2025. #GOTOcon #GOTOcph
+https://gotocph.com
+
+Sam Newman - Author of Building Microservices & Monolith to Microservices @samnewman4355 
+Jacqui Read - Author of Communication Patterns: A Guide for Developers and Architects @JacquiRRead 
+Simon Rohrer - Global Head of Enterprise Tech Architecture and Ways of Thinking @SimonRohrer 
+
+ORIGINAL TALK TITLE
+Software Design, Architecture & Giving Clarity at Scale
+
+RESOURCES
+Sam
+https://twitter.com/samnewman
+https://www.linkedin.com/in/samnewman
+http://samnewman.io
+http://samnewman.io/blog
+https://github.com/snewman
+
+Jacqui
+https://bsky.app/profile/tekiegirl.bsky.social
+https://jacquiread.com
+https://fosstodon.org/@tekiegirl
+https://www.linkedin.com/in/jacquelineread
+https://github.com/tekiegirl
+
+Simon
+https://bsky.app/profile/simon.bvssh.com
+https://mastodon.social/@simonr
+https://x.com/sirohrer
+https://www.linkedin.com/in/simonrohrer
+https://github.com/sirohrer
+https://www.soonersaferhappier.com
+
+Links
+https://acedmodel.com
+
+ABSTRACT
+In this session, we will explore the nature of software design - what is it, and where is the intersection with architecture? We’ll also look at the importance of communicating context, design, and architecture across an organization.
+
+If you’d like to do some advanced reading, head over to acedmodel.com for more.
+
+Both Jacqui and Simon will be sharing their expertise and experiences, but this session is also all about your questions. Come along, and get involved! [...]
+
+TIMECODES
+00:00 Intro
+02:46 What is software design?
+04:21 Decision‑Records: Why & how to use them
+22:46 Keeping documentation fresh – ADR templates & automation
+29:44 Bridging the Dev ↔ Architect gap
+32:30 Standardizing vs Over‑standardizing (Platform Engineering)
+42:20 Feedback loops & continuous improvement
+45:00 Outro
+
+Read the full abstract here:
+https://gotocph.com/2025/sessions/3932
+
+RECOMMENDED BOOKS
+Jacqui Read • Communication Patterns • https://amzn.to/3E37lvv
+Sam Newman • Building Resilient Distributed Systems • https://www.oreilly.com/library/view/building-resilient-distributed/9781098163532
+Sam Newman • Monolith to Microservices • https://amzn.to/2Nml96E
+Sam Newman • Building Microservices • https://amzn.to/3dMPbOs
+Jonathan Smart, Zsolt Berend, Myles Ogilvie & Simon Rohrer • Sooner Safer Happier • https://amzn.to/3Emm9p2
+
+https://bsky.app/profile/gotocon.com
+https://twitter.com/GOTOcon
+https://www.linkedin.com/company/goto-
+https://www.instagram.com/goto_con
+https://www.facebook.com/GOTOConferences
+#SoftwareDesign #SoftwareArchitecture #Clarity #ClarityInSoftware #Communication #ADR #PlatformEngineering #SamNewman #JaquiRead #SimonRohrer #TodayInTech #Programming #SoftwareEngineering
+
+CHANNEL MEMBERSHIP BONUS
+Join this channel to get early access to videos & other perks:
+https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA/join
+
+Looking for a unique learning experience?
+Attend the next GOTO conference near you! Get your ticket at https://gotopia.tech
+Sign up for updates and specials at https://gotopia.tech/newsletter
+
+SUBSCRIBE TO OUR CHANNEL - new videos posted almost daily.
+https://www.youtube.com/user/GotoConferences/?sub_confirmation=1]]></content:encoded></item><item><title>Unboxing two Syntech Chronos 68 keyboards!</title><link>https://www.youtube.com/watch?v=PYF2h5Rr1p0</link><author>Chyrosran22</author><category>yt</category><enclosure url="https://www.youtube.com/v/PYF2h5Rr1p0?version=3" length="" type=""/><pubDate>Wed, 21 Jan 2026 06:00:22 +0000</pubDate><source url="https://www.youtube.com/channel/UCD0y51PJfvkZNe3y3FR5riw">Chyrosran22</source><content:encoded><![CDATA[Get them here: bit.ly/49w2xMt
+Groovy brewery site: https://groovybieren.nl/
+Today we look at a pair of small but admittedly quite sleek-looking, metal-chassis Hall effect keyboards. I went into this with some skepticism but I think I like them better up-front than I thought I would ^^ . 
+
+Intro by Kyle Carter
+Outro by Facundo Cabanne
+
+My keyboard reviews: http://bit.ly/1TbOtft
+My switch teardowns: http://bit.ly/2C1QGHz
+My TOP X videos: http://bit.ly/2FmpZfd
+My XL typing demos: https://bit.ly/2OoAW3w
+My tutorials and featurettes: https://bit.ly/2OrkLUh
+My unboxing videos: https://bit.ly/2TSrr0m
+
+I'm Thomas and I do videos and reviews on mechanical keyboards ranging from the most sickening modern RGB gaming keyboards to vintage hardware relics, or sometimes keycaps or keyswitches ranging from Cherry MX to Alps SKCM to IBM buckling springs and anything in between.
+
+Follow me on Twitter for updates on my keyboard videos! https://twitter.com/chyrosran22]]></content:encoded></item><item><title>How Did Isabel dos Santos Amass A Fortune? | The Luanda Leaks (full documentary) | FRONTLINE + ICIJ</title><link>https://www.youtube.com/watch?v=H26q5-I7Ep0</link><author>FRONTLINE PBS | Official</author><category>yt</category><enclosure url="https://www.youtube.com/v/H26q5-I7Ep0?version=3" length="" type=""/><pubDate>Tue, 20 Jan 2026 21:00:27 +0000</pubDate><source url="https://www.youtube.com/channel/UC3ScyryU9Oy9Wse3a8OAmYQ">FRONTLINE PBS | Official</source><content:encoded><![CDATA[A 2020 investigation into how Isabel dos Santos, then Africa’s richest woman, built a business empire with access to state funds from Angola, a country with widespread poverty — and the role of U.S. companies. (Aired 2020)
+
+This journalism is made possible by viewers like you. Donate to FRONTLINE now: https://bit.ly/47DFzCb
+
+And support your local PBS station here: https://www.pbs.org/donate
+
+The Emmy Award-winning documentary “The Luanda Leaks” — part of a worldwide investigation with the International Consortium of Investigative Journalists that drew on a trove of more than 700,000 leaked documents — revealed how Isabel dos Santos made hundreds of millions of dollars thanks in part to her father’s longtime control of Angola’s government.
+
+Despite a history of favorable deals with the Angolan government, dos Santos said she made her fortune on her own merit — and that corruption charges that were levied against her were part of a politically motivated “witch hunt.”
+
+As part of the ICIJ’s reporting, 120 journalists from 36 media organizations in 20 countries spent months examining and verifying dos Santos’ leaked financial and business records, and revealed a paper trail of how she benefited from her position — and how big-name American accounting and consulting firms helped make it possible.
+
+Read more about developments in the U.S. after the film aired: https://www.pbs.org/wgbh/frontline/article/luanda-leaks-isabel-dos-santos-barred-from-us/ 
+“The Luanda Leaks” is a BBC Current Affairs production for WGBH/FRONTLINE and BBC. The producer and reporter is Evan Williams. The producer and director is James Oliver. The senior producer is Dan Edge. 
+
+Explore additional reporting on “The Luanda Leaks” on our website:
+https://www.pbs.org/wgbh/frontline/documentary/luanda-leaks/
+
+#Documentary #Africa #Angola 
+
+Subscribe on YouTube: https://www.youtube.com/user/PBSfrontline
+Sign up for our newsletter: https://frontline.org/newsletter
+Instagram: https://www.instagram.com/frontlinepbs
+Facebook: https://www.facebook.com/frontline
+Bluesky: https://bsky.app/profile/frontlinepbs.bsky.social
+
+FRONTLINE is produced at GBH in Boston and is broadcast nationwide on PBS. The editor-in-chief and executive producer of FRONTLINE is Raney Aronson-Rath. Funding for FRONTLINE is provided through the support of PBS viewers and by the Corporation for Public Broadcasting, with major support from Ford Foundation. Additional support for FRONTLINE is provided by the Abrams Foundation, Park Foundation, John D. and Catherine T. MacArthur Foundation, Heising-Simons Foundation, and the FRONTLINE Trust, with major support from Jon and Jo Ann Hagler on behalf of the Jon L. Hagler Foundation, and additional support from Koo and Patricia Yuen.]]></content:encoded></item><item><title>A brief history of programming...</title><link>https://www.youtube.com/watch?v=9uW6B9LPntY</link><author>Fireship</author><category>yt</category><enclosure url="https://www.youtube.com/v/9uW6B9LPntY?version=3" length="" type=""/><pubDate>Tue, 20 Jan 2026 17:58:16 +0000</pubDate><source url="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA">Fireship</source><content:encoded><![CDATA[Try out the Junie coding agent in your JetBrains IDE - https://jb.gg/Fireship-Junie-AI
+
+Computing has come a long way since we figured out that 1s and 0s were pretty useful. In today's video, we look at the history of programming from the Turing machine to modern JavaScript...
+
+#coding #programming #tech #softwaredevelopment 
+
+🔥 Brain food for developers
+- https://fireship.dev
+
+🎨 My Editor Settings
+
+- Atom One Dark 
+- vscode-icons
+- Fira Code Font
+
+🔖 Topics Covered
+- Alan Turing
+- Werner Buchholz
+- Kathleen Booth
+- John McCarthey
+- Edsger Dijkstra
+- Dennis Ritchie
+- Ken Thompson
+- Bjarne Stroustrup
+- Anders Hejlsberg
+- Guido Van Rossum
+- James Gosling
+- Brendan Eich]]></content:encoded></item><item><title>The Couple Who Stole the Atomic Bomb</title><link>https://www.youtube.com/watch?v=ygH5-W4DFpo</link><author>Newsthink</author><category>yt</category><enclosure url="https://www.youtube.com/v/ygH5-W4DFpo?version=3" length="" type=""/><pubDate>Tue, 20 Jan 2026 17:30:18 +0000</pubDate><source url="https://www.youtube.com/channel/UCIlU5KDHKFSaebYviKfOidw">Newsthink</source><content:encoded><![CDATA[Even in the face of death, Julius and Ethel Rosenberg refused to confess. Try https://brilliant.org/Newsthink/ for FREE for 30 days and get 20% off your annual premium subscription.
+
+Chapters: 
+0:00 The Atomic Shock
+0:13 Klaus Fuchs Confesses
+0:29 Julius & Ethel Rosenberg
+1:14 The Manhattan Project Leak
+1:43 Greenglass Agrees to Spy
+2:31 Espionage
+3:31 The Jell-O Box
+4:28 The Arrests Begin
+5:15 A Family Turns on Itself
+5:53 The Spy Ring Unravels
+6:30 The Rosenbergs’ Trial
+7:49 The Sentencing
+8:55 Appeals and Defiance
+10:39 The Executions
+11:59 Today’s Sponsor: Brilliant
+
+Newsthink is produced and presented by Cindy Pom
+https://x.com/cindypom
+
+Grab your Newsthink merch here: https://newsthink.creator-spring.com
+
+Support Cindy on Patreon! https://www.patreon.com/Newsthink
+
+Sources: 
+
+Battle Hymn of the Republic performed by West Point Band: https://www.youtube.com/watch?v=yAqNe-m0a8s
+
+Knickerbocker village apartment where the Rosenbergs resided: jqpubliq (original)Vzeebjtf (cropped and lighting-altered), CC BY-SA 2.0 via Wikimedia Commons]]></content:encoded></item><item><title>Motorola - The Greatest Comeback of All Time</title><link>https://www.youtube.com/watch?v=nKocyzMO7nI</link><author>ColdFusion</author><category>yt</category><enclosure url="https://www.youtube.com/v/nKocyzMO7nI?version=3" length="" type=""/><pubDate>Tue, 20 Jan 2026 17:20:31 +0000</pubDate><source url="https://www.youtube.com/channel/UC4QZ_LsYcvcq7qOsOhpAX4A">ColdFusion</source><content:encoded><![CDATA[Try Odoo for free: https://www.odoo.com/r/lK92
+Motorola once a pioneer in the mobile industry had been largely thrown to the dustbin of history, but recently they've been making a comeback of sorts. In this episode, we explore.
+
+Watch or listen to ColdFusion on Spotify: 
+
+https://open.spotify.com/show/1YEwCKoRz8fEDqheXB6UJ1
+
+
+ColdFusion Music: 
+
+https://www.youtube.com/@ColdFusionmusic
+http://burnwater.bandcamp.com   
+
+ColdFusion Socials: 
+
+https://discord.gg/coldfusion
+https://facebook.com/ColdFusionTV 
+https://twitter.com/ColdFusion_TV 
+https://instagram.com/coldfusiontv
+
+Created by: Dagogo Altraide
+Producers: Tawsif Akkas, Dagogo Altraide]]></content:encoded></item><item><title>How Trump’s Greenland Threats Put U.S.-Europe Relations on Thin Ice</title><link>https://www.youtube.com/shorts/PtBqnGiT3WY</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/PtBqnGiT3WY?version=3" length="" type=""/><pubDate>Tue, 20 Jan 2026 17:15:51 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[WSJ’s Max Colchester explains what's at stake amid escalating tension between the U.S. and Europe over Greenland as President Trump travels to Davos.
+
+#Trump #Greenland #WSJ]]></content:encoded></item><item><title>Greenland - Between Denmark and Trump | DW Documentary</title><link>https://www.youtube.com/watch?v=eyE5cO-v5p0</link><author>DW Documentary</author><category>yt</category><enclosure url="https://www.youtube.com/v/eyE5cO-v5p0?version=3" length="" type=""/><pubDate>Tue, 20 Jan 2026 17:01:16 +0000</pubDate><source url="https://www.youtube.com/channel/UCW39zufHfsuGgpLviKh297Q">DW Documentary</source><content:encoded><![CDATA[Greenland should become part of the United States — at least, that’s the opinion of US President Donald Trump. Talk of the US acquiring, or perhaps even seizing, the world's largest island with its vast mineral wealth has been causing concern not only among Greenlanders.
+
+Denmark is outraged, as Greenland — a former colony — is still a semi-autonomous territory of the Danish Realm. But for how long? Many Greenlanders want to take control of their own future.
+Nukannguaq Zeeb was born on the island and feels deeply connected to the island’s cultural traditions of hunting and fishing. He also coaches Greenland’s national soccer team, a sport introduced by Danish colonialists. He’s critical of Denmark’s ongoing influence. "To be honest, we are currently under Danish rule and not an independent country,” he says. Trump's neocolonial ambitions came as a shock to him.
+
+Greenland did not gain any autonomy until 1953, when it became a Danish district. To this day, it remains closely associated with Denmark, both politically and economically. Many Greenlanders are pinning their hopes on the rich natural resources still hidden beneath the ice. As global warming accelerates, they could soon become accessible — drawing attention not only from the US administration.
+
+The White Mountain mine lies north of the capital Nuuk and can only be reached by boat or helicopter. International investors are extracting anorthosite, a mineral used to produce insulation material and glass fiber, among other things.
+
+Niels Ole is one of the few Greenlandic foremen in the mine — many skilled workers here come from abroad. Greenland’s weak education system means that many young people drop out before graduating. Social worker Ane Pipaluk looks after them. They live in shared housing and often come from families struggling with unemployment and alcoholism.
+
+Negotiating a path between old and new dependencies poses a major challenge for Greenland. Niels Ole dreams of more autonomy for his homeland. He says, "It's the dream of many Greenlanders.”
+
+#documentary #dwdocumentary #dwdocs #greenland #trump #denmark 
+______
+
+DW Documentary gives you knowledge beyond the headlines. Watch top documentaries from German broadcasters and international production companies. Meet intriguing people, travel to distant lands, get a look behind the complexities of daily life and build a deeper understanding of current affairs and global events. Subscribe and explore the world around you with DW Documentary.
+
+Subscribe to: ‬
+⮞ DW Documentary (English): https://www.youtube.com/@DWDocumentary 
+⮞ DW Documental (Spanish): https://www.youtube.com/@DWDocumental 
+⮞ DW Documentary وثائقية دي دبليو (Arabic): https://www.youtube.com/@DWDocarabia
+⮞ DW Documentary हिन्दी (Hindi): https://www.youtube.com/@dwdochindi
+⮞ DW Dokumenter (Indonesian): https://www.youtube.com/@DWDokumenter
+⮞ DW Doku (German): https://www.youtube.com/@DWDoku
+
+For more visit: http://www.dw.com/en/tv/docfilm/s-3610
+Follow DW Documentary on Instagram: https://www.instagram.com/dwdocumentary/
+Follow DW Documental on Facebook: https://www.facebook.com/dwdocumental
+
+We kindly ask viewers to read and stick to the DW netiquette policy on our channel: https://p.dw.com/p/MF1G]]></content:encoded></item><item><title>The infamous JoJo thought experiment - Michael Vazquez and Sarah Stroud</title><link>https://www.youtube.com/watch?v=BT93bRX2t68</link><author>TED-Ed</author><category>yt</category><enclosure url="https://www.youtube.com/v/BT93bRX2t68?version=3" length="" type=""/><pubDate>Tue, 20 Jan 2026 16:01:15 +0000</pubDate><source url="https://www.youtube.com/channel/UCsooa4yRKGN_zEE8iknghZA">TED-Ed</source><content:encoded><![CDATA[Puzzle through this classic ethical dilemma and decide: does your upbringing affect your moral responsibility for your actions?
+
+--
+
+Jo the First is a ruthless dictator who rules with an iron fist. To most onlookers, his rule appears cruel and unjust. But for his beloved son JoJo, this life is all he’s ever known and he grows up to inherit his father’s role and style of rule. Given JoJo’s unusual upbringing, does he bear full moral responsibility for his actions? Michael Vazquez and Sarah Stroud dig into this ethical dilemma.
+
+Lesson by Michael Vazquez and Sarah Stroud, directed by Skirmanta Jakaitė, Art Shot.
+
+This video was produced in collaboration with the Parr Center for Ethics, housed within the renowned Philosophy Department at the University of North Carolina at Chapel Hill. The Parr Center is committed to integrating abstract work in ethical theory with the informed discussion of practical ethical issues, and prides itself on the development of innovative and inclusive approaches to moral and civic education.
+
+Learn more about how TED-Ed partnerships work: https://bit.ly/TEDEdPartner
+
+Support Our Non-Profit Mission
+----------------------------------------------
+Support us on Patreon: http://bit.ly/TEDEdPatreon
+Check out our merch: http://bit.ly/TEDEDShop
+----------------------------------------------
+
+Connect With Us
+----------------------------------------------
+Sign up for our newsletter: http://bit.ly/TEDEdNewsletter
+Follow us on Facebook: http://bit.ly/TEDEdFacebook
+Find us on Twitter: http://bit.ly/TEDEdTwitter
+Peep us on Instagram: http://bit.ly/TEDEdInstagram
+----------------------------------------------
+
+Keep Learning
+----------------------------------------------
+View full lesson: https://ed.ted.com/lessons/the-infamous-jojo-thought-experiment-michael-vazquez-and-sarah-stroud
+Dig deeper with additional resources: https://ed.ted.com/lessons/the-infamous-jojo-thought-experiment-michael-vazquez-and-sarah-stroud/digdeeper
+
+Animator's website: https://artshot.lt/artshot
+----------------------------------------------
+
+Thank you so much to our patrons for your support! Without you this video would not be possible! Sydney Evans, Latora, Noel Situ, emily lam, Sid, Niccolò Frassetto, Mana, I'm here because of Knowledge Fight Facebook group., Linda Freedman, Edgardo Cuellar, Jaspar Carmichael-Jack, Michael Burton, VIVIANA A GARCIA BESNE, The Vernon's, Olha Bahatiuk, Jesús Bíquez Talayero, Chels Raknrl, Sai Pranavi Jonnalagadda, Stuart Rice, Jing Chen, Vector-Dopamine math, Jasper Song, Giorgio Bugnatelli, Chardon, Eddy Trochez, OnlineBookClub.org, Eric Shear, Leith Salem, Omar Hicham, Adrian Rotaru, Brad Sullivan, Karen Ho, Niklas Frimberger, Hunter Manhart, Nathan Nguyen, Igor Stavchanskiy, James R DeVries, Grace Huo, Diana Huang, Chau Hong Diem, Orlellys Torre, Corheu, Thomas Mee, Maryann H McCrory, Blas Borde, John Hellmann, Poompak Meephian, Chuck Wofford, Adam Pagan, and Wes Winn.]]></content:encoded></item><item><title>Inside the World&apos;s Most Lethal Drone Unit That Cost Putin $12B</title><link>https://www.youtube.com/shorts/wNXW8Ln13Gs</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/wNXW8Ln13Gs?version=3" length="" type=""/><pubDate>Tue, 20 Jan 2026 15:01:49 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[Nearly four years into the Russia-Ukraine War, drones have gone from battlefield experiments to indispensable, scalable machines of destruction. Ukrainian forces have adapted drone tech and combat tactics to counter evolving Russian threats, and now they’re warning that Europe is unprepared for the kind of high-tech war they are fighting.⁠
+⁠
+WSJ was given exclusive access inside Lasar’s Group, one of the largest and deadliest drone units in the world. WSJ's Ben C. Solomon went inside their secret bunker, where dozens of drone pilots are attacking Russian targets 24 hours a day.⁠
+
+#Ukraine #Russia #WSJ]]></content:encoded></item><item><title>The $1 Billion Coca-Cola Machine</title><link>https://www.youtube.com/watch?v=-a29Ygyzc2c</link><author>fern</author><category>yt</category><enclosure url="https://www.youtube.com/v/-a29Ygyzc2c?version=3" length="" type=""/><pubDate>Tue, 20 Jan 2026 15:00:01 +0000</pubDate><source url="https://www.youtube.com/channel/UCODHrzPMGbNv67e84WDZhQQ">fern</source><content:encoded><![CDATA[Use code 'FERNTV' to get 60% off an annual plan https://incogni.com/ferntv and take control of your personal data (ad)
+
+This soda fountain isn’t just serving you a drink. It’s quietly collecting your data — and Coke will profit from it tremendously.
+
+
+Sources: https://docs.google.com/document/d/19xRKb-X1t7UpbXdARy_hKgI1rcud9OWAOGP35ZP1iGc/edit?usp=sharing
+
+
+Music list:
+
+Artlist:
+Out of Flux - BAM BAM
+Soniq Branding - Just Flippin custom
+IamDayLight - War Zone
+Out of Flux - GIVE ME ICE - Instrumental version
+MooveKa - We Dont Stop
+Airborne Sound - Ambience people talking and walking in a courthouse hallway
+Out of Flux - CloudCity - No Backing Vocals
+
+Epidemic Sound:
+Time Bender - Philip Ayers
+Gravity (Instrumental Version) - Adelyn Paik
+Formula - Christoffer Moe Ditlevsen
+Boundless - Ooyy
+Fallout - Lennon Hutton
+Apparent Solution - Brendon Moeller
+Swindler's Groove - Andreas Dahlback
+In Mind - A Path Untold
+The Bells - VELDA
+Cold War Games - Gabriel Lewis
+Axon Terminal - Out To The World
+Axon Terminal - Out To The World
+Lens Distortions:
+Absolute
+Free Fall
+
+Tom Fox:
+Technically Correct
+Tech Trade
+Bad Pieces
+
+
+_____
+Armchair documentaries, almost weekly]]></content:encoded></item><item><title>Building Modern Databases with the FDAP Stack • Andrew Lamb &amp; Olimpiu Pop</title><link>https://www.youtube.com/watch?v=MjeAzPelQpI</link><author>GOTO Conferences</author><category>yt</category><enclosure url="https://www.youtube.com/v/MjeAzPelQpI?version=3" length="" type=""/><pubDate>Tue, 20 Jan 2026 13:27:32 +0000</pubDate><source url="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</source><content:encoded><![CDATA[This interview was recorded for GOTO Unscripted.
+https://gotopia.tech
+
+Check out more here:
+https://gotopia.tech/articles/412
+
+Andrew Lamb - Staff Engineer at InfluxData, ASF Member & PMC Apache DataFusion & Apache Arrow
+Olimpiu Pop - Technologist & Tech Journalist
+
+RESOURCES
+Andrew
+https://bsky.app/profile/andrewlamb1111.bsky.social
+https://x.com/andrewlamb1111
+https://github.com/alamb
+https://www.linkedin.com/in/andrewalamb
+https://andrew.nerdnetworks.org
+
+Olimpiu
+https://x.com/olimpiupop
+https://github.com/zroll
+https://www.linkedin.com/in/olimpiupop
+
+Links
+https://www.influxdata.com/blog/flight-datafusion-arrow-parquet-fdap-architecture-influxdb
+https://www.cidrdb.org/cidr2005/papers/P19.pdf
+
+DESCRIPTION
+Olimpiu Pop speaks with Andrew Lamb, staff engineer at InfluxData and PMC member of Apache DataFusion and Apache Arrow, about how modern data systems are built using standardized open source components rather than being developed from scratch.
+
+Andrew discusses the FDAP Stack (Flight, DataFusion, Arrow & Parquet), the shift from row-based to columnar data storage, and how technologies like Apache Iceberg are enabling a new era of interoperability across data platforms. The discussion covers why this modular approach saves years of development time while providing better performance and compatibility.
+
+RECOMMENDED BOOKS
+Kasun Indrasiri & Danesh Kuruppu • gRPC: Up and Running • https://amzn.to/3sBGBJJ
+Tomer Shiran, Jason Hughes & Alex Merced • Apache Iceberg: The Definitive Guide • https://amzn.to/488Z30k
+William Smith • Arrow Flight Protocols and Practices • https://amzn.to/4o2Q2fd
+Matthew Topol • In-Memory Analytics with Apache Arrow • https://amzn.to/4oJQ6BM
+Apache Parquet A Complete Guide • https://amzn.to/4i7HVN6
+
+
+Bluesky (https://bsky.app/profile/gotocon.com) 
+Twitter (https://twitter.com/GOTOcon) 
+Instagram (https://www.instagram.com/goto_con) 
+LinkedIn (https://www.linkedin.com/company/goto-) 
+Facebook (https://www.facebook.com/GOTOConferences) 
+
+CHANNEL MEMBERSHIP BONUS
+Join this channel to get early access to videos & other perks:
+https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA/join
+
+Looking for a unique learning experience?
+Attend the next GOTO conference near you! Get your ticket: gotopia.tech (https://gotopia.tech) 
+
+SUBSCRIBE TO OUR YOUTUBE CHANNEL (https://www.youtube.com/user/GotoConferences/?sub_confirmation=1)  - new videos posted daily!]]></content:encoded></item><item><title>Everything You Need to Know: Liquidators</title><link>https://www.youtube.com/watch?v=eF-KSUfnbhg</link><author>Megaprojects</author><category>yt</category><enclosure url="https://www.youtube.com/v/eF-KSUfnbhg?version=3" length="" type=""/><pubDate>Mon, 19 Jan 2026 19:50:00 +0000</pubDate><source url="https://www.youtube.com/channel/UC0woBco6Dgcxt0h8SwyyOmw">Megaprojects</source><content:encoded><![CDATA[Get your copy of The Book: The Ultimate Guide to Rebuilding Civilization for yourself or as a Christmas gift for someone you love. Use my Promo Code MEGA10 for a special discount. Shop Now: https://bit.ly/44yTveO
 
 Got a beard? Good. I've got something for you: http://beardblaze.com
 
@@ -29,7 +664,7 @@ Casual Criminalist: https://www.youtube.com/@TheCasualCriminalist
 Decoding the Unknown: https://www.youtube.com/@decodingtheunknown2373
 Places: https://www.youtube.com/@Places302
 Celestium: https://www.youtube.com/@astrographics-ve4yq
-PoliticalFronts: http://www.youtube.com/@politicalfronts]]></content:encoded></item><item><title>We Found the Rarest Battle of Trafalgar Artefacts</title><link>https://www.youtube.com/watch?v=K2DEBxvHcLs</link><author>History Hit</author><category>yt</category><enclosure url="https://www.youtube.com/v/K2DEBxvHcLs?version=3" length="" type=""/><pubDate>Mon, 19 Jan 2026 19:00:00 +0000</pubDate><source url="https://www.youtube.com/channel/UCZwU2G-KVl-P-O-B35chZOQ">History Hit</source><content:encoded><![CDATA[Luke Tomes gets special access to a selection of incredible artefacts related to British hero Vice-Admiral Lord Horatio Nelson, including a part of the white ensign flown by HMS Victory at the Battle of Trafalgar in 1805, a lock of hair taken from his Nelson’s pigtail and presented to Captain Hardy, a front page newspaper headline ‘extraordinary’ reporting on the death of Nelson in 1805 and an original architectural plan of Nelson’s Column in Trafalgar Square dating to 1843.
+PoliticalFronts: http://www.youtube.com/@politicalfronts]]></content:encoded></item><item><title>The Remaining Artefacts From the Battle Of Trafalgar</title><link>https://www.youtube.com/watch?v=K2DEBxvHcLs</link><author>History Hit</author><category>yt</category><enclosure url="https://www.youtube.com/v/K2DEBxvHcLs?version=3" length="" type=""/><pubDate>Mon, 19 Jan 2026 19:00:00 +0000</pubDate><source url="https://www.youtube.com/channel/UCZwU2G-KVl-P-O-B35chZOQ">History Hit</source><content:encoded><![CDATA[Luke Tomes gets special access to a selection of incredible artefacts related to British hero Vice-Admiral Lord Horatio Nelson, including a part of the white ensign flown by HMS Victory at the Battle of Trafalgar in 1805, a lock of hair taken from his Nelson’s pigtail and presented to Captain Hardy, a front page newspaper headline ‘extraordinary’ reporting on the death of Nelson in 1805 and an original architectural plan of Nelson’s Column in Trafalgar Square dating to 1843.
 
 Special thanks to Charles Miller Ltd. For more information about these and other items check out the Charles Miller Ltd website:  https://www.charlesmillerltd.com/ the auction takes place on Tuesday 20 January from 2pm GMT (UK time), you can follow the action here: 
 
@@ -66,7 +701,7 @@ Thank you to Tech Imaging for letting us use their Photron Nova S16 high-speed v
 
 A massive thank you Nikhil Behari, Ramesh Raskar and MIT’s Camera Culture Group for having us over - https://ve42.co/CameraCulture
 
-Check out Prof Raskar’s original trillion FPS coke bottle video here - Visualizing video at the speed of light — one trillion frames per second
+Check out Prof Raskar’s original trillion FPS coke bottle video here - https://youtu.be/EtsXgODHMWk
 
 A big thank you to Anagh Malik and the University of Toronto Computational Imaging Group. 
 Check out Anagh’s work here - https://ve42.co/Malik2024
@@ -128,19 +763,7 @@ Sign up to our museum membership scheme here: https://royalarmouries.org/support
 
 We are the Royal Armouries, the United Kingdom's national collection of arms and armour. Discover what goes on behind the scenes and watch our collection come to life. See combat demonstrations, experience jousting and meet our experts. 
 
-Have a question about arms and armour? Feel free to leave us a comment and we'll do our best to answer it.]]></content:encoded></item><item><title>CALL OF THE VOID GOT A MAP JAM - QUAKE MOD MADNESS LIVE</title><link>https://www.youtube.com/watch?v=aOedMRP-DRE</link><author>IcarusLIVES</author><category>yt</category><enclosure url="https://www.youtube.com/v/aOedMRP-DRE?version=3" length="" type=""/><pubDate>Mon, 19 Jan 2026 13:44:05 +0000</pubDate><source url="https://www.youtube.com/channel/UCgp_adxCQiesfxKYIqIE9yQ">IcarusLIVES</source><content:encoded><![CDATA[Mmm, Strogg flavoured.
-
-Want to annoy Icarus? Luxury Harrasment options available @ tangia.co/mr_icarus
-
-Official ProtonVPN Partner - https://go.getproton.me/SH1mq
-
-Find me elsewhere on the net:
-Twitch        ► twitch.tv/mr_icarus/
-Bluesky        ► mistericarus.bsky.social
-Patreon      ► patreon.com/MrIcarus
-Bandcamp ► icarusliv3s.bandcamp.com/
-
-#quake #quake2 #mods #modding #modded #gaming #games #recommended]]></content:encoded></item><item><title>Serverless &amp; Agentic AI: Better Together • Prashanth HN • GOTO 2025</title><link>https://www.youtube.com/watch?v=FmmKRkUverw</link><author>GOTO Conferences</author><category>yt</category><enclosure url="https://www.youtube.com/v/FmmKRkUverw?version=3" length="" type=""/><pubDate>Mon, 19 Jan 2026 13:00:25 +0000</pubDate><source url="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</source><content:encoded><![CDATA[This presentation was recorded at GOTO Serverless 2025. #GOTOcon #GOTOserverless
+Have a question about arms and armour? Feel free to leave us a comment and we'll do our best to answer it.]]></content:encoded></item><item><title>Serverless &amp; Agentic AI: Better Together • Prashanth HN • GOTO 2025</title><link>https://www.youtube.com/watch?v=FmmKRkUverw</link><author>GOTO Conferences</author><category>yt</category><enclosure url="https://www.youtube.com/v/FmmKRkUverw?version=3" length="" type=""/><pubDate>Mon, 19 Jan 2026 13:00:25 +0000</pubDate><source url="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</source><content:encoded><![CDATA[This presentation was recorded at GOTO Serverless 2025. #GOTOcon #GOTOserverless
 https://conferences.gotopia.tech/goto-serverless-bengaluru-2025
 
 Prashanth HN - CTO and Co-Founder at AntStack & AWS Serverless Hero
@@ -190,19 +813,7 @@ Attend the next GOTO conference near you! Get your ticket at https://gotopia.tec
 Sign up for updates and specials at https://gotopia.tech/newsletter
 
 SUBSCRIBE TO OUR CHANNEL - new videos posted almost daily.
-https://www.youtube.com/user/GotoConferences/?sub_confirmation=1]]></content:encoded></item><item><title>CALL OF THE VOID GOT A MAP JAM - QUAKE MOD MADNESS LIVE</title><link>https://www.youtube.com/watch?v=w9WwbcLxe8w</link><author>IcarusLIVES</author><category>yt</category><enclosure url="https://www.youtube.com/v/w9WwbcLxe8w?version=3" length="" type=""/><pubDate>Mon, 19 Jan 2026 10:27:46 +0000</pubDate><source url="https://www.youtube.com/channel/UCgp_adxCQiesfxKYIqIE9yQ">IcarusLIVES</source><content:encoded><![CDATA[Mmm, Strogg flavoured.
-
-Want to annoy Icarus? Luxury Harrasment options available @ tangia.co/mr_icarus
-
-Official ProtonVPN Partner - https://go.getproton.me/SH1mq
-
-Find me elsewhere on the net:
-Twitch        ► twitch.tv/mr_icarus/
-Bluesky        ► mistericarus.bsky.social
-Patreon      ► patreon.com/MrIcarus
-Bandcamp ► icarusliv3s.bandcamp.com/
-
-#quake #quake2 #mods #modding #modded #gaming #games #recommended]]></content:encoded></item><item><title>corrupt pardons corrode trust</title><link>https://www.youtube.com/watch?v=0ydymkrshVc</link><author>voidzilla</author><category>yt</category><enclosure url="https://www.youtube.com/v/0ydymkrshVc?version=3" length="" type=""/><pubDate>Mon, 19 Jan 2026 03:27:37 +0000</pubDate><source url="https://www.youtube.com/channel/UC28n0tlcNSa1iPe5mettocg">voidzilla</source><content:encoded><![CDATA[bloomberg original story: https://www.youtube.com/watch?v=Xq4x6uVNiM4&t=80s&pp=ygUXZWxpIHdlaW5zdGVpbiBibG9vbWJlcmc%3D
+https://www.youtube.com/user/GotoConferences/?sub_confirmation=1]]></content:encoded></item><item><title>corrupt pardons corrode trust</title><link>https://www.youtube.com/watch?v=0ydymkrshVc</link><author>voidzilla</author><category>yt</category><enclosure url="https://www.youtube.com/v/0ydymkrshVc?version=3" length="" type=""/><pubDate>Mon, 19 Jan 2026 03:27:37 +0000</pubDate><source url="https://www.youtube.com/channel/UC28n0tlcNSa1iPe5mettocg">voidzilla</source><content:encoded><![CDATA[bloomberg original story: https://www.youtube.com/watch?v=Xq4x6uVNiM4&t=80s&pp=ygUXZWxpIHdlaW5zdGVpbiBibG9vbWJlcmc%3D
 support: https://www.patreon.com/coffeezilla
 
 disclaimer (updated May 2025): voidzilla is an opinion‑driven channel that comments on the news of the day under the satirical and rhetorically hyperbolic banner “CRIME IS LEGAL.” the phrase critiques what we see as a lax or uneven regulatory enforcement environment for fraud. unlike our affiliated channel Coffeezilla, which conducts detailed investigations and source‑document deep dives, and draws opinions from that, voidzilla offers rapid‑fire commentary and criticism on information already in the public domain. statements here reflect the host’s views at the moment of recording and may become outdated as facts evolve. references to “crime,” “fraud,” “scam,” or similar terms appear in a rhetorical hyperbolic context similar to “CRIME IS LEGAL.” unless we expressly state that a court has entered a final judgment, no segment should be read as a definitive finding of legal liability. viewers are urged to consult primary sources and form independent conclusions. production of this program is public‑interest commentary protected by the First Amendment and the Texas Citizens Participation Act (TCPA). 
@@ -284,10 +895,10 @@ Chapters:
 5:20 Getting a promotion at work 
 6:03 Starting a successful business 
 
-Subscribers get access to full-length episodes of WSJ’s The Money Interview, plus the chance to have their questions answered by our millionaire guest. Watch the full series here: https://on.wsj.com/3ZauOly 
+Subscribers get access to full-length episodes of The WSJ Money Interview, plus the chance to have their questions answered by our millionaire guest. Watch the full series here: https://on.wsj.com/3ZauOly 
 
-WSJ The Money Interview
-What can some of the world’s most interesting tycoons teach us about ambition and wealth? WSJ’s Gunjan Banerji sits down with highfliers for a candid conversation about how they made it.
+The WSJ Money Interview
+What can some of the world’s most interesting tycoons teach us about money and success? WSJ’s Gunjan Banerji sits down with highfliers for a candid conversation about how they made it.
 
 #Wealth #Business #WSJ]]></content:encoded></item><item><title>Everything You Weren&apos;t Taught About Shakespeare</title><link>https://www.youtube.com/watch?v=9YgVk-O20Iw</link><author>Weird History</author><category>yt</category><enclosure url="https://www.youtube.com/v/9YgVk-O20Iw?version=3" length="" type=""/><pubDate>Sun, 18 Jan 2026 15:00:28 +0000</pubDate><source url="https://www.youtube.com/channel/UCc-N24Y5OA0gqbjBwe1ttfA">Weird History</source><content:encoded><![CDATA[William Shakespeare’s plays have shaped the English language, defined genres, and given high-schoolers panic attacks over pop quizzes for centuries. Yet for a guy who invented, like, half the metaphors we use to flirt, we know shockingly little about his personal life. What do YOU know about William Shakespear? Let us know in the comments!
 
@@ -543,17 +1154,11 @@ When Western intelligence realized what the Soviets were building, it caused imm
 
 But Project 705, a super submarine meant to restore balance beneath the seas, would prove to be far more than the Soviets ever bargained for.
 
-Thanks for watching!]]></content:encoded></item><item><title>Forgot To Loot Clean Pants #arcraiders</title><link>https://www.youtube.com/shorts/V7Wpr0hY3Hg</link><author>IcarusLIVES</author><category>yt</category><enclosure url="https://www.youtube.com/v/V7Wpr0hY3Hg?version=3" length="" type=""/><pubDate>Sat, 17 Jan 2026 09:45:03 +0000</pubDate><source url="https://www.youtube.com/channel/UCgp_adxCQiesfxKYIqIE9yQ">IcarusLIVES</source><content:encoded><![CDATA[Hey RaiDOHMYGOD 
+Thanks for watching!]]></content:encoded></item><item><title>How Minneapolis Residents Are Organizing to Monitor ICE Activity</title><link>https://www.youtube.com/shorts/xZV318UwtZg</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/xZV318UwtZg?version=3" length="" type=""/><pubDate>Fri, 16 Jan 2026 22:03:43 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[The surge of federal agents conducting immigration enforcement operations has sparked widespread resistance from local law enforcement and community groups. 
 
-Official ProtonVPN Partner - https://go.getproton.me/SH1mq
+#Minneapolis #ICE #WSJ]]></content:encoded></item><item><title>Nintendo&apos;s First Console #nintendo #videogames #70s #history</title><link>https://www.youtube.com/shorts/45q9FQPSg7k</link><author>NesHacker</author><category>yt</category><enclosure url="https://www.youtube.com/v/45q9FQPSg7k?version=3" length="" type=""/><pubDate>Fri, 16 Jan 2026 22:00:04 +0000</pubDate><source url="https://www.youtube.com/channel/UCXR5PCyUI2pG_a3ydnCIS-g">NesHacker</source><content:encoded><![CDATA[Support the channel: https://patreon.com/NesHacker]]></content:encoded></item><item><title>This TECH Knife is Insane!</title><link>https://www.youtube.com/shorts/PTd98UnJnnU</link><author>Marques Brownlee</author><category>yt</category><enclosure url="https://www.youtube.com/v/PTd98UnJnnU?version=3" length="" type=""/><pubDate>Fri, 16 Jan 2026 21:56:34 +0000</pubDate><source url="https://www.youtube.com/channel/UCBJycsmduvYEL83R_U4JriQ">Marques Brownlee</source><content:encoded><![CDATA[Sorry dinner is late, I had to charge my knife]]></content:encoded></item><item><title>Watch: Trump&apos;s Full Speech at World Economic Forum in Davos | WSJ</title><link>https://www.youtube.com/watch?v=MSEycl66RFk</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/MSEycl66RFk?version=3" length="" type=""/><pubDate>Fri, 16 Jan 2026 21:26:58 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[President Trump delivers an address during the 2026 World Economic Forum in Davos, Switzerland.
 
-▬ Socials  ▬▬▬▬▬▬▬▬▬▬
-Twitch        ► www.twitch.tv/mr_icarus/
-Bluesky        ► mistericarus.bsky.social
-Patreon      ► www.patreon.com/MrIcarus
-Bandcamp ► icarusliv3s.bandcamp.com/]]></content:encoded></item><item><title>How Minneapolis Residents Are Organizing to Monitor ICE Activity</title><link>https://www.youtube.com/shorts/xZV318UwtZg</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/xZV318UwtZg?version=3" length="" type=""/><pubDate>Fri, 16 Jan 2026 22:03:43 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[The surge of federal agents conducting immigration enforcement operations has sparked widespread resistance from local law enforcement and community groups. 
-
-#Minneapolis #ICE #WSJ]]></content:encoded></item><item><title>Nintendo&apos;s First Console #nintendo #videogames #70s #history</title><link>https://www.youtube.com/shorts/45q9FQPSg7k</link><author>NesHacker</author><category>yt</category><enclosure url="https://www.youtube.com/v/45q9FQPSg7k?version=3" length="" type=""/><pubDate>Fri, 16 Jan 2026 22:00:04 +0000</pubDate><source url="https://www.youtube.com/channel/UCXR5PCyUI2pG_a3ydnCIS-g">NesHacker</source><content:encoded><![CDATA[Support the channel: https://patreon.com/NesHacker]]></content:encoded></item><item><title>This TECH Knife is Insane!</title><link>https://www.youtube.com/shorts/PTd98UnJnnU</link><author>Marques Brownlee</author><category>yt</category><enclosure url="https://www.youtube.com/v/PTd98UnJnnU?version=3" length="" type=""/><pubDate>Fri, 16 Jan 2026 21:56:34 +0000</pubDate><source url="https://www.youtube.com/channel/UCBJycsmduvYEL83R_U4JriQ">Marques Brownlee</source><content:encoded><![CDATA[Sorry dinner is late, I had to charge my knife]]></content:encoded></item><item><title>Why Investors Should Hold Onto Megabank Stocks–For Now</title><link>https://www.youtube.com/shorts/RNcarVhVsUI</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/RNcarVhVsUI?version=3" length="" type=""/><pubDate>Fri, 16 Jan 2026 20:29:26 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[WSJ’s Telis Demos explains why he thinks 2026 could be another busy deal-making year for Wall Street’s biggest banks.
+#Trump #Economy #WSJ]]></content:encoded></item><item><title>Why Investors Should Hold Onto Megabank Stocks–For Now</title><link>https://www.youtube.com/shorts/RNcarVhVsUI</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/RNcarVhVsUI?version=3" length="" type=""/><pubDate>Fri, 16 Jan 2026 20:29:26 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[WSJ’s Telis Demos explains why he thinks 2026 could be another busy deal-making year for Wall Street’s biggest banks.
 
 #Markets #Banking #WSJ]]></content:encoded></item><item><title>.NET in 100 Seconds</title><link>https://www.youtube.com/watch?v=MFsYaRnrcPQ</link><author>Fireship</author><category>yt</category><enclosure url="https://www.youtube.com/v/MFsYaRnrcPQ?version=3" length="" type=""/><pubDate>Fri, 16 Jan 2026 17:03:35 +0000</pubDate><source url="https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA">Fireship</source><content:encoded><![CDATA[.NET is a free and open-source platform for creating high-performance software in virtually every domain, powered primarily by the C# programming language.
 
@@ -577,465 +1182,4 @@ Bandcamp ► icarusliv3s.bandcamp.com/]]></content:encoded></item><item><title>H
 - .NET explained
 - The .Net ecosystem
 - What can you build in .NET?
-- .NET demo]]></content:encoded></item><item><title>My son was killed - A mother&apos;s journey through grief | DW Documentary</title><link>https://www.youtube.com/watch?v=36WcDbvRKtE</link><author>DW Documentary</author><category>yt</category><enclosure url="https://www.youtube.com/v/36WcDbvRKtE?version=3" length="" type=""/><pubDate>Fri, 16 Jan 2026 17:00:06 +0000</pubDate><source url="https://www.youtube.com/channel/UCW39zufHfsuGgpLviKh297Q">DW Documentary</source><content:encoded><![CDATA[In June 2024, Joanna lost her 20-year-old son Philippos. He was beaten up by another young man, following his sister's high school graduation party. Two days later, he died. The alleged perpetrator, a 19-year-old Syrian, was arrested.
-
-A summer evening that ended in disaster. After his sister's high school graduation party, 20-year-old Philippos was brutally attacked in the German town of Bad Oeynhausen.
-
-As his mother Joanna was mourning her son, Philippos became headline news. Before long, his death was used to reignite the debate on Germany’s asylum policy. Both in the German parliament, and in the media. 
-
-Philippos' mother did not participate in this discussion. For her, the nationality of the perpetrator was irrelevant. "The doctor who fought for my child's life is Syrian," she said. "So is my hairdresser. And me? I'm Polish.”
-
-Instead, Joanna, who is deeply religious, tried to find a way to deal with her anger, rage, despair, and grief. She sought advice from a prison psychologist and a priest: Why did Philippos have to die? Am I allowed to be angry with the perpetrator? Do I have to forgive him?
-
-She sat opposite the defendant at the Bielefeld Regional Court, endured the police reports and witness statements, listened to the autopsy results from the forensic pathologists, and witnessed the images of her dead child on the dissection table.
-
-"Even hearing the incomprehensible, the painful, knowing how Philippos died... I owe that to my child," she said. 
-
-#documentary #dwdocumentary #dwdocs
-______
-
-DW Documentary gives you knowledge beyond the headlines. Watch top documentaries from German broadcasters and international production companies. Meet intriguing people, travel to distant lands, get a look behind the complexities of daily life and build a deeper understanding of current affairs and global events. Subscribe and explore the world around you with DW Documentary.
-
-Subscribe to: ‬
-⮞ DW Documentary (English): https://www.youtube.com/@DWDocumentary 
-⮞ DW Documental (Spanish): https://www.youtube.com/@DWDocumental 
-⮞ DW Documentary وثائقية دي دبليو (Arabic): https://www.youtube.com/@dwdocarabia
-⮞ DW Documentary हिन्दी (Hindi): https://www.youtube.com/@dwdochindi
-⮞ DW Dokumenter (Indonesian): https://www.youtube.com/@DWDokumenter
-⮞ DW Doku (German): https://www.youtube.com/@dwdoku
-
-For more visit: http://www.dw.com/en/tv/docfilm/s-3610
-Follow DW Documentary on Instagram: https://www.instagram.com/dwdocumentary/
-Follow DW Documental on Facebook: https://www.facebook.com/dwdocumental
-
-We kindly ask viewers to read and stick to the DW netiquette policy on our channel: https://p.dw.com/p/MF1G]]></content:encoded></item><item><title>A First World War Luger and the Personal Items of a Major with Firearms Curator Lisa Traynor</title><link>https://www.youtube.com/watch?v=0Fvwk6DQ4fw</link><author>Royal Armouries</author><category>yt</category><enclosure url="https://www.youtube.com/v/0Fvwk6DQ4fw?version=3" length="" type=""/><pubDate>Fri, 16 Jan 2026 16:15:00 +0000</pubDate><source url="https://www.youtube.com/channel/UCsMX-XuiEkBi4-GDrYuniWg">Royal Armouries</source><content:encoded><![CDATA[A Luger with a story: Firearms Curator, Lisa Traynor, tells the story of this WWI Luger and the associated items of Major Charles Frederick Ashdown.
- 
-Find out more about the Luger via our collection online:
-https://royalarmouries.org/collection/object/object-113919
-
-Subscribe to our channel for more videos about arms and armour  
-
-Help us bring history to life by supporting us here: https://royalarmouries.org/support-us/donations/
-
-Sign up to our museum membership scheme here: https://royalarmouries.org/support-us/membership/ 
-
-⚔Website: https://royalarmouries.org/home
-⚔Blog: https://royalarmouries.org/stories/
-⚔Facebook: https://www.facebook.com/RoyalArmouriesMuseum/
-⚔Twitter: https://twitter.com/Royal_Armouries
-⚔ Instagram: http://instagram.com/royalarmouriesmuseum
-
-We are the Royal Armouries, the United Kingdom's national collection of arms and armour. Discover what goes on behind the scenes and watch our collection come to life. See combat demonstrations, experience jousting and meet our experts. 
-
-Have a question about arms and armour? Feel free to leave us a comment and we'll do our best to answer it.]]></content:encoded></item><item><title>Watch Live: Anthropic CEO Dario Amodei From World Economic Forum | WSJ</title><link>https://www.youtube.com/watch?v=K7F6ohcBJus</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/K7F6ohcBJus?version=3" length="" type=""/><pubDate>Fri, 16 Jan 2026 15:58:04 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[Anthropic CEO Dario Amodei speaks live with WSJ Editor-in-Chief Emma Tucker from WSJ’s 2026 World Economic Forum in Davos, Switzerland. 
-
-#Anthropic #AI #WSJ]]></content:encoded></item><item><title>Watch Live: Goldman Sachs CEO David Solomon From World Economic Forum | WSJ</title><link>https://www.youtube.com/watch?v=oDC0GzF-mao</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/oDC0GzF-mao?version=3" length="" type=""/><pubDate>Fri, 16 Jan 2026 15:56:23 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[Goldman Sachs CEO David Solomon speaks live with WSJ Editor-in-Chief Emma Tucker from WSJ’s 2026 World Economic Forum in Davos, Switzerland. 
-
-#GoldmanSachs #Banking #WSJ]]></content:encoded></item><item><title>We Made A New Channel!</title><link>https://www.youtube.com/watch?v=D0WQK7cMJn8</link><author>Kurzgesagt – In a Nutshell</author><category>yt</category><enclosure url="https://www.youtube.com/v/D0WQK7cMJn8?version=3" length="" type=""/><pubDate>Fri, 16 Jan 2026 15:30:05 +0000</pubDate><source url="https://www.youtube.com/channel/UCsXVk37bltHxD1rDPwtNM8Q">Kurzgesagt – In a Nutshell</source><content:encoded><![CDATA[For years, we’ve been dreaming of a second channel. A channel where we could tell different kinds of stories and dive into something else we deeply care about: history. Because the story of the past is also the story of us, of humanity. Welcome to the nightshift. 🌚
-
-Our first video dives into the extraordinary story of Zheng Yi Sao, a young woman who built the largest pirate confederation the world has ever seen. Her floating shadow state of 1,800 ships and 70,000 pirates pushed the Chinese Empire to its limits and reshaped trade in the South China Sea. 
-
-Continue watching on nightshift: https://kgs.link/NGT_PP
-
-We’d love to hear what you think. 🖤
-
-
-OUR CHANNELS
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-German:        https://kgs.link/youtubeDE
-Spanish:        https://kgs.link/youtubeES
-French:          https://kgs.link/youtubeFR
-Portuguese:  https://kgs.link/youtubePT
-Arabic:           https://kgs.link/youtubeAR
-Hindi:             https://kgs.link/youtubeHI
-Japanese:     https://kgs.link/youtubeJA
-Korean:          https://kgs.link/youtubeKO
-
-
-HOW CAN YOU SUPPORT US?
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-This is how we make our living and it would be a pleasure if you support us!
-
-Get Products designed with ❤️ https://shop.kgs.link
-Join the Patreon Bird Army 🐧  https://kgs.link/patreon  
-
-
-DISCUSSIONS & SOCIAL MEDIA
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-TikTok:           https://kgs.link/tiktok
-Reddit:            https://kgs.link/reddit
-Instagram:     https://kgs.link/instagram
-Twitter:           https://kgs.link/twitter
-Facebook:      https://kgs.link/facebook
-Discord:          https://kgs.link/discord
-Newsletter:    https://kgs.link/newsletter
-
-
-OUR VOICE
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-The kurzgesagt voice is from 
-Steve Taylor:  https://kgs.link/youtube-voice
-
-
-OUR MUSIC ♬♪
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-700+ minutes of kurzgesagt Soundtracks by Epic Mountain:
-
-Spotify:            https://kgs.link/music-spotify
-Soundcloud:   https://kgs.link/music-soundcloud
-Bandcamp:     https://kgs.link/music-bandcamp
-Youtube:          https://kgs.link/music-youtube
-Facebook:       https://kgs.link/music-facebook
-
-
-If you want to help us caption this video, please send subtitles to subtitle@kurzgesagt.org
-You can find info on what subtitle files work on YouTube here:
-https://support.google.com/youtube/answer/2734698?hl=en-GB&ref_topic=7296214
-Thank you!
-
-
-🐦🐧🐤 PATREON BIRD ARMY 🐤🐧🐦
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-Many Thanks to our wonderful Patreons (from http://kgs.link/patreon) who support us every month and made this video possible.]]></content:encoded></item><item><title>The Most Brutal Stories From World War II | Compilation</title><link>https://www.youtube.com/watch?v=UQM2K2ZaNZ0</link><author>Weird History</author><category>yt</category><enclosure url="https://www.youtube.com/v/UQM2K2ZaNZ0?version=3" length="" type=""/><pubDate>Fri, 16 Jan 2026 15:00:55 +0000</pubDate><source url="https://www.youtube.com/channel/UCc-N24Y5OA0gqbjBwe1ttfA">Weird History</source><content:encoded><![CDATA[This past century was a wild one. Especially concerning Wars... Today We delve into many different aspects of World War II - Life of a World War II G.I., what civilians ate during World War II to get by, how exactly the attack on Peal Harbor went down, and many many other aspects! What do you think was most interesting about World War II? Let us know in the comments!
-
-Chapters:
-00:00:00 - A Beat By Beat Breakdown of Pearl Harbor
-00:12:19 - Little-Known Facts About The Finnish Soldiers of World War II
-00:23:24 - What It Was Like to Be an American G.I. in WWII
-00:34:24 - How World War II Is Taught Around The World
-00:43:13 - How A Baseball Player Became a World War II Assassin
-00:54:53 - What Happened Immediately After Hitler's Death
-01:07:21 - What Happened After the Attack on Pearl Harbor
-01:17:52 - Here's What People Ate To Survive During WWII
-01:29:07 - Hiroo Onoda Fought WWII For 30 Additional Years
-01:37:07 - What Was Hygiene Like For US Soldiers In WWII?
-
-
-Be sure to subscribe to the Weird History Newsletter: https://bit.ly/WeirdHistoryNews
-
-#ww2 #compilation #weirdhistory]]></content:encoded></item><item><title>Why Ukraine’s Deadly Drone Operation Runs Like a ‘McDonald’s’ | WSJ</title><link>https://www.youtube.com/watch?v=9hzIMI2DLys</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/9hzIMI2DLys?version=3" length="" type=""/><pubDate>Fri, 16 Jan 2026 15:00:29 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[Nearly four years into the Russia-Ukraine War, drones have gone from battlefield experiments to indispensable, scalable machines of destruction. Ukrainian forces have adapted drone tech and combat tactics to counter evolving Russian threats; and now they’re warning that Europe is unprepared for the kind of high-tech war they are fighting.
-
-WSJ was given exclusive access inside Lasar’s Group, one of the largest and deadliest drone units in the world. We went inside their secret bunker, where dozens of drone pilots are attacking Russian targets 24 hours a day. 
-
-Chapters:
-0:00 Inside Ukraine’s secret bunker
-1:39 The new drone warfare
-2:56 Ukraine’s drone unit history
-5:51 Lasar’s accomplishments and helping NATO
-7:22 What’s next?
-
-Russia-Ukraine War
-WSJ’s latest news coverage around the 2022-2026 Russia-Ukraine War.
-
-#Ukraine #Russia #WSJ]]></content:encoded></item><item><title>Modern X86 Assembly Language Programming • Daniel Kusswurm &amp; Matt Godbolt</title><link>https://www.youtube.com/watch?v=1GfPBqyGWmw</link><author>GOTO Conferences</author><category>yt</category><enclosure url="https://www.youtube.com/v/1GfPBqyGWmw?version=3" length="" type=""/><pubDate>Fri, 16 Jan 2026 13:24:03 +0000</pubDate><source url="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</source><content:encoded><![CDATA[This interview was recorded for the GOTO Book Club.
-http://gotopia.tech/bookclub
-
-Check out more here:
-https://gotopia.tech/episodes/411
-
-Daniel Kusswurm - SW Developer, Computer Scientist & Author of "Modern X86 Assembly Language Programming" & many more books
-Matt Godbolt - Low-level Latency Geek & Creator of Compiler Explorer
-
-RESOURCES
-Matt
-https://bsky.app/profile/matt.godbolt.org
-https://xania.org
-https://github.com/mattgodbolt
-https://www.linkedin.com/in/godbolt
-https://twitter.com/mattgodbolt
-https://godbolt.org
-
-Links
-https://link.springer.com
-https://youtu.be/L2Qu9rk05rE
-https://youtu.be/-HNpim5x-IE
-https://youtu.be/hgcNM-6wr34
-
-DESCRIPTION
-Matt Godbolt, creator of Compiler Explorer, interviews Daniel Kusswurm, author of "Modern X86 Assembly Language Programming", about the enduring relevance of assembly language in modern software development. They explore what SIMD (Single Instruction, Multiple Data) is and why it enables dramatic performance improvements for specific computational tasks, discuss when assembly language programming is justified versus using compiler intrinsics, and examine the challenges of writing vectorized algorithms. Dan shares insights from his career optimizing image analysis software and explains how understanding low-level architecture can improve code quality even when writing in higher-level languages.
-
-RECOMMENDED BOOKS
-Daniel Kusswurm • Modern X86 Assembly Language Programming v3 • https://amzn.to/44hIVZf
-Daniel Kusswurm • Modern X86 Assembly Language Programming v2 • https://amzn.to/3LJlMIZ
-Daniel Kusswurm • Modern X86 Assembly Language Programming v1 • https://amzn.to/43DPANj
-Daniel Kusswurm • Modern Arm Assembly Language Programming • https://amzn.to/4rbyH6M
-Daniel Kusswurm • Practical C++ STL Programming • https://amzn.to/4ickAdq
-Daniel Kusswurm • Modern Parallel Programming with C++ and Assembly Language • https://amzn.to/4o5J3SF
-
-
-Bluesky (https://bsky.app/profile/gotocon.com) 
-Twitter (https://twitter.com/GOTOcon) 
-Instagram (https://www.instagram.com/goto_con) 
-LinkedIn (https://www.linkedin.com/company/goto-) 
-Facebook (https://www.facebook.com/GOTOConferences) 
-
-CHANNEL MEMBERSHIP BONUS
-Join this channel to get early access to videos & other perks:
-https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA/join
-
-Looking for a unique learning experience?
-Attend the next GOTO conference near you! Get your ticket: gotopia.tech (https://gotopia.tech) 
-
-SUBSCRIBE TO OUR YOUTUBE CHANNEL (https://www.youtube.com/user/GotoConferences/?sub_confirmation=1)  - new videos posted daily!]]></content:encoded></item><item><title>Why Japan’s Economy Is at a Tipping Point</title><link>https://www.youtube.com/watch?v=R_LlRX299fQ</link><author>Bloomberg Originals</author><category>yt</category><enclosure url="https://www.youtube.com/v/R_LlRX299fQ?version=3" length="" type=""/><pubDate>Fri, 16 Jan 2026 09:00:51 +0000</pubDate><source url="https://www.youtube.com/channel/UCUMZ7gohGI9HcU9VNsr2FJQ">Bloomberg Originals</source><content:encoded><![CDATA[For 30 years, Japan’s prices were largely at a standstill. Now, a weak yen is changing everything. Here’s how consumers and businesses are coping with rising costs, and what it means for the nation’s economic future.   
-
-Get the Economics Daily newsletter https://www.bloomberg.com/account/newsletters/new-economy-daily?utm_medium=social&utm_source=youtube&utm_campaign=originals&utm_content=article
-
---------
-Like this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1
-
-Get unlimited access to Bloomberg.com for just $1.99 your first month: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals
-Bloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. 
-
-Subscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.
-
-Visit our partner channel Bloomberg News for global news and insight in an instant.]]></content:encoded></item><item><title>Private Jet Billionaire Breaks Down Every Step in His Wealth Journey | The WSJ Money Interview</title><link>https://www.youtube.com/watch?v=MbsT2RC1wQo</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/MbsT2RC1wQo?version=3" length="" type=""/><pubDate>Thu, 15 Jan 2026 20:00:16 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[Kenn Ricci is a pilot whose obsession over four decades with aviation and luxe travel made him a billionaire. He has started businesses tied to almost every aspect of flying—his private-jet company Flexjet was recently valued at $4 billion after an investment by a private-equity firm backed by LVMH. So how does he think about money and wealth? 
-
-WSJ sat down with Kenn Ricci to learn how he made his first million, what spending in his tax bracket looks like and more. 
-
-Chapters:
-0:00 Introducing Kenn Ricci
-0:48 How Ken made his first millions
-3:34 Merging with Raytheon 
-4:31 Ken’s next venture: Directional Aviation Capital 
-5:42 Buying Raytheon out and turning it around
-6:27 Hitting a billion dollar net worth 
-7:39 How money changes things and passing on wealth
-8:40 Family meeting agendas
-10:17 How much money you donated last year
-10:46 Vacation spending and tipping
-12:03 Watch collection and spending on clothes 
-
-Subscribers get access to full-length episodes of WSJ’s The Money Interview, plus the chance to have their questions answered by our millionaire guest. Watch the full series here: https://on.wsj.com/3ZauOly 
-
-Follow our host Gunjan Banerji on Instagram at @gunjansb.
-
-WSJ The Money Interview
-What can some of the world’s most interesting tycoons teach us about ambition and wealth? WSJ’s Gunjan Banerji sits down with highfliers for a candid conversation about how they made it.
-
-#Business #Wealth #WSJ]]></content:encoded></item><item><title>Flying Boats: The Boeing 314 Clipper</title><link>https://www.youtube.com/watch?v=wm-OKMqLHYY</link><author>Megaprojects</author><category>yt</category><enclosure url="https://www.youtube.com/v/wm-OKMqLHYY?version=3" length="" type=""/><pubDate>Thu, 15 Jan 2026 19:50:00 +0000</pubDate><source url="https://www.youtube.com/channel/UC0woBco6Dgcxt0h8SwyyOmw">Megaprojects</source><content:encoded><![CDATA[Click here to check out Huel: https://huel.com/mega20 and use code mega20 for 20% off your order ($75+). New customers only. #ad
-
-Got a beard? Good. I've got something for you: http://beardblaze.com
-
-Simon's Social Media:
-Twitter: https://twitter.com/SimonWhistler
-Instagram: https://www.instagram.com/simonwhistler/
-
-This video is #sponsored by Huel. 
-
-Love content? Check out Simon's other YouTube Channels:
-
-
-Warfronts: https://www.youtube.com/@warographics643
-SideProjects: https://www.youtube.com/@Sideprojects
-Into The Shadows: https://www.youtube.com/@IntotheShadows
-Today I Found Out: https://www.youtube.com/@TodayIFoundOut
-Highlight History: https://www.youtube.com/channel/UCnb-VTwBHEV3gtiB9di9DZQ
-Brain Blaze: https://www.youtube.com/@brainblaze6526
-Casual Criminalist: https://www.youtube.com/@TheCasualCriminalist
-Decoding the Unknown: https://www.youtube.com/@decodingtheunknown2373
-Places: https://www.youtube.com/@Places302
-Celestium: https://www.youtube.com/@astrographics-ve4yq
-PoliticalFronts: http://www.youtube.com/@politicalfronts]]></content:encoded></item><item><title>Trump Paused Iran Threats: Will the Crackdown End?</title><link>https://www.youtube.com/shorts/X5uncEv-fAw</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/X5uncEv-fAw?version=3" length="" type=""/><pubDate>Thu, 15 Jan 2026 19:45:05 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[President Trump appears to have cooled on the idea of a military strike against Iran, but as WSJ’s Sune Engel Rasmussen explains, ongoing volatility motivating his warnings still remains.  
-
-#Trump #Iran #WSJ]]></content:encoded></item><item><title>The 10 Greatest Directors</title><link>https://www.youtube.com/watch?v=bZsn4zXJTzk</link><author>The House of Tabula</author><category>yt</category><enclosure url="https://www.youtube.com/v/bZsn4zXJTzk?version=3" length="" type=""/><pubDate>Thu, 15 Jan 2026 19:20:36 +0000</pubDate><source url="https://www.youtube.com/channel/UCL5kBJmBUVFLYBDiSiK1VDw">The House of Tabula</source><content:encoded><![CDATA[This is a personal list of my favourite filmmakers of all time.
-This is not a ranking of technical achievement or historical importance, but a personal canon. The filmmakers I will always return to.
-
-Support The House of Tabula (and join our Discord Film Club):
-https://www.patreon.com/c/thehouseoftabula
-
-Join this channel to get access to perks:
-https://www.youtube.com/channel/UCL5kBJmBUVFLYBDiSiK1VDw/join
-———————————
-🎬 Deep Dive Film Club 
-———————————
-🎞️ All 30+ episodes: https://tinyurl.com/4kf9kjjd
-🎥 The Film Club series: https://tinyurl.com/4hu3p89d
-There Will Be Blood: https://tinyurl.com/2uwxewfy
-Tetsuo: The Iron Man: https://tinyurl.com/336x9rec
-—————————————————
-💊 Acid is Bad for Business Podcast
-—————————————————
-All 70+ episodes: https://tinyurl.com/3r3kjw3w
-Socialmediaocracy: https://tinyurl.com/mjdx75wu
-Keep Robert De Niro Close, But Viola Davis Closer: https://tinyurl.com/9fmtb98y
-The Artwork of the 21st Century: https://tinyurl.com/459c4vzu
-————————————————————
-⚔️ Exclusive Uncensored Essays & Workshops
-—————————————————————
-Join our Composition for Cinema & Visual Arts Workshop: https://tinyurl.com/2s4evptm
-Over 20+ Uncensored Essays: https://tinyurl.com/3esebpew
-💀 The Allure of the New Profane: https://tinyurl.com/2w6dsxzv
-☕ Content with the Veneer of Depth: https://tinyurl.com/4fy83wyj
-———————————————————————
-For business inquiries: contact@thehouseoftabula.com
-———————————————————————
-TIMESTAMPS:
-0:00 Number 10
-4:37 Number 9
-8:04 Number 8
-12:52 Number 7
-16:13 Number 6
-19:05 Number 5
-22:30 Number 4
-27:22 Number 3
-31:10 Number 2
-35:13 Number 1]]></content:encoded></item><item><title>A Brief History Of Greenland (And Why Trump Wants To Control It)</title><link>https://www.youtube.com/watch?v=db1oi_fMF7A</link><author>History Hit</author><category>yt</category><enclosure url="https://www.youtube.com/v/db1oi_fMF7A?version=3" length="" type=""/><pubDate>Thu, 15 Jan 2026 19:00:00 +0000</pubDate><source url="https://www.youtube.com/channel/UCZwU2G-KVl-P-O-B35chZOQ">History Hit</source><content:encoded><![CDATA[Greenland, the world's largest island, is at the centre of a rapidly heating geopolitical struggle.
-
-In this video, historian Matt Lewis breaks down the brief history of Greenland, from its Indigenous Inuit origins and Norse settlements to Danish rule and modern self-governance. But history is only half the story. The real question is why the United States cares so much about Greenland right now.
-
-As climate change melts Arctic ice, Greenland is no longer just the world’s largest island—it’s a strategic goldmine. New shipping routes, untapped rare earth minerals, and massive energy potential are turning the Arctic into the next great power competition zone. The U.S., China, and Russia are all watching closely, but America’s interest in Greenland goes back decades, from Cold War military bases to recent, very public attempts to increase influence.
-
-0:00 Introduction 
-1:23 Prehistory 
-2:50 Viking Age
-7:50 Rediscovery
-9:21 Polar Exploration
-11:30 World War Two
-13:35 The Cold War
-19:14 Modern Era
-
-You can now become a History Hit member right here on YouTube! Join for access to a new exclusive documentary every week, and access to over 160+ of our documentaries presented by world-renowned historians like Dan Snow, Eleanor Janega, Tristan Hughes, Mary Beard, Matt Lewis and more.
-
-Get an exclusive release every week by signing up here: https://www.youtube.com/channel/UCZwU2G-KVl-P-O-B35chZOQ/join
-
-#greenland #history #donaldtrump]]></content:encoded></item><item><title>America&apos;s First Emperor | Weird Dudes in History</title><link>https://www.youtube.com/shorts/fZERro4ic7k</link><author>Extra History</author><category>yt</category><enclosure url="https://www.youtube.com/v/fZERro4ic7k?version=3" length="" type=""/><pubDate>Thu, 15 Jan 2026 18:29:52 +0000</pubDate><source url="https://www.youtube.com/channel/UCCODtTcd5M1JavPCOr_Uydg">Extra History</source><content:encoded><![CDATA[📚 For more Historical Tales, why not check out our series on the World's Tyrants here: https://youtu.be/99dygZ98Krg
-
-* Watch us ad-free & get 1-week early access on NEBULA https://go.nebula.tv/extrahistory * 
-* Suggest & Vote on our next episodes, get exclusive content & 24-hour early access on PATREON https://bit.ly/EHPatreon * 
-* Show off your fandom with MERCH from our store! http://extracredits.store/ *
-
-https://twitter.com/extracreditz | https://www.facebook.com/ExtraCredits/ | http://instagram.com/extracredits | https://www.tiktok.com/@extracreditz
-GAMING: https://www.youtube.com/@extracredits | http://www.twitch.tv/extracredits/
-https://bsky.app/profile/extracredits.bsky.social 
-
-*Thanks for the high-quality conversations & for following our community guidelines: https://bit.ly/ECFansRNice
-
-*Interested in sponsoring an episode? Email us: extracredits@standard.tv *
-Artist: Scott DeWitt I Writer: Robert Rath I Showrunner & Narrator: Matthew Krol I Video Editor: Devon House Creative I Audio Editor: Clean Waves I Studio Director: Geoffrey Zatkin I Social Media: Kat Rider
-
-#ExtraHistory  #Shorts  #History]]></content:encoded></item><item><title>Inside the &apos;Woman, Life, Freedom&apos; protest movement in Iran | DW Documentary</title><link>https://www.youtube.com/watch?v=us8B_KdcB3c</link><author>DW Documentary</author><category>yt</category><enclosure url="https://www.youtube.com/v/us8B_KdcB3c?version=3" length="" type=""/><pubDate>Thu, 15 Jan 2026 17:01:35 +0000</pubDate><source url="https://www.youtube.com/channel/UCW39zufHfsuGgpLviKh297Q">DW Documentary</source><content:encoded><![CDATA[Filmed in secret, this documentary is a behind-the-scenes look at the "Woman, Life, Freedom” uprising in Iran. The story begins a few weeks after the death of Jina Mahsa Amini, a young Kurdish student who died on 16 September 2022.
-
-She had allowed a few strands of hair to escape from her veil. Members of the Iranian morality police beat her so severely that she died of her injuries. The regime in Tehran has denied all responsibility for her death, which triggered nationwide mass protests under a slogan that echoed all around the world: "Woman, Life, Freedom”.
-
-Iranian filmmaker Shorresh Afkari filmed in secret, smuggling the footage out of the country to a colleague in France. His documentary gives a voice to people who, like large sections of the Iranian population, have run out of strength and patience.
-
-For example, the film observes a young couple who dream of being able to express their love openly and in complete freedom. We also meet a taxi driver, who ends up in prison as a bitter opponent of the regime. His mother tries to protect him at all costs. A painter continues to practise her art despite censorship; a doctor secretly treats demonstrators. A young man is prepared to do anything for cash, even sell one of his kidneys. Just like men who dare to protest, women who show their hair in public and publicly oppose the regime still face harsh punishment, including the death penalty. For this reason, many interviewees speak off-camera to protect their anonymity.
-
-The widespread protests and mass demonstrations that began shortly before the end of 2025 and continue to this day show that large parts of the population no longer support the regime in Tehran — a regime that continues to respond with brutality against the people of Iran.
-
-#documentary #dwdocumentary #dwdocs #iran #protest #womanlifefreedom 
-______
-
-DW Documentary gives you knowledge beyond the headlines. Watch top documentaries from German broadcasters and international production companies. Meet intriguing people, travel to distant lands, get a look behind the complexities of daily life and build a deeper understanding of current affairs and global events. Subscribe and explore the world around you with DW Documentary.
-
-Subscribe to: ‬
-⮞ DW Documentary (English): https://www.youtube.com/@DWDocumentary 
-⮞ DW Documental (Spanish): https://www.youtube.com/@DWDocumental 
-⮞ DW Documentary وثائقية دي دبليو (Arabic): https://www.youtube.com/@dwdocarabia
-⮞ DW Documentary हिन्दी (Hindi): https://www.youtube.com/@dwdochindi
-⮞ DW Dokumenter (Indonesian): https://www.youtube.com/@DWDokumenter
-⮞ DW Doku (German): https://www.youtube.com/@dwdoku
-
-For more visit: http://www.dw.com/en/tv/docfilm/s-3610
-Follow DW Documentary on Instagram: https://www.instagram.com/dwdocumentary/
-Follow DW Documental on Facebook: https://www.facebook.com/dwdocumental
-
-We kindly ask viewers to read and stick to the DW netiquette policy on our channel: https://p.dw.com/p/MF1G]]></content:encoded></item><item><title>Kiranmala: The tale of the princess who conquered Magic Mountain - Malay Bera</title><link>https://www.youtube.com/watch?v=-bFgGvl4pBQ</link><author>TED-Ed</author><category>yt</category><enclosure url="https://www.youtube.com/v/-bFgGvl4pBQ?version=3" length="" type=""/><pubDate>Thu, 15 Jan 2026 16:00:50 +0000</pubDate><source url="https://www.youtube.com/channel/UCsooa4yRKGN_zEE8iknghZA">TED-Ed</source><content:encoded><![CDATA[Dig into the Bengali tale of a trio of siblings who attempt to scale the fearsome Magic Mountain to gain treasures for their home.
-
---
-
-Inspired by a king’s visit, a trio of siblings began building a palace, traveling far and wide to collect rare jewels, seeds, and marble. A holy man stopped by and told them of a Magic Mountain, east of north and north of east, where they’d find their most meaningful treasures. But, he said, only a true hero could complete the journey. Malay Bera shares the Bengali tale of Kiranmala's quest.
-
-Lesson by Malay Bera, directed by Héloïse Dorsan-Rachet.
-
-Although this folktale exists in multiple oral variants across the Bengali-speaking world, this video is based on a variant akin to the better-known literary version, “Kironmala", from Thakurmar Jhuli (1907), an anthology of Bengali folktales collected by Dakshinaranjan Mitra Majumdar in the early 20th century.
-
-Support Our Non-Profit Mission
-----------------------------------------------
-Support us on Patreon: http://bit.ly/TEDEdPatreon
-Check out our merch: http://bit.ly/TEDEDShop
-----------------------------------------------
-
-Connect With Us
-----------------------------------------------
-Sign up for our newsletter: http://bit.ly/TEDEdNewsletter
-Follow us on Facebook: http://bit.ly/TEDEdFacebook
-Find us on Twitter: http://bit.ly/TEDEdTwitter
-Peep us on Instagram: http://bit.ly/TEDEdInstagram
-----------------------------------------------
-
-Keep Learning
-----------------------------------------------
-View full lesson: https://ed.ted.com/lessons/the-princess-who-conquered-magic-mountain-malay-bera
-Dig deeper with additional resources: 
-
-Animator's website: https://ed.ted.com/lessons/the-princess-who-conquered-magic-mountain-malay-bera/digdeeper
-----------------------------------------------
-
-Thank you so much to our patrons for your support! Without you this video would not be possible! Ophelia Gibson Best, Paul Schneider, Joichiro Yamada, Henrique Cassús, Karthik Cherala, Clarence E. Harper Jr., Vignan Velivela, Ana Maria, Exal Enrique Cisneros Tuch, Tejas Dc, Khalifa Alhulail, Martin Stephen, Jose Henrique Leopoldo e Silva, Mandeep Singh, Abhijit Kiran Valluri, Morgan Williams, Devin Harris, Pavel Zalevskiy, Karen Goepen-Wee, Filip Dabrowski, Barbara Smalley, Megan Douglas, Tim Leistikow, Ka-Hei Law, Hiroshi Uchiyama, Mark Morris, Misaki Sato, EdoKun, SookKwan Loong, Bev Millar, Lex Azevedo, Michael Aquilina, Jason A Saslow, Yansong Li, Cristóbal Moenne, Dawn Jordan, Prasanth Mathialagan, Samuel Doerle, David Rosario, Dominik Kugelmann - they-them, Siamak Hajizadeh, Ryohky Araya, Mayank Kaul, Christophe Dessalles, Heather Slater, Sandra Tersluisen, Zhexi Shan, Bárbara Nazaré, Andrea Feliz, and Victor E Karhel.]]></content:encoded></item><item><title>How Minneapolis Is Fighting ICE’s Enforcement Surge | WSJ</title><link>https://www.youtube.com/watch?v=4oGgFZ1BwpY</link><author>The Wall Street Journal</author><category>yt</category><enclosure url="https://www.youtube.com/v/4oGgFZ1BwpY?version=3" length="" type=""/><pubDate>Thu, 15 Jan 2026 15:11:28 +0000</pubDate><source url="https://www.youtube.com/channel/UCK7tptUDHh-RYDsdxO1-5QQ">The Wall Street Journal</source><content:encoded><![CDATA[The surge of federal agents conducting immigration enforcement operations has sparked widespread resistance from local law enforcement and community groups. 
-
-Chapters:
-0:00 The situation in Minneapolis
-0:43 Ride along with the Minneapolis Police Chief
-3:07 ICE shootings since July 
-3:40 ICE protests and an ICE-watching patrol 
-
-Trump threatens to invoke Insurrection Act in response to Minnesota protests: https://on.wsj.com/4jRI6wX
-
-#Minneapolis #ICE #WSJ]]></content:encoded></item><item><title>Planets Around Black Holes</title><link>https://www.youtube.com/shorts/OU36JDGzXb0</link><author>Kurzgesagt – In a Nutshell</author><category>yt</category><enclosure url="https://www.youtube.com/v/OU36JDGzXb0?version=3" length="" type=""/><pubDate>Thu, 15 Jan 2026 15:00:45 +0000</pubDate><source url="https://www.youtube.com/channel/UCsXVk37bltHxD1rDPwtNM8Q">Kurzgesagt – In a Nutshell</source><content:encoded><![CDATA[Could planets form around black holes? Maybe! These “blanets” wouldn’t orbit stars but black holes. 
-
-#kurzgesagt
-#inanutshell #kurzgesagt_inanutshell #learnwithshorts #science #blackholes #blanets #astrophysics 
-
-Sources & further reading: 
-https://sites.google.com/view/kgs-tiktok-sources
-
-Follow us for more sciencey content! 🦆
-
-OUR CHANNELS
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-German:        https://kgs.link/youtubeDE
-Spanish:        https://kgs.link/youtubeES
-French:          https://kgs.link/youtubeFR
-Portuguese:  https://kgs.link/youtubePT
-Arabic:           https://kgs.link/youtubeAR
-Hindi:             https://kgs.link/youtubeHI
-Japanese:     https://kgs.link/youtubeJA
-Korean:          https://kgs.link/youtubeKO
-
-
-HOW CAN YOU SUPPORT US?
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-This is how we make our living and it would be a pleasure if you support us!
-
-Get Products designed with ❤ https://shop.kgs.link/shorts
-Become a Part of kurzgesagt by joining the Patreon Bird Army 🐧  https://kgs.link/patreon  
-
-
-DISCUSSIONS & SOCIAL MEDIA
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-Instagram:     https://kgs.link/instagram
-TikTok:           https://kgs.link/tiktok
-Reddit:            https://kgs.link/reddit
-Discord:          https://kgs.link/discord
-Twitter:           https://kgs.link/twitter
-Bluesky:          https://kgs.link/bluesky
-Facebook:      https://kgs.link/facebook
-Newsletter:    https://kgs.link/newsletter
-
-
-OUR VOICE
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-The Kurzgesagt voice is from 
-Steve Taylor:  https://kgs.link/youtube-voice
-
-
-OUR MUSIC ♬♪
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-700+ minutes of Kurzgesagt Soundtracks by Epic Mountain:
-
-Spotify:            https://kgs.link/music-spotify
-Soundcloud:   https://kgs.link/music-soundcloud
-Bandcamp:     https://kgs.link/music-bandcamp
-Youtube:          https://kgs.link/music-youtube
-Facebook:       https://kgs.link/music-facebook]]></content:encoded></item></channel></rss>
+- .NET demo]]></content:encoded></item></channel></rss>
