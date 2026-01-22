@@ -7,8 +7,22 @@
   "isQuery": true,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 181,
+  "itemCount": 179,
   "items": [
+    {
+      "title": "How They Prevented The Citicorp Disaster",
+      "url": "https://www.youtube.com/shorts/w2TLv30F6UU",
+      "date": 1769090483,
+      "author": "Veritasium",
+      "guid": 37904,
+      "unread": true,
+      "content": "<article>The Citicorp centre once had a 67% chance of falling over!\n\nRepairs were beyond necessary but William LeMessurier and his team had to construct supports secretly at night so as not to cause panic.</article>",
+      "contentLength": 196,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/w2TLv30F6UU?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Effect Oriented Programming • Bill Frasure, Bruce Eckel, James Ward & Andrew Harmel-Law • GOTO 2026",
       "url": "https://www.youtube.com/watch?v=Qds6rO9lxps",
@@ -2498,48 +2512,6 @@
       "contentLength": 569,
       "flags": null,
       "enclosureUrl": "https://www.youtube.com/v/AkyXfC9OvHE?version=3",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Timeline Movies: The 80s - Everything That Happened In Movies In The 80s | Compilation",
-      "url": "https://www.youtube.com/watch?v=OvU23GUQS6A",
-      "date": 1767366044,
-      "author": "Weird History",
-      "guid": 36337,
-      "unread": true,
-      "content": "<article>Ah, the 80s.... Dayglo fashion, great music, and of course, some of the greatest movies ever made!! Today on Weird History we are taking you through a truly enjoyable binge of every great movie that came out in the 1980s by year - What year did goonies come out? What about Indiana Jones? Back to the Future? ...and what about E.T? Come with us through a cinematic stroll through the 80s - what was your favorite movie experience in the 80s? Let us know in the comments!\n\nChapters:\n00:00:00 - 1980\n00:13:56 - 1981\n00:27:53 - 1982\n00:43:36 - 1983\n00:59:49 - 1984\n01:19:34 - 1985\n01:38:34 - 1986\n01:55:40 - 1987\n02:15:56 - 1988\n02:35:01 - 1989\n\n\nBe sure to subscribe to the Weird History Newsletter: https://bit.ly/WeirdHistoryNews\n\n#1980s #movies #weirdhistory</article>",
-      "contentLength": 759,
-      "flags": null,
-      "enclosureUrl": "https://www.youtube.com/v/OvU23GUQS6A?version=3",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "$1m server vs $600 router",
-      "url": "https://www.youtube.com/watch?v=3D5q3NWEMZY",
-      "date": 1767366006,
-      "author": "Jeff Geerling",
-      "guid": 35963,
-      "unread": true,
-      "content": "<article>HUGE thanks to Patrick from @ServeTheHomeVideo for helping with this test!\n\nLinks to everything I mentioned:\n\n  - Mono Gateway: https://mono.si\n  - Tomaž Zaman on YouTube: @tomazzaman \n  - ServeTheHome YouTube: @ServeTheHomeVideo \n  - ServeTheHome Website: https://www.servethehome.com\n\nTomaž sent me the dev kit Mono Gateway I am testing in this video, so I have marked the video as 'sponsored' (I also ordered one for myself, prior to Tomaž sending this test unit!). Mono did not offer any other form of payment, nor have any input into this video's contents. See my sponsorship policies here: https://github.com/geerlingguy/youtube?tab=readme-ov-file#sponsorships\n\nSupport me on Patreon: https://www.patreon.com/geerlingguy\nSponsor me on GitHub: https://github.com/sponsors/geerlingguy\nMerch: https://www.redshirtjeff.com\n2nd Channel: https://www.youtube.com/@GeerlingEngineering\n3rd Channel: https://www.youtube.com/@Level2Jeff\n\nContents:\n\n00:00 - What is this box?\n00:58 - 51.2 Tbps in Phoenix\n02:00 - The Million Dollar Network Testing Box\n03:33 - From 1.6 Tbps to 10 Gbps\n06:14 - SFP+ is always upside-down\n06:58 - Saturating 20 Gbps with real traffic\n10:13 - Real web traffic and latency results\n11:55 - Firewall testing next year\n13:39 - Mono Gateway works\n14:53 - Specs and happy 2026!</article>",
-      "contentLength": 1298,
-      "flags": null,
-      "enclosureUrl": "https://www.youtube.com/v/3D5q3NWEMZY?version=3",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Building Software That Survives • Michael Nygard & Charles Humble",
-      "url": "https://www.youtube.com/watch?v=Xvz3ads_wcc",
-      "date": 1767360205,
-      "author": "GOTO Conferences",
-      "guid": 36028,
-      "unread": true,
-      "content": "<article>This interview was recorded for GOTO Unscripted.\nhttps://gotopia.tech\n\nRead the full transcription of this interview here:\nhttps://gotopia.tech/articles/408\n\nMichael Nygard - Chief Architect at Nubank &amp; Author of \"Release It!\"\nCharles Humble - Freelance Techie, Podcaster, Editor, Author &amp; Consultant\n\nFULL TALK TITLE\nBuilding Software That Survives: Autonomy, Architecture &amp; Alignment at Scale\n\nRESOURCES\nMichael\nhttps://www.linkedin.com/in/mtnygard\nhttps://twitter.com/mtnygard\nhttp://www.michaelnygard.com\n\nCharles\nhttps://bsky.app/profile/charleshumble.bsky.social\nhttps://linkedin.com/in/charleshumble\nhttps://mastodon.social/@charleshumble\nhttps://conissaunce.com\n\nDESCRIPTION\nMichael Nygard, author of the influential \"Release It!\" and Chief Architect at Nuank, discusses his journey from programmer to technical leader.\n\nIn this conversation, he shares insights from major transformation projects at Sabre and Nubank, exploring the nuances of centralization versus autonomy, the often-misunderstood implications of Conway's Law, and how architectural boundaries can reduce the need for constant organizational alignment.\n\nHe emphasizes that effective technical leadership involves more than reorganizations - it requires understanding communication structures, celebrating the right behaviors, and creating systems that enable teams to operate independently within well-defined boundaries.\n\nRECOMMENDED BOOKS\nMichael Nygard • Release It! 2nd Edition • https://amzn.to/3WJeKV8\nMichael Nygard • Release It! 1st Edition • https://amzn.to/3XCkiRf\nRichard Monson-Haefel • 97 Things Every Software Architect Should Know • https://amzn.to/3JdRYU2\nCharles Humble • Professional Skills for Software Engineers • https://www.conissaunce.com/professional-skills-shortcut\nPatterson, Grenny, McMillan &amp; Switzler • Crucial Conversations • https://amzn.to/3LhGHTa\nYevgeniy Brikman • Fundamentals of DevOps and Software Delivery • https://amzn.to/3WMPMFU\nTod Golding • Building Multi-Tenant SaaS Architectures • https://amzn.to/3YfM49o\nJacqui Read • Communication Patterns • https://amzn.to/3E37lvv\nMatthew Skelton &amp; Manuel Pais • Team Topologies • http://amzn.to/3sVLyLQ\nJames Stanier • Become an Effective Software Engineering Manager • https://amzn.to/3vHrx1E\nAI Research Today (https://www.buzzsprout.com/2559699) \nSerious Conversations About Real AI Research; decoding the ArXiv into your headphones. \n\n\nListen on: Apple Podcasts (https://podcasts.apple.com/podcast/id1855587284)  &nbsp; Spotify (https://open.spotify.com/show/6C9zvGRG8KxmYnKtwDYmoP) \n\n\nBluesky (https://bsky.app/profile/gotocon.com) \nTwitter (https://twitter.com/GOTOcon) \nInstagram (https://www.instagram.com/goto_con) \nLinkedIn (https://www.linkedin.com/company/goto-) \nFacebook (https://www.facebook.com/GOTOConferences) \n\nCHANNEL MEMBERSHIP BONUS\nJoin this channel to get early access to videos &amp; other perks:\nhttps://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA/join\n\nLooking for a unique learning experience?\nAttend the next GOTO conference near you! Get your ticket: gotopia.tech (https://gotopia.tech) \n\nSUBSCRIBE TO OUR YOUTUBE CHANNEL (https://www.youtube.com/user/GotoConferences/?sub_confirmation=1)  - new videos posted daily!</article>",
-      "contentLength": 3243,
-      "flags": null,
-      "enclosureUrl": "https://www.youtube.com/v/Xvz3ads_wcc?version=3",
       "enclosureMime": "",
       "commentsUrl": null
     }

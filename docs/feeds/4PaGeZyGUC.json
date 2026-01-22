@@ -10,6 +10,20 @@
   "itemCount": 50,
   "items": [
     {
+      "title": "How They Prevented The Citicorp Disaster",
+      "url": "https://www.youtube.com/shorts/w2TLv30F6UU",
+      "date": 1769090483,
+      "author": "Veritasium",
+      "guid": 37904,
+      "unread": true,
+      "content": "<article>The Citicorp centre once had a 67% chance of falling over!\n\nRepairs were beyond necessary but William LeMessurier and his team had to construct supports secretly at night so as not to cause panic.</article>",
+      "contentLength": 196,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/w2TLv30F6UU?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
       "title": "Effect Oriented Programming • Bill Frasure, Bruce Eckel, James Ward & Andrew Harmel-Law • GOTO 2026",
       "url": "https://www.youtube.com/watch?v=Qds6rO9lxps",
       "date": 1769086854,
@@ -692,20 +706,6 @@
       "contentLength": 145,
       "flags": null,
       "enclosureUrl": "https://www.youtube.com/v/RNcarVhVsUI?version=3",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": ".NET in 100 Seconds",
-      "url": "https://www.youtube.com/watch?v=MFsYaRnrcPQ",
-      "date": 1768583015,
-      "author": "Fireship",
-      "guid": 36503,
-      "unread": true,
-      "content": "<article>.NET is a free and open-source platform for creating high-performance software in virtually every domain, powered primarily by the C# programming language.\n\n#coding #programming #softwaredevelopment \n\n🔗 Resources\n- https://learn.microsoft.com/en-us/dotnet/\n\n🔥 Brain food for developers\n- https://fireship.dev\n\n🎨 My Editor Settings\n\n- Atom One Dark \n- vscode-icons\n- Fira Code Font\n\n🔖 Topics Covered\n\n- The history of .NET\n- .NET explained\n- The .Net ecosystem\n- What can you build in .NET?\n- .NET demo</article>",
-      "contentLength": 513,
-      "flags": null,
-      "enclosureUrl": "https://www.youtube.com/v/MFsYaRnrcPQ?version=3",
       "enclosureMime": "",
       "commentsUrl": null
     }
