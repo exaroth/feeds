@@ -7,8 +7,36 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 17,
+  "itemCount": 18,
   "items": [
+    {
+      "title": "Jibby Jones, by Ellis Parker Butler",
+      "url": "https://standardebooks.org/ebooks/ellis-parker-butler/jibby-jones",
+      "date": 1769204610,
+      "author": "",
+      "guid": 38518,
+      "unread": true,
+      "content": "<article>Five boys who live near the Mississippi River embark on an adventure to find hidden pirate treasure.</article>",
+      "contentLength": 100,
+      "flags": null,
+      "enclosureUrl": "https://standardebooks.org/ebooks/ellis-parker-butler/jibby-jones/downloads/ellis-parker-butler_jibby-jones.epub?source=feed",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "The Ladies Lindores, by Margaret Oliphant",
+      "url": "https://standardebooks.org/ebooks/margaret-oliphant/the-ladies-lindores",
+      "date": 1769186745,
+      "author": "",
+      "guid": 38517,
+      "unread": true,
+      "content": "<article>The lives of three families of the Scottish gentry intertwine through love and conflict.</article>",
+      "contentLength": 88,
+      "flags": null,
+      "enclosureUrl": "https://standardebooks.org/ebooks/margaret-oliphant/the-ladies-lindores/downloads/margaret-oliphant_the-ladies-lindores.epub?source=feed",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "At the Villa Rose, by A. E. W. Mason",
       "url": "https://standardebooks.org/ebooks/a-e-w-mason/at-the-villa-rose",
@@ -230,20 +258,6 @@
       "contentLength": 89,
       "flags": null,
       "enclosureUrl": "https://standardebooks.org/ebooks/harry-harrison/planet-of-the-damned/downloads/harry-harrison_planet-of-the-damned.epub?source=feed",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "The City of God, by Augustine of Hippo",
-      "url": "https://standardebooks.org/ebooks/augustine-of-hippo/the-city-of-god/marcus-dods_george-wilson_j-j-smith",
-      "date": 1767473171,
-      "author": "",
-      "guid": 35983,
-      "unread": true,
-      "content": "<article>Bishop Augustine of Hippo provides a defense of the Christian faith against its pagan critics, as well as explaining God’s work and purposes in world history, from beginning to end.</article>",
-      "contentLength": 183,
-      "flags": null,
-      "enclosureUrl": "https://standardebooks.org/ebooks/augustine-of-hippo/the-city-of-god/marcus-dods_george-wilson_j-j-smith/downloads/augustine-of-hippo_the-city-of-god_marcus-dods-george-wilson-j-j-smith.epub?source=feed",
       "enclosureMime": "",
       "commentsUrl": null
     }
