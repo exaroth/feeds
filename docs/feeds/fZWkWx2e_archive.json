@@ -7,8 +7,22 @@
   "isQuery": true,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 35,
+  "itemCount": 36,
   "items": [
+    {
+      "title": "Guillermo del Toro's Closet Picks",
+      "url": "https://www.youtube.com/watch?v=CcscEY2KoS8",
+      "date": 1769290493,
+      "author": "CRITERION",
+      "guid": 38667,
+      "unread": true,
+      "content": "<article>The Criterion Closet’s very first guest stops by the Mobile Closet at the Toronto International Film Festival, where he examines the technical brilliance of a scene in NOTORIOUS, shares why he feels a kinship with Wes Anderson, and talks about drawing inspiration from Martin Scorsese’s powerful explorations of repression.</article>",
+      "contentLength": 327,
+      "flags": null,
+      "enclosureUrl": "https://www.youtube.com/v/CcscEY2KoS8?version=3",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Jodie Foster’s Closet Picks",
       "url": "https://www.youtube.com/watch?v=wO2fHMqAXO8",

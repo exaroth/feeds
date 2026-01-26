@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 18,
+  "itemCount": 17,
   "items": [
+    {
+      "title": "Poetry, by George MacDonald",
+      "url": "https://standardebooks.org/ebooks/george-macdonald/poetry",
+      "date": 1769385250,
+      "author": "",
+      "guid": 38885,
+      "unread": true,
+      "content": "<article>A collection of poetry by Scottish author, poet, and Christian minister George MacDonald, exploring themes of faith, nature, redemption, and the human soul.</article>",
+      "contentLength": 156,
+      "flags": null,
+      "enclosureUrl": "https://standardebooks.org/ebooks/george-macdonald/poetry/downloads/george-macdonald_poetry.epub?source=feed",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "Jibby Jones, by Ellis Parker Butler",
       "url": "https://standardebooks.org/ebooks/ellis-parker-butler/jibby-jones",
@@ -230,34 +244,6 @@
       "contentLength": 126,
       "flags": null,
       "enclosureUrl": "https://standardebooks.org/ebooks/g-d-h-cole/the-brooklyn-murders/downloads/g-d-h-cole_the-brooklyn-murders.epub?source=feed",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "The Apple Cart, by George Bernard Shaw",
-      "url": "https://standardebooks.org/ebooks/george-bernard-shaw/the-apple-cart",
-      "date": 1767651274,
-      "author": "",
-      "guid": 35985,
-      "unread": true,
-      "content": "<article>An English king challenges his popular prime minister and cabinet.</article>",
-      "contentLength": 66,
-      "flags": null,
-      "enclosureUrl": "https://standardebooks.org/ebooks/george-bernard-shaw/the-apple-cart/downloads/george-bernard-shaw_the-apple-cart.epub?source=feed",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Planet of the Damned, by Harry Harrison",
-      "url": "https://standardebooks.org/ebooks/harry-harrison/planet-of-the-damned",
-      "date": 1767643480,
-      "author": "",
-      "guid": 35984,
-      "unread": true,
-      "content": "<article>A planetary champion finds himself employed to solve another planet’s pressing problem.</article>",
-      "contentLength": 89,
-      "flags": null,
-      "enclosureUrl": "https://standardebooks.org/ebooks/harry-harrison/planet-of-the-damned/downloads/harry-harrison_planet-of-the-damned.epub?source=feed",
       "enclosureMime": "",
       "commentsUrl": null
     }
