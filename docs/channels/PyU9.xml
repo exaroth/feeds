@@ -1,424 +1,224 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Headlamp in 2025: Project Highlights</title><link>https://kubernetes.io/blog/2026/01/22/headlamp-in-2025-project-highlights/</link><author></author><category>dev</category><pubDate>Thu, 22 Jan 2026 02:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[This announcement is a recap from a post originally published on the Headlamp blog.Headlamp has come a long way in 2025. The project has continued to grow – reaching more teams across platforms, powering new workflows and integrations through plugins, and seeing increased collaboration from the broader community.We wanted to take a moment to share a few updates and highlight how Headlamp has evolved over the past year.Joining Kubernetes SIG UIThis year marked a big milestone for the project: Headlamp is now officially part of Kubernetes SIG UI. This move brings roadmap and design discussions even closer to the core Kubernetes community and reinforces Headlamp’s role as a modern, extensible UI for the project.Linux Foundation mentorshipThis year, we were excited to work with several students through the Linux Foundation’s Mentorship program, and our mentees have already left a visible mark on Headlamp: built the KEDA plugin, adding a UI in Headlamp to view and manage KEDA resources like ScaledObjects and ScaledJobs. set up an OpenTelemetry-based observability stack for Headlamp, wiring up metrics, logs, and traces so the project is easier to monitor and debug. led a UX audit of Headlamp plugins, identifying usability issues and proposing design improvements and personas for plugin users. developed the Karpenter plugin, giving Headlamp a focused view into Karpenter autoscaling resources and decisions. improved Gateway API support, so you can see networking relationships on the resource map, as well as improved support for many of the new Gateway API resources. worked on backend caching for Kubernetes API calls, reducing load on the API server and improving performance in Headlamp.Managing multiple clusters is challenging: teams often switch between tools and lose context when trying to see what runs where. Headlamp solves this by giving you a single view to compare clusters side-by-side. This makes it easier to understand workloads across environments and reduces the time spent hunting for resources.View of multi-cluster workloadsKubernetes apps often span multiple namespaces and resource types, which makes troubleshooting feel like piecing together a puzzle. We’ve added  to give you an application-centric view that groups related resources across multiple namespaces – and even clusters. This allows you to reduce sprawl, troubleshoot faster, and collaborate without digging through YAML or cluster-wide lists.View of the new Projects featureNew “Projects” feature for grouping namespaces into app- or team-centric projectsExtensible Projects details view that plugins can customize with their own tabs and actionsNavigation and ActivitiesDay-to-day ops in Kubernetes often means juggling logs, terminals, YAML, and dashboards across clusters. We redesigned Headlamp’s navigation to treat these as first-class “activities” you can keep open and come back to, instead of one-off views you lose as soon as you click away.A new task bar/activities model lets you pin logs, exec sessions, and details as ongoing activitiesAn activity overview with a “Close all” action and cluster informationMulti-select and global filters in tablesWhen something breaks in production, the first two questions are usually “where is it?” and “what is it connected to?” We’ve upgraded both search and the map view so you can get from a high-level symptom to the right set of objects much faster.View of the new Advanced Search featureAn Advanced search view that supports rich, expression-based queries over Kubernetes objectsImproved global search that understands labels and multiple search items, and can even update your current namespace based on what you findEndpointSlice support in the Network sectionA richer map view that now includes Custom Resources and Gateway API objectsWe’ve put real work into making OIDC setup clearer and more resilient, especially for in-cluster deployments.View of user information for OIDC clustersUser information displayed in the top bar for OIDC-authenticated usersPKCE support for more secure authentication flows, as well as hardened token refresh handlingDocumentation for using the access token using -oidc-use-access-token=trueImproved support for public OIDC clients like AKS and EKSWe’ve broadened how you deploy and source apps via Headlamp, specifically supporting vanilla Helm repos.A more capable Helm chart with optional backend TLS termination, PodDisruptionBudgets, custom pod labels, and moreImproved formatting and added missing access token arg in the Helm chartNew in-cluster Helm support with an  flag and a service proxyFinally, we’ve spent a lot of time on the things you notice every day but don’t always make headlines: startup time, list views, log viewers, accessibility, and small network UX details. A continuous accessibility self-audit has also helped us identify key issues and make Headlamp easier for everyone to use.View of the Learn section in docsSignificant desktop improvements, with up to 60% faster app loads and much quicker dev-mode reloads for contributorsNumerous table and log viewer refinements: persistent sort order, consistent row actions, copy-name buttons, better tooltips, and more forgiving log inputsAccessibility and localization improvements, including fixes for zoom-related layout issues, better color contrast, improved screen reader support, and expanded language coverageMore control over resources, with live pod CPU/memory metrics, richer pod details, and inline editing for secrets and CRD fieldsA refreshed documentation and plugin onboarding experience, including a “Learn” section and plugin showcaseA more complete NetworkPolicy UI and network-related polishNightly builds available for early testingPlugins and extensibilityDiscovering plugins is simpler now – no more hopping between Artifact Hub and assorted GitHub repos. Browse our dedicated Plugins page for a curated catalog of Headlamp-endorsed plugins, along with a showcase of featured plugins.View of the Plugins showcaseManaging Kubernetes often means memorizing commands and juggling tools. Headlamp’s new AI Assistant changes this by adding a natural-language interface built into the UI. Now, instead of typing  or digging through YAML you can ask, “Is my app healthy?” or “Show logs for this deployment,” and get answers in context, speeding up troubleshooting and smoothing onboarding for new users. Learn more about it here.Alongside the new AI Assistant, we’ve been growing Headlamp’s plugin ecosystem so you can bring more of your workflows into a single UI, with integrations like Minikube, Karpenter, and more.Highlights from the latest plugin releases:Minikube plugin, providing a locally stored single node Minikube clusterKarpenter plugin, with support for Azure Node Auto-Provisioning (NAP)KEDA plugin, which you can learn more about hereAlongside new additions, we’ve also spent time refining plugins that many of you already use, focusing on smoother workflows and better integration with the core UI.View of the Backstage plugin: Updated for Flux v2.7, with support for newer CRDs, navigation fixes so it works smoothly on recent clusters: Now supports Helm repos in addition to Artifact Hub, can run in-cluster via /serviceproxy, and shows both current and latest app versions: Improved card layout and accessibility, plus dependency and Storybook test updates: Dependency and build updates, more info hereWe’ve focused on making it faster and clearer to build, test, and ship Headlamp plugins, backed by improved documentation and lighter tooling.View of the Plugin Development guideImproved type checking for Headlamp APIs, restored Storybook support for component testing, and reduced dependencies for faster installs and fewer updatesDocumented plugin install locations, UI signifiers in Plugin Settings, and labels that differentiated shipped, UI-installed, and dev-mode pluginsWe've also been investing in keeping Headlamp secure – both by tightening how authentication works and by staying on top of upstream vulnerabilities and tooling.We've been keeping up with security updates, regularly updating dependencies and addressing upstream security issues.We tightened the Helm chart's default security context and fixed a regression that broke the plugin manager.We've improved OIDC security with PKCE support, helping unblock more secure and standards-compliant OIDC setups when deploying Headlamp in-cluster.Thank you to everyone who has contributed to Headlamp this year – whether through pull requests, plugins, or simply sharing how you're using the project. Seeing the different ways teams are adopting and extending the project is a big part of what keeps us moving forward. If your organization uses Headlamp, consider adding it to our adopters list.If you haven't tried Headlamp recently, all these updates are available today. Check out the latest Headlamp release, explore the new views, plugins, and docs, and share your feedback with us on Slack or GitHub – your feedback helps shape where Headlamp goes next.]]></content:encoded></item><item><title>Announcing Rust 1.93.0</title><link>https://blog.rust-lang.org/2026/01/22/Rust-1.93.0/</link><author>The Rust Release Team</author><category>dev</category><pubDate>Thu, 22 Jan 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust team is happy to announce a new version of Rust, 1.93.0. Rust is a programming language empowering everyone to build reliable and efficient software.If you have a previous version of Rust installed via , you can get 1.93.0 with:If you'd like to help us out by testing future releases, you might consider updating locally to use the beta channel () or the nightly channel (). Please report any bugs you might come across!
-Update bundled musl to 1.2.5The various  targets now all ship with musl 1.2.5. This primarily affects static musl builds for , , and  which bundled musl 1.2.3. This update comes with several fixes and improvements, and a breaking change that affects the Rust ecosystem.For the Rust ecosystem, the primary motivation for this update is to receive major improvements to
-musl's DNS resolver which shipped in 1.2.4 and received bug fixes in 1.2.5. When using 
-targets for static linking, this should make portable Linux binaries that do networking more
-reliable, particularly in the face of large DNS records and recursive nameservers.
-Allow the global allocator to use thread-local storageRust 1.93 adjusts the internals of the standard library to permit global allocators written in Rust
-to use std's  and
- without
-re-entrancy concerns by using the system allocator instead. attributes on  linesPreviously, if individual parts of a section of inline assembly needed to be 'd, the full 
-block would need to be repeated with and without that section. In 1.93,  can now be applied to
-individual statements within the  block.Many people came together to create Rust 1.93.0. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>Announcing the Checkpoint/Restore Working Group</title><link>https://kubernetes.io/blog/2026/01/21/introducing-checkpoint-restore-wg/</link><author></author><category>dev</category><pubDate>Wed, 21 Jan 2026 18:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[The community around Kubernetes includes a number of Special Interest Groups (SIGs) and Working Groups (WGs) facilitating discussions on important topics between interested contributors. Today we would like to announce the new Kubernetes Checkpoint Restore WG focusing on the integration of Checkpoint/Restore functionality into Kubernetes.There are several high-level scenarios discussed in the working group:Optimizing resource utilization for interactive workloads, such as Jupyter notebooks and AI chatbotsAccelerating startup of applications with long initialization times, including Java applications and LLM inference servicesUsing periodic checkpointing to enable fault-tolerance for long-running workloads, such as distributed model trainingProviding interruption-aware scheduling with transparent checkpoint/restore, allowing lower-priority Pods to be preempted while preserving the runtime state of applicationsFacilitating Pod migration across nodes for load balancing and maintenance, without disrupting workloads.Enabling forensic checkpointing to investigate and analyze security incidents such as cyberattacks, data breaches, and unauthorized access.Across these scenarios, the goal is to help facilitate discussions of ideas between the Kubernetes community and the growing Checkpoint/Restore in Userspace (CRIU) ecosystem. The CRIU community includes several projects that support these use cases, including:CRIU - A tool for checkpointing and restoring running applications and containerscheckpointctl - A tool for in-depth analysis of container checkpointscriu-coordinator - A tool for coordinated checkpoint/restore of distributed applications with CRIUMore information about the checkpoint/restore integration with Kubernetes is also available here.If you are interested in contributing to Kubernetes or CRIU, there are several ways to participate:]]></content:encoded></item><item><title>Results from the 2025 Go Developer Survey</title><link>https://go.dev/blog/survey2025</link><author>Todd Kulesza, on behalf of the Go team</author><category>dev</category><pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[Hello! In this article we’ll discuss the results of the 2025 Go Developer
-Survey, conducted during September 2025.Thank you to the 5,379 Go developers who responded to our survey invitation
-this year. Your feedback helps both the Go team at Google and the wider Go
-community understand the current state of the Go ecosystem and prioritize
-projects for the year ahead.Our three biggest findings are:Broadly speaking, Go developers asked for help with identifying and applying
-best practices, making the most of the standard library, and expanding the
-language and built-in tooling with more modern capabilities.Most Go developers are now using AI-powered development tools when seeking
-information (e.g., learning how to use a module) or toiling (e.g., writing
-repetitive blocks of similar code), but their satisfaction with these tools
-is middling due, in part, to quality concerns.A surprisingly high proportion of respondents said they frequently need to
-review documentation for core  subcommands, including , , and , suggesting meaningful room for improvement with the 
-command’s help system.Read on for the details about these findings, and much more.Most survey respondents self-identified as professional developers (87%) who
-use Go for their primary job (82%). A large majority also uses Go for personal
-or open-source projects (72%). Most respondents were between 25 – 45
-years old (68%) with at least six years of professional development experience
-(75%). Going deeper, 81% of respondents told us they had more professional
-development experience than Go-specific experience, strong evidence that Go is
-usually not the first language developers work with. In fact, one of the
-themes that repeatedly surfaced during this year’s survey analysis seems to
-stem from this fact: when the way to do a task in Go is substantially
-different from a more familiar language, it creates friction for developers to
-first learn the new (to them) idiomatic Go pattern, and then to consistently
-recall these differences as they continue to work with multiple languages.
-We’ll return to this theme later.The single most common industry respondents work in was “Technology” (46%),
-but a majority of respondents work outside of the tech industry (54%). We saw
-representation of all sizes of organizations, with a bare majority working
-somewhere with 2 – 500 employees (51%), 9% working alone, and 30%
-working at enterprises of over 1,000 employees. As in prior years, a majority
-of responses come from North America and Europe.This year we observed a decrease in the proportion of respondents who said
-they were fairly new to Go, having worked with it for less than one year
-(13%, vs. 21% in 2024). We suspect this is related to industry-wide
-declines in entry-level software engineering roles; we commonly hear from
-people that they learned Go for a specific job, so a downturn in hiring would
-be expected to reduce the number of developers learning Go in that year. This
-hypothesis is further supported by our finding that over 80% of respondents
-learned Go  beginning their professional career.Other than the above, we found no significant changes in other demographics
-since our 2024 survey.How do people feel about Go?The vast majority of respondents (91%) said they felt satisfied while working
-with Go. Almost ⅔ were “very satisfied”, the highest rating. Both of these
-metrics are incredibly positive, and have been stable since we began asking
-this question in 2019. The stability over time is really what we monitor from
-this metric — we view it as a lagging indicator, meaning by the time
-this satisfaction metric shows a meaningful change, we would expect to already
-have seen earlier signals from issue reports, mailing lists, or other
-community feedback.Why were respondents so positive about Go? Looking at open-text responses to
-several different survey questions suggests that it’s the gestalt, rather than
-any one thing. These folks are telling us that they find tremendous value in
-Go as a holistic platform. That doesn’t mean it supports all programming
-domains equally well (it surely does not), but that developers’ value the
-domains it  nicely support via stdlib and built-in tooling.Below are some representative quotations from respondents. To provide context
-for each quote, we also identify the satisfaction level, years of experience
-with Go, and industry of the respondent.“Go is by far my favorite language; other languages feel far too complex and
-unhelpful. The fact that Go is comparatively small, simple, with fewer bells
-and whistles plays a massive role in making it such a good long-lasting
-foundation for building programs with it. I love that it scales well to
-being used by a single programmer and in large teams.” “The entire reason I use Go is the great tooling and standard library.  I’m
-very thankful to the team for focusing on great HTTP, crypto, math, sync,
-and other tools that make developing service-oriented applications easy and
-reliable.” “[The] Go ecosystem is the reason why I really like the programming
-language. There are a lot of npm issues lately but not with Go.” This year we also asked about the other languages that people use. Survey
-respondents said that besides Go, they enjoy working with Python, Rust, and
-TypeScript, among a long tail of other languages. Some shared characteristics
-of these languages align with common points of friction reported by Go
-developers, including  areas like error handling, enums, and object-oriented
-design patterns. For example, when we sum the proportion of respondents who
-said their next-favorite language included one of the following factors, we
-found that majorities of respondents enjoy using languages with inheritance,
-type-safe enums, and exceptions, with only a bare majority of these languages
-including a static type system by default.Proportion of respondentsWe think this is important because it reveals the larger environment in which
-developers operate — it suggests that people need to use different
-design patterns for fairly mundane tasks, depending on the language of the
-codebase they’re currently working on. This leads to additional cognitive load
-and confusion, not only among developers new to Go (who must learn idiomatic
-Go design patterns), but also among the many developers who work in multiple
-codebases or projects. One way to alleviate this additional load is
-context-specific guidance, such as a tutorial on “Error handling in Go for
-Java developers”. There may even be opportunities to build some of this
-guidance into code analyzers, making it easier to surface directly in an IDE.This year we asked the Go community to share their sentiment towards the Go
-project itself. These results were quite different from the 91% satisfaction
-rate we discussed above, and point to areas the Go Team plans to invest our
-energy during 2026. In particular, we want to encourage more contributors to
-get involved, and ensure the Go Team accurately understands the challenges Go
-developers currently face. We hope this focus, in turn, will help to increase
-developer trust in both the Go project and the Go Team leadership. As one
-respondent explained the problem:“Now that the founding first generation of Go Team members [are] not
-involved much anymore in the decision making, I am a bit worried about the
-future of Go in terms of quality of maintenance, and its balanced decisions
-so far wrt to changes in the language and std lib. More presence in form of
-talks [by] the new core team members about the current state and future
-plans might be helpful to strengthen trust.” What are people building with Go?We revised this list of “what types of things do you build with Go?” from 2024
-with the intent of more usefully teasing apart what people are building with
-Go, and avoid confusion around evolving terms like “agents”. Respondent’s top
-use cases remain CLIs and API services, with no meaningful change in either
-since 2024. In fact, a majority of respondents (55%) said they build 
-CLIs and API services with Go. Over ⅓ of respondents specifically build cloud
-infrastructure tooling (a new category), and 11% work with ML models, tools,
-or agents (an expanded category). Unfortunately embedded use cases were left
-off of the revised list, but we’ll fix this for next year’s survey.Most respondents said they are not currently building AI-powered features into
-the Go software they work on (78%), with ⅔ reporting that their software does
-not use AI functionality at all (66%). This appears to be a decrease in
-production-related AI usage year-over-year; in 2024, 59% of respondents were
-not involved in AI feature work, while 39% indicated some level of
-involvement. That marks a shift of 14 points away from building AI-powered
-systems among survey respondents, and may reflect some natural pullback from
-the early hype around AI-powered applications: it’s plausible that lots of
-folks tried to see what they could do with this technology during its initial
-rollout, with some proportion deciding against further exploration (at least
-at this time).Among respondents who are building AI- or LLM-powered functionality, the most
-common use case was to create summaries of existing content (45%). Overall,
-however, there was little difference between most uses, with between 28%
-– 33% of respondents adding AI functionality to support classification,
-generation, solution identification, chatbots, and software development.What are the biggest challenges facing Go developers?One of the most helpful types of feedback we receive from developers are
-details about the challenges people run into while working with Go. The Go
-Team considers this information holistically and over long time horizons,
-because there is often tension between improving Go’s rougher edges and
-keeping the language and tooling consistent for developers. Beyond technical
-factors, every change also incurs some cost in terms of developer attention
-and cognitive disruption. Minimizing disruption may sound a bit dull or
-boring, but we view this as an important strength of Go. As Russ Cox wrote in
-2023, “Boring is good… Boring means being able to focus on your work, not
-on what’s different about Go.”.In that spirit, this year’s top challenges are not radically different from
-last year’s. The top three frustrations respondents reported were “Ensuring
-our Go code follows best practices / Go idioms” (33% of respondents), “A
-feature I value from another language isn’t part of Go” (28%), and “Finding
-trustworthy Go modules and packages” (26%). We examined open-text responses to
-better understand what people meant. Let’s take a minute to dig into each.Respondents who were most frustrated by writing idiomatic Go were often
-looking for more official guidance, as well as tooling support to help enforce
-this guidance in their codebase. As in prior surveys, questions about how to
-structure Go projects were also a common theme. For example:“The simplicity of go helps to read and understand code from other
-developers, but there are still some aspects that can differ quite a lot
-between programmers. Especially if developers come from other languages,
-e.g. Java.” “More opinionated way to write go code. Like how to structure a Go project
-for services/cli tool.” “It’s hard to figure out what are good idioms. Especially since the core
-team doesn’t keep Effective Go up-to-date.” The second major category of frustrations were language features that
-developers enjoyed working with in other ecosystems. These open-text comments
-largely focused on error handling and reporting patterns, enums and sum types,
-nil pointer safety, and general expressivity / verbosity:“Still not sure what is the best way to do error handling.” “Rust’s enums are great, and lead to writing great type safe code.” “There is nothing (in the compiler) that stops me from using a maybe nil
-pointer, or using a value without checking the err first. That should be
-[baked into] the type system.” “I like [Go] but I didn’t expect it to have nil pointer exceptions :)” “I often find it hard to build abstractions and to provide clear intention
-to the future readers of my code.” The third major frustration was finding trustworthy Go modules. Respondents
-often described two aspects to this problem. One is that they considered many
-3rd-party modules to be of marginal quality, making it hard for really good
-modules to stand out. The second is identifying which modules are commonly
-used and under which types of conditions (including recent trends over time).
-These are both problems that could be addressed by showing what we’ll vaguely
-call “quality signals” on pkg.go.dev. Respondents provided helpful
-explanations of the signals they use to identify trustworthy modules,
-including project activity, code quality, recent adoption trends, or the
-specific organizations that support or rely upon the module.“Being able to filter by criteria like stable version, number of users and
-last update age at pkg.go.dev could make things a bit easier.” “Many pacakges are just clones/forks or one-off pojects with no
-history/maintenance. [sic]” “Maybe flagging trustworthy packages based on experience, maturity and
-community feedback?” We agree that these are all areas where the developer experience with Go could
-be improved. The challenge, as discussed earlier, is doing so in such a way
-that doesn’t lead to breaking changes, increased confusion among Go
-developers, or otherwise gets in the way of people trying to get their work
-done with Go. Feedback from this survey is a major source of information we
-use when discussing proposals, but if you’d like to get involved more directly
-or follow along with other contributors, visit the Go proposals on
-GitHub;
-please be sure to follow this process if
-you’d like to add a new proposal.In addition to these (potentially) ecosystem-wide challenges, this year we
-also asked specifically about working with the  command. We’ve informally
-heard from developers that this tool’s help system can be confusing to
-navigate, but we haven’t had a great sense of how frequently people find
-themselves reviewing this documentation.Respondents told us that except for , between 15% – 25% of them
-felt they “often needed to review documentation” with working with these
-tools. This was surprising, especially for commonly-used subcommands like
- and . Common reasons included remembering specific flags,
-understanding what different options do, and navigating the help system
-itself. Participants also confirmed that infrequent use was one reason for
-frustration, but navigating and parsing command help appears to be the
-underlying cause. In other words, we all expect to need to review
-documentation sometimes, but we don’t expect to need help navigating the
-documentation system itself. As on respondent described their journey:“Accessing the help is painful. go test –help # didn’t work, but tell[s] me
-to type  instead… go help test # oh, actually, the info I’m
-looking for is in  go help testflag # visually parsing through
-text that looks all the same without much formatting… I just lack time to
-dig into this rabbit hole.” What does their development environment look like?Operating systems and architecturesGenerally, respondents told us their development platforms are UNIX-like. Most
-respondents develop on macOS (60%) or Linux (58%) and deploy to Linux-based
-systems, including containers (96%). The largest year-over-year change was
-among “embedded devices / IoT” deployments, which increased from 2% -> 8% of
-respondents; this was the only meaningful change in deployment platforms since
-2024.The vast majority of respondents develop on x86-64 or ARM64 architectures,
-with a sizable group (25%) still potentially working on 32-bit x86 systems.
-However, we believe the wording of this question was confusing to respondents;
-next year we’ll clarify the 32-bit vs. 64-bit distinction for each
-architecture.Several new code editors have become available in the past two years, and we
-expanded our survey question to include the most popular ones. While we saw
-some evidence of early adoption, most respondents continued to favor VS
-Code (37%) or
-GoLand (28%). Of the newer editors, Zed and
-Cursor were the highest ranked, each becoming the preferred editor of 4% of
-respondents. To put those numbers in context, we looked back at when VS Code
-and GoLand were first introduced. VS Code (released in 2015) was favored by
-16% of respondents one year after its release. IntelliJ has had a
-community-led Go plugin longer than we’ve been surveying Go developers (💙),
-but if we look at when JetBrains began officially supporting Go in IntelliJ
-(2016), within one year IntelliJ was preferred by 20% of respondents.Note: This analysis of code editors does not include respondents who were
-referred to the survey directly from VS Code or GoLand.The most common deployment environments for Go continue to be Amazon Web
-Services (AWS) at 46% of respondents, company-owned servers (44%), and Google
-Cloud Platform (GCP) at 26%. These numbers show minor shifts since 2024, but
-nothing statistically significant. We found that the “Other” category
-increased to 11% this year, and this was primarily driven by Hetzner (20% of
-Other responses); we plan to include Hetzner as a response choice in next
-year’s survey.We also asked respondents about their development experience of working with
-different cloud providers. The most common responses, however, showed that
-respondents weren’t really sure (46%) or don’t directly interact with public
-cloud providers (21%). The biggest driver behind these responses was a theme
-we’ve heard often before: with containers, it’s possible to abstract many
-details of the cloud environment away from the developer, so that they don’t
-meaningfully interact with most provider-specific technologies. This result
-suggests that even developers whose work is  to clouds may have
-limited experience with the larger suite of tools and technology associated
-with each cloud provider. For example:“Kinda abstract to the platform, Go is very easy to put in a container and
-so pretty easy to deploy anywhere: one of its big strength[s].” “The cloud provider really doesn’t make much difference to me. I write code
-and deploy it to containers, so whether that’s AWS or GCP I don’t really
-care.” We suspect this level of abstraction is dependant on the use case and
-requirements of the service that’s being deployed — it may not always
-make sense or be possible to keep it highly abstracted. In the future, we plan
-to further investigate how Go developers tend to interact with the platforms
-where their software is ultimately deployed.Finally, we can’t discuss development environments in 2025 without also
-mentioning AI-powered software development tools. Our survey suggests
-bifurcated adoption — while a majority of respondents (53%) said they
-use such tools daily, there is also a large group (29%) who do not use these
-at all, or only used them a few times during the past month. We expected this
-to negatively correlate with age or development experience, but were unable to
-find strong evidence supporting this theory except for  new developers:
-respondents with less than one year of professional development experience
-(not specific to Go) did report more AI use than every other cohort, but this
-group only represented 2% of survey respondents.At this time, agentic use of AI-powered tools appears nascent among Go
-developers, with only 17% of respondents saying this is their primary way of
-using such tools, though a larger group (40%) are occasionally trying agentic
-modes of operation.The most commonly used AI assistants remain ChatGPT, GitHub Copilot, and
-Claude. Most of these agents show lower usage numbers compared with our 2024
-survey (Claude and Cursor are
-notable exceptions), but due to a methodology change, this is not an
-apples-to-apples comparison. It is, however, plausible that developers are
-“shopping around” less than they were when these tools were first released,
-resulting in more people using a single assistant for most of their work.We also asked about overall satisfaction with AI-powered development tools. A
-majority (55%) reported being satisfied, but this was heavily weighted towards
-the “Somewhat satisfied” category (42%) vs. the “Very satisfied” group (13%).
-Recall that Go itself consistently shows a 90%+ satisfaction rate each year;
-this year, 62% of respondents said they are “Very satisfied” with Go. We add
-this context to show that while AI-powered tooling is starting to see adoption
-and finding some successful use cases, developer sentiment  towards them
-remains much softer than towards more established tooling (among Go
-developers, at least).What is driving this lower rate of satisfaction? In a word: quality. We asked
-respondents to tell us something good they’ve accomplished with these tools,
-as well as something that didn’t work out well. A majority said that creating
-non-functional code was their primary problem with AI developer tools (53%),
-with 30% lamenting that even working code was of poor quality. The most
-frequently cited benefits, conversely, were generating unit tests, writing
-boilerplate code, enhanced autocompletion, refactoring, and documentation
-generation. These appear to be cases where code quality is perceived as less
-critical, tipping the balance in favor of letting AI take the first pass at a
-task. That said, respondents also told us the AI-generated code in these
-successful cases still required careful review (and often, corrections), as it
-can be buggy, insecure, or lack context.“I’m never satisfied with code quality or consistency, it never follows the
-practices I want to.” “All AI tools tend to hallucinate quickly when working with medium-to-large
-codebases (10k+ lines of code). They can explain code effectively but
-struggle to generate new, complex features” “Despite numerous efforts to make it write code in an established codebase,
-it would take too much effort to steer it to follow the practices in the
-project, and it would add subtle behaviour paths - i.e. if it would miss
-some method it would try to find its way around it or rely on some side
-effect. Sometimes those things are hard to recognize during code review. I
-also found it mentally taxing to review ai generated code and that overhead
-kills the productivity potential in writing code.” When we asked developers what they used these tools for, a pattern emerged
-that is consistent with these quality concerns. The tasks with most adoption
-(green in the chart below) and least resistance (red) deal with bridging
-knowledge gaps, improving local code, and avoiding toil. The frustrations that
-developers talk about with code-generating tools were much less evident when
-they’re seeking information, like how to use a specific API or configure test
-coverage, and perhaps as a result, we see higher usage of AI in these areas.
-Another spot that stood out was  code review and related suggestions
-— people were less interested in using AI to review other people’s code
-than in reviewing their own. Surprisingly, “testing code” showed lower AI
-adoption than other toilsome tasks, though we don’t yet have strong
-understanding of why.Of all the tasks we asked about, “Writing code” was the most bifurcated, with
-66% of respondents already or hoping to soon use AI for this, while ¼ of
-respondents didn’t want AI involved at all. Open-ended responses suggest
-developers primarily use this for toilsome, repetitive code, and continue to
-have concerns about the quality of AI-generated code.Once again, a tremendous thank-you to everyone who responded to this year’s Go
-Developer Survey!We plan to share the raw survey dataset in Q1 2026, so the larger community
-can also explore the data underlying these findings. This will only include
-responses from people who opted in to share this data (82% of all
-respondents), so there may be some differences from the numbers we reference
-in this post.This survey was conducted between Sept 9 - Sept 30, 2025. Participants were
-publicly invited to respond via the Go Blog, invitations on social media
-channels (including Bluesky, Mastodon, Reddit, and X), as well as randomized
-in-product invitations to people using VS Code and GoLand to write Go
-software. We received a total of 7,070 responses. After data cleaning to
-remove bots and other very low quality responses, 5,379 were used for the
-remainder of our analysis. The median survey response time was between 12
-– 13 minutes.Throughout this report we use charts of survey responses to provide supporting
-evidence for our findings. All of these charts use a similar format. The title
-is the exact question that survey respondents saw. Unless otherwise noted,
-questions were multiple choice and participants could only select a single
-response choice; each chart’s subtitle will tell the reader if the question
-allowed multiple response choices or was an open-ended text box instead of a
-multiple choice question. For charts of open-ended text responses, a Go team
-member read and manually categorized all of the responses. Many open-ended
-questions elicited a wide variety of responses; to keep the chart sizes
-reasonable, we condensed them to a maximum of the top 10-12 themes, with
-additional themes all grouped under “Other”. The percentage labels shown in
-charts are rounded to the nearest integer (e.g., 1.4% and 0.8% will both be
-displayed as 1%), but the length of each bar and row ordering are based on the
-unrounded values.To help readers understand the weight of evidence underlying each finding, we
-included error bars showing the 95% confidence
-interval for responses;
-narrower bars indicate increased confidence. Sometimes two or more responses
-have overlapping error bars, which means the relative order of those responses
-is not statistically meaningful (i.e., the responses are effectively tied).
-The lower right of each chart shows the number of people whose responses are
-included in the chart, in the form “n = [number of respondents]”.]]></content:encoded></item><item><title>crates.io: development update</title><link>https://blog.rust-lang.org/2026/01/21/crates-io-development-update/</link><author>Tobias Bieniek</author><category>dev</category><pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[Time flies! Six months have passed since our last crates.io development update, so it's time for another one. Here's a summary of the most notable changes and improvements made to crates.io over the past six months.Crate pages now have a new "Security" tab that displays security advisories from the RustSec database. This allows you to quickly see if a crate has known vulnerabilities before adding it as a dependency.The tab shows known vulnerabilities for the crate along with the affected version ranges.This feature is still a work in progress, and we plan to add more functionality in the future. We would like to thank the OpenSSF (Open Source Security Foundation) for funding this work and Dirkjan Ochtman for implementing it.
-Trusted Publishing EnhancementsIn our July 2025 update, we announced Trusted Publishing support for GitHub Actions. Since then, we have made several enhancements to this feature.Trusted Publishing now supports GitLab CI/CD in addition to GitHub Actions. This allows GitLab users to publish crates without managing API tokens, using the same OIDC-based authentication flow.Note that this currently only works with GitLab.com. Self-hosted GitLab instances are not supported yet. The crates.io implementation has been refactored to support multiple CI providers, so adding support for other platforms like Codeberg/Forgejo in the future should be straightforward. Contributions are welcome!
-Trusted Publishing Only ModeCrate owners can now enforce Trusted Publishing for their crates. When enabled in the crate settings, traditional API token-based publishing is disabled, and only Trusted Publishing can be used to publish new versions. This reduces the risk of unauthorized publishes from leaked API tokens.The  and  GitHub Actions triggers are now blocked from Trusted Publishing. These triggers have been responsible for multiple security incidents in the GitHub Actions ecosystem and are not worth the risk.Crate pages now display source lines of code (SLOC) metrics, giving you insight into the size of a crate before adding it as a dependency. This metric is calculated in a background job after publishing using the tokei crate. It is also shown on OpenGraph images:
-Publication Time in IndexA new  field has been added to crate index entries, recording when each version was published. This enables several use cases:Cargo can implement cooldown periods for new versions in the futureCargo can replay dependency resolution as if it were a past date, though yanked versions remain yankedServices like Renovate can determine release dates without additional API requests
-Svelte Frontend MigrationAt the end of 2025, the crates.io team evaluated several options for modernizing our frontend and decided to experiment with porting the website to Svelte. The goal is to create a one-to-one port of the existing functionality before adding new features.This migration is still considered experimental and is a work in progress. Using a more mainstream framework should make it easier for new contributors to work on the frontend. The new Svelte frontend uses TypeScript and generates type-safe API client code from our OpenAPI description, so types flow from the Rust backend to the TypeScript frontend automatically.Thanks to eth3lbert for the helpful reviews and guidance on Svelte best practices. We'll share more details in a future update.These were some of the more visible changes to crates.io over the past six months, but a lot has happened "under the hood" as well.Cargo user agent filtering: We noticed that download graphs were showing a constant background level of downloads even for unpopular crates due to bots, scrapers, and mirrors. Download counts are now filtered to only include requests from Cargo, providing more accurate statistics.: Emails from crates.io now support HTML formatting.: OAuth access tokens from GitHub are now encrypted at rest in the database. While we have no evidence of any abuse, we decided to improve our security posture. The tokens were never included in the daily database dump, and the old unencrypted column has been removed.: Crate pages now display a "Browse source" link in the sidebar that points to the corresponding docs.rs page. Thanks to Carol Nichols for implementing this feature.: The sparse index at index.crates.io is now served primarily via Fastly to conserve our AWS credits for other use cases. In the past month, static.crates.io served approximately 1.6 PB across 11 billion requests, while index.crates.io served approximately 740 TB across 19 billion requests. A big thank you to Fastly for providing free CDN services through their Fast Forward program!OpenGraph image improvements: We fixed emoji and CJK character rendering in OpenGraph images, which was caused by missing fonts on our server.Background worker performance: Database indexes were optimized to improve background job processing performance.CloudFront invalidation improvements: Invalidation requests are now batched to avoid hitting AWS rate limits when publishing large workspaces.We hope you enjoyed this update on the development of crates.io. If you have any feedback or questions, please let us know on Zulip or GitHub. We are always happy to hear from you and are looking forward to your feedback!]]></content:encoded></item><item><title>Uniform API server access using clientcmd</title><link>https://kubernetes.io/blog/2026/01/19/clientcmd-apiserver-access/</link><author></author><category>dev</category><pubDate>Mon, 19 Jan 2026 18:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[If you've ever wanted to develop a command line client for a Kubernetes API,
-especially if you've considered making your client usable as a  plugin,
-you might have wondered how to make your client feel familiar to users of .
-A quick glance at the output of  might put a damper on that:
-"Am I really supposed to implement all those options?"Fear not, others have done a lot of the work involved for you.
-In fact, the Kubernetes project provides two libraries to help you handle
--style command line arguments in Go programs:
- and
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Rust participates in Google Summer of Code 2026</title><link>https://blog.rust-lang.org/2026/02/19/Rust-participates-in-GSoC-2026/</link><author>Jakub Beránek, Jack Huey</author><category>dev</category><pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[We are happy to announce that the Rust Project will again be participating in Google Summer of Code (GSoC) 2026, same as in the previous two years. If you're not eligible or interested in participating in GSoC, then most of this post likely isn't relevant to you; if you are, this should contain some useful information and links.Google Summer of Code (GSoC) is an annual global program organized by Google that aims to bring new contributors to the world of open-source. The program pairs organizations (such as the Rust Project) with contributors (usually students), with the goal of helping the participants make meaningful open-source contributions under the guidance of experienced mentors.The organizations that have been accepted into the program have been announced by Google. The GSoC applicants now have several weeks to discuss project ideas with mentors. Later, they will send project proposals for the projects that they found the most interesting. If their project proposal is accepted, they will embark on a several months long journey during which they will try to complete their proposed project under the guidance of an assigned mentor.We have prepared a list of project ideas that can serve as inspiration for potential GSoC contributors that would like to send a project proposal to the Rust organization. However, applicants can also come up with their own project ideas. You can discuss project ideas or try to find mentors in the #gsoc Zulip stream. We have also prepared a proposal guide that should help you with preparing your project proposals. We would also like to bring your attention to our GSoC AI policy.You can start discussing the project ideas with Rust Project mentors and maintainers immediately, but you might want to keep the following important dates in mind:The project proposal application period starts on March 16, 2026. From that date you can submit project proposals into the GSoC dashboard.The project proposal application period ends on  at 18:00 UTC. Take note of that deadline, as there will be no extensions!If you are interested in contributing to the Rust Project, we encourage you to check out our project idea list and send us a GSoC project proposal! Of course, you are also free to discuss these projects and/or try to move them forward even if you do not intend to (or cannot) participate in GSoC. We welcome all contributors to Rust, as there is always enough work to do.Our GSoC contributors were quite successful in the past two years (2024, 2025), so we are excited what this year's GSoC will bring! We hope that participants in the program can improve their skills, but also would love for this to bring new contributors to the Project and increase the awareness of Rust in general. Like last year, we expect to publish blog posts in the future with updates about our participation in the program.]]></content:encoded></item><item><title>Join the Python Security Response Team!</title><link>https://pythoninsider.blogspot.com/2026/02/join-the-python-security-response-team.html</link><author>Seth Michael Larson</author><category>dev</category><pubDate>Tue, 17 Feb 2026 07:30:00 +0000</pubDate><source url="https://pythoninsider.blogspot.com/">Python official news</source><content:encoded><![CDATA[And this new onboarding process is already working! The PSF 
+Infrastructure Engineer, Jacob Coffee, has just joined the PSRT as the 
+first new non-"Release Manager" member since Seth joined the PSRT in 
+2023. We expect new members to join further bolstering the 
+sustainability of security work for the Python programming language.Thanks to Alpha-Omega
+ for their support of Python ecosystem security by sponsoring Seth’s 
+work as the Security Developer-in-Residence at the Python Software 
+Foundation.What is the Python Security Response Team?Security doesn't happen by accident: it's thanks to the work of 
+volunteers and paid Python Software Foundation staff on the Python 
+Security Response Team to triage and coordinate vulnerability reports 
+and remediations keeping all Python users safe. Just last year the PSRT 
+published 16 vulnerability advisories for CPython and pip, the most in a single year to date!And the PSRT usually can’t do this work alone, PSRT coordinators are 
+encouraged to involve maintainers and experts on the projects and 
+submodules. By involving the experts directly in the remediation process
+ ensures fixes adhere to existing API conventions and threat-models, are
+ maintainable long-term, and have minimal impact on existing use-cases.Sometimes the PSRT even coordinates with other open source projects 
+to avoid catching the Python ecosystem off-guard by publishing a 
+vulnerability advisory that affects multiple other projects. The most 
+recent example of this is PyPI’s ZIP archive differential attack mitigation.This work deserves recognition and celebration
+ just like contributions to source code and documentation. Seth and 
+Jacob are developing further improvements to workflows involving “GitHub
+ Security Advisories” to record the reporter, coordinator, and 
+remediation developers and reviewers to CVE and OSV records to properly 
+thank everyone involved in the otherwise private contribution to open 
+source projects.How can I join the Python Security Response Team?Maybe you’ve read all this and are interested in directly helping the
+ Python programming language be more secure! The process is similar to the Core Team nomination process,
+ you need an existing PSRT member to nominate you and for your 
+nomination to receive at least ⅔ positive votes from existing PSRT 
+members.You do not need to be a core developer, team member, or triager to be
+ a member of the Python Security Response Team. Anyone with security 
+expertise that is known and highly-trusted within the Python community 
+and has time to volunteer or donate through their employer would make a 
+good candidate for the PSRT. Please note that all PSRT team members have documented responsibilities and are expected to contribute meaningfully to the remediation of vulnerabilities.Being a member of the PSRT is not required to be notified of vulnerabilities
+ and shouldn’t be to receive “early notification” of vulnerabilities 
+affecting CPython and pip. The Python Software Foundation is a CVE Numbering Authority and publishes CVE and OSV records with up-to-date information about vulnerabilities affecting CPython and pip.]]></content:encoded></item><item><title>Using go fix to modernize Go code</title><link>https://go.dev/blog/gofix</link><author>Alan Donovan</author><category>dev</category><pubDate>Tue, 17 Feb 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[The 1.26 release of Go this month includes a completely rewritten go fix subcommand. Go fix uses a suite of algorithms to identify opportunities to improve your code, often by taking advantage of more modern features of the language and library. In this post, we’ll first show you how to use  to modernize your Go codebase. Then in the second section we’ll dive into the infrastructure behind it and how it is evolving. Finally, we’ll present the theme of “self-service” analysis tools to help module maintainers and organizations encode their own guidelines and best practices.The  command, like  and , accepts a set of patterns that denote packages. This command fixes all packages beneath the current directory:On success, it silently updates your source files. It discards any fix that touches generated files since the appropriate fix in that case is to the logic of the generator itself. We recommend running  over your project each time you update your build to a newer Go toolchain release. Since the command may fix hundreds of files, start from a clean git state so that the change consists only of edits from go fix; your code reviewers will thank you.To preview the changes the above command would have made, use the  flag:$ go fix -diff ./...
+--- dir/file.go (old)
++++ dir/file.go (new)
+-                       eq := strings.IndexByte(pair, '=')
+-                       result[pair[:eq]] = pair[1+eq:]
++                       before, after, _ := strings.Cut(pair, "=")
++                       result[before] = after
+…
+You can list the available fixers by running this command:$ go tool fix help
+…
+Registered analyzers:
+    any          replace interface{} with any
+    buildtag     check //go:build and // +build directives
+    fmtappendf   replace []byte(fmt.Sprintf) with fmt.Appendf
+    forvar       remove redundant re-declaration of loop variables
+    hostport     check format of addresses passed to net.Dial
+    inline       apply fixes based on 'go:fix inline' comment directives
+    mapsloop     replace explicit loops over maps with calls to maps package
+    minmax       replace if/else statements with calls to min or max
+…
+Adding the name of a particular analyzer shows its complete documentation:$ go tool fix help forvar
 
-(which uses ).
-This article will show how to use the former.As might be expected since it's part of ,
-'s ultimate purpose is to provide an instance of
+forvar: remove redundant re-declaration of loop variables
 
-that can issue requests to an API server.It follows  semantics:defaults are taken from  or equivalent;files can be specified using the  environment variable;all of the above settings can be further overridden using command line arguments.It doesn't set up a  command line argument,
-which you might want to do to align with ;
-you'll see how to do this
-in the "Bind the flags" section. allows programs to handle selection (using );client certificates and private keys;HTTP Basic authentication support (username/password).In various scenarios,  supports  configuration settings:
- can specify multiple files whose contents are combined.
-This can be confusing, because settings are merged in different directions
-depending on how they are implemented.
-If a setting is defined in a map, the first definition wins,
-subsequent definitions are ignored.
-If a setting is not defined in a map, the last definition wins.When settings are retrieved using ,
-missing files result in warnings only.
-If the user explicitly specifies a path (in  style),
-there must be a corresponding file.If  isn't defined,
-the default configuration file, , is used instead,
-if present.The general usage pattern is succinctly expressed in
-the  package documentation:In the context of this article, there are six steps:Configure the loading rulesclientcmd.NewDefaultClientConfigLoadingRules() builds loading rules which will use either the contents of the  environment variable,
-or the default configuration file name ().
-In addition, if the default configuration file is used,
-it is able to migrate settings from the (very) old default configuration file
-().You can build your own ,
-but in most cases the defaults are fine.clientcmd.ConfigOverrides is a  storing overrides which will be applied over the settings loaded from the configuration derived using the loading rules.
-In the context of this article,
-its primary purpose is to store values obtained from command line arguments.
-These are handled using the pflag library,
-which is a drop-in replacement for Go's  package,
-adding support for double-hyphen arguments with long names.In most cases there's nothing to set in the overrides;
-I will only bind them to flags.In this context, a flag is a representation of a command line argument,
-specifying its long name (such as ),
-its short name if any (such as ),
-its default value,
-and a description shown in the usage information.
-Flags are stored in instances of
-the  struct.Three sets of flags are available,
-representing the following command line arguments:authentication arguments (certificates, tokens, impersonations, username/password);cluster arguments (API server, certificate authority, TLS configuration, proxy, compression)context arguments (cluster name,  user name, namespace)The recommended selection includes all three with a named context selection argument and a timeout argument.These are all available using the  functions.
-The functions take a prefix, which is prepended to all the argument long names.So calling
-clientcmd.RecommendedConfigOverrideFlags("")
-results in command line arguments such as , , and so on.
-The  argument is given a default value of 0,
-and the  argument has a corresponding short variant, .
-Adding a prefix, such as , results in command line arguments such as
-, , etc.
-This might not seem particularly useful on commands involving a single API server,
-but they come in handy when multiple API servers are involved,
-such as in multi-cluster scenarios.There's a potential gotcha here: prefixes don't modify the short name,
-so  needs some care if multiple prefixes are used:
-only one of the prefixes can be associated with the  short name.
-You'll have to clear the short names associated with the other prefixes'
- , or perhaps all prefixes if there's no sensible
- association.
-Short names can be cleared as follows:In a similar fashion, flags can be disabled entirely by clearing their long name:Once a set of flags has been defined,
-it can be used to bind command line arguments to overrides using
-clientcmd.BindOverrideFlags.
-This requires a
+The forvar analyzer removes unnecessary shadowing of loop variables.
+Before Go 1.22, it was common to write `for _, x := range s { x := x ... }`
+to create a fresh variable for each iteration. Go 1.22 changed the semantics
+of `for` loops, making this pattern redundant. This analyzer removes the
+unnecessary `x := x` statement.
 
-rather than one from Go's  package.If you also want to bind , you should do so now,
-by binding  in the loading rules:Build the merged configurationTwo functions are available to build a merged configuration:As the names suggest, the difference between the two is that the first
-can ask for authentication information interactively,
-using a provided reader,
-whereas the second only operates on the information given to it by the caller.The "deferred" mention in these function names refers to the fact that
-the final configuration will be determined as late as possible.
-This means that these functions can be called before the command line arguments are parsed,
-and the resulting configuration will use whatever values have been parsed
-by the time it's actually constructed.The merged configuration is returned as a
- instance.
-An API client can be obtained from that by calling the  method.If no configuration is given
-( is empty or points to non-existent files,
- doesn't exist,
-and no configuration is given using command line arguments),
-the default setup will return an obscure error referring to .
-This is legacy behaviour;
-several attempts have been made to get rid of it,
-but it is preserved for the  and  command line arguments in .
-You should check for "empty configuration" errors by calling clientcmd.IsEmptyConfig()
-and provide a more explicit error message.The  method is also useful:
-it returns the namespace that should be used.
-It also indicates whether the namespace was overridden by the user
-(using ).Here's a complete example.Happy coding, and thank you for your interest in implementing tools with
-familiar usage patterns!]]></content:encoded></item><item><title>Python 3.15.0 alpha 5 (yes, another alpha!)</title><link>https://pythoninsider.blogspot.com/2026/01/python-3150-alpha-5-yes-another-alpha.html</link><author>Hugo</author><category>dev</category><pubDate>Wed, 14 Jan 2026 17:38:00 +0000</pubDate><source url="https://pythoninsider.blogspot.com/">Python official news</source><content:encoded><![CDATA[Note: 3.15.0a4 was accidentally built against  from
-2025-12-23 instead of 2026-01-13, so this 3.15.0a5 is an extra release
-correctly built against 2026-01-14.This is an early developer preview of Python
-3.15Python 3.15 is still in development. This release, 3.15.0a5, is the
-fifth of  eight planned alpha releases.Alpha releases are intended to make it easier to test the current
+This fix only applies to `range` loops.
+By default, the  command runs all analyzers. When fixing a large project it may reduce the burden of code review if you apply fixes from the most prolific analyzers as separate code changes. To enable only specific analyzers, use the flags matching their names. For example, to run just the  fixer, specify the  flag. Conversely, to run all the analyzers  selected ones, negate the flags, for instance .As with  and , each run of the  command analyzes only a specific build configuration. If your project makes heavy use of files tagged for different CPUs or platforms, you may wish to run the command more than once with different values of  and  for better coverage:$ GOOS=linux   GOARCH=amd64 go fix ./...
+$ GOOS=darwin  GOARCH=arm64 go fix ./...
+$ GOOS=windows GOARCH=amd64 go fix ./...
+Running the command more than once also provides opportunities for synergistic fixes, as we’ll see below.The introduction of generics in Go 1.18 marked the end of an era of very few changes to the language spec and the start of a period of more rapid—though still careful—change, especially in the libraries. Many of the trivial loops that Go programmers routinely write, such as to gather the keys of a map into a slice, can now be conveniently expressed as a call to a generic function such as . Consequently these new features create many opportunities to simplify existing code.In December 2024, during the frenzied adoption of LLM coding assistants, we became aware that such tools tended—unsurprisingly—to produce Go code in a style similar to the mass of Go code used during training, even when there were newer, better ways to express the same idea. Less obviously, the same tools often refused to use the newer ways even when directed to do so in general terms such as “always use the latest idioms of Go 1.25.” In some cases, even when explicitly told to use a feature, the model would deny that it existed. (See my 2025 GopherCon talk for more exasperating details.) To ensure that future models are trained on the latest idioms, we need to ensure that these idioms are reflected in the training data, which is to say the global corpus of open-source Go code.Over the past year, we have built dozens of analyzers to identify opportunities for modernization. Here are three examples of the fixes they suggest: replaces an  statement by a use of Go 1.21’s  or  functions:x := f()
+if x < 0 {
+    x = 0
+}
+if x > 100 {
+    x = 100
+}
+x := min(max(f(), 0), 100)
+ replaces a 3-clause  loop by a Go 1.22 -over-int loop:for i := 0; i < n; i++ {
+    f()
+}
+ (whose  output we saw earlier) replaces uses of  and slicing by Go 1.18’s :i := strings.Index(s, ":")
+if i >= 0 {
+     return s[:i]
+}
+before, _, ok := strings.Cut(s, ":")
+if ok {
+    return before
+}
+These modernizers are included in gopls, to provide instant feedback as you type, and in , so that you can modernize several entire packages at once in a single command. In addition to making code clearer, modernizers may help Go programmers learn about newer features. As part of the process of approving each new change to the language and standard library, the proposal review group now considers whether it should be accompanied by a modernizer. We expect to add more modernizers with each release.Example: a modernizer for Go 1.26’s new(expr)Go 1.26 includes a small but widely useful change to the language specification. The built-in  function creates a new variable and returns its address. Historically, its sole argument was required to be a type, such as , and the new variable was initialized to its “zero” value, such as . In Go 1.26, the  function may be called with any value, causing it to create a variable initialized to that value, avoiding the need for an additional statement. For example:ptr := new(string)
+*ptr = "go1.25"
+This feature filled a gap that had been discussed for over a decade and resolved one of the most popular proposals for a change to the language. It is especially convenient in code that uses a pointer type  to indicate an optional value of type , as is common when working with serialization packages such as json.Marshal or protocol buffers. This is such a common pattern that people often capture it in a helper, such as the  function below, saving the caller from the need to break out of an expression context to introduce additional statements:type RequestJSON struct {
+    URL      string
+    Attempts *int  // (optional)
+}
+
+data, err := json.Marshal(&RequestJSON{
+    URL:      url,
+    Attempts: newInt(10),
+})
+
+func newInt(x int) *int { return &x }
+Helpers such as  are so frequently needed with protocol buffers that the  API itself provides them as , , and so on. But Go 1.26 makes all these helpers unnecessary:data, err := json.Marshal(&RequestJSON{
+    URL:      url,
+    Attempts: new(10),
+})
+To help you take advantage of this feature, the  command now includes a fixer, newexpr, that recognizes “new-like” functions such as  and suggests fixes to replace the function body with  and to replace every call, whether in the same package or an importing package, with a direct use of .To avoid introducing premature uses of new features, modernizers offer fixes only in files that require at least the minimum appropriate version of Go (1.26 in this instance), either through a  directive in the enclosing go.mod file or a build constraint in the file itself.Run this command to update all calls of this form in your source tree:At this point, with luck, all of your -like helper functions will have become unused and may be safely deleted (assuming they aren’t part of a stable published API). A few calls may remain where it would be unsafe to suggest a fix, such as when the name  is locally shadowed by another declaration. You can also use the deadcode command to help identify unused functions.Applying one modernization may create opportunities to apply another. For example, this snippet of code, which clamps  to the range 0–100, causes the minmax modernizer to suggest a fix to use . Once that fix is applied it suggests a second fix, this time to use .x := f()
+if x < 0 {
+    x = 0
+}
+if x > 100 {
+    x = 100
+}
+x := min(max(f(), 0), 100)
+Synergies may also occur between different analyzers. For example, a common mistake is to repeatedly concatenate strings within a loop, resulting in quadratic time complexity—a bug and a potential vector for a denial-of-service attack. The  modernizer recognizes the problem and suggests using Go 1.10’s :s := ""
+for _, b := range bytes {
+    s += fmt.Sprintf("%02x", b)
+}
+use(s)
+var s strings.Builder
+for _, b := range bytes {
+    s.WriteString(fmt.Sprintf("%02x", b))
+}
+use(s.String())
+Once this fix is applied, a second analyzer may recognize that the  and  operations can be combined as fmt.Fprintf(&s, "%02x", b), which is both cleaner and more efficient, and offer a second fix. (This second analyzer is QF1012 from Dominik Honnef’s staticcheck, which is already enabled in gopls but not yet in , though we plan to add staticcheck analyzers to the go command starting in Go 1.27.)Consequently, it may be worth running  more than once until it reaches a fixed point; twice is usually enough.Merging fixes and conflictsA single run of  may apply dozens of fixes within the same source file. All fixes are conceptually independent, analogous to a set of git commits with the same parent. The  command uses a simple three-way merge algorithm to reconcile the fixes in sequence, analogous to the task of merging a set of git commits that edit the same file. If a fix conflicts with the list of edits accumulated so far, it is discarded, and the tool issues a warning that some fixes were skipped and that the tool should be run again.This reliably detects  conflicts arising from overlapping edits, but another class of conflict is possible: a  conflict occurs when two changes are textually independent but their meanings are incompatible. As an example consider two fixes that each remove the second-to-last use of a local variable: each fix is fine by itself, but when both are applied together the local variable becomes unused, and in Go that’s a compilation error. Neither fix is responsible for removing the variable declaration, but someone has to do it, and that someone is the user of .A similar semantic conflict arises when a set of fixes causes an import to become unused. Because this case is so common, the  command applies a final pass to detect unused imports and remove them automatically.Semantic conflicts are relatively rare. Fortunately they usually reveal themselves as compilation errors, making them impossible to overlook. Unfortunately, when they happen, they do demand some manual work after running .Let’s now delve into the infrastructure beneath these tools.The Go analysis frameworkSince the earliest days of Go, the  command has had two subcommands for static analysis,  and , each with its own suite of algorithms: “checkers” and “fixers”. A checker reports likely mistakes in your code, such as passing a string instead of an integer as the operand of a  conversion. A fixer safely edits your code to fix a bug or to express the same thing in a better way, perhaps more clearly, concisely, or efficiently. Sometimes the same algorithm appears in both suites when it can both report a mistake and safely fix it.In 2017 we redesigned the then-monolithic  program to separate the checker algorithms (now called “analyzers”) from the “driver”, the program that runs them; the result was the Go analysis framework. This separation enables an analyzer to be written once then run in a diverse range of drivers for different environments, such as:unitchecker, which turns a suite of analyzers into a subcommand that can be run by the go command’s scalable incremental build system, analogous to a compiler in go build. This is the basis of  and .nogo, the analogous driver for alternative build systems such as Bazel and Blaze.singlechecker, which turns an analyzer into a standalone command that loads, parses, and type-checks a set of packages (perhaps a whole program) and then analyzes them. We often use it for ad hoc experiments and measurements over the module mirror (proxy.golang.org) corpus.multichecker, which does the same thing for a suite of analyzers with a ‘swiss-army knife’ CLI.gopls, the language server behind VS Code and other editors, which provides real-time diagnostics from analyzers after each editor keystroke.the highly configurable driver used by the staticcheck tool. (Staticcheck also provides a large suite of analyzers that can be run in other drivers.)Tricorder, the batch static analysis pipeline used by Google’s monorepo and integrated with its code review system.gopls’ MCP server, which makes diagnostics available to LLM-based coding agents, providing more robust “guardrails”.One benefit of the framework is its ability to express helper analyzers that don’t report diagnostics or suggest fixes of their own but instead compute some intermediate data structure that may be useful to many other analyzers, amortizing the costs of its construction. Examples include control-flow graphs, the SSA representation of function bodies, and data structures for optimized AST navigation.Another benefit of the framework is its support for making deductions across packages. An analyzer can attach a “fact” to a function or other symbol so that information learned while analyzing the function’s body can be used when later analyzing a call to the function, even if the call appears in another package or the later analysis occurs in a different process. This makes it easy to define scalable interprocedural analyses. For example, the printf checker can tell when a function such as  is really just a wrapper around , so it knows that calls to  should be checked in a similar manner. This process works by induction, so the tool will also check calls to further wrappers around , and so on. An example of an analyzer that makes heavy use of facts is Uber’s nilaway, which reports potential mistakes resulting in nil pointer dereferences.The process of “separate analysis” in   is analogous to the process of separate compilation in . Just as the compiler builds packages starting from the bottom of the dependency graph and passing type information up to importing packages, the analysis framework works from the bottom of the dependency graph up, passing facts (and types) up to importing packages.In 2019, as we started developing gopls, the language server for Go, we added the ability for an analyzer to suggest a fix when reporting a diagnostic. The printf analyzer, for example, offers to replace  with  to avoid misformatting should the dynamic  value contain a  symbol. This mechanism has become the basis for many of the quick fixes and refactoring features of gopls.While all these developments were happening to ,  remained stuck as it was back before the Go compatibility promise, when early adopters of Go used it to maintain their code during the rapid and sometimes incompatible evolution of the language and libraries.The Go 1.26 release brings the Go analysis framework to . The  and  commands have converged and are now almost identical in implementation. The only differences between them are the criteria for the suites of algorithms they use, and what they do with computed diagnostics. Go vet analyzers must detect likely mistakes with low false positives; their diagnostics are reported to the user. Go fix analyzers must generate fixes that are safe to apply without regression in correctness, performance, or style; their diagnostics may not be reported, but the fixes are directly applied. Aside from this difference of emphasis, the task of developing a fixer is no different from that of developing a checker.Improving analysis infrastructureAs the number of analyzers in  and  continues to grow, we have been investing in infrastructure both to improve the performance of each analyzer and to make it easier to write each new analyzer.For example, most analyzers start by traversing the syntax trees of each file in the package looking for a particular kind of node such as a range statement or function literal. The existing inspector package makes this scan efficient by pre-computing a compact index of a complete traversal so that later traversals can quickly skip subtrees that don’t contain any nodes of interest. Recently we extended it with the Cursor datatype to allow flexible and efficient navigation between nodes in all four cardinal directions—up, down, left, and right, similar to navigating the elements of an HTML DOM—making it easy and efficient to express a query such as “find each go statement that is the first statement of a loop body”:    var curFile inspector.Cursor = ...
+
+    // Find each go statement that is the first statement of a loop body.
+    for curGo := range curFile.Preorder((*ast.GoStmt)(nil)) {
+        kind, index := curGo.ParentEdge()
+        if kind == edge.BlockStmt_List && index == 0 {
+            switch curGo.Parent().ParentEdgeKind() {
+            case edge.ForStmt_Body, edge.RangeStmt_Body:
+                ...
+            }
+        }
+    }
+Many analyzers start by searching for calls to a specific function, such as . Function calls are among the most numerous expressions in Go code, so rather than search every call expression and test whether it is a call to , it is much more efficient to pre-compute an index of symbol references, which is done by typeindex and its helper analyzer. Then the calls to  can be enumerated directly, making the cost proportional to the number of calls instead of to the size of the package. For an analyzer such as hostport that seeks an infrequently used symbol (), this can easily make it 1,000× faster.Some other infrastructural improvements over the past year include:a dependency graph of the standard library that analyzers can consult to avoid introducing import cycles. For example, we can’t introduce a call to  in a package that is itself imported by .support for querying the effective Go version of a file as determined by the enclosing go.mod file and build tags, so that analyzers don’t insert uses of features that are “too new”.a richer library of refactoring primitives (e.g. “delete this statement”) that correctly handle adjacent comments and other tricky edge cases.We have come a long way, but there remains much to do. Fixer logic can be tricky to get right. Since we expect users to apply hundreds of suggested fixes with only cursory review, it’s critical that fixers are correct even in obscure edge cases. As just one example (see my GopherCon talk for several more), we built a modernizer that replaces calls such as append([]string{}, slice...) by the clearer  only to discover that, when  is empty, the result of Clone is nil, a subtle behavior change that in rare cases can cause bugs; so we had to exclude that modernizer from the  suite.Some of these difficulties for authors of analyzers can be ameliorated with better documentation (both for humans and LLMs), particularly checklists of surprising edge cases to consider and test. A pattern-matching engine for syntax trees, similar to those in staticcheck and Tree Sitter, could simplify the fiddly task of efficiently identifying the locations that need fixing. A richer library of operators for computing accurate fixes would help avoid common mistakes. A better test harness would let us check that fixes don’t break the build, and preserve dynamic properties of the target code. These are all on our roadmap.The “self-service” paradigmMore fundamentally, we are turning our attention in 2026 to a “self-service” paradigm.The  analyzer we saw earlier is a typical modernizer: a bespoke algorithm tailored to a particular feature. The bespoke model works well for features of the language and standard library, but it doesn’t really help update uses of third-party packages. Although there’s nothing to stop you from writing a modernizer for your own public APIs and running it on your own project, there’s no automatic way to get users of your API to run it too. Your modernizer probably wouldn’t belong in gopls or the  suite unless your API is particularly widely used across the Go ecosystem. Even in that case you would have to obtain code reviews and approvals and then wait for the next release.Under the self-service paradigm, Go programmers would be able to define modernizations for their own APIs that their users can apply without all the bottlenecks of the current centralized paradigm. This is especially important as the Go community and global Go corpus are growing much faster than the ability of our team to review analyzer contributions.The  command in Go 1.26 includes a preview of the first fruits of this new paradigm: the annotation-driven source-level inliner, which we’ll describe in an upcoming companion blog post next week. In the coming year, we plan to investigate two more approaches within this paradigm.First, we will be exploring the possibility of dynamically loading modernizers from the source tree and securely executing them, either in gopls or . In this approach a package that provides an API for, say, a SQL database could additionally provide a checker for misuses of the API, such as SQL injection vulnerabilities or failure to handle critical errors. The same mechanism could be used by project maintainers to encode internal housekeeping rules, such as avoiding calls to certain problematic functions or enforcing stronger coding disciplines in critical parts of the code.Second, many existing checkers can be informally described as “don’t forget to X after you Y!”, such as “close the file after you open it”, “cancel the context after you create it”, “unlock the mutex after you lock it”, “break out of the iterator loop after yield returns false”, and so on. What such checkers have in common is that they enforce certain invariants on all execution paths. We plan to explore generalizations and unifications of these control-flow checkers so that Go programmers can easily apply them to new domains, without complex analytical logic, simply by annotating their own code.We hope that these new tools will save you effort during maintenance of your Go projects and help you learn about and benefit from newer features sooner. Please try out  on your projects and report any problems you find, and do share any ideas you have for new modernizers, fixers, checkers, or self-service approaches to static analysis.]]></content:encoded></item><item><title>crates.io: an update to the malicious crate notification policy</title><link>https://blog.rust-lang.org/2026/02/13/crates.io-malicious-crate-update/</link><author>Adam Harvey</author><category>dev</category><pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The crates.io team will no longer publish a blog post each time a malicious crate is detected or reported. In the vast majority of cases to date, these notifications have involved crates that have no evidence of real world usage, and we feel that publishing these blog posts is generating noise, rather than signal.Crates that contain malware  are seeing real usage or exploitation will still get both a blog post and a RustSec advisory. We may also notify via additional communication channels (such as social media) if we feel it is warranted.Since we are announcing this policy change now, here is a retrospective summary of the malicious crates removed since our last blog post and today:: we were notified on February 6th by Socket that this crate was attempting to exfiltrate credentials by impersonating the  crate. Advisory: RUSTSEC-2026-0010.: we were notified on February 13th that this crate was attempting to exfiltrate credentials by impersonating the  crate. Advisory: RUSTSEC-2026-0011.In all cases, the crates were deleted, the user accounts that published them were immediately disabled, and reports were made to upstream providers as appropriate.Once again, our thanks go to Matthias, Socket, and the reporter of  for their reports. We also want to thank Dirkjan Ochtman from the secure code working group, Emily Albini from the security response working group, and Walter Pearce from the Rust Foundation for aiding in the response.]]></content:encoded></item><item><title>Announcing Rust 1.93.1</title><link>https://blog.rust-lang.org/2026/02/12/Rust-1.93.1/</link><author>The Rust Release Team</author><category>dev</category><pubDate>Thu, 12 Feb 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust team has published a new point release of Rust, 1.93.1. Rust is a programming language that is empowering everyone to build reliable and efficient software.If you have a previous version of Rust installed via rustup, getting Rust 1.93.1 is as easy as:If you don't have it already, you can get  from the appropriate page on our website.Rust 1.93.1 resolves three regressions that were introduced in the 1.93.0 release.Many people came together to create Rust 1.93.1. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>Spotlight on SIG Architecture: API Governance</title><link>https://kubernetes.io/blog/2026/02/12/sig-architecture-api-spotlight/</link><author></author><category>dev</category><pubDate>Thu, 12 Feb 2026 00:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[This is the fifth interview of a SIG Architecture Spotlight series that covers the different
+subprojects, and we will be covering SIG Architecture: API
+Governance.In this SIG Architecture spotlight we talked with Jordan Liggitt, lead
+of the API Governance sub-project.FM: Hello Jordan, thank you for your availability. Tell us a bit about yourself, your role and how
+you got involved in Kubernetes.: My name is Jordan Liggitt. I'm a Christian, husband, father of four, software engineer at
+Google by day, and amateur musician by stealth. I was born in Texas (and still
+like to claim it as my point of origin), but I've lived in North Carolina for most of my life.I've been working on Kubernetes since 2014. At that time, I was working on authentication and
+authorization at Red Hat, and my very first pull request to Kubernetes attempted to add an OAuth
+server to the Kubernetes API server. It never
+exited work-in-progress status. I ended up going with a different approach that layered on top of
+the core Kubernetes API server in a different project (spoiler alert: this is foreshadowing), and I
+closed it without merging six months later.Undeterred by that start, I stayed involved, helped build Kubernetes authentication and
+authorization capabilities, and got involved in the definition and evolution of the core Kubernetes
+APIs from early beta APIs, like  to . I got tagged as an API reviewer in 2016 based on
+those contributions, and was added as an API approver in 2017.Today, I help lead the API Governance and code organization subprojects for SIG Architecture, and I
+am a tech lead for SIG Auth.FM: And when did you get specifically involved in the API Governance project?Goals and scope of API GovernanceFM: How would you describe the main goals and areas of intervention of the subproject?The surface area includes all the various APIs Kubernetes has, and there are APIs that people do not
+always realize are APIs: command-line flags, configuration files, how binaries are run, how they
+talk to back-end components like the container runtime, and how they persist data. People often
+think of "the API" as only the REST API... that
+is the biggest and most obvious one, and the one with the largest audience, but all of these other
+surfaces are also APIs. Their audiences are narrower, so there is more flexibility there, but they
+still require consideration.The goals are to be stable while still enabling innovation. Stability is easy if you never change
+anything, but that contradicts the goal of evolution and growth. So we balance "be stable" with
+"allow change".FM: Speaking of changes, in terms of ensuring consistency and quality (which is clearly one of the
+reasons this project exists), what are the specific quality gates in the lifecycle of a Kubernetes
+change? Does API Governance get involved during the release cycle, prior to it through guidelines,
+or somewhere in between? At what points do you ensure the intended role is fulfilled?: We have guidelines and
+conventions,
+both for APIs in general and for how to change an API. These are living documents that we update as
+we encounter new scenarios. They are long and dense, so we also support them with involvement at
+either the design stage or the implementation stage.Sometimes, due to bandwidth constraints, teams move ahead with design work without feedback from API Review. That’s fine, but it means that when implementation begins, the API review will happen then,
+and there may be substantial feedback. So we get involved when a new API is created or an existing
+API is changed, either at design or implementation.FM: Is this during the Kubernetes Enhancement Proposal (KEP) process? Since KEPs are mandatory for
+enhancements, I assume part of the work intersects with API Governance?: It can. KEPs vary
+in how detailed they are. Some include literal API definitions. When they do, we can perform an API
+review at the design stage. Then implementation becomes a matter of checking fidelity to the design.Getting involved early is ideal. But some KEPs are conceptual and leave details to the
+implementation. That’s not wrong; it just means the implementation will be more exploratory. Then
+API Review gets involved later, possibly recommending structural changes.There’s a trade-off regardless: detailed design upfront versus iterative discovery during
+implementation. People and teams work differently, and we’re flexible and happy to consult early or
+at implementation time.FM: This reminds me of what Fred Brooks wrote in "The Mythical Man-Month" about conceptual
+integrity being central to product quality... No matter how you structure the process, there must be
+a point where someone looks at what is coming and ensures conceptual integrity. Kubernetes uses APIs
+everywhere -- externally and internally -- so API Governance is critical to maintaining that
+integrity. How is this captured?: Yes, the conventions document captures patterns we’ve learned over time: what to do in
+various situations. We also have automated linters and checks to ensure correctness around patterns
+like spec/status semantics. These automated tools help catch issues even when humans miss them.As new scenarios arise -- and they do constantly -- we think through how to approach them and fold
+the results back into our documentation and tools. Sometimes it takes a few attempts before we
+settle on an approach that works well.FM: Exactly. Each new interaction improves the guidelines.: Right. And sometimes the first approach turns out to be wrong. It may take two or three
+iterations before we land on something robust.The impact of Custom Resource DefinitionsFM: Is there any particular change, episode, or domain that stands out as especially noteworthy,
+complex, or interesting in your experience?: The watershed moment was Custom Resources.
+Prior to that, every API was handcrafted by us and fully reviewed. There were inconsistencies, but
+we understood and controlled every type and field.When Custom Resources arrived, anyone could define anything. The first version did not even require
+a schema. That made it extremely powerful -- it enabled change immediately -- but it left us playing
+catch-up on stability and consistency.When Custom Resources graduated to General Availability (GA), schemas became required, but escape
+hatches still existed for backward compatibility. Since then, we’ve been working on giving CRD
+authors validation capabilities comparable to built-ins. Built-in validation rules for CRDs have
+only just reached GA in the last few releases.So CRDs opened the "anything is possible" era. Built-in validation rules are the second major
+milestone: bringing consistency back.The three major themes have been defining schemas, validating data, and handling pre-existing
+invalid data. With ratcheting validation (allowing data to improve without breaking existing
+objects), we can now guide CRD authors toward conventions without breaking the world.API Governance in contextFM: How does API Governance relate to SIG Architecture and API Machinery?: API Machinery provides the actual code and
+tools that people build APIs on. They don’t review APIs for storage, networking, scheduling, etc.SIG Architecture sets the overall system direction and works with API Machinery to ensure the system
+supports that direction. API Governance works with other SIGs building on that foundation to define
+conventions and patterns, ensuring consistent use of what API Machinery provides.FM: Thank you. That clarifies the flow. Going back to release cycles: do release phases -- enhancements freeze, code
+freeze -- change your workload? Or is API Governance mostly continuous?: We get involved in two places: design and implementation. Design involvement increases
+before enhancements freeze; implementation involvement increases before code freeze. However, many
+efforts span multiple releases, so there is always some design and implementation happening, even
+for work targeting future releases. Between those intense periods, we often have time to work on
+long-term design work.An anti-pattern we see is teams thinking about a large feature for months and then presenting it
+three weeks before enhancements freeze, saying, "Here is the design, please review." For big changes
+with API impact, it’s much better to involve API Governance early.And there are good times in the cycle for this -- between freezes -- when people have bandwidth.
+That’s when long-term review work fits best.FM: Clearly. Now, regarding team dynamics and new contributors: how can someone get involved in
+API Governance? What should they focus on?: It’s usually best to follow a specific change rather than trying to learn everything at
+once. Pick a small API change, perhaps one someone else is making or one you want to make, and
+observe the full process: design, implementation, review.High-bandwidth review -- live discussion over video -- is often very effective. If you’re making or
+following a change, ask whether there’s a time to go over the design or PR together. Observing those
+discussions is extremely instructive.Start with a small change. Then move to a bigger one. Then maybe a new API. That builds
+understanding of conventions as they are applied in practice.FM: Excellent. Any final comments, or anything we missed?: Yes... the reason we care so much about compatibility and stability is for our users. It’s
+easy for contributors to see those requirements as painful obstacles preventing cleanup or requiring
+tedious work... but users integrated with our system, and we made a promise to them: we want them to
+trust that we won’t break that contract. So even when it requires more work, moves slower, or
+involves duplication, we choose stability.We are not trying to be obstructive; we are trying to make life good for users.A lot of our questions focus on the future: you want to do something now... how will you evolve it
+later without breaking it? We assume we will know more in the future, and we want the design to
+leave room for that.We also assume we will make mistakes. The question then is: how do we leave ourselves avenues to
+improve while keeping compatibility promises?FM: Exactly. Jordan, thank you, I think we’ve covered everything. This has been an insightful view
+into the API Governance project and its role in the wider Kubernetes project.]]></content:encoded></item><item><title>Python 3.15.0 alpha 6</title><link>https://pythoninsider.blogspot.com/2026/02/python-3150-alpha-6.html</link><author>Hugo</author><category>dev</category><pubDate>Wed, 11 Feb 2026 15:42:00 +0000</pubDate><source url="https://pythoninsider.blogspot.com/">Python official news</source><content:encoded><![CDATA[This is an early developer preview of Python
+3.15Python 3.15 is still in development. This release, 3.15.0a6, is the
+sixth of eight planned alpha releases.Alpha releases are intended to make it easier to test the current
 state of new features and bug fixes and to test the release process.During the alpha phase, features may be added up until the start of
 the beta phase (2026-05-05) and, if necessary, may be modified or
 deleted up until the release candidate phase (2026-07-28). Please keep
@@ -427,197 +227,50 @@ in mind that this is a preview release and its use is
 written. Among the new major new features and changes so far:PEP
 799: A new high-frequency, low-overhead, statistical sampling
 profiler and dedicated profiling packagePEP
+798: Unpacking in comprehensions with  and
+PEP
 686: Python now uses UTF-8 as the default encodingPEP
 782: A new  C API to create a Python bytes
-objectThe JIT
-compiler has been significantly upgraded, with 4-5% geometric mean
-performance improvement on x86-64 Linux over the standard interpreter,
-and 7-8% speedup on AArch64 macOS over the tail-calling interpreter(Hey,  if a feature
-you find important is missing from this list, let Hugo
-know.)The next pre-release of Python 3.15 will be 3.15.0a6, currently
-scheduled for 2026-02-10.At last it was given out that some time next day the ship would
-certainly sail. So next morning, Queequeg and I took a very early
-start.Thanks to all of the many volunteers who help make Python Development
-and these releases possible! Please consider supporting our efforts by
-volunteering yourself or through organisation contributions to the Python Software
-Foundation.Regards from a still snowfully subzero Helsinki,Your release team,
-  Hugo van Kemenade
-  Steve Dower
-  ]]></content:encoded></item><item><title>What does it take to ship Rust in safety-critical?</title><link>https://blog.rust-lang.org/2026/01/14/what-does-it-take-to-ship-rust-in-safety-critical/</link><author>Pete LeVasseur</author><category>dev</category><pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[This is another post in our series covering what we learned through the Vision Doc process. In our first post, we described the overall approach and what we learned about doing user research. In our second post, we explored what people love about Rust. This post goes deep on one domain: safety-critical software.When we set out on the Vision Doc work, one area we wanted to explore in depth was safety-critical systems: software where malfunction can result in injury, loss of life, or environmental harm. Think vehicles, airplanes, medical devices, industrial automation. We spoke with engineers at OEMs, integrators, and suppliers across automotive (mostly), industrial, aerospace, and medical contexts.What we found surprised us a bit. The conversations kept circling back to a single tension: Rust's compiler-enforced guarantees support much of what Functional Safety Engineers and Software Engineers in these spaces spend their time preventing, but once you move beyond prototyping into the higher-criticality parts of a system, the ecosystem support thins out fast. There is no MATLAB/Simulink Rust code generation. There is no OSEK or AUTOSAR Classic-compatible RTOS written in Rust or with first-class Rust support. The tooling for qualification and certification is still maturing.
-Quick context: what makes software "safety-critical"If you've never worked in these spaces, here's the short version. Each safety-critical domain has standards that define a ladder of integrity levels: ISO 26262 in automotive, IEC 61508 in industrial, IEC 62304 in medical devices, DO-178C in aerospace. The details differ, but the shape is similar: as you climb the ladder toward higher criticality, the demands on your development process, verification, and evidence all increase, and so do the costs.This creates a strong incentive for : isolate the highest-criticality logic into the smallest surface area you can, and keep everything else at lower levels where costs are more manageable and you can move faster.We'll use automotive terminology in this post (QM through ASIL D) since that's where most of our interviews came from, but the patterns generalize. These terms represent increasing levels of safety-criticality, with QM being the lowest and ASIL D being the highest. The story at low criticality looks very different from the story at high criticality, regardless of domain.
-Rust is already in production for safety-critical systemsBefore diving into the challenges, it is worth noting that Rust is not just being evaluated in these domains. It is deployed and running in production.We spoke with a principal firmware engineer working on mobile robotics systems certified to IEC 61508 SIL 2:"We had a new project coming up that involved a safety system. And in the past, we'd always done these projects in C using third party stack analysis and unit testing tools that were just generally never very good, but you had to do them as part of the safety rating standards. Rust presented an opportunity where 90% of what the stack analysis stuff had to check for is just done by the compiler. That combined with the fact that now we had a safety qualified compiler to point to was kind of a breakthrough." -- Principal Firmware Engineer (mobile robotics)We also spoke with an engineer at a medical device company deploying IEC 62304 Class B software to intensive care units:"All of the product code that we deploy to end users and customers is currently in Rust. We do EEG analysis with our software and that's being deployed to ICUs, intensive care units, and patient monitors." -- Rust developer at a medical device company"We changed from this Python component to a Rust component and I think that gave us a 100-fold speed increase." -- Rust developer at a medical device companyThese are not proofs of concept. They are shipping systems in regulated environments, going through audits and certification processes. The path is there. The question is how to make it easier for the next teams coming through.
-Rust adoption is easiest at QM, and the constraints sharpen fastAt low criticality, teams described a pragmatic approach: use Rust and the crates ecosystem to move quickly, then harden what you ship. One architect at an automotive OEM told us:"We can use any crate [from crates.io] [..] we have to take care to prepare the software components for production usage." -- Architect at Automotive OEMBut at higher levels, third-party dependencies become difficult to justify. Teams either rewrite, internalize, or strictly constrain what they use. An embedded systems engineer put it bluntly:"We tend not to use 3rd party dependencies or nursery crates [..] solutions become kludgier as you get lower in the stack." -- Firmware EngineerSome teams described building escape hatches, abstraction layers designed for future replacement:"We create an interface that we'd eventually like to have to simplify replacement later on [..] sometimes rewrite, but even if re-using an existing crate we often change APIs, write more tests." -- Team Lead at Automotive Supplier (ASIL D target)Even teams that do use crates from crates.io described treating that as a temporary accelerator, something to track carefully and remove from critical paths before shipping:"We use crates mainly for things in the beginning where we need to set up things fast, proof of concept, but we try to track those dependencies very explicitly and for the critical parts of the software try to get rid of them in the long run." -- Team lead at an automotive software company developing middleware in RustIn aerospace, the "control the whole stack" instinct is even stronger:"In aerospace there's a notion of we must own all the code ourselves. We must have control of every single line of code." -- Engineering lead in aerospaceThis is the first big takeaway: a lot of "Rust in safety-critical" is not just about whether Rust compiles for a target. It is about whether teams can assemble an evidence-friendly software stack and keep it stable over long product lifetimes.Many interviewees framed Rust's value in terms of work shifted earlier and made more repeatable by the compiler. This is not just "nice," it changes how much manual review you can realistically afford. Much of what was historically process-based enforcement through coding standards like MISRA C and CERT C becomes a language-level concern in Rust, checked by the compiler rather than external static analysis or manual review."Roughly 90% of what we used to check with external tools is built into Rust's compiler." -- Principal Firmware Engineer (mobile robotics)We heard variations of this from teams dealing with large codebases and varied skill levels:"We cannot control the skill of developers from end to end. We have to check the code quality. Rust by checking at compile time, or Clippy tools, is very useful for our domain." -- Engineer at a major automakerEven on smaller teams, the review load matters:"I usually tend to work on teams between five and eight. Even so, it's too much code. I feel confident moving faster, a certain class of flaws that you aren't worrying about." -- Embedded systems engineer (mobile robotics)Closely related: people repeatedly highlighted Rust's consistency around error handling:"Having a single accepted way of handling errors used throughout the ecosystem is something that Rust did completely right." -- Automotive Technical LeadFor teams building products with 15-to-20-year lifetimes and "teams of teams," compiler-enforced invariants scale better than "we will just review harder."A common pattern in safety-critical environments is conservative toolchain selection. But engineers pointed out a tension: older toolchains carry their own defect history."[..] traditional wisdom is that after something's been around and gone through motions / testing then considered more stable and safer [..] older compilers used tend to have more bugs [and they become] hard to justify" -- Software Engineer at an Automotive supplierRust's edition system was described as a real advantage here, especially for incremental migration strategies that are common in automotive programs:"[The edition system is] golden for automotive, where incremental migration is essential." -- Software Engineer at major AutomakerIn practice, "stability" is also about managing the mismatch between what the platform supports and what the ecosystem expects. Teams described pinning Rust versions, then fighting dependency drift:"We can pin the Rust toolchain, but because almost all crates are implemented for the latest versions, we have to downgrade. It's very time-consuming." -- Engineer at a major automakerFor safety-critical adoption, "stability" is operational. Teams need to answer questions like: What does a Rust upgrade change, and what does it not change? What are the bounds on migration work? How do we demonstrate we have managed upgrade risk?
-Target support matters in practical waysSafety-critical software often runs on long-lived platforms and RTOSs. Even when "support exists," there can be caveats. Teams described friction around targets like QNX, where upstream Rust support exists but with limitations (for example, QNX 8.0 support is currently  only).This connects to Rust's target tier policy: the policy itself is clear, but regulated teams still need to map "tier" to "what can I responsibly bet on for this platform and this product lifetime.""I had experiences where all of a sudden I was upgrading the compiler and my toolchain and dependencies didn't work anymore for the Tier 3 target we're using. That's simply not acceptable. If you want to invest in some technology, you want to have a certain reliability." -- Senior software engineer at a major automaker is the spine, and it sets expectationsIn  environments,  becomes the spine of Rust. Teams described it as both rich enough to build real products and small enough to audit.A lot of Rust's safety leverage lives there:  and , slices, iterators,  and , atomics, , . But we also heard a consistent shape of gaps: many embedded and safety-critical projects want -friendly building blocks (fixed-size collections, queues) and predictable math primitives, but do not want to rely on "just any" third-party crate at higher integrity levels."Most of the math library stuff is not in core, it's in std. Sin, cosine... the workaround for now has been the libm crate. It'd be nice if it was in core." -- Principal Firmware Engineer (mobile robotics)
-Async is appealing, but the long-run story is not settledSome safety-critical-adjacent systems are already heavily asynchronous: daemons, middleware frameworks, event-driven architectures. That makes Rust's async story interesting.But people also expressed uncertainty about ecosystem lock-in and what it would take to use async in higher-criticality components. One team lead developing middleware told us:"We're not sure how async will work out in the long-run [in Rust for safety-critical]. [..] A lot of our software is highly asynchronous and a lot of our daemons in the AUTOSAR Adaptive Platform world are basically following a reactor pattern. [..] [C++14] doesn't really support these concepts, so some of this is lack of familiarity." -- Team lead at an automotive software company developing middleware in RustAnd when teams look at async through an ISO 26262 lens, the runtime question shows up immediately:"If we want to make use of async Rust, of course you need some runtime which is providing this with all the quality artifacts and process artifacts for ISO 26262." -- Team lead at an automotive software company developing middleware in RustAsync is not "just a language feature" in safety-critical contexts. It pulls in runtime choices, scheduling assumptions, and, at higher integrity levels, the question of what it would mean to certify or qualify the relevant parts of the stack.Find ways to help the safety-critical community support their own needs. Open source helps those who help themselves. The Ferrocene Language Specification (FLS) shows this working well: it started as an industry effort to create a specification suitable for safety-qualification of the Rust compiler, companies invested in the work, and it now has a sustainable home under the Rust Project with a team actively maintaining it.Contrast this with MC/DC coverage support in rustc. Earlier efforts stalled due to lack of sustained engagement from safety-critical companies. The technical work was there, but without industry involvement to help define requirements, validate the implementation, and commit to maintaining it, the effort lost momentum. A major concern was that the MC/DC code added maintenance burden to the rest of the coverage infrastructure without a clear owner. Now in 2026, there is renewed interest in doing this the right way: companies are working through the Safety-Critical Rust Consortium to create a Rust Project Goal in 2026 to collaborate with the Rust Project on MC/DC support. The model is shared ownership of requirements, with primary implementation and maintenance done by companies with a vested interest in safety-critical, done in a way that does not impede maintenance of the rest of the coverage code.The remaining recommendations follow this pattern: the Safety-Critical Rust Consortium can help the community organize requirements and drive work, with the Rust Project providing the deep technical knowledge of Rust Project artifacts needed for successful collaboration. The path works when both sides show up.Establish ecosystem-wide MSRV conventions. The dependency drift problem is real: teams pin their Rust toolchain for stability, but crates targeting the latest compiler make this difficult to sustain. An LTS release scheme, combined with encouraging libraries to maintain MSRV compatibility with LTS releases, could reduce this friction. This would require coordination between the Rust Project (potentially the release team) and the broader ecosystem, with the Safety-Critical Rust Consortium helping to articulate requirements and adoption patterns.Turn "target tier policy" into a safety-critical onramp. The friction we heard is not about the policy being unclear, it is about translating "tier" into practical decisions. A short, target-focused readiness checklist would help: Which targets exist? Which ones are  only? What is the last known tested OS version? What are the top blockers? The raw ingredients exist in rustc docs, release notes, and issue trackers, but pulling them together in one place would lower the barrier. Clearer, consolidated information also makes it easier for teams who depend on specific targets to contribute to maintaining them. The Safety-Critical Rust Consortium could lead this effort, working with compiler team members and platform maintainers to keep the information accurate.Document "dependency lifecycle" patterns teams are already using. The QM story is often: use crates early, track carefully, shrink dependencies for higher-criticality parts. The ASIL B+ story is often: avoid third-party crates entirely, or use abstraction layers and plan to replace later. Turning those patterns into a reusable playbook would help new teams make the same moves with less trial and error. This seems like a natural fit for the Safety-Critical Rust Consortium's liaison work.Define requirements for a safety-case friendly async runtime. Teams adopting async in safety-critical contexts need runtimes with appropriate quality and process artifacts for standards like ISO 26262. Work is already happening in this space. The Safety-Critical Rust Consortium could lead the effort to define what "safety-case friendly" means in concrete terms, working with the async working group and libs team on technical feasibility and design.Treat interop as part of the safety story. Many teams are not going to rewrite their world in Rust. They are going to integrate Rust into existing C and C++ systems and carry that boundary for years. Guidance and tooling to keep interfaces correct, auditable, and in sync would help. The compiler team and lang team could consider how FFI boundaries are surfaced and checked, informed by requirements gathered through the Safety-Critical Rust Consortium."We rely very heavily on FFI compatibility between C, C++, and Rust. In a safety-critical space, that's where the difficulty ends up being, generating bindings, finding out what the problem was." -- Embedded systems engineer (mobile robotics)To sum up the main points in this post:Rust is already deployed in production for safety-critical systems, including mobile robotics (IEC 61508 SIL 2) and medical devices (IEC 62304 Class B). The path exists.Rust's defaults (memory safety, thread safety, strong typing) map directly to much of what Functional Safety Engineers spend their time preventing. But ecosystem support thins out as you move toward higher-criticality software.At low criticality (QM), teams use crates freely and harden later. At higher levels (ASIL B+), third-party dependencies become difficult to justify, and teams rewrite, internalize, or build abstraction layers for future replacement.The compiler is doing work that used to require external tools and manual review. Much of what was historically process-based enforcement through standards like MISRA C and CERT C becomes a language-level concern, checked by the compiler. That can scale better than "review harder" for long-lived products with large teams and supports engineers in these domains feeling more secure in the systems they ship.Stability is operational: teams need to explain what upgrades change, manage dependency drift, and map target tier policies to their platform reality.Async is appealing for middleware and event-driven systems, but the runtime and qualification story is not settled for higher-criticality use.We make six recommendations: find ways to help the safety-critical community support their own needs, establish ecosystem-wide MSRV conventions, create target-focused readiness checklists, document dependency lifecycle patterns, define requirements for safety-case friendly async runtimes, and treat C/C++ interop as part of the safety story.Hearing concrete constraints, examples of assessor feedback, and what "evidence" actually looks like in practice is incredibly helpful. The goal is to make Rust's strengths more accessible in environments where correctness and safety are not optional.]]></content:encoded></item><item><title>Python 3.15.0 alpha 4</title><link>https://pythoninsider.blogspot.com/2026/01/python-3150-alpha-4.html</link><author>Hugo</author><category>dev</category><pubDate>Tue, 13 Jan 2026 20:24:00 +0000</pubDate><source url="https://pythoninsider.blogspot.com/">Python official news</source><content:encoded><![CDATA[Edit: This 3.15.0a4 was accidentally built against `main` from 2025-12-23 instead of 2026-01-13, so 3.15.0a5 is an extra release correctly built against 2026-01-14.This is an early developer preview of Python
-3.15Python 3.15 is still in development. This release, 3.15.0a4, is the
-fourth of seven planned alpha releases.Alpha releases are intended to make it easier to test the current
-state of new features and bug fixes and to test the release process.During the alpha phase, features may be added up until the start of
-the beta phase (2026-05-05) and, if necessary, may be modified or
-deleted up until the release candidate phase (2026-07-28). Please keep
-in mind that this is a preview release and its use is
- recommended for production environments.Many new features for Python 3.15 are still being planned and
-written. Among the new major new features and changes so far:PEP
-799: A new high-frequency, low-overhead, statistical sampling
-profiler and dedicated profiling packagePEP
-686: Python now uses UTF-8 as the default encodingPEP
-782: A new  C API to create a Python bytes
-objectThe JIT
+objectPEP 728:
+ with typed extra itemsThe JIT
 compiler has been significantly upgraded, with 3-4% geometric mean
 performance improvement on x86-64 Linux over the standard interpreter,
 and 7-8% speedup on AArch64 macOS over the tail-calling interpreter(Hey,  if a feature
 you find important is missing from this list, let Hugo
-know.)The next pre-release of Python 3.15 will be 3.15.0a5, currently
-scheduled for 2026-02-10.Upon this every soul was confounded; for the phenomenon just then
-observed by Ahab had unaccountably escaped every one else; but its very
-blinding palpableness must have been the cause.Thrusting his head half way into the binnacle, Ahab caught one
-glimpse of the compasses; his uplifted arm slowly fell; for a moment he
-almost seemed to stagger. Standing behind him Starbuck looked, and lo!
-the two compasses pointed East, and the Pequod was as infallibly going
-West.But ere the first wild alarm could get out abroad among the crew, the
-old man with a rigid laugh exclaimed, “I have it! It has happened
-before. Mr. Starbuck, last night’s thunder turned our compasses—that’s
-all. Thou hast before now heard of such a thing, I take it.”“Aye; but never before has it happened to me, sir,” said the pale
-mate, gloomily.Thanks to all of the many volunteers who help make Python Development
+know.)The next pre-release of Python 3.15 will be 3.15.0a7, currently
+scheduled for 2026-03-10.By reason of these things, then, the whaling voyage was welcome; the
+great flood-gates of the wonder-world swung open, and in the wild
+conceits that swayed me to my purpose, two and two there floated into my
+inmost soul, endless processions of the whale, and, mid most of them
+all, one grand hooded phantom, like a snow hill in the air.Thanks to all of the many volunteers who help make Python development
 and these releases possible! Please consider supporting our efforts by
 volunteering yourself or through organisation contributions to the Python Software
-Foundation.Regards from a snowfully subzero Helsinki,Your release team,
+Foundation.Regards as the snow slowly falls in Helsinki,Your release team,
   Hugo van Kemenade
   Steve Dower
-  ]]></content:encoded></item><item><title>Kubernetes v1.35: Restricting executables invoked by kubeconfigs via exec plugin allowList added to kuberc</title><link>https://kubernetes.io/blog/2026/01/09/kubernetes-v1-35-kuberc-credential-plugin-allowlist/</link><author></author><category>dev</category><pubDate>Fri, 9 Jan 2026 18:30:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[Did you know that  can run arbitrary executables, including shell
-scripts, with the full privileges of the invoking user, and without your
-knowledge? Whenever you download or auto-generate a , the
- field can specify an executable to fetch credentials on
-your behalf. Don't get me wrong, this is an incredible feature that allows you
-to authenticate to the cluster with external identity providers. Nevertheless,
-you probably see the problem: Do you know exactly what executables your 
-is running on your system? Do you trust the pipeline that generated your ?
-If there has been a supply-chain attack on the code that generates the kubeconfig,
-or if the generating pipeline has been compromised, an attacker might well be
-doing unsavory things to your machine by tricking your  into running
-arbitrary code.To give the user more control over what gets run on their system, SIG-Auth and SIG-CLI added the credential plugin policy and allowlist as a beta feature to
-Kubernetes 1.35. This is available to all clients using the  library,
-by filling out the ExecProvider.PluginPolicy struct on a REST config. To
-broaden the impact of this change, Kubernetes v1.35 also lets you manage this without
-writing a line of application code. You can configure  to enforce
-the policy and allowlist by adding two fields to the  configuration
-file:  and credentialPluginAllowlist. Adding one or
-both of these fields restricts which credential plugins  is allowed to execute.A full description of this functionality is available in our official documentation for kuberc,
-but this blog post will give a brief overview of the new security knobs. The new
-features are in beta and available without using any feature gates.The following example is the simplest one: simply don't specify the new fields.This will keep  acting as it always has, and all plugins will be
-allowed.The next example is functionally identical, but it is more explicit and
-therefore preferred if it's actually what you want:If you  whether or not you're using exec credential plugins, try
-setting your policy to :If you  using credential plugins, you'll quickly find out what  is
-trying to execute. You'll get an error like the following.Unable to connect to the server: getting credentials: plugin "cloudco-login" not allowed: policy set to "DenyAll"If there is insufficient information for you to debug the issue, increase the
-logging verbosity when you run your next command. For example:Selectively allowing pluginsWhat if you need the  plugin to do your daily work? That is why
-there's a third option for your policy, . To allow a specific plugin,
-set the policy and add the credentialPluginAllowlist:You'll notice that there are two entries in the allowlist. One of them is
-specified by full path, and the other,  is just a basename. When
-you specify just the basename, the full path will be looked up using
-, which does not expand globbing or handle wildcards.
-Globbing is not supported at this time. Both forms
-(basename and full path) are acceptable, but the full path is preferable because
-it narrows the scope of allowed binaries even further.Currently, an allowlist entry has only one field, . In the future, we
-(Kubernetes SIG CLI) want to see other requirements added. One idea that seems
-useful is checksum verification whereby, for example, a binary would only be allowed
-to run if it has the sha256 sum
-b9a3fad00d848ff31960c44ebb5f8b92032dc085020f857c98e32a5d5900ff9c
-exists at the path .Another possibility is only allowing binaries that have been signed by one of a
-set of a trusted signing keys.The credential plugin policy is still under development and we are very interested
-in your feedback. We'd love to hear what you like about it and what problems
-you'd like to see it solve. Or, if you have the cycles to contribute one of the
-above enhancements, they'd be a great way to get started contributing to
-Kubernetes. Feel free to join in the discussion on slack:]]></content:encoded></item><item><title>Kubernetes v1.35: Mutable PersistentVolume Node Affinity (alpha)</title><link>https://kubernetes.io/blog/2026/01/08/kubernetes-v1-35-mutable-pv-nodeaffinity/</link><author></author><category>dev</category><pubDate>Thu, 8 Jan 2026 18:30:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[The PersistentVolume node affinity API
-dates back to Kubernetes v1.10.
-It is widely used to express that volumes may not be equally accessible by all nodes in the cluster.
-This field was previously immutable,
-and it is now mutable in Kubernetes v1.35 (alpha). This change opens a door to more flexible online volume management.Why make node affinity mutable?This raises an obvious question: why make node affinity mutable now?
-While stateless workloads like Deployments can be changed freely
-and the changes will be rolled out automatically by re-creating every Pod,
-PersistentVolumes (PVs) are stateful and cannot be re-created easily without losing data.However, Storage providers evolve and storage requirements change.
-Most notably, multiple providers are offering regional disks now.
-Some of them even support live migration from zonal to regional disks, without disrupting the workloads.
-This change can be expressed through the
-VolumeAttributesClass API,
-which recently graduated to GA in 1.34.
-However, even if the volume is migrated to regional storage,
-Kubernetes still prevents scheduling Pods to other zones because of the node affinity recorded in the PV object.
-In this case, you may want to change the PV node affinity from:As another example, providers sometimes offer new generations of disks.
-New disks cannot always be attached to older nodes in the cluster.
-This accessibility can also be expressed through PV node affinity and ensures the Pods can be scheduled to the right nodes.
-But when the disk is upgraded, new Pods using this disk can still be scheduled to older nodes.
-To prevent this, you may want to change the PV node affinity from:So, it is mutable now, a first step towards a more flexible online volume management.
-While it is a simple change that removes one validation from the API server,
-we still have a long way to go to integrate well with the Kubernetes ecosystem.This feature is for you if you are a Kubernetes cluster administrator,
-and your storage provider allows online update that you want to utilize,
-but those updates can affect the accessibility of the volume.Note that changing PV node affinity alone will not actually change the accessibility of the underlying volume.
-Before using this feature,
-you must first update the underlying volume in the storage provider,
-and understand which nodes can access the volume after the update.
-You can then enable this feature and keep the PV node affinity in sync.Currently, this feature is in alpha state.
-It is disabled by default, and may subject to change.
-To try it out, enable the  feature gate on APIServer, then you can edit the PV  field.
-Typically only administrators can edit PVs, please make sure you have the right RBAC permissions.Race condition between updating and schedulingThere are only a few factors outside of a Pod that can affect the scheduling decision, and PV node affinity is one of them.
-It is fine to allow more nodes to access the volume by relaxing node affinity,
-but there is a race condition when you try to tighten node affinity:
-it is unclear how the Scheduler will see the modified PV in its cache,
-so there is a small window where the scheduler may place a Pod on an old node that can no longer access the volume.
-In this case, the Pod will stuck at  state.One mitigation currently under discussion is for the kubelet to fail Pod startup if the PersistentVolume’s node affinity is violated.
-This has not landed yet.
-So if you are trying this out now, please watch subsequent Pods that use the updated PV,
-and make sure they are scheduled onto nodes that can access the volume.
-If you update PV and immediately start new Pods in a script, it may not work as intended.Future integration with CSI (Container Storage Interface)Currently, it is up to the cluster administrator to modify both PV's node affinity and the underlying volume in the storage provider.
-But manual operations are error-prone and time-consuming.
-It is preferred to eventually integrate this with VolumeAttributesClass,
-so that an unprivileged user can modify their PersistentVolumeClaim (PVC) to trigger storage-side updates,
-and PV node affinity is updated automatically when appropriate, without the need for cluster admin's intervention.As noted earlier, this is only a first step.If you are a Kubernetes user,
-we would like to learn how you use (or will use) PV node affinity.
-Is it beneficial to update it online in your case?If you are a CSI driver developer,
-would you be willing to implement this feature? How would you like the API to look?Please provide your feedback via:For any inquiries or specific questions related to this feature, please reach out to the SIG Storage community.]]></content:encoded></item><item><title>Kubernetes v1.35: A Better Way to Pass Service Account Tokens to CSI Drivers</title><link>https://kubernetes.io/blog/2026/01/07/kubernetes-v1-35-csi-sa-tokens-secrets-field-beta/</link><author></author><category>dev</category><pubDate>Wed, 7 Jan 2026 18:30:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[If you maintain a CSI driver that uses service account tokens,
-Kubernetes v1.35 brings a refinement you'll want to know about.
-Since the introduction of the TokenRequests feature,
-service account tokens requested by CSI drivers have been passed to them through the  field.
-While this has worked, it's not the ideal place for sensitive information,
-and we've seen instances where tokens were accidentally logged in CSI drivers.Kubernetes v1.35 introduces a beta solution to address this:
-CSI Driver Opt-in for Service Account Tokens via Secrets Field.
-This allows CSI drivers to receive service account tokens
-through the  field in ,
-which is the appropriate place for sensitive data in the CSI specification.Understanding the existing approachWhen CSI drivers use the TokenRequests feature,
-they can request service account tokens for workload identity
-by configuring the  field in the CSIDriver spec.
-These tokens are passed to drivers as part of the volume attributes map,
-using the key csi.storage.k8s.io/serviceAccount.tokens.The  field works, but it's not designed for sensitive data.
-Because of this, there are a few challenges:First, the  tool that CSI drivers use doesn't treat volume context as sensitive,
-so service account tokens can end up in logs when gRPC requests are logged.
-This happened with CVE-2023-2878 in the Secrets Store CSI Driver
-and CVE-2024-3744 in the Azure File CSI Driver.Second, each CSI driver that wants to avoid this issue needs to implement its own sanitization logic,
-which leads to inconsistency across drivers.The CSI specification already has a  field in 
-that's designed exactly for this kind of sensitive information.
-The challenge is that we can't just change where we put the tokens
-without breaking existing CSI drivers that expect them in volume context.How the opt-in mechanism worksKubernetes v1.35 introduces an opt-in mechanism that lets CSI drivers choose
-how they receive service account tokens.
-This way, existing drivers continue working as they do today,
-and drivers can move to the more appropriate secrets field when they're ready.CSI drivers can set a new field in their CSIDriver spec:The behavior depends on the serviceAccountTokenInSecrets field:When set to  (the default), tokens are placed in  with the key csi.storage.k8s.io/serviceAccount.tokens, just like today.
-When set to , tokens are placed only in the  field with the same key.The CSIServiceAccountTokenSecrets feature gate is enabled by default
-on both kubelet and kube-apiserver.
-Since the serviceAccountTokenInSecrets field defaults to ,
-enabling the feature gate doesn't change any existing behavior.
-All drivers continue receiving tokens via volume context unless they explicitly opt in.
-This is why we felt comfortable starting at beta rather than alpha.Guide for CSI driver authorsIf you maintain a CSI driver that uses service account tokens, here's how to adopt this feature.First, update your driver code to check both locations for tokens.
-This makes your driver compatible with both the old and new approaches:This fallback logic is backward compatible and safe to ship in any driver version,
-even before clusters upgrade to v1.35.CSI driver authors need to follow a specific sequence when adopting this feature to avoid breaking existing volumes. (can happen anytime)You can start preparing your driver right away by adding fallback logic that checks both the secrets field and volume context for tokens.
-This code change is backward compatible and safe to ship in any driver version, even before clusters upgrade to v1.35.
-We encourage you to add this fallback logic early, cut releases, and even backport to maintenance branches where feasible.Cluster upgrade and feature enablementOnce your driver has the fallback logic deployed, here's the safe rollout order for enabling the feature in a cluster:Complete the kube-apiserver upgrade to 1.35 or laterComplete kubelet upgrade to 1.35 or later on all nodesEnsure CSI driver version with fallback logic is deployed (if not already done in preparation phase)Fully complete CSI driver DaemonSet rollout across all nodesUpdate your CSIDriver manifest to set serviceAccountTokenInSecrets: trueThe most important thing to remember is timing.
-If your CSI driver DaemonSet and CSIDriver object are in the same manifest or Helm chart,
-you need two separate updates.
-Deploy the new driver version with fallback logic first,
-wait for the DaemonSet rollout to complete,
-then update the CSIDriver spec to set serviceAccountTokenInSecrets: true.Also, don't update the CSIDriver before all driver pods have rolled out.
-If you do, volume mounts will fail on nodes still running the old driver version,
-since those pods only check volume context.Adopting this feature helps in a few ways:It eliminates the risk of accidentally logging service account tokens as part of volume context in gRPC requestsIt uses the CSI specification's designated field for sensitive data, which feels rightThe  tool automatically handles the secrets field correctly, so you don't need driver-specific workaroundsIt's opt-in, so you can migrate at your own pace without breaking existing deploymentsWe (Kubernetes SIG Storage) encourage CSI driver authors to adopt this feature and provide feedback
-on the migration experience.
-If you have thoughts on the API design or run into any issues during adoption,
-please reach out to us on the
-#csi channel on Kubernetes Slack
-(for an invitation, visit https://slack.k8s.io/).You can follow along on
-KEP-5538
-to track progress across the coming Kubernetes releases.]]></content:encoded></item></channel></rss>
+  ]]></content:encoded></item><item><title>Go 1.26 is released</title><link>https://go.dev/blog/go1.26</link><author>Carlos Amedee, on behalf of the Go team</author><category>dev</category><pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[Today the Go team is pleased to release Go 1.26.
+You can find its binary archives and installers on the download page.First, the built-in  function, which creates a new variable, now allows its operand to be an
+expression, specifying the initial value of the variable.A simple example of this change means that code such as this:x := int64(300)
+ptr := &x
+Second, generic types may now refer to themselves in their own type parameter list. This change
+simplifies the implementation of complex data structures and interfaces.The  command has been completely rewritten to use the
+Go analysis framework, and now includes a
+couple dozen “modernizers”, analyzers
+that suggest safe fixes to help your code take advantage of newer features of the language
+and standard library. It also includes the
+ analyzer, which
+attempts to inline all calls to each function annotated with a  directive.
+Two upcoming blog posts will address these features in more detail.More improvements and changesSome of the additions in Go 1.26 are in an experimental stage
+and become exposed only when you explicitly opt in. Notably:These experiments are all expected to be generally available in a
+future version of Go. We encourage you to try them out ahead of time.
+We really value your feedback!Please refer to the Go 1.26 Release Notes for the complete list
+of additions, changes, and improvements in Go 1.26.Over the next few weeks, follow-up blog posts will cover some of the topics
+relevant to Go 1.26 in more detail. Check back later to read those posts.Thanks to everyone who contributed to this release by writing code, filing bugs,
+trying out experimental additions, sharing feedback, and testing the release candidates.
+Your efforts helped make Go 1.26 as stable as possible.
+As always, if you notice any problems, please file an issue.We hope you enjoy using the new release!]]></content:encoded></item><item><title>Python 3.14.3 and 3.13.12 are now available!</title><link>https://pythoninsider.blogspot.com/2026/02/python-3143-and-31312-are-now-available.html</link><author>Thomas Wouters</author><category>dev</category><pubDate>Tue, 3 Feb 2026 22:08:00 +0000</pubDate><source url="https://pythoninsider.blogspot.com/">Python official news</source><content:encoded><![CDATA[This is third maintenance release of Python 3.14Python 3.14.3 is the third maintenance release of 3.14, containing around 299 bugfixes, build improvements and documentation changes since 3.14.2.Some of the major new features and changes in Python 3.14 are:Incompatible changes, removals and new deprecationsThe installer we offer for Windows is being replaced by our new install manager, which can be installed from the Windows Store or from its download page. See our documentation for more information. The JSON file available for download contains the list of all the installable packages available as part of this release, including file URLs and hashes, but is not required to install the latest release. The traditional installer will remain available throughout the 3.14 and 3.15 releases.Python 3.13.12 is  now available!Python 3.13.12 is the twelfth maintenance release of 3.13, containing around 250 bugfixes, build improvements and documentation changes since 3.13.11.Thanks to all of the many volunteers who help make Python Development and these releases possible! Please consider supporting our efforts by volunteering yourself or through organisation contributions to the Python Software Foundation.Regards from an international releasing task force spread out over a whopping 10 timezones this time,Your release team,Thomas Wouters Ned Deily Łukasz Langa ]]></content:encoded></item><item><title>Introducing Node Readiness Controller</title><link>https://kubernetes.io/blog/2026/02/03/introducing-node-readiness-controller/</link><author></author><category>dev</category><pubDate>Tue, 3 Feb 2026 02:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[In the standard Kubernetes model, a node’s suitability for workloads hinges on a single binary "Ready" condition. However, in modern Kubernetes environments, nodes require complex infrastructure dependencies—such as network agents, storage drivers, GPU firmware, or custom health checks—to be fully operational before they can reliably host pods.Today, on behalf of the Kubernetes project, I am announcing the Node Readiness Controller.
+This project introduces a declarative system for managing node taints, extending the readiness guardrails during node bootstrapping beyond standard conditions.
+By dynamically managing taints based on custom health signals, the controller ensures that workloads are only placed on nodes that met all infrastructure-specific requirements.Why the Node Readiness Controller?Core Kubernetes Node "Ready" status is often insufficient for clusters with sophisticated bootstrapping requirements. Operators frequently struggle to ensure that specific DaemonSets or local services are healthy before a node enters the scheduling pool.The Node Readiness Controller fills this gap by allowing operators to define custom scheduling gates tailored to specific node groups. This enables you to enforce
+distinct readiness requirements across heterogeneous clusters, ensuring for example, that GPU equipped nodes only accept pods once specialized drivers are verified,
+while general purpose nodes follow a standard path.It provides three primary advantages:Custom Readiness Definitions: Define what  means for your specific platform.Automated Taint Management: The controller automatically applies or removes node taints based on condition status, preventing pods from landing on unready infrastructure.Declarative Node Bootstrapping: Manage multi-step node initialization reliably, with a clear observability into the bootstrapping process.Core concepts and featuresThe controller centers around the NodeReadinessRule (NRR) API, which allows you to define declarative  for your nodes.Flexible enforcement modesThe controller supports two distinct operational modes:Actively maintains the readiness guarantee throughout the node’s entire lifecycle. If a critical dependency (like a device driver) fails later, the node is immediately tainted to prevent new scheduling.Specifically for one-time initialization steps, such as pre-pulling heavy images or hardware provisioning. Once conditions are met, the controller marks the bootstrap as complete and stops monitoring that specific rule for the node.The controller reacts to Node Conditions rather than performing health checks itself. This decoupled design allows it to integrate seamlessly with other tools existing in the ecosystem as well as custom solutions:Readiness Condition Reporter: A lightweight agent provided by the project that can be deployed to periodically check local HTTP endpoints and patch node conditions accordingly.Operational safety with dry runDeploying new readiness rules across a fleet carries inherent risk. To mitigate this,  mode allows operators to first simulate impact on the cluster.
+In this mode, the controller logs intended actions and updates the rule's status to show affected nodes without applying actual taints, enabling safe validation before enforcement.Example: CNI bootstrappingThe following NodeReadinessRule ensures a node remains unschedulable until its CNI agent is functional. The controller monitors a custom cniplugin.example.net/NetworkReady condition and only removes the readiness.k8s.io/acme.com/network-unavailable taint once the status is True.The Node Readiness Controller is just getting started, with our initial releases out, and we are seeking community feedback to refine the roadmap. Following our productive Unconference discussions at KubeCon NA 2025, we are excited to continue the conversation in person.In the meantime, you can contribute or track our progress here:]]></content:encoded></item></channel></rss>
