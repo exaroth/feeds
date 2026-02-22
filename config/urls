@@ -22,20 +22,20 @@ https://blog.rust-lang.org/feed "~Rust Blog" ! dev
 https://blog.python.org/feeds/posts/default?alt=rss "~Python official news" ! dev
 
 
-https://www.youtube.com/feeds/videos.xml?channel_id=UCknLrEdhRCp1aegoMqRaCZg "~News - DW" ! news
-https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg "~News - Bloomberg" ! news
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFknLrEdhRCp1aegoMqRaCZg "~News - DW" ! news
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFIALMKvObZNtJ6AmdCLP7Lg "~News - Bloomberg" ! news
 https://www.channel4.com/news/world/feed "~Channel 4" ! news
-https://www.youtube.com/feeds/videos.xml?channel_id=UCSrZ3UV4jOidv8ppoVuvW9Q "~News - Euronews" ! news
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFSrZ3UV4jOidv8ppoVuvW9Q "~News - Euronews" ! news
 https://notesfrompoland.com/category/news/rss "~News - Poland" ! news
 
 
-https://www.youtube.com/feeds/videos.xml?channel_id=UCrTNhL_yO3tPTdQ5XgmmWjA "~Movies - RedLetterMedia" ! movies
-https://www.youtube.com/feeds/videos.xml?channel_id=UCjFqcJQXGZ6T6sxyFB-5i6A "~Movies - Every Frame a Painting" ! movies
-https://www.youtube.com/feeds/videos.xml?channel_id=UCcGlif61mMV6soFSiN2QHoQ "~Movies - Kino Corner" ! movies
-https://www.youtube.com/feeds/videos.xml?channel_id=UCUyvQV2JsICeLZP4c_h40kA "~Movies - Thomas Flight" ! movies
-https://www.youtube.com/feeds/videos.xml?channel_id=UCI62rVaY9gn5yO3Msh6BN0w "~Movies - Layton Eversaul" ! movies
-https://www.youtube.com/feeds/videos.xml?channel_id=UCFOfgEQLHpPuVNP_m-XldTg "~Movies - FilmStack" ! movies
-https://www.youtube.com/feeds/videos.xml?channel_id=UCErmMCK1sHF-kCtyHpuSXtQ "~Movies - Kermode" ! movies
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFrTNhL_yO3tPTdQ5XgmmWjA "~Movies - RedLetterMedia" ! movies
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFjFqcJQXGZ6T6sxyFB-5i6A "~Movies - Every Frame a Painting" ! movies
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFcGlif61mMV6soFSiN2QHoQ "~Movies - Kino Corner" ! movies
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFUyvQV2JsICeLZP4c_h40kA "~Movies - Thomas Flight" ! movies
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFI62rVaY9gn5yO3Msh6BN0w "~Movies - Layton Eversaul" ! movies
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFFOfgEQLHpPuVNP_m-XldTg "~Movies - FilmStack" ! movies
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFErmMCK1sHF-kCtyHpuSXtQ "~Movies - Kermode" ! movies
 https://www.youtube.com/feeds/videos.xml?playlist_id=PLpd1itfTDtaVLCrM6OgjyE7TY_CwUnnGE "~Movies - A24 Podcast" ! movies
 https://www.youtube.com/feeds/videos.xml?playlist_id=PL7D89754A5DAD1E8E "~Movies - Criterion" ! movies
 http://feeds.libsyn.com/265448/rss "~Movies - Team Deakins" ! movies
@@ -93,138 +93,138 @@ https://gh-issues-to-rss.fly.dev/exaroth/poom?m=io ! gh
 https://gh-issues-to-rss.fly.dev/exaroth/game-appimage?m=io ! gh
 
 # Astrum
-https://www.youtube.com/feeds/videos.xml?channel_id=UC-9b7aDP6ZN0coj9-xFnrtw ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF-9b7aDP6ZN0coj9-xFnrtw ! yt
 # French Cooking Academy
-https://www.youtube.com/feeds/videos.xml?channel_id=UC0lG3Ihe4LGV851lODRIS5g ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF0lG3Ihe4LGV851lODRIS5g ! yt
 # Real Science
-https://www.youtube.com/feeds/videos.xml?channel_id=UC176GAQozKKjhz62H8u9vQQ ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF176GAQozKKjhz62H8u9vQQ ! yt
 # Mustard
-https://www.youtube.com/feeds/videos.xml?channel_id=UC1ZBQ-F-yktYD4m5AzM6pww ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF1ZBQ-F-yktYD4m5AzM6pww ! yt
 # ColdFusion
-https://www.youtube.com/feeds/videos.xml?channel_id=UC4QZ_LsYcvcq7qOsOhpAX4A ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF4QZ_LsYcvcq7qOsOhpAX4A ! yt
 # System Design Fight Club
-https://www.youtube.com/feeds/videos.xml?channel_id=UC5_QAB65IbajYkL6hzoY-gg ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF5_QAB65IbajYkL6hzoY-gg ! yt
 # GEOPOP
-https://www.youtube.com/feeds/videos.xml?channel_id=UC5_npTvQVSZ28Kc8wvffPew ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF5_npTvQVSZ28Kc8wvffPew ! yt
 # Sarcasmitron
-https://www.youtube.com/feeds/videos.xml?channel_id=UC6WD1VImCVeOuNccuqDzAdA ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF6WD1VImCVeOuNccuqDzAdA ! yt
 # Patrick Boyle
-https://www.youtube.com/feeds/videos.xml?channel_id=UCASM0cgfkJxQ1ICmRilfHLw ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFASM0cgfkJxQ1ICmRilfHLw ! yt
 # Real Time History
-https://www.youtube.com/feeds/videos.xml?channel_id=UCB1eDEd1AYG3YrRIJSZzMOQ ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFB1eDEd1AYG3YrRIJSZzMOQ ! yt
 # The Cold War
-https://www.youtube.com/feeds/videos.xml?channel_id=UCCGvq-qmjFmmMD4e-PLQqGg ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFCGvq-qmjFmmMD4e-PLQqGg ! yt
 # Extra History
-https://www.youtube.com/feeds/videos.xml?channel_id=UCCODtTcd5M1JavPCOr_Uydg ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFCODtTcd5M1JavPCOr_Uydg ! yt
 # Chyrosran22
-https://www.youtube.com/feeds/videos.xml?channel_id=UCD0y51PJfvkZNe3y3FR5riw ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFD0y51PJfvkZNe3y3FR5riw ! yt
 # The People Profiles
-https://www.youtube.com/feeds/videos.xml?channel_id=UCD6TPU-PvTMvqgzC_AM7_uA ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFD6TPU-PvTMvqgzC_AM7_uA ! yt
 # Georg Rockall-Schmidt
-https://www.youtube.com/feeds/videos.xml?channel_id=UCG5h8yHSUS4n7zPnh0dG0SA ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFG5h8yHSUS4n7zPnh0dG0SA ! yt
 # SEA
-https://www.youtube.com/feeds/videos.xml?channel_id=UCG9ShGbASoiwHwFcLcAh9EA ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFG9ShGbASoiwHwFcLcAh9EA ! yt
 # Veritasium
-https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFHnyfMqiRRG1u-2MsSQLbXA ! yt
 # Kyle McDougall
-https://www.youtube.com/feeds/videos.xml?channel_id=UCJQcBYfgescGRJUzU6IMCMw ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFJQcBYfgescGRJUzU6IMCMw ! yt
 # EXPLORE WITH US
-https://www.youtube.com/feeds/videos.xml?channel_id=UCJWKjrrUh2KL1d3zXQW79cQ ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFJWKjrrUh2KL1d3zXQW79cQ ! yt
 # tanks for nothin
-https://www.youtube.com/feeds/videos.xml?channel_id=UCJXxuESjGIaaqb1-IRWFihw ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFJXxuESjGIaaqb1-IRWFihw ! yt
 # Nerdwriter1
-https://www.youtube.com/feeds/videos.xml?channel_id=UCJkMlOu7faDgqh4PfzbpLdg ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFJkMlOu7faDgqh4PfzbpLdg ! yt
 # The Cinema Cartography
-https://www.youtube.com/feeds/videos.xml?channel_id=UCL5kBJmBUVFLYBDiSiK1VDw ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFL5kBJmBUVFLYBDiSiK1VDw ! yt
 # Vox
-https://www.youtube.com/feeds/videos.xml?channel_id=UCLXo7UDZvByw2ixzpQCufnA ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFLXo7UDZvByw2ixzpQCufnA ! yt
 # ciekawehistorie
-https://www.youtube.com/feeds/videos.xml?channel_id=UCO8czxzBx4PxuTEolCBmq2w ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFO8czxzBx4PxuTEolCBmq2w ! yt
 # fern
-https://www.youtube.com/feeds/videos.xml?channel_id=UCODHrzPMGbNv67e84WDZhQQ ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFODHrzPMGbNv67e84WDZhQQ ! yt
 # RealLifeLore
-https://www.youtube.com/feeds/videos.xml?channel_id=UCP5tjEmvPItGyLhmjdwP7Ww ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFP5tjEmvPItGyLhmjdwP7Ww ! yt
 # Internet Historian
-https://www.youtube.com/feeds/videos.xml?channel_id=UCR1D15p_vdP3HkrH8wgjQRw ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFR1D15p_vdP3HkrH8wgjQRw ! yt
 # Real Engineering
-https://www.youtube.com/feeds/videos.xml?channel_id=UCR1IuLEqb6UEA_zQ81kwXfg ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFR1IuLEqb6UEA_zQ81kwXfg ! yt
 # LEMMiNO
-https://www.youtube.com/feeds/videos.xml?channel_id=UCRcgy6GzDeccI7dkbbBna3Q ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFRcgy6GzDeccI7dkbbBna3Q ! yt
 # Fall of Civilizations
-https://www.youtube.com/feeds/videos.xml?channel_id=UCT6Y5JJPKe_JDMivpKgVXew ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFT6Y5JJPKe_JDMivpKgVXew ! yt
 # Bloomberg Originals
-https://www.youtube.com/feeds/videos.xml?channel_id=UCUMZ7gohGI9HcU9VNsr2FJQ ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFUMZ7gohGI9HcU9VNsr2FJQ ! yt
 # DW Documentary
-https://www.youtube.com/feeds/videos.xml?channel_id=UCW39zufHfsuGgpLviKh297Q ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFW39zufHfsuGgpLviKh297Q ! yt
 # Middle Eats
-https://www.youtube.com/feeds/videos.xml?channel_id=UCWj_rUMGYCP0DjffybE2nbg ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFWj_rUMGYCP0DjffybE2nbg ! yt
 # History Hit
-https://www.youtube.com/feeds/videos.xml?channel_id=UCZwU2G-KVl-P-O-B35chZOQ ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFZwU2G-KVl-P-O-B35chZOQ ! yt
 # Weird History
-https://www.youtube.com/feeds/videos.xml?channel_id=UCc-N24Y5OA0gqbjBwe1ttfA ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFc-N24Y5OA0gqbjBwe1ttfA ! yt
 # BBC Earth Science
-https://www.youtube.com/feeds/videos.xml?channel_id=UCdsOTr6SmDrxuWE7sJFrkhQ ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFdsOTr6SmDrxuWE7sJFrkhQ ! yt
 # Great Art Explained
-https://www.youtube.com/feeds/videos.xml?channel_id=UCePDFpCr78_qmVtpoB1Axaw ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFePDFpCr78_qmVtpoB1Axaw ! yt
 # You Suck At Cooking
-https://www.youtube.com/feeds/videos.xml?channel_id=UCekQr9znsk2vWxBo3YiLq2w ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFekQr9znsk2vWxBo3YiLq2w ! yt
 # Core Dump
-https://www.youtube.com/feeds/videos.xml?channel_id=UCgY3bHW4qHKq9aC4i3nO-0g ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFgY3bHW4qHKq9aC4i3nO-0g ! yt
 # History Buffs
-https://www.youtube.com/feeds/videos.xml?channel_id=UCggHoXaj8BQHIiPmOxezeWA ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFggHoXaj8BQHIiPmOxezeWA ! yt
 # Kraut
-https://www.youtube.com/feeds/videos.xml?channel_id=UCr_Q-bPpcw5fJ-Oow1BW1NQ ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFr_Q-bPpcw5fJ-Oow1BW1NQ ! yt
 # Like Stories of Old
-https://www.youtube.com/feeds/videos.xml?channel_id=UCs7nPQIEba0T3tGOWWsZpJQ ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFs7nPQIEba0T3tGOWWsZpJQ ! yt
 # Royal Armouries
-https://www.youtube.com/feeds/videos.xml?channel_id=UCsMX-XuiEkBi4-GDrYuniWg ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFsMX-XuiEkBi4-GDrYuniWg ! yt
 # Kurzgesagt – In a Nutshell
-https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFsXVk37bltHxD1rDPwtNM8Q ! yt
 # GOTO Conferences
-https://www.youtube.com/feeds/videos.xml?channel_id=UCs_tLP3AiwYKwdUHpltJPuA ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFs_tLP3AiwYKwdUHpltJPuA ! yt
 # TED-Ed
-https://www.youtube.com/feeds/videos.xml?channel_id=UCsooa4yRKGN_zEE8iknghZA ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFsooa4yRKGN_zEE8iknghZA ! yt
 # Summoning Salt
-https://www.youtube.com/feeds/videos.xml?channel_id=UCtUbO6rBht0daVIOGML3c8w ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFtUbO6rBht0daVIOGML3c8w ! yt
 # neo
-https://www.youtube.com/feeds/videos.xml?channel_id=UCtYKe7-XbaDjpUwcU5x0bLg ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFtYKe7-XbaDjpUwcU5x0bLg ! yt
 # Folding Ideas
-https://www.youtube.com/feeds/videos.xml?channel_id=UCyNtlmLB73-7gtlBz00XOQQ ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFyNtlmLB73-7gtlBz00XOQQ ! yt
 # James Jani
-https://www.youtube.com/feeds/videos.xml?channel_id=UCT0dmfFCLWuVKPWZ6wcdKyg ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFT0dmfFCLWuVKPWZ6wcdKyg ! yt
 # Frontline
-https://www.youtube.com/feeds/videos.xml?channel_id=UC3ScyryU9Oy9Wse3a8OAmYQ ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF3ScyryU9Oy9Wse3a8OAmYQ ! yt
 # Newsthink
-https://www.youtube.com/feeds/videos.xml?channel_id=UCIlU5KDHKFSaebYviKfOidw ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFIlU5KDHKFSaebYviKfOidw ! yt
 # Jeff Goerling
-https://www.youtube.com/feeds/videos.xml?channel_id=UCR-DXc1voovS8nhAvccRZhg ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFR-DXc1voovS8nhAvccRZhg ! yt
 # Jon Tron Show
-https://www.youtube.com/feeds/videos.xml?channel_id=UCdJdEguB1F1CiYe7OEi3SBg ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFdJdEguB1F1CiYe7OEi3SBg ! yt
 # Wall street Journal
-https://www.youtube.com/feeds/videos.xml?channel_id=UCK7tptUDHh-RYDsdxO1-5QQ ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFK7tptUDHh-RYDsdxO1-5QQ ! yt
 # Voidzilla
-https://www.youtube.com/feeds/videos.xml?channel_id=UC28n0tlcNSa1iPe5mettocg ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF28n0tlcNSa1iPe5mettocg ! yt
 # NesHacker
-https://www.youtube.com/feeds/videos.xml?channel_id=UCXR5PCyUI2pG_a3ydnCIS-g ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFXR5PCyUI2pG_a3ydnCIS-g ! yt
 # Displaced Gamers
-https://www.youtube.com/feeds/videos.xml?channel_id=UCWoSKWs8h6lFdiEDAjuIfpA ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFWoSKWs8h6lFdiEDAjuIfpA ! yt
 # Coffeezila
-https://www.youtube.com/feeds/videos.xml?channel_id=UCFQMnBA3CS502aghlcr0_aw ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFFQMnBA3CS502aghlcr0_aw ! yt
 # Marquees Brownlee
-https://www.youtube.com/feeds/videos.xml?channel_id=UCBJycsmduvYEL83R_U4JriQ ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFBJycsmduvYEL83R_U4JriQ ! yt
 # Fireship
-https://www.youtube.com/feeds/videos.xml?channel_id=UCsBjURrPoezykLs9EqgamOA ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFsBjURrPoezykLs9EqgamOA ! yt
 # Ordinary Things
-https://www.youtube.com/feeds/videos.xml?channel_id=UCxLYtICsUCWdr1YPrj5DtwA ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFxLYtICsUCWdr1YPrj5DtwA ! yt
 # History of the Universe
-https://www.youtube.com/feeds/videos.xml?channel_id=UCtRFmSyL4fSLQkn-wMqlmdA ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFtRFmSyL4fSLQkn-wMqlmdA ! yt
 # Megaprojects
-https://www.youtube.com/feeds/videos.xml?channel_id=UC0woBco6Dgcxt0h8SwyyOmw ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF0woBco6Dgcxt0h8SwyyOmw ! yt
 # Sseth
-https://www.youtube.com/feeds/videos.xml?channel_id=UCD6VugMZKRhSyzWEWA9W2fg ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFD6VugMZKRhSyzWEWA9W2fg ! yt
 # PBS Space Time
-https://www.youtube.com/feeds/videos.xml?channel_id=UC7_gcs09iThXybpVgjHZ_7g ! yt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF7_gcs09iThXybpVgjHZ_7g ! yt
+# Epic
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFvPXiKxH-eH9xq-80vpgmKQ ! yt
 # About that
 https://www.youtube.com/feeds/videos.xml?playlist_id=PLeyJPHbRnGaZeajS8uAtr8cyc19TYBZZ9 ! yt
-# Epic
-https://www.youtube.com/feeds/videos.xml?channel_id=UCvPXiKxH-eH9xq-80vpgmKQ ! yt
