@@ -1,4 +1,237 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Rust debugging survey 2026</title><link>https://blog.rust-lang.org/2026/02/23/rust-debugging-survey-2026/</link><author>Jakub Beránek</author><category>dev</category><pubDate>Mon, 23 Feb 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[Various issues with debugging Rust code are often mentioned as one of the biggest challenges that annoy Rust developers. While it is definitely possible to debug Rust code today, there are situations where it does not work well enough, and the quality of debugging support also varies a lot across different debuggers and operating systems.In order for Rust to have truly stellar debugging support, it should ideally:Support (several versions!) of different debuggers (such as GDB, LLDB or CDB) across multiple operating systems.Implement debugger visualizers that are able to produce quality presentation of most Rust types.Provide first-class support for debugging  code.Allow evaluating Rust expressions in the debugger.Rust is not quite there yet, and it will take a lot of work to reach that level of debugger support. Furthermore, it is also challenging to ensure that debugging Rust code  working well, across newly released debugger versions, changes to internal representation of Rust data structures in the standard library and other things that can break the debugging experience.We already have some plans to start improving debugging support in Rust, but it would also be useful to understand the current debugging struggles of Rust developers. That is why we have prepared the Rust Debugging Survey, which should help us find specific challenges with debugging Rust code.You can fill out the survey here.Filling the survey should take you approximately 5 minutes, and the survey is fully anonymous. We will accept submissions until Friday, March 13th, 2026. After the survey ends, we will evaluate the results and post key insights on this blog.We would like to thank Sam Kellam (@hashcatHitman) who did a lot of great work to prepare this survey.We invite you to fill the survey, as your responses will help us improve the Rust debugging experience. Thank you!]]></content:encoded></item><item><title>Rust participates in Google Summer of Code 2026</title><link>https://blog.rust-lang.org/2026/02/19/Rust-participates-in-GSoC-2026/</link><author>Jakub Beránek, Jack Huey</author><category>dev</category><pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[We are happy to announce that the Rust Project will again be participating in Google Summer of Code (GSoC) 2026, same as in the previous two years. If you're not eligible or interested in participating in GSoC, then most of this post likely isn't relevant to you; if you are, this should contain some useful information and links.Google Summer of Code (GSoC) is an annual global program organized by Google that aims to bring new contributors to the world of open-source. The program pairs organizations (such as the Rust Project) with contributors (usually students), with the goal of helping the participants make meaningful open-source contributions under the guidance of experienced mentors.The organizations that have been accepted into the program have been announced by Google. The GSoC applicants now have several weeks to discuss project ideas with mentors. Later, they will send project proposals for the projects that they found the most interesting. If their project proposal is accepted, they will embark on a several months long journey during which they will try to complete their proposed project under the guidance of an assigned mentor.We have prepared a list of project ideas that can serve as inspiration for potential GSoC contributors that would like to send a project proposal to the Rust organization. However, applicants can also come up with their own project ideas. You can discuss project ideas or try to find mentors in the #gsoc Zulip stream. We have also prepared a proposal guide that should help you with preparing your project proposals. We would also like to bring your attention to our GSoC AI policy.You can start discussing the project ideas with Rust Project mentors and maintainers immediately, but you might want to keep the following important dates in mind:The project proposal application period starts on March 16, 2026. From that date you can submit project proposals into the GSoC dashboard.The project proposal application period ends on  at 18:00 UTC. Take note of that deadline, as there will be no extensions!If you are interested in contributing to the Rust Project, we encourage you to check out our project idea list and send us a GSoC project proposal! Of course, you are also free to discuss these projects and/or try to move them forward even if you do not intend to (or cannot) participate in GSoC. We welcome all contributors to Rust, as there is always enough work to do.Our GSoC contributors were quite successful in the past two years (2024, 2025), so we are excited what this year's GSoC will bring! We hope that participants in the program can improve their skills, but also would love for this to bring new contributors to the Project and increase the awareness of Rust in general. Like last year, we expect to publish blog posts in the future with updates about our participation in the program.]]></content:encoded></item><item><title>Join the Python Security Response Team!</title><link>https://pythoninsider.blogspot.com/2026/02/join-the-python-security-response-team.html</link><author>Seth Michael Larson</author><category>dev</category><pubDate>Tue, 17 Feb 2026 07:30:00 +0000</pubDate><source url="https://pythoninsider.blogspot.com/">Python official news</source><content:encoded><![CDATA[And this new onboarding process is already working! The PSF 
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Before You Migrate: Five Surprising Ingress-NGINX Behaviors You Need to Know</title><link>https://kubernetes.io/blog/2026/02/27/ingress-nginx-before-you-migrate/</link><author></author><category>dev</category><pubDate>Fri, 27 Feb 2026 15:30:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[As announced November 2025, Kubernetes will retire Ingress-NGINX in March 2026.
+Despite its widespread usage, Ingress-NGINX is full of surprising defaults and side effects that are probably present in your cluster today.
+This blog highlights these behaviors so that you can migrate away safely and make a conscious decision about which behaviors to keep.
+This post also compares Ingress-NGINX with Gateway API and shows you how to preserve Ingress-NGINX behavior in Gateway API.
+The recurring risk pattern in every section is the same: a seemingly correct translation can still cause outages if it does not consider Ingress-NGINX's quirks.I'm going to assume that you, the reader, have some familiarity with Ingress-NGINX and the Ingress API.
+Most examples use  as the backend.Also, note that Ingress-NGINX and NGINX Ingress are two separate Ingress controllers.
+Ingress-NGINX is an Ingress controller maintained and governed by the Kubernetes community that is retiring March 2026.
+NGINX Ingress is an Ingress controller by F5.
+Both use NGINX as the dataplane, but are otherwise unrelated.
+From now on, this blog post only discusses Ingress-NGINX.1. Regex matches are prefix-based and case insensitiveSuppose that you wanted to route all requests with a path consisting of only three uppercase letters to the  service.
+You might create the following Ingress with the nginx.ingress.kubernetes.io/use-regex: "true" annotation and the regex pattern of .However, because regex matches are prefix and case insensitive, Ingress-NGINX routes any request with a path that starts with any three letters to httpbin:The output is similar to: The  endpoint of httpbin returns a random UUID.
+A UUID in the response body means that the request was successfully routed to httpbin.With Gateway API, you can use an HTTP path match with a  of  for regular expression path matching.
+ matches are implementation specific, so check with your Gateway API implementation to verify the semantics of  matching.
+Popular Envoy-based Gateway API implementations such as Istio, Envoy Gateway, and Kgateway do a full case-sensitive match.Thus, if you are unaware that Ingress-NGINX patterns are prefix and case-insensitive, and, unbeknownst to you,
+clients or applications send traffic to  (or ), you might create the following HTTP route.However, if your Gateway API implementation does full case-sensitive matches,
+the above HTTP route would not match a request with a path of .
+The above HTTP route would thus cause an outage because requests
+that Ingress-NGINX routed to httpbin would fail with a 404 Not Found at the gateway.To preserve the case-insensitive regex matching, you can use the following HTTP route.Alternatively, the aforementioned proxies support the  flag to indicate case insensitive matches.
+Using the flag, the pattern could be .2. The nginx.ingress.kubernetes.io/use-regex applies to all paths of a host across all (Ingress-NGINX) IngressesNow, suppose that you have an Ingress with the nginx.ingress.kubernetes.io/use-regex: "true" annotation, but you want to route
+requests with a path of exactly  to .
+Unfortunately, you made a typo and set the path to  instead of .Most would expect a request to  to respond with a 404 Not Found, since  does not match the  path of .
+However, because the  Ingress has the nginx.ingress.kubernetes.io/use-regex: "true" annotation and the  host,
+all paths with the  host are treated as regular expressions across all (Ingress-NGINX) Ingresses.
+Since regex patterns are case-insensitive prefix matches,  matches the  pattern and Ingress-NGINX routes such requests to .
+Running the command The  endpoint of httpbin returns the request headers.
+The fact that the response contains the request headers in the body means that the request was successfully routed to httpbin.Gateway API does not silently convert or interpret  and  matches as regex patterns.
+So if you converted the above Ingresses into the following HTTP route and
+preserved the typo and match types, requests to  will respond with a 404 Not Found instead of a 200 OK.To keep the case-insensitive prefix matching, you can changeOr even better, you could fix the typo and change the match to3. Rewrite target implies regexIn this case, suppose you want to rewrite the path of requests with a path of  to  before routing them to , and
+as in Section 2, you want to route requests with the path of exactly  to .
+However, you accidentally make a typo and set the path to  instead of  and  instead of .The nginx.ingress.kubernetes.io/rewrite-target: "/uuid" annotation
+causes requests that match paths in the  Ingress to have their paths rewritten to  before being routed to the backend.Even though no Ingress has the nginx.ingress.kubernetes.io/use-regex: "true" annotation,
+the presence of the nginx.ingress.kubernetes.io/rewrite-target annotation in the  Ingress causes all paths with the rewrite-target.example.com host to be treated as regex patterns.
+In other words, the nginx.ingress.kubernetes.io/rewrite-target silently adds the nginx.ingress.kubernetes.io/use-regex: "true" annotation, along with all the side effects discussed above.For example, a request to  has its path rewritten to  because  matches the case-insensitive prefix pattern of  in the  Ingress.
+After running the commandthe output is similar to:Like in the nginx.ingress.kubernetes.io/use-regex example, Ingress-NGINX treats s of other ingresses with the rewrite-target.example.com host as case-insensitive prefix patterns.
+Running the commandgives an output that looks likeYou can configure path rewrites in Gateway API with the HTTP URL rewrite filter which does not silently convert your  and  matches into regex patterns.
+However, if you are unaware of the side effects of the nginx.ingress.kubernetes.io/rewrite-target annotation
+and do not realize that  and  are both typos, you might create the following
+HTTP route.As with Section 2, because  is now an  match type in your HTTP route, requests to  will respond with a 404 Not Found instead of a 200 OK.
+Similarly, requests to  will also respond with a 404 Not Found instead of a 200 OK.
+Thus, this HTTP route will break applications and clients that rely on the  and  routes.To fix this, you can change the matches in the HTTP route to be regex matches, and change the path patterns to be case-insensitive prefix matches, as follows.Or, you can keep the  match type and fix the typos.4. Requests missing a trailing slash are redirected to the same path with a trailing slashConsider the following Ingress:You might expect Ingress-NGINX to respond to  with a 404 Not Found since the  does not exactly match the  path of .
+However, Ingress-NGINX redirects the request to  with a 301 Moved Permanently because the only difference between  and  is a trailing slash.The same applies if you change the  to .
+However, the redirect does not happen if the path is a regex pattern.Conformant Gateway API implementations do not silently configure any kind of redirects.
+If clients or downstream services depend on this redirect, a migration to Gateway API that
+does not explicitly configure request redirects will cause an outage because
+requests to  will now respond with a 404 Not Found instead of a 301 Moved Permanently.
+You can explicitly configure redirects using the HTTP request redirect filter as follows:5. Ingress-NGINX normalizes URLs is the process of converting a URL into a canonical form before matching it against Ingress rules and routing it.
+The specifics of URL normalization are defined in RFC 3986 Section 6.2, but some examples areremoving path segments that are just a : having a  path segment remove the previous segment: deduplicating consecutive slashes in a path: Ingress-NGINX normalizes URLs before matching them against Ingress rules.
+For example, consider the following Ingress:Ingress-NGINX normalizes the path of the following requests to .
+Now that the request matches the  path of , Ingress-NGINX responds with either a 200 OK response or a 301 Moved Permanently to .For the following commandsthe outputs are similar toYour backends might rely on the Ingress/Gateway API implementation to normalize URLs.
+That said, most Gateway API implementations will have some path normalization enabled by default.
+For example, Istio, Envoy Gateway, and Kgateway all normalize  and  segments out of the box.
+For more details, check the documentation for each Gateway API implementation that you use.As we all race to respond to the Ingress-NGINX retirement, I hope this blog post instills some confidence that you can migrate safely and effectively despite all the intricacies of Ingress-NGINX.SIG Network has also been working on supporting the most common Ingress-NGINX annotations (and some of these unexpected behaviors) in Ingress2Gateway to help you translate Ingress-NGINX configuration into Gateway API, and offer alternatives to unsupported behavior.SIG Network released Gateway API 1.5 earlier today (27th February 2026), which graduates features such as
+ListenerSet (that allow app developers to better manage TLS certificates),
+and the HTTPRoute CORS filter that allows CORS configuration.]]></content:encoded></item><item><title>Allocating on the Stack</title><link>https://go.dev/blog/allocation-optimizations</link><author>Keith Randall</author><category>dev</category><pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[We’re always looking for ways to make Go programs faster. In the last
+2 releases, we have concentrated on mitigating a particular source of
+slowness, heap allocations. Each time a Go program allocates memory
+from the heap, there’s a fairly large chunk of code that needs to run
+to satisfy that allocation. In addition, heap allocations present
+additional load on the garbage collector.  Even with recent
+enhancements like Green Tea, the garbage collector
+still incurs substantial overhead.So we’ve been working on ways to do more allocations on the stack
+instead of the heap.  Stack allocations are considerably cheaper to
+perform (sometimes completely free).  Moreover, they present no load
+to the garbage collector, as stack allocations can be collected
+automatically together with the stack frame itself. Stack allocations
+also enable prompt reuse, which is very cache friendly.Stack allocation of constant-sized slicesConsider the task of building a slice of tasks to process:func process(c chan task) {
+    var tasks []task
+    for t := range c {
+        tasks = append(tasks, t)
+    }
+    processAll(tasks)
+}
+Let’s walk through what happens at runtime when pulling tasks from the
+channel  and adding them to the slice .On the first loop iteration, there is no backing store for , so
+ has to allocate one. Because it doesn’t know how big the
+slice will eventually be, it can’t be too aggressive. Currently, it
+allocates a backing store of size 1.On the second loop iteration, the backing store now exists, but it is
+full.  again has to allocate a new backing store, this time of
+size 2. The old backing store of size 1 is now garbage.On the third loop iteration, the backing store of size 2 is
+full.  has to allocate a new backing store, this time
+of size 4. The old backing store of size 2 is now garbage.On the fourth loop iteration, the backing store of size 4 has only 3
+items in it.  can just place the item in the existing backing
+store and bump up the slice length. Yay! No call to the allocator for
+this iteration.On the fifth loop iteration, the backing store of size 4 is full, and
+ again has to allocate a new backing store, this time of size
+8.And so on. We generally double the size of the allocation each time it
+fills up, so we can eventually append most new tasks to the slice
+without allocation. But there is a fair amount of overhead in the
+“startup” phase when the slice is small. During this startup phase we
+spend a lot of time in the allocator, and produce a bunch of garbage,
+which seems pretty wasteful. And it may be that in your program, the
+slice never really gets large. This startup phase may be all you ever
+encounter.If this code was a really hot part of your program, you might be
+tempted to start the slice out at a larger size, to avoid all of these
+allocations.func process2(c chan task) {
+    tasks := make([]task, 0, 10) // probably at most 10 tasks
+    for t := range c {
+        tasks = append(tasks, t)
+    }
+    processAll(tasks)
+}
+This is a reasonable optimization to do. It is never incorrect; your
+program still runs correctly. If the guess is too small, you get
+allocations from  as before. If the guess is too large, you
+waste some memory.If your guess for the number of tasks was a good one, then there’s
+only one allocation site in this program. The  call allocates a
+slice backing store of the correct size, and  never has to do
+any reallocation.The surprising thing is that if you benchmark this code with 10
+elements in the channel, you’ll see that you didn’t reduce the number
+of allocations to 1, you reduced the number of allocations to 0!The reason is that the compiler decided to allocate the backing store
+on the stack. Because it knows what size it needs to be (10 times the
+size of a task) it can allocate storage for it in the stack frame of
+ instead of on the heap.  Note
+that this depends on the fact that the backing store does not escape
+to the heap inside of .Stack allocation of variable-sized slicesBut of course, hard coding a size guess is a bit rigid.
+Maybe we can pass in an estimated length?func process3(c chan task, lengthGuess int) {
+    tasks := make([]task, 0, lengthGuess)
+    for t := range c {
+        tasks = append(tasks, t)
+    }
+    processAll(tasks)
+}
+This lets the caller pick a good size for the  slice, which may
+vary depending on where this code is being called from.Unfortunately, in Go 1.24 the non-constant size of the backing store
+means the compiler can no longer allocate the backing store on the
+stack.  It will end up on the heap, converting our 0-allocation code
+to 1-allocation code. Still better than having  do all the
+intermediate allocations, but unfortunate.But never fear, Go 1.25 is here!Imagine you decide to do the following, to get the stack allocation
+only in cases where the guess is small:func process4(c chan task, lengthGuess int) {
+    var tasks []task
+    if lengthGuess <= 10 {
+        tasks = make([]task, 0, 10)
+    } else {
+        tasks = make([]task, 0, lengthGuess)
+    }
+    for t := range c {
+        tasks = append(tasks, t)
+    }
+    processAll(tasks)
+}
+Kind of ugly, but it would work. When the guess is small, you use a
+constant size  and thus a stack-allocated backing store, and
+when the guess is larger you use a variable size  and allocate
+the backing store from the heap.But in Go 1.25, you don’t need to head down this ugly road. The Go
+1.25 compiler does this transformation for you!  For certain slice
+allocation locations, the compiler automatically allocates a small
+(currently 32-byte) slice backing store, and uses that backing store
+for the result of the  if the size requested is small
+enough. Otherwise, it uses a heap allocation as normal.In Go 1.25,  performs zero heap allocations, if
+ is small enough that a slice of that length fits into 32
+bytes. (And of course that  is a correct guess for how
+many items are in .)We’re always improving the performance of Go, so upgrade to the latest
+Go release and be
+surprised by
+how much faster and memory efficient your program becomes!Stack allocation of append-allocated slicesOk, but you still don’t want to have to change your API to add this
+weird length guess. Anything else you could do?func process(c chan task) {
+    var tasks []task
+    for t := range c {
+        tasks = append(tasks, t)
+    }
+    processAll(tasks)
+}
+In Go 1.26, we allocate the same kind of small, speculative backing
+store on the stack, but now we can use it directly at the 
+site.On the first loop iteration, there is no backing store for , so
+ uses a small, stack-allocated backing store as the first
+allocation. If, for instance, we can fit 4 s in that backing store,
+the first  allocates a backing store of length 4 from the stack.The next 3 loop iterations append directly to the stack backing store,
+requiring no allocation.On the 4th iteration, the stack backing store is finally full and we
+have to go to the heap for more backing store. But we have avoided
+almost all of the startup overhead described earlier in this article.
+No heap allocations of size, 1, 2, and 4, and none of the garbage that
+they eventually become. If your slices are small, maybe you will never
+have a heap allocation.Stack allocation of append-allocated escaping slicesOk, this is all good when the  slice doesn’t escape. But what if
+I’m returning the slice? Then it can’t be allocated on the stack, right?Right! The backing store for the slice returned by  below
+can’t be allocated on the stack, because the stack frame for 
+disappears when  returns.func extract(c chan task) []task {
+    var tasks []task
+    for t := range c {
+        tasks = append(tasks, t)
+    }
+    return tasks
+}
+But you might think, the  slice can’t be allocated on the
+stack. But what about all those intermediate slices that just become
+garbage? Maybe we can allocate those on the stack?func extract2(c chan task) []task {
+    var tasks []task
+    for t := range c {
+        tasks = append(tasks, t)
+    }
+    tasks2 := make([]task, len(tasks))
+    copy(tasks2, tasks)
+    return tasks2
+}
+Then the  slice never escapes . It can benefit from
+all of the optimizations described above. Then at the very end of
+, when we know the final size of the slice, we do one heap
+allocation of the required size, copy our s into it, and return
+the copy.But do you really want to write all that additional code? It seems
+error prone. Maybe the compiler can do this transformation for us?For escaping slices, the compiler will transform the original 
+code to something like this:func extract3(c chan task) []task {
+    var tasks []task
+    for t := range c {
+        tasks = append(tasks, t)
+    }
+    tasks = runtime.move2heap(tasks)
+    return tasks
+}
+ is a special compiler+runtime function that is the
+identity function for slices that are already allocated in the heap.
+For slices that are on the stack, it allocates a new slice on the
+heap, copies the stack-allocated slice to the heap copy, and returns
+the heap copy.This ensures that for our original  code, if the number of
+items fits in our small stack-allocated buffer, we perform exactly 1
+allocation of exactly the right size. If the number of items exceeds
+the capacity our small stack-allocated buffer, we do our normal
+doubling-allocation once the stack-allocated buffer overflows.The optimization that Go 1.26 does is actually better than the
+hand-optimized code, because it does not require the extra
+allocation+copy that the hand-optimized code always does at the end.
+It requires the allocation+copy only in the case that we’ve exclusively
+operated on a stack-backed slice up to the return point.We do pay the cost for a copy, but that cost is almost completely
+offset by the copies in the startup phase that we no longer have to
+do. (In fact, the new scheme at worst has to copy one more element
+than the old scheme.)Hand optimization can still be beneficial, especially if you have a
+good estimate of the slice size ahead of time. But hopefully the
+compiler will now catch a lot of the simple cases for you and allow
+you to focus on the remaining ones that really matter.There are a lot of details that the compiler needs to ensure to get
+all these optimizations right. If you think that one of these
+optimizations is causing correctness or (negative) performance issues
+for you, you can turn them off with
+-gcflags=all=-d=variablemakehash=n. If turning these optimizations
+off helps, please file an issue so we can investigate. Go stacks do not have any -style mechanism for
+dynamically-sized stack frames. All Go stack frames are constant
+sized.]]></content:encoded></item><item><title>Rust debugging survey 2026</title><link>https://blog.rust-lang.org/2026/02/23/rust-debugging-survey-2026/</link><author>Jakub Beránek</author><category>dev</category><pubDate>Mon, 23 Feb 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[Various issues with debugging Rust code are often mentioned as one of the biggest challenges that annoy Rust developers. While it is definitely possible to debug Rust code today, there are situations where it does not work well enough, and the quality of debugging support also varies a lot across different debuggers and operating systems.In order for Rust to have truly stellar debugging support, it should ideally:Support (several versions!) of different debuggers (such as GDB, LLDB or CDB) across multiple operating systems.Implement debugger visualizers that are able to produce quality presentation of most Rust types.Provide first-class support for debugging  code.Allow evaluating Rust expressions in the debugger.Rust is not quite there yet, and it will take a lot of work to reach that level of debugger support. Furthermore, it is also challenging to ensure that debugging Rust code  working well, across newly released debugger versions, changes to internal representation of Rust data structures in the standard library and other things that can break the debugging experience.We already have some plans to start improving debugging support in Rust, but it would also be useful to understand the current debugging struggles of Rust developers. That is why we have prepared the Rust Debugging Survey, which should help us find specific challenges with debugging Rust code.You can fill out the survey here.Filling the survey should take you approximately 5 minutes, and the survey is fully anonymous. We will accept submissions until Friday, March 13th, 2026. After the survey ends, we will evaluate the results and post key insights on this blog.We would like to thank Sam Kellam (@hashcatHitman) who did a lot of great work to prepare this survey.We invite you to fill the survey, as your responses will help us improve the Rust debugging experience. Thank you!]]></content:encoded></item><item><title>Rust participates in Google Summer of Code 2026</title><link>https://blog.rust-lang.org/2026/02/19/Rust-participates-in-GSoC-2026/</link><author>Jakub Beránek, Jack Huey</author><category>dev</category><pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[We are happy to announce that the Rust Project will again be participating in Google Summer of Code (GSoC) 2026, same as in the previous two years. If you're not eligible or interested in participating in GSoC, then most of this post likely isn't relevant to you; if you are, this should contain some useful information and links.Google Summer of Code (GSoC) is an annual global program organized by Google that aims to bring new contributors to the world of open-source. The program pairs organizations (such as the Rust Project) with contributors (usually students), with the goal of helping the participants make meaningful open-source contributions under the guidance of experienced mentors.The organizations that have been accepted into the program have been announced by Google. The GSoC applicants now have several weeks to discuss project ideas with mentors. Later, they will send project proposals for the projects that they found the most interesting. If their project proposal is accepted, they will embark on a several months long journey during which they will try to complete their proposed project under the guidance of an assigned mentor.We have prepared a list of project ideas that can serve as inspiration for potential GSoC contributors that would like to send a project proposal to the Rust organization. However, applicants can also come up with their own project ideas. You can discuss project ideas or try to find mentors in the #gsoc Zulip stream. We have also prepared a proposal guide that should help you with preparing your project proposals. We would also like to bring your attention to our GSoC AI policy.You can start discussing the project ideas with Rust Project mentors and maintainers immediately, but you might want to keep the following important dates in mind:The project proposal application period starts on March 16, 2026. From that date you can submit project proposals into the GSoC dashboard.The project proposal application period ends on  at 18:00 UTC. Take note of that deadline, as there will be no extensions!If you are interested in contributing to the Rust Project, we encourage you to check out our project idea list and send us a GSoC project proposal! Of course, you are also free to discuss these projects and/or try to move them forward even if you do not intend to (or cannot) participate in GSoC. We welcome all contributors to Rust, as there is always enough work to do.Our GSoC contributors were quite successful in the past two years (2024, 2025), so we are excited what this year's GSoC will bring! We hope that participants in the program can improve their skills, but also would love for this to bring new contributors to the Project and increase the awareness of Rust in general. Like last year, we expect to publish blog posts in the future with updates about our participation in the program.]]></content:encoded></item><item><title>Join the Python Security Response Team!</title><link>https://pythoninsider.blogspot.com/2026/02/join-the-python-security-response-team.html</link><author>Seth Michael Larson</author><category>dev</category><pubDate>Tue, 17 Feb 2026 07:30:00 +0000</pubDate><source url="https://pythoninsider.blogspot.com/">Python official news</source><content:encoded><![CDATA[And this new onboarding process is already working! The PSF 
 Infrastructure Engineer, Jacob Coffee, has just joined the PSRT as the 
 first new non-"Release Manager" member since Seth joined the PSRT in 
 2023. We expect new members to join further bolstering the 

@@ -7,7 +7,7 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 19,
+  "itemCount": 20,
   "items": [
     {
       "title": "The Portent, by George MacDonald",
@@ -30,8 +30,8 @@
       "author": "",
       "guid": 48233,
       "unread": true,
-      "content": "<article>Five linked plays about human longetivity and governance.</article>",
-      "contentLength": 57,
+      "content": "<article>Five linked plays explore human longetivity and governance.</article>",
+      "contentLength": 59,
       "flags": null,
       "enclosureUrl": "https://standardebooks.org/ebooks/george-bernard-shaw/back-to-methuselah/downloads/george-bernard-shaw_back-to-methuselah.epub?source=feed",
       "enclosureMime": "",
@@ -76,6 +76,20 @@
       "contentLength": 89,
       "flags": null,
       "enclosureUrl": "https://standardebooks.org/ebooks/anonymous/sir-gawain-and-the-green-knight/downloads/anonymous_sir-gawain-and-the-green-knight.epub?source=feed",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
+    {
+      "title": "Sir Gawain and the Green Knight, by Anonymous",
+      "url": "https://standardebooks.org/ebooks/anonymous/sir-gawain-and-the-green-knight/s-o-andrew",
+      "date": 1771810308,
+      "author": "",
+      "guid": 48877,
+      "unread": true,
+      "content": "<article>A knight accepts a supernatural challenge and faces tests of honesty, loyalty, and honor.</article>",
+      "contentLength": 89,
+      "flags": null,
+      "enclosureUrl": "https://standardebooks.org/ebooks/anonymous/sir-gawain-and-the-green-knight/s-o-andrew/downloads/anonymous_sir-gawain-and-the-green-knight_s-o-andrew.epub?source=feed",
       "enclosureMime": "",
       "commentsUrl": null
     },
