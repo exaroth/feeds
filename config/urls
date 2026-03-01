@@ -13,6 +13,7 @@ file:///home/exaroth/.scripts/atom.xml "~ Atom Pocket"
 https://theweekinchess.com/twic-rss-feed "~Week in Chess" chess
 https://feeds.feedburner.com/ign/reviews "~IGN" ign
 https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml "~Github Trending"
+https://terminaltrove.com/new.xml "~Terminal Tools"
 https://standardebooks.org/feeds/rss/new-releases "~Standard E-Books"
 
 https://zig.news/rss "~Zig News" ! dev
