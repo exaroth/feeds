@@ -24,7 +24,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 57
+      "num_items": 55
     },
     {
       "id": "ETKeSdT1Jvn",
@@ -76,7 +76,7 @@
       "tags": [
         "tech"
       ],
-      "num_items": 1793
+      "num_items": 1792
     },
     {
       "id": "PyU9",
@@ -140,6 +140,17 @@
       "is_query": false,
       "tags": [],
       "num_items": 105
+    },
+    {
+      "id": "Y2iXpRRkNSnx4gcGxbb6SwAw8J6WgRYKhY86enVhyDx91",
+      "title": "Terminal Trove Newly Added Tools",
+      "display_title": "Terminal Tools",
+      "url": "https://terminaltrove.com/new.xml",
+      "feedlink": "https://terminaltrove.com/",
+      "hidden": false,
+      "is_query": false,
+      "tags": [],
+      "num_items": 18
     },
     {
       "id": "HuuaCwcKuiEntzTgdUnGL5yiphYKsF7LGtg6ZPikiebavCJbabm82gNrUaTivqvncwt",
