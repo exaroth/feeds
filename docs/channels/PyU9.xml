@@ -481,24 +481,4 @@ volunteering yourself or through organisation contributions to the Python Softwa
 Foundation.Regards as the snow slowly falls in Helsinki,Your release team,
   Hugo van Kemenade
   Steve Dower
-  ]]></content:encoded></item><item><title>Go 1.26 is released</title><link>https://go.dev/blog/go1.26</link><author>Carlos Amedee, on behalf of the Go team</author><category>dev</category><pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[Today the Go team is pleased to release Go 1.26.
-You can find its binary archives and installers on the download page.First, the built-in  function, which creates a new variable, now allows its operand to be an
-expression, specifying the initial value of the variable.A simple example of this change means that code such as this:x := int64(300)
-ptr := &x
-Second, generic types may now refer to themselves in their own type parameter list. This change
-simplifies the implementation of complex data structures and interfaces.The  command has been completely rewritten to use the
-Go analysis framework, and now includes a
-couple dozen “modernizers”, analyzers
-that suggest safe fixes to help your code take advantage of newer features of the language
-and standard library. It also includes the
- analyzer, which
-attempts to inline all calls to each function annotated with a  directive.
-Two upcoming blog posts will address these features in more detail.More improvements and changesSome of the additions in Go 1.26 are in an experimental stage
-and become exposed only when you explicitly opt in. Notably:These experiments are all expected to be generally available in a
-future version of Go. We encourage you to try them out ahead of time.
-We really value your feedback!Please refer to the Go 1.26 Release Notes for the complete list
-of additions, changes, and improvements in Go 1.26.Over the next few weeks, follow-up blog posts will cover some of the topics
-relevant to Go 1.26 in more detail. Check back later to read those posts.Thanks to everyone who contributed to this release by writing code, filing bugs,
-trying out experimental additions, sharing feedback, and testing the release candidates.
-Your efforts helped make Go 1.26 as stable as possible.
-As always, if you notice any problems, please file an issue.We hope you enjoy using the new release!]]></content:encoded></item></channel></rss>
+  ]]></content:encoded></item></channel></rss>

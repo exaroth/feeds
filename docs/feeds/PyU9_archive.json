@@ -7,7 +7,7 @@
   "isQuery": true,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 11,
+  "itemCount": 10,
   "items": [
     {
       "title": "Before You Migrate: Five Surprising Ingress-NGINX Behaviors You Need to Know",
@@ -144,20 +144,6 @@
       "unread": true,
       "content": "<p><strong>This is an early developer preview of Python\n3.15</strong></p><p>Python 3.15 is still in development. This release, 3.15.0a6, is the\nsixth of eight planned alpha releases.</p><p>Alpha releases are intended to make it easier to test the current\nstate of new features and bug fixes and to test the release process.</p><p>During the alpha phase, features may be added up until the start of\nthe beta phase (2026-05-05) and, if necessary, may be modified or\ndeleted up until the release candidate phase (2026-07-28). Please keep\nin mind that this is a preview release and its use is\n recommended for production environments.</p><p>Many new features for Python 3.15 are still being planned and\nwritten. Among the new major new features and changes so far:</p><ul><li><a href=\"https://docs.python.org/3.15/whatsnew/3.15.html#whatsnew315-sampling-profiler\">PEP\n799</a>: A new high-frequency, low-overhead, statistical sampling\nprofiler and dedicated profiling package</li><li><a href=\"https://docs.python.org/3.15/whatsnew/3.15.html#whatsnew315-unpacking-in-comprehensions\">PEP\n798</a>: Unpacking in comprehensions with  and\n</li><li><a href=\"https://docs.python.org/3.15/whatsnew/3.15.html#whatsnew315-utf8-default\">PEP\n686</a>: Python now uses UTF-8 as the default encoding</li><li><a href=\"https://docs.python.org/3.15/whatsnew/3.15.html#whatsnew315-pep782\">PEP\n782</a>: A new  C API to create a Python bytes\nobject</li><li><a href=\"https://peps.python.org/pep-0728/\">PEP 728</a>:\n with typed extra items</li><li>The <a href=\"https://docs.python.org/3.15/whatsnew/3.15.html#whatsnew315-jit\">JIT\ncompiler</a> has been significantly upgraded, with 3-4% geometric mean\nperformance improvement on x86-64 Linux over the standard interpreter,\nand 7-8% speedup on AArch64 macOS over the tail-calling interpreter</li><li><small>(Hey,  if a feature\nyou find important is missing from this list, let Hugo\nknow.)</small></li></ul><p>The next pre-release of Python 3.15 will be 3.15.0a7, currently\nscheduled for 2026-03-10.</p><blockquote><p>By reason of these things, then, the whaling voyage was welcome; the\ngreat flood-gates of the wonder-world swung open, and in the wild\nconceits that swayed me to my purpose, two and two there floated into my\ninmost soul, endless processions of the whale, and, mid most of them\nall, one grand hooded phantom, like a snow hill in the air.</p></blockquote><p>Thanks to all of the many volunteers who help make Python development\nand these releases possible! Please consider supporting our efforts by\nvolunteering yourself or through organisation contributions to the <a href=\"https://www.python.org/psf/donations/\">Python Software\nFoundation</a>.</p><p>Regards as the snow slowly falls in Helsinki,</p><p>Your release team,\n  Hugo van Kemenade\n  Steve Dower\n  </p>",
       "contentLength": 2058,
-      "flags": null,
-      "enclosureUrl": "",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Go 1.26 is released",
-      "url": "https://go.dev/blog/go1.26",
-      "date": 1770681600,
-      "author": "Carlos Amedee, on behalf of the Go team",
-      "guid": 43794,
-      "unread": true,
-      "content": "<p>Today the Go team is pleased to release Go 1.26.\nYou can find its binary archives and installers on the <a href=\"https://go.dev/dl/\">download page</a>.</p><p>First, the built-in  function, which creates a new variable, now allows its operand to be an\nexpression, specifying the initial value of the variable.</p><p>A simple example of this change means that code such as this:</p><pre><code>x := int64(300)\nptr := &amp;x\n</code></pre><p>Second, generic types may now refer to themselves in their own type parameter list. This change\nsimplifies the implementation of complex data structures and interfaces.</p><p>The  command has been completely rewritten to use the\n<a href=\"https://go.dev/pkg/golang.org/x/tools/go/analysis\">Go analysis framework</a>, and now includes a\ncouple dozen “<a href=\"https://go.dev/pkg/golang.org/x/tools/go/analysis/passes/modernize\">modernizers</a>”, analyzers\nthat suggest safe fixes to help your code take advantage of newer features of the language\nand standard library. It also includes the\n<a href=\"https://go.dev/pkg/golang.org/x/tools/go/analysis/passes/inline#hdr-Analyzer_inline\"> analyzer</a>, which\nattempts to inline all calls to each function annotated with a  directive.\nTwo upcoming blog posts will address these features in more detail.</p><h2>More improvements and changes</h2><p>Some of the additions in Go 1.26 are in an experimental stage\nand become exposed only when you explicitly opt in. Notably:</p><p>These experiments are all expected to be generally available in a\nfuture version of Go. We encourage you to try them out ahead of time.\nWe really value your feedback!</p><p>Please refer to the <a href=\"https://go.dev/doc/go1.26\">Go 1.26 Release Notes</a> for the complete list\nof additions, changes, and improvements in Go 1.26.</p><p>Over the next few weeks, follow-up blog posts will cover some of the topics\nrelevant to Go 1.26 in more detail. Check back later to read those posts.</p><p>Thanks to everyone who contributed to this release by writing code, filing bugs,\ntrying out experimental additions, sharing feedback, and testing the release candidates.\nYour efforts helped make Go 1.26 as stable as possible.\nAs always, if you notice any problems, please <a href=\"https://go.dev/issue/new\">file an issue</a>.</p><p>We hope you enjoy using the new release!</p>",
-      "contentLength": 1861,
       "flags": null,
       "enclosureUrl": "",
       "enclosureMime": "",
