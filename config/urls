@@ -1,5 +1,3 @@
-exec:~/.scripts/pocket_atom
-file:///home/exaroth/.scripts/atom.xml "~ Atom Pocket"
 "query:Youtube:tags # \"yt\""
 "query:News:tags # \"news\" and age < 1 and unread = \"yes\""
 "query:Podcasts:tags # \"podcast\""
@@ -29,7 +27,6 @@ https://www.youtube.com/feeds/videos.xml?playlist_id=UULFSrZ3UV4jOidv8ppoVuvW9Q 
 https://notesfrompoland.com/category/news/rss "~News - Poland" ! news
 
 
-https://www.youtube.com/feeds/videos.xml?playlist_id=UULFrTNhL_yO3tPTdQ5XgmmWjA "~Movies - RedLetterMedia" ! movies
 https://www.youtube.com/feeds/videos.xml?playlist_id=UULFjFqcJQXGZ6T6sxyFB-5i6A "~Movies - Every Frame a Painting" ! movies
 https://www.youtube.com/feeds/videos.xml?playlist_id=UULFcGlif61mMV6soFSiN2QHoQ "~Movies - Kino Corner" ! movies
 https://www.youtube.com/feeds/videos.xml?playlist_id=UULFUyvQV2JsICeLZP4c_h40kA "~Movies - Thomas Flight" ! movies
@@ -65,7 +62,6 @@ https://changelog.com/podcast/feed "~Podcast - Changelog" ! podcast
 https://feeds.buzzsprout.com/2105116.rss "~Podcast - Cmd+Shift+Left" ! podcast
 https://www.youtube.com/feeds/videos.xml?channel_id=UCzQUP1qoWDoEbmsQxvdjxgQ "~Podcast - Joe Rogan" ! podcast
 https://www.youtube.com/feeds/videos.xml?channel_id=UCSHZKyawb77ixDdsGog4iWA "~Podcast - Lex Fridman" ! podcast
-https://www.youtube.com/feeds/videos.xml?channel_id=UCl9StMQ79LtEvlrskzjoYbQ "~Podcast - Closer to Truth" ! podcast
 https://softwareengineeringdaily.com/category/podcast/feed "~Podcast - Software Engineering Daily" ! podcast
 https://feeds.simplecast.com/L9810DOa "~Podcast - Signals and Threads" ! podcast
 https://feeds.transistor.fm/on-the-metal-0294649e-ec23-4eab-975a-9eb13fd94e06 "~Podcast - On the Metal" ! podcast
