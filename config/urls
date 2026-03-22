@@ -1,0 +1,216 @@
+"query:Youtube:tags # \"yt\""
+"query:News:tags # \"news\" and age < 1 and unread = \"yes\""
+"query:Podcasts:tags # \"podcast\""
+"query:Movies:tags # \"movies\" and unread = \"yes\""
+"query:HN:tags # \"hn\""
+"query:Tech:tags # \"tech\""
+"query:Dev:tags # \"dev\""
+"query:Reddit:tags # \"reddit\""
+"query:Github Issues:tags # \"gh\" and age < 14"
+
+https://feeds.feedburner.com/ign/reviews "~IGN" ign
+https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml "~Github Trending"
+https://terminaltrove.com/new.xml "~Terminal Tools"
+https://standardebooks.org/feeds/rss/new-releases "~Standard E-Books"
+
+https://zig.news/rss "~Zig News" ! dev
+http://blog.golang.org/feed.atom "~Golang Blog" ! dev
+https://kubernetes.io/feed.xml "~Kubernetes Blog" ! dev
+https://blog.rust-lang.org/feed "~Rust Blog" ! dev
+https://blog.python.org/feeds/posts/default?alt=rss "~Python official news" ! dev
+
+
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFknLrEdhRCp1aegoMqRaCZg "~News - DW" ! news
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFIALMKvObZNtJ6AmdCLP7Lg "~News - Bloomberg" ! news
+https://www.channel4.com/news/world/feed "~Channel 4" ! news
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFSrZ3UV4jOidv8ppoVuvW9Q "~News - Euronews" ! news
+https://notesfrompoland.com/category/news/rss "~News - Poland" ! news
+
+
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFjFqcJQXGZ6T6sxyFB-5i6A "~Movies - Every Frame a Painting" ! movies
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFcGlif61mMV6soFSiN2QHoQ "~Movies - Kino Corner" ! movies
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFUyvQV2JsICeLZP4c_h40kA "~Movies - Thomas Flight" ! movies
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFI62rVaY9gn5yO3Msh6BN0w "~Movies - Layton Eversaul" ! movies
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFFOfgEQLHpPuVNP_m-XldTg "~Movies - FilmStack" ! movies
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFErmMCK1sHF-kCtyHpuSXtQ "~Movies - Kermode" ! movies
+https://www.youtube.com/feeds/videos.xml?playlist_id=PLpd1itfTDtaVLCrM6OgjyE7TY_CwUnnGE "~Movies - A24 Podcast" ! movies
+https://www.youtube.com/feeds/videos.xml?playlist_id=PL7D89754A5DAD1E8E "~Movies - Criterion" ! movies
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFL5kBJmBUVFLYBDiSiK1VDw "~Cinema cartography" ! movies
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFs7nPQIEba0T3tGOWWsZpJQ "~Like stories of old" ! movies
+http://feeds.libsyn.com/265448/rss "~Movies - Team Deakins" ! movies
+
+https://hnrss.org/best "~HN" ! hn
+https://hnrss.org/show?points=60 "~HN Show" ! hn
+https://hnrss.org/frontpage?points=75 "~HN Front" ! hn
+
+https://techcrunch.com/feed/ ! tech
+http://rss.slashdot.org/Slashdot/slashdotMain ! tech
+https://www.codeproject.com/WebServices/ArticleRSS.aspx ! tech
+https://feeds.arstechnica.com/arstechnica/technology-lab ! tech
+https://hackernoon.com/feed "~Tech - HackerNoon" ! tech
+https://www.phoronix.com/rss.php ! tech
+https://spectrum.ieee.org/customfeeds/feed/all-topics/rss ! tech
+https://www.techdirt.com/feed/ ! tech
+https://www.eff.org/rss/updates.xml ! tech
+https://www.404media.co/rss "~404" ! tech
+https://www.quantamagazine.org/rss "Quanta Magazine" ! tech
+
+https://access.acast.com/rss/f2925f7a-eb08-471a-9958-387cb5ee6353/default "~Podcast - Ancients" ! podcast
+https://access.acast.com/rss/c939f8d1-c4bc-478e-8bb9-e5343f9a7ab5/default "~Podcast - HistoryHit" ! podcast
+https://changelog.com/gotime/feed "~Podcast - Go Time" ! podcast
+https://changelog.com/podcast/feed "~Podcast - Changelog" ! podcast
+https://feeds.buzzsprout.com/2105116.rss "~Podcast - Cmd+Shift+Left" ! podcast
+https://www.youtube.com/feeds/videos.xml?channel_id=UCzQUP1qoWDoEbmsQxvdjxgQ "~Podcast - Joe Rogan" ! podcast
+https://www.youtube.com/feeds/videos.xml?channel_id=UCSHZKyawb77ixDdsGog4iWA "~Podcast - Lex Fridman" ! podcast
+https://softwareengineeringdaily.com/category/podcast/feed "~Podcast - Software Engineering Daily" ! podcast
+https://feeds.simplecast.com/L9810DOa "~Podcast - Signals and Threads" ! podcast
+https://feeds.transistor.fm/on-the-metal-0294649e-ec23-4eab-975a-9eb13fd94e06 "~Podcast - On the Metal" ! podcast
+https://link.chtbl.com/corecursive?id=corecursive&platform=rss "~Podcast - CoRecursive" ! podcast
+https://anchor.fm/s/174cb1b8/podcast/rss "~Podcast - MLOps" ! podcast
+https://www.youtube.com/feeds/videos.xml?channel_id=UCfuj1MM5p37CRzWYPv_PsWA "~Podcast - CodeTalks" ! podcast
+https://www.youtube.com/feeds/videos.xml?channel_id=UCmYAQDZIQGm_kPvemBc_qwg "~Podcast - DevConfs" ! podcast
+https://feeds.megaphone.fm/GLT4787413333 "~The Rest is History" ! podcast
+https://www.youtube.com/feeds/videos.xml?channel_id=UC3RcjbuyF5M1U4R62zjE3hg "~Dan Carlin" ! podcast
+https://podcasts.files.bbci.co.uk/p07mdbhg.rss "~Youre dead to me" ! podcast
+https://www.theguardian.com/news/series/the-audio-long-read/podcast.xml "~Long reads" ! podcast
+
+# reddit
+https://www.reddit.com/r/rust/top/.rss?sort=top&t=day&limit=3 "~Reddit - Rust" ! rust reddit
+https://www.reddit.com/r/programming/top/.rss?sort=top&t=day&limit=6 "~Reddit - Programming" ! reddit
+https://www.reddit.com/r/linux/top/.rss?sort=top&t=day&limit=6 "~Reddit - Linux" ! reddit
+https://www.reddit.com/r/kubernetes/top/.rss?sort=top&t=day&limit=6 "~Kubernetes" ! reddit
+https://www.reddit.com/r/golang/top/.rss?sort=top&t=day&limit=6 "~Reddit - Go" ! golang reddit
+https://www.reddit.com/r/MachineLearning/top/.rss?sort=top&t=day&limit=3 "~Reddit - ML" ! ai reddit
+https://www.reddit.com/r/artificial/top/.rss?sort=top&t=day&limit=3 "~Reddit - AI" ! ai reddit
+
+https://gh-issues-to-rss.fly.dev/exaroth/liveboat?m=io ! gh
+https://gh-issues-to-rss.fly.dev/exaroth/liveboat-github-runner?m=io ! gh
+https://gh-issues-to-rss.fly.dev/exaroth/awesome-dev.news?m=io ! gh
+https://gh-issues-to-rss.fly.dev/exaroth/i3-news?m=io ! gh
+https://gh-issues-to-rss.fly.dev/exaroth/poom?m=io ! gh
+https://gh-issues-to-rss.fly.dev/exaroth/game-appimage?m=io ! gh
+
+# Astrum
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF-9b7aDP6ZN0coj9-xFnrtw ! yt
+# French Cooking Academy
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF0lG3Ihe4LGV851lODRIS5g ! yt
+# Real Science
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF176GAQozKKjhz62H8u9vQQ ! yt
+# Mustard
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF1ZBQ-F-yktYD4m5AzM6pww ! yt
+# ColdFusion
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF4QZ_LsYcvcq7qOsOhpAX4A ! yt
+# GEOPOP
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF5_npTvQVSZ28Kc8wvffPew ! yt
+# Sarcasmitron
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF6WD1VImCVeOuNccuqDzAdA ! yt
+# Patrick Boyle
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFASM0cgfkJxQ1ICmRilfHLw ! yt
+# Real Time History
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFB1eDEd1AYG3YrRIJSZzMOQ ! yt
+# The Cold War
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFCGvq-qmjFmmMD4e-PLQqGg ! yt
+# Extra History
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFCODtTcd5M1JavPCOr_Uydg ! yt
+# Chyrosran22
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFD0y51PJfvkZNe3y3FR5riw ! yt
+# The People Profiles
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFD6TPU-PvTMvqgzC_AM7_uA ! yt
+# Georg Rockall-Schmidt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFG5h8yHSUS4n7zPnh0dG0SA ! yt
+# SEA
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFG9ShGbASoiwHwFcLcAh9EA ! yt
+# Veritasium
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFHnyfMqiRRG1u-2MsSQLbXA ! yt
+# EXPLORE WITH US
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFJWKjrrUh2KL1d3zXQW79cQ ! yt
+# tanks for nothin
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFJXxuESjGIaaqb1-IRWFihw ! yt
+# Nerdwriter1
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFJkMlOu7faDgqh4PfzbpLdg ! yt
+# Vox
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFLXo7UDZvByw2ixzpQCufnA ! yt
+# ciekawehistorie
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFO8czxzBx4PxuTEolCBmq2w ! yt
+# fern
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFODHrzPMGbNv67e84WDZhQQ ! yt
+# RealLifeLore
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFP5tjEmvPItGyLhmjdwP7Ww ! yt
+# Internet Historian
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFR1D15p_vdP3HkrH8wgjQRw ! yt
+# Real Engineering
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFR1IuLEqb6UEA_zQ81kwXfg ! yt
+# LEMMiNO
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFRcgy6GzDeccI7dkbbBna3Q ! yt
+# Fall of Civilizations
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFT6Y5JJPKe_JDMivpKgVXew ! yt
+# Bloomberg Originals
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFUMZ7gohGI9HcU9VNsr2FJQ ! yt
+# DW Documentary
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFW39zufHfsuGgpLviKh297Q ! yt
+# Middle Eats
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFWj_rUMGYCP0DjffybE2nbg ! yt
+# History Hit
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFZwU2G-KVl-P-O-B35chZOQ ! yt
+# Weird History
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFc-N24Y5OA0gqbjBwe1ttfA ! yt
+# BBC Earth Science
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFdsOTr6SmDrxuWE7sJFrkhQ ! yt
+# Great Art Explained
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFePDFpCr78_qmVtpoB1Axaw ! yt
+# You Suck At Cooking
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFekQr9znsk2vWxBo3YiLq2w ! yt
+# Core Dump
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFgY3bHW4qHKq9aC4i3nO-0g ! yt
+# History Buffs
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFggHoXaj8BQHIiPmOxezeWA ! yt
+# Kraut
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFr_Q-bPpcw5fJ-Oow1BW1NQ ! yt
+# Royal Armouries
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFsMX-XuiEkBi4-GDrYuniWg ! yt
+# Kurzgesagt – In a Nutshell
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFsXVk37bltHxD1rDPwtNM8Q ! yt
+# GOTO Conferences
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFs_tLP3AiwYKwdUHpltJPuA ! yt
+# Summoning Salt
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFtUbO6rBht0daVIOGML3c8w ! yt
+# neo
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFtYKe7-XbaDjpUwcU5x0bLg ! yt
+# Folding Ideas
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFyNtlmLB73-7gtlBz00XOQQ ! yt
+# Frontline
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF3ScyryU9Oy9Wse3a8OAmYQ ! yt
+# Newsthink
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFIlU5KDHKFSaebYviKfOidw ! yt
+# Jeff Goerling
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFR-DXc1voovS8nhAvccRZhg ! yt
+# Wall street Journal
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFK7tptUDHh-RYDsdxO1-5QQ ! yt
+# Voidzilla
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF28n0tlcNSa1iPe5mettocg ! yt
+# Coffeezila
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFFQMnBA3CS502aghlcr0_aw ! yt
+# Marquees Brownlee
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFBJycsmduvYEL83R_U4JriQ ! yt
+# Fireship
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFsBjURrPoezykLs9EqgamOA ! yt
+# Ordinary Things
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFxLYtICsUCWdr1YPrj5DtwA ! yt
+# History of the Universe
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFtRFmSyL4fSLQkn-wMqlmdA ! yt
+# Megaprojects
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF0woBco6Dgcxt0h8SwyyOmw ! yt
+# Sseth
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFD6VugMZKRhSyzWEWA9W2fg ! yt
+# PBS Space Time
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF7_gcs09iThXybpVgjHZ_7g ! yt
+# Epic
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFvPXiKxH-eH9xq-80vpgmKQ ! yt
+# Kaze
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFuvSqzfO_LV_QzHdmEj84SQ ! yt
+# Manatee
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFZvbFJH9zfNLuvAZC0_oeFg ! yt
+# Tso
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFEbYhDd6c6vngsF5PQpFVWg ! yt
+# About that
+https://www.youtube.com/feeds/videos.xml?playlist_id=PLeyJPHbRnGaZeajS8uAtr8cyc19TYBZZ9 ! yt

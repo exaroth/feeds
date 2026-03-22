@@ -1,0 +1,11 @@
+version = "1.3.0"
+builder = "spa"
+
+[template_settings]
+text-color = "#c7cfcc"
+background-color = "#121414"
+autoreload = "1"
+custom-color = "#f3a833"
+accent-color = "#2D4566"
+highlight-color = "#73bed3"
+youtube-embed-params = "autoplay=1"
