@@ -1,0 +1,8 @@
+version = "1.0.1"
+builder = "multipage-ext"
+include_json_feeds = false
+include_opml = false
+include_rss = true
+
+[template_settings]
+dummy-setting = "yes"

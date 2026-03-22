@@ -1,461 +1,456 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Call for Testing: Build Dir Layout v2</title><link>https://blog.rust-lang.org/2026/03/13/call-for-testing-build-dir-layout-v2/</link><author>Ed Page</author><category>dev</category><pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[We would welcome people to try and report issues with the nightly-only
-cargo -Zbuild-dir-new-layout.
-While the layout of the build dir
-is internal-only,
-many projects need to rely on the unspecified details due to missing features within Cargo.
-While we've performed a crater run,
-that won't cover everything and we need help identifying tools and process that rely on the details,
-reporting issues to these projects so they can update to the new layout or support them both.With at least nightly 2026-03-10,
-run your tests, release processes, and anything else that may touch build-dir/target-dir
-with the  flag.Note: if you see failures, the problem may not be isolated to just .
-With Cargo 1.91,
-users can separate where to store intermediate build artifacts (build-dir) and final artifacts (still in target-dir).
-You can verify this by running with only CARGO_BUILD_BUILD_DIR=build set.
-We are evaluating changing the default for build-dir in #16147.Build scripts looking up target-dir from their binary or : see Issue #13663Update current workarounds to support the new layoutLooking up user-requested artifacts from rustc, see Issue #13672Update current workarounds to support the new layoutLibrary support status as of publish time:Nesting of build artifacts under the profile and the target tuple, if specified.We are switching from organizing by content type to scoping the content by the package name and a hash of the build unit and its inputs.Here is an example of the current layout, assuming you have a package named  and a package named , and both have a build script:ranger-ross has worked tirelessly on this as a stepping stone to cross-workspace caching
-which will be easier when we can track each cacheable unit in a self-contained directory.This also unblocks work on:Along the way, we found this helps with:While the Cargo team does not officially endorse sharing a  across workspaces,
-that last item should reduce the chance of encountering problems for those who choose to.We will use the experience of this layout change to help guide how and when to perform any future layout changes, including:Efforts to reduce path lengths to reduce risks for errors for developers on WindowsExperimenting with moving artifacts out of the  and  directories, allowing sharing of more artifacts where possibleIn addition to narrowing scope,
-we did not do all of the layout changes now because some are blocked on the lock change which is blocked on this layout change.We would also like to work to decouple projects from the unspecified details of build-dir.]]></content:encoded></item><item><title>Announcing rustup 1.29.0</title><link>https://blog.rust-lang.org/2026/03/12/Rustup-1.29.0/</link><author>The Rustup Team</author><category>dev</category><pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The rustup team is happy to announce the release of rustup version 1.29.0.Rustup is the recommended tool to install Rust, a
-programming language that empowers everyone to build reliable and efficient
-software.
-What's new in rustup 1.29.0Following the footsteps of many package managers in the pursuit of better
-toolchain installation performance, the headline of this release is that rustup
-has been enabled to download components concurrently and  in operations such as  or  and to
-concurrently check for updates in , thanks to a GSoC 2025
-project.
-This is by no means a trivial change so a long
-tail of issues might occur, please report them if you have found any!Furthermore, rustup now officially supports the following host platforms:Also, rustup will start automatically inserting the right  entries
-during  for the following shells, in addition to those already
-supported:This release also comes with other quality-of-life improvements, to name a few:When running rust-analyzer via a proxy, rustup will consider the
- binary from  when the rustup-managed one is not found.This should be particularly useful if you would like to bring your own
- binary, e.g. if you use Neovim, Helix, etc. or are
-developing rust-analyzer itself.Empty environment variables are now treated as unset. This should help with
-resetting configuration values to default when an override is present. will use different exit codes based on whether new updates
-have been found: it will exit with  on any updates or  for no
-updates.Furthermore, @FranciscoTGouveia has joined the team. He has shown his talent,
-enthusiasm and commitment to the project since the first interactions with
-rustup and has played a significant role in bring more concurrency to it, so we
-are thrilled to have him on board and are actively looking forward to what we
-can achieve together.Further details are available in the changelog!If you have a previous version of rustup installed, getting the new one is as easy as stopping
-any programs which may be using rustup (e.g. closing your IDE) and running:Rustup will also automatically update itself at the end of a normal toolchain update:If you don't have it already, you can get rustup from the appropriate page on our website.Rustup releases can come with problems not caused by rustup itself but just due to having a new release.In particular, anti-malware scanners might block rustup or stop it from creating or copying
-files, especially when installing  which contains many small files.Issues like this should be automatically resolved in a few weeks when the anti-malware scanners are updated
-to be aware of the new rustup release.Thanks again to all the contributors who made this rustup release possible!]]></content:encoded></item><item><title>//go:fix inline and the source-level inliner</title><link>https://go.dev/blog/inliner</link><author>Alan Donovan</author><category>dev</category><pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[Go 1.26 contains an all-new implementation of the  subcommand,
-designed to help you keep your Go code up-to-date and modern. For an
-introduction, start by reading our recent post on the topic.
-In this post, we’ll look at one particular feature, the source-level
-inliner.While  has several bespoke modernizers for specific new
-language and library features,
-the source-level inliner is the first fruit of our efforts to provide
-“self-service” modernizers and analyzers.
-It enables any package author to express simple API migrations and
-updates in a straightforward and safe way.
-We’ll first explain what the source-level inliner is and how you can use it,
-then we’ll dive into some aspects of the problem and the technology behind it.In 2023, we built an algorithm for source-level inlining of function calls in Go. To “inline” a call means to replace the call by a copy of the body of the called function, substituting arguments for parameters. We call it “source-level” inlining because it durably modifies the source code. By contrast, the inlining algorithm found in a typical compiler, including Go’s, applies a similar transformation, but to the compiler’s ephemeral intermediate representation, to generate more efficient code.If you’ve ever invoked gopls’ “Inline call” interactive refactoring, you’ve used the source-level inliner. (In VS Code, this code action can be found on the “Source Action…” menu.) The before-and-after screenshots below show the effect of inlining the call to  from the function named .The inliner is a crucial building block for a number of source transformation tools. For example, gopls uses it for the “Change signature” and “Remove unused parameter” refactorings because, as we’ll see below, it takes care of many subtle correctness issues that arise when refactoring function calls.This same inliner is also one of the analyzers in the all-new  command.
-In , it enables self-service API migration and upgrades using a new  directive comment.
-Let’s take a look at a few examples of how this works and what it can be used for.Example: renaming In Go 1.16, the  function, which reads the content of a file, was deprecated in favor of the new  function. In effect, the function was renamed, though of course Go’s compatibility promise prevents us from ever removing the old name.package ioutil
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Kubernetes v1.38 Sneak Peek</title><link>https://kubernetes.io/blog/2026/11/23/kubernetes-v1-38-sneak-peek/</link><author></author><category>dev</category><pubDate>Mon, 23 Nov 2026 16:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[As we get closer to the release date for Kubernetes v1.38, the project develops and matures,
+features may be deprecated, removed, or replaced with better ones for the project's overall health.
+This blog post outlines some of the planned changes for the Kubernetes v1.38 release that the
+release team feels you should be aware of for the continued maintenance of your Kubernetes
+environment and keeping up to date with the latest changes. The information listed below is based
+on the current status of the v1.38 release and may change before the actual release date.Deprecations and removals for Kubernetes v1.38kubectl: WebSocket opt-out environment variables removed has used WebSockets instead of SPDY by default for ,  and  since
+v1.30, and for  since v1.31. The KUBECTL_REMOTE_COMMAND_WEBSOCKETS and
+KUBECTL_PORT_FORWARD_WEBSOCKETS environment variables let you turn that behavior off. These
+variables are going to be removed in v1.38.  will then always try WebSockets first and fall
+back to SPDY when it needs to (the same as the current default behavior). If your scripts or CI
+environments set either of these environment variables, you can remove them since they will no
+longer have any effect.kubectl:  dropped from kuberc credential plugin allowlist entriesThe  file keeps kubectl user preferences separate from cluster credentials in the
+kubeconfig, including an allowlist of the credential plugins  is allowed to run. In the
+beta kubectl.config.k8s.io/v1beta1 API, an allowlist entry can use  as an alias for
+. The  field (not ) has been deprecated since v1.36.With  expected to graduate to stable in v1.38, the new  API will
+not include . If any of your allowlist entries use , change them to  now.Future removal of cgroup v1 supportSupport for cgroup v1 is being phased out. Since v1.35, the kubelet fails to start on nodes that use
+cgroup v1 unless you set  in the kubelet configuration. This option remains
+available in v1.38, but it should be treated as a short-term fix as support for cgroup v1 is planned
+to be removed in a future release. If you haven't already, please plan your migration to
+cgroup v2.Admission webhooks no longer receive authentication and authorization review requestsSince v1.37, the ExcludeAdmissionWebhookVirtualResources feature gate has been enabled by default.
+With it on, validating and mutating admission webhooks no longer receive requests for (virtual)
+writes to TokenReview, SelfSubjectReview, SubjectAccessReview, SelfSubjectAccessReview,
+LocalSubjectAccessReview or SelfSubjectRulesReview. Creating or updating a webhook configuration
+whose rules name one of these resources returns a deprecation warning, and the API server logs any
+existing configurations that are affected when it starts.If you rely on a webhook to see these requests, you can turn the feature gate off for now, but note
+that the gate is planned to be locked on when the feature graduates to stable.Breaking changes in Kubernetes v1.38Container runtimes must report the cgroup driverThe kubelet in v1.37 and older supported releases provides a legacy mechanism to configure the
+cgroup driver. The modern way to do that is via the CRI  RPC, which reports the
+cgroup driver that the container runtime recommends using. In v1.38, the kubelet defaults to not
+allowing the legacy configuration mechanism: it will be both deprecated and unavailable unless
+explicitly re-activated. As a result, v1.38 nodes will essentially require that your container
+runtime is running  the kubelet starts (to look up the expected cgroup driver); if the
+kubelet can't get the cgroup driver from the runtime even after retrying, it will exit with an error
+before even registering the node.As part of this upcoming release, the  field in the kubelet configuration file will be
+deprecated. Not only is specifying that field going to be deprecated, the kubelet will actually
+reject it unless you reactivate the legacy mechanism by enabling the (temporary)
+LegacyCgroupDriverFallback feature gate. The kubeadm tool will also no longer set 
+to  by default, and its preflight checks will report an error if the runtime doesn't
+support the RPC. If any of your nodes run an older, incompatible container runtime, you should
+follow the instructions in the official v1.38 release notes about how to upgrade.Pod-level resources: swap behavior changes on  nodesIf you use pod-level resources on Linux nodes that use cgroup v2 and are configured with
+, the kubelet in v1.38 will start applying swap limits based on the Pod's pod-level
+memory settings. This means that Pods whose pod-level memory request equals their memory limit will
+get no swap at all (both for the Pod and for every container in it), even if a container sets a
+memory request lower than its limit. Check any workloads that rely on swap before you upgrade, and
+be sure to read the official release notes for v1.38 for detailed advice.Featured enhancements of Kubernetes v1.38The following list of enhancements is likely to be included in the upcoming v1.38 release. This is
+not a commitment and the release content is subject to change.kubectl user preferences (kuberc) graduating to stablekuberc, the separate kubectl configuration file for user preferences such as aliases, default
+options and a credential plugin policy, is expected to graduate to stable in v1.38.Pod-level resources graduating to stablePod-level resources, which let you set CPU, memory and hugepages requests and limits for a Pod as a
+whole, are expected to graduate to stable in v1.38. If you run Linux nodes with , see
+the swap behavior change above before you upgrade.DRA support for partitionable devices graduating to stablePartitionable devices let a
+Dynamic Resource Allocation (DRA)
+driver advertise a device such as a GPU both as a whole and as smaller partitions, and the scheduler
+allocates only combinations that fit within the physical device. The feature is expected to
+graduate to stable in v1.38, and the  feature gate will then be locked on.EvictionRequest API (alpha)Evicting a Pod isn’t always as simple as terminating it. Some applications may be in the middle of
+important work, such as data migration or cleanup, and terminating them without giving them time to
+prepare can cause disruptions.The EvictionRequest API introduces a more coordinated way to evict Pods. It gives applications and
+controllers time to prepare before a Pod is evicted. For example, when a node needs to be drained or
+a Pod needs to be moved to another node, a controller can create an EvictionRequest to signal that
+this Pod needs to be evicted.The eviction request controller coordinates with the responders configured for the Pod. These
+responders can perform application-specific tasks such as completing ongoing work, cleaning up
+resources, or migrating data before the Pod is terminated.If no custom responder is available or responders don't complete the process, Kubernetes can fall
+back to the existing API-initiated eviction mechanism, which continues to respect
+PodDisruptionBudgets (PDBs). The EvictionRequest API does not replace PDBs. It gives applications a
+chance to participate in the eviction process.As this is an alpha feature, you will need to enable the  feature gate 
+the relevant alpha API group. Check the v1.38 release notes and documentation, once they're
+available, to confirm exactly what's required.New features and deprecations are also announced in the Kubernetes release notes. We will formally
+announce what's new in Kubernetes v1.38
+as part of the CHANGELOG for that release.The Kubernetes v1.38 release is planned for Wednesday, December 16th, 2026. Stay tuned for updates!You can see the announcements of changes in the release notes for:The simplest way to get involved with Kubernetes is by joining one of the many
+Special Interest Groups (SIGs) that align
+with your interests.If you don't know where to start, join our monthly
+New Contributor Orientations where we teach the
+community how the project is structured, and we'll guide you on how to make your first contribution
+to the project.]]></content:encoded></item><item><title>Scheduling the removal of the kube-proxy IPVS backend</title><link>https://kubernetes.io/blog/2026/11/16/ipvs-removal/</link><author></author><category>dev</category><pubDate>Mon, 16 Nov 2026 18:35:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[The  backend for kube-proxy was an experiment in providing a
+service proxy implementation with better performance than the
+ backend. While it succeeded in that goal, the kernel IPVS
+API has turned out to be a bad match for the Kubernetes Services API,
+and the  backend was never able to implement all of the edge
+cases of Kubernetes Service functionality correctly.In Kubernetes 1.29, the project introduced the  backend for
+kube-proxy, which became GA in 1.33. Part of the plan behind adding
+the  backend was the idea that it would eventually replace
+both the  and  backends. Because the  backend in
+particular is complex, not 100% feature complete, and architecturally
+quite different from the other two backends (and thus more work to
+maintain), Kubernetes SIG Network decided to officially deprecate it
+as of Kubernetes 1.35. Although it currently remains available in
+kube-proxy (with a warning about its deprecation), we (Kubernetes SIG
+Network) now plan to remove it in Kubernetes 1.40. All  users
+should therefore be planning to migrate to either the  or
+ backends.Why was the  backend written?The  backend was originally designed to fix two different kinds
+of performance problems in the  backend:First,  had problems with  latency (the speed
+at which clients could establish new connections to services),
+because kube-proxy would write a separate iptables rule to match
+each service IP, so every new connection would need to be matched
+against a long series of rules that was  in the number of
+services in the cluster.Second, it had an even larger problem with  latency
+(the speed at which kube-proxy could process changes to services and
+endpoints and update the data plane rules), because kube-proxy would
+rewrite the entire iptables ruleset every time any service or
+endpoint changed. While the list of rules itself was only 
+in the total number of endpoints, the amount of time, RAM, and CPU
+that it took to process the updated ruleset grew faster than that.
+In very large clusters, kube-proxy would use 100% of one CPU all the
+time just to process iptables updates. (In fact, the control plane
+scaling problem was bad enough that for most users it was not even
+possible to grow the cluster to the size where the data plane
+scaling problem became noticeable.)The  backend solved both of these scaling problems. The data
+plane problem was solved mostly automatically, because the kernel IPVS
+subsystem uses hash tables rather than linear lookup. The
+control-plane problem was solved by  rewriting the entire
+ruleset on every update. (The kernel IPVS API doesn’t have a way of
+doing batch updates anyway, so this was essentially forced.)Why is the  backend now being deprecated?Almost from the start, the  backend also had problems.The first version didn’t have 100% compatibility with the 
+backend, but it was assumed that this would be fixed over time.
+Unfortunately, the original authors moved on to other things outside
+the Kubernetes ecosystem (as inevitably sometimes happens in open
+source), and it took a while to find new people interested in
+maintaining the code.Meanwhile, as people began using the  backend in larger and
+larger clusters, its own scaling problems started to emerge. In
+particular, the lack of batch update operations in the IPVS API meant
+that while the  backend was faster than  when making a
+few small changes, it was potentially slower when making a large
+number of changes at once. And because the IPVS API is fairly limited
+in what it can do, kube-proxy's  backend needed to fall back to
+using iptables to implement various features of Kubernetes Services
+beyond basic "load balancing", making it run into some of the same
+scaling problems the  backend has. While the  backend
+tried to mitigate this by using  for some of its rules, this
+again ran into the problem of not having a batch update API.
+Additionally, the fact that the  backend uses iptables means
+that it has the same long-term support problem as the 
+backend: Red Hat's plan to remove the iptables API entirely from Red
+Hat Enterprise Linux means the  kube-proxy backend will also no
+longer be available to Kubernetes users on RHEL.What about IPVS schedulers?Beyond performance, the other reason some users were excited about the
+ backend was the ability to pick from among various IPVS
+"schedulers" for distributing traffic to endpoints, rather than
+relying on the simple random selection used by  (and
+).Unfortunately, the way IPVS is used by kube-proxy prevents it from
+being able to use most of the IPVS schedulers in a  way. The
+problem is that kube-proxy is a distributed service that runs on all
+nodes in the cluster, but the kube-proxy processes on different nodes
+do not share their IPVS scheduler state, so each node picks endpoints
+without knowing what is happening with clients on any other node. Even
+the schedulers that are designed to work in a distributed way
+generally don't work better than random selection in the context of
+kube-proxy. For example, the  scheduler uses Maglev Hashing to
+select endpoints, which theoretically allows for extremely efficient
+distributed load balancing. But that efficiency is only in the context
+of a specific sort of two-layer load-balancer design, and kube-proxy
+does not have the right architecture to be able to act as  of
+the two layers in that design.If you are running Kubernetes 1.36 or later, and your nodes are
+running a Linux distribution with kernel 5.13 or later, and you use
+the  proxy mode, then Kubernetes recommends switching to the
+ mode of kube-proxy. (Although the  backend is GA
+—and fully usable—as of Kubernetes 1.33, there have been some
+performance- and scaling-related fixes since then that that weren't
+backported to releases earlier than 1.36.)The  backend is fully supported, feature-complete, and even
+has  better performance than :(Taller bars represent longer latency. The "p50" group is the average
+connection establishment latency. Note that even the largest numbers
+in this graph are quite tiny; the point is not to claim that
+ is (noticeably) faster than , just to show that,
+unlike , it's not .)Switching is as easy as changing the kube-proxy configuration and
+restarting kube-proxy. For example, in clusters deployed via kubeadm,
+change  to  in the  ConfigMap
+and then restart the kube-proxy pods, as described in the
+documentation on reconfiguring a kubeadm cluster. (If you are
+overriding other -specific kube-proxy configuration, you will
+also need to change those options to the corresponding 
+ones.)Switching to : "It's Not As Slow As You Think!"If you can't switch to , either because you are on an older
+version of Kubernetes, or because your cluster runs on an older Linux
+distribution that isn't new enough to support the  backend,
+you may be able to just switch to the  backend, which has
+improved greatly since the original creation of the  backend in
+2017:The generated ruleset has been optimized to remove redundant and
+irrelevant rules (#57461, #60306, #96959, #108251), reducing
+data plane latency.The code that generates the ruleset has been optimized to do fewer
+allocations, and to avoid unnecessarily recomputing the same
+information multiple times (#65755, #65902, #67948, #85617,
+#90103, #97238), reducing CPU and memory usage when resyncing.Rather than doing “check the current state of the rules, then update
+them to the new state”,  kube-proxy now does “assume the
+current state is correct, update to the new state based on that
+assumption, and only explicitly check the current state if that
+update fails”. This greatly improves the resyncing speed, because it
+turns out that even  the iptables ruleset is extremely slow
+in large clusters (#81517, #110334, #114181).To the extent possible within the constraints of the iptables APIs,
+kube-proxy’s iptables backend now only updates iptables rules for
+services/endpoints that have changed since the last sync, rather
+than rewriting the entire ruleset every time (#110268 /
+KEP-3453).The net result of this is that the  backend of 2026, while
+still not as good as the  backend, is at least  better
+than the  backend of 2017 was, and many people who found
+ unusable in the past would not have problems with it now.As with switching to , switching to  is mostly
+just a matter of updating your kube-proxy configuration, although for
+technical reasons, in this case we recommend that you reboot each node
+after changing the kube-proxy configuration, rather than merely
+restarting kube-proxy.KEP-5495 gives the full timeline and plan for kube-proxy IPVS
+deprecation.]]></content:encoded></item><item><title>XTM Transifex sponsors Python’s documentation translations</title><link>https://blog.python.org/2026/11/transifex-sponsors-python-docs/</link><author>Stan Ulbrych</author><category>dev</category><pubDate>Mon, 16 Nov 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[XTM Transifex is supporting Python’s documentation translation teams with a year of free access to its Growth plan.]]></content:encoded></item><item><title>Enabling the parallel frontend on nightly</title><link>https://blog.rust-lang.org/2026/11/16/enabling-parallel-frontend-on-nightly/</link><author>Jakub Beránek</author><category>dev</category><pubDate>Mon, 16 Nov 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[TL;DR: We are enabling the parallel frontend of the Rust compiler on nightly by default,
+to find remaining issues in preparation for its stabilization.The Rust compiler has been using multiple threads to compile code in its "backend" part (using LLVM) for a long time. However, its "frontend" part (which includes type checking and borrow checking) has been executing sequentially, on a single thread, which of course limits the performance of the compiler. If you are interested in a more in-depth explanation of parallelism in the Rust compiler, see this previous post.The compiler frontend actually had support for running in parallel for a long time, but it was not enabled by default due to various issues. Three years ago, we made it possible to opt into the parallel frontend on the nightly channel, with the plan to stabilize it in 2024. Clearly, we did not achieve that goal, but work on the parallel frontend was still slowly progressing in the meantime.Last year, Vadim Petrochenkov, together with several other contributors, started a coordinated effort to finally get the parallel frontend over the finish line. Since then, many long-standing issues were fixed, and its performance was improved. Now we are at a point where we would like to make it widely available. But before that, we want to find out if people encounter issues with it in the wild, which is why we are enabling it by default only on the nightly channel. Once we will be confident enough that it is working well, we want to stabilize it.The parallel frontend has been enabled on the nightly channel by default since .The primary benefit of enabling the parallel frontend is, of course, faster compilation of Rust programs.We benchmarked the parallel frontend in our benchmark suite, which measures the duration to compile the  crate in a crate graph. As usual, the results were varied. In some benchmarks, the parallel frontend barely helped. In others, for example when performing a  of the ,  or  crates, the compilation was almost three times faster, using 8 threads.In the table below, you can find the aggregated wall-time mean change for the real-world benchmarks in our suite, when building a single crate from scratch across several configurations, compared to the same build using a sequential frontend.Frontend threads / ProfileIt is clear that the parallelization is not perfect, and we definitely plan to invest more effort into improving its performance. Nevertheless, with 8 threads, it can make the end-to-end compilation time of  ~2x faster for several crates that we tested, which is still quite an improvement.The performance benefits for incremental rebuilds are much more modest, and also very hard to compare, because the performance of rebuilds depends on what was changed and how were the codegen units laid out. In our benchmark suite, we saw a mean improvement of 3-5% for incremental rebuilds. But we currently do not have great benchmarks for this use-case, so your results might vary.We can also zoom in on an individual crate. Here is a chart of how the wall-time scales when compiling the  crate, for a full non-incremental build (), full incremental build () and an incremental rebuild () across several build configurations:What is interesting to note is that enabling the parallel frontend can actually also make the backend faster, for reasons explained here.It is important to note that all benchmark results presented above measured only the compilation of a single crate. When compiling a whole crate graph, your CPU cores might already be saturated because of backend (LLVM) parallelism or by Cargo compiling multiple crates in parallel. So the final performance effect will vary heavily based on the workload that you are running, and on the number of cores that you have available.We also benchmarked  end-to-end (checking the whole crate graph) on the  crate itself on a machine with 8 CPU cores. With 8 threads, it resulted in a ~15% end-to-end improvement:36.7s with 1 frontend thread35.1s with 2 frontend threads31.9s with 4 frontend threads30.8s with 8 frontend threadsAs can be seen from the results above, when the CPU cores are already saturated with parallel crate compilation and LLVM, the positive effect of the parallel frontend is reduced.At the start, the nightly toolchain will default to the parallel frontend using only  threads. This is a conservative choice that should still allow us to find potential issues while not increasing memory usage a lot at the same time.If you want to test out the performance with different thread counts, you can override the number of threads used for the frontend using the  compiler flag. It can be specified either in the  environment variable, or you can put it into a  file:Currently, the performance of the parallel frontend will likely not scale very well above ~8 threads, but you can try it on your workload to test what happens. Note that using higher thread counts will likely lead to higher memory usage of the compiler, and in extreme cases it might cause you to run out of memory.
+Limitations and known issuesDue to the used parallelism, the produced order of diagnostics might not be deterministic when using the parallel frontend.In some situations, the generated binary might also not be reproducible, though we currently consider these cases bugs, and we would like to identify them and fix them.There are currently some known issues related to the reproducibility of the Rust compiler when using the parallel frontend, which are being worked on.To reiterate: this is only being enabled on nightly for now. If you are using the stable toolchain, you will still be using the sequential frontend by default.If you want to disable the parallel frontend on the nightly channel, pass -Zunstable-options --jobs-frontend=1 to , either via the  environment variable, or with the  configuration file:If you have to do this for some reason, please do tell us why on GitHub or on Zulip. We would especially like to know about any compiler crashes that you encounter, or the produced binaries not being reproducible when the parallel frontend is enabled.Over the next few months, we will be monitoring GitHub and Zulip for any reported issues about the parallel frontend. Once we have enough confidence that it is working well, and there are no major issues, we would like to move forward and finally stabilize it.We would also like to improve its performance, and make more things parallel. So far, a lot of the work on the parallel frontend has been focused on making it work correctly, rather than tuning its performance down to the last percent. We thus expect that we might still be able to make further performance improvements to it.We would also like to make more parts of the frontend actually parallel, as some parts are currently still sequential even if parallelism is enabled. There is some ongoing work on this. Last year, we had a Google Summer of Code project focused on enabling parallel macro expansion and name resolution, and there is also an open pull request for parallelizing the lowering of the Abstract Syntax Tree (AST) to the High-Level Intermediate Representation (HIR). More work remains to be done on this front.]]></content:encoded></item><item><title>Announcing Rust 1.100.0</title><link>https://blog.rust-lang.org/2026/11/12/Rust-1.100.0/</link><author>The Rust Release Team</author><category>dev</category><pubDate>Thu, 12 Nov 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust team is happy to announce a new version of Rust, 1.100.0. Rust is a programming language empowering everyone to build reliable and efficient software.If you have a previous version of Rust installed via , you can get 1.100.0 with:If you'd like to help us out by testing future releases, you might consider updating locally to use the beta channel () or the nightly channel (). Please report any bugs you might come across!After 10 years and 5 failed stabilization attempts, ! This also completes the project goal for this work.The never type, spelled  in code, is the canonical uninhabited type. It represents the type of diverging computations – computations which never resolve to any value – where any code that follows is unreachable. Expressions that terminate control flow, such as , , and , also have the type .Since having a value of the never type is impossible, Rust permits a never-to-any coercion, allowing to turn  into any other type (this is what distinguishes it from any other uninhabited types). This can be used, for example, to not return a value from one of the branches of a  or an :While the never type could already be used and observed this way, and even named in the return type of functions (), this release allows naming the never type anywhere:Additionally this release changes  to be an alias to the never type. That makes all old APIs that used  be compatible with using . This was the plan ever since the introduction of  and is one of the reasons why the never type stabilization was so hard (waffle gave a talk about some of the troubles of the stabilization).Unfortunately, to allow changing , we had to introduce a breaking change. This release changes the "never type fallback" from  to  in editions  2024 (i.e. 2015, 2018, and 2021), similarly to what has already been done in edition 2024. This should largely be unnoticeable, but can affect code in some rare cases (for example when ignoring a result of a function returning a generic parameter). Note that this change might also make the compiler detect more code as unreachable.We tried to minimize the impact of this breaking change as much as possible, by providing future compatibility warnings far in advance and releasing fixes to public crates that have been broken by this. If a dependency is failing due to issues with the never type, consider updating it, as a fix might have already been released for it.This release brings about the stabilization of the core parts of , enabling library authors to define custom allocators that can be used together with certain standard library types - currently  and . These are enabled through the newly-stabilized  trait.This is the foundation of the Allocators 1.0 project goal. A lot remains to be done still, including expanding the API surface usable with custom allocators and stabilizing their use on more collections and pointer types; with the core trait and design out of the way though, expect to see more being stabilized soon!: run a closure on every exit pathThe  trait in Rust makes it possible to run code when a variable goes out of scope, regardless of whether we , , or panic.  being a part of types means that in Rust you never have to close a socket.Implementing  can however feel a little inconvenient when all you want is to run some code unconditionally when a function exits. This is why we’re introducing : a new helper type that runs a closure when dropped. takes two arguments: a variable and a closure. It implements  and  so you can keep working with the variable as normal. But when dropped it runs the closure and consumes the variable. also implements a  associated function which returns the variable from the guard without running the destructor. This makes it possible to quickly implement all-or-nothing transaction-like APIs with a rollback. Here is an example implementing a parser which uses a guard to roll back mutations in case of failure:
+Conjuring zero-sized typesAs Rust's unsafe code guidelines are still being decided, it became clear that it would be very useful to decide what exactly it means to create zero-sized types in an unsafe way, and what we should recommend for people to do this.Instead of transmuting , MaybeUninit::uninit().assume_init(), or various other incantations, this is the dedicated way to create a value of a zero-sized type when you know that doing so is safe to do. If an inhabited type has no size, we know exactly what value it must be: nothing.Of course, APIs often rely on the inability to construct such types for safety, and that's why this function is unsafe. For example, PyO3's  is a zero-sized marker token that represents holding the Python GIL (global interpreter lock). Many of Python's APIs require holding this lock to be safe, but conjuring a token from thin air would allow safe PyO3 calls to violate that precondition.
+Reporting unused dependencies in CargoBuilding dependencies that are no longer used or are only needed for specific platforms can slow down builds.
+Rustc has the unused_crate_dependencies lint for this but it has false positives when used with Cargo because dependencies may be shared between multiple build targets, e.g. dependencies.tracing-subscriber being available for every  in a package when only some may use it.Cargo now reports unused dependencies to users, e.g.A limitation of this warning is that it will only appear when building every build target that may use an entry in a dependencies table.
+For example, running  won't show warnings for unused  because another  may be present that uses them.
+No warning will be shown for unused  because there isn't a way to ensure every development build target is built.
+Reducing Cargo cache collisionsCargo builds all libraries and binaries in the  and then uplifts final artifacts to the . At this time, these share a common parent directory.
+Different build configurations, like , can lead to different copies of libraries and binaries in the .
+These copies are kept unique by a build-configuration hash but this hash was not always applied due to platform constraints.
+This can lead to extra rebuilds, missed rebuilds, confusion over what binaries or libraries are used, and so on.
+These problems get exacerbated when sharing a  across git worktrees.The  now consistently applies the build-configuration hash to all content by organizing the directories around their build step, rather than their file type, and moving the hash from a file's name to the parent directory.This work began with the build directory layout project goal in 2025, and its stabilization is a milestone toward a new project goal, unblocking future improvements such as cache garbage collection, cross-workspace cache de-duplication, cross-workspace caching, and fine grain locking.We previously published a call for testing for the changes that are now taking effect.
+While this is an internal change, this may break build processes and tests that had workarounds for missing or incomplete features.
+In some cases, the workaround is no longer needed.
+See cargo#17287 for possible solutions and to add any new use cases.
+Cargo min-publish-age a.k.a. dependency cooldownsMalicious versions of packages are often caught within hours or days after being published, by either automated scanners or by the community.
+Rust 1.100 stabilizes Cargo's min-publish-age aware dependency resolution, which lets you wait for that window before it picks up newly published versions.
+This practice is also known as dependency cooldowns.When selecting versions, Cargo now skips any version published more recently than that, and tells you what it held back:When a new version is needed right away, you can override the check for a single update:The newer version will be recorded in  and kept from then on until a later  re-resolves it.A few things to keep in mind:This depends on the registry recording when each version was published.
+Versions without a  field in the index are never held back. ignores the minimum publish age, for both the installed crate and its dependencies.
+Pin a version with  if needed.Cooldowns reduce the risk from some supply chain attacks but are not a complete defense on their own.
+Please keep reviewing dependency updates as you otherwise would.Many people came together to create Rust 1.100.0. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>Google Summer of Code 2026 results</title><link>https://blog.rust-lang.org/2026/11/11/gsoc-2026-results/</link><author>Jakub Beránek</author><category>dev</category><pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust Project participated in Google Summer of Code (GSoC) for the third time this year. This time we had 13 projects, and our dear contributors have been working very hard on them for several months. As usual, the projects had various durations, so while some of them have ended in August, the last one has only finished in November, so we have been waiting until we have all the results before publishing this blog post.We are very happy to announce that all 13 projects were successful and passed their final evaluation! We consider it to be a testament to the diligence of our contributors, and the helpfulness of our mentors, that we are able to keep a very high rate of successful GSoC projects several years in a row.At the start of summer, we had a video call with our contributors, so that we could all get to know each other a bit, and learn about their projects. Over the following few months, we continuously communicated with the contributors, provided guidance and answered their questions and reviewed their pull requests. And most importantly, we learned many new things together! It was an overall great experience. We are grateful for all Rust contributions done by our GSoC participants and for the time we spent working together, and we hope that we will continue seeing at least some of them around in the future.We would like to thank all our Rust GSoC 2026 contributors. You did a great job!Even though this year we had fewer projects than in 2025, mostly due to limited mentoring capacity, Google Summer of Code 2026 was again a success for the Rust Project. We think that GSoC is a great way of introducing new contributors to our community, and we are looking forward to participating in GSoC (and other mentorship programs, such as Outreachy) again in the near future. If you are interested in becoming a (GSoC) contributor, check out our GSoC project idea list and our guide for new contributors.Below you can find a brief summary of our GSoC 2026 projects. You can find more information about the original goals of the projects here. For easier navigation, here is an index of the project descriptions in alphabetical order:And now strap in, as there is a ton of great content to read about here!
+A Frontend for Safe GPU Offloading in RustMarcelo worked on improving the usability of cross-vendor GPU programs in Rust using the  module. At the start of the project, the offload prototype was only a proof of concept. It assumed that the offloaded code was bug-free, and it required users to write a lot of boilerplate code. Marcelo resolved both issues over the summer.First, he implemented proper type checking. Marcelo extended the compiler to verify that the arguments passed to any offload call are of the correct type, as expected by the GPU kernel. Kernel launches are thus now safe.After that, he added support for generic kernels. The compiler now collects all generic instantiations launched from the CPU side, and loads that info later when compiling GPU kernels to make sure we instantiate them as needed. Marcelo also added support to select which GPU to use, which is helpful for laptops with both an integrated and a dedicated GPU, as well as for servers with multiple GPUs. He also added two macros that removed the need for any boilerplate when writing and launching GPU kernels.The hardest part of this project by far was dealing with references. Due to Rust semantics, we cannot just map types containing mutable references to GPUs and then process them using multiple threads. Previous Rust GPU projects used raw pointers as a workaround, but we obviously wanted to avoid those. Marcelo managed to implement a sound abstraction so that users can now safely declare how their kernels will access mutable arguments.As a cherry on top, Marcelo also ported the RajaPerf performance suite from C++ to Rust and used it to benchmark his pull requests. His safe Rust version matches the performance of the original C++ code, and is now described in a GPU offload paper that he is working on together with his mentor, Manuel. This was Marcelo's second Rust GSoC project, and same as last year, we are very happy with the results. Great job!
+Adding WebAssembly Linking Support to WildThe goal of this project was simple on paper: teach the Wild linker to link WebAssembly (Wasm) programs. However, adding support for a new linker target is of course far from simple. Luckily, Kei already had a lot of experience with Wild, as this was his second GSoC project working on the Wild linker.And as expected, Kei did a great job! Prior to GSoC 2026, Wild had no Wasm output support. Now, the Wasm support is sufficiently good that Wild can link a range of complex programs to Wasm. For example, it is able to link itself, SQLite, ripgrep, CPython and even the SpiderMonkey JavaScript engine.And the linking performance is excellent! When compared to , the de-facto standard Wasm linker, which is based on the LLD linker, Wild is 2-15x faster, and uses 2-5x less memory. You can find more benchmarks in his final report, where he also explains that achieving this performance took quite some work, because Wild's ELF linking performance did not immediately translate to being fast when linking Wasm.Even after this GSoC project ended, Kei has continued improving Wild's Wasm support, as well as contributing to other parts of Wild. Thank you for bringing fast linking to a new set of use-cases, Kei! You are a valued member of the Wild team.
+Bringing autodiff and offload into Rust CIThe goal of this project was to build the experimental  module, which implements automatic differentiation of Rust code, and the  module, which allows offloading Rust code to GPUs, in the CI of the Rust compiler.Shota has already been contributing to this area in the months leading up to this year's GSoC, so he had no issues getting started. After valiantly fighting with our CI, he made both modules available in the official  compiler channel. Rust users can thus now simply install them with a single rustup command, rather than having to compile rustc from source! This is a huge benefit for gathering feedback on these features in the wild, as it makes it much easier to experiment with them.Beyond making these projects available via rustup, he also worked on making it simpler to build projects that use . The original compilation pipeline was derived from Clang's support for GPU offload, so it involved calling clang helper binaries. That is clearly not optimal, so Shota worked on replacing it by directly calling the underlying LLVM APIs from rustc.The last piece of his project was enabling testing in CI for both offload and autodiff, which already helped prevent multiple regressions. Right now, the GPU offload pipeline only tests the CPU setup side, but his work allowed us to talk to GPU hardware vendors, two of which already agreed to provide the Rust Project with GPU hardware so that in the future we can also run those tests on dedicated GPUs.Overall, the project was a success. Shota had to show a lot of patience and endurance when working with various CMake quirks and CI challenges. We would like to extend a special thank you for that!miri is a tool that can detect undefined behavior (UB) in unsafe Rust code. It used to have a prototype of an interactive debugger called , but it became unmaintained some time ago. The goal of this project was to re-establish , to make it easier to use miri interactively, debug how and why is UB introduced in Rust programs, and also help rustc developers analyse MIR, one of the intermediate representations of Rust programs.Mohamed successfully reached both main goals of this project. He created a miri interface for the gdb debugger, which allows debugging programs executed by miri. You can set breakpoints, step through individual instructions, analyse MIR local variables and inspect the debugged program's state, with miri acting as a "virtual CPU". So when you encounter your next miri UB report, you can actually debug the program state that caused UB by running ! Mohamed also created a command-line interface for , which is used to test it in miri's CI. This will ensure that it keeps working properly and will not bitrot again.Mohamed also added basic support for the Debugger Adapter Protocol, which allows using  together with IDEs such as Visual Studio Code. Currently, connecting priroda to an IDE is a bit involved, so the next step would be to build a plugin for an IDE that would allow showing all the extra state that miri has, which gdb doesn't know how to interpret.Debugging programs executed by miri is very exciting. Thank you for all your work!
+Implementing impl and mut restrictionsThe goal of this project was to implement two new language features that were accepted in RFC 3323:Impl restrictions (), which allow restricting in which modules you are able to implement a given trait.Mut restrictions (struct Foo { pub mut(crate) bar: u8 }), which allow restricting in which modules you are able to mutate a given field.Ryosuke had to familiarize himself with the compiler's codebase and do a lot of implementation work to get both features working. This included implementing parsing of the new syntax, recording its metadata in the compiler's Abstract Syntax Tree, implementing resolution of the restricted crate paths, and finally adding checks to enforce both restriction rules. This all amounted to around five thousand lines of Rust code!Once the new features were implemented and available on nightly, Ryosuke wrote a Call for Testing blog post. It had to be very exciting to announce to the world that he implemented two new features from scratch, and people can now play with them on the nightly channel! After the blog post was published, users reported a few issues, which Ryosuke promptly fixed. He also contributed to rustdoc to improve how the impl and mut restrictions are rendered in the generated documentation pages.Now that the features are available on nightly, feedback is being gathered on them, with the plan being to stabilize them in 2027. If you would like to provide feedback on the impl and mut restrictions, you can do so in this issue.The goal of this project was clear, and Ryosuke achieved it completely. Awesome work!
+Improving Ergonomics and Safety of serialport-rsThe serialport project is a bit different from some other projects which participated in this year's Google Summer of Code. It is more on the side of "facility management" than rocket science. Its challenges are taming finicky operating system APIs and making good abstractions, rather than full-blown software engineering.Tanmay led many fruitful discussions about potential design decisions, and did a lot of field research on how other crates that depend on serialport actually use its API, to figure out how to make the upcoming breaking API changes less disruptive and painful for them.Tanmay also worked on sanding off some rough edges of the serialport API, such as replacing Boxed trait objects with enums, and making errors explicit in places where the legacy API used to panic. Some of the work still waits for integration. It is targeting the upcoming serialport 5.0 release.Christian (Tanmay's mentor) found working alongside Tanmay very motivational, and he was able to catch up with a lot of other unrelated work in order to integrate Tanmay's changes. He noted that working with Tanmay was fun and productive, and that it was pure joy to see him grow from his first contribution in the bonding phase to seasoned contributions. Thank you, Tanmay!This was my first Google Summer of Code as well. It was challenging, motivating, fun and definitely worth it. I would show up again.
+libc: transition differing bit-width time and offset variants and deprecate bug-prone constants is a foundational crate that is used by thousands of other crates across the Rust ecosystem. For the past several years, its maintainers have been attempting to publish a stable 1.0 release of the crate. Because this crate has to support interoperating with C on many compilation targets with weird quirks, this requires an enormous amount of work. We already had a GSoC project for moving  towards 1.0 last year, and the goal of Adam's project was to make more progress in that direction.And we can happily say that progress was indeed made! The original goal of Adam's project was to deprecate a number of constants that were difficult to maintain and cleanup inconsistencies in handling 32-bit/64-bit variants of file and time handling functions. Adam was able to resolve that in a few weeks, and then he moved on to resolve a number of various issues blocking the 1.0 milestone.Saying that Adam was productive would be… an understatement. We could follow his work in real-time, because he was posting daily GSoC reports for . The diligence and consistency with which he tackled so many complicated issues was an inspiration to us. In fact, sometimes the  reviewers were not able to keep up!You can find all Adam's  pull requests here. You might notice that many of them have lots of comments, and even more discussions happened in GitHub issues and on Zulip. In addition to implementing the necessary code, making changes that affect interesting C platforms and architectures also required him to do a ton of research, and a lot of considerations of edge cases and possible backwards compatibility breakages. His work also took him on a whirlwind tour of diverse platforms; Adam's contributions spanned FreeBSD, NetBSD, Android, Hurd, NuttX, AIX, VxWorks, Fuchsia, L4Re and more.Even though more work will still be required to get  to 1.0, Adam's contributions made a significant dent in this effort. Thank you very much for all your work!
+Link Linux kernel and its Modules with WildLinker scripts are arcane commands that can be used to instruct a linker to construct the final binary in a custom way. The Wild linker used to implement only basic linker script functionality, which Vishruth greatly expanded during his GSoC project.Thanks to that, Wild can now successfully link Linux kernel modules, and it's even close to being able to link the Linux kernel itself! Vishruth's work involved greatly expanding expression evaluation support, location counters, program headers, etc. In addition to adding support for many missing bits of linker script support, Vishruth implemented support for partial linking (-r) as this is needed in order to link Linux kernel modules. You can find all the linker script features that he implemented here.Adding all those peculiar features to Wild required performing many cross-cutting changes to its codebase, which Vishruth managed to do really well. And it was not at the cost of performance! Wild now manages to link Linux kernel modules such as  or  2-4x faster than the BFD (GNU ld) or LLD linkers. You can find more benchmarks in his final report.Vishruth has continued to contribute to Wild even after his GSoC project ended and has become a valued contributor to the project. Thank you very much for making Wild better, Vishruth!
+Migrating rust-analyzer assists to SyntaxEditorrust-analyzer uses rowan for its syntax trees, a library for Concrete Syntax Trees.  has served us well over the years, but it has some downsides that cause major performance problems and also smaller convenience issues. In particular, memory fragmentation causes rust-analyzer to consume much more memory than it actually needs (in the order of redundant gigabytes).We wanted to rewrite  to change that. The problem was that many parts in rust-analyzer touch syntax trees, and in particular assists (code actions) of which we have a lot. They also use mutable tree editing, a feature of  that can be convenient but was a major obstacle in rewriting it to be more efficient.During his project, bit-aloo first migrated all rust-analyzer code from mutable tree editing to , a new abstraction that was created specifically to avoid mutation. After that, he removed mutable editing from  altogether.The migration process is incremental and  is still inefficient in various aspects. However, we believe that the parts which required changes to large amounts of code are behind us, and we can complete the migration with more focused changes. bit-aloo is continuing to work on that even after his GSoC project ended. And he was also accepted as a member of the rust-analyzer team, so congratulations! We would like to thank him for his work, and hope to continue working with him to improve rust-analyzer for everyone.
+Port std::arch test suite to rust-lang/rustThe  module of the Rust standard library contains various intrinsic functions that provide architecture and vendor-specific functionality. Their implementation lives in the stdarch repository, which is included as a Josh subtree in the main compiler repo ().When someone changes the intrinsics in the main repo, breakages can silently creep in, because the main repo does not execute all the  tests in its CI. That can cause friction when we synchronize the changes between the two repositories. Ideally, we would run all of 's tests in the main repo to detect any issues as soon as possible.And that is where Sumit came in! Over the course of his GSoC project, he examined the (very!) complex ways the intrinsics are tested in , and started porting them over to the main repo. But this was not a matter of copying over a few lines of YAML. The compiler repo uses its own build system (called ) and a CI workflow structure that is quite different from the  repository. Sumit thus had to first understand what is each test suite doing, reimplement it as a part of bootstrap and finally integrate it into the compiler's CI workflows.We run ~90 CI jobs across several hardware architectures, operating systems and . Getting all that to work while testing  intrinsics required a lot of diligent work… and a lot of patience. It took  for one of the test suites to finally succeed on the main repo's CI, and it required Sumit to completely refactor how the suite worked, for it to be more compatible with bootstrap. As another example, a different test suite that Sumit also got to work required running the tests in an Intel CPU emulator on CI.Sumit ported most of the  test suites to , including intrinsics verification against reference  implementations, checks for automatically generated source code being up-to-date, and various unit tests for individual intrinsics and CPU feature detection logic. There is one remaining test suite to port, but the ported tests are already helping us find issues, which is great.You can check Sumit's  PRs here; notice that he was also contributing to other parts of Rust in the meantime! Sumit's work will help us make LLVM upgrades and land intrinsics changes more easily. Thank you, Sumit!
+Reorganizing tests/ui/issuesThe goal of this project was to get rid of a very scary place in the Rust compiler's test suite: a directory called . It contained thousands of test files based on historical Rust issues, dating back all the way to 2012. The problem with those tests was that they were named only with an issue number (e.g. ). When such a test would break, it was quite difficult to figure out what was it even supposed to test, because there was little context attached to it.Even though we already had a GSoC project to tackle this problem last year, due to the sheer amount of uncategorized tests, there were still over four hundred tests left in this directory by the time zedddie started working on this project.For each test in this directory, zedddie had to first understand what was the test doing and dig through its original GitHub issue and any other related issues and pull requests. Then they had to figure out what would be the best location to move the test under, search for any possible duplicates, come up with a descriptive name for the test (that tends to be very difficult!), and finally add a short description to the test that explains the context of why the test was added in the first place. Rinse and repeat, for hundreds of tests.zedddie rolled up their sleeves, and categorized over 300 tests in 30 pull requests. Together with other contributors helping out over this summer, zedddie was finally able to remove the last batch of uncategorized tests at the start of August. As zedddie said in their final report: "What is left to do: nothing, tests/ui/issues is gone".While this work might sound a bit bland, its positive effect on the maintainability of our test suite, and improving the lives of Rust compiler contributors, is considerable. It is also apparently a great way to learn about cool niche edge cases of Rust that most Rust developers might not know about! After migrating the remaining uncategorized UI tests, zedddie continued contributing to the next trait solver and const generics. Thank you very much for helping us finally get rid of , zedddie!
+Utilize debugger APIs to improve debug info test accuracy and error reportingThe Rust debugging experience leaves a lot to be desired. One reason why we struggled to improve it is that many of our debuginfo test suites did not even run in CI for the past few years, as they were difficult to maintain. When something changed in the type visualizers, the implementation details of a standard library type or in debugger internals, someone had to go through tens of tests and manually update them. This was not sustainable, so the test suite rotted.Luckily for us, Anthony took that affront personally. Even before his GSoC project, he spent considerable effort on improving the quality of debug visualizers of various Rust standard library types, and gained an impressive amount of knowledge about debuggers.During his GSoC project, he completely overhauled how our debuginfo test infrastructure works, both for LLDB and GDB. Thanks to his improvements, we can now easily "rebless" the reference output when something changes, which makes it much easier to keep our test suite up-to-date. The new tests also record much more information about the internal state of the debugger recorded during the test, which helps with diagnosing issues that cause type visualizers to stop working.In addition to redesigning the test suite, Anthony also actually managed to re-enable the LLDB tests on both Windows and Linux in our CI again (after several years of being skipped there!). This will allow us to avoid debuginfo regressions and make it easier to improve the Rust debugging experience. Oh, and it goes without saying that while doing all that, he also made numerous improvements to Rust type visualizers. You can find his PRs here.Anthony's amazing contributions and his deep expertise in debuggers led to him being invited to the Rust Compiler team, which was much deserved. What else can we add, other than: thank you for your awesome work!
+XDG path support for rustupThe support for platform-specific directories (platformdirs) has been a long-standing feature request for rustup, to have more fine-grained filesystem directory choices. This project investigated how that issue could be resolved.The real complexity of this feature request lies within a decade worth of different assumptions that previous iterations of rustup and cargo have made: it turns out that quite a lot of them are no longer true if we were to implement platformdirs support truly faithfully.Guicheng first worked on cleaning up the interactions between  and  as a warmup. This issue itself is a very good demonstration of all that compatibility baggage: somehow  has become the default binary directory for all things Rust, so rustup ended up installing itself and all its proxies into it. As a result, it has been super annoying to many that everything in  is gone with .After that, he started the actual implementation of platformdirs support in rustup. This was no easy task! Not because the code itself was hard to write, but because it takes a lot of effort to figure out what should be the desired behavior in the first place. Also, in order to determine the appropriate platformdirs semantics, some prior research is often required to see how things became what they are today, so the decoupling of different concerns could proceed, and migration paths could be designed accordingly. It was in this sense that this is different from a typical GSoC project, and luckily thanks to the effort he has put into this project, we have not only come up with the final patch, but also discovered and fixed some tiny preexisting issues with this long-untouched aspect of the rustup codebase along the way.Thank you for digging into this complex topic, Guicheng!We would like to thank all contributors who have participated in Google Summer of Code 2026 with us! Your contributions helped make Rust better, and introduced you as new members of our community, which is a reason to celebrate. We are looking forward to participating in GSoC again next year!We would also like to thank Google for organizing the Google Summer of Code program and for allowing us to host a large number of projects every year. And last, but not least, we would like to thank all the Rust mentors who were tirelessly helping our contributors to complete their projects. Without you, Rust GSoC would not be possible.]]></content:encoded></item><item><title>Go Turns 17</title><link>https://go.dev/blog/17years</link><author>Austin Clements, for the Go team</author><category>dev</category><pubDate>Tue, 10 Nov 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[Over the past year, we released Go 1.26 in February and Go 1.27
+in August, alongside a steady stream of releases across our
+ libraries and developer tools.
+Meanwhile, the pace of change across the software industry continues to
+accelerate, driven by shifting hardware, evolving security threats, and the
+rapid rise of AI-assisted development and agentic systems.In a tumultuous time for the industry, Go aims to be a steady hand on the
+tiller. Our goal is to keep Go grounded in its foundational principles of
+simplicity, reliability, efficiency, and an unwavering commitment to
+compatibility, while adapting to modern hardware, production
+workloads, and developer workflows. Increasingly, our investments serve a : what helps human engineers write, understand, and maintain reliable Go
+code at scale also provides the guardrails and authoritative context that AI
+coding assistants and agents need to be effective.Core language and library improvementsIn the language itself, Go 1.26 and 1.27 addressed several long-standing
+restrictions in generics and everyday Go syntax, guided by years of real-world
+experience. When generics first landed in Go 1.18, methods could not declare
+their own type parameters, which sometimes forced awkward package-level
+functions and “inside-out” nested calls. Go 1.27 introduced generic
+methods on non-interface types (such as the new
+ method in ),
+allowing APIs to stay naturally organized on types and enabling readable method
+chaining. Together with support for self-referential type constraints in Go 1.26
+and broader type inference for generic function values in Go 1.27, generics in
+Go feel more complete and natural than ever.Alongside generics, two refinements to value construction make everyday Go code
+cleaner and more concise. Go 1.26 extended the built-in  function to
+accept an initial value expression, allowing 
+or  without the ubiquitous -style helper functions used
+to populate optional pointer fields in JSON and protocol buffer structs. And in
+Go 1.27, struct literal keys can refer directly to fields of embedded or nested
+structs, reducing boilerplate in composite literals.In the standard library, our focus has been on evolving Go’s “production stack”
+and eliminating subtle operational traps. Few packages are as central to that as
+, which has been a mainstay of Go since before Go 1.0. While its
+core model has held up remarkably well for over 15 years, tighter JSON standards
+and security expectations have turned some of its original defaults into
+interoperability and security hazards, such as silently accepting invalid UTF-8
+or duplicate object keys and matching struct fields case-insensitively. At
+the same time, its buffered design prevented true streaming and limited
+performance. Addressing these issues while upholding Go’s compatibility promise
+for the millions of existing programs that depend on  meant
+designing a new major version of the package.Six years in the making, the new  and
+ packages reached general
+availability in Go 1.27. Driven by Joe Tsai, Daniel Martí, and contributors from
+across the Go community, this modern JSON API brings safer,
+stricter defaults, flexible caller- and type-specified customization, and up to
+10× faster unmarshaling, while cleanly separating high-level semantic marshaling
+() from low-level, reflection-free syntactic streaming ().
+Crucially, we didn’t leave existing code behind: the original
+ package is now implemented entirely in
+terms of  under the hood. Existing  callers get faster unmarshaling
+simply by upgrading, and packages using  and  interoperate seamlessly so
+that the ecosystem can migrate gradually without flag days.We’ve also brought new production diagnostics to Go’s concurrency primitives.
+Concurrency is one of Go’s greatest strengths, but goroutines accidentally left
+blocked on abandoned channels or locks can silently leak memory and CPU in
+long-running services, and traditional goroutine profiles cannot distinguish
+leaked goroutines from ones legitimately waiting for work. First previewed in Go
+1.26 and now generally available in Go 1.27, the new goroutine leak
+profiler ( in  and
+/debug/pprof/goroutineleak in ) solves this for production
+services. Contributed by Vlad Saioc and Uber’s Programming Systems team,
+building on academic research with Aarhus University and Washington University
+in St. Louis, the profiler repurposes the garbage collector’s reachability phase
+to identify goroutines blocked on concurrency primitives that no runnable
+goroutine can ever reach. That allows it to pinpoint leaks in production with
+near-zero false positives and zero overhead when not in use.In , closing an HTTP/1 response body with even a single unread
+byte—such as a trailing newline left behind by a JSON decoder—previously forced
+the client to tear down the underlying TCP and TLS connection. Go 1.27’s HTTP
+transport now automatically drains small unread response bodies in the
+background on close, turning a widespread latency
+footgun into up to a 5× speedup for sequential HTTP/1 requests while letting
+application code stay clean and simple.These releases also added several notable standard library APIs, including a
+native  package, a generic and type-safe
+, and an in-memory
+ designed for
+virtual-time testing with . Existing
+packages saw significant speedups as well:  now
+runs twice as fast while allocating half as much memory,
+ compresses faster (speeding up ,
+, , and ), and  has a faster,
+more accurate encoder and decoder.Making the most of modern hardwareModern CPUs look very different from the hardware Go first launched on 17 years
+ago, with wide vector units and deep, non-uniform memory hierarchies. A major
+focus of our runtime and compiler work is ensuring Go programs make full use of
+modern silicon, both transparently when you upgrade your toolchain and through
+new APIs when you need explicit control.After debuting as an experiment in Go 1.25, the Green Tea garbage
+collector became the default in Go 1.26. By organizing object
+marking around contiguous memory spans rather than chasing pointers across the
+heap, Green Tea aligns with modern CPU memory architectures to reduce garbage
+collection overhead by 10–40% in real-world workloads—and by an additional ~10%
+on recent  processors using AVX-512 vector instructions during scanning.Of course, the runtime shouldn’t be the only part of a Go program that can tap
+into vector hardware. Without access to Single Instruction, Multiple Data (SIMD)
+capabilities, compute-intensive software, from cryptography and media processing
+to data analytics and AI, leaves a significant portion of modern silicon dark.
+Until recently, the only way to light up that hardware in Go was by writing and
+maintaining per-architecture assembly. To change that, Go 1.26 and 1.27
+introduced two experimental SIMD packages: ,
+for low-level access to architecture-specific vector instructions on ,
+ (NEON), and WebAssembly (); and , a
+higher-level, width-agnostic API that provides portable, near-assembly
+performance across architectures with automatic fallback emulation.We’ve also attacked the cost of memory allocation from multiple angles. The
+cheapest heap allocation is the one that never happens: in Go 1.26, the compiler
+began allocating initial slice backing stores on the
+stack at  sites—even for slices that
+ultimately escape to the heap—eliminating the flurry of small heap allocations
+that typically accompany slice growth. And for heap allocations more broadly, Go
+1.27 introduced size-specialized memory
+allocation to speed up allocating the small
+objects (such as small structs, slices, and strings) that dominate allocator
+time. Generating dedicated fast-path allocator routines for size classes up to
+80 bytes made small allocations up to 30% faster and improved overall
+performance in allocation-heavy programs. Together with a ~30% reduction in
+baseline  call overhead in Go 1.26, these improvements make Go programs
+faster and leaner out of the box.Secure software and ecosystem defenseGo’s approach to security spans the entire lifecycle of software: providing safe
+APIs by design, preparing cryptography for the future, and actively defending
+the live ecosystem as new threats emerge.To defend against store-now, decrypt-later attacks and support the industry’s
+accelerating timelines for quantum readiness, Go has continued expanding its
+post-quantum cryptography support. Go 1.26 enabled hybrid post-quantum key
+exchanges ( and ) by default in
+ and added the  package
+(implementing RFC 9180 Hybrid Public Key Encryption, including post-quantum
+hybrid KEMs). Go 1.27 followed up with the new
+ package, implementing the FIPS 204
+post-quantum ML-DSA signature standard and integrating it into  and
+.At the same time, we’ve continued hardening the standard library and runtime
+against subtle classes of vulnerabilities. Most key generation and signing
+functions across Go’s  packages now unconditionally draw from a
+secure system randomness source, closing off a classic footgun where
+non-cryptographic readers were accidentally passed in. Under the hood, Go 1.26
+also added 64-bit heap base address randomization to harden  binaries and
+introduced the experimental  package for
+eagerly erasing sensitive cryptographic temporaries from registers, stack
+frames, and the heap.Securing Go deployments also requires rapid vulnerability and incident response
+in a fast-moving threat landscape. From the Go vulnerability database and
+ to our
+release infrastructure, we’ve invested heavily in ecosystem defense. In October,
+that preparation was put to the test during the eMudhra certificate key
+disclosure incident, when eight intermediate TLS and
+code-signing certificates chaining to a widely trusted root CA were discovered
+to use trivially weak private keys. Because Linux lacks a uniform OS-level
+certificate revocation mechanism, Go’s built-in TLS verifier is the frontline
+defense for millions of Linux services. Within seven and a half hours of initial
+notification, the Go Security team shipped a targeted block in our first-ever
+URGENT track security release (Go 1.27.3 and Go
+1.26.10) alongside an updated Go vulnerability database entry so 
+could flag affected binaries, giving Go users everything they needed to protect
+their deployments before the weak keys were publicly disclosed the next morning.Go has always been more than a compiler and standard library: it is an
+end-to-end platform for software engineering. Over the past year, our work in
+, the
+ language server, ,
+and  has focused on making that platform even
+more productive for both human developers and AI coding assistants.In last fall’s Go Developer Survey, the single biggest
+challenge developers reported was ensuring their code follows best practices and
+current Go idioms. As Go evolves while standing by its compatibility promise,
+older ways of writing code continue to work alongside newer, clearer, or faster
+alternatives, creating a natural drift in idioms over time. That drift has been
+compounded by AI coding assistants, which gravitate toward the older patterns
+that dominate their training data.Go 1.26 tackled this with a complete overhaul of the 
+command, returning the long-dormant tool to its pre-Go 1.0
+roots to apply dozens of automatic
 
-import "os"
-
-// ReadFile reads the file named by filename…
-// Deprecated: As of Go 1.16, this function simply calls [os.ReadFile].
-func ReadFile(filename string) ([]byte, error) {
-    return os.ReadFile(filename)
-}
-Ideally, we would like to change every Go program in the world to stop using  and to call  instead. The inliner can help us do that. First we annotate the old function with . This comment tells the tool that any time it sees a call to this function, it should inline the call.package ioutil
-
-import "os"
-
-// ReadFile reads the file named by filename…
-// Deprecated: As of Go 1.16, this function simply calls [os.ReadFile].
-//go:fix inline
-func ReadFile(filename string) ([]byte, error) {
-    return os.ReadFile(filename)
-}
-When we run  on a file containing a call to , it applies the replacement:$ go fix -diff ./...
--import "io/ioutil"
-+import "os"
-
--   data, err := ioutil.ReadFile("hello.txt")
-+   data, err := os.ReadFile("hello.txt")
-The call has been inlined, in effect replacing a call to one function by a call to another.Because the inliner replaces a function call by a copy of the body of
-the called function, not by some arbitrary expression, in principle
-the transformation should not change the program’s behavior
-(barring code that inspects the call stack, of course).
-This differs from other tools that allow for arbitrary rewrites,
-such as , which are very powerful but need to be watched closely.For many years now, our Google colleagues on the teams supporting
-Java, Kotlin, and C++ have been using source-level inliner tools like this.
-To date, these tools have eliminated millions of calls to deprecated
-functions in Google’s code base.
-Users simply add the directives, and wait.
-During the night, robots quietly prepare, test, and submit batches of
-code changes across a monorepo of billions of lines of code.
-If all goes well, by the morning the old code is no longer in use and can be
-safely deleted.
-Go’s inliner is a relative newcomer, but it has already been used to
-prepare more than 18,000 changelists to Google’s monorepo.Example: fixing API design flawsWith a little creativity, a variety of migrations can be expressed as inlinings.
-Consider this hypothetical  package:// Package oldmath is the bad old math package.
-package oldmath
-
-// Sub returns x - y.
-func Sub(y, x int) int
-
-// Inf returns positive infinity.
-func Inf() float64
-
-// Neg returns -x.
-func Neg(x int) int
-It has several design flaws: the  function declares its parameters in the wrong order; the  function implicitly prefers one of the two infinities; and the  function is redundant with . Fortunately we have a  package that avoids these mistakes, and we’d like to get users to switch to it. The first step is to implement the old API in terms of the new package and to deprecate the old functions. Then we add inliner directives:// Package oldmath is the bad old math package.
-package oldmath
-
-import "newmath"
-
-// Sub returns x - y.
-// Deprecated: the parameter order is confusing.
-//go:fix inline
-func Sub(y, x int) int {
-    return newmath.Sub(x, y)
-}
-
-// Inf returns positive infinity.
-// Deprecated: there are two infinite values; be explicit.
-//go:fix inline
-func Inf() float64 {
-    return newmath.Inf(+1)
-}
-
-// Neg returns -x.
-// Deprecated: this function is unnecessary.
-//go:fix inline
-func Neg(x int) int {
-    return newmath.Sub(0, x)
-}
-Now, when users of  run the  command on their code, it will replace all calls to the old functions by their new counterparts. By the way, gopls has included  in its analyzer suite for some time, so if your editor uses gopls, the moment you add the  directives you should start seeing a diagnostic at each call site, such as “call of  should be inlined”, along with a suggested fix that inlines that particular call.For example, this old code:import "oldmath"
-
-var nine = oldmath.Sub(1, 10) // diagnostic: "call to oldmath.Sub should be inlined"
-import "newmath"
-
-var nine = newmath.Sub(10, 1)
-Observe that after the fix, the arguments to  are in the logical order. This is progress! If you’re in luck, the inliner will succeed at removing every call to the functions in , perhaps allowing you to delete it as a dependency.The  analyzer works on types and constants too. If our  package had originally declared a data type for rational numbers and a constant for π, we could use the following forwarding declarations to migrate them to the  package while preserving the behavior of existing code:package oldmath
-
-//go:fix inline
-type Rational = newmath.Rational
-
-//go:fix inline
-const Pi = newmath.Pi
-Each time the  analyzer encounters a reference to  or , it will update them to refer instead to .Under the hood of the inlinerAt a glance, source inlining seems straightforward: just replace the
-call with the body of the callee function, introduce variables for the
-function parameters, and bind the call arguments to those variables.
-But handling all of the complexities and corner cases correctly
-while producing acceptable results is no small technical challenge:
-the inliner is about 7,000 lines of dense, compiler-like logic.
-Let’s look at six aspects of the problem that make it so tricky.One of the inliner’s most important tasks is to attempt to replace each occurrence of a parameter in the callee by its corresponding argument from the call. In the simplest case, the argument is a trivial literal such as  or , so the replacement is straightforward and the parameter can be eliminated.//go:fix inline
-func show(prefix, item string) {
-    fmt.Println(prefix, item)
-}
-For less trivial literals such as  or , the replacement is equally straightforward, so long as the parameter appears in the callee at most once. But if it appears multiple times, it would be bad style to sprinkle copies of these magic values throughout the code as it would obscure the relationship between them; a later change to only one of them might create an inconsistency.In such cases the inliner must tread carefully and emit a more conservative result. Whenever one or more parameters cannot be completely substituted for any reason, the inliner inserts an explicit “parameter binding” declaration://go:fix inline
-func printPair(before, x, y, after string) {
-    fmt.Println(before, x, after)
-    fmt.Println(before, y, after)
-}
-printPair("[", "one", "two", "]")
-// a “parameter binding” declaration
-var before, after = "[", "]"
-fmt.Println(before, "one", after)
-fmt.Println(before, "two", after)
-In Go, as in all imperative programming languages, calling a function may have the side effect of updating variables, which in turn may affect the behavior of other functions. Consider the call to  below:func add(x, y int) int { return y + x }
-
-z = add(f(), g())
-A trivial inlining of the call would replace  with  and  with , with this result:But this result is incorrect because evaluation of  now occurs before ; if the two functions have side effects, those effects will now be observed in a different order and may affect the result of the expression. Of course, it is bad form to write code that relies on effect ordering among call arguments, but that doesn’t mean people don’t do it, and our tools have to get it right.So, the inliner must attempt to prove that  and  do not have side effects on each other. On success, it can safely proceed with the result above. Otherwise, it must fall back to an explicit parameter binding:When considering side effects, it’s not only the argument expressions that matter. Also significant is the order in which parameters are evaluated relative to other code in the callee. Consider this call to ://go:fix inline
-func add2(x, y int) int {
-    return x + other() + y
-}
-
-add2(f(), g())
-This time, parameters  and  are used in the same order they are declared, so the substitution  won’t change the order of effects of  and —but it will change the order of any effects of  and . Furthermore, if the function body uses a parameter within a loop, substitution might change the cardinality of effects.The inliner uses a novel hazard analysis to model the order of effects in each callee function. Nonetheless, its ability to construct the necessary safety proofs is quite limited. For example, if the calls  and  are simple accessors, it would be perfectly safe to call them in either order. Indeed, an optimizing compiler might use its knowledge of the internals of  and  to safely reorder the two calls. But unlike a compiler, which generates object code that reflects the source at a specific moment, the purpose of the inliner is to make permanent changes to the source, so it can’t take advantage of ephemeral details. As an extreme example, consider this  function:func start() { /* TODO: implement */ }
-An optimizing compiler is free to delete each call to  because it has no effects today, but the inliner is not, because it may become important tomorrow.In short, the inliner may produce results that—to the informed eye of a project maintainer—are clearly too conservative. In such cases, the fixed code would benefit stylistically from a little manual cleanup.3. “Fallible” constant expressionsYou might imagine (as I once did) that it would always be safe to replace a parameter variable by a constant argument of the same type. Surprisingly, this turns out not to be the case, because some checks previously done at run time would now happen—and fail—at compile time. Consider this call to the  function://go:fix inline
-func index(s string, i int) byte {
-    return s[i]
-}
-
-index("", 0)
-A naive inliner might replace  with  and  with , resulting in , but this is not actually a legal Go expression because this particular index is out of bounds for this particular string. Because the expression  is composed of constants, it is evaluated at compile time, and a program that contains it will not even build. By contrast, the original program would fail only if execution reaches this call to , which presumably in a working program it does not.Consequently, the inliner must keep track of all expressions and their operands that might become constant during parameter substitution, triggering additional compile-time checks. It builds a constraint system and attempts to solve it. Each unsatisfied constraint is resolved by adding an explicit binding for the constrained parameters.Typical argument expressions contain one or more identifiers that refer to symbols (variables, functions, and so on) in the caller’s file. The inliner must make sure that each name in the argument expression would refer to the same symbol after parameter substitution; in other words, none of the caller’s names is  in the callee. If this fails, the inliner must again insert parameter bindings, as in this example://go:fix inline
-func f(val string) {
-    x := 123
-    fmt.Println(val, x)
-}
-x := "hello"
-{
-    // another “parameter binding” declaration
-    // to read the caller's x before shadowing it
-    var val string = x
-    x := 123
-    fmt.Println(val, x)
-}
-Conversely, the inliner must also check that each name in the  function body would refer to the same thing when it is spliced into the call site. In other words, none of the callee’s names is shadowed or missing in the caller. For missing names, the inliner may need to insert additional imports.When an argument expression has no effects and its corresponding parameter is never used, the expression may be eliminated. However, if the expression contains the last reference to a local variable at the caller, this may cause a compile error because the variable is now unused.//go:fix inline
-func f(_ int) { print("hello") }
-x := 42 // error: unused variable: x
-print("hello")
-So the inliner must account for references to local variables and avoid removing the last one. (Of course it is still possible that two different inliner fixes each remove the -to-last reference to a variable, so the two fixes are valid in isolation but not together; see the discussion of semantic conflicts in the previous post. Unfortunately manual cleanup is inevitably required in this case.)In some cases, it is simply impossible to inline away the call.
-Consider a call to a function that uses a  statement:
-if we were to eliminate the call, the deferred function would execute
-when the  function returns, which is too late.
-All we can safely do when the callee uses  is to
-put the body of the callee in a function literal and immediately call it.
-This function literal, , delimits the lifetime of the
- statement, as in this example://go:fix inline
-func callee() {
-    defer f()
-    …
-}
-func() {
-    defer f()
-    …
-}()
-If you invoke the inliner in gopls, you’ll see that it makes the change shown above and introduces the function literal. This result may be appropriate in an interactive setting, since you are likely to immediately tweak the code (or undo the fix) as you prefer, but it is rarely desirable in a batch tool, so as a matter of policy the analyzer in  refuses to inline such “literalized” calls.We’ve now seen half a dozen examples of how the inliner handles tricky semantic edge cases correctly.
-(Many thanks to Rob Findley, Jonathan Amsterdam, and Olena Synenka for insights, discussions, reviews, features, and fixes.)
-By putting all of the smarts into the inliner, users can simply apply an “Inline call” refactoring in their IDE or add a  directive to their own functions and be confident that the resulting code transformations can be applied with only the most cursory review.Although we have made good progress toward that goal, we have not yet fully attained it, and it is likely that we never will. Consider a compiler. A sound compiler produces correct output for any input and never miscompiles your code; this is the fundamental expectation that every user should have of their compiler. An  compiler produces code carefully chosen for speed without compromising on safety. Similarly, an inliner is a bit like an optimizing compiler whose goal is not speed but : inlining a call must never change the behavior of your program, and ideally it produces code that is maximally neat and tidy. Unfortunately, an optimizing compiler is provably never done: showing that two different programs are equivalent is an undecidable problem, and there will always be improvements that an expert knows are safe but the compiler cannot prove. So too with the inliner: there will always be cases where the inliner’s output is too fussy or otherwise stylistically inferior to that of a human expert, and there will always be more “tidiness optimizations” to add.We hope this tour of the inliner gives you a sense of some of the challenges involved, and of our priorities and directions in providing sound, self-service code transformation tools. Please try out the inliner, either interactively in your IDE, or through  directives and the  command, and share with us your experiences and any ideas you have for further improvements or new tools.]]></content:encoded></item><item><title>Python 3.15.0 alpha 7</title><link>https://blog.python.org/2026/03/python-3150-alpha-7/</link><author>Hugo van Kemenade</author><category>dev</category><pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[The penultimate 3.15 alpha is out!]]></content:encoded></item><item><title>Announcing the AI Gateway Working Group</title><link>https://kubernetes.io/blog/2026/03/09/announcing-ai-gateway-wg/</link><author></author><category>dev</category><pubDate>Mon, 9 Mar 2026 18:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[The community around Kubernetes includes a number of Special Interest Groups (SIGs) and Working Groups (WGs) facilitating discussions on important topics between interested contributors. Today, we're excited to announce the formation of the AI Gateway Working Group, a new initiative focused on developing standards and best practices for networking infrastructure that supports AI workloads in Kubernetes environments.In a Kubernetes context, an  refers to network gateway infrastructure (including proxy servers, load-balancers, etc.) that generally implements the Gateway API specification with enhanced capabilities for AI workloads. Rather than defining a distinct product category, AI Gateways describe infrastructure designed to enforce policy on AI traffic, including:Token-based rate limiting for AI APIs.Fine-grained access controls for inference APIs.Payload inspection enabling intelligent routing, caching, and guardrails.Support for AI-specific protocols and routing patterns.Working group charter and missionThe AI Gateway Working Group operates under a clear charter with the mission to develop proposals for Kubernetes Special Interest Groups (SIGs) and their sub-projects.
-Its primary goals include:: Create declarative APIs, standards, and guidance for AI workload networking in Kubernetes.: Foster discussions and build consensus around best practices for AI infrastructure.: Ensure composability, pluggability, and ordered processing for AI-specific gateway extensions.: Build on established networking foundations, layering AI-specific capabilities on top of proven standards.WG AI Gateway currently has several active proposals that address key challenges in
-AI workload networking:The payload processing proposal addresses the critical need for AI workloads to inspect and transform full HTTP request and response payloads.
-This enables:Guard against malicious prompts and prompt injection attacks.Content filtering for AI responses.Signature-based detection and anomaly detection for AI traffic.AI Inference OptimizationSemantic routing based on request content.Intelligent caching to reduce inference costs and improve response times.RAG (Retrieval-Augmented Generation) system integration for context enhancement.The proposal defines standards for declarative payload processor configuration, ordered processing pipelines, and configurable failure modes - all essential for production AI workload deployments.Modern AI applications increasingly depend on external inference services, whether for specialized models,
-failover scenarios, or cost optimization.
-The egress gateways proposal aims to define standards for securely routing traffic outside the cluster.
-Key features include:External AI Service IntegrationSecure access to cloud-based AI services (OpenAI, Vertex AI, Bedrock, etc.).Managed authentication and token injection for third-party AI APIs.Regional compliance and failover capabilities.Advanced Traffic ManagementBackend resource definitions for external FQDNs and services.TLS policy management and certificate authority control.Cross-cluster routing for centralized AI infrastructure.User Stories We're AddressingPlatform operators providing managed access to external AI services.Developers requiring inference failover across multiple cloud providers.Compliance engineers enforcing regional restrictions on AI traffic.Organizations centralizing AI workloads on dedicated clusters.KubeCon + CloudNativeCon Europe 2026, AmsterdamAI Gateway working group members will be presenting at KubeCon + CloudNativeCon Europe in Amsterdam, discussing the problems at the intersection of AI and networking, including the working group's active proposals, as well as the intersection of AI gateways with Model Context Protocol (MCP) and agent networking patterns.
-This session will showcase how AI Gateway working group proposals enable the infrastructure needed for next-generation AI deployments and communication patterns.
-The session will also include the initial designs, early prototypes, and emerging directions shaping the WG’s roadmap.
-For more details see our session here:The AI Gateway Working Group represents the Kubernetes community's commitment to standardizing AI workload networking. As AI becomes increasingly integral to modern applications, we need robust, standardized infrastructure that can support the unique requirements of inference workloads while maintaining the security, observability, and reliability standards that Kubernetes users expect.
-Our proposals are currently in active development, with implementations beginning across various gateway projects. We're working closely with SIG Network on Gateway API enhancements and collaborating with the broader cloud-native community to ensure our standards meet real-world production needs.Whether you're a gateway implementer, platform operator, AI application developer, or simply interested in the intersection of Kubernetes and AI, we'd love your input. The working group follows an open contribution model - you can review our proposals, join our weekly meetings, or start discussions on our GitHub repository.
-To learn more:The future of AI infrastructure in Kubernetes is being built today, join up and learn how you can contribute and help shape the future of AI-aware gateway capabilities in Kubernetes.]]></content:encoded></item><item><title>CPython: 36 Years of Source Code</title><link>https://blog.python.org/2026/03/cpython-codebase-growth/</link><author>Stan Ulbrych</author><category>dev</category><pubDate>Sun, 8 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[An analysis of the growth of CPython's codebase from its first commits to the present day]]></content:encoded></item><item><title>Announcing Rust 1.94.0</title><link>https://blog.rust-lang.org/2026/03/05/Rust-1.94.0/</link><author>The Rust Release Team</author><category>dev</category><pubDate>Thu, 5 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust team is happy to announce a new version of Rust, 1.94.0. Rust is a programming language empowering everyone to build reliable and efficient software.If you have a previous version of Rust installed via , you can get 1.94.0 with:If you'd like to help us out by testing future releases, you might consider updating locally to use the beta channel () or the nightly channel (). Please report any bugs you might come across!Rust 1.94 adds , an iterating method for slices. It works just like  but with a constant length, so the iterator items are  rather than dynamically-sized . In many cases, the window length may even be inferred by how the iterator is used!For example, part of one 2016 Advent of Code puzzle is looking for ABBA patterns: "two different characters followed by the reverse of that pair, such as  or ." If we assume only ASCII characters, that could be written by sweeping windows of the byte slice like this:The destructuring argument pattern in that closure lets the compiler infer that we want windows of 4 here. If we had used the older  iterator, then that argument would be a slice which we would have to index manually,  that runtime bounds-checking will be optimized away.Cargo now supports the  key in configuration files (), enabling better organization, sharing, and management of Cargo configurations across projects and environments. These include paths may also be marked  if they might not be present in some circumstances, e.g. depending on local developer choices.
-TOML 1.1 support in CargoInline tables across multiple lines and with trailing commas and  string escape charactersOptional seconds in times (sets to 0)For example, a dependency like this:... can now be written like this:Note that using these features in  will raise your development MSRV (minimum supported Rust version) to require this new Cargo parser, and third-party tools that read the manifest may also need to update their parsers. However, Cargo automatically rewrites manifests on publish to remain compatible with older parsers, so it is still possible to support an earlier MSRV for your crate's users.These previously stable APIs are now stable in const contexts:Many people came together to create Rust 1.94.0. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>The Python Insider Blog Has Moved!</title><link>https://blog.python.org/2026/03/the-python-insider-blog-has-moved/</link><author>Jacob Coffee</author><category>dev</category><pubDate>Tue, 3 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Python Insider now lives at blog.python.org, backed by a Git repository. All 307 posts from the Blogger era have been migrated, and old URLs redirect automatically.]]></content:encoded></item><item><title>Python 3.12.13, 3.11.15 and 3.10.20 are now available!</title><link>https://blog.python.org/2026/03/python-31213-31115-31020/</link><author>Thomas Wouters</author><category>dev</category><pubDate>Tue, 3 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[[Python Releases For Your Security!](https://discuss.python.org/t/python-3-12-13-3-11-15-and-3-10-20-are-now-available/106363) New security releases for 3.10, 3.11 and 3.12 are now available.]]></content:encoded></item><item><title>2025 State of Rust Survey Results</title><link>https://blog.rust-lang.org/2026/03/02/2025-State-Of-Rust-Survey-results/</link><author>The Rust Survey Team</author><category>dev</category><pubDate>Mon, 2 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[Once again, the survey team is happy to share the results of the State of Rust survey, this year celebrating a round number - the 10th edition!The survey ran for 30 days (from November 17th to December, 17th 2025) and collected 7156 responses, a slight decrease in responses compared to last year. In this blog post we will shine a light on some specific key findings. As usual, the full report is available for download.Overall, the answers we received this year pretty closely match the results of last year, differences are often under a single percentage point. The number of respondents decreases slightly year over year. In 2025, we published multiple surveys (such as the Compiler Performance or Variadic Generics survey), which might have also contributed to less people answering this (longer) survey. We plan to discuss how (and whether) to combine the State of Rust survey with the ongoing work on the Rust Vision Doc.Also to be noted that these numbers should be taken in context: we cannot extrapolate too much from a mere 7 000 answers and some optional questions have even less replies.Let's point out some interesting pieces of data:Confirmed that people develop using the stable compiler and keep up with releases, trusting our stability and compatibility guarantees. On the other hand, people use nightly out of "necessity" (for example, something not yet stabilized). Compared to last year (link) we seem to have way less nightly users. This may not be a significant data point because we are looking at a sliding window of releases and differences could depend on many factors (for example, at a specific point in time we might have more downloads of the nightly compiler because of a highly anticipated feature).One example might be the very popular let chains and async closures features, which were stabilized last year.We are also interested to hear from (and grateful to) people  using Rust (or not anymore) when they tell us why they dropped the language. In most cases it seems to be a "see you again in the future" rather than a "goodbye".Some specific topic we were interested in: how often people download crates using a git repository pinned in the Cargo.toml (something like foo = { git = "https://github.com/foo/bar" }).and if people actually find the output of  useful. Internal discussions hinted that we were not too sure about that but this graph contradicts our prior assumption. Seems like many Rust users actually do find compiler error code explanations useful.
-Challenges and wishes about RustWe landed long-awaited features in 2025 ( and ) and the survey results show that they are indeed very popular and often used. That's something to celebrate! Now generic const expressions and  are bubbling up in the charts as the most-wanted features. Most of the other desired features didn't change significantly.When asked about which non-trivial problems people encounter, little changes overall compared to 2024: resource usage (slow compile times and storage usage) is still up there. The debugging story slipped from 2nd to 4th place (~2pp). We just started a survey to learn more about it!Noticeable (within a ~3pp) flection in attendance for online and offline communities to learn about Rust (like meetups, discussion forums and other learning material). This hints at some people moving their questions to LLM tooling (as the word cloud for open answers suggests). Still, our online documentation is the preferred canonical reference, followed by studying the code itself.Confirmed the hiring trend from organisations looking for more Rust developers. The steady growth may indicate a structural market presence of Rust in companies, codebases consolidate and the quantity of Rust code overall keeps increasing.As always we try to get a picture of the concerns about the future of Rust. Given the target group we are surveying, unsurprisingly the majority of respondents would like even more Rust! But at the same time concerns persist about the language becoming more and more complex.Slight uptick for "developer and maintainers support". We know and we are working on it. There are ongoing efforts from RustNL (https://rustnl.org/fund) and on the Foundation side. Funding efforts should focus on retaining talents that otherwise would leave after some time of unpaid labor.This graph is also a message to companies using Rust: please consider supporting Rust project contributors and authors of Rust crates that you use in your projects. Either by joining the Rust Foundation, by allowing some paid time of your employees to be spent on Rust projects you benefit from or by funding through other collect funds (like https://opencollective.com, https://www.thanks.dev and similar) or personal sponsorships (GitHub, Liberapay or similar personal donation boxes).Trust in the Rust Foundation is improving, which is definitively good to hear.As a piece of trivia we ask people which tools they use when programming in Rust. The Zed editor did a remarkable jump upward in the preferences of our respondents (with Helix as a good second). Editors with agentic support are also on the rise (as the word cloud shows) and seems they are eroding the userbase of VSCode and IntelliJ, if we were to judge by the histogram.We're happy to meet again those 11 developers still using Atom (hey 👋!) and we salute those attached to their classic editors choice like Emacs and Vim (or derivatives).And finally, here are some data about marginalized groups, out of all participants who completed our survey:Lesbian, gay, bisexual, queer, or otherwise non-heterosexualWoman or perceived as a womanDisabled (physically, mentally, or otherwise)Racial or ethnic minorityOlder or younger than the average developers I knowWhile some of these numbers have slightly improved, this still shows that only a very small percentage of the people who are part of marginalized groups make it to our project. While we still do better than many other tech communities, it is a reminder that we need to keep working hard on being a diverse and welcoming FOSS community , which has always been and always will be one of our core values.Overall, no big surprises and a few trends confirmed.If you want to dig more into details, feel free to download the PDF report.We want once again to thank all the volunteers that helped shaping and translating this survey and to all the participants, who took the time to provide us a picture of the Rust community.Since this year we publish a round number, if you fancy a trip down the memory lane here the blog posts with the past years' survey results:]]></content:encoded></item><item><title>Before You Migrate: Five Surprising Ingress-NGINX Behaviors You Need to Know</title><link>https://kubernetes.io/blog/2026/02/27/ingress-nginx-before-you-migrate/</link><author></author><category>dev</category><pubDate>Fri, 27 Feb 2026 15:30:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[As announced November 2025, Kubernetes will retire Ingress-NGINX in March 2026.
-Despite its widespread usage, Ingress-NGINX is full of surprising defaults and side effects that are probably present in your cluster today.
-This blog highlights these behaviors so that you can migrate away safely and make a conscious decision about which behaviors to keep.
-This post also compares Ingress-NGINX with Gateway API and shows you how to preserve Ingress-NGINX behavior in Gateway API.
-The recurring risk pattern in every section is the same: a seemingly correct translation can still cause outages if it does not consider Ingress-NGINX's quirks.I'm going to assume that you, the reader, have some familiarity with Ingress-NGINX and the Ingress API.
-Most examples use  as the backend.Also, note that Ingress-NGINX and NGINX Ingress are two separate Ingress controllers.
-Ingress-NGINX is an Ingress controller maintained and governed by the Kubernetes community that is retiring March 2026.
-NGINX Ingress is an Ingress controller by F5.
-Both use NGINX as the dataplane, but are otherwise unrelated.
-From now on, this blog post only discusses Ingress-NGINX.1. Regex matches are prefix-based and case insensitiveSuppose that you wanted to route all requests with a path consisting of only three uppercase letters to the  service.
-You might create the following Ingress with the nginx.ingress.kubernetes.io/use-regex: "true" annotation and the regex pattern of .However, because regex matches are prefix and case insensitive, Ingress-NGINX routes any request with a path that starts with any three letters to httpbin:The output is similar to: The  endpoint of httpbin returns a random UUID.
-A UUID in the response body means that the request was successfully routed to httpbin.With Gateway API, you can use an HTTP path match with a  of  for regular expression path matching.
- matches are implementation specific, so check with your Gateway API implementation to verify the semantics of  matching.
-Popular Envoy-based Gateway API implementations such as Istio, Envoy Gateway, and Kgateway do a full case-sensitive match.Thus, if you are unaware that Ingress-NGINX patterns are prefix and case-insensitive, and, unbeknownst to you,
-clients or applications send traffic to  (or ), you might create the following HTTP route.However, if your Gateway API implementation does full case-sensitive matches,
-the above HTTP route would not match a request with a path of .
-The above HTTP route would thus cause an outage because requests
-that Ingress-NGINX routed to httpbin would fail with a 404 Not Found at the gateway.To preserve the case-insensitive regex matching, you can use the following HTTP route.Alternatively, the aforementioned proxies support the  flag to indicate case insensitive matches.
-Using the flag, the pattern could be .2. The nginx.ingress.kubernetes.io/use-regex applies to all paths of a host across all (Ingress-NGINX) IngressesNow, suppose that you have an Ingress with the nginx.ingress.kubernetes.io/use-regex: "true" annotation, but you want to route
-requests with a path of exactly  to .
-Unfortunately, you made a typo and set the path to  instead of .Most would expect a request to  to respond with a 404 Not Found, since  does not match the  path of .
-However, because the  Ingress has the nginx.ingress.kubernetes.io/use-regex: "true" annotation and the  host,
-all paths with the  host are treated as regular expressions across all (Ingress-NGINX) Ingresses.
-Since regex patterns are case-insensitive prefix matches,  matches the  pattern and Ingress-NGINX routes such requests to .
-Running the command The  endpoint of httpbin returns the request headers.
-The fact that the response contains the request headers in the body means that the request was successfully routed to httpbin.Gateway API does not silently convert or interpret  and  matches as regex patterns.
-So if you converted the above Ingresses into the following HTTP route and
-preserved the typo and match types, requests to  will respond with a 404 Not Found instead of a 200 OK.To keep the case-insensitive prefix matching, you can changeOr even better, you could fix the typo and change the match to3. Rewrite target implies regexIn this case, suppose you want to rewrite the path of requests with a path of  to  before routing them to , and
-as in Section 2, you want to route requests with the path of exactly  to .
-However, you accidentally make a typo and set the path to  instead of  and  instead of .The nginx.ingress.kubernetes.io/rewrite-target: "/uuid" annotation
-causes requests that match paths in the  Ingress to have their paths rewritten to  before being routed to the backend.Even though no Ingress has the nginx.ingress.kubernetes.io/use-regex: "true" annotation,
-the presence of the nginx.ingress.kubernetes.io/rewrite-target annotation in the  Ingress causes all paths with the rewrite-target.example.com host to be treated as regex patterns.
-In other words, the nginx.ingress.kubernetes.io/rewrite-target silently adds the nginx.ingress.kubernetes.io/use-regex: "true" annotation, along with all the side effects discussed above.For example, a request to  has its path rewritten to  because  matches the case-insensitive prefix pattern of  in the  Ingress.
-After running the commandthe output is similar to:Like in the nginx.ingress.kubernetes.io/use-regex example, Ingress-NGINX treats s of other ingresses with the rewrite-target.example.com host as case-insensitive prefix patterns.
-Running the commandgives an output that looks likeYou can configure path rewrites in Gateway API with the HTTP URL rewrite filter which does not silently convert your  and  matches into regex patterns.
-However, if you are unaware of the side effects of the nginx.ingress.kubernetes.io/rewrite-target annotation
-and do not realize that  and  are both typos, you might create the following
-HTTP route.As with Section 2, because  is now an  match type in your HTTP route, requests to  will respond with a 404 Not Found instead of a 200 OK.
-Similarly, requests to  will also respond with a 404 Not Found instead of a 200 OK.
-Thus, this HTTP route will break applications and clients that rely on the  and  routes.To fix this, you can change the matches in the HTTP route to be regex matches, and change the path patterns to be case-insensitive prefix matches, as follows.Or, you can keep the  match type and fix the typos.4. Requests missing a trailing slash are redirected to the same path with a trailing slashConsider the following Ingress:You might expect Ingress-NGINX to respond to  with a 404 Not Found since the  does not exactly match the  path of .
-However, Ingress-NGINX redirects the request to  with a 301 Moved Permanently because the only difference between  and  is a trailing slash.The same applies if you change the  to .
-However, the redirect does not happen if the path is a regex pattern.Conformant Gateway API implementations do not silently configure any kind of redirects.
-If clients or downstream services depend on this redirect, a migration to Gateway API that
-does not explicitly configure request redirects will cause an outage because
-requests to  will now respond with a 404 Not Found instead of a 301 Moved Permanently.
-You can explicitly configure redirects using the HTTP request redirect filter as follows:5. Ingress-NGINX normalizes URLs is the process of converting a URL into a canonical form before matching it against Ingress rules and routing it.
-The specifics of URL normalization are defined in RFC 3986 Section 6.2, but some examples areremoving path segments that are just a : having a  path segment remove the previous segment: deduplicating consecutive slashes in a path: Ingress-NGINX normalizes URLs before matching them against Ingress rules.
-For example, consider the following Ingress:Ingress-NGINX normalizes the path of the following requests to .
-Now that the request matches the  path of , Ingress-NGINX responds with either a 200 OK response or a 301 Moved Permanently to .For the following commandsthe outputs are similar toYour backends might rely on the Ingress/Gateway API implementation to normalize URLs.
-That said, most Gateway API implementations will have some path normalization enabled by default.
-For example, Istio, Envoy Gateway, and Kgateway all normalize  and  segments out of the box.
-For more details, check the documentation for each Gateway API implementation that you use.As we all race to respond to the Ingress-NGINX retirement, I hope this blog post instills some confidence that you can migrate safely and effectively despite all the intricacies of Ingress-NGINX.SIG Network has also been working on supporting the most common Ingress-NGINX annotations (and some of these unexpected behaviors) in Ingress2Gateway to help you translate Ingress-NGINX configuration into Gateway API, and offer alternatives to unsupported behavior.SIG Network released Gateway API 1.5 earlier today (27th February 2026), which graduates features such as
-ListenerSet (that allow app developers to better manage TLS certificates),
-and the HTTPRoute CORS filter that allows CORS configuration.]]></content:encoded></item><item><title>Allocating on the Stack</title><link>https://go.dev/blog/allocation-optimizations</link><author>Keith Randall</author><category>dev</category><pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[We’re always looking for ways to make Go programs faster. In the last
-2 releases, we have concentrated on mitigating a particular source of
-slowness, heap allocations. Each time a Go program allocates memory
-from the heap, there’s a fairly large chunk of code that needs to run
-to satisfy that allocation. In addition, heap allocations present
-additional load on the garbage collector.  Even with recent
-enhancements like Green Tea, the garbage collector
-still incurs substantial overhead.So we’ve been working on ways to do more allocations on the stack
-instead of the heap.  Stack allocations are considerably cheaper to
-perform (sometimes completely free).  Moreover, they present no load
-to the garbage collector, as stack allocations can be collected
-automatically together with the stack frame itself. Stack allocations
-also enable prompt reuse, which is very cache friendly.Stack allocation of constant-sized slicesConsider the task of building a slice of tasks to process:func process(c chan task) {
-    var tasks []task
-    for t := range c {
-        tasks = append(tasks, t)
-    }
-    processAll(tasks)
-}
-Let’s walk through what happens at runtime when pulling tasks from the
-channel  and adding them to the slice .On the first loop iteration, there is no backing store for , so
- has to allocate one. Because it doesn’t know how big the
-slice will eventually be, it can’t be too aggressive. Currently, it
-allocates a backing store of size 1.On the second loop iteration, the backing store now exists, but it is
-full.  again has to allocate a new backing store, this time of
-size 2. The old backing store of size 1 is now garbage.On the third loop iteration, the backing store of size 2 is
-full.  has to allocate a new backing store, this time
-of size 4. The old backing store of size 2 is now garbage.On the fourth loop iteration, the backing store of size 4 has only 3
-items in it.  can just place the item in the existing backing
-store and bump up the slice length. Yay! No call to the allocator for
-this iteration.On the fifth loop iteration, the backing store of size 4 is full, and
- again has to allocate a new backing store, this time of size
-8.And so on. We generally double the size of the allocation each time it
-fills up, so we can eventually append most new tasks to the slice
-without allocation. But there is a fair amount of overhead in the
-“startup” phase when the slice is small. During this startup phase we
-spend a lot of time in the allocator, and produce a bunch of garbage,
-which seems pretty wasteful. And it may be that in your program, the
-slice never really gets large. This startup phase may be all you ever
-encounter.If this code was a really hot part of your program, you might be
-tempted to start the slice out at a larger size, to avoid all of these
-allocations.func process2(c chan task) {
-    tasks := make([]task, 0, 10) // probably at most 10 tasks
-    for t := range c {
-        tasks = append(tasks, t)
-    }
-    processAll(tasks)
-}
-This is a reasonable optimization to do. It is never incorrect; your
-program still runs correctly. If the guess is too small, you get
-allocations from  as before. If the guess is too large, you
-waste some memory.If your guess for the number of tasks was a good one, then there’s
-only one allocation site in this program. The  call allocates a
-slice backing store of the correct size, and  never has to do
-any reallocation.The surprising thing is that if you benchmark this code with 10
-elements in the channel, you’ll see that you didn’t reduce the number
-of allocations to 1, you reduced the number of allocations to 0!The reason is that the compiler decided to allocate the backing store
-on the stack. Because it knows what size it needs to be (10 times the
-size of a task) it can allocate storage for it in the stack frame of
- instead of on the heap.  Note
-that this depends on the fact that the backing store does not escape
-to the heap inside of .Stack allocation of variable-sized slicesBut of course, hard coding a size guess is a bit rigid.
-Maybe we can pass in an estimated length?func process3(c chan task, lengthGuess int) {
-    tasks := make([]task, 0, lengthGuess)
-    for t := range c {
-        tasks = append(tasks, t)
-    }
-    processAll(tasks)
-}
-This lets the caller pick a good size for the  slice, which may
-vary depending on where this code is being called from.Unfortunately, in Go 1.24 the non-constant size of the backing store
-means the compiler can no longer allocate the backing store on the
-stack.  It will end up on the heap, converting our 0-allocation code
-to 1-allocation code. Still better than having  do all the
-intermediate allocations, but unfortunate.But never fear, Go 1.25 is here!Imagine you decide to do the following, to get the stack allocation
-only in cases where the guess is small:func process4(c chan task, lengthGuess int) {
-    var tasks []task
-    if lengthGuess <= 10 {
-        tasks = make([]task, 0, 10)
-    } else {
-        tasks = make([]task, 0, lengthGuess)
-    }
-    for t := range c {
-        tasks = append(tasks, t)
-    }
-    processAll(tasks)
-}
-Kind of ugly, but it would work. When the guess is small, you use a
-constant size  and thus a stack-allocated backing store, and
-when the guess is larger you use a variable size  and allocate
-the backing store from the heap.But in Go 1.25, you don’t need to head down this ugly road. The Go
-1.25 compiler does this transformation for you!  For certain slice
-allocation locations, the compiler automatically allocates a small
-(currently 32-byte) slice backing store, and uses that backing store
-for the result of the  if the size requested is small
-enough. Otherwise, it uses a heap allocation as normal.In Go 1.25,  performs zero heap allocations, if
- is small enough that a slice of that length fits into 32
-bytes. (And of course that  is a correct guess for how
-many items are in .)We’re always improving the performance of Go, so upgrade to the latest
-Go release and be
-surprised by
-how much faster and memory efficient your program becomes!Stack allocation of append-allocated slicesOk, but you still don’t want to have to change your API to add this
-weird length guess. Anything else you could do?func process(c chan task) {
-    var tasks []task
-    for t := range c {
-        tasks = append(tasks, t)
-    }
-    processAll(tasks)
-}
-In Go 1.26, we allocate the same kind of small, speculative backing
-store on the stack, but now we can use it directly at the 
-site.On the first loop iteration, there is no backing store for , so
- uses a small, stack-allocated backing store as the first
-allocation. If, for instance, we can fit 4 s in that backing store,
-the first  allocates a backing store of length 4 from the stack.The next 3 loop iterations append directly to the stack backing store,
-requiring no allocation.On the 4th iteration, the stack backing store is finally full and we
-have to go to the heap for more backing store. But we have avoided
-almost all of the startup overhead described earlier in this article.
-No heap allocations of size, 1, 2, and 4, and none of the garbage that
-they eventually become. If your slices are small, maybe you will never
-have a heap allocation.Stack allocation of append-allocated escaping slicesOk, this is all good when the  slice doesn’t escape. But what if
-I’m returning the slice? Then it can’t be allocated on the stack, right?Right! The backing store for the slice returned by  below
-can’t be allocated on the stack, because the stack frame for 
-disappears when  returns.func extract(c chan task) []task {
-    var tasks []task
-    for t := range c {
-        tasks = append(tasks, t)
-    }
-    return tasks
-}
-But you might think, the  slice can’t be allocated on the
-stack. But what about all those intermediate slices that just become
-garbage? Maybe we can allocate those on the stack?func extract2(c chan task) []task {
-    var tasks []task
-    for t := range c {
-        tasks = append(tasks, t)
-    }
-    tasks2 := make([]task, len(tasks))
-    copy(tasks2, tasks)
-    return tasks2
-}
-Then the  slice never escapes . It can benefit from
-all of the optimizations described above. Then at the very end of
-, when we know the final size of the slice, we do one heap
-allocation of the required size, copy our s into it, and return
-the copy.But do you really want to write all that additional code? It seems
-error prone. Maybe the compiler can do this transformation for us?For escaping slices, the compiler will transform the original 
-code to something like this:func extract3(c chan task) []task {
-    var tasks []task
-    for t := range c {
-        tasks = append(tasks, t)
-    }
-    tasks = runtime.move2heap(tasks)
-    return tasks
-}
- is a special compiler+runtime function that is the
-identity function for slices that are already allocated in the heap.
-For slices that are on the stack, it allocates a new slice on the
-heap, copies the stack-allocated slice to the heap copy, and returns
-the heap copy.This ensures that for our original  code, if the number of
-items fits in our small stack-allocated buffer, we perform exactly 1
-allocation of exactly the right size. If the number of items exceeds
-the capacity of our small stack-allocated buffer, we do our normal
-doubling-allocation once the stack-allocated buffer overflows.The optimization that Go 1.26 does is actually better than the
-hand-optimized code, because it does not require the extra
-allocation+copy that the hand-optimized code always does at the end.
-It requires the allocation+copy only in the case that we’ve exclusively
-operated on a stack-backed slice up to the return point.We do pay the cost for a copy, but that cost is almost completely
-offset by the copies in the startup phase that we no longer have to
-do. (In fact, the new scheme at worst has to copy one more element
-than the old scheme.)Hand optimization can still be beneficial, especially if you have a
-good estimate of the slice size ahead of time. But hopefully the
-compiler will now catch a lot of the simple cases for you and allow
-you to focus on the remaining ones that really matter.There are a lot of details that the compiler needs to ensure to get
-all these optimizations right. If you think that one of these
-optimizations is causing correctness or (negative) performance issues
-for you, you can turn them off with
--gcflags=all=-d=variablemakehash=n. If turning these optimizations
-off helps, please file an issue so we can investigate. Go stacks do not have any -style mechanism for
-dynamically-sized stack frames. All Go stack frames are constant
-sized.]]></content:encoded></item><item><title>Rust debugging survey 2026</title><link>https://blog.rust-lang.org/2026/02/23/rust-debugging-survey-2026/</link><author>Jakub Beránek</author><category>dev</category><pubDate>Mon, 23 Feb 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[Various issues with debugging Rust code are often mentioned as one of the biggest challenges that annoy Rust developers. While it is definitely possible to debug Rust code today, there are situations where it does not work well enough, and the quality of debugging support also varies a lot across different debuggers and operating systems.In order for Rust to have truly stellar debugging support, it should ideally:Support (several versions!) of different debuggers (such as GDB, LLDB or CDB) across multiple operating systems.Implement debugger visualizers that are able to produce quality presentation of most Rust types.Provide first-class support for debugging  code.Allow evaluating Rust expressions in the debugger.Rust is not quite there yet, and it will take a lot of work to reach that level of debugger support. Furthermore, it is also challenging to ensure that debugging Rust code  working well, across newly released debugger versions, changes to internal representation of Rust data structures in the standard library and other things that can break the debugging experience.We already have some plans to start improving debugging support in Rust, but it would also be useful to understand the current debugging struggles of Rust developers. That is why we have prepared the Rust Debugging Survey, which should help us find specific challenges with debugging Rust code.You can fill out the survey here.Filling the survey should take you approximately 5 minutes, and the survey is fully anonymous. We will accept submissions until Friday, March 13th, 2026. After the survey ends, we will evaluate the results and post key insights on this blog.We would like to thank Sam Kellam (@hashcatHitman) who did a lot of great work to prepare this survey.We invite you to fill the survey, as your responses will help us improve the Rust debugging experience. Thank you!]]></content:encoded></item></channel></rss>
+across entire codebases. What  did for stylistic consistency, modernizers
+aim to do for idiomatic consistency. Available both as instant suggestions in
+ and as bulk, push-button upgrades in , modernizers simplify
+existing code and help developers discover new language and library features. We
+now routinely consider whether new language and library proposals should ship
+with a modernizer of their own. Just as importantly, modernizers give coding
+agents an immediate way to bring generated code up to date, while helping shift
+the global corpus of open source Go code so that future models learn modern
+idioms from the start.Bespoke modernizers work well for the language and standard library, but a
+centralized team can never write them for every third-party module in the
+ecosystem. That’s why Go 1.26 also introduced the annotation-driven
+source-level inliner, the first step toward a “self-service”
+paradigm for automated code maintenance. Any package author can now annotate a
+deprecated function, type, or constant with , and the inliner
+will safely migrate callers and references via  or in the IDE, carefully
+handling evaluation order, side effects, and name shadowing.In the editor, we’ve made four feature-packed releases of  over the past
+year (v0.21.0, v0.22.0,
+v0.23.0, and v0.24.0). In
+collaboration with the Dart team, we designed and proposed an open Language
+Server Protocol (LSP) extension for interactive
+refactoring, allowing language servers to ask
+for user input through dynamic, multi-step dialogs in any supporting editor. Now
+integrated into  and , interactive refactoring powers
+customizable struct tag addition and removal, interface implementation
+(including generic interfaces) with live symbol search, and cross-package
+declaration moves. Beyond refactoring,  also gained generalized package
+renaming across directories, zero-configuration support for editing Go assembly
+files, subexpression hover inspection, completions and inlay hints for promoted
+fields, automatic  scanning when  dependencies change, and
+continued enhancements to its built-in Model Context Protocol (MCP)
+server for AI coding assistants.Rounding out the developer platform, in May we launched the official
+ API and followed up with support for
+ in Go 1.27. Previously, developer
+tools and IDE integrations had to resort to fragile web scraping to query
+ecosystem metadata. Today, the  API gives tool authors and AI coding
+agents a fast, authoritative service for querying module versions, package
+symbols, importers, and vulnerability data, while  makes it
+easy to pull up documentation for any version of any package right from the
+command line.We have an ambitious year ahead for Go.On the tooling front, we’re building on the  API, , and  to make Go’s developer tools even more capable for both human developers
+and coding agents. Following the strong community response to  and
+, we’re exploring ways to expand self-service static
+analysis, enabling developers, package maintainers, and
+organizations to easily integrate custom analyzers and domain-specific
+best-practice checks directly into their development workflows. We’re also
+exploring ways to surface richer package health and quality signals on
+ and through its API, helping developers and coding agents evaluate
+and choose trustworthy, reliable dependencies.In the language and libraries, Go 1.28 will resolve one of Go’s longest-standing
+language requests by allowing composite literals to omit redundant
+types whenever the type can be inferred from context, cutting
+visual noise in deeply nested configurations, API requests, and table-driven
+tests. And with recent generics refinements and hashing
+APIs in place, we’ve just accepted a
+swath of proposals for generic collection APIs—including sets,
+ordered maps, and more—which will land in  over the next few
+weeks so the community can try them out and share feedback ahead of future
+standard library inclusion.Under the hood, we’re working hard to graduate a large subset of the  and
+ packages (covering ,  NEON, and ) in Go
+1.28, with further expansions and  scalable vector (SVE) support targeted
+for Go 1.29. Amid the global RAM crunch, reducing Go’s memory footprint is also
+one of our major priorities for the coming year.Finally, ensuring Go stands the test of time means scaling not just our
+technology, but the open source project itself. Over the past year, some of Go’s
+most impactful advances, including  and the 
+profile, were driven by or built in close partnership with contributors outside
+Google. To better support our growing ecosystem and contributor base, we’re
+working to bridge the gap between Go maintainers at Google and our broader
+community, and to diversify Go’s technical stewardship. That includes
+restructuring the proposal process to improve throughput, give
+the community clearer visibility into the process and input into prioritization,
+and formally involve community contributors in triage and review. Beyond
+proposals, we are building a clearer contributor ladder to empower proven
+contributors with greater autonomy, decision-making privileges, and maintenance
+responsibilities, and opening up maintainer summits and day-to-day
+communications to trusted contributors from our amazing community.Seventeen years in, Go is thriving because of the people who use it, build with
+it, and contribute to it every day. Thank you to everyone in the Go community
+for being part of this journey, and we wish you all the best in the year ahead!]]></content:encoded></item><item><title>Python 3.16.0 alpha 2 is now available</title><link>https://blog.python.org/2026/11/python-3160-alpha-2-is-now-available/</link><author>Savannah Ostrowski</author><category>dev</category><pubDate>Tue, 10 Nov 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[The second developer preview of Python 3.16 is ready for testing.]]></content:encoded></item><item><title>CPython 3.16.0a2</title><link>https://www.python.org/downloads/release/python-3160a2/</link><author>Brian Skinn</author><category>Python releases</category><category>dev</category><pubDate>Tue, 10 Nov 2026 00:00:00 +0000</pubDate><source url="https://github.com/bskinn/cpython-release-feed">CPython Release Downloads</source><content:encoded><![CDATA[]]></content:encoded></item></channel></rss>
