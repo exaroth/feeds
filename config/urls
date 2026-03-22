@@ -10,7 +10,6 @@
 
 https://feeds.feedburner.com/ign/reviews "~IGN" ign
 https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml "~Github Trending"
-https://terminaltrove.com/new.xml "~Terminal Tools"
 https://standardebooks.org/feeds/rss/new-releases "~Standard E-Books"
 
 https://zig.news/rss "~Zig News" ! dev
@@ -18,6 +17,9 @@ http://blog.golang.org/feed.atom "~Golang Blog" ! dev
 https://kubernetes.io/feed.xml "~Kubernetes Blog" ! dev
 https://blog.rust-lang.org/feed "~Rust Blog" ! dev
 https://blog.python.org/feeds/posts/default?alt=rss "~Python official news" ! dev
+https://raw.githubusercontent.com/bskinn/cpython-release-feed/refs/heads/main/feed/feed.rss "Python releases" ! dev
+https://ziglang.org/news/index.xml ! dev
+
 
 
 https://www.youtube.com/feeds/videos.xml?playlist_id=UULFknLrEdhRCp1aegoMqRaCZg "~News - DW" ! news
@@ -37,6 +39,9 @@ https://www.youtube.com/feeds/videos.xml?playlist_id=PLpd1itfTDtaVLCrM6OgjyE7TY_
 https://www.youtube.com/feeds/videos.xml?playlist_id=PL7D89754A5DAD1E8E "~Movies - Criterion" ! movies
 https://www.youtube.com/feeds/videos.xml?playlist_id=UULFL5kBJmBUVFLYBDiSiK1VDw "~Cinema cartography" ! movies
 https://www.youtube.com/feeds/videos.xml?playlist_id=UULFs7nPQIEba0T3tGOWWsZpJQ "~Like stories of old" ! movies
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFrTNhL_yO3tPTdQ5XgmmWjA "~RedLetter" ! movies
+
+
 http://feeds.libsyn.com/265448/rss "~Movies - Team Deakins" ! movies
 
 https://hnrss.org/best "~HN" ! hn
@@ -47,7 +52,6 @@ https://techcrunch.com/feed/ ! tech
 http://rss.slashdot.org/Slashdot/slashdotMain ! tech
 https://www.codeproject.com/WebServices/ArticleRSS.aspx ! tech
 https://feeds.arstechnica.com/arstechnica/technology-lab ! tech
-https://hackernoon.com/feed "~Tech - HackerNoon" ! tech
 https://www.phoronix.com/rss.php ! tech
 https://spectrum.ieee.org/customfeeds/feed/all-topics/rss ! tech
 https://www.techdirt.com/feed/ ! tech
@@ -60,7 +64,6 @@ https://access.acast.com/rss/c939f8d1-c4bc-478e-8bb9-e5343f9a7ab5/default "~Podc
 https://changelog.com/gotime/feed "~Podcast - Go Time" ! podcast
 https://changelog.com/podcast/feed "~Podcast - Changelog" ! podcast
 https://feeds.buzzsprout.com/2105116.rss "~Podcast - Cmd+Shift+Left" ! podcast
-https://www.youtube.com/feeds/videos.xml?channel_id=UCzQUP1qoWDoEbmsQxvdjxgQ "~Podcast - Joe Rogan" ! podcast
 https://www.youtube.com/feeds/videos.xml?channel_id=UCSHZKyawb77ixDdsGog4iWA "~Podcast - Lex Fridman" ! podcast
 https://softwareengineeringdaily.com/category/podcast/feed "~Podcast - Software Engineering Daily" ! podcast
 https://feeds.simplecast.com/L9810DOa "~Podcast - Signals and Threads" ! podcast
@@ -134,8 +137,6 @@ https://www.youtube.com/feeds/videos.xml?playlist_id=UULFLXo7UDZvByw2ixzpQCufnA 
 https://www.youtube.com/feeds/videos.xml?playlist_id=UULFO8czxzBx4PxuTEolCBmq2w ! yt
 # fern
 https://www.youtube.com/feeds/videos.xml?playlist_id=UULFODHrzPMGbNv67e84WDZhQQ ! yt
-# RealLifeLore
-https://www.youtube.com/feeds/videos.xml?playlist_id=UULFP5tjEmvPItGyLhmjdwP7Ww ! yt
 # Internet Historian
 https://www.youtube.com/feeds/videos.xml?playlist_id=UULFR1D15p_vdP3HkrH8wgjQRw ! yt
 # Real Engineering
@@ -212,5 +213,37 @@ https://www.youtube.com/feeds/videos.xml?playlist_id=UULFuvSqzfO_LV_QzHdmEj84SQ 
 https://www.youtube.com/feeds/videos.xml?playlist_id=UULFZvbFJH9zfNLuvAZC0_oeFg ! yt
 # Tso
 https://www.youtube.com/feeds/videos.xml?playlist_id=UULFEbYhDd6c6vngsF5PQpFVWg ! yt
+# Lock stock
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFEd_Fj-_VlXG-BiXpJ69Wfg ! yt
+# Quanta
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFTpmmkp1E4nmZqWPS-dl5bg ! yt
+# Oblicza XX
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFcgaO0y7vJVFl6xsAEA6Mog ! yt
+# BBC Earth
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFwmZiChSryoWQCZMIQezgTg ! yt
+#TLDR EU
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF-eegKVWEgBCa4OzjnK_PtA ! yt
+#Prof G
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFp4CBeq4nzeg9smAvdjPrig ! yt
+#Good Times
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFTTzMDoVCbaX6K1CwKsRJsQ ! yt
+#MVG
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFjFaPUcJU1vwk193mnW_w1w ! yt
+# Channel 5
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFoUxsWakJucWg46KW5RsvPw ! yt
+#Meritum
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFh3--ltcPYgTFa5jG6QjY9Q ! yt
+# Financial Times
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF-AQKm7HUNMmxjdS371MSwg ! yt
+# JerryRig
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFWFKCr40YwOZQx8FHU_ZqqQ ! yt
+# OSW
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF4wLxazk7AUJLoIDUk-WVjg ! yt
+# VG Esoterica
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFn2pQB4jsCTLUtx2NIkCvUg ! yt
 # About that
 https://www.youtube.com/feeds/videos.xml?playlist_id=PLeyJPHbRnGaZeajS8uAtr8cyc19TYBZZ9 ! yt
+# Gameranx
+https://www.youtube.com/feeds/videos.xml?playlist_id=PLJAzFcYKyx4RX5JBq_rXbQNmUdc9Ugbv1 ! yt
+# Rest is Politics
+https://www.youtube.com/feeds/videos.xml?playlist_id=PL_6zDbB-zRefVolUJSaReDmB-dFfdO0-P ! yt
