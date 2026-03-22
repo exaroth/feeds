@@ -10,7 +10,7 @@ on:
 
 jobs:
   liveboat-feed-build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     permissions:
       contents: write
       pull-requests: write
@@ -21,17 +21,6 @@ jobs:
         with:
           fetch-depth: 0
           ref: 'master'
-
-      - name: Install deps
-        run: sudo apt-get update && sudo apt-get install snapd sqlite3
-
-      - name: Install newsboat
-        run: source ./scripts/retry.sh && with_retry 5 sudo snap install newsboat
-
-      - name: Fetch liveboat
-        run: |
-          mkdir -p ./bin
-          sh -c 'wget -O ./bin/liveboat https://github.com/exaroth/liveboat/releases/download/nightly/liveboat-linux-musl && chmod +x ./bin/liveboat'
 
       - name: Source options
         uses: falti/dotenv-action@v1.1.4
@@ -50,7 +39,7 @@ jobs:
         run: |
           if echo $(git log --oneline -1) | grep -q "Feed rebuild @"; then
               git reset --soft HEAD~1
-              git stash push -m old_feeds ./docs 
+              git stash push -m old_feeds ./docs
           fi
         shell: bash
 
@@ -60,14 +49,11 @@ jobs:
           git add ./templates ./config
         if: env.ENABLE_AUTOMATIC_UPDATES == '1'
 
-      - name: Run newsboat
-        run: newsboat -u config/urls -C config/newsboat-config -c cache.db -x reload
-
-      - name: Run liveboat
-        run: ./bin/liveboat --template-path templates/default --config-file config/liveboat-config.toml --debug 
-
-      - name: Debug
-        run: ls ./docs/feeds
+      - name: Run newsboat + liveboat
+        run: |
+          docker run --rm -v "${{ github.workspace }}:/workspace" -w /workspace ghcr.io/exaroth/liveboat:latest \
+          sh -c "newsboat -u config/urls -C config/newsboat-config -c cache.db -x reload && liveboat --template-path templates/default --config-file config/liveboat-config.toml"
+          sudo chown -R "$(id -u):$(id -g)" .
 
       - name: Truncate database
         run: |
@@ -82,6 +68,11 @@ jobs:
           let ts=$(date +"%s")
           git commit -m "Feed rebuild @ ${ts}" -a
         shell: bash
+
+      - name: Clean unreachable objects
+        run: |
+          git reflog expire --expire-unreachable=now
+          git gc --prune=now
 
       - name: Push changes
         uses: ad-m/github-push-action@master
