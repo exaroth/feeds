@@ -1,4 +1,246 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Call for Testing: Build Dir Layout v2</title><link>https://blog.rust-lang.org/2026/03/13/call-for-testing-build-dir-layout-v2/</link><author>Ed Page</author><category>dev</category><pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[We would welcome people to try and report issues with the nightly-only
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Security advisory for Cargo</title><link>https://blog.rust-lang.org/2026/03/21/cve-2026-33056/</link><author>The Rust Security Response Team</author><category>dev</category><pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust Security Response Team was notified of a vulnerability in the
+third-party crate , used by Cargo to extract packages during a build. The
+vulnerability, tracked as CVE-2026-33056, allows a malicious crate to change
+the permissions on arbitrary directories on the filesystem when Cargo extracts
+it during a build.For users of the public crates.io registry, we deployed a change on March 13th
+to prevent uploading crates exploiting this vulnerability, and we audited all
+crates ever published. We can confirm that no crates on crates.io are exploiting
+this.For users of alternate registries, please contact the vendor of your registry to
+verify whether you are affected by this. The Rust team will release Rust 1.94.1
+on March 26th, 2026, updating to a patched version of the  crate (along
+with other non-security fixes for the Rust toolchain), but that won't protect
+users of older versions of Cargo using alternate registries.We'd like to thank Sergei Zimmerman for discovering the underlying  crate
+vulnerability and notifying the Rust project ahead of time, and William Woodruff
+for directly assisting the crates.io team with the mitigations. We'd also like
+to thank the Rust project members involved in this advisory: Eric Huss for
+patching Cargo; Tobias Bieniek, Adam Harvey and Walter Pearce for patching
+crates.io and analyzing existing crates; Emily Albini and Josh Stone for
+coordinating the response; and Emily Albini for writing this advisory.]]></content:encoded></item><item><title>Announcing Ingress2Gateway 1.0: Your Path to Gateway API</title><link>https://kubernetes.io/blog/2026/03/20/ingress2gateway-1-0-release/</link><author></author><category>dev</category><pubDate>Fri, 20 Mar 2026 19:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[With the Ingress-NGINX retirement scheduled for March 2026, the Kubernetes networking landscape is at a turning point.
+For most organizations, the question isn't whether to migrate to Gateway API, but how to do so safely.Migrating from Ingress to Gateway API is a fundamental shift in API design.
+Gateway API provides a modular, extensible API with strong support for Kubernetes-native RBAC.
+Conversely, the Ingress API is simple, and implementations such as Ingress-NGINX extend the API through esoteric annotations, ConfigMaps, and CRDs.
+Migrating away from Ingress controllers such as Ingress-NGINX presents the daunting task of capturing all the nuances of the Ingress controller,
+and mapping that behavior to Gateway API.Ingress2Gateway is an assistant that helps teams confidently move from Ingress to Gateway API.
+It translates Ingress resources/manifests along with implementation-specific annotations to Gateway API while warning you about untranslatable configuration and offering suggestions.Today, SIG Network is proud to announce the 1.0 release of Ingress2Gateway.
+This milestone represents a stable, tested migration assistant for teams ready to modernize their networking stack.Ingress-NGINX annotation supportThe main improvement for the 1.0 release is more comprehensive Ingress-NGINX support.
+Before the 1.0 release, Ingress2Gateway only supported three Ingress-NGINX annotations.
+For the 1.0 release, Ingress2Gateway supports over 30 common annotations (CORS, backend TLS, regex matching, path rewrite, etc.).Each supported Ingress-NGINX annotation, and representative combinations of common annotations, is backed by controller-level integration tests that verify the behavioral equivalence of the Ingress-NGINX configuration and the generated Gateway API.
+These tests exercise real controllers in live clusters and compare runtime behavior (routing, redirects, rewrites, etc.), not just YAML structure.spin up an Ingress-NGINX controllerspin up multiple Gateway API controllersapply Ingress resources that have implementation-specific configurationtranslate Ingress resources to Gateway API with  and apply generated manifestsverify that the Gateway API controllers and the Ingress controller exhibit equivalent behavior.A comprehensive test suite not only catches bugs in development, but also ensures the correctness of the translation, especially given surprising edge cases and unexpected defaults,
+so that you don't find out about them in production.Notification & error handlingMigration is not a "one-click" affair.
+Surfacing subtleties and untranslatable behavior is as important as translating supported configuration.
+The 1.0 release cleans up the formatting and content of notifications, so it is clear what is missing and how you can fix it.Ingress2Gateway is a migration assistant, not a one-shot replacement.
+Its goal is tomigrate supported Ingress configuration and behavioridentify unsupported configuration and suggest alternativesreevaluate and potentially discard undesirable configurationThe rest of the section shows you how to safely migrate the following Ingress-NGINX configuration1. Install Ingress2GatewayIf you have a Go environment set up, you can install Ingress2Gateway withYou can pass Ingress2Gateway Ingress manifests, or have the tool read directly from your cluster.You can also pass --emitter <agentgateway|envoy-gateway|kgateway> to output implementation-specific extensions.This is the most critical step.
+The commands from the previous section output a Gateway API manifest to , and they also emit warnings that explain what did not translate exactly and what to review manually.Ingress2Gateway successfully translated some annotations into their Gateway API equivalents.
+For example, the nginx.ingress.kubernetes.io/enable-cors annotation was translated into a CORS filter.
+But upon closer inspection, the nginx.ingress.kubernetes.io/proxy-{read,send}-timeout and nginx.ingress.kubernetes.io/proxy-body-size annotations do not map perfectly.
+The logs show the reason for these omissions as well as reasoning behind the translation.┌─ WARN ────────────────────────────────────────
+│ Unsupported annotation nginx.ingress.kubernetes.io/configuration-snippet
+│ source: INGRESS-NGINX
+│ object: Ingress: my-ns/my-ingress
+└─
+┌─ INFO ────────────────────────────────────────
+│ Using case-insensitive regex path matches. You may want to change this.
+│ source: INGRESS-NGINX
+│ object: HTTPRoute: my-ns/my-ingress-my-host-example-com
+└─
+┌─ WARN ────────────────────────────────────────
+│ ingress-nginx only supports TCP-level timeouts; i2gw has made a best-effort translation to Gateway API timeouts.request. Please verify that this meets your needs. See documentation: https://gateway-api.sigs.k8s.io/guides/http-timeouts/
+│ source: INGRESS-NGINX
+│ object: HTTPRoute: my-ns/my-ingress-my-host-example-com
+└─
+┌─ WARN ────────────────────────────────────────
+│ Failed to apply my-ns.my-ingress.metadata.annotations."nginx.ingress.kubernetes.io/proxy-body-size" from my-ns/my-ingress: Most Gateway API implementations have reasonable body size and buffering defaults
+│ source: STANDARD_EMITTER
+│ object: HTTPRoute: my-ns/my-ingress-my-host-example-com
+└─
+┌─ WARN ────────────────────────────────────────
+│ Gateway API does not support configuring URL normalization (RFC 3986, Section 6). Please check if this matters for your use case and consult implementation-specific details.
+│ source: STANDARD_EMITTER
+└─
+There is a warning that Ingress2Gateway does not support the nginx.ingress.kubernetes.io/configuration-snippet annotation.
+You will have to check your Gateway API implementation documentation to see if there is a way to achieve equivalent behavior.The tool also notified us that Ingress-NGINX regex matches are case-insensitive prefix matches, which is why there is a match pattern of .
+Most organizations will want to change this behavior to be an exact case-sensitive match by removing the leading  and the trailing  from the path pattern.Ingress2Gateway made a best-effort translation from the nginx.ingress.kubernetes.io/proxy-{send,read}-timeout annotations to a 10 second request timeout in our HTTP route.
+If requests for this service should be much shorter, say 3 seconds, you can make the corresponding changes to your Gateway API manifests.Also, nginx.ingress.kubernetes.io/proxy-body-size does not have a Gateway API equivalent, and was thus not translated.
+However, most Gateway API implementations have reasonable defaults for maximum body size and buffering, so this might not be a problem in practice.
+Further, some emitters might offer support for this annotation through implementation-specific extensions.
+For example, adding the , , or  flag to the previous  command would have resulted in additional implementation-specific configuration in the generated Gateway API manifests that attempted to capture the body size configuration.We also see a warning about URL normalization.
+Gateway API implementations such as Agentgateway, Envoy Gateway, Kgateway, and Istio have some level of URL normalization, but the behavior varies across implementations and is not configurable through standard Gateway API.
+You should check and test the URL normalization behavior of your Gateway API implementation to ensure it is compatible with your use case.To match Ingress-NGINX default behavior, Ingress2Gateway also added a listener on port 80 and a HTTP Request redirect filter to redirect HTTP traffic to HTTPS.
+You may not want to serve HTTP traffic at all and remove the listener on port 80 and the corresponding HTTPRoute.Always thoroughly review the generated output and logs.After manually applying these changes, the Gateway API manifests might look as follows.Now that you have Gateway API manifests, you should thoroughly test them in a development cluster.
+In this case, you should at least double-check that your Gateway API implementation's maximum body size defaults are appropriate for you and verify that a three-second timeout is enough.After validating behavior in a development cluster, deploy your Gateway API configuration alongside your existing Ingress.
+We strongly suggest that you then gradually shift traffic using weighted DNS, your cloud load balancer, or traffic-splitting features of your platform.
+This way, you can quickly recover from any misconfiguration that made it through your tests.Finally, when you have shifted all your traffic to your Gateway API controller, delete your Ingress resources and uninstall your Ingress controller.The Ingress2Gateway 1.0 release is just the beginning, and we hope that you use Ingress2Gateway to safely migrate to Gateway API.
+As we approach the March 2026 Ingress-NGINX retirement, we invite the community to help us increase our configuration coverage, expand testing, and improve UX.Resources about Gateway APIThe scope of Gateway API can be daunting.
+Here are some resources to help you work with Gateway API:]]></content:encoded></item><item><title>Running Agents on Kubernetes with Agent Sandbox</title><link>https://kubernetes.io/blog/2026/03/20/running-agents-on-kubernetes-with-agent-sandbox/</link><author></author><category>dev</category><pubDate>Fri, 20 Mar 2026 18:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[The landscape of artificial intelligence is undergoing a massive architectural shift. In the early days of generative AI, interacting with a model was often treated as a transient, stateless function call: a request that spun up, executed for perhaps 50 milliseconds, and terminated.Today, the world is witnessing AI v2 eating AI v1. The ecosystem is moving from short-lived, isolated tasks to deploying multiple, coordinated AI agents that run constantly. These autonomous agents need to maintain context, use external tools, write and execute code, and communicate with one another over extended periods.As platform engineering teams look for the right infrastructure to host these new AI workloads, one platform stands out as the natural choice: Kubernetes. However, mapping these unique agentic workloads to traditional Kubernetes primitives requires a new abstraction.This is where the new Agent Sandbox project (currently in development under SIG Apps) comes into play.The Kubernetes advantage (and the abstraction gap)Kubernetes is the de facto standard for orchestrating cloud-native applications precisely because it solves the challenges of extensibility, robust networking, and ecosystem maturity. However, as AI evolves from short-lived inference requests to long-running, autonomous agents, we are seeing the emergence of a new operational pattern.AI agents, by contrast, are typically isolated, stateful, singleton workloads. They act as a digital workspace or execution environment for an LLM. An agent needs a persistent identity and a secure scratchpad for writing and executing (often untrusted) code. Crucially, because these long-lived agents are expected to be mostly idle except for brief bursts of activity, they require a lifecycle that supports mechanisms like suspension and rapid resumption.While you could theoretically approximate this by stringing together a StatefulSet of size 1, a headless Service, and a PersistentVolumeClaim for every single agent, managing this at scale becomes an operational nightmare.Because of these unique properties, traditional Kubernetes primitives don't perfectly align.Introducing Kubernetes Agent SandboxTo bridge this gap, SIG Apps is developing agent-sandbox. The project introduces a declarative, standardized API specifically tailored for singleton, stateful workloads like AI agent runtimes.At its core, the project introduces the Sandbox CRD. It acts as a lightweight, single-container environment built entirely on Kubernetes primitives, offering:Strong isolation for untrusted code: When an AI agent generates and executes code autonomously, security is paramount. The Sandbox custom resource natively supports different runtimes, like gVisor or Kata Containers. This provides the necessary kernel and network isolation required for multi-tenant, untrusted execution.: Unlike traditional web servers optimized for steady, stateless traffic, an AI agent operates as a stateful workspace that may be idle for hours between tasks. Agent Sandbox supports scaling these idle environments to zero to save resources, while ensuring they can resume exactly where they left off.: Coordinated multi-agent systems require stable networking. Every Sandbox is given a stable hostname and network identity, allowing distinct agents to discover and communicate with each other seamlessly.Scaling agents with extensionsBecause the AI space is moving incredibly quickly, we built an Extensions API layer that enables even faster iteration and development.Starting a new pod adds about a second of overhead. That's perfectly fine when deploying a new version of a microservice, but when an agent is invoked after being idle, a one-second cold start breaks the continuity of the interaction. It forces the user or the orchestrating service to wait for the environment to provision before the model can even begin to think or act. SandboxWarmPool solves this by maintaining a pool of pre-provisioned Sandbox pods, effectively eliminating cold starts. Users or orchestration services can simply issue a SandboxClaim against a SandboxTemplate, and the controller immediately hands over a pre-warmed, fully isolated environment to the agent.Ready to try it yourself? You can install the Agent Sandbox core components and extensions directly into your learning or sandbox cluster, using your chosen release.We recommend you use the latest release as the project is moving fast.Once installed, you can try out the Python SDK for AI agents or deploy one of the ready-to-use examples to see how easy it is to spin up an isolated agent environment.The future of agents is cloud nativeWhether it’s a 50-millisecond stateless task, or a multi-week, mostly-idle collaborative process, extending Kubernetes with primitives designed specifically for isolated stateful singletons allows us to leverage all the robust benefits of the cloud-native ecosystem.The Agent Sandbox project is open source and community-driven. If you are building AI platforms, developing agentic frameworks, or are interested in Kubernetes extensibility, we invite you to get involved:]]></content:encoded></item><item><title>What we heard about Rust&apos;s challenges, and how we can address them</title><link>https://blog.rust-lang.org/2026/03/20/rust-challenges/</link><author>Jack Huey</author><category>dev</category><pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[When we set out to understand Rust's challenges, we expected to hear about the borrow checker learning curve and maybe some ecosystem gaps. Of course, we did. A lot. But, of course, it's more nuanced.The conventional wisdom is that Rust has a steep learning curve, but once you "get it," smooth sailing awaits. We found that while some challenges disappear with experience, they are replaced with others. Beginners struggle with ownership concepts, experts face domain-specific challenges: async complexity for network developers, certification gaps for safety-critical teams, ecosystem maturity issues for embedded developers.This isn't all doom and gloom though: we ultimately found that despite Rust's challenges, it remains necessary and desired:If all the things laid out [to make Rust better] were done, I'd be a happy Rust programmer. If not, I'd still be a Rust programmer. -- Engineering manager adopting Rust for performance
+The universal challenges that affect everyoneAcross every interview, regardless of experience level or domain, we heard about the same core set of challenges. These aren't beginner problems that go away—they're fundamental friction points that manifest differently as developers grow. we analyzed—from novices to experts, from embedded developers to web developers—cited compilation times as a significant barrier to productivity:"Java takes about 100 milliseconds, Rust anywhere from 5 seconds to a minute depending on what you changed" -- Distinguished engineer working on backend systems at a large company"8 to 10s iteration cycle... when you want to tweak the padding on a box" -- GUI development teamThe impact varies by domain, but the pattern is consistent. CLI tool and GUI developers, who need rapid iteration cycles, are hit hardest. Safety-critical developers with 25-30 minute build times face workflow disruption. Size-constrained embedded developers are forced into optimized builds that take longer to compile and complicate debugging.What's particularly important to note, is that this isn't just about absolute build times; it's about the  that compounds over time. Long compile times can have strong negative impact on code iteration time. Anything that can reduce this code iteration time - hot reloading, fast debug builds, faster linking - will have an outsized impact on development velocity.Moreover, the compilation performance tax compounds at scale. Individual developers might tolerate 5-10 second builds, but teams with CI/CD pipelines, large codebases, and frequent iterations face exponentially worse impacts. One participant noted 25-30 minute builds that create "wait for 30 minutes before the tool finds out I made a mistake" cycles.
+The borrow checker: first it's sour, then it's sweetThe borrow checker is often touted as a "beginner problem", and we found that this is largely true: Novices are most strongly impacted by the borrow checker, but this often extends even into the stage where a developer is  writing Rust where they  get tripped by the borrow checker sometimes.However, highly-experienced Rust developers basically never cite the borrow checker itself as a frustration for them.Ownership: The first time I went through the chapter, I was really like, what is this? - Developer learning Rust as a first languageI actually did not understand the borrow checker until I spent a lot of time writing Rust - Executive at a developer tools companyMultiple participants identified  as a pain point. Many people, not just beginners, often choose to completely avoid it, instead focusing solely on sync Rust. This is because, for many,  Rust feels completely different.My biggest complaint with Rust is async. If we want to use [a tool], we're forced into that model...not just a different language, but a different programming model...I have zero [experience], I've been avoiding it. - Developer working on a security agent at a large companyOf course, those who  use it often share how complex it is, how it can feel incomplete in ways, or how it is difficult to learn."When you got Rust that's both async and generic and has lifetimes, then those types become so complicated that you basically have to be some sort of Rust god" -- Software engineer with production Rust experience"My general impression is actually pretty negative. It feels unbaked... there is a lot of arcane knowledge that you need" -- Research software engineer"There's a significant learning gap between basic Rust and async programming... creating a 'chasm of sadness' that requires substantial investment to cross." -- Professional developerThe async complexity isn't just about individual developer experience: it is exacerbated by ecosystem fragmentation and architectural lock-in:"the fact that there is still plenty of situations where you go that library looks useful I want to use that library and then that immediately locks you into one of tokio or one of the other runtimes" -- Community-focused developerThis fragmentation forces architectural decisions early and limits library compatibility, creating a unique challenge among programming languages.Of course, it would be remiss to clarify that plenty of people  express positive sentiments of async, often despite the mentioned challenges.
+Ecosystem navigation: choice paralysis and tacit knowledgeThe Rust ecosystem shows uneven maturity across domains: excellent for CLI tools and web backends, but significantly lacking in other domains such as embedded and safety-critical applications. This creates a fragmented adoption landscape where Rust's reputation varies dramatically depending on your domain."Biggest reason people don't use Rust is that the ecosystem they'd be entering into is not what they expect. It doesn't have the tooling that C++ has nor the libraries." -- Developer for a large tech company"I think the amount of choice you can have often makes it difficult to make the right choice" -- Developer transitioning from high-level languages"the crates to use are sort of undiscoverable... There's a layer of tacit knowledge about what crates to use for specific things that you kind of gather through experience" -- Web developerThe problem isn't lack of libraries—it's that choosing the right ones requires expertise that newcomers don't have.The Rust Project has made this choice mostly intentionally though: it has chosen not to bless certain crates in order to not unduly stifle innovation. The expectation is that if a newer crate ends up being "better" than some well-established crate, then that newer crate should be become more popular; but, if the Project recommends using the more established crate, then that is less likely to happen. This is a tradeoff that might be worth reevaluating, or finding clever solutions to.
+How challenges amplify differently across domainsWhile the core challenges are universal, different domains have unique challenges that ultimately must be either adoption blockers or acceptable trade-offs.
+Embedded systems: where every constraint mattersEmbedded developers face the most constrained environment for resources, which can amplify other challenges like learning."if you pull in a crate, you pull in a lot of things and you have no control" -- Embedded systems researcher"can't use standard collections like hashmaps" -- Embedded software engineerDebug builds become too large for small controllers, forcing developers into optimized builds that complicate debugging. Cross-compilation adds another layer of complexity. The "no-std" ecosystem, while growing, still has significant gaps.
+Safety-critical systems: stability vs. innovation tensionSafety-critical developers need Rust's memory safety guarantees, but face unique challenges around certification and tooling:"we don't have the same tools we have to measure its safety criticality as we do in C++ and I think it's a worry point" -- Safety systems engineer"not a lot of people know Rust not a lot of managers actually trust that this is a technology that's here to stay" -- Safety-critical developer on organizational barriersThe tension between Rust's rapid evolution and safety-critical requirements for stability creates adoption barriers even when the technical benefits are clear.To note, we previously wrote a blog post all about safety-critical Rust. Check it out!GUI developers need rapid visual feedback, making compilation times particularly painful:We've got a UI framework that's just Rust code so when you want to tweak the padding on a box ... it's a pain that we just kind of accept a 10 seconds or more iteration cycle. -- Developer working on a GUI app
+Background-dependent learning pathsOne important insight gained from this work, and it seems obvious if you think about it, is that learning Rust isn't a universal experience: it depends heavily on your background:High-level language developers must learn systems concepts alongside Rust:The challenge for me was I needed to grasp the idea of a lower-level computer science ideas and Rust at the same time. -- Developer with Typescript background often struggle to unlearn patterns and concepts:I'm coming from C++ world so I had the big class that does everything. Taken a while for me to internalize that "dude you gotta go down a level". -- Developer with C++ backgroundRust tried to hide away notion of pointers - Just tell me it's a pointer -- System-level developerInterestingly though, learning Rust alongside C++ can help students understand both better:Students learn smart pointers in C++ and then 'we're just now learning smart pointers with Rust as well' — learning both at the same time makes it easier. -- Community organizerGiven that compilation performance affects every single user group, we recommend treating it as a first-class language concern, not just an implementation detail. This could include:Incremental compilation improvements that better match developer workflows that reduce the iteration cycle tax that makes build times less disruptiveWe do want to quickly shout a couple of neat community projects that have this goal in mind:The subsecond crate by the Dioxus team allows hot-reloading, which can make workflows like those found in GUI development more seamlessThe Wild linker aims to be a fast linker for Linux, with plans for incremental linkingWe previously made some suggestions in this area, and they still hold true. Finding ways to not only help users find crates that are useful to them, but also enable better compatibility between crates will surely have a net-positive benefit to the Rust community.
+Address learning diversityWhen someone is learning Rust, their programming language background, level of experience, and domain in which they are trying to work in, all influence the challenges they face. We recommend that the Rust Project and the community find ways to  learning paths to individuals' needs. For example, for someone with a C or C++ background, it might be useful to be able to directly compare references to pointers.Similarly, having domain-specific learning materials can help newcomers focus on the problems they are facing more specifically than a general "Rust tutorial" might. The Embedded Rust Book does this, for example.
+Close the gap between sync and async RustThis is a tall order -- there are a lot of moving parts here, but it's clear that many people struggle. On one hand, async Rust feels often "incomplete" in some language features compared to sync Rust. On the other, documentation is often focused on sync Rust (for example, much of The Rust Programming Language Book is focused on sync code patterns).Within the Rust Project, we can work towards stabilizing long-awaited features such as async functions in dyn traits, or improving compiler errors for issues with, for example, lifetimes and async code. We can include fundamental async library traits and functions within , enabling a more cohesive async ecosystem.Of course, as much as can be done  the Rust Project, even getting more community involvement in producing tutorials, example code, and otherwise just sharing knowledge, can go a long way to closing the gap.Rust's challenges are more nuanced than the conventional "steep learning curve" narrative suggests. They are domain-specific and evolve with experience.Understanding these patterns is crucial for Rust's continued growth. As we work to expand Rust's reach, we need to address not just the initial learning curve, but the ongoing friction that affects productivity across all experience levels.The good news is that recognizing these patterns gives us recommendations for improvement. By acknowledging the expertise gradient, prioritizing compilation performance, creating better ecosystem navigation, and addressing background-dependent challenges, we can help Rust fulfill its promise of empowering everyone to build reliable, efficient software.]]></content:encoded></item><item><title>Securing Production Debugging in Kubernetes</title><link>https://kubernetes.io/blog/2026/03/18/securing-production-debugging-in-kubernetes/</link><author></author><category>dev</category><pubDate>Wed, 18 Mar 2026 18:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[During production debugging, the fastest route is often broad access such as  (a ClusterRole that grants administrator-level access), shared bastions/jump boxes, or long-lived SSH keys. It works in the moment, but it comes with two common problems: auditing becomes difficult, and temporary exceptions have a way of becoming routine.This post offers my recommendations for good practices applicable to existing Kubernetes environments with minimal tooling changes:Least privilege with RBACShort-lived, identity-bound credentialsAn SSH-style handshake model for cloud native debuggingA good architecture for securing production debugging workflows is to use a just-in-time secure shell gateway
+(often deployed as an on demand pod in the cluster).
+It acts as an SSH-style “front door” that makes temporary access actually temporary. You can
+authenticate with short-lived, identity-bound credentials, establish a session to the gateway,
+and the gateway uses the Kubernetes API and RBAC to control what they can do, such as , , and .
+Sessions expire automatically, and both the gateway logs and Kubernetes audit logs capture who accessed what and when without shared bastion accounts or long-lived keys.1) Using an access broker on top of Kubernetes RBACRBAC controls who can do what in Kubernetes. Many Kubernetes environments rely primarily on RBAC for authorization, although Kubernetes also supports other authorization modes such as Webhook authorization. You can enforce access directly with Kubernetes RBAC, or put an access broker in front of the cluster that still relies on Kubernetes permissions under the hood. In either model, Kubernetes RBAC remains the source of truth for what the Kubernetes API allows and at what scope.An access broker adds controls that RBAC does not cover well. For example, it can decide whether a request is auto-approved or requires manual approval, whether a user can run a command, and which commands are allowed in a session. It can also manage group membership so that you grant permissions to groups instead of individual users. Kubernetes RBAC can allow actions such as pods/exec, but it cannot restrict which commands run inside an exec session.With that model, Kubernetes RBAC defines the allowed actions for a user or group (for example, an on-call team in a single namespace).
+I recommend you only define access rules that grant rights to groups or to ServiceAccounts - never to individual users. The broker or identity provider then adds or removes users from that group as needed.The broker can also enforce extra policy on top, like which commands are permitted in an interactive session and
+which requests can be auto-approved versus require manual approval.
+That policy can live in a JSON or XML file and be maintained through code review, so updates go through a formal pull request and are reviewed like any other production change.Example: a namespaced on-call debug RoleBind the Role to a group (rather than individual users) so membership can be managed through your identity provider:2) Short-lived, identity-bound credentialsThe goal is to use short-lived, identity-bound credentials that clearly tie a session to a real person and expire quickly. These credentials can include the user’s identity and the scope of what they’re allowed to do. They’re typically signed using a private key that stays with the engineer, such as a hardware-backed key (for example, a YubiKey), so they can not be forged without access to that key.You can implement this with Kubernetes-native authentication (for example, client certificates or an OIDC-based flow),
+or have the access broker from the previous section issue short-lived credentials on the user’s behalf.
+In many setups, Kubernetes still uses RBAC to enforce permissions based on the authenticated identity and groups/claims.
+If you use an access broker, it can also encode additional scope constraints in the credential and enforce them during the session, such as which cluster or namespace the session applies to and which actions
+(or approved commands) are allowed against pods or nodes.
+In either case, the credentials should be signed by a certificate authority (CA), and that CA should be rotated on a regular schedule (for example, quarterly) to limit long-term risk.Option A: short-lived OIDC tokensA lot of managed Kubernetes clusters already give you short-lived tokens. The main thing is to make sure your kubeconfig refreshes them automatically instead of copying a long-lived token into the file.Option B: Short-lived client certificates (X.509)If your API server (or your access broker from the previous section) is set up to trust a client CA, you can use short-lived client certificates for debugging access. The idea is:The private key is created and kept under the engineer’s machine (ideally hardware-backed, like a non-exportable key in a YubiKey/PIV token)A short-lived certificate is issued (often via the
+CertificateSigningRequest API, or your access broker from the previous section, with a TTL).RBAC maps the authenticated identity to a minimal RoleThis is straightforward to operationalize with the Kubernetes CertificateSigningRequest API.Generate a key and CSR locally:Create a CertificateSigningRequest with a short expiration:After the CSR is approved and signed, you extract the issued certificate and use it together with the private key to authenticate, for example via kubectl.Once you have short-lived credentials, you can use them to open a secure shell session to a just-in-time access gateway, often exposed over SSH and created on demand. If the gateway is exposed over SSH, a common pattern is to issue the engineer a short-lived OpenSSH user certificate for the session. The gateway trusts your SSH user CA, authenticates the engineer at connection time, and then applies the approved session policy before making Kubernetes API calls on the user’s behalf. OpenSSH certificates are separate from Kubernetes X.509 client certificates, so these are usually treated as distinct layers.The resulting session should also be scoped so it cannot be reused outside of what was approved. For example, the gateway or broker can limit it to a specific cluster and namespace, and optionally to a narrower target such as a pod or node. That way, even if someone tries to reuse the access, it will not work outside the intended scope. After the session is established, the gateway executes only the allowed actions and records what happened for auditing.Example: Namespace-scoped role bindingsThese RBAC objects, and the rules they define, allow debugging only within the specified namespace; attempts to access other namespaces are not allowed.Example: Cluster-scoped role bindingThese RBAC rules grant cluster-wide read access (for example, to nodes and namespaces) and should be used only for workflows that truly require cluster-scoped resources.Finer-grained restrictions like “only this pod/node” or “only these commands” are typically enforced by the access gateway/broker during the session, but Kubernetes also offers other options, such as ValidatingAdmissionPolicy for restricting writes and webhook authorization for custom authorization across verbs.In environments with stricter access controls, you can add an extra, short-lived session mediation layer
+to separate session establishment from privileged actions. Both layers are ephemeral, use identity-bound expiring credentials,
+and produce independent audit trails. The mediation layer handles session setup/forwarding,
+while the execution layer performs only RBAC-authorized Kubernetes actions.
+This separation can reduce exposure by narrowing responsibilities, scoping credentials per step, and enforcing end-to-end session expiry.Disclaimer: The views expressed in this post are solely those of the author and do not reflect the views of the author’s employer or any other organization.]]></content:encoded></item><item><title>The Invisible Rewrite: Modernizing the Kubernetes Image Promoter</title><link>https://kubernetes.io/blog/2026/03/17/image-promoter-rewrite/</link><author></author><category>dev</category><pubDate>Tue, 17 Mar 2026 00:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[Every container image you pull from  got there through
+, the Kubernetes image
+promoter. It copies images from staging registries to
+production, signs them with cosign, replicates
+signatures across more than 20 regional mirrors, and generates
+SLSA provenance attestations. If this tool breaks, no
+Kubernetes release ships. Over the past few weeks, we rewrote its core from
+scratch, deleted 20% of the codebase, made it dramatically faster, and
+nobody noticed. That was the whole point.The image promoter started in late 2018 as an internal Google project by
+Linus Arver. The goal was simple: replace the
+manual, Googler-gated process of copying container images into  with
+a community-owned, GitOps-based workflow. Push to a staging registry, open a PR
+with a YAML manifest, get it reviewed and merged, and automation handles the
+rest. KEP-1734
+formalized this proposal.In early 2019, the code moved to kubernetes-sigs/k8s-container-image-promoter
+and grew quickly. Over the next few years,
+Stephen Augustus consolidated multiple tools
+(, , , ) into a single CLI
+called . The repository was renamed to
+.
+Adolfo Garcia Veytia (Puerco) added cosign signing
+and SBOM support. Tyler Ferrara built
+vulnerability scanning. Carlos Panato kept the project in a healthy and
+releasable state. 42 contributors made about 3,500 commits across more than 60 releases.It worked. But by 2025 the codebase carried the weight of seven years of
+incremental additions from multiple SIGs and subprojects. The README
+said it plainly:
+you will see duplicated code, multiple techniques for accomplishing the same
+thing, and several TODOs.The problems we needed to solveProduction promotion jobs for Kubernetes core images regularly took over 30
+minutes and frequently failed with rate limit errors. The core promotion logic
+had grown into a monolith that was
+hard to extend
+and difficult to test, making new features like provenance or vulnerability
+scanning painful to add.On the SIG Release roadmap,
+two work items had been sitting for a while: "Rewrite artifact promoter" and
+"Make artifact validation more robust". We had discussed these at SIG Release
+meetings and KubeCons, and the open research spikes on
+project board #171 captured
+eight questions that needed answers before we could move forward.One issue to answer them allIn February 2026, we opened issue #1701
+("Rewrite artifact promoter pipeline") and answered all eight spikes in a single
+tracking issue. The rewrite was deliberately phased so that each step could be
+reviewed, merged, and validated independently. Here is what we did: (#1702).
+Rewrote rate limiting to properly throttle all registry operations with adaptive
+backoff. (#1704).
+Put registry and auth operations behind clean interfaces so they can be swapped
+out and tested independently. (#1705).
+Built a pipeline engine that runs promotion as a sequence of distinct phases
+instead of one large function. (#1706).
+Added SLSA provenance verification for staging images.Phase 5: Scanner and SBOMs (#1709).
+Added vulnerability scanning and SBOM support. Flipped the default to the new
+pipeline engine. At this point we cut
+v4.2.0 and let it
+soak in production before continuing.Phase 6: Split Signing from Replication (#1713).
+Separated image signing from signature replication into their own pipeline
+phases, eliminating the rate limit contention that caused most production
+failures.Phase 7: Remove Legacy Pipeline (#1712).
+Deleted the old code path entirely.Phase 8: Remove Legacy Dependencies (#1716).
+Deleted the audit subsystem, deprecated tools, and e2e test infrastructure.Phase 9: Delete the Monolith (#1718).
+Removed the old monolithic core and its supporting packages. Thousands of lines
+deleted across phases 7 through 9.Each phase shipped independently.
+v4.3.0 followed
+the next day with the legacy code fully removed.With the new architecture in place, a series of follow-up improvements landed:
+parallelized registry reads
+(#1736),
+retry logic for all network operations
+(#1742),
+per-request timeouts to prevent pipeline hangs
+(#1763),
+HTTP connection reuse
+(#1759),
+local registry integration tests
+(#1746),
+the removal of deprecated credential file support
+(#1758),
+a rework of attestation handling to use cosign's OCI APIs and the removal of
+deprecated SBOM support
+(#1764),
+and a dedicated promotion record predicate type registered with the
+in-toto attestation framework
+(#1767).
+These would have been much harder to land without the clean separation the
+rewrite provided.
+v4.4.0
+shipped all of these improvements and enabled provenance generation and
+verification by default.The promotion pipeline now has seven clearly separated phases:graph LR
+Setup --> Plan --> Provenance --> Validate --> Promote --> Sign --> Attest
+Validate options, prewarm TUF cache.Parse manifests, read registries, compute which images need promotion.Verify SLSA attestations on staging images.Check cosign signatures, exit here for dry runs.Copy images server-side, preserving digests.Sign promoted images with keyless cosign.Generate promotion provenance attestations using a dedicated in-toto predicate type.Phases run sequentially, so each one gets exclusive access to the full rate
+limit budget. No more contention. Signature replication to mirror registries is
+no longer part of this pipeline and runs as a
+dedicated periodic Prow job
+instead.With the architecture in place, we turned to performance. (#1736):
+The plan phase reads 1,350 registries. We parallelized this and the plan phase
+dropped from about 20 minutes to about 2 minutes. (#1761):
+Instead of checking all 46,000 image groups across more than 20 mirrors, we first check
+only the source repositories. About 57% of images have no signatures at all
+because they were promoted before signing was enabled. We skip those entirely,
+cutting API calls roughly in half.Source check before replication (#1727):
+Before iterating all mirrors for a given image, we check if the signature
+exists on the primary registry first. In steady state where most signatures are
+already replicated, this reduced the work from about 17 hours to about 15
+minutes. (#1763):
+We observed intermittent hangs where a stalled connection blocked the pipeline
+for over 9 hours. Every network operation now has its own timeout and transient
+failures are retried automatically. (#1759):
+We started reusing HTTP connections and auth state across operations, eliminating
+redundant token negotiations. This closed a
+long-standing request
+from 2023.Here is what the rewrite looks like in aggregate.Over 10,000 lines added and over 16,000 lines deleted, a net reduction
+of about 5,000 lines (20% smaller codebase)Performance drastically improved across the boardRobustness improved with retry logic, per-request timeouts, and adaptive rate limiting19 long-standing issues closedThe codebase shrank by a fifth while gaining provenance attestations, a pipeline
+engine, vulnerability scanning integration, parallelized operations, retry
+logic, integration tests against local registries, and a standalone signature
+replication mode.This was a hard requirement. The  command accepts the same flags and
+reads the same YAML manifests. The
+
+Prow job continued working throughout. The promotion manifests in
+kubernetes/k8s.io did not change. Nobody
+had to update their workflows or configuration.We caught two regressions early in production. One (#1731)
+caused a registry key mismatch that made every image appear as "lost" so that
+nothing was promoted. Another (#1733)
+set the default thread count to zero, blocking all goroutines. Both were fixed
+within hours. The phased release strategy (v4.2.0 with the new engine, v4.3.0
+with legacy code removed) gave us a clear rollback path that we fortunately
+never needed.Signature replication across all mirror registries remains the most expensive
+part of the promotion cycle. Issue #1762
+proposes eliminating it entirely by having
+archeio (the 
+redirect service) route signature tag requests to a single canonical upstream
+instead of per-region backends. Another option would be to move signing closer
+to the registry infrastructure itself. Both approaches need further discussion
+with the SIG Release and infrastructure teams, but either one would remove
+thousands of API calls per promotion cycle and simplify the codebase even
+further.This project has been a community effort spanning seven years. Thank you to
+Linus,
+Stephen,
+Adolfo,
+Carlos,
+Ben,
+Marko,
+Lauri,
+Tyler,
+Arnaud, and many others who contributed
+code, reviews, and planning over the years. The SIG Release and Release
+Engineering communities provided the context, the discussions, and the patience
+for a rewrite of infrastructure that every Kubernetes release depends on.]]></content:encoded></item><item><title>Call for Testing: Build Dir Layout v2</title><link>https://blog.rust-lang.org/2026/03/13/call-for-testing-build-dir-layout-v2/</link><author>Ed Page</author><category>dev</category><pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[We would welcome people to try and report issues with the nightly-only
 cargo -Zbuild-dir-new-layout.
 While the layout of the build dir
 is internal-only,
@@ -224,238 +466,4 @@ The session will also include the initial designs, early prototypes, and emergin
 For more details see our session here:The AI Gateway Working Group represents the Kubernetes community's commitment to standardizing AI workload networking. As AI becomes increasingly integral to modern applications, we need robust, standardized infrastructure that can support the unique requirements of inference workloads while maintaining the security, observability, and reliability standards that Kubernetes users expect.
 Our proposals are currently in active development, with implementations beginning across various gateway projects. We're working closely with SIG Network on Gateway API enhancements and collaborating with the broader cloud-native community to ensure our standards meet real-world production needs.Whether you're a gateway implementer, platform operator, AI application developer, or simply interested in the intersection of Kubernetes and AI, we'd love your input. The working group follows an open contribution model - you can review our proposals, join our weekly meetings, or start discussions on our GitHub repository.
 To learn more:The future of AI infrastructure in Kubernetes is being built today, join up and learn how you can contribute and help shape the future of AI-aware gateway capabilities in Kubernetes.]]></content:encoded></item><item><title>CPython: 36 Years of Source Code</title><link>https://blog.python.org/2026/03/cpython-codebase-growth/</link><author>Stan Ulbrych</author><category>dev</category><pubDate>Sun, 8 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[An analysis of the growth of CPython's codebase from its first commits to the present day]]></content:encoded></item><item><title>Announcing Rust 1.94.0</title><link>https://blog.rust-lang.org/2026/03/05/Rust-1.94.0/</link><author>The Rust Release Team</author><category>dev</category><pubDate>Thu, 5 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust team is happy to announce a new version of Rust, 1.94.0. Rust is a programming language empowering everyone to build reliable and efficient software.If you have a previous version of Rust installed via , you can get 1.94.0 with:If you'd like to help us out by testing future releases, you might consider updating locally to use the beta channel () or the nightly channel (). Please report any bugs you might come across!Rust 1.94 adds , an iterating method for slices. It works just like  but with a constant length, so the iterator items are  rather than dynamically-sized . In many cases, the window length may even be inferred by how the iterator is used!For example, part of one 2016 Advent of Code puzzle is looking for ABBA patterns: "two different characters followed by the reverse of that pair, such as  or ." If we assume only ASCII characters, that could be written by sweeping windows of the byte slice like this:The destructuring argument pattern in that closure lets the compiler infer that we want windows of 4 here. If we had used the older  iterator, then that argument would be a slice which we would have to index manually,  that runtime bounds-checking will be optimized away.Cargo now supports the  key in configuration files (), enabling better organization, sharing, and management of Cargo configurations across projects and environments. These include paths may also be marked  if they might not be present in some circumstances, e.g. depending on local developer choices.
-TOML 1.1 support in CargoInline tables across multiple lines and with trailing commas and  string escape charactersOptional seconds in times (sets to 0)For example, a dependency like this:... can now be written like this:Note that using these features in  will raise your development MSRV (minimum supported Rust version) to require this new Cargo parser, and third-party tools that read the manifest may also need to update their parsers. However, Cargo automatically rewrites manifests on publish to remain compatible with older parsers, so it is still possible to support an earlier MSRV for your crate's users.These previously stable APIs are now stable in const contexts:Many people came together to create Rust 1.94.0. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>The Python Insider Blog Has Moved!</title><link>https://blog.python.org/2026/03/the-python-insider-blog-has-moved/</link><author>Jacob Coffee</author><category>dev</category><pubDate>Tue, 3 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Python Insider now lives at blog.python.org, backed by a Git repository. All 307 posts from the Blogger era have been migrated, and old URLs redirect automatically.]]></content:encoded></item><item><title>Python 3.12.13, 3.11.15 and 3.10.20 are now available!</title><link>https://blog.python.org/2026/03/python-31213-31115-31020/</link><author>Thomas Wouters</author><category>dev</category><pubDate>Tue, 3 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[[Python Releases For Your Security!](https://discuss.python.org/t/python-3-12-13-3-11-15-and-3-10-20-are-now-available/106363) New security releases for 3.10, 3.11 and 3.12 are now available.]]></content:encoded></item><item><title>2025 State of Rust Survey Results</title><link>https://blog.rust-lang.org/2026/03/02/2025-State-Of-Rust-Survey-results/</link><author>The Rust Survey Team</author><category>dev</category><pubDate>Mon, 2 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[Once again, the survey team is happy to share the results of the State of Rust survey, this year celebrating a round number - the 10th edition!The survey ran for 30 days (from November 17th to December, 17th 2025) and collected 7156 responses, a slight decrease in responses compared to last year. In this blog post we will shine a light on some specific key findings. As usual, the full report is available for download.Overall, the answers we received this year pretty closely match the results of last year, differences are often under a single percentage point. The number of respondents decreases slightly year over year. In 2025, we published multiple surveys (such as the Compiler Performance or Variadic Generics survey), which might have also contributed to less people answering this (longer) survey. We plan to discuss how (and whether) to combine the State of Rust survey with the ongoing work on the Rust Vision Doc.Also to be noted that these numbers should be taken in context: we cannot extrapolate too much from a mere 7 000 answers and some optional questions have even less replies.Let's point out some interesting pieces of data:Confirmed that people develop using the stable compiler and keep up with releases, trusting our stability and compatibility guarantees. On the other hand, people use nightly out of "necessity" (for example, something not yet stabilized). Compared to last year (link) we seem to have way less nightly users. This may not be a significant data point because we are looking at a sliding window of releases and differences could depend on many factors (for example, at a specific point in time we might have more downloads of the nightly compiler because of a highly anticipated feature).One example might be the very popular let chains and async closures features, which were stabilized last year.We are also interested to hear from (and grateful to) people  using Rust (or not anymore) when they tell us why they dropped the language. In most cases it seems to be a "see you again in the future" rather than a "goodbye".Some specific topic we were interested in: how often people download crates using a git repository pinned in the Cargo.toml (something like foo = { git = "https://github.com/foo/bar" }).and if people actually find the output of  useful. Internal discussions hinted that we were not too sure about that but this graph contradicts our prior assumption. Seems like many Rust users actually do find compiler error code explanations useful.
-Challenges and wishes about RustWe landed long-awaited features in 2025 ( and ) and the survey results show that they are indeed very popular and often used. That's something to celebrate! Now generic const expressions and  are bubbling up in the charts as the most-wanted features. Most of the other desired features didn't change significantly.When asked about which non-trivial problems people encounter, little changes overall compared to 2024: resource usage (slow compile times and storage usage) is still up there. The debugging story slipped from 2nd to 4th place (~2pp). We just started a survey to learn more about it!Noticeable (within a ~3pp) flection in attendance for online and offline communities to learn about Rust (like meetups, discussion forums and other learning material). This hints at some people moving their questions to LLM tooling (as the word cloud for open answers suggests). Still, our online documentation is the preferred canonical reference, followed by studying the code itself.Confirmed the hiring trend from organisations looking for more Rust developers. The steady growth may indicate a structural market presence of Rust in companies, codebases consolidate and the quantity of Rust code overall keeps increasing.As always we try to get a picture of the concerns about the future of Rust. Given the target group we are surveying, unsurprisingly the majority of respondents would like even more Rust! But at the same time concerns persist about the language becoming more and more complex.Slight uptick for "developer and maintainers support". We know and we are working on it. There are ongoing efforts from RustNL (https://rustnl.org/fund) and on the Foundation side. Funding efforts should focus on retaining talents that otherwise would leave after some time of unpaid labor.This graph is also a message to companies using Rust: please consider supporting Rust project contributors and authors of Rust crates that you use in your projects. Either by joining the Rust Foundation, by allowing some paid time of your employees to be spent on Rust projects you benefit from or by funding through other collect funds (like https://opencollective.com, https://www.thanks.dev and similar) or personal sponsorships (GitHub, Liberapay or similar personal donation boxes).Trust in the Rust Foundation is improving, which is definitively good to hear.As a piece of trivia we ask people which tools they use when programming in Rust. The Zed editor did a remarkable jump upward in the preferences of our respondents (with Helix as a good second). Editors with agentic support are also on the rise (as the word cloud shows) and seems they are eroding the userbase of VSCode and IntelliJ, if we were to judge by the histogram.We're happy to meet again those 11 developers still using Atom (hey 👋!) and we salute those attached to their classic editors choice like Emacs and Vim (or derivatives).And finally, here are some data about marginalized groups, out of all participants who completed our survey:Lesbian, gay, bisexual, queer, or otherwise non-heterosexualWoman or perceived as a womanDisabled (physically, mentally, or otherwise)Racial or ethnic minorityOlder or younger than the average developers I knowWhile some of these numbers have slightly improved, this still shows that only a very small percentage of the people who are part of marginalized groups make it to our project. While we still do better than many other tech communities, it is a reminder that we need to keep working hard on being a diverse and welcoming FOSS community , which has always been and always will be one of our core values.Overall, no big surprises and a few trends confirmed.If you want to dig more into details, feel free to download the PDF report.We want once again to thank all the volunteers that helped shaping and translating this survey and to all the participants, who took the time to provide us a picture of the Rust community.Since this year we publish a round number, if you fancy a trip down the memory lane here the blog posts with the past years' survey results:]]></content:encoded></item><item><title>Before You Migrate: Five Surprising Ingress-NGINX Behaviors You Need to Know</title><link>https://kubernetes.io/blog/2026/02/27/ingress-nginx-before-you-migrate/</link><author></author><category>dev</category><pubDate>Fri, 27 Feb 2026 15:30:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[As announced November 2025, Kubernetes will retire Ingress-NGINX in March 2026.
-Despite its widespread usage, Ingress-NGINX is full of surprising defaults and side effects that are probably present in your cluster today.
-This blog highlights these behaviors so that you can migrate away safely and make a conscious decision about which behaviors to keep.
-This post also compares Ingress-NGINX with Gateway API and shows you how to preserve Ingress-NGINX behavior in Gateway API.
-The recurring risk pattern in every section is the same: a seemingly correct translation can still cause outages if it does not consider Ingress-NGINX's quirks.I'm going to assume that you, the reader, have some familiarity with Ingress-NGINX and the Ingress API.
-Most examples use  as the backend.Also, note that Ingress-NGINX and NGINX Ingress are two separate Ingress controllers.
-Ingress-NGINX is an Ingress controller maintained and governed by the Kubernetes community that is retiring March 2026.
-NGINX Ingress is an Ingress controller by F5.
-Both use NGINX as the dataplane, but are otherwise unrelated.
-From now on, this blog post only discusses Ingress-NGINX.1. Regex matches are prefix-based and case insensitiveSuppose that you wanted to route all requests with a path consisting of only three uppercase letters to the  service.
-You might create the following Ingress with the nginx.ingress.kubernetes.io/use-regex: "true" annotation and the regex pattern of .However, because regex matches are prefix and case insensitive, Ingress-NGINX routes any request with a path that starts with any three letters to httpbin:The output is similar to: The  endpoint of httpbin returns a random UUID.
-A UUID in the response body means that the request was successfully routed to httpbin.With Gateway API, you can use an HTTP path match with a  of  for regular expression path matching.
- matches are implementation specific, so check with your Gateway API implementation to verify the semantics of  matching.
-Popular Envoy-based Gateway API implementations such as Istio, Envoy Gateway, and Kgateway do a full case-sensitive match.Thus, if you are unaware that Ingress-NGINX patterns are prefix and case-insensitive, and, unbeknownst to you,
-clients or applications send traffic to  (or ), you might create the following HTTP route.However, if your Gateway API implementation does full case-sensitive matches,
-the above HTTP route would not match a request with a path of .
-The above HTTP route would thus cause an outage because requests
-that Ingress-NGINX routed to httpbin would fail with a 404 Not Found at the gateway.To preserve the case-insensitive regex matching, you can use the following HTTP route.Alternatively, the aforementioned proxies support the  flag to indicate case insensitive matches.
-Using the flag, the pattern could be .2. The nginx.ingress.kubernetes.io/use-regex applies to all paths of a host across all (Ingress-NGINX) IngressesNow, suppose that you have an Ingress with the nginx.ingress.kubernetes.io/use-regex: "true" annotation, but you want to route
-requests with a path of exactly  to .
-Unfortunately, you made a typo and set the path to  instead of .Most would expect a request to  to respond with a 404 Not Found, since  does not match the  path of .
-However, because the  Ingress has the nginx.ingress.kubernetes.io/use-regex: "true" annotation and the  host,
-all paths with the  host are treated as regular expressions across all (Ingress-NGINX) Ingresses.
-Since regex patterns are case-insensitive prefix matches,  matches the  pattern and Ingress-NGINX routes such requests to .
-Running the command The  endpoint of httpbin returns the request headers.
-The fact that the response contains the request headers in the body means that the request was successfully routed to httpbin.Gateway API does not silently convert or interpret  and  matches as regex patterns.
-So if you converted the above Ingresses into the following HTTP route and
-preserved the typo and match types, requests to  will respond with a 404 Not Found instead of a 200 OK.To keep the case-insensitive prefix matching, you can changeOr even better, you could fix the typo and change the match to3. Rewrite target implies regexIn this case, suppose you want to rewrite the path of requests with a path of  to  before routing them to , and
-as in Section 2, you want to route requests with the path of exactly  to .
-However, you accidentally make a typo and set the path to  instead of  and  instead of .The nginx.ingress.kubernetes.io/rewrite-target: "/uuid" annotation
-causes requests that match paths in the  Ingress to have their paths rewritten to  before being routed to the backend.Even though no Ingress has the nginx.ingress.kubernetes.io/use-regex: "true" annotation,
-the presence of the nginx.ingress.kubernetes.io/rewrite-target annotation in the  Ingress causes all paths with the rewrite-target.example.com host to be treated as regex patterns.
-In other words, the nginx.ingress.kubernetes.io/rewrite-target silently adds the nginx.ingress.kubernetes.io/use-regex: "true" annotation, along with all the side effects discussed above.For example, a request to  has its path rewritten to  because  matches the case-insensitive prefix pattern of  in the  Ingress.
-After running the commandthe output is similar to:Like in the nginx.ingress.kubernetes.io/use-regex example, Ingress-NGINX treats s of other ingresses with the rewrite-target.example.com host as case-insensitive prefix patterns.
-Running the commandgives an output that looks likeYou can configure path rewrites in Gateway API with the HTTP URL rewrite filter which does not silently convert your  and  matches into regex patterns.
-However, if you are unaware of the side effects of the nginx.ingress.kubernetes.io/rewrite-target annotation
-and do not realize that  and  are both typos, you might create the following
-HTTP route.As with Section 2, because  is now an  match type in your HTTP route, requests to  will respond with a 404 Not Found instead of a 200 OK.
-Similarly, requests to  will also respond with a 404 Not Found instead of a 200 OK.
-Thus, this HTTP route will break applications and clients that rely on the  and  routes.To fix this, you can change the matches in the HTTP route to be regex matches, and change the path patterns to be case-insensitive prefix matches, as follows.Or, you can keep the  match type and fix the typos.4. Requests missing a trailing slash are redirected to the same path with a trailing slashConsider the following Ingress:You might expect Ingress-NGINX to respond to  with a 404 Not Found since the  does not exactly match the  path of .
-However, Ingress-NGINX redirects the request to  with a 301 Moved Permanently because the only difference between  and  is a trailing slash.The same applies if you change the  to .
-However, the redirect does not happen if the path is a regex pattern.Conformant Gateway API implementations do not silently configure any kind of redirects.
-If clients or downstream services depend on this redirect, a migration to Gateway API that
-does not explicitly configure request redirects will cause an outage because
-requests to  will now respond with a 404 Not Found instead of a 301 Moved Permanently.
-You can explicitly configure redirects using the HTTP request redirect filter as follows:5. Ingress-NGINX normalizes URLs is the process of converting a URL into a canonical form before matching it against Ingress rules and routing it.
-The specifics of URL normalization are defined in RFC 3986 Section 6.2, but some examples areremoving path segments that are just a : having a  path segment remove the previous segment: deduplicating consecutive slashes in a path: Ingress-NGINX normalizes URLs before matching them against Ingress rules.
-For example, consider the following Ingress:Ingress-NGINX normalizes the path of the following requests to .
-Now that the request matches the  path of , Ingress-NGINX responds with either a 200 OK response or a 301 Moved Permanently to .For the following commandsthe outputs are similar toYour backends might rely on the Ingress/Gateway API implementation to normalize URLs.
-That said, most Gateway API implementations will have some path normalization enabled by default.
-For example, Istio, Envoy Gateway, and Kgateway all normalize  and  segments out of the box.
-For more details, check the documentation for each Gateway API implementation that you use.As we all race to respond to the Ingress-NGINX retirement, I hope this blog post instills some confidence that you can migrate safely and effectively despite all the intricacies of Ingress-NGINX.SIG Network has also been working on supporting the most common Ingress-NGINX annotations (and some of these unexpected behaviors) in Ingress2Gateway to help you translate Ingress-NGINX configuration into Gateway API, and offer alternatives to unsupported behavior.SIG Network released Gateway API 1.5 earlier today (27th February 2026), which graduates features such as
-ListenerSet (that allow app developers to better manage TLS certificates),
-and the HTTPRoute CORS filter that allows CORS configuration.]]></content:encoded></item><item><title>Allocating on the Stack</title><link>https://go.dev/blog/allocation-optimizations</link><author>Keith Randall</author><category>dev</category><pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[We’re always looking for ways to make Go programs faster. In the last
-2 releases, we have concentrated on mitigating a particular source of
-slowness, heap allocations. Each time a Go program allocates memory
-from the heap, there’s a fairly large chunk of code that needs to run
-to satisfy that allocation. In addition, heap allocations present
-additional load on the garbage collector.  Even with recent
-enhancements like Green Tea, the garbage collector
-still incurs substantial overhead.So we’ve been working on ways to do more allocations on the stack
-instead of the heap.  Stack allocations are considerably cheaper to
-perform (sometimes completely free).  Moreover, they present no load
-to the garbage collector, as stack allocations can be collected
-automatically together with the stack frame itself. Stack allocations
-also enable prompt reuse, which is very cache friendly.Stack allocation of constant-sized slicesConsider the task of building a slice of tasks to process:func process(c chan task) {
-    var tasks []task
-    for t := range c {
-        tasks = append(tasks, t)
-    }
-    processAll(tasks)
-}
-Let’s walk through what happens at runtime when pulling tasks from the
-channel  and adding them to the slice .On the first loop iteration, there is no backing store for , so
- has to allocate one. Because it doesn’t know how big the
-slice will eventually be, it can’t be too aggressive. Currently, it
-allocates a backing store of size 1.On the second loop iteration, the backing store now exists, but it is
-full.  again has to allocate a new backing store, this time of
-size 2. The old backing store of size 1 is now garbage.On the third loop iteration, the backing store of size 2 is
-full.  has to allocate a new backing store, this time
-of size 4. The old backing store of size 2 is now garbage.On the fourth loop iteration, the backing store of size 4 has only 3
-items in it.  can just place the item in the existing backing
-store and bump up the slice length. Yay! No call to the allocator for
-this iteration.On the fifth loop iteration, the backing store of size 4 is full, and
- again has to allocate a new backing store, this time of size
-8.And so on. We generally double the size of the allocation each time it
-fills up, so we can eventually append most new tasks to the slice
-without allocation. But there is a fair amount of overhead in the
-“startup” phase when the slice is small. During this startup phase we
-spend a lot of time in the allocator, and produce a bunch of garbage,
-which seems pretty wasteful. And it may be that in your program, the
-slice never really gets large. This startup phase may be all you ever
-encounter.If this code was a really hot part of your program, you might be
-tempted to start the slice out at a larger size, to avoid all of these
-allocations.func process2(c chan task) {
-    tasks := make([]task, 0, 10) // probably at most 10 tasks
-    for t := range c {
-        tasks = append(tasks, t)
-    }
-    processAll(tasks)
-}
-This is a reasonable optimization to do. It is never incorrect; your
-program still runs correctly. If the guess is too small, you get
-allocations from  as before. If the guess is too large, you
-waste some memory.If your guess for the number of tasks was a good one, then there’s
-only one allocation site in this program. The  call allocates a
-slice backing store of the correct size, and  never has to do
-any reallocation.The surprising thing is that if you benchmark this code with 10
-elements in the channel, you’ll see that you didn’t reduce the number
-of allocations to 1, you reduced the number of allocations to 0!The reason is that the compiler decided to allocate the backing store
-on the stack. Because it knows what size it needs to be (10 times the
-size of a task) it can allocate storage for it in the stack frame of
- instead of on the heap.  Note
-that this depends on the fact that the backing store does not escape
-to the heap inside of .Stack allocation of variable-sized slicesBut of course, hard coding a size guess is a bit rigid.
-Maybe we can pass in an estimated length?func process3(c chan task, lengthGuess int) {
-    tasks := make([]task, 0, lengthGuess)
-    for t := range c {
-        tasks = append(tasks, t)
-    }
-    processAll(tasks)
-}
-This lets the caller pick a good size for the  slice, which may
-vary depending on where this code is being called from.Unfortunately, in Go 1.24 the non-constant size of the backing store
-means the compiler can no longer allocate the backing store on the
-stack.  It will end up on the heap, converting our 0-allocation code
-to 1-allocation code. Still better than having  do all the
-intermediate allocations, but unfortunate.But never fear, Go 1.25 is here!Imagine you decide to do the following, to get the stack allocation
-only in cases where the guess is small:func process4(c chan task, lengthGuess int) {
-    var tasks []task
-    if lengthGuess <= 10 {
-        tasks = make([]task, 0, 10)
-    } else {
-        tasks = make([]task, 0, lengthGuess)
-    }
-    for t := range c {
-        tasks = append(tasks, t)
-    }
-    processAll(tasks)
-}
-Kind of ugly, but it would work. When the guess is small, you use a
-constant size  and thus a stack-allocated backing store, and
-when the guess is larger you use a variable size  and allocate
-the backing store from the heap.But in Go 1.25, you don’t need to head down this ugly road. The Go
-1.25 compiler does this transformation for you!  For certain slice
-allocation locations, the compiler automatically allocates a small
-(currently 32-byte) slice backing store, and uses that backing store
-for the result of the  if the size requested is small
-enough. Otherwise, it uses a heap allocation as normal.In Go 1.25,  performs zero heap allocations, if
- is small enough that a slice of that length fits into 32
-bytes. (And of course that  is a correct guess for how
-many items are in .)We’re always improving the performance of Go, so upgrade to the latest
-Go release and be
-surprised by
-how much faster and memory efficient your program becomes!Stack allocation of append-allocated slicesOk, but you still don’t want to have to change your API to add this
-weird length guess. Anything else you could do?func process(c chan task) {
-    var tasks []task
-    for t := range c {
-        tasks = append(tasks, t)
-    }
-    processAll(tasks)
-}
-In Go 1.26, we allocate the same kind of small, speculative backing
-store on the stack, but now we can use it directly at the 
-site.On the first loop iteration, there is no backing store for , so
- uses a small, stack-allocated backing store as the first
-allocation. If, for instance, we can fit 4 s in that backing store,
-the first  allocates a backing store of length 4 from the stack.The next 3 loop iterations append directly to the stack backing store,
-requiring no allocation.On the 4th iteration, the stack backing store is finally full and we
-have to go to the heap for more backing store. But we have avoided
-almost all of the startup overhead described earlier in this article.
-No heap allocations of size, 1, 2, and 4, and none of the garbage that
-they eventually become. If your slices are small, maybe you will never
-have a heap allocation.Stack allocation of append-allocated escaping slicesOk, this is all good when the  slice doesn’t escape. But what if
-I’m returning the slice? Then it can’t be allocated on the stack, right?Right! The backing store for the slice returned by  below
-can’t be allocated on the stack, because the stack frame for 
-disappears when  returns.func extract(c chan task) []task {
-    var tasks []task
-    for t := range c {
-        tasks = append(tasks, t)
-    }
-    return tasks
-}
-But you might think, the  slice can’t be allocated on the
-stack. But what about all those intermediate slices that just become
-garbage? Maybe we can allocate those on the stack?func extract2(c chan task) []task {
-    var tasks []task
-    for t := range c {
-        tasks = append(tasks, t)
-    }
-    tasks2 := make([]task, len(tasks))
-    copy(tasks2, tasks)
-    return tasks2
-}
-Then the  slice never escapes . It can benefit from
-all of the optimizations described above. Then at the very end of
-, when we know the final size of the slice, we do one heap
-allocation of the required size, copy our s into it, and return
-the copy.But do you really want to write all that additional code? It seems
-error prone. Maybe the compiler can do this transformation for us?For escaping slices, the compiler will transform the original 
-code to something like this:func extract3(c chan task) []task {
-    var tasks []task
-    for t := range c {
-        tasks = append(tasks, t)
-    }
-    tasks = runtime.move2heap(tasks)
-    return tasks
-}
- is a special compiler+runtime function that is the
-identity function for slices that are already allocated in the heap.
-For slices that are on the stack, it allocates a new slice on the
-heap, copies the stack-allocated slice to the heap copy, and returns
-the heap copy.This ensures that for our original  code, if the number of
-items fits in our small stack-allocated buffer, we perform exactly 1
-allocation of exactly the right size. If the number of items exceeds
-the capacity of our small stack-allocated buffer, we do our normal
-doubling-allocation once the stack-allocated buffer overflows.The optimization that Go 1.26 does is actually better than the
-hand-optimized code, because it does not require the extra
-allocation+copy that the hand-optimized code always does at the end.
-It requires the allocation+copy only in the case that we’ve exclusively
-operated on a stack-backed slice up to the return point.We do pay the cost for a copy, but that cost is almost completely
-offset by the copies in the startup phase that we no longer have to
-do. (In fact, the new scheme at worst has to copy one more element
-than the old scheme.)Hand optimization can still be beneficial, especially if you have a
-good estimate of the slice size ahead of time. But hopefully the
-compiler will now catch a lot of the simple cases for you and allow
-you to focus on the remaining ones that really matter.There are a lot of details that the compiler needs to ensure to get
-all these optimizations right. If you think that one of these
-optimizations is causing correctness or (negative) performance issues
-for you, you can turn them off with
--gcflags=all=-d=variablemakehash=n. If turning these optimizations
-off helps, please file an issue so we can investigate. Go stacks do not have any -style mechanism for
-dynamically-sized stack frames. All Go stack frames are constant
-sized.]]></content:encoded></item><item><title>Rust debugging survey 2026</title><link>https://blog.rust-lang.org/2026/02/23/rust-debugging-survey-2026/</link><author>Jakub Beránek</author><category>dev</category><pubDate>Mon, 23 Feb 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[Various issues with debugging Rust code are often mentioned as one of the biggest challenges that annoy Rust developers. While it is definitely possible to debug Rust code today, there are situations where it does not work well enough, and the quality of debugging support also varies a lot across different debuggers and operating systems.In order for Rust to have truly stellar debugging support, it should ideally:Support (several versions!) of different debuggers (such as GDB, LLDB or CDB) across multiple operating systems.Implement debugger visualizers that are able to produce quality presentation of most Rust types.Provide first-class support for debugging  code.Allow evaluating Rust expressions in the debugger.Rust is not quite there yet, and it will take a lot of work to reach that level of debugger support. Furthermore, it is also challenging to ensure that debugging Rust code  working well, across newly released debugger versions, changes to internal representation of Rust data structures in the standard library and other things that can break the debugging experience.We already have some plans to start improving debugging support in Rust, but it would also be useful to understand the current debugging struggles of Rust developers. That is why we have prepared the Rust Debugging Survey, which should help us find specific challenges with debugging Rust code.You can fill out the survey here.Filling the survey should take you approximately 5 minutes, and the survey is fully anonymous. We will accept submissions until Friday, March 13th, 2026. After the survey ends, we will evaluate the results and post key insights on this blog.We would like to thank Sam Kellam (@hashcatHitman) who did a lot of great work to prepare this survey.We invite you to fill the survey, as your responses will help us improve the Rust debugging experience. Thank you!]]></content:encoded></item></channel></rss>
+TOML 1.1 support in CargoInline tables across multiple lines and with trailing commas and  string escape charactersOptional seconds in times (sets to 0)For example, a dependency like this:... can now be written like this:Note that using these features in  will raise your development MSRV (minimum supported Rust version) to require this new Cargo parser, and third-party tools that read the manifest may also need to update their parsers. However, Cargo automatically rewrites manifests on publish to remain compatible with older parsers, so it is still possible to support an earlier MSRV for your crate's users.These previously stable APIs are now stable in const contexts:Many people came together to create Rust 1.94.0. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>The Python Insider Blog Has Moved!</title><link>https://blog.python.org/2026/03/the-python-insider-blog-has-moved/</link><author>Jacob Coffee</author><category>dev</category><pubDate>Tue, 3 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Python Insider now lives at blog.python.org, backed by a Git repository. All 307 posts from the Blogger era have been migrated, and old URLs redirect automatically.]]></content:encoded></item><item><title>Python 3.12.13, 3.11.15 and 3.10.20 are now available!</title><link>https://blog.python.org/2026/03/python-31213-31115-31020/</link><author>Thomas Wouters</author><category>dev</category><pubDate>Tue, 3 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[[Python Releases For Your Security!](https://discuss.python.org/t/python-3-12-13-3-11-15-and-3-10-20-are-now-available/106363) New security releases for 3.10, 3.11 and 3.12 are now available.]]></content:encoded></item></channel></rss>
