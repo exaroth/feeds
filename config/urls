@@ -10,7 +10,6 @@
 
 https://feeds.feedburner.com/ign/reviews "~IGN" ign
 https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml "~Github Trending"
-https://terminaltrove.com/new.xml "~Terminal Tools"
 https://standardebooks.org/feeds/rss/new-releases "~Standard E-Books"
 
 https://zig.news/rss "~Zig News" ! dev
@@ -60,7 +59,6 @@ https://access.acast.com/rss/c939f8d1-c4bc-478e-8bb9-e5343f9a7ab5/default "~Podc
 https://changelog.com/gotime/feed "~Podcast - Go Time" ! podcast
 https://changelog.com/podcast/feed "~Podcast - Changelog" ! podcast
 https://feeds.buzzsprout.com/2105116.rss "~Podcast - Cmd+Shift+Left" ! podcast
-https://www.youtube.com/feeds/videos.xml?channel_id=UCzQUP1qoWDoEbmsQxvdjxgQ "~Podcast - Joe Rogan" ! podcast
 https://www.youtube.com/feeds/videos.xml?channel_id=UCSHZKyawb77ixDdsGog4iWA "~Podcast - Lex Fridman" ! podcast
 https://softwareengineeringdaily.com/category/podcast/feed "~Podcast - Software Engineering Daily" ! podcast
 https://feeds.simplecast.com/L9810DOa "~Podcast - Signals and Threads" ! podcast
@@ -212,5 +210,11 @@ https://www.youtube.com/feeds/videos.xml?playlist_id=UULFuvSqzfO_LV_QzHdmEj84SQ 
 https://www.youtube.com/feeds/videos.xml?playlist_id=UULFZvbFJH9zfNLuvAZC0_oeFg ! yt
 # Tso
 https://www.youtube.com/feeds/videos.xml?playlist_id=UULFEbYhDd6c6vngsF5PQpFVWg ! yt
+# Lock stock
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFEd_Fj-_VlXG-BiXpJ69Wfg ! yt
+# Quanta
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFTpmmkp1E4nmZqWPS-dl5bg ! yt
+# BBC Earth
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFwmZiChSryoWQCZMIQezgTg ! yt
 # About that
 https://www.youtube.com/feeds/videos.xml?playlist_id=PLeyJPHbRnGaZeajS8uAtr8cyc19TYBZZ9 ! yt
