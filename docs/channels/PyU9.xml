@@ -1,4 +1,292 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Security advisory for Cargo</title><link>https://blog.rust-lang.org/2026/03/21/cve-2026-33056/</link><author>The Rust Security Response Team</author><category>dev</category><pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust Security Response Team was notified of a vulnerability in the
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Rust for CPython Progress Update April 2026</title><link>https://blog.python.org/2026/04/rust-for-cpython-2026-04/</link><author>Emma Smith</author><category>dev</category><pubDate>Wed, 8 Apr 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Rust for CPython project status update April 2026]]></content:encoded></item><item><title>Python 3.15.0a8, 3.14.4 and 3.13.13 are out!</title><link>https://blog.python.org/2026/04/python-3150a8-3144-31313/</link><author>Hugo van Kemenade</author><category>dev</category><pubDate>Tue, 7 Apr 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[A final alpha and two bug fixes are awaiting your upgrade.]]></content:encoded></item><item><title>docs.rs: building fewer targets by default</title><link>https://blog.rust-lang.org/2026/04/04/docsrs-only-default-targets/</link><author>Denis Cornehl</author><category>dev</category><pubDate>Sat, 4 Apr 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[On , docs.rs will make a  change to its build
+behavior.Today, if a crate does not define a  list in its
+docs.rs metadata, docs.rs builds documentation for a default
+list of five targets.Starting on , docs.rs will instead build documentation for only
+the default target unless additional targets are requested explicitly.This is the next step in a change we first introduced in 2020, when docs.rs
+added support for opting into fewer build targets. Most crates do not compile
+different code for different targets, so building fewer targets by default is a
+better fit for most releases. It also reduces build times and saves resources on
+docs.rs.This change only affects:
+How is the default target chosen?If you do not set , docs.rs uses the target of its build
+servers: .
+How do I build documentation for additional targets?If your crate needs documentation to be built for more than the default target,
+define the full list explicitly in your :When  is set, docs.rs will build documentation for exactly those
+targets.docs.rs still supports any target available in the Rust toolchain. Only the
+default behavior is changing.]]></content:encoded></item><item><title>Changes to WebAssembly targets and handling undefined symbols</title><link>https://blog.rust-lang.org/2026/04/04/changes-to-webassembly-targets-and-handling-undefined-symbols/</link><author>Alex Crichton</author><category>dev</category><pubDate>Sat, 4 Apr 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[Rust's WebAssembly targets are soon going to experience a change which has a
+risk of breaking existing projects, and this post is intended to notify users of
+this upcoming change, explain what it is, and how to handle it. Specifically, all
+WebAssembly targets in Rust have been linked using the  flag
+to , and this flag is being removed.
+What is ?WebAssembly binaries in Rust today are all created by linking with .
+This serves a similar purpose to , , and , for example; it
+takes separately compiled crates/object files and creates one final binary.
+Since the first introduction of WebAssembly targets in Rust, the
+ flag has been passed to . This flag is documented
+as:The term "undefined" here specifically means with respect to symbol resolution in  itself. Symbols used by  correspond relatively closely to what native platforms use, for example all Rust functions have a symbol associated with them. Symbols can be referred to in Rust through  blocks, for example:The symbol  is an undefined symbol. This is typically defined by
+a separate component of a program, such as an externally compiled C library,
+which will provide a definition for this symbol. By passing 
+to , however, it means that the above would generate a WebAssembly
+module like so:This means that the undefined symbol was ignored and ended up as an imported
+symbol in the final WebAssembly module that is produced.The precise history here is somewhat lost to time, but the current understanding
+is that  was effectively required in the very early days of
+introducing  to the Rust toolchain. This historical workaround stuck
+around till today and hasn't changed.
+What's wrong with ?By passing  on all WebAssembly targets, rustc is introducing
+diverging behavior between other platforms and WebAssembly. The main risk of
+ is that misconfiguration or mistakes in building can
+result in broken WebAssembly modules being produced, as opposed to compilation
+errors. This means that the proverbial can is kicked down the road and lengthens
+the distance from where the problem is discovered to where it was introduced.
+Some example problematic situations are:If  was typo'd as  then the final binary would
+import the  symbol instead of calling the linked
+ C symbol.If  was mistakenly not compiled and linked into a final
+application then the  symbol would end up imported rather than
+producing a linker error saying it's undefined.If external tooling is used to process a WebAssembly module, such as  or , these tools don't know what to do with  imports by default and they are likely to provide an error message of some form that isn't clearly connected back to the original source code and where the symbols was imported from.For web users if you've ever seen an error along the lines of Uncaught TypeError: Failed to resolve module specifier "env". Relative references must start with either "/", "./", or "../". this can mean that  leaked into the final module unexpectedly and the true error is the undefined symbol error, not the lack of  items provided.All native platforms consider undefined symbols to be an error by default, and
+thus by passing  rustc is introducing surprising behavior on
+WebAssembly targets. The goal of the change is to remove this surprise and
+behave more like native platforms.
+What is going to break, and how to fix?In theory, not a whole lot is expected to break from this change. If the final
+WebAssembly binary imports unexpected symbols, then it's likely that the binary
+won't be runnable in the desired embedding, as the desired embedding probably
+doesn't provide the symbol as a definition. For example, if you compile an
+application for  if the final binary imports 
+then it'll fail to run in most runtimes because it's considered an unresolved
+import. This means that most of the time this change won't break users, but
+it'll instead provide better diagnostics.The reason for this post, however, is that it's possible users could be
+intentionally relying on this behavior. For example your application might have:And then perhaps some JS code that looks like:Effectively it's possible for users to explicitly rely on the behavior of
+ generating an import in the final WebAssembly binary.If users encounter this then the code can be fixed through a  attribute
+which explicitly specifies the  name:This will have the same behavior as before and will no longer be considered an
+undefined symbol to , and it'll work both before and after this change.Affected users can also compile with -Clink-arg=--allow-undefined as well to
+quickly restore the old behavior.
+When is this change being made?Removing  on wasm targets is being done in
+rust-lang/rust#149868. That change is slated to land in nightly soon, and will then get released with Rust 1.96 on 2026-05-28. If you see any issues as a
+result of this fallout please don't hesitate to file an issue on
+rust-lang/rust.]]></content:encoded></item><item><title>Kubernetes v1.36 Sneak Peek</title><link>https://kubernetes.io/blog/2026/03/30/kubernetes-v1-36-sneak-peek/</link><author></author><category>dev</category><pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[Kubernetes v1.36 is coming at the end of April 2026. This release will include removals and deprecations, and it is packed with an impressive number of
+enhancements. Here are some of the features we are most excited about in this cycle!Please note that this information reflects the current state of v1.36 development and may change before release.The Kubernetes API removal and deprecation processThe Kubernetes project has a well-documented deprecation policy for features. This policy states that stable APIs
+may only be deprecated when a newer, stable version of that same API is available and that APIs have a minimum lifetime for each stability level. A deprecated API
+has been marked for removal in a future Kubernetes release. It will continue to function until removal (at least one year from the deprecation), but usage will
+result in a warning being displayed. Removed APIs are no longer available in the current version, at which point you must migrate to using the replacement.Generally available (GA) or stable API versions may be marked as deprecated but must not be removed within a major version of Kubernetes.Beta or pre-release API versions must be supported for 3 releases after the deprecation.Alpha or experimental API versions may be removed in any release without prior deprecation notice; this process can become a withdrawal in cases where a different implementation for the same feature is already in place.Whether an API is removed as a result of a feature graduating from beta to stable, or because that API simply did not succeed, all removals comply with this
+deprecation policy. Whenever an API is removed, migration options are communicated in the deprecation guide.A recent example of this principle in action is the retirement of the ingress-nginx project, announced
+by SIG-Security on March 24, 2026. As stewardship shifts away from the project, the community has been
+encouraged to evaluate alternative ingress controllers that align with current security and maintenance
+best practices. This transition reflects the same lifecycle discipline that underpins Kubernetes itself,
+ensuring continued evolution without abrupt disruption.To prioritize the safety and security of the ecosystem, Kubernetes SIG Network and the Security Response Committee have retired Ingress NGINX on March 24, 2026.
+Since that date, there have been no further releases, no bugfixes, and no updates to resolve any security vulnerabilities discovered. Existing deployments of
+Ingress NGINX will continue to function, and installation artifacts like Helm charts and container images will remain available.Deprecations and removals for Kubernetes v1.36Deprecation of  in ServiceThe  field in Service  is being deprecated, which means you’ll soon lose a quick way to route arbitrary externalIPs to your Services. This
+field has been a known security headache for years, enabling man-in-the-middle attacks on your cluster traffic, as documented in CVE-2020-8554. From Kubernetes v1.36 and onwards, you will see deprecation warnings when using it, with full removal
+planned for v1.43.If your Services still lean on , consider using LoadBalancer services for cloud-managed ingress, NodePort for simple port exposure, or Gateway API
+for a more flexible and secure way to handle external traffic.Removal of  volume driverThe gitRepo volume type has been deprecated since v1.11. Starting Kubernetes v1.36, the  volume plugin is permanently disabled and cannot be turned back
+on. This change protects clusters from a critical security issue where using  could let an attacker run code as root on the node.Although  has been deprecated for years and better alternatives have been recommended, it was still technically possible to use it in previous releases.
+From v1.36 onward, that path is closed for good, so any existing workloads depending on  will need to migrate to supported approaches such as init
+containers or external git-sync style tools.Featured enhancements of Kubernetes v1.36The following list of enhancements is likely to be included in the upcoming v1.36 release. This is not a commitment and the release content is subject to change.Faster SELinux labelling for volumes (GA)Kubernetes v1.36 makes the SELinux volume mounting improvement generally available. This change replaced recursive file relabeling with  option, applying the correct SELinux label to the entire volume at mount time. It brings more consistent performance and reduces Pod startup delays on SELinux-enforcing systems.This feature was introduced as beta in v1.28 for  volumes. In v1.32, it gained metrics and an opt-out option
+(securityContext.seLinuxChangePolicy: Recursive) to help catch conflicts. Now in v1.36, it reaches stable and defaults to all volumes, with Pods or
+CSIDrivers opting in via .However, we expect this feature to create the risk of breaking changes in the future Kubernetes releases, due to the potential for mixing of privileged and unprivileged pods.
+Setting the  field and
+SELinux volume labels on Pods, correctly, is the responsibility of the Pod author
+Developers have that responsibility whether they are writing a Deployment, StatefulSet, DaemonSet or even a custom resource that includes a Pod template.
+Being careless
+with these settings can lead to a range of problems when Pods share volumes.External signing of ServiceAccount tokensAs a beta feature, Kubernetes already supports external signing of ServiceAccount tokens. This allows clusters to integrate with external key management systems
+or signing services instead of relying only on internally managed keys.With this enhancement, the  can delegate token signing to external systems such as cloud key management services or hardware security modules. This
+improves security and simplifies key management services for clusters that rely on centralized signing infrastructure.
+We expect that this will graduate to stable (GA) in Kubernetes v1.36.DRA Driver support for Device taints and tolerationsKubernetes v1.33 introduced support for taints and tolerations for physical devices managed through Dynamic Resource Allocation (DRA). Normally, any device can be
+used for scheduling. However, this enhancement allows DRA drivers to mark devices as tainted, which ensures that they will not be used for scheduling purposes.
+Alternatively, cluster administrators can create a  to mark devices that match a certain selection criteria(such as all devices of a certain
+driver) as tainted. This improves scheduling control and helps ensure that specialized hardware resources are only used by workloads that explicitly request them.In Kubernetes v1.36, this feature graduates to beta with more comprehensive testing complete, making it accessible by default without the need for a feature
+flag and open to user feedback.DRA support for partitionable devicesKubernetes v1.36 expands Dynamic Resource Allocation (DRA) by introducing support for partitionable devices, allowing a single hardware accelerator to be split
+into multiple logical units that can be shared across workloads. This is especially useful for high-cost resources like GPUs, where dedicating an entire device
+to a single workload can lead to underutilization.With this enhancement, platform teams can improve overall cluster efficiency by allocating only the required portion of a device to each workload, rather than
+reserving it entirely. This makes it easier to run multiple workloads on the same hardware while maintaining isolation and control, helping organizations get more
+value out of their infrastructure.New features and deprecations are also announced in the Kubernetes release notes. We will formally announce what's new in Kubernetes v1.36 as part of the CHANGELOG for that release.Kubernetes v1.36 release is planned for Wednesday, April 22, 2026. Stay tuned for updates!You can also see the announcements of changes in the release notes for:The simplest way to get involved with Kubernetes is by joining one of the many Special Interest Groups (SIGs) that align with your interests. Have something you’d like to broadcast to the Kubernetes community? Share your voice at our weekly
+community meeting, and through the channels below. Thank you for your continued feedback and support.]]></content:encoded></item><item><title>Announcing Rust 1.94.1</title><link>https://blog.rust-lang.org/2026/03/26/1.94.1-release/</link><author>The Rust Release Team</author><category>dev</category><pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust team has published a new point release of Rust, 1.94.1. Rust is a
+programming language that is empowering everyone to build reliable and
+efficient software.If you have a previous version of Rust installed via rustup, getting Rust 1.94.1 is as easy as:If you don't have it already, you can get  from the appropriate page on our website.Rust 1.94.1 resolves three regressions that were introduced in the 1.94.0 release.Many people came together to create Rust 1.94.1. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>Type Construction and Cycle Detection</title><link>https://go.dev/blog/type-construction-and-cycle-detection</link><author>Mark Freeman</author><category>dev</category><pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[Go’s static typing is an important part of why Go is a good fit for production
+systems that have to be robust and reliable. When a Go package is compiled, it
+is first parsed—meaning that the Go source code within that package is converted
+into an abstract syntax tree (or AST). This AST is then passed to the Go
+.In this blog post, we’ll dive into a part of the type checker we significantly
+improved in Go 1.26. How does this change things from a Go user’s perspective?
+Unless one is fond of arcane type definitions, there’s no observable change
+here. This refinement was intended to reduce corner cases, setting us up for
+future improvements to Go. Also, it’s a fun look at something that seems quite
+ordinary to Go programmers, but has some real subtleties hiding within.But first, what exactly is ? It’s a step in the Go compiler that
+eliminates whole classes of errors at compile time. Specifically, the Go type
+checker verifies that:Types appearing in the AST are valid (for example, a map’s key type must be
+).Operations involving those types (or their values) are valid (for example,
+one can’t add an  and a ).To accomplish this, the type checker constructs an internal representation for
+each type it encounters while traversing the AST—a process informally called
+.As we’ll soon see, even though Go is known for its simple type system, type
+construction can be deceptively complex in certain corners of the language.Let’s start by considering a simple pair of type declarations:When the type checker is invoked, it first encounters the type declaration for
+. Here, the AST records a type definition of a type name  and a
+.  is a defined type; to represent
+the actual data structure that the type checker uses when constructing defined
+types, we’ll use a  struct.The  struct contains a pointer to the type for the type expression to
+the right of the type name. This  field is relevant for sourcing the
+type’s underlying type. To help illustrate the
+type checker’s state, let’s see how walking the AST fills in the data
+structures, starting with:At this point,  is , indicated by the color yellow. Since
+we haven’t evaluated the type expression  yet—it’s still black—
+points to , indicated by an open arrow.When we evaluate , the type checker constructs a  struct, the
+internal data structure used to represent slice types. Similarly to ,
+it contains a pointer to the element type for the slice. We don’t yet know what
+the name  refers to, though we expect it to refer to a type. So, again, this
+pointer is . We are left with:By now you might be getting the gist, so we’ll pick up the pace a bit.To convert the type name  to a type, we first locate its declaration. Upon
+seeing that it represents another defined type, we construct a separate
+ for  accordingly. Inspecting the right side of , we see the type
+expression , which evaluates to a  struct, with the base type of
+the pointer being the type expression .When we evaluate , something special happens: we get back a predeclared
+type. Predeclared types are constructed  the type checker even begins
+walking the AST. Since the type for  is already constructed, there’s
+nothing for us to do but point to that type.Note that the  type is  at this point, indicated by the color
+green. Completeness means that the type’s internal data structure has all of its
+fields populated and any types pointed to by those fields are complete.
+Completeness is an important property of a type because it ensures that
+accessing the internals, or , of that type is sound: we have all
+the information describing the type.In the image above, the  struct only contains a  field, which
+points to . Since  has no fields to populate, it’s “vacuously”
+complete, making the type for  complete.From here, the type checker begins unwinding the stack. Since the type for
+ is complete, we can complete the type for , meaning we can complete
+the type for , and so on for . When this process ends, we are left with
+only complete types, as shown below:The numbering above shows the order in which the types were completed (after the
+). Note that the type on the bottom completed first. Type construction
+is naturally a depth-first process, since completing a type requires its
+dependencies to be completed first.With this simple example out of the way, let’s add a bit more nuance. Go’s type
+system also allows us to express recursive types. A typical example is something
+like:type Node struct {
+  next *Node
+}
+If we reconsider our example from above, we can add a bit of recursion by
+swapping  for  like so:Now for a trace: let’s start once more with , but skip ahead to illustrate
+the effects of this change. As one might suspect from our previous example, the
+type checker will approach the evaluation of  with the below state:The question is what to do with the base type for . We have an idea of what
+ is (a ), but it’s currently being constructed (its  is
+still ).We simply point the base type for  to , even though  is incomplete:We do this assuming that  will complete when it finishes construction
+ (by pointing to a complete type). When that happens,  will
+point to a complete type, thus making  complete.In the meantime, we’ll begin heading back up the stack:When we get back to the top and finish constructing , the “loop” of types
+will close, completing each type in the loop simultaneously:Before we considered recursive types, evaluating a type expression always
+returned a complete type. That was a convenient property because it meant the
+type checker could always deconstruct (look inside) a type returned from
+evaluation.But in the example above, evaluation of  returned an 
+type, meaning deconstructing  is unsound until it completes. Generally
+speaking, recursive types mean that the type checker can no longer assume that
+types returned from evaluation will be complete.Yet, type checking involves many checks which require deconstructing a type. A
+classic example is confirming that a map key is , which requires
+inspecting the  field. How do we safely interact with incomplete
+types like ?Recall that type completeness is a prerequisite for deconstructing a type. In
+this case, type construction never deconstructs a type, it merely refers to
+types. In other words, type completeness  block type construction
+here.Because type construction isn’t blocked, the type checker can simply delay such
+checks until the end of type checking, when all types are complete (note that
+the checks themselves also do not block type construction). If a type were to
+reveal a type error, it makes no difference when that error is reported during
+type checking—only that it is reported eventually.With this knowledge in mind, let’s examine a more complex example involving
+values of incomplete types.Recursive types and valuesLet’s take a brief detour and have a look at Go’s
+array types. Importantly, array types have a size,
+which is a constant that is part of the type. Some
+operations, like the built-in functions  and  can return
+constants when applied to certain values or
+expressions, meaning they can appear as array
+sizes. Importantly, the values passed to those functions can be of any type,
+even an incomplete type. We call these .Let’s consider this example:type T [unsafe.Sizeof(T{})]int
+In the same way as before, we’ll reach a state like the one below:To construct the , we must calculate its size. From the value expression
+, that’s the size of . For array types (such as ),
+calculating their size requires deconstruction: we need to look inside the type
+to determine the length of the array and size of each element.In other words, type construction for the  deconstruct ,
+meaning the  cannot finish construction (let alone complete) before 
+completes. The “loop” trick that we used earlier—where a loop of types
+simultaneously completes as the type starting the loop finishes
+construction—doesn’t work here.This leaves us in a bind: cannot be completed until the  completes.The  cannot be completed until  completes.They  be completed simultaneously (unlike before).Clearly, this is impossible to satisfy. What is the type checker to do?Fundamentally, code such as this is invalid because the size of  cannot be
+determined without knowing the size of , regardless of how the type checker
+operates. This particular instance—cyclic size definition—is part of a class of
+errors called , which generally involve cyclic definition of Go
+constructs. As another example, consider , which is also in this
+class, but for different reasons. The process of finding and reporting cycle
+errors in the course of type checking is called .Now, how does cycle detection work for type T [unsafe.Sizeof(T{})]int? To
+answer this, let’s look at the inner . Because  is a composite literal
+expression, the type checker knows that its resulting value is of type .
+Because  is incomplete, we call the value  an .We must be cautious—operating on an incomplete value is only sound if it doesn’t
+deconstruct the value’s type. For example, type T [unsafe.Sizeof(new(T))]int sound, since the value  (of type ) is never deconstructed—all
+pointers have the same size. To reiterate, it is sound to size an incomplete
+value of type , but not one of type .This is because the “pointerness” of  provides enough type information for
+, whereas just  does not. In fact, it’s never sound to operate
+on an incomplete value whose type is a defined type, because a mere type name
+conveys no (underlying) type information at all.Up to now we’ve focused on  directly operating on potentially
+incomplete values. In type T [unsafe.Sizeof(T{})]int, the call to 
+is just the “root” of the array length expression. We can readily imagine the
+incomplete value  as an operand in some other value expression.For example, it could be passed to a function (i.e.
+type T [unsafe.Sizeof(f(T{}))]int), sliced (i.e.
+type T [unsafe.Sizeof(T{}[:])]int), indexed (i.e.
+type T [unsafe.Sizeof(T{}[0])]int), etc. All of these are invalid because they
+require deconstructing . For instance, indexing requires checking the underlying type of .
+Because these expressions “consume” potentially incomplete values, let’s call
+them . There are many more examples of downstream operators, some
+of which are not syntactically obvious.Similarly,  is just one example of an expression that “produces” a
+potentially incomplete value—let’s call these kinds of expressions :Comparatively, there are fewer and more syntactically obvious value expressions
+that might result in incomplete values. Also, it’s rather simple to enumerate
+these cases by inspecting Go’s syntax definition. For these reasons, it’ll be
+simpler to implement our cycle detection logic via the upstreams, where
+potentially incomplete values originate. Below are some examples of them:
+type T [unsafe.Sizeof(T(42))]int                // conversion
+
+func f() T
+type T [unsafe.Sizeof(f())]int                  // function call
+
+var i interface{}
+type T [unsafe.Sizeof(i.(T))]int                // assertion
+
+type T [unsafe.Sizeof(<-(make(<-chan T)))]int   // channel receive
+
+type T [unsafe.Sizeof(make(map[int]T)[42])]int  // map access
+
+type T [unsafe.Sizeof(*new(T))]int              // dereference
+
+// ... and a handful more
+For each of these cases, the type checker has extra logic where that particular
+kind of value expression is evaluated. As soon as we know the type of the
+resulting value, we insert a simple test that checks that the type is complete.For instance, in the conversion example type T [unsafe.Sizeof(T(42))]int,
+there is a snippet in the type checker that resembles:func callExpr(call *syntax.CallExpr) operand {
+  x := typeOrValue(call.Fun)
+  switch x.mode() {
+  // ... other cases
+  case typeExpr:
+    // T(), meaning it's a conversion
+    T := x.typ()
+    // ... handle the conversion, T *is not* safe to deconstruct
+  }
+}
+As soon as we observe that the  is a conversion to , we know that
+the resulting type will be  (assuming no preceding errors). Before we pass
+back a value (here, an ) of type  to the rest of the type checker,
+we need to check for completeness of :func callExpr(call *syntax.CallExpr) operand {
+  x := typeOrValue(call.Fun)
+  switch x.mode() {
+  // ... other cases
+  case typeExpr:
+    // T(), meaning it's a conversion
+    T := x.typ()
++   if !isComplete(T) {
++     reportCycleErr(T)
++     return invalid
++   }
+    // ... handle the conversion, T *is* safe to deconstruct
+  }
+}
+Instead of returning an incomplete value, we return a special  operand,
+which signals that the call expression could not be evaluated. The rest of the
+type checker has special handling for invalid operands. By adding this, we
+prevented incomplete values from “escaping” downstream—both into the rest of the
+type conversion logic and to downstream operators—and instead reported a cycle
+error describing the problem with .A similar code pattern is used in all other cases, implementing cycle detection
+for incomplete values.Systematic cycle detection involving incomplete values is a new addition to the
+type checker. Before Go 1.26, we used a more complex type construction algorithm,
+which involved more bespoke cycle detection that didn’t always work. Our new,
+simpler approach addressed a number of (admittedly esoteric) compiler panics
+(issues #75918, #76383,
+#76384, #76478, and more), resulting in a more
+stable compiler.As programmers, we’ve become accustomed to features like recursive type
+definitions and sized array types such that we might overlook the nuance of
+their underlying complexity. While this post does skip over some finer details,
+hopefully we’ve conveyed a deeper understanding of (and perhaps appreciation
+for) the problems surrounding type checking in Go.]]></content:encoded></item><item><title>Python 3.15&apos;s JIT is now back on track</title><link>https://blog.python.org/2026/03/jit-on-track/</link><author>Ken Jin</author><category>dev</category><pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[A look at Python's JIT in 3.15a7.]]></content:encoded></item><item><title>Security advisory for Cargo</title><link>https://blog.rust-lang.org/2026/03/21/cve-2026-33056/</link><author>The Rust Security Response Team</author><category>dev</category><pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust Security Response Team was notified of a vulnerability in the
 third-party crate , used by Cargo to extract packages during a build. The
 vulnerability, tracked as CVE-2026-33056, allows a malicious crate to change
 the permissions on arbitrary directories on the filesystem when Cargo extracts
@@ -71,399 +359,7 @@ In this case, you should at least double-check that your Gateway API implementat
 We strongly suggest that you then gradually shift traffic using weighted DNS, your cloud load balancer, or traffic-splitting features of your platform.
 This way, you can quickly recover from any misconfiguration that made it through your tests.Finally, when you have shifted all your traffic to your Gateway API controller, delete your Ingress resources and uninstall your Ingress controller.The Ingress2Gateway 1.0 release is just the beginning, and we hope that you use Ingress2Gateway to safely migrate to Gateway API.
 As we approach the March 2026 Ingress-NGINX retirement, we invite the community to help us increase our configuration coverage, expand testing, and improve UX.Resources about Gateway APIThe scope of Gateway API can be daunting.
-Here are some resources to help you work with Gateway API:]]></content:encoded></item><item><title>Running Agents on Kubernetes with Agent Sandbox</title><link>https://kubernetes.io/blog/2026/03/20/running-agents-on-kubernetes-with-agent-sandbox/</link><author></author><category>dev</category><pubDate>Fri, 20 Mar 2026 18:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[The landscape of artificial intelligence is undergoing a massive architectural shift. In the early days of generative AI, interacting with a model was often treated as a transient, stateless function call: a request that spun up, executed for perhaps 50 milliseconds, and terminated.Today, the world is witnessing AI v2 eating AI v1. The ecosystem is moving from short-lived, isolated tasks to deploying multiple, coordinated AI agents that run constantly. These autonomous agents need to maintain context, use external tools, write and execute code, and communicate with one another over extended periods.As platform engineering teams look for the right infrastructure to host these new AI workloads, one platform stands out as the natural choice: Kubernetes. However, mapping these unique agentic workloads to traditional Kubernetes primitives requires a new abstraction.This is where the new Agent Sandbox project (currently in development under SIG Apps) comes into play.The Kubernetes advantage (and the abstraction gap)Kubernetes is the de facto standard for orchestrating cloud-native applications precisely because it solves the challenges of extensibility, robust networking, and ecosystem maturity. However, as AI evolves from short-lived inference requests to long-running, autonomous agents, we are seeing the emergence of a new operational pattern.AI agents, by contrast, are typically isolated, stateful, singleton workloads. They act as a digital workspace or execution environment for an LLM. An agent needs a persistent identity and a secure scratchpad for writing and executing (often untrusted) code. Crucially, because these long-lived agents are expected to be mostly idle except for brief bursts of activity, they require a lifecycle that supports mechanisms like suspension and rapid resumption.While you could theoretically approximate this by stringing together a StatefulSet of size 1, a headless Service, and a PersistentVolumeClaim for every single agent, managing this at scale becomes an operational nightmare.Because of these unique properties, traditional Kubernetes primitives don't perfectly align.Introducing Kubernetes Agent SandboxTo bridge this gap, SIG Apps is developing agent-sandbox. The project introduces a declarative, standardized API specifically tailored for singleton, stateful workloads like AI agent runtimes.At its core, the project introduces the Sandbox CRD. It acts as a lightweight, single-container environment built entirely on Kubernetes primitives, offering:Strong isolation for untrusted code: When an AI agent generates and executes code autonomously, security is paramount. The Sandbox custom resource natively supports different runtimes, like gVisor or Kata Containers. This provides the necessary kernel and network isolation required for multi-tenant, untrusted execution.: Unlike traditional web servers optimized for steady, stateless traffic, an AI agent operates as a stateful workspace that may be idle for hours between tasks. Agent Sandbox supports scaling these idle environments to zero to save resources, while ensuring they can resume exactly where they left off.: Coordinated multi-agent systems require stable networking. Every Sandbox is given a stable hostname and network identity, allowing distinct agents to discover and communicate with each other seamlessly.Scaling agents with extensionsBecause the AI space is moving incredibly quickly, we built an Extensions API layer that enables even faster iteration and development.Starting a new pod adds about a second of overhead. That's perfectly fine when deploying a new version of a microservice, but when an agent is invoked after being idle, a one-second cold start breaks the continuity of the interaction. It forces the user or the orchestrating service to wait for the environment to provision before the model can even begin to think or act. SandboxWarmPool solves this by maintaining a pool of pre-provisioned Sandbox pods, effectively eliminating cold starts. Users or orchestration services can simply issue a SandboxClaim against a SandboxTemplate, and the controller immediately hands over a pre-warmed, fully isolated environment to the agent.Ready to try it yourself? You can install the Agent Sandbox core components and extensions directly into your learning or sandbox cluster, using your chosen release.We recommend you use the latest release as the project is moving fast.Once installed, you can try out the Python SDK for AI agents or deploy one of the ready-to-use examples to see how easy it is to spin up an isolated agent environment.The future of agents is cloud nativeWhether it’s a 50-millisecond stateless task, or a multi-week, mostly-idle collaborative process, extending Kubernetes with primitives designed specifically for isolated stateful singletons allows us to leverage all the robust benefits of the cloud-native ecosystem.The Agent Sandbox project is open source and community-driven. If you are building AI platforms, developing agentic frameworks, or are interested in Kubernetes extensibility, we invite you to get involved:]]></content:encoded></item><item><title>What we heard about Rust&apos;s challenges, and how we can address them</title><link>https://blog.rust-lang.org/2026/03/20/rust-challenges/</link><author>Jack Huey</author><category>dev</category><pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[When we set out to understand Rust's challenges, we expected to hear about the borrow checker learning curve and maybe some ecosystem gaps. Of course, we did. A lot. But, of course, it's more nuanced.The conventional wisdom is that Rust has a steep learning curve, but once you "get it," smooth sailing awaits. We found that while some challenges disappear with experience, they are replaced with others. Beginners struggle with ownership concepts, experts face domain-specific challenges: async complexity for network developers, certification gaps for safety-critical teams, ecosystem maturity issues for embedded developers.This isn't all doom and gloom though: we ultimately found that despite Rust's challenges, it remains necessary and desired:If all the things laid out [to make Rust better] were done, I'd be a happy Rust programmer. If not, I'd still be a Rust programmer. -- Engineering manager adopting Rust for performance
-The universal challenges that affect everyoneAcross every interview, regardless of experience level or domain, we heard about the same core set of challenges. These aren't beginner problems that go away—they're fundamental friction points that manifest differently as developers grow. we analyzed—from novices to experts, from embedded developers to web developers—cited compilation times as a significant barrier to productivity:"Java takes about 100 milliseconds, Rust anywhere from 5 seconds to a minute depending on what you changed" -- Distinguished engineer working on backend systems at a large company"8 to 10s iteration cycle... when you want to tweak the padding on a box" -- GUI development teamThe impact varies by domain, but the pattern is consistent. CLI tool and GUI developers, who need rapid iteration cycles, are hit hardest. Safety-critical developers with 25-30 minute build times face workflow disruption. Size-constrained embedded developers are forced into optimized builds that take longer to compile and complicate debugging.What's particularly important to note, is that this isn't just about absolute build times; it's about the  that compounds over time. Long compile times can have strong negative impact on code iteration time. Anything that can reduce this code iteration time - hot reloading, fast debug builds, faster linking - will have an outsized impact on development velocity.Moreover, the compilation performance tax compounds at scale. Individual developers might tolerate 5-10 second builds, but teams with CI/CD pipelines, large codebases, and frequent iterations face exponentially worse impacts. One participant noted 25-30 minute builds that create "wait for 30 minutes before the tool finds out I made a mistake" cycles.
-The borrow checker: first it's sour, then it's sweetThe borrow checker is often touted as a "beginner problem", and we found that this is largely true: Novices are most strongly impacted by the borrow checker, but this often extends even into the stage where a developer is  writing Rust where they  get tripped by the borrow checker sometimes.However, highly-experienced Rust developers basically never cite the borrow checker itself as a frustration for them.Ownership: The first time I went through the chapter, I was really like, what is this? - Developer learning Rust as a first languageI actually did not understand the borrow checker until I spent a lot of time writing Rust - Executive at a developer tools companyMultiple participants identified  as a pain point. Many people, not just beginners, often choose to completely avoid it, instead focusing solely on sync Rust. This is because, for many,  Rust feels completely different.My biggest complaint with Rust is async. If we want to use [a tool], we're forced into that model...not just a different language, but a different programming model...I have zero [experience], I've been avoiding it. - Developer working on a security agent at a large companyOf course, those who  use it often share how complex it is, how it can feel incomplete in ways, or how it is difficult to learn."When you got Rust that's both async and generic and has lifetimes, then those types become so complicated that you basically have to be some sort of Rust god" -- Software engineer with production Rust experience"My general impression is actually pretty negative. It feels unbaked... there is a lot of arcane knowledge that you need" -- Research software engineer"There's a significant learning gap between basic Rust and async programming... creating a 'chasm of sadness' that requires substantial investment to cross." -- Professional developerThe async complexity isn't just about individual developer experience: it is exacerbated by ecosystem fragmentation and architectural lock-in:"the fact that there is still plenty of situations where you go that library looks useful I want to use that library and then that immediately locks you into one of tokio or one of the other runtimes" -- Community-focused developerThis fragmentation forces architectural decisions early and limits library compatibility, creating a unique challenge among programming languages.Of course, it would be remiss to clarify that plenty of people  express positive sentiments of async, often despite the mentioned challenges.
-Ecosystem navigation: choice paralysis and tacit knowledgeThe Rust ecosystem shows uneven maturity across domains: excellent for CLI tools and web backends, but significantly lacking in other domains such as embedded and safety-critical applications. This creates a fragmented adoption landscape where Rust's reputation varies dramatically depending on your domain."Biggest reason people don't use Rust is that the ecosystem they'd be entering into is not what they expect. It doesn't have the tooling that C++ has nor the libraries." -- Developer for a large tech company"I think the amount of choice you can have often makes it difficult to make the right choice" -- Developer transitioning from high-level languages"the crates to use are sort of undiscoverable... There's a layer of tacit knowledge about what crates to use for specific things that you kind of gather through experience" -- Web developerThe problem isn't lack of libraries—it's that choosing the right ones requires expertise that newcomers don't have.The Rust Project has made this choice mostly intentionally though: it has chosen not to bless certain crates in order to not unduly stifle innovation. The expectation is that if a newer crate ends up being "better" than some well-established crate, then that newer crate should be become more popular; but, if the Project recommends using the more established crate, then that is less likely to happen. This is a tradeoff that might be worth reevaluating, or finding clever solutions to.
-How challenges amplify differently across domainsWhile the core challenges are universal, different domains have unique challenges that ultimately must be either adoption blockers or acceptable trade-offs.
-Embedded systems: where every constraint mattersEmbedded developers face the most constrained environment for resources, which can amplify other challenges like learning."if you pull in a crate, you pull in a lot of things and you have no control" -- Embedded systems researcher"can't use standard collections like hashmaps" -- Embedded software engineerDebug builds become too large for small controllers, forcing developers into optimized builds that complicate debugging. Cross-compilation adds another layer of complexity. The "no-std" ecosystem, while growing, still has significant gaps.
-Safety-critical systems: stability vs. innovation tensionSafety-critical developers need Rust's memory safety guarantees, but face unique challenges around certification and tooling:"we don't have the same tools we have to measure its safety criticality as we do in C++ and I think it's a worry point" -- Safety systems engineer"not a lot of people know Rust not a lot of managers actually trust that this is a technology that's here to stay" -- Safety-critical developer on organizational barriersThe tension between Rust's rapid evolution and safety-critical requirements for stability creates adoption barriers even when the technical benefits are clear.To note, we previously wrote a blog post all about safety-critical Rust. Check it out!GUI developers need rapid visual feedback, making compilation times particularly painful:We've got a UI framework that's just Rust code so when you want to tweak the padding on a box ... it's a pain that we just kind of accept a 10 seconds or more iteration cycle. -- Developer working on a GUI app
-Background-dependent learning pathsOne important insight gained from this work, and it seems obvious if you think about it, is that learning Rust isn't a universal experience: it depends heavily on your background:High-level language developers must learn systems concepts alongside Rust:The challenge for me was I needed to grasp the idea of a lower-level computer science ideas and Rust at the same time. -- Developer with Typescript background often struggle to unlearn patterns and concepts:I'm coming from C++ world so I had the big class that does everything. Taken a while for me to internalize that "dude you gotta go down a level". -- Developer with C++ backgroundRust tried to hide away notion of pointers - Just tell me it's a pointer -- System-level developerInterestingly though, learning Rust alongside C++ can help students understand both better:Students learn smart pointers in C++ and then 'we're just now learning smart pointers with Rust as well' — learning both at the same time makes it easier. -- Community organizerGiven that compilation performance affects every single user group, we recommend treating it as a first-class language concern, not just an implementation detail. This could include:Incremental compilation improvements that better match developer workflows that reduce the iteration cycle tax that makes build times less disruptiveWe do want to quickly shout a couple of neat community projects that have this goal in mind:The subsecond crate by the Dioxus team allows hot-reloading, which can make workflows like those found in GUI development more seamlessThe Wild linker aims to be a fast linker for Linux, with plans for incremental linkingWe previously made some suggestions in this area, and they still hold true. Finding ways to not only help users find crates that are useful to them, but also enable better compatibility between crates will surely have a net-positive benefit to the Rust community.
-Address learning diversityWhen someone is learning Rust, their programming language background, level of experience, and domain in which they are trying to work in, all influence the challenges they face. We recommend that the Rust Project and the community find ways to  learning paths to individuals' needs. For example, for someone with a C or C++ background, it might be useful to be able to directly compare references to pointers.Similarly, having domain-specific learning materials can help newcomers focus on the problems they are facing more specifically than a general "Rust tutorial" might. The Embedded Rust Book does this, for example.
-Close the gap between sync and async RustThis is a tall order -- there are a lot of moving parts here, but it's clear that many people struggle. On one hand, async Rust feels often "incomplete" in some language features compared to sync Rust. On the other, documentation is often focused on sync Rust (for example, much of The Rust Programming Language Book is focused on sync code patterns).Within the Rust Project, we can work towards stabilizing long-awaited features such as async functions in dyn traits, or improving compiler errors for issues with, for example, lifetimes and async code. We can include fundamental async library traits and functions within , enabling a more cohesive async ecosystem.Of course, as much as can be done  the Rust Project, even getting more community involvement in producing tutorials, example code, and otherwise just sharing knowledge, can go a long way to closing the gap.Rust's challenges are more nuanced than the conventional "steep learning curve" narrative suggests. They are domain-specific and evolve with experience.Understanding these patterns is crucial for Rust's continued growth. As we work to expand Rust's reach, we need to address not just the initial learning curve, but the ongoing friction that affects productivity across all experience levels.The good news is that recognizing these patterns gives us recommendations for improvement. By acknowledging the expertise gradient, prioritizing compilation performance, creating better ecosystem navigation, and addressing background-dependent challenges, we can help Rust fulfill its promise of empowering everyone to build reliable, efficient software.]]></content:encoded></item><item><title>Securing Production Debugging in Kubernetes</title><link>https://kubernetes.io/blog/2026/03/18/securing-production-debugging-in-kubernetes/</link><author></author><category>dev</category><pubDate>Wed, 18 Mar 2026 18:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[During production debugging, the fastest route is often broad access such as  (a ClusterRole that grants administrator-level access), shared bastions/jump boxes, or long-lived SSH keys. It works in the moment, but it comes with two common problems: auditing becomes difficult, and temporary exceptions have a way of becoming routine.This post offers my recommendations for good practices applicable to existing Kubernetes environments with minimal tooling changes:Least privilege with RBACShort-lived, identity-bound credentialsAn SSH-style handshake model for cloud native debuggingA good architecture for securing production debugging workflows is to use a just-in-time secure shell gateway
-(often deployed as an on demand pod in the cluster).
-It acts as an SSH-style “front door” that makes temporary access actually temporary. You can
-authenticate with short-lived, identity-bound credentials, establish a session to the gateway,
-and the gateway uses the Kubernetes API and RBAC to control what they can do, such as , , and .
-Sessions expire automatically, and both the gateway logs and Kubernetes audit logs capture who accessed what and when without shared bastion accounts or long-lived keys.1) Using an access broker on top of Kubernetes RBACRBAC controls who can do what in Kubernetes. Many Kubernetes environments rely primarily on RBAC for authorization, although Kubernetes also supports other authorization modes such as Webhook authorization. You can enforce access directly with Kubernetes RBAC, or put an access broker in front of the cluster that still relies on Kubernetes permissions under the hood. In either model, Kubernetes RBAC remains the source of truth for what the Kubernetes API allows and at what scope.An access broker adds controls that RBAC does not cover well. For example, it can decide whether a request is auto-approved or requires manual approval, whether a user can run a command, and which commands are allowed in a session. It can also manage group membership so that you grant permissions to groups instead of individual users. Kubernetes RBAC can allow actions such as pods/exec, but it cannot restrict which commands run inside an exec session.With that model, Kubernetes RBAC defines the allowed actions for a user or group (for example, an on-call team in a single namespace).
-I recommend you only define access rules that grant rights to groups or to ServiceAccounts - never to individual users. The broker or identity provider then adds or removes users from that group as needed.The broker can also enforce extra policy on top, like which commands are permitted in an interactive session and
-which requests can be auto-approved versus require manual approval.
-That policy can live in a JSON or XML file and be maintained through code review, so updates go through a formal pull request and are reviewed like any other production change.Example: a namespaced on-call debug RoleBind the Role to a group (rather than individual users) so membership can be managed through your identity provider:2) Short-lived, identity-bound credentialsThe goal is to use short-lived, identity-bound credentials that clearly tie a session to a real person and expire quickly. These credentials can include the user’s identity and the scope of what they’re allowed to do. They’re typically signed using a private key that stays with the engineer, such as a hardware-backed key (for example, a YubiKey), so they can not be forged without access to that key.You can implement this with Kubernetes-native authentication (for example, client certificates or an OIDC-based flow),
-or have the access broker from the previous section issue short-lived credentials on the user’s behalf.
-In many setups, Kubernetes still uses RBAC to enforce permissions based on the authenticated identity and groups/claims.
-If you use an access broker, it can also encode additional scope constraints in the credential and enforce them during the session, such as which cluster or namespace the session applies to and which actions
-(or approved commands) are allowed against pods or nodes.
-In either case, the credentials should be signed by a certificate authority (CA), and that CA should be rotated on a regular schedule (for example, quarterly) to limit long-term risk.Option A: short-lived OIDC tokensA lot of managed Kubernetes clusters already give you short-lived tokens. The main thing is to make sure your kubeconfig refreshes them automatically instead of copying a long-lived token into the file.Option B: Short-lived client certificates (X.509)If your API server (or your access broker from the previous section) is set up to trust a client CA, you can use short-lived client certificates for debugging access. The idea is:The private key is created and kept under the engineer’s machine (ideally hardware-backed, like a non-exportable key in a YubiKey/PIV token)A short-lived certificate is issued (often via the
-CertificateSigningRequest API, or your access broker from the previous section, with a TTL).RBAC maps the authenticated identity to a minimal RoleThis is straightforward to operationalize with the Kubernetes CertificateSigningRequest API.Generate a key and CSR locally:Create a CertificateSigningRequest with a short expiration:After the CSR is approved and signed, you extract the issued certificate and use it together with the private key to authenticate, for example via kubectl.Once you have short-lived credentials, you can use them to open a secure shell session to a just-in-time access gateway, often exposed over SSH and created on demand. If the gateway is exposed over SSH, a common pattern is to issue the engineer a short-lived OpenSSH user certificate for the session. The gateway trusts your SSH user CA, authenticates the engineer at connection time, and then applies the approved session policy before making Kubernetes API calls on the user’s behalf. OpenSSH certificates are separate from Kubernetes X.509 client certificates, so these are usually treated as distinct layers.The resulting session should also be scoped so it cannot be reused outside of what was approved. For example, the gateway or broker can limit it to a specific cluster and namespace, and optionally to a narrower target such as a pod or node. That way, even if someone tries to reuse the access, it will not work outside the intended scope. After the session is established, the gateway executes only the allowed actions and records what happened for auditing.Example: Namespace-scoped role bindingsThese RBAC objects, and the rules they define, allow debugging only within the specified namespace; attempts to access other namespaces are not allowed.Example: Cluster-scoped role bindingThese RBAC rules grant cluster-wide read access (for example, to nodes and namespaces) and should be used only for workflows that truly require cluster-scoped resources.Finer-grained restrictions like “only this pod/node” or “only these commands” are typically enforced by the access gateway/broker during the session, but Kubernetes also offers other options, such as ValidatingAdmissionPolicy for restricting writes and webhook authorization for custom authorization across verbs.In environments with stricter access controls, you can add an extra, short-lived session mediation layer
-to separate session establishment from privileged actions. Both layers are ephemeral, use identity-bound expiring credentials,
-and produce independent audit trails. The mediation layer handles session setup/forwarding,
-while the execution layer performs only RBAC-authorized Kubernetes actions.
-This separation can reduce exposure by narrowing responsibilities, scoping credentials per step, and enforcing end-to-end session expiry.Disclaimer: The views expressed in this post are solely those of the author and do not reflect the views of the author’s employer or any other organization.]]></content:encoded></item><item><title>The Invisible Rewrite: Modernizing the Kubernetes Image Promoter</title><link>https://kubernetes.io/blog/2026/03/17/image-promoter-rewrite/</link><author></author><category>dev</category><pubDate>Tue, 17 Mar 2026 00:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[Every container image you pull from  got there through
-, the Kubernetes image
-promoter. It copies images from staging registries to
-production, signs them with cosign, replicates
-signatures across more than 20 regional mirrors, and generates
-SLSA provenance attestations. If this tool breaks, no
-Kubernetes release ships. Over the past few weeks, we rewrote its core from
-scratch, deleted 20% of the codebase, made it dramatically faster, and
-nobody noticed. That was the whole point.The image promoter started in late 2018 as an internal Google project by
-Linus Arver. The goal was simple: replace the
-manual, Googler-gated process of copying container images into  with
-a community-owned, GitOps-based workflow. Push to a staging registry, open a PR
-with a YAML manifest, get it reviewed and merged, and automation handles the
-rest. KEP-1734
-formalized this proposal.In early 2019, the code moved to kubernetes-sigs/k8s-container-image-promoter
-and grew quickly. Over the next few years,
-Stephen Augustus consolidated multiple tools
-(, , , ) into a single CLI
-called . The repository was renamed to
-.
-Adolfo Garcia Veytia (Puerco) added cosign signing
-and SBOM support. Tyler Ferrara built
-vulnerability scanning. Carlos Panato kept the project in a healthy and
-releasable state. 42 contributors made about 3,500 commits across more than 60 releases.It worked. But by 2025 the codebase carried the weight of seven years of
-incremental additions from multiple SIGs and subprojects. The README
-said it plainly:
-you will see duplicated code, multiple techniques for accomplishing the same
-thing, and several TODOs.The problems we needed to solveProduction promotion jobs for Kubernetes core images regularly took over 30
-minutes and frequently failed with rate limit errors. The core promotion logic
-had grown into a monolith that was
-hard to extend
-and difficult to test, making new features like provenance or vulnerability
-scanning painful to add.On the SIG Release roadmap,
-two work items had been sitting for a while: "Rewrite artifact promoter" and
-"Make artifact validation more robust". We had discussed these at SIG Release
-meetings and KubeCons, and the open research spikes on
-project board #171 captured
-eight questions that needed answers before we could move forward.One issue to answer them allIn February 2026, we opened issue #1701
-("Rewrite artifact promoter pipeline") and answered all eight spikes in a single
-tracking issue. The rewrite was deliberately phased so that each step could be
-reviewed, merged, and validated independently. Here is what we did: (#1702).
-Rewrote rate limiting to properly throttle all registry operations with adaptive
-backoff. (#1704).
-Put registry and auth operations behind clean interfaces so they can be swapped
-out and tested independently. (#1705).
-Built a pipeline engine that runs promotion as a sequence of distinct phases
-instead of one large function. (#1706).
-Added SLSA provenance verification for staging images.Phase 5: Scanner and SBOMs (#1709).
-Added vulnerability scanning and SBOM support. Flipped the default to the new
-pipeline engine. At this point we cut
-v4.2.0 and let it
-soak in production before continuing.Phase 6: Split Signing from Replication (#1713).
-Separated image signing from signature replication into their own pipeline
-phases, eliminating the rate limit contention that caused most production
-failures.Phase 7: Remove Legacy Pipeline (#1712).
-Deleted the old code path entirely.Phase 8: Remove Legacy Dependencies (#1716).
-Deleted the audit subsystem, deprecated tools, and e2e test infrastructure.Phase 9: Delete the Monolith (#1718).
-Removed the old monolithic core and its supporting packages. Thousands of lines
-deleted across phases 7 through 9.Each phase shipped independently.
-v4.3.0 followed
-the next day with the legacy code fully removed.With the new architecture in place, a series of follow-up improvements landed:
-parallelized registry reads
-(#1736),
-retry logic for all network operations
-(#1742),
-per-request timeouts to prevent pipeline hangs
-(#1763),
-HTTP connection reuse
-(#1759),
-local registry integration tests
-(#1746),
-the removal of deprecated credential file support
-(#1758),
-a rework of attestation handling to use cosign's OCI APIs and the removal of
-deprecated SBOM support
-(#1764),
-and a dedicated promotion record predicate type registered with the
-in-toto attestation framework
-(#1767).
-These would have been much harder to land without the clean separation the
-rewrite provided.
-v4.4.0
-shipped all of these improvements and enabled provenance generation and
-verification by default.The promotion pipeline now has seven clearly separated phases:graph LR
-Setup --> Plan --> Provenance --> Validate --> Promote --> Sign --> Attest
-Validate options, prewarm TUF cache.Parse manifests, read registries, compute which images need promotion.Verify SLSA attestations on staging images.Check cosign signatures, exit here for dry runs.Copy images server-side, preserving digests.Sign promoted images with keyless cosign.Generate promotion provenance attestations using a dedicated in-toto predicate type.Phases run sequentially, so each one gets exclusive access to the full rate
-limit budget. No more contention. Signature replication to mirror registries is
-no longer part of this pipeline and runs as a
-dedicated periodic Prow job
-instead.With the architecture in place, we turned to performance. (#1736):
-The plan phase reads 1,350 registries. We parallelized this and the plan phase
-dropped from about 20 minutes to about 2 minutes. (#1761):
-Instead of checking all 46,000 image groups across more than 20 mirrors, we first check
-only the source repositories. About 57% of images have no signatures at all
-because they were promoted before signing was enabled. We skip those entirely,
-cutting API calls roughly in half.Source check before replication (#1727):
-Before iterating all mirrors for a given image, we check if the signature
-exists on the primary registry first. In steady state where most signatures are
-already replicated, this reduced the work from about 17 hours to about 15
-minutes. (#1763):
-We observed intermittent hangs where a stalled connection blocked the pipeline
-for over 9 hours. Every network operation now has its own timeout and transient
-failures are retried automatically. (#1759):
-We started reusing HTTP connections and auth state across operations, eliminating
-redundant token negotiations. This closed a
-long-standing request
-from 2023.Here is what the rewrite looks like in aggregate.Over 10,000 lines added and over 16,000 lines deleted, a net reduction
-of about 5,000 lines (20% smaller codebase)Performance drastically improved across the boardRobustness improved with retry logic, per-request timeouts, and adaptive rate limiting19 long-standing issues closedThe codebase shrank by a fifth while gaining provenance attestations, a pipeline
-engine, vulnerability scanning integration, parallelized operations, retry
-logic, integration tests against local registries, and a standalone signature
-replication mode.This was a hard requirement. The  command accepts the same flags and
-reads the same YAML manifests. The
-
-Prow job continued working throughout. The promotion manifests in
-kubernetes/k8s.io did not change. Nobody
-had to update their workflows or configuration.We caught two regressions early in production. One (#1731)
-caused a registry key mismatch that made every image appear as "lost" so that
-nothing was promoted. Another (#1733)
-set the default thread count to zero, blocking all goroutines. Both were fixed
-within hours. The phased release strategy (v4.2.0 with the new engine, v4.3.0
-with legacy code removed) gave us a clear rollback path that we fortunately
-never needed.Signature replication across all mirror registries remains the most expensive
-part of the promotion cycle. Issue #1762
-proposes eliminating it entirely by having
-archeio (the 
-redirect service) route signature tag requests to a single canonical upstream
-instead of per-region backends. Another option would be to move signing closer
-to the registry infrastructure itself. Both approaches need further discussion
-with the SIG Release and infrastructure teams, but either one would remove
-thousands of API calls per promotion cycle and simplify the codebase even
-further.This project has been a community effort spanning seven years. Thank you to
-Linus,
-Stephen,
-Adolfo,
-Carlos,
-Ben,
-Marko,
-Lauri,
-Tyler,
-Arnaud, and many others who contributed
-code, reviews, and planning over the years. The SIG Release and Release
-Engineering communities provided the context, the discussions, and the patience
-for a rewrite of infrastructure that every Kubernetes release depends on.]]></content:encoded></item><item><title>Call for Testing: Build Dir Layout v2</title><link>https://blog.rust-lang.org/2026/03/13/call-for-testing-build-dir-layout-v2/</link><author>Ed Page</author><category>dev</category><pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[We would welcome people to try and report issues with the nightly-only
-cargo -Zbuild-dir-new-layout.
-While the layout of the build dir
-is internal-only,
-many projects need to rely on the unspecified details due to missing features within Cargo.
-While we've performed a crater run,
-that won't cover everything and we need help identifying tools and process that rely on the details,
-reporting issues to these projects so they can update to the new layout or support them both.With at least nightly 2026-03-10,
-run your tests, release processes, and anything else that may touch build-dir/target-dir
-with the  flag.Note: if you see failures, the problem may not be isolated to just .
-With Cargo 1.91,
-users can separate where to store intermediate build artifacts (build-dir) and final artifacts (still in target-dir).
-You can verify this by running with only CARGO_BUILD_BUILD_DIR=build set.
-We are evaluating changing the default for build-dir in #16147.Build scripts looking up target-dir from their binary or : see Issue #13663Update current workarounds to support the new layoutLooking up user-requested artifacts from rustc, see Issue #13672Update current workarounds to support the new layoutLibrary support status as of publish time:Nesting of build artifacts under the profile and the target tuple, if specified.We are switching from organizing by content type to scoping the content by the package name and a hash of the build unit and its inputs.Here is an example of the current layout, assuming you have a package named  and a package named , and both have a build script:ranger-ross has worked tirelessly on this as a stepping stone to cross-workspace caching
-which will be easier when we can track each cacheable unit in a self-contained directory.This also unblocks work on:Along the way, we found this helps with:While the Cargo team does not officially endorse sharing a  across workspaces,
-that last item should reduce the chance of encountering problems for those who choose to.We will use the experience of this layout change to help guide how and when to perform any future layout changes, including:Efforts to reduce path lengths to reduce risks for errors for developers on WindowsExperimenting with moving artifacts out of the  and  directories, allowing sharing of more artifacts where possibleIn addition to narrowing scope,
-we did not do all of the layout changes now because some are blocked on the lock change which is blocked on this layout change.We would also like to work to decouple projects from the unspecified details of build-dir.]]></content:encoded></item><item><title>Announcing rustup 1.29.0</title><link>https://blog.rust-lang.org/2026/03/12/Rustup-1.29.0/</link><author>The Rustup Team</author><category>dev</category><pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The rustup team is happy to announce the release of rustup version 1.29.0.Rustup is the recommended tool to install Rust, a
-programming language that empowers everyone to build reliable and efficient
-software.
-What's new in rustup 1.29.0Following the footsteps of many package managers in the pursuit of better
-toolchain installation performance, the headline of this release is that rustup
-has been enabled to download components concurrently and  in operations such as  or  and to
-concurrently check for updates in , thanks to a GSoC 2025
-project.
-This is by no means a trivial change so a long
-tail of issues might occur, please report them if you have found any!Furthermore, rustup now officially supports the following host platforms:Also, rustup will start automatically inserting the right  entries
-during  for the following shells, in addition to those already
-supported:This release also comes with other quality-of-life improvements, to name a few:When running rust-analyzer via a proxy, rustup will consider the
- binary from  when the rustup-managed one is not found.This should be particularly useful if you would like to bring your own
- binary, e.g. if you use Neovim, Helix, etc. or are
-developing rust-analyzer itself.Empty environment variables are now treated as unset. This should help with
-resetting configuration values to default when an override is present. will use different exit codes based on whether new updates
-have been found: it will exit with  on any updates or  for no
-updates.Furthermore, @FranciscoTGouveia has joined the team. He has shown his talent,
-enthusiasm and commitment to the project since the first interactions with
-rustup and has played a significant role in bring more concurrency to it, so we
-are thrilled to have him on board and are actively looking forward to what we
-can achieve together.Further details are available in the changelog!If you have a previous version of rustup installed, getting the new one is as easy as stopping
-any programs which may be using rustup (e.g. closing your IDE) and running:Rustup will also automatically update itself at the end of a normal toolchain update:If you don't have it already, you can get rustup from the appropriate page on our website.Rustup releases can come with problems not caused by rustup itself but just due to having a new release.In particular, anti-malware scanners might block rustup or stop it from creating or copying
-files, especially when installing  which contains many small files.Issues like this should be automatically resolved in a few weeks when the anti-malware scanners are updated
-to be aware of the new rustup release.Thanks again to all the contributors who made this rustup release possible!]]></content:encoded></item><item><title>//go:fix inline and the source-level inliner</title><link>https://go.dev/blog/inliner</link><author>Alan Donovan</author><category>dev</category><pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[Go 1.26 contains an all-new implementation of the  subcommand,
-designed to help you keep your Go code up-to-date and modern. For an
-introduction, start by reading our recent post on the topic.
-In this post, we’ll look at one particular feature, the source-level
-inliner.While  has several bespoke modernizers for specific new
-language and library features,
-the source-level inliner is the first fruit of our efforts to provide
-“self-service” modernizers and analyzers.
-It enables any package author to express simple API migrations and
-updates in a straightforward and safe way.
-We’ll first explain what the source-level inliner is and how you can use it,
-then we’ll dive into some aspects of the problem and the technology behind it.In 2023, we built an algorithm for source-level inlining of function calls in Go. To “inline” a call means to replace the call by a copy of the body of the called function, substituting arguments for parameters. We call it “source-level” inlining because it durably modifies the source code. By contrast, the inlining algorithm found in a typical compiler, including Go’s, applies a similar transformation, but to the compiler’s ephemeral intermediate representation, to generate more efficient code.If you’ve ever invoked gopls’ “Inline call” interactive refactoring, you’ve used the source-level inliner. (In VS Code, this code action can be found on the “Source Action…” menu.) The before-and-after screenshots below show the effect of inlining the call to  from the function named .The inliner is a crucial building block for a number of source transformation tools. For example, gopls uses it for the “Change signature” and “Remove unused parameter” refactorings because, as we’ll see below, it takes care of many subtle correctness issues that arise when refactoring function calls.This same inliner is also one of the analyzers in the all-new  command.
-In , it enables self-service API migration and upgrades using a new  directive comment.
-Let’s take a look at a few examples of how this works and what it can be used for.Example: renaming In Go 1.16, the  function, which reads the content of a file, was deprecated in favor of the new  function. In effect, the function was renamed, though of course Go’s compatibility promise prevents us from ever removing the old name.package ioutil
-
-import "os"
-
-// ReadFile reads the file named by filename…
-// Deprecated: As of Go 1.16, this function simply calls [os.ReadFile].
-func ReadFile(filename string) ([]byte, error) {
-    return os.ReadFile(filename)
-}
-Ideally, we would like to change every Go program in the world to stop using  and to call  instead. The inliner can help us do that. First we annotate the old function with . This comment tells the tool that any time it sees a call to this function, it should inline the call.package ioutil
-
-import "os"
-
-// ReadFile reads the file named by filename…
-// Deprecated: As of Go 1.16, this function simply calls [os.ReadFile].
-//go:fix inline
-func ReadFile(filename string) ([]byte, error) {
-    return os.ReadFile(filename)
-}
-When we run  on a file containing a call to , it applies the replacement:$ go fix -diff ./...
--import "io/ioutil"
-+import "os"
-
--   data, err := ioutil.ReadFile("hello.txt")
-+   data, err := os.ReadFile("hello.txt")
-The call has been inlined, in effect replacing a call to one function by a call to another.Because the inliner replaces a function call by a copy of the body of
-the called function, not by some arbitrary expression, in principle
-the transformation should not change the program’s behavior
-(barring code that inspects the call stack, of course).
-This differs from other tools that allow for arbitrary rewrites,
-such as , which are very powerful but need to be watched closely.For many years now, our Google colleagues on the teams supporting
-Java, Kotlin, and C++ have been using source-level inliner tools like this.
-To date, these tools have eliminated millions of calls to deprecated
-functions in Google’s code base.
-Users simply add the directives, and wait.
-During the night, robots quietly prepare, test, and submit batches of
-code changes across a monorepo of billions of lines of code.
-If all goes well, by the morning the old code is no longer in use and can be
-safely deleted.
-Go’s inliner is a relative newcomer, but it has already been used to
-prepare more than 18,000 changelists to Google’s monorepo.Example: fixing API design flawsWith a little creativity, a variety of migrations can be expressed as inlinings.
-Consider this hypothetical  package:// Package oldmath is the bad old math package.
-package oldmath
-
-// Sub returns x - y.
-func Sub(y, x int) int
-
-// Inf returns positive infinity.
-func Inf() float64
-
-// Neg returns -x.
-func Neg(x int) int
-It has several design flaws: the  function declares its parameters in the wrong order; the  function implicitly prefers one of the two infinities; and the  function is redundant with . Fortunately we have a  package that avoids these mistakes, and we’d like to get users to switch to it. The first step is to implement the old API in terms of the new package and to deprecate the old functions. Then we add inliner directives:// Package oldmath is the bad old math package.
-package oldmath
-
-import "newmath"
-
-// Sub returns x - y.
-// Deprecated: the parameter order is confusing.
-//go:fix inline
-func Sub(y, x int) int {
-    return newmath.Sub(x, y)
-}
-
-// Inf returns positive infinity.
-// Deprecated: there are two infinite values; be explicit.
-//go:fix inline
-func Inf() float64 {
-    return newmath.Inf(+1)
-}
-
-// Neg returns -x.
-// Deprecated: this function is unnecessary.
-//go:fix inline
-func Neg(x int) int {
-    return newmath.Sub(0, x)
-}
-Now, when users of  run the  command on their code, it will replace all calls to the old functions by their new counterparts. By the way, gopls has included  in its analyzer suite for some time, so if your editor uses gopls, the moment you add the  directives you should start seeing a diagnostic at each call site, such as “call of  should be inlined”, along with a suggested fix that inlines that particular call.For example, this old code:import "oldmath"
-
-var nine = oldmath.Sub(1, 10) // diagnostic: "call to oldmath.Sub should be inlined"
-import "newmath"
-
-var nine = newmath.Sub(10, 1)
-Observe that after the fix, the arguments to  are in the logical order. This is progress! If you’re in luck, the inliner will succeed at removing every call to the functions in , perhaps allowing you to delete it as a dependency.The  analyzer works on types and constants too. If our  package had originally declared a data type for rational numbers and a constant for π, we could use the following forwarding declarations to migrate them to the  package while preserving the behavior of existing code:package oldmath
-
-//go:fix inline
-type Rational = newmath.Rational
-
-//go:fix inline
-const Pi = newmath.Pi
-Each time the  analyzer encounters a reference to  or , it will update them to refer instead to .Under the hood of the inlinerAt a glance, source inlining seems straightforward: just replace the
-call with the body of the callee function, introduce variables for the
-function parameters, and bind the call arguments to those variables.
-But handling all of the complexities and corner cases correctly
-while producing acceptable results is no small technical challenge:
-the inliner is about 7,000 lines of dense, compiler-like logic.
-Let’s look at six aspects of the problem that make it so tricky.One of the inliner’s most important tasks is to attempt to replace each occurrence of a parameter in the callee by its corresponding argument from the call. In the simplest case, the argument is a trivial literal such as  or , so the replacement is straightforward and the parameter can be eliminated.//go:fix inline
-func show(prefix, item string) {
-    fmt.Println(prefix, item)
-}
-For less trivial literals such as  or , the replacement is equally straightforward, so long as the parameter appears in the callee at most once. But if it appears multiple times, it would be bad style to sprinkle copies of these magic values throughout the code as it would obscure the relationship between them; a later change to only one of them might create an inconsistency.In such cases the inliner must tread carefully and emit a more conservative result. Whenever one or more parameters cannot be completely substituted for any reason, the inliner inserts an explicit “parameter binding” declaration://go:fix inline
-func printPair(before, x, y, after string) {
-    fmt.Println(before, x, after)
-    fmt.Println(before, y, after)
-}
-printPair("[", "one", "two", "]")
-// a “parameter binding” declaration
-var before, after = "[", "]"
-fmt.Println(before, "one", after)
-fmt.Println(before, "two", after)
-In Go, as in all imperative programming languages, calling a function may have the side effect of updating variables, which in turn may affect the behavior of other functions. Consider the call to  below:func add(x, y int) int { return y + x }
-
-z = add(f(), g())
-A trivial inlining of the call would replace  with  and  with , with this result:But this result is incorrect because evaluation of  now occurs before ; if the two functions have side effects, those effects will now be observed in a different order and may affect the result of the expression. Of course, it is bad form to write code that relies on effect ordering among call arguments, but that doesn’t mean people don’t do it, and our tools have to get it right.So, the inliner must attempt to prove that  and  do not have side effects on each other. On success, it can safely proceed with the result above. Otherwise, it must fall back to an explicit parameter binding:When considering side effects, it’s not only the argument expressions that matter. Also significant is the order in which parameters are evaluated relative to other code in the callee. Consider this call to ://go:fix inline
-func add2(x, y int) int {
-    return x + other() + y
-}
-
-add2(f(), g())
-This time, parameters  and  are used in the same order they are declared, so the substitution  won’t change the order of effects of  and —but it will change the order of any effects of  and . Furthermore, if the function body uses a parameter within a loop, substitution might change the cardinality of effects.The inliner uses a novel hazard analysis to model the order of effects in each callee function. Nonetheless, its ability to construct the necessary safety proofs is quite limited. For example, if the calls  and  are simple accessors, it would be perfectly safe to call them in either order. Indeed, an optimizing compiler might use its knowledge of the internals of  and  to safely reorder the two calls. But unlike a compiler, which generates object code that reflects the source at a specific moment, the purpose of the inliner is to make permanent changes to the source, so it can’t take advantage of ephemeral details. As an extreme example, consider this  function:func start() { /* TODO: implement */ }
-An optimizing compiler is free to delete each call to  because it has no effects today, but the inliner is not, because it may become important tomorrow.In short, the inliner may produce results that—to the informed eye of a project maintainer—are clearly too conservative. In such cases, the fixed code would benefit stylistically from a little manual cleanup.3. “Fallible” constant expressionsYou might imagine (as I once did) that it would always be safe to replace a parameter variable by a constant argument of the same type. Surprisingly, this turns out not to be the case, because some checks previously done at run time would now happen—and fail—at compile time. Consider this call to the  function://go:fix inline
-func index(s string, i int) byte {
-    return s[i]
-}
-
-index("", 0)
-A naive inliner might replace  with  and  with , resulting in , but this is not actually a legal Go expression because this particular index is out of bounds for this particular string. Because the expression  is composed of constants, it is evaluated at compile time, and a program that contains it will not even build. By contrast, the original program would fail only if execution reaches this call to , which presumably in a working program it does not.Consequently, the inliner must keep track of all expressions and their operands that might become constant during parameter substitution, triggering additional compile-time checks. It builds a constraint system and attempts to solve it. Each unsatisfied constraint is resolved by adding an explicit binding for the constrained parameters.Typical argument expressions contain one or more identifiers that refer to symbols (variables, functions, and so on) in the caller’s file. The inliner must make sure that each name in the argument expression would refer to the same symbol after parameter substitution; in other words, none of the caller’s names is  in the callee. If this fails, the inliner must again insert parameter bindings, as in this example://go:fix inline
-func f(val string) {
-    x := 123
-    fmt.Println(val, x)
-}
-x := "hello"
-{
-    // another “parameter binding” declaration
-    // to read the caller's x before shadowing it
-    var val string = x
-    x := 123
-    fmt.Println(val, x)
-}
-Conversely, the inliner must also check that each name in the  function body would refer to the same thing when it is spliced into the call site. In other words, none of the callee’s names is shadowed or missing in the caller. For missing names, the inliner may need to insert additional imports.When an argument expression has no effects and its corresponding parameter is never used, the expression may be eliminated. However, if the expression contains the last reference to a local variable at the caller, this may cause a compile error because the variable is now unused.//go:fix inline
-func f(_ int) { print("hello") }
-x := 42 // error: unused variable: x
-print("hello")
-So the inliner must account for references to local variables and avoid removing the last one. (Of course it is still possible that two different inliner fixes each remove the -to-last reference to a variable, so the two fixes are valid in isolation but not together; see the discussion of semantic conflicts in the previous post. Unfortunately manual cleanup is inevitably required in this case.)In some cases, it is simply impossible to inline away the call.
-Consider a call to a function that uses a  statement:
-if we were to eliminate the call, the deferred function would execute
-when the  function returns, which is too late.
-All we can safely do when the callee uses  is to
-put the body of the callee in a function literal and immediately call it.
-This function literal, , delimits the lifetime of the
- statement, as in this example://go:fix inline
-func callee() {
-    defer f()
-    …
-}
-func() {
-    defer f()
-    …
-}()
-If you invoke the inliner in gopls, you’ll see that it makes the change shown above and introduces the function literal. This result may be appropriate in an interactive setting, since you are likely to immediately tweak the code (or undo the fix) as you prefer, but it is rarely desirable in a batch tool, so as a matter of policy the analyzer in  refuses to inline such “literalized” calls.We’ve now seen half a dozen examples of how the inliner handles tricky semantic edge cases correctly.
-(Many thanks to Rob Findley, Jonathan Amsterdam, and Olena Synenka for insights, discussions, reviews, features, and fixes.)
-By putting all of the smarts into the inliner, users can simply apply an “Inline call” refactoring in their IDE or add a  directive to their own functions and be confident that the resulting code transformations can be applied with only the most cursory review.Although we have made good progress toward that goal, we have not yet fully attained it, and it is likely that we never will. Consider a compiler. A sound compiler produces correct output for any input and never miscompiles your code; this is the fundamental expectation that every user should have of their compiler. An  compiler produces code carefully chosen for speed without compromising on safety. Similarly, an inliner is a bit like an optimizing compiler whose goal is not speed but : inlining a call must never change the behavior of your program, and ideally it produces code that is maximally neat and tidy. Unfortunately, an optimizing compiler is provably never done: showing that two different programs are equivalent is an undecidable problem, and there will always be improvements that an expert knows are safe but the compiler cannot prove. So too with the inliner: there will always be cases where the inliner’s output is too fussy or otherwise stylistically inferior to that of a human expert, and there will always be more “tidiness optimizations” to add.We hope this tour of the inliner gives you a sense of some of the challenges involved, and of our priorities and directions in providing sound, self-service code transformation tools. Please try out the inliner, either interactively in your IDE, or through  directives and the  command, and share with us your experiences and any ideas you have for further improvements or new tools.]]></content:encoded></item><item><title>Python 3.15.0 alpha 7</title><link>https://blog.python.org/2026/03/python-3150-alpha-7/</link><author>Hugo van Kemenade</author><category>dev</category><pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[The penultimate 3.15 alpha is out!]]></content:encoded></item><item><title>Announcing the AI Gateway Working Group</title><link>https://kubernetes.io/blog/2026/03/09/announcing-ai-gateway-wg/</link><author></author><category>dev</category><pubDate>Mon, 9 Mar 2026 18:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[The community around Kubernetes includes a number of Special Interest Groups (SIGs) and Working Groups (WGs) facilitating discussions on important topics between interested contributors. Today, we're excited to announce the formation of the AI Gateway Working Group, a new initiative focused on developing standards and best practices for networking infrastructure that supports AI workloads in Kubernetes environments.In a Kubernetes context, an  refers to network gateway infrastructure (including proxy servers, load-balancers, etc.) that generally implements the Gateway API specification with enhanced capabilities for AI workloads. Rather than defining a distinct product category, AI Gateways describe infrastructure designed to enforce policy on AI traffic, including:Token-based rate limiting for AI APIs.Fine-grained access controls for inference APIs.Payload inspection enabling intelligent routing, caching, and guardrails.Support for AI-specific protocols and routing patterns.Working group charter and missionThe AI Gateway Working Group operates under a clear charter with the mission to develop proposals for Kubernetes Special Interest Groups (SIGs) and their sub-projects.
-Its primary goals include:: Create declarative APIs, standards, and guidance for AI workload networking in Kubernetes.: Foster discussions and build consensus around best practices for AI infrastructure.: Ensure composability, pluggability, and ordered processing for AI-specific gateway extensions.: Build on established networking foundations, layering AI-specific capabilities on top of proven standards.WG AI Gateway currently has several active proposals that address key challenges in
-AI workload networking:The payload processing proposal addresses the critical need for AI workloads to inspect and transform full HTTP request and response payloads.
-This enables:Guard against malicious prompts and prompt injection attacks.Content filtering for AI responses.Signature-based detection and anomaly detection for AI traffic.AI Inference OptimizationSemantic routing based on request content.Intelligent caching to reduce inference costs and improve response times.RAG (Retrieval-Augmented Generation) system integration for context enhancement.The proposal defines standards for declarative payload processor configuration, ordered processing pipelines, and configurable failure modes - all essential for production AI workload deployments.Modern AI applications increasingly depend on external inference services, whether for specialized models,
-failover scenarios, or cost optimization.
-The egress gateways proposal aims to define standards for securely routing traffic outside the cluster.
-Key features include:External AI Service IntegrationSecure access to cloud-based AI services (OpenAI, Vertex AI, Bedrock, etc.).Managed authentication and token injection for third-party AI APIs.Regional compliance and failover capabilities.Advanced Traffic ManagementBackend resource definitions for external FQDNs and services.TLS policy management and certificate authority control.Cross-cluster routing for centralized AI infrastructure.User Stories We're AddressingPlatform operators providing managed access to external AI services.Developers requiring inference failover across multiple cloud providers.Compliance engineers enforcing regional restrictions on AI traffic.Organizations centralizing AI workloads on dedicated clusters.KubeCon + CloudNativeCon Europe 2026, AmsterdamAI Gateway working group members will be presenting at KubeCon + CloudNativeCon Europe in Amsterdam, discussing the problems at the intersection of AI and networking, including the working group's active proposals, as well as the intersection of AI gateways with Model Context Protocol (MCP) and agent networking patterns.
-This session will showcase how AI Gateway working group proposals enable the infrastructure needed for next-generation AI deployments and communication patterns.
-The session will also include the initial designs, early prototypes, and emerging directions shaping the WG’s roadmap.
-For more details see our session here:The AI Gateway Working Group represents the Kubernetes community's commitment to standardizing AI workload networking. As AI becomes increasingly integral to modern applications, we need robust, standardized infrastructure that can support the unique requirements of inference workloads while maintaining the security, observability, and reliability standards that Kubernetes users expect.
-Our proposals are currently in active development, with implementations beginning across various gateway projects. We're working closely with SIG Network on Gateway API enhancements and collaborating with the broader cloud-native community to ensure our standards meet real-world production needs.Whether you're a gateway implementer, platform operator, AI application developer, or simply interested in the intersection of Kubernetes and AI, we'd love your input. The working group follows an open contribution model - you can review our proposals, join our weekly meetings, or start discussions on our GitHub repository.
-To learn more:The future of AI infrastructure in Kubernetes is being built today, join up and learn how you can contribute and help shape the future of AI-aware gateway capabilities in Kubernetes.]]></content:encoded></item><item><title>CPython: 36 Years of Source Code</title><link>https://blog.python.org/2026/03/cpython-codebase-growth/</link><author>Stan Ulbrych</author><category>dev</category><pubDate>Sun, 8 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[An analysis of the growth of CPython's codebase from its first commits to the present day]]></content:encoded></item><item><title>Announcing Rust 1.94.0</title><link>https://blog.rust-lang.org/2026/03/05/Rust-1.94.0/</link><author>The Rust Release Team</author><category>dev</category><pubDate>Thu, 5 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust team is happy to announce a new version of Rust, 1.94.0. Rust is a programming language empowering everyone to build reliable and efficient software.If you have a previous version of Rust installed via , you can get 1.94.0 with:If you'd like to help us out by testing future releases, you might consider updating locally to use the beta channel () or the nightly channel (). Please report any bugs you might come across!Rust 1.94 adds , an iterating method for slices. It works just like  but with a constant length, so the iterator items are  rather than dynamically-sized . In many cases, the window length may even be inferred by how the iterator is used!For example, part of one 2016 Advent of Code puzzle is looking for ABBA patterns: "two different characters followed by the reverse of that pair, such as  or ." If we assume only ASCII characters, that could be written by sweeping windows of the byte slice like this:The destructuring argument pattern in that closure lets the compiler infer that we want windows of 4 here. If we had used the older  iterator, then that argument would be a slice which we would have to index manually,  that runtime bounds-checking will be optimized away.Cargo now supports the  key in configuration files (), enabling better organization, sharing, and management of Cargo configurations across projects and environments. These include paths may also be marked  if they might not be present in some circumstances, e.g. depending on local developer choices.
-TOML 1.1 support in CargoInline tables across multiple lines and with trailing commas and  string escape charactersOptional seconds in times (sets to 0)For example, a dependency like this:... can now be written like this:Note that using these features in  will raise your development MSRV (minimum supported Rust version) to require this new Cargo parser, and third-party tools that read the manifest may also need to update their parsers. However, Cargo automatically rewrites manifests on publish to remain compatible with older parsers, so it is still possible to support an earlier MSRV for your crate's users.These previously stable APIs are now stable in const contexts:Many people came together to create Rust 1.94.0. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>The Python Insider Blog Has Moved!</title><link>https://blog.python.org/2026/03/the-python-insider-blog-has-moved/</link><author>Jacob Coffee</author><category>dev</category><pubDate>Tue, 3 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Python Insider now lives at blog.python.org, backed by a Git repository. All 307 posts from the Blogger era have been migrated, and old URLs redirect automatically.]]></content:encoded></item><item><title>Python 3.12.13, 3.11.15 and 3.10.20 are now available!</title><link>https://blog.python.org/2026/03/python-31213-31115-31020/</link><author>Thomas Wouters</author><category>dev</category><pubDate>Tue, 3 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[[Python Releases For Your Security!](https://discuss.python.org/t/python-3-12-13-3-11-15-and-3-10-20-are-now-available/106363) New security releases for 3.10, 3.11 and 3.12 are now available.]]></content:encoded></item></channel></rss>
+Here are some resources to help you work with Gateway API:]]></content:encoded></item><item><title>Running Agents on Kubernetes with Agent Sandbox</title><link>https://kubernetes.io/blog/2026/03/20/running-agents-on-kubernetes-with-agent-sandbox/</link><author></author><category>dev</category><pubDate>Fri, 20 Mar 2026 18:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[The landscape of artificial intelligence is undergoing a massive architectural shift. In the early days of generative AI, interacting with a model was often treated as a transient, stateless function call: a request that spun up, executed for perhaps 50 milliseconds, and terminated.Today, the world is witnessing AI v2 eating AI v1. The ecosystem is moving from short-lived, isolated tasks to deploying multiple, coordinated AI agents that run constantly. These autonomous agents need to maintain context, use external tools, write and execute code, and communicate with one another over extended periods.As platform engineering teams look for the right infrastructure to host these new AI workloads, one platform stands out as the natural choice: Kubernetes. However, mapping these unique agentic workloads to traditional Kubernetes primitives requires a new abstraction.This is where the new Agent Sandbox project (currently in development under SIG Apps) comes into play.The Kubernetes advantage (and the abstraction gap)Kubernetes is the de facto standard for orchestrating cloud-native applications precisely because it solves the challenges of extensibility, robust networking, and ecosystem maturity. However, as AI evolves from short-lived inference requests to long-running, autonomous agents, we are seeing the emergence of a new operational pattern.AI agents, by contrast, are typically isolated, stateful, singleton workloads. They act as a digital workspace or execution environment for an LLM. An agent needs a persistent identity and a secure scratchpad for writing and executing (often untrusted) code. Crucially, because these long-lived agents are expected to be mostly idle except for brief bursts of activity, they require a lifecycle that supports mechanisms like suspension and rapid resumption.While you could theoretically approximate this by stringing together a StatefulSet of size 1, a headless Service, and a PersistentVolumeClaim for every single agent, managing this at scale becomes an operational nightmare.Because of these unique properties, traditional Kubernetes primitives don't perfectly align.Introducing Kubernetes Agent SandboxTo bridge this gap, SIG Apps is developing agent-sandbox. The project introduces a declarative, standardized API specifically tailored for singleton, stateful workloads like AI agent runtimes.At its core, the project introduces the Sandbox CRD. It acts as a lightweight, single-container environment built entirely on Kubernetes primitives, offering:Strong isolation for untrusted code: When an AI agent generates and executes code autonomously, security is paramount. The Sandbox custom resource natively supports different runtimes, like gVisor or Kata Containers. This provides the necessary kernel and network isolation required for multi-tenant, untrusted execution.: Unlike traditional web servers optimized for steady, stateless traffic, an AI agent operates as a stateful workspace that may be idle for hours between tasks. Agent Sandbox supports scaling these idle environments to zero to save resources, while ensuring they can resume exactly where they left off.: Coordinated multi-agent systems require stable networking. Every Sandbox is given a stable hostname and network identity, allowing distinct agents to discover and communicate with each other seamlessly.Scaling agents with extensionsBecause the AI space is moving incredibly quickly, we built an Extensions API layer that enables even faster iteration and development.Starting a new pod adds about a second of overhead. That's perfectly fine when deploying a new version of a microservice, but when an agent is invoked after being idle, a one-second cold start breaks the continuity of the interaction. It forces the user or the orchestrating service to wait for the environment to provision before the model can even begin to think or act. SandboxWarmPool solves this by maintaining a pool of pre-provisioned Sandbox pods, effectively eliminating cold starts. Users or orchestration services can simply issue a SandboxClaim against a SandboxTemplate, and the controller immediately hands over a pre-warmed, fully isolated environment to the agent.Ready to try it yourself? You can install the Agent Sandbox core components and extensions directly into your learning or sandbox cluster, using your chosen release.We recommend you use the latest release as the project is moving fast.Once installed, you can try out the Python SDK for AI agents or deploy one of the ready-to-use examples to see how easy it is to spin up an isolated agent environment.The future of agents is cloud nativeWhether it’s a 50-millisecond stateless task, or a multi-week, mostly-idle collaborative process, extending Kubernetes with primitives designed specifically for isolated stateful singletons allows us to leverage all the robust benefits of the cloud-native ecosystem.The Agent Sandbox project is open source and community-driven. If you are building AI platforms, developing agentic frameworks, or are interested in Kubernetes extensibility, we invite you to get involved:]]></content:encoded></item><item><title>What we heard about Rust&apos;s challenges</title><link>https://blog.rust-lang.org/2026/03/20/rust-challenges/</link><author>Jack Huey</author><category>dev</category><pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The original version of this article has been retracted. I used an LLM to write the first draft, though this had come after many hours of  and going through the data and analyses to identify the points to be made, as well as me going through the post line by line, editing into my voice and verifying the wording and scope of the text was accurate. However, many people still felt like the LLM-speak bled through in ways that felt uncomfortable. Given this, I and other members of the Rust Project have decided to retract the post in its entirety.I stand by the content of the post. As I said, the LLM did not decide the points to be made - those were done well in advance of even beginning to write the blog post. And, admittedly, I  need to make edits to dampen the scope of them (in large part because I couldn't find specific quotes to substantiate them, even though I often "felt" that they were true given what I know as a Rust Project member), but in general I (and the Vision Doc team) defined the content, not an LLM.Many people thought that the blog post felt "empty", with no "real substance". While I see the point here, this is unfortunately just how the data played out and goal of this effort. The Vision Doc team conducted ~70 interviews (mostly 1:1), which were the basis for the conclusions in this blog post. This is  of data, it's hard to fully capture the essence of them in a single blog post. And yet, it is also  data to fully capture the nuance of differences across groups of different types. On top of this, it shouldn't be that unexpected the problems we heard about in these interviews are the same problems that we (and many others) mostly already knew existed. The insight these interviews give us is that they allow us to begin to capture for whom which issues are most prominent.The insights we identify and the conclusions we make are supported by the data we have gathered. When making these posts, the Vision Doc team has tried to stay as neutral as possible, doing our best to not exert bias by making any claims that cannot be supported  by the data itself. With drastically more time, I would have loved to pull in data from the ~5500 survey responses we got, which ultimately could help us make  claims or conclusions, but unfortunately that is time that I haven't had. That shouldn't diminish the substance of the insights and conclusions we  been able to make though.Wording matters though. And it's clear that to many people, the blog post as-written didn't meet the mark that they want. LLMs are a tool that many people use (including me, obviously) to varying degrees to help do things that they couldn't do before (either for lack of skill, lack of time, or lack of motivation). In this case, I used an LLM to compensate for the lack of time for me to dedicate to sifting through transcripts for the ~70 interviews we did, and the many analyses that followed, to find specific quotes and write an early draft. It certainly did not help that writing and editing of this post happened over the span of about 3 months - meaning that things that "worked" in early edits did not necessarily work in later edits.This all being said, I think that we as a Vision Doc team owe it to the Rust Project and the community to share (at least to some extent) what we have learned here. So, I have taken the original challenges identified by the team (without the recommendations or conclusions) and will provide a brief personal commentary on them. I've chosen to exclude any specific quotes - rather, just focus on the "high level" ideas. So, as a disclaimer, this will mean that the statements here will be much more biased than what we typically want to publish as part of the Vision Doc work.Across the ~70 interviews the Vision Doc team conducted, we heard  of complaints. Of course, we tried to keep these interviews pretty high-level, not focusing on any particular technical details. Rather, we wanted to get a general sense of what the difficulties were that people encountered, among the other topics discussed during these interviews. Here, we've identified a few common challenges to most people, and then a few challenges that are more domain-specific.
+Challenges that are universalWe heard a number of things that basically everyone said was an issue for them, in some capacity. Doing things to address these issues could have a universal impact, but that is not to say that these issues necessarily  people from using Rust.The universal challenges, you've definitely heard before. If you write Rust, you've probably encountered them. That's what makes them universal. However, the point is that we share the data that we gather, and the fact that we have learned that these challenges  affect everyone is data in itself: we have sampled different domains, different experience levels, and different backgrounds; and we have found that these challenges exist for everyone.Everybody knows that "compile times" are a thing that Rust is known for. This is an ever-moving target: the Rust Project tracks performance of the compiler on every merged change to track regressions, many people have attempted many times to make substantial progress here, and yet there is always more that we want to or could do.The good news, is that among our interviews, nobody really told us that compilation time  blocks them. We did hear things to the effect of "if we keep writing more and more Rust code, we may eventually get to a point that compile times are an issue", so that's not to say that we're "in the clear" but it is important to think about how this matters  with other challenges that people face.
+Borrow checking and ownershipAgain, another thing that Rust is known for. Borrow checking and ownership is a hard topic that basically every beginner struggles with. However, we found that "Rust experts" don't really complain about the borrow checker anymore: it  a challenge that goes away with experience. That's not to say we can't do better for beginners, but it's not clear exactly what that means.Certainly learning materials and compiler error messages help, and these are areas that we've tried in the past and today to sincerely provide the best experience. Despite that, the borrow checker remains a difficult part of the Rust language. We have ongoing efforts to improve the borrow checker, but it's likely that there are (for example) language features that may make this better. (Or worse!)We found previously that what makes Rust  is the balance that we put on reliability, efficiency, and versatility. And, we need to be careful when adjusting something as core as the borrow checker to maintain this balance.When conducting our interviews, async was consistently something that many people had issues with. Beginners often said that they basically completely ignore async while learning. People who  use async often said that the choice wasn't always clear, and that even though using async feels like the right choice , they still encounter issues.Fortunately, unlike performance and the borrow checker, we have a number of clear "next steps" for async (e.g. async fns in traits, async drop, async version of std traits) that will  to solve these issues and close the gap. Of course, for other things (like the coloring problem), we don't have good "solutions" just quite yet.We previously talked about how crates.io creates a wealth of resources for people to turn to, but people still run into issues. For one, when there  crates that do the thing people want, they need to know: which crates do the things they need, which crates can they trust, and which crates are just overall the "best" for them. Further, in some domains and industries, there  crates that do what people need; Rust support for some industries are still too immature.
+Challenges that are domain-specificThough more challenging given the limited diversity in the interviews we conducted, we still were able to find  domain-specific challenges: at least, we were able to hear about some challenges that seem to disproportionately effect some domains over others.For developers programming for embedded systems, we heard most often about the difficulties that fundamentally boil down to constrained resource management. For example, embedded developers are often unable to use the vast majority of the crate ecosystem, they often have trouble using the standard library, and the debugging experience is generally harder. Things that are "normal" for most Rust developers are oftentimes "special" for embedded developers.We made an entire post about shipping Rust in safety critical systems. The biggest issue for safety-critical developers with Rust is the lack of availability or maturity for tools to  their Rust code.The biggest issue heard from GUI developers is compilation time but is slightly different from the general case, because GUI development is so heavily dependent on the  changes - and so this is a slightly different workflow than just "check if the code compiles and passes tests".]]></content:encoded></item></channel></rss>
