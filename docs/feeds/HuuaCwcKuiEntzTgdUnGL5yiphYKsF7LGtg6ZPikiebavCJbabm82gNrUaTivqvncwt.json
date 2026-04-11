@@ -7,8 +7,22 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 12,
+  "itemCount": 11,
   "items": [
+    {
+      "title": "With the Empress Dowager of China, by Katharine A. Carl",
+      "url": "https://standardebooks.org/ebooks/katharine-a-carl/with-the-empress-dowager-of-china",
+      "date": 1775680691,
+      "author": "",
+      "guid": 58181,
+      "unread": true,
+      "content": "<article>A female painter becomes the court artist of the Empress Dowager of China.</article>",
+      "contentLength": 74,
+      "flags": null,
+      "enclosureUrl": "https://standardebooks.org/ebooks/katharine-a-carl/with-the-empress-dowager-of-china/downloads/katharine-a-carl_with-the-empress-dowager-of-china.epub?source=feed",
+      "enclosureMime": "",
+      "commentsUrl": null
+    },
     {
       "title": "A Bride of a Summer’s Day, by Catherine Louisa Pirkis",
       "url": "https://standardebooks.org/ebooks/catherine-louisa-pirkis/a-bride-of-a-summers-day",
@@ -146,34 +160,6 @@
       "contentLength": 70,
       "flags": null,
       "enclosureUrl": "https://standardebooks.org/ebooks/catherine-louisa-pirkis/the-experiences-of-loveday-brooke-lady-detective/downloads/catherine-louisa-pirkis_the-experiences-of-loveday-brooke-lady-detective.epub?source=feed",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "The Hoosier Schoolmaster, by Edward Eggleston",
-      "url": "https://standardebooks.org/ebooks/edward-eggleston/the-hoosier-schoolmaster",
-      "date": 1774028650,
-      "author": "",
-      "guid": 53274,
-      "unread": true,
-      "content": "<article>A young man takes on a difficult teaching assignment in rural Indiana.</article>",
-      "contentLength": 70,
-      "flags": null,
-      "enclosureUrl": "https://standardebooks.org/ebooks/edward-eggleston/the-hoosier-schoolmaster/downloads/edward-eggleston_the-hoosier-schoolmaster.epub?source=feed",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Short Fiction, by Akutagawa Ryūnosuke",
-      "url": "https://standardebooks.org/ebooks/akutagawa-ryunosuke/short-fiction/various-translators",
-      "date": 1773949813,
-      "author": "",
-      "guid": 53273,
-      "unread": true,
-      "content": "<article>A collection of short fiction by Akutagawa Ryūnosuke, ordered by date of publication.</article>",
-      "contentLength": 86,
-      "flags": null,
-      "enclosureUrl": "https://standardebooks.org/ebooks/akutagawa-ryunosuke/short-fiction/various-translators/downloads/akutagawa-ryunosuke_short-fiction_various-translators.epub?source=feed",
       "enclosureMime": "",
       "commentsUrl": null
     }
