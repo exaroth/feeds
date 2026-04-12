@@ -286,4 +286,4 @@ stable compiler.As programmers, we’ve become accustomed to features like recur
 definitions and sized array types such that we might overlook the nuance of
 their underlying complexity. While this post does skip over some finer details,
 hopefully we’ve conveyed a deeper understanding of (and perhaps appreciation
-for) the problems surrounding type checking in Go.]]></content:encoded></item><item><title>Python 3.15&apos;s JIT is now back on track</title><link>https://blog.python.org/2026/03/jit-on-track/</link><author>Ken Jin</author><category>dev</category><pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[A look at Python's JIT in 3.15a7.]]></content:encoded></item></channel></rss>
+for) the problems surrounding type checking in Go.]]></content:encoded></item></channel></rss>

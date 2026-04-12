@@ -7,7 +7,7 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 11,
+  "itemCount": 9,
   "items": [
     {
       "title": "With the Empress Dowager of China, by Katharine A. Carl",
@@ -132,34 +132,6 @@
       "contentLength": 108,
       "flags": null,
       "enclosureUrl": "https://standardebooks.org/ebooks/hilaire-belloc/the-cruise-of-the-nona/downloads/hilaire-belloc_the-cruise-of-the-nona.epub?source=feed",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Chance, by Joseph Conrad",
-      "url": "https://standardebooks.org/ebooks/joseph-conrad/chance",
-      "date": 1774235089,
-      "author": "",
-      "guid": 53688,
-      "unread": true,
-      "content": "<article>The daughter of a banker jailed for fraud spontanously decides to marry a sea captain after a brief encounter.</article>",
-      "contentLength": 110,
-      "flags": null,
-      "enclosureUrl": "https://standardebooks.org/ebooks/joseph-conrad/chance/downloads/joseph-conrad_chance.epub?source=feed",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "The Experiences of Loveday Brooke, Lady Detective, by Catherine Louisa Pirkis",
-      "url": "https://standardebooks.org/ebooks/catherine-louisa-pirkis/the-experiences-of-loveday-brooke-lady-detective",
-      "date": 1774233933,
-      "author": "",
-      "guid": 53674,
-      "unread": true,
-      "content": "<article>A female private investigator solves crimes in late-Victorian England.</article>",
-      "contentLength": 70,
-      "flags": null,
-      "enclosureUrl": "https://standardebooks.org/ebooks/catherine-louisa-pirkis/the-experiences-of-loveday-brooke-lady-detective/downloads/catherine-louisa-pirkis_the-experiences-of-loveday-brooke-lady-detective.epub?source=feed",
       "enclosureMime": "",
       "commentsUrl": null
     }

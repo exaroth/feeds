@@ -7,7 +7,7 @@
   "isQuery": true,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 36,
+  "itemCount": 35,
   "items": [
     {
       "title": "Steven Knight’s Closet Picks",
@@ -136,14 +136,14 @@
       "commentsUrl": null
     },
     {
-      "title": "Jamie Demetriou's Closet Picks",
+      "title": "Jamie Demetriou’s Closet Picks",
       "url": "https://www.youtube.com/watch?v=W5hLFhqn1FM",
       "date": 1775493539,
       "author": "CRITERION",
       "guid": 57524,
       "unread": true,
-      "content": "<article>The actor, comedian, and screenwriter shares why he thinks SECRETS &amp; LIES is Mike Leigh's “juiciest” work, praises the powerful simplicity of THE CELEBRATION, and selects contemporary films that have inspired him, like ANATOMY OF A FALL and THE WORST PERSON IN THE WORLD.</article>",
-      "contentLength": 275,
+      "content": "<article>The actor, comedian, and screenwriter shares why he thinks SECRETS &amp; LIES is Mike Leigh’s “juiciest” work, praises the powerful simplicity of THE CELEBRATION, and selects contemporary films that have inspired him, like ANATOMY OF A FALL and THE WORST PERSON IN THE WORLD.</article>",
+      "contentLength": 277,
       "flags": null,
       "enclosureUrl": "https://www.youtube.com/v/W5hLFhqn1FM?version=3",
       "enclosureMime": "",
@@ -496,20 +496,6 @@
       "contentLength": 1441,
       "flags": null,
       "enclosureUrl": "https://www.youtube.com/v/XoRm09Ynx2U?version=3",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Cary Elwes’s Closet Picks",
-      "url": "https://www.youtube.com/watch?v=mIugin2XpV4",
-      "date": 1774292646,
-      "author": "CRITERION",
-      "guid": 53876,
-      "unread": true,
-      "content": "<article>The actor and author talks about the life-changing experience of watching THE BATTLE OF ALGIERS, praises the dreamlike quality of Federico Fellini’s movies, and takes home all-time favorites like ALL THAT JAZZ and ODD MAN OUT.</article>",
-      "contentLength": 228,
-      "flags": null,
-      "enclosureUrl": "https://www.youtube.com/v/mIugin2XpV4?version=3",
       "enclosureMime": "",
       "commentsUrl": null
     }

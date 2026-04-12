@@ -11,7 +11,7 @@
       "tags": [
         "yt"
       ],
-      "num_items": 159
+      "num_items": 162
     },
     {
       "id": "31E7iA",
@@ -24,7 +24,7 @@
       "tags": [
         "news"
       ],
-      "num_items": 65
+      "num_items": 31
     },
     {
       "id": "ETKeSdT1Jvn",
@@ -37,7 +37,7 @@
       "tags": [
         "podcast"
       ],
-      "num_items": 58
+      "num_items": 44
     },
     {
       "id": "fZWkWx2e",
@@ -50,7 +50,7 @@
       "tags": [
         "movies"
       ],
-      "num_items": 36
+      "num_items": 35
     },
     {
       "id": "6W9",
@@ -63,7 +63,7 @@
       "tags": [
         "hn"
       ],
-      "num_items": 797
+      "num_items": 800
     },
     {
       "id": "3A81sm",
@@ -76,7 +76,7 @@
       "tags": [
         "tech"
       ],
-      "num_items": 1674
+      "num_items": 1671
     },
     {
       "id": "PyU9",
@@ -89,7 +89,7 @@
       "tags": [
         "dev"
       ],
-      "num_items": 8
+      "num_items": 7
     },
     {
       "id": "i2nisf4o",
@@ -102,7 +102,7 @@
       "tags": [
         "reddit"
       ],
-      "num_items": 1116
+      "num_items": 1112
     },
     {
       "id": "6C2W1azD1rBrwqWWL9kQ8NNS7mo2oXZeYHE6yGhvbbfLdTg1HWfEMAJ",
@@ -115,7 +115,7 @@
       "tags": [
         "ign"
       ],
-      "num_items": 47
+      "num_items": 46
     },
     {
       "id": "KWcVEiwEzuiDsTqLn6LojC9X2yBX45N36DRtYHsFby6oiM4t597YhKBSdxr5wqMdj8kvSgDuiUuV6yvogw",
@@ -126,18 +126,7 @@
       "hidden": false,
       "is_query": false,
       "tags": [],
-      "num_items": 101
-    },
-    {
-      "id": "Y2iXpRRkNSnx4gcGxbb6SwAw8J6WgRYKhY86enVhyDx91",
-      "title": "Terminal Trove Newly Added Tools",
-      "display_title": "Terminal Tools",
-      "url": "https://terminaltrove.com/new.xml",
-      "feedlink": "https://terminaltrove.com/",
-      "hidden": false,
-      "is_query": false,
-      "tags": [],
-      "num_items": 6
+      "num_items": 88
     },
     {
       "id": "HuuaCwcKuiEntzTgdUnGL5yiphYKsF7LGtg6ZPikiebavCJbabm82gNrUaTivqvncwt",
@@ -148,7 +137,7 @@
       "hidden": false,
       "is_query": false,
       "tags": [],
-      "num_items": 11
+      "num_items": 9
     }
   ]
 }
