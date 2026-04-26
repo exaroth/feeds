@@ -1,102 +1,466 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Rust for CPython Progress Update April 2026</title><link>https://blog.python.org/2026/04/rust-for-cpython-2026-04/</link><author>Emma Smith</author><category>dev</category><pubDate>Wed, 8 Apr 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Rust for CPython project status update April 2026]]></content:encoded></item><item><title>Python 3.15.0a8, 3.14.4 and 3.13.13 are out!</title><link>https://blog.python.org/2026/04/python-3150a8-3144-31313/</link><author>Hugo van Kemenade</author><category>dev</category><pubDate>Tue, 7 Apr 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[A final alpha and two bug fixes are awaiting your upgrade.]]></content:encoded></item><item><title>docs.rs: building fewer targets by default</title><link>https://blog.rust-lang.org/2026/04/04/docsrs-only-default-targets/</link><author>Denis Cornehl</author><category>dev</category><pubDate>Sat, 4 Apr 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[On , docs.rs will make a  change to its build
-behavior.Today, if a crate does not define a  list in its
-docs.rs metadata, docs.rs builds documentation for a default
-list of five targets.Starting on , docs.rs will instead build documentation for only
-the default target unless additional targets are requested explicitly.This is the next step in a change we first introduced in 2020, when docs.rs
-added support for opting into fewer build targets. Most crates do not compile
-different code for different targets, so building fewer targets by default is a
-better fit for most releases. It also reduces build times and saves resources on
-docs.rs.This change only affects:
-How is the default target chosen?If you do not set , docs.rs uses the target of its build
-servers: .
-How do I build documentation for additional targets?If your crate needs documentation to be built for more than the default target,
-define the full list explicitly in your :When  is set, docs.rs will build documentation for exactly those
-targets.docs.rs still supports any target available in the Rust toolchain. Only the
-default behavior is changing.]]></content:encoded></item><item><title>Changes to WebAssembly targets and handling undefined symbols</title><link>https://blog.rust-lang.org/2026/04/04/changes-to-webassembly-targets-and-handling-undefined-symbols/</link><author>Alex Crichton</author><category>dev</category><pubDate>Sat, 4 Apr 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[Rust's WebAssembly targets are soon going to experience a change which has a
-risk of breaking existing projects, and this post is intended to notify users of
-this upcoming change, explain what it is, and how to handle it. Specifically, all
-WebAssembly targets in Rust have been linked using the  flag
-to , and this flag is being removed.
-What is ?WebAssembly binaries in Rust today are all created by linking with .
-This serves a similar purpose to , , and , for example; it
-takes separately compiled crates/object files and creates one final binary.
-Since the first introduction of WebAssembly targets in Rust, the
- flag has been passed to . This flag is documented
-as:The term "undefined" here specifically means with respect to symbol resolution in  itself. Symbols used by  correspond relatively closely to what native platforms use, for example all Rust functions have a symbol associated with them. Symbols can be referred to in Rust through  blocks, for example:The symbol  is an undefined symbol. This is typically defined by
-a separate component of a program, such as an externally compiled C library,
-which will provide a definition for this symbol. By passing 
-to , however, it means that the above would generate a WebAssembly
-module like so:This means that the undefined symbol was ignored and ended up as an imported
-symbol in the final WebAssembly module that is produced.The precise history here is somewhat lost to time, but the current understanding
-is that  was effectively required in the very early days of
-introducing  to the Rust toolchain. This historical workaround stuck
-around till today and hasn't changed.
-What's wrong with ?By passing  on all WebAssembly targets, rustc is introducing
-diverging behavior between other platforms and WebAssembly. The main risk of
- is that misconfiguration or mistakes in building can
-result in broken WebAssembly modules being produced, as opposed to compilation
-errors. This means that the proverbial can is kicked down the road and lengthens
-the distance from where the problem is discovered to where it was introduced.
-Some example problematic situations are:If  was typo'd as  then the final binary would
-import the  symbol instead of calling the linked
- C symbol.If  was mistakenly not compiled and linked into a final
-application then the  symbol would end up imported rather than
-producing a linker error saying it's undefined.If external tooling is used to process a WebAssembly module, such as  or , these tools don't know what to do with  imports by default and they are likely to provide an error message of some form that isn't clearly connected back to the original source code and where the symbols was imported from.For web users if you've ever seen an error along the lines of Uncaught TypeError: Failed to resolve module specifier "env". Relative references must start with either "/", "./", or "../". this can mean that  leaked into the final module unexpectedly and the true error is the undefined symbol error, not the lack of  items provided.All native platforms consider undefined symbols to be an error by default, and
-thus by passing  rustc is introducing surprising behavior on
-WebAssembly targets. The goal of the change is to remove this surprise and
-behave more like native platforms.
-What is going to break, and how to fix?In theory, not a whole lot is expected to break from this change. If the final
-WebAssembly binary imports unexpected symbols, then it's likely that the binary
-won't be runnable in the desired embedding, as the desired embedding probably
-doesn't provide the symbol as a definition. For example, if you compile an
-application for  if the final binary imports 
-then it'll fail to run in most runtimes because it's considered an unresolved
-import. This means that most of the time this change won't break users, but
-it'll instead provide better diagnostics.The reason for this post, however, is that it's possible users could be
-intentionally relying on this behavior. For example your application might have:And then perhaps some JS code that looks like:Effectively it's possible for users to explicitly rely on the behavior of
- generating an import in the final WebAssembly binary.If users encounter this then the code can be fixed through a  attribute
-which explicitly specifies the  name:This will have the same behavior as before and will no longer be considered an
-undefined symbol to , and it'll work both before and after this change.Affected users can also compile with -Clink-arg=--allow-undefined as well to
-quickly restore the old behavior.
-When is this change being made?Removing  on wasm targets is being done in
-rust-lang/rust#149868. That change is slated to land in nightly soon, and will then get released with Rust 1.96 on 2026-05-28. If you see any issues as a
-result of this fallout please don't hesitate to file an issue on
-rust-lang/rust.]]></content:encoded></item><item><title>Kubernetes v1.36 Sneak Peek</title><link>https://kubernetes.io/blog/2026/03/30/kubernetes-v1-36-sneak-peek/</link><author></author><category>dev</category><pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[Kubernetes v1.36 is coming at the end of April 2026. This release will include removals and deprecations, and it is packed with an impressive number of
-enhancements. Here are some of the features we are most excited about in this cycle!Please note that this information reflects the current state of v1.36 development and may change before release.The Kubernetes API removal and deprecation processThe Kubernetes project has a well-documented deprecation policy for features. This policy states that stable APIs
-may only be deprecated when a newer, stable version of that same API is available and that APIs have a minimum lifetime for each stability level. A deprecated API
-has been marked for removal in a future Kubernetes release. It will continue to function until removal (at least one year from the deprecation), but usage will
-result in a warning being displayed. Removed APIs are no longer available in the current version, at which point you must migrate to using the replacement.Generally available (GA) or stable API versions may be marked as deprecated but must not be removed within a major version of Kubernetes.Beta or pre-release API versions must be supported for 3 releases after the deprecation.Alpha or experimental API versions may be removed in any release without prior deprecation notice; this process can become a withdrawal in cases where a different implementation for the same feature is already in place.Whether an API is removed as a result of a feature graduating from beta to stable, or because that API simply did not succeed, all removals comply with this
-deprecation policy. Whenever an API is removed, migration options are communicated in the deprecation guide.A recent example of this principle in action is the retirement of the ingress-nginx project, announced
-by SIG-Security on March 24, 2026. As stewardship shifts away from the project, the community has been
-encouraged to evaluate alternative ingress controllers that align with current security and maintenance
-best practices. This transition reflects the same lifecycle discipline that underpins Kubernetes itself,
-ensuring continued evolution without abrupt disruption.To prioritize the safety and security of the ecosystem, Kubernetes SIG Network and the Security Response Committee have retired Ingress NGINX on March 24, 2026.
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Kubernetes v1.36: Fine-Grained Kubelet API Authorization Graduates to GA</title><link>https://kubernetes.io/blog/2026/04/24/kubernetes-v1-36-fine-grained-kubelet-authorization-ga/</link><author></author><category>dev</category><pubDate>Fri, 24 Apr 2026 18:35:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[On behalf of Kubernetes SIG Auth and SIG Node, we are pleased to announce the
+graduation of fine-grained  API authorization to General Availability
+(GA) in Kubernetes v1.36!The  feature gate was introduced as an opt-in alpha
+feature in Kubernetes v1.32, then graduated to beta (enabled by default) in
+v1.33. Now, the feature is generally available and the feature gate is locked
+to enabled. This feature enables more precise, least-privilege access control
+over the 's HTTPS API, replacing the need to grant the overly broad
+ permission for common monitoring and observability use cases.Motivation: the  problemThe  exposes an HTTPS endpoint with several APIs that give access to data
+of varying sensitivity, including pod listings, node metrics, container logs,
+and, critically, the ability to execute commands inside running containers.Prior to this feature,  authorization used a coarse-grained model. When
+webhook authorization was enabled, almost all  API paths were mapped to a
+single  subresource. This meant that any workload needing to read
+metrics or health status from the  required  permission,
+the same permission that also grants the ability to execute arbitrary commands
+in any container running on the node.Granting  to monitoring agents, log collectors, or health-checking
+tools violates the principle of least privilege. If any of those workloads were
+compromised, an attacker would gain the ability to run commands in every
+container on the node. The  permission is effectively a node-level
+superuser capability, and granting it broadly dramatically increases the blast
+radius of a security incident.The  WebSocket RCE riskThe situation is more severe than it might appear at first glance. Security
+researchers demonstrated in early 2026
+that  alone, which is the minimal read-only permission routinely
+granted to monitoring tools, can be abused to execute commands in any pod on
+reachable nodes.The root cause is a mismatch between how WebSocket connections work and how the
+ maps HTTP methods to RBAC verbs. The
+WebSocket protocol (RFC 6455)
+requires an HTTP  request for the initial connection handshake. The 
+maps this  to the RBAC  verb and authorizes the request without
+performing a secondary check to confirm that  permission is also present
+for the write operation that follows. Using a WebSocket client like ,
+an attacker can reach the 's  endpoint directly on port 10250 and
+execute arbitrary commands:Fine-grained  authorization: how it worksWith , the  now performs an additional, more
+specific authorization check before falling back to the 
+subresource. Several commonly used  API paths are mapped to their own
+dedicated subresources:For the endpoints that now have fine-grained subresources (,
+, , ), the  first sends a
+ for the specific subresource. If that check succeeds, the
+request is authorized. If it fails, the  retries with the coarse-grained
+ subresource for backward compatibility.This dual-check approach ensures a smooth migration path. Existing workloads
+with  permissions continue to work, while new deployments can adopt
+least-privilege access from day one.What this means in practiceConsider a Prometheus node exporter or a monitoring  that needs to
+scrape  from the . Previously, you would need an RBAC
+ like this:This grants the monitoring agent far more access than it needs. With
+fine-grained authorization, you can now scope the permissions precisely:The monitoring agent can now read metrics and stats from the  without
+ever being able to execute commands in containers.Updated When RBAC authorization is enabled, the built-in  is automatically updated to include permissions for all the new
+fine-grained subresources. This ensures that cluster administrators who already
+use this role, including the API server's  client, continue to have
+full access without any manual configuration changes.The role now includes permissions for:Because the  performs a dual authorization check (fine-grained first,
+then falling back to ), upgrading to v1.36 should be seamless for
+most clusters: with  permissions continue to work without
+changes. The fallback to  ensures backward compatibility. always has  permissions via
+, so -to- communication is
+unaffected regardless of feature gate state. are handled gracefully. If a  supports
+fine-grained authorization but the API server does not (or vice versa),
+ permissions serve as the fallback.Verifying the feature is enabledYou can confirm that the feature is active on a given node by checking the
+ metrics endpoint. Since the metrics endpoint on port 10250 requires
+authorization, you'll first need to create appropriate RBAC bindings for the pod
+or  making the request.Step 1: Create a  and Step 2: Bind the  to the Step 3: Run a pod with the  and check the feature flagThen from within the pod, retrieve the node IP and query the metrics endpoint:If the feature is enabled, you should see output like:kubernetes_feature_enabled{name="KubeletFineGrainedAuthz",stage="GA"} 1
+ Replace  with the IP address of the node you want to check.
+You can retrieve node IPs with kubectl get nodes -o wide.The journey from alpha to GAFeature gate  introduced, disabled by defaultEnabled by default; fine-grained checks for , , , Feature gate locked to enabled; fine-grained  authorization is always activeWith fine-grained  authorization now GA, the Kubernetes community can
+begin recommending and eventually enforcing the use of specific subresources
+instead of  for monitoring and observability workloads. The urgency
+of this migration is underscored by
+research showing that  can be abused for unlogged remote code execution via the WebSocket protocol. This risk is present in the default RBAC
+configurations of dozens of widely deployed Helm charts. Over time, we expect: Monitoring tools like Prometheus, Datadog agents, and
+other  can update their default RBAC configurations to use
+, , and  instead of . This
+directly eliminates the WebSocket RCE attack surface for those workloads. Admission controllers and policy engines can flag or
+reject RBAC bindings that grant  when fine-grained alternatives
+exist, helping organizations adopt least-privilege access at scale. As adoption grows,  may eventually be
+deprecated for monitoring use cases, further reducing the attack surface of
+Kubernetes clusters.This enhancement was driven by SIG Auth and SIG Node. If you are interested in
+contributing to the security and authorization features of Kubernetes, please
+join us:We look forward to hearing your feedback and experiences with this feature!]]></content:encoded></item><item><title>Kubernetes v1.36: User Namespaces in Kubernetes are finally GA</title><link>https://kubernetes.io/blog/2026/04/23/kubernetes-v1-36-userns-ga/</link><author></author><category>dev</category><pubDate>Thu, 23 Apr 2026 18:35:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[After several years of development, User Namespaces support in
+Kubernetes reached General Availability (GA) with the v1.36 release.
+This is a Linux-only feature.For those of us working on low level container runtimes and rootless
+technologies, this has been a long awaited milestone. We finally
+reached the point where "rootless" security isolation can be used for
+Kubernetes workloads.This feature also enables a critical pattern: running workloads with
+privileges and still being confined in the user namespace. When
+ is set, capabilities like  become
+, meaning they grant administrative power over container
+local resources without affecting the host. This effectively enables
+new use cases that were not possible before without running a fully
+privileged container.A process running as root inside a container is also seen from the
+kernel as root on the host. If an attacker manages to break out of
+the container, whether through a kernel vulnerability or a
+misconfigured mount, they are root on the host.While there are many security measures in place for running
+containers, these measures don't change the underlying identity of the
+process, it still has some "parts" of root.The engine: ID-mapped mountsThe road to GA wasn't just about the Kubernetes API; it was about
+making the kernel work for us. In the early stages, one of the
+biggest blockers was volume ownership. If you mapped a container to a
+high UID range, the Kubelet had to recursively  every file in
+the attached volume so the container could read/write them. For large
+volumes, this was such an expensive operation that destroyed startup
+performance.The key enabler was  (introduced in Linux
+5.12 and refined in later versions). Instead of rewriting file
+ownership on disk, the kernel remaps it at mount time.When a volume is mounted into a Pod with User Namespaces enabled, the
+kernel performs a transparent translation of the UIDs (user ids) and
+GIDs (group ids). To the container, the files appear owned by
+UID 0. On disk, file ownership is unchanged — no  is needed.
+This is an  operation, instant and efficient.Using it in Kubernetes v1.36Using user namespaces is straightforward: all you need to do is set
+ in your Pod spec. No changes to your container
+images, no complex configuration. The interface remains the same one
+introduced during the Alpha phase. In the  for a Pod (or PodTemplate), you explicitly
+opt-out of the host user namespace:If you're interested in user namespaces or want to contribute, here
+are some useful links:This feature has been years in the making: the first KEP was opened
+10 years ago by other contributors, and we have been actively working
+on it for the last 6 years. We'd like to thank everyone who
+contributed across SIG Node, the container runtimes, and the Linux
+kernel. Special thanks to the reviewers and early adopters who helped
+shape the design through multiple alpha and beta cycles.]]></content:encoded></item><item><title>SELinux Volume Label Changes goes GA (and likely implications in v1.37)</title><link>https://kubernetes.io/blog/2026/04/22/breaking-changes-in-selinux-volume-labeling/</link><author></author><category>dev</category><pubDate>Wed, 22 Apr 2026 18:35:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[If you run Kubernetes on Linux with SELinux in enforcing mode, plan ahead: a future release (anticipated to be v1.37) is
+expected to turn the feature gate on by default. This makes volume setup faster
+for most workloads, but it can break applications that still depend on the older recursive relabeling
+model in subtle ways (for example, sharing one volume between privileged and unprivileged Pods on the same node).
+Kubernetes v1.36 is the right release to audit your cluster and fix or opt out of this change.If your nodes do not use SELinux, nothing changes for you: the kubelet skips the whole
+SELinux logic when SELinux is unavailable or disabled in the Linux kernel. You can skip this article completely.This blog builds on the earlier work described in the
+Kubernetes 1.27: Efficient SELinux Relabeling (Beta)
+post, where the SELinuxMountReadWriteOncePod feature gate was described. The problem to be addressed remains
+the same, however, this blog extends that same approach to all volumes.Linux systems with Security Enhanced Linux (SELinux) enabled use labels attached to objects
+(for example, files and network sockets) to make access control decisions.
+Historically, the container runtime applies SELinux labels to a Pod and all its volumes. Kubernetes only passes the SELinux label from a Pod's  fields
+to the container runtime.The container runtime then recursively changes the SELinux label on all files that
+are visible to the Pod's containers. This can be time-consuming if there are
+many files on the volume, especially when the volume is on a remote filesystem.If a container uses  of a volume, only that  of the whole
+volume is relabeled. This allows two Pods that have two different SELinux labels
+to use the same volume, as long as they use different subpaths of it.If a Pod does not have any SELinux label assigned in the Kubernetes API, the
+container runtime assigns a unique random label, so a process that potentially
+escapes the container boundary cannot access data of any other container on the
+host. The container runtime still recursively relabels all Pod volumes with this
+random SELinux label.What Kubernetes is improvingWhere the stack supports it, the kubelet can mount the volume with  so the kernel
+applies the correct label for all inodes on that mount without a recursive inode traversal. That path is
+gated by feature flags and requires, among other things, that the Pod expose enough of an SELinux
+label (for example spec.securityContext.seLinuxOptions.level) and that the volume driver opts in (for CSI,
+CSIDriver field ).The project rolled this out in phases:ReadWriteOncePod volumes were handled under the SELinuxMountReadWriteOncePod feature gate, on by default since v1.28 and GA in v1.36.Broader coverage was handled under the  flag, paired with the spec.securityContext.seLinuxChangePolicy field on Pods.If a Pod and its volume meet  of the following conditions, Kubernetes will
+mount the volume directly with the right SELinux label. Such a mount will happen
+in a constant time and the container runtime will not need to recursively
+relabel any files on it. For such a mount to happen:The operating system must support SELinux. Without SELinux support detected, the kubelet and the container runtime do not
+do anything with regard to SELinux.The feature gateSELinuxMountReadWriteOncePod must be enabled.
+If you're running Kubernetes v1.36, the feature is enabled unconditionally.The Pod must use a PersistentVolumeClaim with applicable :Either the volume has accessModes: ["ReadWriteOncePod"]or the volume can use any other access mode(s), provided that the feature gates
+ and  are both enabled
+ the Pod has spec.securityContext.seLinuxChangePolicy set to nil (default) or as .The feature gate  is Beta and disabled by default in Kubernetes 1.36.
+All other SELinux-related feature gates are now General Availability (GA).With any of these feature gates disabled, SELinux labels will always be
+applied by the container runtime via recursively traversing through the volume
+(or its subPaths).The Pod must have at least  assigned in its
+security context
+or all containers in that Pod must have it set in their container-level security contexts.
+Kubernetes will read the default ,  and  from the operating
+system defaults (typically ,  and ).Without Kubernetes knowing at least the SELinux , the container
+runtime will assign a random level after the volumes are mounted. The
+container runtime will still relabel the volumes recursively in that case.The volume plugin or the CSI driver responsible for the volume supports
+mounting with SELinux mount options.These in-tree volume plugins support mounting with SELinux mount options:
+ and .CSI drivers that support mounting with SELinux mount options must declare this capability in their
+CSIDriver
+instance by setting the  field.Volumes managed by other volume plugins or CSI drivers that do not
+set  will be recursively relabeled by the container
+runtime.The  feature gate changes what volumes can be shared among multiple Pods in a subtle way.Both of these cases work with recursive relabeling:Two Pods with different SELinux labels share the same volume, but each of them uses a different  to the volume.A privileged Pod and an unprivileged Pod share the same volume.The above scenarios will not work with modern, target behavior for Kubernetes mounting when SELinux is active. Instead, one of these Pods will be stuck in  until the other Pod is terminated.The first case is very niche and hasn't been seen in practice.
+Although the second case is still quite rare, this setup has been observed in applications.
+Kubernetes v1.36 offers metrics and events to identify these Pods and allows cluster administrators to opt out of the
+mount option through the Pod field spec.securityContext.seLinuxChangePolicy.The new Pod field spec.securityContext.seLinuxChangePolicy specifies how the SELinux label is applied to all Pod volumes.
+In Kubernetes v1.36, this field is part of the stable Pod API.There are three choices available:In Kubernetes v1.36, the behavior depends on whether the  feature gate is enabled. By default that feature gate is not enabled, and the SELinux label is applied recursively. If you enable that feature gate in your cluster, and all other conditions are met, labelling will be applied using the mount option.the SELinux label is applied recursively. This opts out from using the mount option.the SELinux label is applied using the mount option, if all other conditions are met.
+This choice is available only when the  feature gate is enabled.SELinux warning controller (optional)Kubernetes v1.36 provides a new controller within the control plane, selinux-warning-controller.
+This controller runs within the kube-controller-manager controller.
+To use it, you pass --controllers=*,selinux-warning-controller on the kube-controller-manager command line;
+you also must not have explicitly overridden the  feature gate to be disabled.The controller watches all Pods in the cluster and emits an Event when it finds two Pods that share the same
+volume in a way that is not compatible with the  feature gate.
+All such conflicting Pods will receive an event, such as:The actual Pod name may be censored when the conflicting Pods run in different namespaces to prevent leaking information across namespace boundaries.The controller reports such an event even when these Pods don't run on the same node, to make sure all Pods work
+regardless of the Kubernetes scheduler decision. They could run on the same node next time.In addition, the controller emits the metric selinux_warning_controller_selinux_volume_conflict that lists all current conflicts among Pods.
+The metric has labels that identify the conflicting Pods and their SELinux labels, such as:selinux_warning_controller_selinux_volume_conflict{pod1_name="my-other-pod",pod1_namespace="default",pod1_value="system_u:object_r:container_file_t:s0:c0,c1",pod2_name="my-pod",pod2_namespace="default",pod2_value="system_u:object_r:container_file_t:s0:c0,c2",property="SELinuxLabel"} 1
+There is a security consequence from enabling this opt-in controller: it may reveal namespace names, which are always present in the metric.
+The Kubernetes project assumes only cluster administrators can access kube-controller-manager metrics.To ensure a smooth upgrade path from v1.36 to a release with  enabled (anticipated to be v1.37), we suggest you follow these steps:Enable selinux-warning-controller in the kube-controller-manager.Check the selinux_warning_controller_selinux_volume_conflict metric. It shows all  conflicts between Pods.
+For each conflicting Pod (Deployment, StatefulSet, etc.), either apply the opt-out (set Pod's spec.securityContext.seLinuxChangePolicy: Recursive)
+or re-architect the application to remove such a conflict. For example, do your Pods really need to run as privileged?Check the volume_manager_selinux_volume_context_mismatch_warnings_total metric. This metric is emitted by the kubelet when it actually
+starts a Pod that runs when  is disabled, but such a Pod won't start when  is enabled.
+This metric lists the number of Pods that will experience a true conflict. Unfortunately, this metric does not expose the exact Pod name as a label.
+The full Pod name is available only in the selinux_warning_controller_selinux_volume_conflict metric.Once both metrics have been accounted for, upgrade to a Kubernetes version that has  enabled.When  is enabled, the kubelet will emit the metric volume_manager_selinux_volume_context_mismatch_errors_total with the number of
+Pods that could not start because their SELinux label conflicts with an existing Pod that uses the same volume.
+The exact Pod names should still be available in the selinux_warning_controller_selinux_volume_conflict metric,
+if the selinux-warning-controller is enabled.If you run into issues, have feedback, or want to contribute, find us
+on the Kubernetes Slack in  and  or join a
+SIG Node or SIG Storage meetings.]]></content:encoded></item><item><title>Kubernetes v1.36: ハル (Haru)</title><link>https://kubernetes.io/blog/2026/04/22/kubernetes-v1-36-release/</link><author></author><category>dev</category><pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[ Chad M. Crowell, Kirti Goyal, Sophia Ugochukwu, Swathi Rao, Utkarsh UmreSimilar to previous releases, the release of Kubernetes v1.36 introduces new stable, beta, and alpha features. The consistent delivery of high-quality releases underscores the strength of our development cycle and the vibrant support from our community.This release consists of 70 enhancements. Of those enhancements, 18 have graduated to Stable, 25 are entering Beta, and 25 have graduated to Alpha.We open 2026 with Kubernetes v1.36, a release that arrives as the season turns and the light shifts on the mountain. ハル () is a sound in Japanese that carries many meanings; among those we hold closest are 春 (spring), 晴れ (, clear skies), and 遥か (, far-off, distant). A season, a sky, and a horizon. You will find all three in what follows.The logo, created by avocadoneko / Natsuho Ide, draws inspiration from Katsushika Hokusai's Thirty-six Views of Mount Fuji (富嶽三十六景, ), the same series that gave the world The Great Wave off Kanagawa. Our v1.36 logo reimagines one of the series' most celebrated prints,  (凱風快晴, ), also known as Red Fuji (赤富士, ): the mountain lit red in a summer dawn, bare of snow after the long thaw. Thirty-six views felt like a fitting number to sit with at v1.36, and a reminder that even Hokusai didn't stop there. Keeping watch over the scene is the Kubernetes helm, set into the sky alongside the mountain.At the foot of Fuji sit Stella (left) and Nacho (right), two cats with the Kubernetes helm on their collars, standing in for the role of , the paired lion-dog guardians that watch over Japanese shrines. Paired, because nothing is guarded alone. Stella and Nacho stand in for a very much larger set of paws: the SIGs and working groups, the maintainers and reviewers, the people behind docs, blogs, and translations, the release team, first-time contributors taking their first steps, and lifelong contributors returning season after season. Kubernetes v1.36 is, as always, held up by many hands.Brushed across Red Fuji in the logo is the calligraphy 晴れに翔け (), "soar into clear skies". It is the first half of a couplet that was too long to fit on the mountain:
+"Soar into clear skies; toward tomorrow's sunrise."That is the wish we carry for this release: to soar into clear skies, for the release itself, for the project, and for everyone who ships it together. The dawn breaking over Red Fuji is not an ending but a passage: this release carries us to the next, and that one to the one after, on toward horizons far beyond what any single view can hold.1. The series was so popular that Hokusai added ten more prints, bringing the total to forty-six.2. 未来 means "the future" in its widest sense, not just tomorrow but everything still to come. It is usually read ; here it takes the informal reading .Kubernetes v1.36 is packed with new features and improvements. Here are a
+few select updates the Release Team would like to highlight!Stable: Fine-grained API authorizationOn behalf of Kubernetes SIG Auth and SIG Node, we are pleased to announce the
+graduation of fine-grained  API authorization to General Availability
+(GA) in Kubernetes v1.36!The  feature gate was introduced as an opt-in alpha feature
+in Kubernetes v1.32, then graduated to beta (enabled by default) in v1.33.
+Now, the feature is generally available.
+This feature enables more precise, least-privilege access control over the kubelet's
+HTTPS API replacing the need to grant the overly broad nodes/proxy permission for
+common monitoring and observability use cases.​​This work was done as a part of KEP #2862 led by SIG Auth and SIG Node.Beta: Resource health statusBefore the v1.34 release, Kubernetes lacked a native way to report the health of allocated devices,
+making it difficult to diagnose Pod crashes caused by hardware failures.
+Building on the initial alpha release in v1.31 which focused on Device Plugins,
+Kubernetes v1.36 expands this feature by promoting the 
+field within the  for each Pod (to beta). This field provides a unified health
+reporting mechanism for all specialized hardware.Users can now run  to determine if a container's crash loop is
+due to an  or  device status, regardless of whether the hardware was
+provisioned via traditional plugins or the newer DRA framework.
+This enhanced visibility allows administrators and automated controllers to
+quickly identify faulty hardware and streamline the recovery of high-performance workloads.This work was done as part of KEP #4680 led by SIG Node.Alpha: Workload Aware Scheduling (WAS) featuresPreviously, the Kubernetes scheduler and job controllers managed pods as independent units,
+often leading to fragmented scheduling or resource waste for complex, distributed workloads.
+Kubernetes v1.36 introduces a comprehensive suite of Workload Aware Scheduling (WAS) features in Alpha,
+natively integrating the Job controller with a revised Workload
+API and a new decoupled PodGroup API,
+to treat related pods as a single logical entity.Kubernetes v1.35 already supported gang scheduling by requiring
+a minimum number of pods to be schedulable before any were bound to nodes.
+v1.36 goes further with a new PodGroup scheduling cycle that evaluates the entire group atomically,
+either all pods in the group are bound together, or none are.Features graduating to StableThis is a selection of some of the improvements that are now stable following the v1.36 release.After several cycles in beta, VolumeGroupSnapshot support reaches General Availability (GA) in Kubernetes v1.36.
+This feature allows you to take crash-consistent snapshots across multiple PersistentVolumeClaims simultaneously.
+The support for volume group snapshots relies on a set of extension APIs for group snapshots.
+These APIs allow users to take crash consistent snapshots for a set of volumes.
+A key aim is to allow you to restore that set of snapshots to new volumes and recover your workload based on
+a crash consistent recovery point.This work was done as part of KEP #3476 led by SIG Storage.Mutable volume attach limitsIn Kubernetes v1.36, the mutable  allocatable feature graduates to stable.
+This enhancement allows Container Storage Interface (CSI) drivers to
+dynamically update the reported maximum number of volumes that a node can handle.With this update, the  can dynamically update a node's volume limits and capacity information.
+The  adjusts these limits based on periodic checks or in response to
+resource exhaustion errors from the CSI driver, without requiring a component restart.
+This ensures the Kubernetes scheduler maintains an accurate view of storage availability,
+preventing pod scheduling failures caused by outdated volume limits.This work was done as part of KEP #4876 led by SIG Storage.API for external signing of ServiceAccount tokensIn Kubernetes v1.36, the external ServiceAccount token signer feature for service accounts graduates to stable,
+making it possible to offload token signing to an external system while still integrating cleanly with the Kubernetes API.
+Clusters can now rely on an external JWT signer for issuing projected service account tokens that
+follow the standard service account token format, including support for extended expiration when needed.
+This is especially useful for clusters that already rely on external identity or key management systems,
+allowing Kubernetes to integrate without duplicating key management inside the control plane.The kube-apiserver is wired to discover public keys from the external signer,
+cache them, and validate tokens it did not sign itself,
+so existing authentication and authorization flows continue to work as expected.
+Over the alpha and beta phases, the API and configuration for the external signer plugin,
+path validation, and OIDC discovery were hardened to handle real-world deployments and rotation patterns safely.With GA in v1.36, external ServiceAccount token signing is now a fully supported option for platforms that
+centralize identity and signing, simplifying integration with external IAM systems and
+reducing the need to manage signing keys directly inside the control plane.This work was done as part of KEP #740 led by SIG Auth.DRA features graduating to StablePart of the Dynamic Resource Allocation (DRA) ecosystem reaches full production maturity in
+Kubernetes v1.36 as key governance and selection features graduate to Stable.
+The transition of  to GA provides a permanent, secure framework for cluster administrators
+to access and manage hardware resources globally, while the stabilization of  ensures that
+resource selection logic remains consistent and predictable across all cluster environments.Now, organizations can confidently deploy mission-critical hardware automation with the guarantee
+of long-term API stability and backward compatibility. These features empower users to implement
+sophisticated resource-sharing policies and administrative overrides that are essential for
+large-scale GPU clusters and multi-tenant AI platforms, marking the completion of the
+core architectural foundation for next-generation resource management.This work was done as part of KEPs #5018 and #4816 led by SIG Auth and SIG Scheduling.Mutating admission policiesDeclarative cluster management reaches a new level of sophistication in Kubernetes v1.36 with the
+graduation of MutatingAdmissionPolicies to Stable. This milestone provides a native,
+high-performance alternative to traditional webhooks by allowing administrators to
+define resource mutations directly in the API server using the Common Expression Language (CEL),
+fully replacing the need for external infrastructure for many common use cases.Now, cluster operators can modify incoming requests without the latency and operational
+complexity associated with managing custom admission webhooks.
+By moving mutation logic into a declarative, versioned policy, organizations can achieve
+more predictable cluster behavior, reduced network overhead,
+and a hardened security model with the full guarantee of long-term API stability.This work was done as part of KEP #3962 led by SIG API Machinery.Declarative validation of Kubernetes native types with The development of custom resources reaches a new level of efficiency in Kubernetes v1.36
+as  (with ) graduates to Stable.
+This milestone replaces the manual and often error-prone task of writing complex
+OpenAPI schemas by allowing developers to define sophisticated validation logic directly
+within Go struct tags using the Common Expression Language (CEL).Instead of writing custom validation functions, Kubernetes contributors can now define validation
+rules using IDL marker comments (such as  or ) directly
+within the API type definitions (). The  tool parses these
+comments to automatically generate robust API validation code at compile-time.
+This reduces maintenance overhead and ensures that API validation
+remains consistent and synchronized with the source code.This work was done as part of KEP #5073 led by SIG API Machinery.Removal of gogo protobuf dependency for Kubernetes API typesSecurity and long-term maintainability for the Kubernetes codebase take a major step forward
+in Kubernetes v1.36 with the completion of the  removal.
+This initiative has eliminated a significant dependency on the unmaintained  library,
+which had become a source of potential security vulnerabilities and
+a blocker for adopting modern Go language features.Instead of migrating to standard Protobuf generation, which presented compatibility risks
+for Kubernetes API types, the project opted to fork and internalize the required
+generation logic within . This approach successfully eliminates
+the unmaintained runtime dependencies from the Kubernetes dependency graph
+while preserving existing API behavior and serialization compatibility.
+For consumers of Kubernetes API Go types, this change reduces technical debt and
+prevents accidental misuse with standard protobuf libraries.This work was done as part of KEP #5589 led by SIG API Machinery.Previously, Kubernetes required cluster administrators to log into nodes via SSH or implement a
+client-side reader for debugging issues pertaining to control-plane or worker nodes.
+While certain issues still require direct node access, issues with the kube-proxy or kubelet
+can be diagnosed by inspecting their logs. Node logs offer cluster administrators
+a method to view these logs using the kubelet API and kubectl plugin
+to simplify troubleshooting without logging into nodes, similar to debugging issues
+related to a pod or container. This method is operating system agnostic and
+requires the services or nodes to log to .As this feature reaches GA in Kubernetes 1.36 after thorough performance validation on production workloads,
+it is enabled by default on the kubelet through the  feature gate.
+In addition, the  kubelet configuration option must also be enabled.This work was done as a part of KEP #2258 led by SIG Windows.Support User Namespaces in podsContainer isolation and node security reach a major maturity milestone in Kubernetes v1.36 as
+support for User Namespaces graduates to Stable.
+This long-awaited feature provides a critical layer of defense-in-depth by allowing the
+mapping of a container's root user to a non-privileged user on the host,
+ensuring that even if a process escapes the container,
+it possesses no administrative power over the underlying node.Now, cluster operators can confidently enable this hardened isolation for production
+workloads to mitigate the impact of container breakout vulnerabilities.
+By decoupling the container's internal identity from the host's identity,
+Kubernetes provides a robust, standardized mechanism to protect multi-tenant
+environments and sensitive infrastructure from unauthorized access,
+all with the full guarantee of long-term API stability.This work was done as part of KEP #127 led by SIG Node.Support PSI based on cgroupv2Node resource management and observability become more precise in Kubernetes v1.36
+as the export of Pressure Stall Information (PSI) metrics graduates to Stable.
+This feature provides the kubelet with the ability to report "pressure" metrics for CPU,
+memory, and I/O, offering a more granular view of resource contention than
+traditional utilization metrics.Cluster operators and autoscalers can use these metrics to distinguish between a system that is
+simply busy and one that is actively stalling due to resource exhaustion.
+By leveraging these signals, users can more accurately tune pod resource requests,
+improve the reliability of vertical autoscaling, and detect noisy neighbor
+effects before they lead to application performance degradation or node instability.This work was done as part of KEP #4205 led by SIG Node.Volume source: OCI artifact and/or imageThe distribution of container data becomes more flexible in Kubernetes v1.36 as  support graduates to Stable.
+This feature moves beyond the traditional requirement of mounting volumes from external storage providers
+or config maps by allowing the kubelet to pull and mount content directly from any OCI-compliant registry,
+such as a container image or an artifact repository.Now, developers and platform engineers can package application data, models, or static assets as OCI artifacts
+and deliver them to pods using the same registries and versioning workflows they already use for container images.
+This convergence of image and volume management simplifies CI/CD pipelines,
+reduces dependency on specialized storage backends for read-only content,
+and ensures that data remains portable and securely accessible across any environment.This work was done as part of KEP #4639 led by SIG Node.This is a selection of some of the improvements that are now beta following the v1.36 release.Staleness mitigation for controllersStaleness in Kubernetes controllers is a problem that affects many controllers and can subtly affect controller behavior.
+It is usually not until it is too late, when a controller in production has already taken incorrect action,
+that staleness is found to be an issue due to some underlying assumption made by the controller author.
+This could lead to conflicting updates or data corruption upon controller reconciliation during times of cache staleness.We are excited to announce that Kubernetes v1.36 includes new features that help mitigate controller staleness and
+provide better observability of controller behavior.
+This prevents reconciliation based on an outdated view of cluster state that can often lead to harmful behavior.This work was done as part of KEP #5647 led by SIG API Machinery.IP/CIDR validation improvementsIn Kubernetes v1.36, the  feature for API IP and CIDR fields graduates to beta,
+tightening validation to catch malformed addresses and prefixes that previously slipped through.
+This helps prevent subtle configuration bugs where Services, Pods, NetworkPolicies,
+or other resources reference invalid IPs, which could otherwise lead to
+confusing runtime behavior or security surprises.Controllers are updated to canonicalize IPs they write back into objects and to warn when they
+encounter bad values that were already stored, so clusters can gradually converge on clean,
+consistent data. With beta,  is ready for wider use,
+giving operators more reliable guardrails around IP-related configuration
+as they evolve networks and policies over time.This work was done as a part of KEP #4858 led by SIG Network.Separate kubectl user preferences from cluster configsThe  feature for customizing  user preferences continues to be beta
+and is enabled by default. The  file allows users to store aliases, default flags,
+and other personal settings separately from  files, which hold cluster endpoints and credentials.
+This separation prevents personal preferences from interfering with CI pipelines or shared  files,
+while maintaining a consistent  experience across different clusters and contexts.In Kubernetes v1.36,  was expanded with the ability to define policies for credential plugins
+(allowlists or denylists) to enforce safer authentication practicies.
+Users can disable this functionality if needed by setting the  or  environment variables.This work was done as a part of KEP #3104 led by SIG CLI, with the help from SIG Auth.Mutable container resources when Job is suspendedIn Kubernetes v1.36, the MutablePodResourcesForSuspendedJobs feature graduates to beta and is enabled by default.
+This update relaxes Job validation to allow updates to container CPU, memory,
+GPU, and extended resource requests and limits while a Job is suspended.This capability allows queue controllers and operators to adjust batch workload requirements based on
+real‑time cluster conditions. For example, a queueing system can suspend incoming Jobs,
+adjust their resource requirements to match available capacity or quota, and then unsuspend them.
+The feature strictly limits mutability to suspended Jobs (or Jobs whose pods have been terminated upon suspension)
+to prevent disruptive changes to actively running pods.This work was done as a part of KEP #5440 led by SIG Apps.Constrained impersonationIn Kubernetes v1.36, the  feature for user impersonation graduates to beta,
+tightening a historically all‑or‑nothing mechanism into something that can actually follow least‑privilege principles.
+When this feature is enabled, an impersonator must have two distinct sets of permissions:
+one to impersonate a given identity, and another to perform specific actions on that identity’s behalf.
+This prevents support tools, controllers, or node agents from using impersonation to gain broader access
+than they themselves are allowed, even if their impersonation RBAC is misconfigured.
+Existing impersonate rules keep working, but the API server prefers the new constrained checks first,
+making the transition incremental instead of a flag day. With beta in v1.36,  is tested,
+documented, and ready for wider adoption by platform teams that rely on impersonation for debugging, proxying,
+or node‑level controllers.This work was done as a part of KEP #5284 led by SIG Auth.Now, users benefit from a much more reliable and observable resource lifecycle through ResourceClaim device status
+and the ability to ensure device attachment before Pod scheduling.
+By integrating these features with extended resource support,
+Kubernetes provides a robust production-ready alternative to the legacy device plugin system,
+enabling complex AI and HPC workloads to manage hardware with unprecedented precision and operational safety.In Kubernetes v1.36, the  feature gate for core Kubernetes components graduates to beta,
+providing a  endpoint (enabled by default) that surfaces real‑time build and version details for each component.
+This low‑overhead z-page exposes information like start time, uptime, Go version, binary version,
+emulation version, and minimum compatibility version, so operators and developers can quickly see exactly
+what is running without digging through logs or configs.The endpoint offers a human‑readable text view by default, plus a versioned structured API ()
+for programmatic access in JSON, YAML, or CBOR via explicit content negotiation.
+Access is granted to the  group, keeping it aligned with existing protections on
+health and metrics endpoints and avoiding exposure of sensitive data.With beta,  is enabled by default across all core control‑plane components and node agents,
+backed by unit, integration, and end‑to‑end tests so it can be safely used in production for
+observability and debugging workflows.This work was done as a part of KEP #4827 led by SIG Instrumentation.In Kubernetes v1.36, the  feature gate for core Kubernetes components graduates to beta,
+standardizing a  endpoint that exposes the effective command‑line flags each component was started with.
+This gives cluster operators and developers real‑time, in‑cluster visibility into component configuration,
+making it much easier to debug unexpected behavior or verify that a flag rollout actually took effect after a restart.The endpoint supports both a human‑readable text view and a versioned structured API (initially ),
+so you can either  it during an incident or wire it into automated tooling once you are ready.
+Access is granted to the  group and sensitive values can be redacted,
+keeping configuration insight aligned with existing security practices around health and status endpoints.With beta,  is now enabled by default and implemented across all core control‑plane components
+and node agents, backed by unit, integration, and end‑to‑end tests to ensure the endpoint is reliable in production clusters.This work was done as a part of KEP #4828 led by SIG Instrumentation.Mixed version proxy (aka unknown version interoperability proxy)In Kubernetes v1.36, the  feature graduates to beta, building on its alpha introduction in v1.28
+to provide safer control-plane upgrades for mixed-version clusters. Each API request can now be routed to the apiserver
+instance that serves the requested group, version, and resource, reducing 404s and failures due to version skew.The feature relies on peer-aggregated discovery, so apiservers share information about which resources and versions they expose,
+then use that data to transparently reroute requests when needed. New metrics on rerouted traffic and proxy behavior
+help operators understand how often requests are forwarded and to which peers.
+Together, these changes make it easier to run highly available, mixed-version API control planes in production
+while performing multi-step or partial control-plane upgrades.This work was done as a part of KEP #4020 led by SIG API MachineryMemory QoS with cgroups v2Kubernetes now enhances memory QoS on Linux cgroup v2 nodes with smarter, tiered memory protection that better aligns kernel
+controls with pod requests and limits, reducing interference and thrashing for workloads sharing the same node.
+This iteration also refines how kubelet programs memory.high and memory.min, adds metrics and safeguards to avoid livelocks,
+and introduces configuration options so cluster operators can tune memory protection behavior for their environments.This work was done as part of KEP #2570 led by SIG Node.This is a selection of some of the improvements that are now alpha following the v1.36 release.HPA scale to zero for custom metricsUntil now, the HorizontalPodAutoscaler (HPA) required a minimum of at least one replica to remain active,
+as it could only calculate scaling needs based on metrics (like CPU or Memory) from running pods.
+Kubernetes v1.36 continues the development of the  feature (disabled by default) in Alpha,
+allowing workloads to scale down to zero replicas specifically when using Object or External metrics.Now, users can experiment with significantly reducing infrastructure costs by completely idling heavy workloads when
+no work is pending. While the feature remains behind the  feature gate,
+it enables the HPA to stay active even with zero running pods,
+automatically scaling the deployment back up as soon as the external metric (e.g., queue length)
+indicates that new tasks have arrived.This work was done as part of KEP #2021 led by SIG Autoscaling.Historically, the Dynamic Resource Allocation (DRA) framework lacked seamless integration with high-level controllers and
+provided limited visibility into device-specific metadata or availability.
+Kubernetes v1.36 introduces a wave of DRA enhancements in Alpha, including native ResourceClaim support for workloads,
+and DRA native resources to provide the flexibility of DRA to cpu management.Now, users can leverage the downward API to expose complex resource attributes directly to containers and
+benefit from improved resource availability visibility for more predictable scheduling. these updates,
+combined with support for list types in device attributes, transform DRA from a low-level primitive into a robust system
+capable of handling the sophisticated networking and compute requirements of modern AI and
+high-performance computing (HPC) stacks.Native histogram support for Kubernetes metricsHigh-resolution monitoring reaches a new milestone in Kubernetes v1.36 with the introduction of native histogram support
+in Alpha. While classical Prometheus histograms relied on static, pre-defined buckets that often forced a compromise
+between data accuracy and memory usage, this update allows the control plane to export sparse histograms that
+dynamically adjust their resolution based on real-time data.Now, cluster operators can capture precise latency distributions for the kube-apiserver and other core components without
+the overhead of manual bucket management. This architectural shift ensures more reliable SLIs and SLOs,
+providing high-fidelity heatmaps that remain accurate even during the most unpredictable workload spikes.This work was done as part of KEP #5808 led by SIG Instrumentation.Manifest based admission control configManaging admission controllers moves toward a more declarative and consistent model in Kubernetes v1.36 with the
+introduction of manifest-based admission control configuration in Alpha.
+This change addresses the long-standing challenge of configuring admission plugins through disparate command-line
+flags or separate, complex config files by allowing administrators to define the desired state of admission control
+directly through a structured manifest.Now, cluster operators can manage admission plugin settings with the same versioned, declarative workflows used for
+other Kubernetes objects, significantly reducing the risk of configuration drift and manual errors during cluster upgrades.
+By centralizing these configurations into a unified manifest, the kube-apiserver becomes easier to audit and automate,
+paving the way for more secure and reproducible cluster deployments.This work was done as part of KEP #5793 led by SIG API Machinery.With the introduction of  in Alpha, Kubernetes v1.36 uses new internal streaming operations.
+This enhancement addresses the memory pressure and latency spikes often seen on large-scale nodes by replacing traditional,
+monolithic  requests between the kubelet and the container runtime with a more efficient server-side streaming RPC.Now, instead of waiting for a single, massive response containing all container or image data, the kubelet can process results
+incrementally as they are streamed. This shift significantly reduces the peak memory footprint of the kubelet and improves
+responsiveness on high-density nodes, ensuring that cluster management remains fluid even as the number of
+containers per node continues to grow.This work was done as part of KEP #5825 led by SIG Node.To prioritize the safety and security of the ecosystem, Kubernetes SIG Network and the Security Response Committee have
+retired Ingress NGINX on March 24, 2026.
 Since that date, there have been no further releases, no bugfixes, and no updates to resolve any security vulnerabilities discovered. Existing deployments of
-Ingress NGINX will continue to function, and installation artifacts like Helm charts and container images will remain available.Deprecations and removals for Kubernetes v1.36Deprecation of  in ServiceThe  field in Service  is being deprecated, which means you’ll soon lose a quick way to route arbitrary externalIPs to your Services. This
-field has been a known security headache for years, enabling man-in-the-middle attacks on your cluster traffic, as documented in CVE-2020-8554. From Kubernetes v1.36 and onwards, you will see deprecation warnings when using it, with full removal
-planned for v1.43.If your Services still lean on , consider using LoadBalancer services for cloud-managed ingress, NodePort for simple port exposure, or Gateway API
-for a more flexible and secure way to handle external traffic.Removal of  volume driverThe gitRepo volume type has been deprecated since v1.11. Starting Kubernetes v1.36, the  volume plugin is permanently disabled and cannot be turned back
-on. This change protects clusters from a critical security issue where using  could let an attacker run code as root on the node.Although  has been deprecated for years and better alternatives have been recommended, it was still technically possible to use it in previous releases.
-From v1.36 onward, that path is closed for good, so any existing workloads depending on  will need to migrate to supported approaches such as init
-containers or external git-sync style tools.Featured enhancements of Kubernetes v1.36The following list of enhancements is likely to be included in the upcoming v1.36 release. This is not a commitment and the release content is subject to change.Faster SELinux labelling for volumes (GA)Kubernetes v1.36 makes the SELinux volume mounting improvement generally available. This change replaced recursive file relabeling with  option, applying the correct SELinux label to the entire volume at mount time. It brings more consistent performance and reduces Pod startup delays on SELinux-enforcing systems.This feature was introduced as beta in v1.28 for  volumes. In v1.32, it gained metrics and an opt-out option
-(securityContext.seLinuxChangePolicy: Recursive) to help catch conflicts. Now in v1.36, it reaches stable and defaults to all volumes, with Pods or
-CSIDrivers opting in via .However, we expect this feature to create the risk of breaking changes in the future Kubernetes releases, due to the potential for mixing of privileged and unprivileged pods.
-Setting the  field and
-SELinux volume labels on Pods, correctly, is the responsibility of the Pod author
-Developers have that responsibility whether they are writing a Deployment, StatefulSet, DaemonSet or even a custom resource that includes a Pod template.
-Being careless
-with these settings can lead to a range of problems when Pods share volumes.External signing of ServiceAccount tokensAs a beta feature, Kubernetes already supports external signing of ServiceAccount tokens. This allows clusters to integrate with external key management systems
-or signing services instead of relying only on internally managed keys.With this enhancement, the  can delegate token signing to external systems such as cloud key management services or hardware security modules. This
-improves security and simplifies key management services for clusters that rely on centralized signing infrastructure.
-We expect that this will graduate to stable (GA) in Kubernetes v1.36.DRA Driver support for Device taints and tolerationsKubernetes v1.33 introduced support for taints and tolerations for physical devices managed through Dynamic Resource Allocation (DRA). Normally, any device can be
-used for scheduling. However, this enhancement allows DRA drivers to mark devices as tainted, which ensures that they will not be used for scheduling purposes.
-Alternatively, cluster administrators can create a  to mark devices that match a certain selection criteria(such as all devices of a certain
-driver) as tainted. This improves scheduling control and helps ensure that specialized hardware resources are only used by workloads that explicitly request them.In Kubernetes v1.36, this feature graduates to beta with more comprehensive testing complete, making it accessible by default without the need for a feature
-flag and open to user feedback.DRA support for partitionable devicesKubernetes v1.36 expands Dynamic Resource Allocation (DRA) by introducing support for partitionable devices, allowing a single hardware accelerator to be split
-into multiple logical units that can be shared across workloads. This is especially useful for high-cost resources like GPUs, where dedicating an entire device
-to a single workload can lead to underutilization.With this enhancement, platform teams can improve overall cluster efficiency by allocating only the required portion of a device to each workload, rather than
-reserving it entirely. This makes it easier to run multiple workloads on the same hardware while maintaining isolation and control, helping organizations get more
-value out of their infrastructure.New features and deprecations are also announced in the Kubernetes release notes. We will formally announce what's new in Kubernetes v1.36 as part of the CHANGELOG for that release.Kubernetes v1.36 release is planned for Wednesday, April 22, 2026. Stay tuned for updates!You can also see the announcements of changes in the release notes for:The simplest way to get involved with Kubernetes is by joining one of the many Special Interest Groups (SIGs) that align with your interests. Have something you’d like to broadcast to the Kubernetes community? Share your voice at our weekly
-community meeting, and through the channels below. Thank you for your continued feedback and support.]]></content:encoded></item><item><title>Announcing Rust 1.94.1</title><link>https://blog.rust-lang.org/2026/03/26/1.94.1-release/</link><author>The Rust Release Team</author><category>dev</category><pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust team has published a new point release of Rust, 1.94.1. Rust is a
-programming language that is empowering everyone to build reliable and
-efficient software.If you have a previous version of Rust installed via rustup, getting Rust 1.94.1 is as easy as:If you don't have it already, you can get  from the appropriate page on our website.Rust 1.94.1 resolves three regressions that were introduced in the 1.94.0 release.Many people came together to create Rust 1.94.1. We couldn't have done it without all of you. Thanks!]]></content:encoded></item></channel></rss>
+Ingress NGINX will continue to function, and installation artifacts like Helm charts and container images will remain available.Faster SELinux labelling for volumes (GA)Kubernetes v1.36 makes the SELinux volume mounting improvement generally available. This change replaced recursive file
+relabeling with  option, applying the correct SELinux label to the entire volume at mount time.
+It brings more consistent performance and reduces Pod startup delays on SELinux-enforcing systems.This feature was introduced as beta in v1.28 for  volumes. In v1.32, it gained metrics and an opt-out
+option (securityContext.seLinuxChangePolicy: Recursive) to help catch conflicts. Now in v1.36,
+it reaches Stable and defaults to all volumes, with Pods or CSIDrivers opting in via .However, we expect this feature to create the risk of breaking changes in the future Kubernetes releases, potentially due to sharing one volume between privileged and unprivileged Pods on the same node.Developers have the responsibility of setting the  field and SELinux volume labels on Pods. Regardless of whether they are writing a Deployment, StatefulSet, DaemonSet or even a custom resource that includes a Pod template, being careless with these settings can lead to a range of problems such as Pods not starting up correctly when Pods share a volume.Graduations, deprecations, and removals in v1.36This lists all the features that graduated to stable (also known as general availability).
+For a full list of updates including new features and graduations from alpha to beta, see the release notes.This release includes a total of 18 enhancements promoted to stable:As Kubernetes develops and matures, features may be deprecated, removed, or replaced with better ones to improve the
+project's overall health. See the Kubernetes deprecation and removal policy for more details on this process.
+Kubernetes v1.36 includes a couple of deprecations.Deprecation of Service .spec.externalIPsWith this release, the  field in Service  is deprecated. This means the functionality exists, but will no longer function in a  version of Kubernetes. You should plan to migrate if you currently rely on that field.
+This field has been a known security headache for years,
+enabling man-in-the-middle attacks on your cluster traffic, as documented in CVE-2020-8554.
+From Kubernetes v1.36 and onwards, you will see deprecation warnings when using it, with full removal planned for v1.43.If your Services still lean on , consider using LoadBalancer services for cloud-managed ingress,
+NodePort for simple port exposure, or Gateway API for a more flexible and secure way to handle external traffic.Removal of the  volume driverThe  volume type has been deprecated since v1.11. For Kubernetes v1.36, the  volume plugin is
+permanently disabled and cannot be turned back on. This change protects clusters from a critical security issue where
+using  could let an attacker run code as root on the node.Although  has been deprecated for years and better alternatives have been recommended,
+it was still technically possible to use it in previous releases.
+From v1.36 onward, that path is closed for good, so any existing workloads depending on  will need to migrate to
+supported approaches such as init containers or external  style tools.Check out the full details of the Kubernetes v1.36 release in our release notes.Kubernetes is only possible with the support, commitment, and hard work of its community. Each release team is
+made up of dedicated community volunteers who work together to build the many pieces that make up the
+Kubernetes releases you rely on. This requires the specialized skills of people from all corners of our community,
+from the code itself to its documentation and project management.We would like to thank the entire Release Team for the hours spent hard at work to deliver the Kubernetes v1.36 release to our community.
+The Release Team's membership ranges from first-time shadows to returning team leads with experience forged over
+several release cycles. A very special thanks goes out to our release lead, Ryota Sawada,
+for guiding us through a successful release cycle, for his hands-on approach to solving challenges,
+and for bringing the energy and care that drives our community forward.The CNCF K8s DevStats project aggregates a number of interesting data points related to the velocity of
+Kubernetes and various sub-projects. This includes everything from individual contributions to the number of
+companies that are contributing, and is an illustration of the depth and breadth of effort that goes into evolving this ecosystem.During the v1.36 release cycle, which spanned 15 weeks from 12th January 2026 to 22nd April 2026,
+Kubernetes received contributions from as many as 106 different companies and 491 individuals.
+In the wider cloud native ecosystem, the figure goes up to 370 companies, counting 2235 total contributors.Note that “contribution” counts when someone makes a commit, code review, comment, creates an issue or PR,
+reviews a PR (including blogs and documentation) or comments on issues and PRs.
+If you are interested in contributing, visit Getting Started on our contributor website.Explore upcoming Kubernetes and cloud native events, including KubeCon + CloudNativeCon, KCD,
+and other notable conferences worldwide. Stay informed and get involved with the Kubernetes community!You can find the latest event details here.Join members of the Kubernetes v1.36 Release Team on Wednesday, May 20th 2026 at 4:00 PM (UTC) to learn about the release highlights
+of this release. For more information and registration, visit the event page on the CNCF Online Programs site.The simplest way to get involved with Kubernetes is by joining one of the many Special Interest Groups (SIGs) that align with your interests.
+Have something you’d like to broadcast to the Kubernetes community? Share your voice at our weekly community meeting,
+and through the channels below. Thank you for your continued feedback and support.]]></content:encoded></item><item><title>Gateway API v1.5: Moving features to Stable</title><link>https://kubernetes.io/blog/2026/04/21/gateway-api-v1-5/</link><author></author><category>dev</category><pubDate>Tue, 21 Apr 2026 16:30:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[The Kubernetes SIG Network community presents the release of Gateway API (v1.5)!
+Released on February 27, 2026, version 1.5 is our biggest release yet, and concentrates on moving existing Experimental features to Standard (Stable).The Gateway API v1.5.1 patch release is already available.The Gateway API v1.5 brings six widely-requested feature promotions to the Standard channel (Gateway API's GA release channel):Client Certificate ValidationCertificate Selection for Gateway TLS OriginationAs of Gateway API v1.5, the project has moved to a release train model, where on a feature freeze date, any features that are ready are shipped in the release.This applies to both Experimental and Standard, and also applies to documentation -- if the documentation isn't ready to ship, the feature isn't ready to ship.We are aiming for this to produce a more reliable release cadence (since we are basing our work off the excellent work done by SIG Release on Kubernetes itself).
+As part of this change, we've also introduced Release Manager and Release Shadow roles to our release team. Many thanks to Flynn (Buoyant) and Beka Modebadze (Google) for all the great work coordinating and filing the rough edges of our release process. They are both going to continue in this role for the next release as well.Prior to ListenerSet, all listeners had to be specified directly on the Gateway object.
+While this worked well for simple use cases, it created challenges for more complex
+or multi-tenant environments:Platform teams and application teams often needed to coordinate changes to the same GatewaySafely delegating ownership of individual listeners was difficultExtending existing Gateways required direct modification of the original resourceListenerSet addresses these limitations by allowing listeners to be defined independently and then merged onto a target Gateway.ListenerSets also enable attaching more than 64 listeners to a single, shared Gateway. This is critical for large scale deployments and scenarios with multiple hostnames per listener.Even though the ListenerSet feature significantly enhances scalability, the  field in Gateway remains a mandatory requirement and the Gateway must have at least one valid listener.A ListenerSet attaches to a Gateway and contributes one or more listeners.
+The Gateway controller is responsible for merging listeners from the Gateway resource itself and any attached ListenerSet resources.In this example, a central infrastructure team defines a Gateway with a default HTTP listener,
+while two different application teams define their own ListenerSet resources in separate namespaces.
+Both ListenerSets attach to the same Gateway and contribute additional HTTPS listeners.The TLSRoute resource allows you to route requests by matching the Server Name Indication (SNI) presented by the client during the TLS handshake and directing the stream to the appropriate Kubernetes backends.When working with TLSRoute, a Gateway's TLS listener can be configured in one of two modes:  or .If you install Gateway API v1.5 Standard over v1.4 or earlier Experimental, your existing
+Experimental TLSRoutes will not be usable. This is because they will be stored in the  or  version, which is  included in the v1.5 Standard YAMLs.
+If this applies to you, either continue using Experimental for v1.5.1 and onward, or you'll need to download and migrate your TLSRoutes to , which  present in the Standard YAMLs.The Passthrough mode is designed for strict security requirements. It is ideal for scenarios where traffic must remain encrypted end-to-end until it reaches the destination backend, when the external client and backend need to authenticate directly with each other, or when you can’t store certificates on the Gateway. This configuration is also applicable when an encrypted TCP stream is required instead of standard HTTP traffic.In this mode, the encrypted byte stream is proxied directly to the destination backend. The Gateway has zero access to private keys or unencrypted data.The following TLSRoute is attached to a listener that is configured in  mode. It will match only TLS handshakes with the  SNI hostname and apply its routing rules to pass the encrypted TCP stream to the configured backend:The Terminate mode provides the convenience of centralized TLS certificate management directly at the Gateway.In this mode, the TLS session is fully terminated at the Gateway, which then
+routes the decrypted payload to the destination backend as a plain text TCP stream.The following TLSRoute is attached to a listener that is configured in Terminate mode.
+It will match only TLS handshakes with the  SNI hostname and apply its routing rules to pass the decrypted TCP stream to the configured backend:Cross-origin resource sharing (CORS) is an HTTP-header based security mechanism that allows (or denies) a web page to access resources from a server on an origin different from the domain that served the web page. See our documentation page for more information.
+The HTTPRoute resource can be used to configure Cross-Origin Resource Sharing (CORS). The following HTTPRoute allows requests from https://app.example:Instead of specifying a list of specific origins, you can also specify a single wildcard ("*"), which will allow any origin. It is also allowed to use semi-specified origins in the list, where the wildcard appears after the scheme and at the beginning of the hostname, e.g. https://*.bar.com:HTTPRoute filters allow for the configuration of CORS settings. See a list of supported options below:Specifies whether the browser is allowed to include credentials (such as cookies and HTTP authentication) in the CORS request.The HTTP methods that are allowed for CORS requests.The HTTP headers that are allowed for CORS requests.The HTTP headers that are exposed to the client.The maximum time in seconds that the browser should cache the preflight response.Gateway client certificate validationClient certificate validation, also known as mutual TLS (mTLS), is a security mechanism where the client provides a certificate to the server to prove its identity. This is in contrast to standard TLS, where only the server presents a certificate to the client.
+In the context of the Gateway API, frontend mTLS means that the Gateway validates the client's certificate before allowing the connection to proceed to a backend service. This validation is done by checking the client certificate against a set of trusted Certificate Authorities (CAs) configured on the Gateway. The API was shaped this way to address a critical security vulnerability related to connection reuse and still provide some level of flexibility.Client validation is defined using the frontendValidation struct, which specifies how the Gateway should verify the client's identity.: A list of references to Kubernetes objects (typically ConfigMap's) containing PEM-encoded CA certificate bundles used as trust anchors to validate the client's certificate.: Defines the validation behavior.
+ (Default): The Gateway accepts connections only if the client presents a valid certificate that passes validation against the specified CA bundle.: The Gateway accepts connections even if the client certificate is missing or fails verification. This mode typically delegates authorization to the backend and should be used with caution.Validation can be applied globally to the Gateway or overridden for specific ports:: This configuration applies to all HTTPS listeners on the Gateway, unless a per-port override is defined.: This allows for fine-grained control, overriding the default configuration for all listeners handling traffic on a specific port.Certificate selection for Gateway TLS originationMutual TLS (mTLS) for upstream connections requires the Gateway to present a client certificate to the backend, in addition to verifying the backend's certificate. This ensures that the backend only accepts connections from authorized Gateways.Gateway’s client certificate configurationTo configure the client certificate that the Gateway uses when connecting to backends,
+use the tls.backend.clientCertificateRef field in the Gateway resource.
+This configuration applies to the Gateway as a client for  upstream connections managed by that Gateway.The ReferenceGrant resource has not changed in more than a year, and we do not expect it to change further, so its version has been bumped to v1, and it is now officially in the Standard channel, and abides by the GA API contract (that is, no breaking changes).Unlike other Kubernetes APIs, you don't need to upgrade to the latest version of
+Kubernetes to get the latest version of Gateway API. As long as you're running
+Kubernetes 1.30 or later, you'll be able to get up and running with this version
+of Gateway API.As of this writing, seven implementations are already fully conformant with Gateway API v1.5. In alphabetical order:Wondering when a feature will be added? There are lots of opportunities to get
+involved and help define the future of Kubernetes routing APIs for both ingress
+and service mesh.The maintainers would like to thank  who's contributed to Gateway
+API, whether in the form of commits to the repo, discussion, ideas, or general
+support. We could never have made this kind of progress without the support of
+this dedicated and active community.This article was edited in April 2026 to correct the release date for Gateway API 1.5.0.]]></content:encoded></item><item><title>Announcing Rust 1.95.0</title><link>https://blog.rust-lang.org/2026/04/16/Rust-1.95.0/</link><author>The Rust Release Team</author><category>dev</category><pubDate>Thu, 16 Apr 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust team is happy to announce a new version of Rust, 1.95.0. Rust is a programming language empowering everyone to build reliable and efficient software.If you have a previous version of Rust installed via , you can get 1.95.0 with:If you'd like to help us out by testing future releases, you might consider updating locally to use the beta channel () or the nightly channel (). Please report any bugs you might come across!Rust 1.95 introduces a
+
+macro that acts roughly similar to a compile-time  on s. This
+fulfills the same purpose as the popular
+ crate, although with a different
+syntax.  expands to the right-hand side of the first arm whose
+configuration predicate evaluates to . Some examples:Rust 1.88 stabilized let chains. Rust
+1.95 brings that capability into match expressions, allowing for conditionals
+based on pattern matching.Note that the compiler will not currently consider the patterns matched in  guards as part of the exhaustiveness evaluation of the overall match, just
+like  guards.These previously stable APIs are now stable in const contexts:
+Destabilized JSON target specsRust 1.95 removes support on stable for passing a custom target specification
+to . This should  affect any Rust users using a fully stable
+toolchain, as building the standard library (including just ) already
+required using nightly-only features.We're also gathering use cases for custom targets on the tracking issue
+as we consider whether some form of this feature should eventually be stabilized.Many people came together to create Rust 1.95.0. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>Rust for CPython Progress Update April 2026</title><link>https://blog.python.org/2026/04/rust-for-cpython-2026-04/</link><author>Emma Smith</author><category>dev</category><pubDate>Wed, 8 Apr 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Rust for CPython project status update April 2026]]></content:encoded></item><item><title>Python 3.15.0a8, 3.14.4 and 3.13.13 are out!</title><link>https://blog.python.org/2026/04/python-3150a8-3144-31313/</link><author>Hugo van Kemenade</author><category>dev</category><pubDate>Tue, 7 Apr 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[A final alpha and two bug fixes are awaiting your upgrade.]]></content:encoded></item></channel></rss>
