@@ -26,7 +26,8 @@ jobs:
         run: sudo apt-get update && sudo apt-get install snapd sqlite3
 
       - name: Install newsboat
-        run: source ./scripts/retry.sh && with_retry 5 sudo snap install newsboat
+        # run: source ./scripts/retry.sh && with_retry 5 sudo snap install newsboat
+        run: source ./scripts/retry.sh && with_retry 5 sudo apt-get install newsboat
 
       - name: Fetch liveboat
         run: |
