@@ -7,7 +7,7 @@
   "isQuery": false,
   "isEmpty": false,
   "isHidden": false,
-  "itemCount": 9,
+  "itemCount": 6,
   "items": [
     {
       "title": "The Perennial Bachelor, by Anne Parrish",
@@ -90,48 +90,6 @@
       "contentLength": 118,
       "flags": null,
       "enclosureUrl": "https://standardebooks.org/ebooks/anonymous/the-pearl/sophie-jewett/downloads/anonymous_the-pearl_sophie-jewett.epub?source=feed",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "With the Empress Dowager of China, by Katharine A. Carl",
-      "url": "https://standardebooks.org/ebooks/katharine-a-carl/with-the-empress-dowager-of-china",
-      "date": 1775680691,
-      "author": "",
-      "guid": 58181,
-      "unread": true,
-      "content": "<article>A female painter becomes the court artist of the Empress Dowager of China.</article>",
-      "contentLength": 74,
-      "flags": null,
-      "enclosureUrl": "https://standardebooks.org/ebooks/katharine-a-carl/with-the-empress-dowager-of-china/downloads/katharine-a-carl_with-the-empress-dowager-of-china.epub?source=feed",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "A Bride of a Summer’s Day, by Catherine Louisa Pirkis",
-      "url": "https://standardebooks.org/ebooks/catherine-louisa-pirkis/a-bride-of-a-summers-day",
-      "date": 1775592856,
-      "author": "",
-      "guid": 57857,
-      "unread": true,
-      "content": "<article>After her wedding, a bride asks to visit her mother’s grave, and then disappears.</article>",
-      "contentLength": 83,
-      "flags": null,
-      "enclosureUrl": "https://standardebooks.org/ebooks/catherine-louisa-pirkis/a-bride-of-a-summers-day/downloads/catherine-louisa-pirkis_a-bride-of-a-summers-day.epub?source=feed",
-      "enclosureMime": "",
-      "commentsUrl": null
-    },
-    {
-      "title": "Barnaby Rudge, by Charles Dickens",
-      "url": "https://standardebooks.org/ebooks/charles-dickens/barnaby-rudge",
-      "date": 1775503916,
-      "author": "",
-      "guid": 57574,
-      "unread": true,
-      "content": "<article>A simple-minded young man and his pet raven are swept up in the anti-Catholic Gordon Riots of 1780.</article>",
-      "contentLength": 99,
-      "flags": null,
-      "enclosureUrl": "https://standardebooks.org/ebooks/charles-dickens/barnaby-rudge/downloads/charles-dickens_barnaby-rudge.epub?source=feed",
       "enclosureMime": "",
       "commentsUrl": null
     }
