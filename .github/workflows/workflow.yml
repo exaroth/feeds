@@ -10,7 +10,7 @@ on:
 
 jobs:
   liveboat-feed-build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     permissions:
       contents: write
       pull-requests: write
@@ -23,10 +23,10 @@ jobs:
           ref: 'master'
 
       - name: Install deps
-        run: sudo apt-get update && sudo apt-get install snapd sqlite3
+        run: sudo apt-get update && sudo apt-get install sqlite3 newsboat
 
-      - name: Install newsboat
-        run: source ./scripts/retry.sh && with_retry 5 sudo snap install newsboat
+      # - name: Install newsboat
+      #   run: source ./scripts/retry.sh && with_retry 5 sudo snap install newsboat
 
       - name: Fetch liveboat
         run: |
