@@ -1,606 +1,231 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Kubernetes v1.36: New Metric for Route Sync in the Cloud Controller Manager</title><link>https://kubernetes.io/blog/2026/05/15/ccm-new-metric-route-sync-total/</link><author></author><category>dev</category><pubDate>Fri, 15 May 2026 18:35:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[This article was originally published with the wrong date. It was later republished, dated the 15th of
-May 2026.Kubernetes v1.36 introduces a new alpha counter metric route_controller_route_sync_total
-to the Cloud Controller Manager (CCM) route controller implementation at
-. This metric
-increments each time routes are synced with the cloud provider.A/B testing watch-based route reconciliationThis metric was added to help operators validate the
-CloudControllerManagerWatchBasedRoutesReconciliation feature gate introduced in
-Kubernetes v1.35.
-That feature gate switches the route controller from a fixed-interval loop to a watch-based
-approach that only reconciles when nodes actually change. This reduces unnecessary API calls
-to the infrastructure provider, lowering pressure on rate-limited APIs and allowing operators
-to make more efficient use of their available quota.To A/B test this, compare route_controller_route_sync_total with the feature gate
-disabled (default) versus enabled. In clusters where node changes are infrequent, you should
-see a significant drop in the sync rate with the feature gate turned on.Example: expected behaviorWith the feature gate disabled (the default fixed-interval loop), the counter increments
-steadily regardless of whether any node changes occurred:# After 10 minutes with no node changes
-route_controller_route_sync_total 60
-# After 20 minutes, still no node changes
-route_controller_route_sync_total 120
-With the feature gate enabled (watch-based reconciliation), the counter only increments
-when nodes are actually added, removed, or updated:# After 10 minutes with no node changes
-route_controller_route_sync_total 1
-# After 20 minutes, still no node changes — counter unchanged
-route_controller_route_sync_total 1
-# A new node joins the cluster — counter increments
-route_controller_route_sync_total 2
-The difference is especially visible in stable clusters where nodes rarely change.Where can I give feedback?If you have feedback, feel free to reach out through any of the following channels:]]></content:encoded></item><item><title>Kubernetes v1.36: Mixed Version Proxy Graduates to Beta</title><link>https://kubernetes.io/blog/2026/05/15/kubernetes-1-36-feature-mixed-version-proxy-beta/</link><author></author><category>dev</category><pubDate>Fri, 15 May 2026 18:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[Back in Kubernetes 1.28, we introduced the Mixed Version Proxy (MVP) as an Alpha feature (under the feature gate UnknownVersionInteroperabilityProxy) in a previous blog post. The goal was simple but critical: make cluster upgrades safer by ensuring that requests for resources not yet known to an older API server are correctly routed to a newer peer API server, instead of returning an incorrect .We are excited to announce that the Mixed Version Proxy is moving to Beta in Kubernetes 1.36 and will be enabled by default! The feature has evolved significantly since its initial release, addressing key gaps and modernizing its architecture.Here is a look at how the feature has evolved and what you need to know to leverage it in your clusters.What problem are we solving?In a highly available control plane undergoing an upgrade, you often have API servers running different versions. These servers might serve different sets of APIs (Groups, Versions, Resources).
-Without MVP, if a client request lands on an API server that does not serve the requested resource (e.g., a new API version introduced in the upgrade), that server returns a . This is technically incorrect because the resource is available in the cluster, just not on that specific server. This can lead to serious side effects, such as mistaken garbage collection or blocked namespace deletions.
-MVP solves this by proxying the request to a peer API server that can serve it.
-sequenceDiagram
-participant Client
-participant API_Server_A as API Server A (Older/Different)
-participant API_Server_B as API Server B (Newer/Capable)
-Client->>API_Server_A: 1. Request for Resource (e.g., v2)
-Note over API_Server_A: Determines it cannot serve locally
-API_Server_A->>API_Server_A: 2. Looks up capable peer in Discovery Cache
-API_Server_A->>API_Server_B: 3. Proxies request (adds x-kubernetes-peer-proxied header)
-API_Server_B->>API_Server_B: 4. Processes request locally
-API_Server_B-->>API_Server_A: 5. Returns Response
-API_Server_A-->>Client: 6. Forwards Response
-How has it evolved since 1.28The initial Alpha implementation was a great proof of concept, but it had some limitations and relied on older mechanisms. Here is how we have modernized it for Beta:From StorageVersion API to Aggregated Discovery
-In the Alpha version, API servers relied on the  to figure out which peers served which resources. While functional, this approach had a significant limitation: the  is not yet supported for CRDs and aggregated APIs.
-For Beta, we have replaced the reliance on  calls with the use of . API servers now use the aggregated discovery data to dynamically understand the capabilities of their peers.The Missing Piece: Peer-Aggregated Discovery
-The 1.28 blog post noted a significant gap: while we could proxy resource requests, discovery requests still only showed what the local API server knew about.
-In 1.36, we have added Peer-Aggregated Discovery support! Now, when a client performs discovery (e.g., listing available APIs), the API server merges its local view with the discovery data from all active peers. This provides clients with a complete, unified view of all APIs available across the entire cluster, regardless of which API server they connected to.
-sequenceDiagram
-participant Client
-participant API_Server_A as API Server A
-participant API_Server_B as API Server B
-Client->>API_Server_A: 1. Request Discovery Document
-API_Server_A->>API_Server_A: 2. Gets Local APIs
-API_Server_A->>API_Server_B: 3. Gets Peer APIs (Cached or Direct)
-API_Server_A->>API_Server_A: 4. Merges and sorts lists deterministically
-API_Server_A-->>Client: 5. Returns Unified Discovery Document
-While peer-aggregated discovery will be the default behavior (note that peer-aggregated discovery is enabled if the  flag is set, otherwise the server will fallback to showing only its local APIs), there may be cases where you need to inspect only the resources served by the specific API server you are connected to. You can request this non-aggregated view by including the  parameter in your request's  header (e.g., Accept: application/json;g=apidiscovery.k8s.io;v=v2;as=APIGroupDiscoveryList;profile=nopeer).While the feature gate will be enabled by default, it requires certain flags to be set to allow for secure communication between peer API servers. To function correctly, make sure your API server is configured with the following flags:--feature-gates=UnknownVersionInteroperabilityProxy=true: This will be default in 1.36, but it is good to verify--peer-ca-file=<path-to-ca>: [CRITICAL] This is a required flag. You must provide the CA bundle that the source API server will use to authenticate the serving certificates of destination peer API servers. Without this, proxying will fail due to TLS verification errors. and : These flags are used to set the network address that peers should use to reach this API server. If unset, the values from  or  are used. If you have complex network topologies where API servers communicate over a specific internal interface, setting these flags explicitly is highly recommended.If you manage your cluster with , you can configure these flags in your  file:If you are running multi-master clusters and upgrading them regularly, the Mixed Version Proxy is a major safety improvement. With it becoming default in 1.36, we encourage you to:Review your API server flags to ensure  is set properly.Test the feature in your staging environments as you prepare for the 1.36 upgrade.]]></content:encoded></item><item><title>Kubernetes v1.36: Deprecation and removal of Service ExternalIPs</title><link>https://kubernetes.io/blog/2026/05/14/kubernetes-v1-36-deprecation-and-removal-of-service-externalips/</link><author></author><category>dev</category><pubDate>Thu, 14 May 2026 18:35:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[The  field for Service was an early attempt to provide
-cloud-load-balancer-like functionality for non-cloud clusters.
-Unfortunately, the API assumes that every user in the cluster is fully
-trusted, and in any situation where that is not the case, it enables
-various security exploits, as described in
-CVE-2020-8554.Since Kubernetes 1.21, the Kubernetes project has recommended that all users disable
-. To make that easier, Kubernetes also added an admission controller
-() that can be enabled to do this. At the time,
-SIG Network felt that blocking the functionality by default was too large a
-breaking change to consider.However, the security problems are still there, and as a project we're increasingly
-unhappy with the "insecure by default" state of the feature.
-Additionally, there are now several better alternatives for non-cloud
-clusters wanting load-balancer-like functionality.As a result, the  field for Service is now formally deprecated in Kubernetes 1.36.
-We expect that a future minor release of Kubernetes will drop
-implementation of the behavior from , and will update the
-Kubernetes conformance criteria to require that conforming implementations
- provide support.A note on terminology, and what hasn't been deprecatedThe phrase  is somewhat overloaded in Kubernetes:The Service API has a field  that can be used
-to add additional IP addresses that a Service will respond on.The Node API's  field can list addresses of
-several different types, one of which is called .The  tool, when displaying information about a Service of type
-LoadBalancer in the default output format, will show the load
-balancer IP address under the column heading .This deprecation is about the first of those. If you are not setting
-the field  in any of your Services, then it does not
-apply to you.That said, as a precaution, you may still want to enable the DenyServiceExternalIPs admission controller to
-block any future use of the  field.Alternatives to If you are using , then there are several alternatives.Consider a Service like the following:Using manually-managed LoadBalancer Services instead of The easiest (but also worst) option is to just switch from using
- to using a  service, and assigning a
-load balancer IP by hand. This is, essentially, exactly the same as
-, with one important difference: the load balancer IP is
-part of the Service's , not its , and in a cluster
-with RBAC enabled, it can't be edited by ordinary users by default.
-Thus, this replacement for  would only be available to
-users who were given permission by the admins (although those users
-would then be fully empowered to replicate CVE-2020-8554; there would
-still not be any further checks to ensure that one user wasn't
-stealing another user's IPs, etc.)Because of the way that  works in Kubernetes, you must create the
-Service without a load balancer IP, and then add the IP as a second step:Using a non-cloud based load balancer controllerAlthough  services were originally designed to be backed by
-cloud load balancers, Kubernetes can also support them on non-cloud platforms
-by using a third-party load balancer controller such as MetalLB.
-This solves the security problems associated with  because the
-administrator can configure what ranges of IP addresses the controller will assign
-to services, and the controller will ensure that two services can't both use the same
-IP.So, for example, after installing and
-configuring MetalLB, a cluster administrator
-could configure a pool of IP addresses for use in the cluster:After which a user can create a  Service and MetalLB will handle the
-assignment of the IP address. MetalLB even supports the deprecated 
-field in Service, so the end user can request a specific IP (assuming it is available)
-for backward-compatibility with the  approach, rather than being
-assigned one at random:Similar approaches would work with other load balancer controllers.
-This approach can allow cluster administrators to have control over which IP addresses are assigned,
-rather than users.Another potential solution is to use an implementation of the
-Gateway API.Gateway API allows cluster administrators to define a Gateway resource, which can have an IP address
-attached to it via the  field. Since Gateway resources are designed to be managed by
-cluster administrators, RBAC rules can be put in place to only allow privileged users to manage them.An example of how this could look is:The Gateway API project is the next generation of Kubernetes Ingress, Load Balancing, and Service Mesh APIs within Kubernetes.
-Gateway API was designed to fix the shortcomings of the Service and Ingress resource, making it a very reliable robust solution
-that is under active development.Timeline for  deprecationThe rough timeline for this deprecation is as follows:With the release of Kubernetes 1.36, the field was deprecated;
-Kubernetes now emits warnings when a user uses this fieldAbout a year later (v1.40 at the earliest) support for  will be disabled in kube-proxy, but users will have a way to opt back in should they require more time to migrate awayAbout another year later - (v1.43 at the earliest) support will be disabled completely; users won't have a way to opt back in]]></content:encoded></item><item><title>Kubernetes v1.36: Advancing Workload-Aware Scheduling</title><link>https://kubernetes.io/blog/2026/05/13/kubernetes-v1-36-advancing-workload-aware-scheduling/</link><author></author><category>dev</category><pubDate>Wed, 13 May 2026 18:35:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[AI/ML and batch workloads introduce unique scheduling challenges that go beyond simple Pod-by-Pod scheduling.
-In Kubernetes v1.35, we introduced the first tranche of workload-aware scheduling improvements,
-featuring the foundational Workload API alongside basic  support built on a Pod-based framework,
-and an  feature to efficiently process identical Pods.Kubernetes v1.36 introduces a significant architectural evolution by cleanly separating API concerns:
-the Workload API acts as a static template, while the new PodGroup API handles the runtime state.
-To support this, the  features a new PodGroup scheduling cycle that enables atomic workload processing
-and paves the way for future enhancements. This release also debuts the first iterations of topology-aware scheduling
-and workload-aware preemption to advance scheduling capabilities. Additionally,
-ResourceClaim support for workloads unlocks Dynamic Resource Allocation
-(DRA) for PodGroups. Finally,
-to demonstrate real-world readiness, v1.36 delivers the first phase of integration between the Job controller and the new API.Workload and PodGroup API updatesThe Workload API now serves as a static template, while the new PodGroup API describes the runtime object.
-Kubernetes v1.36 introduces the Workload and PodGroup APIs as part of the
-scheduling.k8s.io/v1alpha2API group,
-completely replacing the previous  API version.In v1.35, Pod groups and their runtime states were embedded within the Workload resource.
-The new model decouples these concepts: the Workload now serves as a static template object,
-while the PodGroup manages the runtime state. This separation also improves performance and scalability
-as the PodGroup API allows per-replica sharding of status updates.Because the Workload API acts merely as a template, the 's logic is streamlined.
-The scheduler can directly read the PodGroup, which contains all the information required by the scheduler,
-without needing to watch or parse the Workload object itself.Here is what the updated configuration looks like. Workload controllers (such as the Job controller)
-define the Workload object, which now acts as a static template for your Pod groups:Controllers then stamp out runtime PodGroup instances based on those templates.
-The PodGroup runtime object holds the actual scheduling policy and references the template from which it was created.
-It also has a status containing conditions that mirror the states of individual Pods,
-reflecting the overall scheduling state of the group:Finally, to bridge this new architecture with individual Pods, the  field in the Pod API has been replaced
-with the  field. When creating Pods, you link them directly to the runtime PodGroup:By keeping the Workload as a static template and elevating the PodGroup to a first-class, standalone API,
-we establish a robust foundation for building advanced workload scheduling capabilities in future Kubernetes releases.PodGroup scheduling cycle and gang schedulingTo efficiently manage these workloads, the kube-scheduler now features a dedicated PodGroup scheduling cycle.
-Instead of evaluating and reserving resources sequentially Pod-by-Pod, which risks scheduling deadlocks,
-the scheduler evaluates the group as a unified operation.When the scheduler pops a PodGroup member from the scheduling queue, regardless of the group's specific policy,
-it fetches the rest of the queued Pods for that group, sorts them deterministically,
-and executes an atomic scheduling cycle as follows:The scheduler takes a single snapshot of the cluster state to prevent race conditions and ensure consistency
-while evaluating the entire group.It then attempts to find valid Node placements for all Pods in the group using a PodGroup scheduling algorithm,
-which leverages the standard Pod-based filtering and scoring phases.Based on the algorithm's outcome, the scheduling decision is applied atomically for the entire PodGroup.Success: If the placement is found and group constraints are met, the schedulable member Pods
-are moved directly to the binding phase together. Any remaining unschedulable Pods are returned
-to the scheduling queue to wait for available resources so they can join the already scheduled Pods.(Note: If new Pods are added to a PodGroup after others are already scheduled,
-the cycle evaluates the new Pods while accounting for the existing ones.
-Crucially, Pods already assigned to Nodes remain running. The scheduler will not unassign
-or evict them, even if the group fails to meet its requirements in subsequent cycles.)Failure: If the group fails to meet its requirements, the entire group is considered unschedulable.
-None of the Pods are bound, and they are returned to the scheduling queue to retry later after a backoff period.This cycle acts as the foundation for . When your workload requires strict  placement,
-the  policy leverages this cycle to prevent partial deployments that lead to resource wastage and potential deadlocks.While the scheduler still holds the Pods in the  until the  requirement is met, the actual scheduling phase now relies entirely
-on the new PodGroup cycle. Specifically, during the algorithm's execution, the scheduler verifies
-that the number of schedulable Pods satisfies the . If the cluster cannot accommodate the required minimum,
-none of the pods are bound. The group fails and waits for sufficient resources to free up.The first version of the PodGroup scheduling cycle comes with certain limitations:For basic  Pod groups (i.e., those where all Pods have identical scheduling requirements
-and lack inter-Pod dependencies like affinity, anti-affinity, or topology spread constraints),
-the algorithm is expected to find a placement if one exists.For  Pod groups, finding a valid placement if one exists is not guaranteed,
-even when the solution might seem trivial.For Pod groups with , finding a valid placement if one exists is not guaranteed.In addition to the above, for cases involving 
-(e.g., when the schedulability of one Pod depends on another group member via inter-Pod affinity),
-this algorithm may fail to find a placement regardless of cluster state due to its deterministic processing order.Topology-aware schedulingFor complex distributed workloads like AI/ML training or batch processing, placing Pods randomly across a cluster
-can introduce significant network latency and bottleneck overall performance.Topology-aware scheduling addresses this problem by allowing you to define topology constraints directly on a PodGroup,
-ensuring its Pods are co-located within specific physical or logical domains:In this example, the  attempts to schedule the Pods across various combinations of Nodes
-that match the  topology constraint. It then selects the optimal placement based on how efficiently
-the PodGroup utilizes resources and how many Pods can successfully be scheduled within that domain.To achieve this, the scheduler extends the PodGroup scheduling cycle with a dedicated placement-based algorithm
-consisting of three phases:Generate candidate placements (subsets of Nodes that are theoretically feasible for the PodGroup's assignment)
-based on the group's scheduling constraints. The topology-aware scheduling plugin uses the new 
-extension point to create these placements.Evaluate each proposed placement to confirm whether the entire PodGroup can actually fit there.Score all feasible placements to select the best fit for the PodGroup. The topology-aware scheduling plugins
-use the new  extension point to score these placements.Currently, topology-aware scheduling does not trigger Pod preemption to satisfy constraints.
-However, we plan to integrate workload-aware preemption with topology constraints in the upcoming release.While Kubernetes v1.36 delivers this foundational topology-aware scheduling, the Kubernetes project is planning
-expand its capabilities soon. Future updates will introduce support for multiple topology levels,
-soft constraints (preferences), deeper integration with Dynamic Resource Allocation (DRA),
-and more robust behavior when paired with the  scheduling policy.Workload-aware preemptionTo support the new PodGroup scheduling cycle, Kubernetes v1.36 introduces a new type of preemption mechanism
-called workload-aware preemption. When a PodGroup cannot be scheduled, the scheduler utilizes this mechanism
-to try making a scheduling of this PodGroup possible.Compared to the default preemption used in the standard Pod-by-Pod scheduling cycle, this new mechanism
-treats the entire PodGroup as a single preemptor unit. Instead of evaluating preemption victims on each Node separately,
-it searches across the entire cluster. This allows the scheduler to preempt Pods from multiple Nodes simultaneously,
-making enough space to schedule the whole PodGroup afterwards.Workload-aware preemption also introduces two additional concepts directly to the PodGroup API:PodGroup  that overrides the priority of the individual Pods forming the PodGroup.PodGroup  that dictates whether the Pods within a PodGroup can be preempted independently,
-or if they have to be preempted together in an  fashion.In Kubernetes v1.36, these fields are only respected by the workload-aware preemption mechanism.
-The people working on this set of features are hoping to extend support for these fields
-to other disruption sources, including default preemption used in the Pod-by-Pod scheduling cycle, in future releases.In this example, when the scheduler evaluates  as a potential preemption victim
-during a workload-aware preemption cycle, it will use 1000 as its priority and preempt the PodGroup
-in a strictly  fashion.DRA ResourceClaim support for workloadsSince its general availability in Kubernetes v1.34, DRA
-has enabled Pods to make detailed requests for devices
-like GPUs, TPUs, and NICs. Requested devices can be shared by multiple Pods
-requesting the same ResourceClaim
-by name. Other requests can be replicated through a ResourceClaimTemplate,
-in which Kubernetes generates one ResourceClaim with a non-deterministic name
-for each Pod referencing the template. However, large-scale workloads that require
-certain Pods to share certain devices are currently left to manage creating
-individual ResourceClaims themselves.Now, in addition to Pods, PodGroups can represent the replicable unit for a
-ResourceClaimTemplate. For ResourceClaimTemplates referenced by one of a
-PodGroup's , Kubernetes generates one ResourceClaim for the
-entire PodGroup, no matter how many Pods are in the group. When one of a Pod's
- for a ResourceClaimTemplate matches one of its PodGroup's
-, the Pod's claim resolves to the ResourceClaim generated
-for the PodGroup and a ResourceClaim will not be generated for that individual
-Pod. A single PodGroupTemplate in a Workload object can express resource
-requests which are both copied for each distinct PodGroup and shareable by the
-Pods within each group.The following example shows two Pods requesting the same ResourceClaim generated
-from a ResourceClaimTemplate for their PodGroup:In addition, ResourceClaims referenced by PodGroups, either through
- or the claim generated from resourceClaimTemplateName,
-become reserved for the entire PodGroup. Previously, kube-scheduler could only
-list individual Pods in a ResourceClaim's  field which is
-limited to 256 items. Now, a single PodGroup reference in 
-can represent many more than 256 Pods, allowing high-cardinality sharing of
-devices.Together, these changes enable massive workloads with complex topologies to
-utilize DRA for scalable device management.Integration with the Job controllerIn Kubernetes v1.36, the Job controller can create and manage Workload and PodGroup objects on your behalf,
-so that Jobs representing a tightly coupled parallel application, such as distributed AI training,
-are gang-scheduled without any additional tooling. Without this integration, you would have to
-create the Workload and PodGroup yourself and wire their references into the Pod template.
-Now, the Job controller automates this process natively.When the 
-feature gate is enabled, the Job controller automatically:creates a Workload and a corresponding runtime PodGroup for each qualifying Job,sets  onto every Pod the Job creates
-so the scheduler treats them as a single gang, andsets the Job as the owner of the generated objects,
-so they are garbage-collected when the Job is deleted.When does the integration kick in?To keep the first feature iteration predictable, the Job controller only creates a
-Workload and PodGroup when the Job has a well-defined, fixed shape: is greater than 1 is equal to The  is not already set on the Pod template.These conditions describe the class of Jobs that gang scheduling can reason about:
-each Pod has a stable identity (), the gang size is known and fixed at admission time
-( == ), and no other controller has already claimed scheduling responsibility
-( field is unset). Jobs that do not meet these conditions are scheduled Pod-by-Pod,
-exactly as before.If you set  on the Pod template yourself (for example,
-because a higher-level controller is managing the workload), the Job controller leaves
-the Pod template alone and does not create its own Workload or PodGroup. This makes the feature
-safe to enable in clusters that already use an external batch system.Here is an example of a Job that qualifies for gang scheduling:The Job controller creates a Workload and a PodGroup owned by this Job,
-and every Pod it creates carries a  that points at the generated PodGroup.
-The Pods are then scheduled together once all four can be placed at the same time using
-the PodGroup scheduling cycle described earlier in this post.The current constraints limit this integration to static, indexed, fully-parallel Jobs.
-Support for additional workload shapes, including elastic Jobs and other built-in controllers,
-is tracked in KEP-5547.In future Kubernetes releases, this integration will expand to support additional workload controllers,
-and the current constraints for Jobs may be relaxed.The journey for workload-aware scheduling doesn't stop here.
-For v1.37, the community is actively working on:Graduating Workload and PodGroup APIs to Beta: Our primary goal is to mature the Workload and PodGroup APIs to the Beta stage,
-solidifying their foundational role in the Kubernetes ecosystem. As part of this graduation process, we also plan to introduce  mutability
-to unlock elastic jobs and allow dynamic workloads to scale efficiently.Multi-level Workload hierarchies: To support complex modern AI workloads like JobSet or Disaggregated Inference via LeaderWorkerSet (LWS),
-we are working on expanding the architecture to support multi-level hierarchies. We aim to introduce a new API
-that allows grouping multiple PodGroups into hierarchical structures, directly reflecting the organization of real-world workload controllers.Graduating advanced scheduling features: We are focused on driving the maturity of the broader workload-aware scheduling ecosystem.
-This includes bringing existing features, such as topology-aware scheduling and workload-aware preemption, to the Beta stage.Unified controller integration API: To streamline adoption, we’re working on a controller integration API.
-This will provide real-world workload controllers with a unified, standardized method for consuming workload-aware scheduling capabilities.The priority and implementation order of these focus areas are subject to change. Stay tuned for further updates.All below workload-aware scheduling improvements are available as Alpha features in v1.36.
-To try them out, you must configure the following:Prerequisite: Workload and PodGroup API support: Enable the
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Python 3.15.0 beta 2 is here!</title><link>https://blog.python.org/2026/06/python-3150-beta-2/</link><author>Hugo van Kemenade</author><category>dev</category><pubDate>Tue, 2 Jun 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[The antepenultimate 3.15 beta is out!]]></content:encoded></item><item><title>Launching the Rust Foundation Maintainers Fund</title><link>https://blog.rust-lang.org/2026/06/02/launching-the-rust-foundation-maintainers-fund/</link><author>Funding team</author><category>dev</category><pubDate>Tue, 2 Jun 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[If you want to financially support the development of Rust, please consider donating to the Rust Foundation Maintainers Fund.The primary goal of the Funding team is to ensure that maintainers who work on Rust and its toolchain will be properly supported. We will talk to Rust Project members to figure out their funding situation, meet Rust team leads to learn about their maintenance needs, approach companies to find opportunities for them to invest into Rust by supporting Rust maintainers, coordinate various funding efforts and ensure that the beneficial effects of funded maintenance are visibly promoted, with the help of the Content team.Maintainer in Residence is a new program dedicated to financially supporting existing Rust Project maintainers. Each Maintainer in Residence will be funded to maintain one or more critical parts of Rust, such as the compiler, the standard library, Cargo, Clippy or one of many other projects that the Rust Project develops and maintains. The funded work will include activities such as performing large-scale refactorings, code reviews, unblocking new features, issue triaging, mentoring other contributors and more, and will be split between priorities guided by the teams they are supporting and priorities of their own choosing within the Project. Where applicable, Maintainers in Residence are also encouraged to propose, champion, and drive forward Rust Project Goals.The goal of this program is to provide stable and long-term funding so that maintainers can focus on important work that ensures the long-term health of Rust. The funding team will select Maintainers in Residence based on funding availability and maintenance needs within the Rust Project, and help ensure that they are successful. We expect that this will usually be a (near) full-time position, but that will depend on the nature of the work and the area of maintenance.This program extends our existing support for Rust maintainers, such as the program management program and the compiler-ops program. An important development is that we now have a centralized mechanism for gathering donations from both individuals and companies, and a dedicated team that will help direct those funds to specific maintainers. You can find more details about the funding team and the Maintainer in Residence program in the RFC.We expect to hire the first Maintainer in Residence in the upcoming months and announce it on this blog, so stay tuned!If you are an individual who wants to help Rust succeed and thrive, you can donate to the RFMF through GitHub Sponsors. Companies who would like to invest in better maintenance of Rust can also donate through GitHub Sponsors or they can contact the Rust Foundation directly.The important thing is that all proceeds from this fund will be directly used to support Rust Project maintainers. We currently expect that to happen primarily through the Maintainer in Residence program, but it can also be done in the form of smaller-scale grants or other mechanisms, as determined by the Funding team. We will figure this out on the go, as this is also quite new for us.We really appreciate each donation, however small, because with more money we can hire more maintainers to ensure that we can continue to develop Rust and that important improvements are not blocked on maintenance tasks. This is especially important at this time, where Rust is starting to get used more and more in the industry in various application areas, which increases the need for sustained maintenance. The importance of multiple funding sources is underscored by an unfortunate trend we currently observe, where key Rust maintainers are losing their funding for Rust work due to budget shifts. The Rust Foundation Maintainers Fund is designed to provide stable funding for Rust maintainers that is less dependent on sudden shifts in the job market and the IT industry.As with most things, there is no one-size-fits-all solution, so there are multiple ways to support Rust financially. The RustNL Maintainers Team recently hired several Rust Project maintainers. Previously, we wrote about how you can support specific individuals working on Rust. And there are also Rust Project Goals in search of funding. We welcome all efforts that can help support Rust Project maintainers, who often do work that is near invisible and thankless, while at the same time incredibly important and necessary, on a volunteer basis.Thank you for considering sponsoring the development and maintenance of Rust! You can find more information about funding Rust on our Funding page.]]></content:encoded></item><item><title>From Kubernetes Dashboard to Headlamp: Understanding the Transition</title><link>https://kubernetes.io/blog/2026/06/01/dashboard-to-headlamp/</link><author></author><category>dev</category><pubDate>Mon, 1 Jun 2026 18:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[For many people, Kubernetes Dashboard was their first window into Kubernetes. It offered a simple visual way to see what was running in a cluster, inspect resources, and build confidence without relying on the command line. For years, it helped developers, students, and operators make sense of Kubernetes, and it served as an important onramp into the ecosystem.The Kubernetes Dashboard project has now been archived. We deeply respect the work the team did and the role Dashboard played in making Kubernetes more approachable for so many users.Headlamp builds on that foundation and carries it forward. It keeps the clarity of a visual interface while adding capabilities that match how Kubernetes is used today. This includes multi-cluster visibility, application-centric views, extensibility through plugins, and flexible deployment options that work both in-cluster and on the desktop.This guide is meant to help you navigate that transition with confidence. Before diving into the mechanics of migration, we start with familiar ground by looking at how common Kubernetes Dashboard workflows map to Headlamp. We also cover what stays the same and what improves after the switch. The goal is not just to replace a tool, but to honor a user-centered legacy and help you land in a UI that can grow with you as your Kubernetes usage evolves.Mapping Kubernetes Dashboard workloads to HeadlampIf you have used Kubernetes Dashboard before, many workflows in Headlamp will feel familiar. Headlamp does not introduce a new way of thinking. Instead, it builds on workloads users already know and extends them in practical ways. The focus is continuity. What worked before still works, with more room to grow.Viewing workloads and resourcesIn Kubernetes Dashboard, most users started by browsing workloads like pods, deployments, services, and namespaces. Headlamp keeps this same starting point. Workloads are easy to find and inspect, and moving between namespaces and clusters is simpler. Resources are still organized in familiar ways, and navigation feels smoother, especially when you work across multiple environments.Editing and interacting with resourcesLike Kubernetes Dashboard, Headlamp lets you view and edit manifests directly in the UI based on your permissions. You can delete resources, scale workloads, or update configurations from the interface. All actions follow standard Kubernetes RBAC. If you could perform an action in Dashboard, you will find the same capability in Headlamp, with the same respect for access controls.Understanding relationshipsWhere Headlamp begins to expand the experience is in how it presents relationships between resources. In addition to list views, Headlamp offers visual ways to see how workloads, services, and configurations connect. This helps provide context without changing the underlying workloads users already rely on.At a high level, the tasks you performed in Kubernetes Dashboard are still there. Headlamp keeps familiar workflows while making it easier to scale as clusters, teams, and applications grow.Where Headlamp goes beyond Kubernetes DashboardExpanding from single cluster to multi-cluster workflowsKubernetes Dashboard was designed to work with one cluster at a time. That model worked well for simple setups, but it became limiting as teams adopted multiple environments. Headlamp expands this view by letting you work with multiple clusters from a single interface without switching tools or losing context. This makes it easier to manage development, staging, and production environments side by side.For teams running Kubernetes in more than one place, this shift reduces friction. You can stay oriented and move between clusters with confidence.From resource lists to application context with ProjectsProjects give you an application-centered way to view Kubernetes. Instead of jumping between lists, you can group related workloads, services, and supporting resources in one place. This makes applications easier to understand. You can see what belongs together, track changes in context, and troubleshoot without scanning the cluster piece by piece.Projects are built on native Kubernetes concepts. Namespaces, labels, and RBAC continue to work the same way they always have. Headlamp adds a visual layer that brings related resources together.Projects are optional. You can still work at the individual resource level when that fits your task. When you need more context, Projects help you step back and see the bigger picture.Extend the Headlamp UI with pluginsHeadlamp can be extended through plugins that bring common workflows directly into the UI. Instead of switching tools, you work in one place with the same context.For example, the Flux plugin brings GitOps workflows into Headlamp. It allows teams to view application state alongside the Kubernetes resources that Flux manages, making it easier to understand how changes in Git relate to what is running in the cluster.The AI Assistant follows a similar pattern. It adds a conversational layer to the UI that helps users understand what they are seeing, troubleshoot issues, or take action. All of this happens in the same screen where the problem appears.Building your own pluginsPlugins are optional and not limited to community-built extensions. Platform and project teams can also create their own plugins. This allows organizations to add custom integrations that match their specific workflows and internal tooling, while keeping the user experience consistent.Choosing how and where Headlamp runsHeadlamp gives teams flexibility in how they use a Kubernetes UI. You can run it directly in a cluster, use it as a desktop application, or combine both approaches based on your needs.Running Headlamp in-cluster works well for shared environments. It provides a centrally managed UI with controlled access and fits naturally into Kubernetes setups, following the same authentication and RBAC rules as other in-cluster components.The desktop application is often a better fit for local development and onboarding. It also works well when you need to manage multiple clusters from one place. Users can connect using their existing kubeconfig without deploying anything into the cluster.These options are not mutually exclusive. Many teams use the desktop app for day-to-day work, while relying on an in-cluster deployment for shared or production environments.Preparing for the MigrationBefore moving from Kubernetes Dashboard to Headlamp, it can be helpful to pause and take stock of how you use the Dashboard today. A little reflection up front can go a long way toward making the transition feel smooth and familiar.Start by noting which clusters and namespaces you access and how authentication works. Headlamp relies on standard Kubernetes authentication and RBAC. In most cases, existing access models carry over without change. If users already connect using kubeconfig files or service accounts, they will be able to access the same resources in Headlamp.It is also useful to think about the workflows that matter most to your team. Some users rely on Dashboard for quick inspection or troubleshooting, while others use it for lightweight edits or validation. Headlamp supports these same workflows and adds optional capabilities on top. Knowing what you rely on today helps the transition feel predictable and confidence building.If you would like to explore Headlamp or try it out before migrating, you can learn more at headlamp.dev.This blog focused on understanding the transition and what to expect. A step by step migration guide is coming soon and will walk through installation and migration in detail.]]></content:encoded></item><item><title>Announcing Rust 1.96.0</title><link>https://blog.rust-lang.org/2026/05/28/Rust-1.96.0/</link><author>The Rust Release Team</author><category>dev</category><pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust team is happy to announce a new version of Rust, 1.96.0. Rust is a programming language empowering everyone to build reliable and efficient software.If you have a previous version of Rust installed via , you can get 1.96.0 with:If you'd like to help us out by testing future releases, you might consider updating locally to use the beta channel () or the nightly channel (). Please report any bugs you might come across!Many users expect  and related  types to be , but this is not the case: they implement  directly, and it is a footgun to implement both  and  on the same type so this has been avoided. RFC3550 proposed a set of replacement range types that implement  rather than , meaning they can also be . The standard library portion of that RFC is now stable, introducing:core::range::RangeInclusiveA Rust version in the near future will also add  and  as re-exports from  (these do not implement  and already implement ), and  as the new home for the current ranges. Range syntax like  still produces the legacy types for now, but will be updated to  types in a future edition.With these stabilizations, it is now possible to store slice accessors in  types without splitting  and :The new  also makes its fields public, unlike the legacy version which avoided exposing the exhausted iterator state. This isn't a concern with the new type since it must be converted to begin iteration.Library authors should consider making use of  in public API, which accepts both legacy and new range types. If a concrete type is needed, prefer using new ranges as this will eventually become the default.The new macros  and  check that a value matches a given pattern, panicking with a  representation of the value otherwise. These are essentially the same as  and debug_assert!(matches!(..)), but the printed value improves the possibility of diagnosing the failure.These new macros have not been added to the standard prelude, because they would collide with popular third-party crates that provide macros with the same name. Instead, they should be manually imported from  or  before use.
+Changes to WebAssembly targetsWebAssembly targets no longer pass  to the linker which means that undefined symbols when linking are now a linker error instead of being converted to WebAssembly imports from the  module. This change prevents modules from linking unless all linking-related symbols are defined to catch bugs earlier and prevent accidental issues with symbol naming or similar.Undefined linking-related symbols are often indicative of build-time related bugs or misconfiguration. If, however, the old behavior is intended then it can be re-enabled with RUSTFLAGS=-Clink-arg=--allow-undefined or by editing the source code and using #[link(wasm_import_module = "env")] on the block defining the symbol.Rust 1.96 contains fixes for two vulnerabilities for users of third-party registries.CVE-2026-5223 is a  severity vulnerability regarding extraction of crate tarballs with symlinks.CVE-2026-5222 is a  severity vulnerability regarding authentication with normalized URLs.Users of crates.io are  by either vulnerability.Many people came together to create Rust 1.96.0. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>Reconciling the Past: Correcting Records for Unfixed Kubernetes CVEs</title><link>https://kubernetes.io/blog/2026/05/26/reconciling-unfixed-kubernetes-cves/</link><author></author><category>dev</category><pubDate>Tue, 26 May 2026 17:30:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[The Kubernetes project relies on transparency to empower cluster administrators and security
+researchers. One important way we do that is by publishing CVE records into the Common
+Vulnerabilities and Exposures database. As part of our ongoing effort to mature the official
+Kubernetes CVE Feed, we have identified
+some discrepancies. CVE records for a few older, unfixed issues incorrectly include a
+ field.The Kubernetes Security Response Committee (SRC) will correct the affected CVE records on June 1, 2026.
+This may result in vulnerability scanners identifying these vulnerabilities in places where
+they were previously not detected.To help reduce confusion, this post provides a technical update on three vulnerabilities that
+were disclosed in previous years but remain unfixed: , ,
+and .Why we are updating these records nowWhile these vulnerabilities have been public for several years, the recent work to generate
+official Open Source Vulnerabilities (OSV) files revealed that their corresponding CVE records
+did not accurately reflect their status. Specifically, some records suggested a  version
+existed, when in reality, these issues are architectural design trade-offs that cannot be
+fully remediated through code without breaking fundamental Kubernetes functionality.Correcting these records is vital for the community for:: Modern vulnerability scanners depend on precise version ranges. Inaccurate  tags lead to false negatives, giving users a false sense of security.: By formalizing these as , we ensure that platform providers and administrators are aware of the persistent need for administrative mitigations.For completeness, we should also mention that
+CVE-2020-8554 is an unfixed CVE with a
+correct CVE record stating that it affects all versions. That record will also be updated to
+use a more-standardized version number format.Technical analysis of unfixed architectural risksThe following vulnerabilities will not be fixed by the Kubernetes project. GitHub issues remain
+the best reference for the technical mechanics of these flaws.: The kube-apiserver follows HTTP redirects when communicating with admission webhooks.
+An actor capable of configuring an AdmissionWebhookConfiguration can redirect API server requests to internal, private networks.: Restricting this behavior would require breaking the standard HTTP client behavior
+that many legitimate integrations rely on.: Set the API server log level to less than 10 (to prevent logging response bodies) and disable
+dynamic profiling () to prevent unauthorized log-level changes.: A Time-of-Check to Time-of-Use (TOCTOU) race condition in the API server proxy allows users
+to bypass IP restrictions. The system performs a DNS check to validate an IP, but then performs a second
+resolution for the actual connection, which an attacker can manipulate.: Fixing this requires pinning resolved IPs in a way that breaks complex
+split-horizon DNS or dynamic IP environments.: Use a local DNS caching server like dnsmasq for the API server and configure 
+to enforce consistent responses between the check and the connection.: A design flaw in the Endpoints and EndpointSlice API objects allows users to manually specify
+IP addresses, which can be used to point a LoadBalancer or Ingress toward backends in other namespaces.: This is a fundamental feature of the Endpoints API used by many networking tools
+and operators.: Restrict write access to Endpoints (legacy) and EndpointSlices. Since Kubernetes 1.22,
+Kubernetes RBAC authorization mode no longer includes those permissions in the default  and 
+ClusterRoles. That removal applies to clusters created using Kubernetes v1.22; for clusters upgraded from
+older versions, administrators should manually audit and reconcile the  ClusterRole.On June 1, 2026, these CVE records will be updated to correctly reflect the fact that all versions are affected.
+You may see them begin to appear in vulnerability scanner results.Required actions for administratorsThe Kubernetes project recommends a  approach to manage these persistent risks:Ensure  is set to  and .Deploy dnsmasq or a similar caching resolver on control plane nodes. to remove Endpoints write access from broad roles.The RBAC action for CVE-2021-25740 applies when your cluster uses RBAC authorization mode,
+which is the default for clusters created with standard Kubernetes tooling. Administrators
+should independently test and validate these configurations in a non-production environment,
+assessing the architectural risks against their specific threat model and risk tolerance.Conclusion: maturity through transparencyThe effort to reconcile these records is a sign of a maturing security ecosystem. By moving away
+from the "patch-only" mindset and accurately documenting architectural debt, the Kubernetes
+project provides the community with the high-fidelity data needed to secure modern cloud
+native infrastructure.We would like to thank the security researchers—QiQi Xu, Javier Provecho, and others—who
+identified these risks, and the SIG Security Tooling contributors who continue to refine our
+official feeds. Special shoutout to Rory McCune for sharing information around these CVEs
+through his blog posts.Update 2026/06/01: Today, the Kubernetes SRC has updated the CVE records for CVE-2020-8554, CVE-2020-8561, CVE-2020-8562, and CVE-2021-25740.]]></content:encoded></item><item><title>Security Advisory for Cargo (CVE-2026-5222)</title><link>https://blog.rust-lang.org/2026/05/25/cve-2026-5222/</link><author>Rust Security Response Team</author><category>dev</category><pubDate>Mon, 25 May 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust Security Response Team was notified that Cargo incorrectly normalized
+the URLs of third-party registries using the sparse index protocol. If a
+hosting provider allowed multiple registries to be hosted with arbitrary names
+within the same domain, an attacker able to publish crates in a registry could
+obtain the credentials of others users of the same registry.This vulnerability is tracked as CVE-2026-5222. The severity of the
+vulnerability is , due to the extremely niche requirements needed to
+achieve the attack.Originally Cargo only supported storing a registry's index within git
+repositories. Most git hosting solutions allow accessing a git repository with
+or without the  suffix, so Cargo mirrored this behavior when normalizing
+registry URLs. This allowed credentials for https://example.com/index to be
+used for https://example.com/index.git.This normalization was unintentionally applied to the new sparse indexes too.
+Sparse indexes can be hosted on any HTTPS server, which treat URLs ending with
+ as different URLs than those without the suffix.If the following conditions apply:https://example.com/index is a sparse index.https://example.com/index allows crates to depend on crates from any other
+registry.The attacker is able to publish crates on https://example.com/index.The attacker is able to upload arbitrary files to
+https://example.com/index.git....the attacker could configure https://example.com/index.git to be a Cargo
+sparse registry requiring authentication for downloads, and with a download URL
+pointing to a server recording any credentials set to it.When the attacker then publishes a crate  to https://example.com/index
+depending on a crate  from https://example.com/index.git, and tricks the
+victim into downloading ,  Cargo will think the two registries share the
+same credential and send the victim's Cargo token to the malicious registry.Rust 1.96, to be released on May 28th, 2026, will update Cargo to only strip the
+ suffix from registry URLs using the git protocol. No mitigations are
+available for users of older versions of Cargo.All versions of Cargo shipped between Rust 1.68 (the stabilization of sparse
+registries) and 1.96 are affected.We'd like to thank Christos Papakonstantinou for reporting this to us according
+to the Rust security policy.We also want to thank the members of the Rust project who helped us address the
+vulnerability: Arlo Siemens for developing the fix; Weihang Lo, Eric Huss and
+Emily Albini for reviewing the fix; Emily Albini for writing this advisory;
+Emily Albini, Josh Stone and Manish Goregaokar for coordinating the disclosure.]]></content:encoded></item><item><title>Security Advisory for Cargo (CVE-2026-5223)</title><link>https://blog.rust-lang.org/2026/05/25/cve-2026-5223/</link><author>Rust Security Response Team</author><category>dev</category><pubDate>Mon, 25 May 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust Security Response Team was notified that Cargo incorrectly handled
+symlinks inside of crate tarballs downloaded from third-party registries,
+allowing a malicious crate to override the source code of another crate from the
+same registry.This vulnerability is tracked as CVE-2026-5223. The severity of the
+vulnerability is  for users of third-party registries. Users of
+crates.io are , as crates.io forbids uploading crates containing
+any symlink.When building a crate, Cargo extracts its source code in a local cache (stored
+within ), reusing it for any future build. Cargo includes protections
+to prevent any file from being extracted outside of the crate's own cache
+directory.It was discovered that it's possible to craft a malicious tarball able to
+extract files one level below the crate's own cache directory. With the way the
+cache is structured, that allowed the malicious crate to override the cache of
+other crates belonging to the same registry.Rust 1.96.0, to be released on May 28th, 2026, will update Cargo to reject
+extracting  symlink within crate tarballs, regardless of whether they come
+from crates.io (which already forbids them) or third-party registries. Note that
+Cargo never added symlinks when running  or , so
+the impact of this should be minimal.Users who are not able to upgrade to the most recent Rust version are
+recommended to audit the contents of their registry for the presence of any
+symlink, and to configure their registry to reject symlink (if such option is
+available).All versions of Cargo shipped before Rust 1.96.0 are affected.We'd like to thank Christos Papakonstantinou for reporting this to us according
+to the Rust security policy.We also want to thank the members of the Rust project who helped us address the
+vulnerability: Josh Triplett for developing the fix; Arlo Siemsen for reviewing
+the fix; Emily Albini for writing this advisory; Emily Albini, Josh Stone and
+Manish Goregaokar for coordinating the disclosure; Ed Page and Eric Huss for
+advising during the disclosure.]]></content:encoded></item><item><title>Introducing the pkg.go.dev API</title><link>https://go.dev/blog/pkgsite-api</link><author>Ethan Lee, Hana Kim, and Jonathan Amsterdam</author><category>dev</category><pubDate>Thu, 21 May 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[Since its inception, pkg.go.dev has established itself as
+the Go community’s primary resource for package documentation and discovery.
+While we initially prioritized creating a comprehensive and highly accessible
+web interface for users, the need for programmatic access has become
+increasingly clear. Developers building tools, IDE integrations, and automated
+workflows have historically relied on fragile workarounds like web scraping to
+access this data. To better address these evolving requirements, we are now
+expanding our platform to provide robust, direct access to the information our
+community needs.Today, we are excited to introduce the official
+pkg.go.dev API — a service interface for querying
+metadata about published Go modules. This launch is a direct response to
+years of community feedback. Furthermore, the need for a formalized
+interface has become even more acute with the rise of AI-assisted coding.
+Tools can now access the specific, high-fidelity context needed to reason
+about the Go ecosystem with greater precision.Built for stability and efficient caching, the API uses a stateless, GET-only
+architecture. Primary endpoints are currently hosted under the  path.
+Following a period of community feedback and confirmed stability, we intend to
+transition toward a formal  release.Information about the package at .Information about the module at .Versions of the module at .Information about packages of the module at .Search results for a given query.List of symbols declared by the package at ./v1beta/imported-by/{path}Paths of packages importing the package at .Vulnerabilities of the module or package at .One design principle for this API is “precision over convenience.” For context,
+when  encounters an import of a package that isn’t provided by an
+existing dependency of the main module, it applies the “longest module path”
+rule to determine which module is needed. (The fact that two or more modules
+could provide the package is what makes it possible to later carve out a
+submodule without breaking existing programs.) The
+pkg.go.dev web interface follows a similar convention
+when choosing which package to display for a given package path.
+By contrast, the pkg.go.dev API requires the module to be
+specified unambiguously. If a package path is ambiguous because it exists in
+multiple modules, the API returns a list of candidates and reports an error
+asking the client to be more specific.For example, a package imported as  could be provided by
+module  or by . While the
+pkg.go.dev web interface will automatically resolve the
+“longest module path” (), a client querying the API must
+specify the module explicitly to avoid an ambiguous resolution error.For endpoints that retrieve package, module, or symbol information, you can
+specify the desired version using the optional  query parameter. The
+API returns information about the latest version of the module or package by
+default. The parameter supports: Retrieve data for a specific release tag (e.g.,
+ or ). Reference default development branches—specifically 
+or  (e.g., ). The API will automatically resolve the
+branch to its corresponding pseudo-version. Note that custom or arbitrary
+branch names are not supported.If the  parameter is omitted, the API defaults to resolving the
+request against the latest tagged version of the package or module.To retrieve structured metadata for a specific package directly (using  for
+formatting):$ curl https://pkg.go.dev/v1beta/package/github.com/google/go-cmp/cmp | jq .
+{
+  "modulePath": "github.com/google/go-cmp",
+  "version": "v0.7.0",
+  "isLatest": true,
+  "isStandardLibrary": false,
+  "goos": "all",
+  "goarch": "all",
+  "path": "github.com/google/go-cmp/cmp",
+  "name": "cmp",
+  "synopsis": "Package cmp determines equality of values.",
+  "isRedistributable": true
+}
+To query a specific branch version (like ) and see it resolve
+automatically to its corresponding pseudo-version:$ curl -s "https://pkg.go.dev/v1beta/package/github.com/google/go-cmp/cmp?version=master" | jq '{path, version}'
+{
+  "path": "github.com/google/go-cmp/cmp",
+  "version": "v0.7.1-0.20260310220054-34c9473539b8"
+}
+The pkgsite-cli reference implementationTo demonstrate how to interact with our API, we are providing a reference
+client implementation:
+pkgsite-cli.
+This implementation serves as a practical example for developers looking to
+build their own integrations, showing how to handle the data directly from the
+terminal. Please be aware that as the API continues to evolve, the interface and
+behavior of this command may change.To get started, install the command:$ go install golang.org/x/pkgsite/cmd/internal/pkgsite-cli@latest
+$ pkgsite-cli search "uuid"
+github.com/google/uuid
+  Module:   github.com/google/uuid@v1.6.0
+  Synopsis: Package uuid generates and inspects UUIDs.
+... more
+To inspect a specific package:$ pkgsite-cli package github.com/google/go-cmp/cmp
+github.com/google/go-cmp/cmp
+  Name:      cmp
+  Module:    github.com/google/go-cmp
+  Version:   v0.7.0 (latest)
+  Synopsis:  Package cmp determines equality of values.
+To see which packages import a specific package:$ pkgsite-cli package --imported-by github.com/google/go-cmp/cmp
+github.com/google/go-cmp/cmp
+  Name:     cmp
+  Module:   github.com/google/go-cmp
+  Version:  v0.7.0 (latest)
+  Synopsis: Package cmp determines equality of values.
 
-feature gate on both the  and , and ensure the scheduling.k8s.io/v1alpha2API group is enabled.Once the prerequisite is met, you can enable specific features:Gang scheduling: Enable the
+Imported by:
+  cloud.google.com/go/internal/testutil
+  cuelang.org/go/internal/cuetxtar
+  chainguard.dev/apko/pkg/build/types
+  ... more
+To list symbols declared by a package:$ pkgsite-cli package --symbols github.com/google/go-cmp/cmp
+github.com/google/go-cmp/cmp
+  Name:     cmp
+  Module:   github.com/google/go-cmp
+  Version:  v0.7.0 (latest)
+  Synopsis: Package cmp determines equality of values.
 
-feature gate on the .Workload-aware preemption: Enable the
+Symbols:
+  type Indirect struct{}
+  type MapIndex struct{}
+  type Option interface{}
+  ... more
+To list versions of a module:$ pkgsite-cli module -versions github.com/google/go-cmp
+github.com/google/go-cmp
+  Version:          v0.7.0 (latest)
+  Repository:       https://github.com/google/go-cmp
+  Has go.mod:       yes
+  Redistributable:  yes
 
-feature gate on the  (requires  to also be enabled).DRA ResourceClaim support for workloads: Enable the
-DRAWorkloadResourceClaims
-feature gate on the , ,  and .Workload API integration with the Job controller: Enable the
+Versions:
+  v0.7.0
+  v0.6.0
+  v0.5.9
+  ... more
+To list both versions and packages of a module:$ pkgsite-cli module -packages -versions github.com/google/go-cmp
+github.com/google/go-cmp
+  Version:          v0.7.0 (latest)
+  Repository:       https://github.com/google/go-cmp
+  Has go.mod:       yes
+  Redistributable:  yes
 
-feature gate on the  and .We encourage you to try out workload-aware scheduling in your test clusters
-and share your experiences to help shape the future of Kubernetes scheduling.
-You can send your feedback by:To dive deeper into the architecture and design of these features, read the KEPs:]]></content:encoded></item><item><title>Kubernetes v1.36: PSI Metrics for Kubernetes Graduates to GA</title><link>https://kubernetes.io/blog/2026/05/12/kubernetes-v1-36-psi-metrics-ga/</link><author></author><category>dev</category><pubDate>Tue, 12 May 2026 18:35:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[Since its original implementation in the Linux kernel in 2018,
-Pressure Stall Information (PSI) has provided users
-with the high-fidelity signals needed to identify resource saturation before it becomes an outage.
-Unlike traditional utilization metrics, PSI tells the story of tasks stalled and time lost, all in nicely-packaged percentages of time across the CPU, memory, and I/O.With the recent release of Kubernetes v1.36, users across the ecosystem have a stable, reliable interface to observe resource contention at the node, pod, and container levels. In this post, we will dive into the improvements and performance testing that proved its readiness for production.Beyond utilization: why PSI?Monitoring CPU or memory usage alone can be misleading. A node may report XX% (below 100%) CPU utilization while certain tasks are experiencing severe latency due to scheduling delays. PSI fills this gap by providing:: Absolute time spent in a stalled state.: 10s, 60s, and 300s windows that allow operators to distinguish between transient spikes and sustained resource tension.A common concern when graduating telemetry features is the resource overhead required to collect and serve the metrics. To address this, SIG Node conducted extensive performance validation on high-density workloads (80+ pods) across various machine types.Our testing focused on two primary scenarios to isolate the impact of the Kubelet and kernel-level collection respectively:Kernel PSI ON / Kubelet Feature OFF vs Kernel PSI ON / Kubelet Feature ON (Kubelet overhead)Kernel PSI OFF / Kubelet Feature ON vs Kernel PSI ON / Kubelet Feature ON (Kernel overhead)Scenario 1: The Kubelet OverheadFirst, we looked at the kubelet usage on 4 core machines (Case 1). For these, the Linux kernel was already tracking pressure on both clusters by default(), but we toggled the  feature gate to see if the Kubelet actively querying and exposing these metrics impacted the resource usage. The synchronized bursts seen in the graph are practically identical in both magnitude and frequency, confirming that the Kubelet's collection logic is highly lightweight and blends seamlessly into standard housekeeping cycles. There is no issue about the feature affecting the pre-existing resource use, staying within the normal 0.1 cores or 2.5% of the total node capacity, and is therefore safe for production-scale deployments.(Case 1) Kubelet CPU Usage Rate ComparisonFigure 2: Kubelet CPU Usage Rate Comparison.Next, we evaluated the system overhead in the same run. As seen in the following graph, the  usage lines for the Kubelet PSI-enabled (red) follows the same pattern as the Kubelet PSI-disabled (blue) clusters, with a slight expected increase from the baseline. This visualizes that once the OS is tracking PSI, at around , the act of Kubernetes reading those cgroup metrics is negligible to performance.(Case 1) System CPU Usage Rate ComparisonFigure 1: Node System CPU Usage Rate Comparison.Scenario 2: The Kernel OverheadShifting gears, we evaluated the underlying overhead of enabling PSI on the Linux kernel also on a 4 core machine. By comparing a cluster booted with  (COS default) against a cluster with , we isolated the exact cost of the OS-level bookkeeping. Even under heavy I/O and CPU load at an 80-pod density, the  delta between the kernel-enabled and kernel-disabled clusters remained consistently between  and  or  of the total node capacity. There was a single spike to , or , but was controlled back down within a few seconds. This confirms that the internal kernel tracking is highly efficient under load.(Case 2) Node System CPU Usage Rate ComparisonFigure 3: Node System CPU Usage Rate Comparison.Figure 4 zooms in on the kubelet process itself, which serves as the primary collector for these metrics. . The results show that even while the kubelet performs periodic  to aggregate data from the cgroup hierarchy, its CPU usage remains remarkably low with interchangeable spikes and nothing exceeding  or  of total capacity for longer than a second.(Case 2) Kubelet CPU Usage Rate ComparisonFigure 4: Kubelet CPU Usage Rate Comparison.Improvements between beta (1.34) and stable (1.36)Smarter Metric Emission for GA: We improved how the Kubelet handles underlying OS support for PSI. Previously, if the feature was enabled in Kubernetes but the underlying Linux kernel didn't support PSI (), the Kubelet would emit misleading zero-valued metrics. These could trigger false alarms when read as real metrics instead of missing values. In v1.36, the Kubelet now detects OS-level PSI support via cgroup configurations before reporting. This ensures that pressure metrics are only collected and emitted when they are actually supported by the node, providing cleaner data for monitoring and alerting systems.To use PSI metrics in your Kubernetes cluster, your nodes must meet the following requirements:Ensure your nodes are running a Linux kernel version 4.20 or later and are using cgroup v2.Ensure PSI is enabled at the OS level (your kernel must be compiled with  and must not be booted with the  parameter).As of v1.36, Kubelet PSI metrics are generally available and you do not need to opt in to any feature gate.Once the OS prerequisites are met, you can start scraping the  endpoint with your Prometheus-compatible monitoring solution or query the Summary API to collect and visualize the new PSI metrics. Note that PSI is a Linux-kernel feature, so these metrics are not available on Windows nodes. Your cluster can contain a mix of Linux and Windows nodes, and on the Windows nodes, the kubelet will simply omit the PSI metrics.If your cluster is running a recent enough version of Kubernetes and you are a privileged node administrator, you can also proxy to the kubelet's HTTP API via the control plane's API server to see real-time pressure data from the Summary API. Proxying to the kubelet is a privileged operation. Granting access to it is a security risk, so ensure you have the appropriate administrative permissions before executing these commands.If you want to dive deeper into how these metrics are calculated and exposed, check out these resources:Support for PSI metrics was developed through the collaborative efforts of SIG Node. Special thanks to all contributors who helped design, implement, test, review, and document this feature across its journey from alpha in v1.33, through beta in v1.34, to GA in v1.36.If you have feedback and want to share your experience using this feature, join the discussion:SIG Node would love to hear about your experiences using this feature in production!]]></content:encoded></item><item><title>Python 3.14.5 is out!</title><link>https://blog.python.org/2026/05/python-3145-is-out/</link><author>Hugo van Kemenade</author><category>dev</category><pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[A special release with a new (old) garbage collector.]]></content:encoded></item><item><title>Kubernetes v1.36: Moving Volume Group Snapshots to GA</title><link>https://kubernetes.io/blog/2026/05/08/kubernetes-v1-36-volume-group-snapshot-ga/</link><author></author><category>dev</category><pubDate>Fri, 8 May 2026 18:35:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[Volume group snapshots were introduced as an Alpha feature with the Kubernetes v1.27 release, moved to Beta in v1.32, and to a second Beta in v1.34. We are excited to announce that in the Kubernetes v1.36 release, support for volume group snapshots has reached General Availability (GA).The support for volume group snapshots relies on a set of extension APIs for group snapshots. These APIs allow users to take crash-consistent snapshots for a set of volumes. Behind the scenes, Kubernetes uses a label selector to group multiple  objects for snapshotting. A key aim is to allow you to restore that set of snapshots to new volumes and recover your workload based on a crash-consistent recovery point.This feature is only supported for CSI volume drivers.An overview of volume group snapshotsSome storage systems provide the ability to create a crash-consistent snapshot of multiple volumes. A group snapshot represents  made from multiple volumes that are taken at the same point-in-time. A group snapshot can be used either to rehydrate new volumes (pre-populated with the snapshot data) or to restore existing volumes to a previous state (represented by the snapshots).Why add volume group snapshots to Kubernetes?The Kubernetes volume plugin system already provides a powerful abstraction that automates the provisioning, attaching, mounting, resizing, and snapshotting of block and file storage. Underpinning all these features is the Kubernetes goal of workload portability.There was already a VolumeSnapshot API that provides the ability to take a snapshot of a persistent volume to protect against data loss or data corruption. However, some storage systems support consistent group snapshots that allow a snapshot to be taken from multiple volumes at the same point-in-time to achieve write order consistency. This is extremely useful for applications that contain multiple volumes. For example, an application may have data stored in one volume and logs stored in another. If snapshots for these volumes are taken at different times, the application will not be consistent and will not function properly if restored from those snapshots.While you can quiesce the application first and take individual snapshots sequentially, this process can be time-consuming or sometimes impossible. Consistent group support provides crash consistency across all volumes in the group without the need for application quiescence.Kubernetes APIs for volume group snapshotsKubernetes' support for volume group snapshots relies on three API kinds that are used for managing snapshots:Created by a Kubernetes user (or automation) to request creation of a volume group snapshot for multiple persistent volume claims.Created by the snapshot controller for a dynamically created VolumeGroupSnapshot. It contains information about the provisioned cluster resource (a group snapshot). The object binds to the VolumeGroupSnapshot for which it was created with a one-to-one mapping.Created by cluster administrators to describe how volume group snapshots should be created, including the driver information, the deletion policy, etc.These three API kinds are defined as CustomResourceDefinitions (CRDs). For the GA release, the API version has been promoted to .The API version for , VolumeGroupSnapshotContent, and  is promoted to groupsnapshot.storage.k8s.io/v1.Enhanced stability and bug fixes based on feedback from the beta releases, including the improvements introduced in v1beta2 for accurate  reporting.How do I use Kubernetes volume group snapshotsCreating a new group snapshot with KubernetesOnce a  object is defined and you have volumes you want to snapshot together, you may request a new group snapshot by creating a  object.Label the PVCs you wish to group:For dynamic provisioning, a selector must be set so that the snapshot controller can find PVCs with the matching labels to be snapshotted together.The  is required for dynamic provisioning:How to use group snapshot for restoreAt restore time, request a new  to be created from a  object that is part of a . Repeat this for all volumes that are part of the group snapshot.As a storage vendor, how do I add support for group snapshots?To implement the volume group snapshot feature, a CSI driver :Implement a new group controller service.Implement group controller RPCs: CreateVolumeGroupSnapshot, DeleteVolumeGroupSnapshot, and .Add group controller capability CREATE_DELETE_GET_VOLUME_GROUP_SNAPSHOT.This project, like all of Kubernetes, is the result of hard work by many contributors from diverse backgrounds working together. On behalf of SIG Storage, I would like to offer a huge thank you to all the contributors who stepped up over the years to help the project reach GA:For those interested in getting involved with the design and development of CSI or any part of the Kubernetes Storage system, join the Kubernetes Storage Special Interest Group (SIG). We always welcome new contributors.]]></content:encoded></item><item><title>Kubernetes v1.36: More Drivers, New Features, and the Next Era of DRA</title><link>https://kubernetes.io/blog/2026/05/07/kubernetes-v1-36-dra-136-updates/</link><author></author><category>dev</category><pubDate>Thu, 7 May 2026 18:35:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[Dynamic Resource Allocation (DRA) has fundamentally changed how platform administrators handle hardware
-accelerators and specialized resources in Kubernetes. In the v1.36 release, DRA
-continues to mature, bringing a wave of feature graduations, critical usability
-improvements, and new capabilities that extend the flexibility of DRA to native
-resources like memory and CPU, and support for ResourceClaims in PodGroups.Driver availability continues to expand. Beyond specialized compute accelerators,
-the ecosystem includes support for networking and other hardware types,
-reflecting a move toward a more robust, hardware-agnostic infrastructure.Whether you are managing massive fleets of GPUs, need better handling of failures,
-or simply looking for better ways to define resource fallback options, the upgrades
-to DRA in 1.36 have something for you. Let's dive into the new features and graduations!The community has been hard at work stabilizing core DRA concepts. In Kubernetes 1.36,
-several highly anticipated features have graduated to Beta and Stable.Prioritized list (stable)Hardware heterogeneity is a reality in most clusters. With the
-Prioritized list
-feature, you can confidently define fallback preferences when requesting
-devices. Instead of hardcoding a request for a specific device model, you can specify an
-ordered list of preferences (e.g., "Give me an H100, but if none are available, fall back
-to an A100"). The scheduler will evaluate these requests in order, drastically improving
-scheduling flexibility and cluster utilization.Extended resource support (beta)As DRA becomes the standard for resource allocation, bridging the gap with legacy systems
-is crucial. The DRA
-Extended resource
-feature allows users to request resources via traditional extended resources on a Pod.
-This allows for a gradual transition to DRA, meaning cluster operators can migrate clusters
-to DRA but let application developers adopt the ResourceClaim API on their own schedule.Partitionable devices (beta)Hardware accelerators are powerful, and sometimes a single workload doesn't need an
-entire device. The
-Partitionable devices
-feature, provides native DRA support for dynamically carving physical hardware into smaller,
-logical instances (such as Multi-Instance GPUs) based on workload demands. This allows
-administrators to safely and efficiently share expensive accelerators across multiple Pods.Just as you can taint a Kubernetes Node, you can apply taints directly to specific DRA
-devices.
-Device taints and tolerations
-empower cluster administrators to manage hardware more effectively. You can taint faulty
-devices to prevent them from being allocated to standard claims, or reserve specific hardware
-for dedicated teams, specialized workloads, and experiments. Ultimately, only Pods with
-matching tolerations are permitted to claim these tainted devices.Device binding conditions (beta)To improve scheduling reliability, the Kubernetes scheduler can use the
-Binding conditions
-feature to delay committing a Pod to a Node until its required external resources—such as attachable
-devices or FPGAs—are fully prepared. By explicitly modeling resource readiness, this
-prevents premature assignments that can lead to Pod failures, ensuring a much more robust
-and predictable deployment process.Resource health status (beta)Knowing when a device has failed or become unhealthy is critical for workloads running on
-specialized hardware. With
-Resource health status,
-Kubernetes expose device health information directly in the Pod status, giving users and
-controllers crucial visibility to quickly identify and react to hardware failures. The
-feature includes support for human-readable health status messages, making it
-significantly easier to diagnose issues without the need to dive into complex driver logs.Beyond stabilizing existing capabilities, v1.36 introduces foundational new features
-that expand what DRA can do. These are alpha features, so they are behind feature gates
-that are disabled by default.ResourceClaim support for workloadsTo optimize large-scale AI/ML workloads that rely on strict topological scheduling, the
-ResourceClaim support for workloads
-feature enables Kubernetes to seamlessly manage shared resources across massive sets
-of Pods. By associating ResourceClaims or ResourceClaimTemplates with PodGroups,
-this feature eliminates previous scaling bottlenecks, such as the limit on the
-number of pods that can share a claim, and removes the burden of manual claim
-management from specialized orchestrators.Node allocatable resourcesWhy should DRA only be for external accelerators? In v1.36, we are introducing the first
-iteration of using the DRA APIs to manage  infrastructure resources (like CPU and
-memory). By bringing CPU and memory allocation under the DRA umbrella with the DRA
-Node allocatable resources
-feature, users can leverage DRA's advanced placement, NUMA-awareness, and prioritization
-semantics for standard compute resources, paving the way for incredibly fine-grained
-performance tuning.DRA resource availability visibilityOne of the most requested features from cluster administrators has been better visibility
-into hardware capacity. The new
-Resource pool status
-feature allows you to query the availability of devices in DRA resource pools. By creating a
-ResourcePoolStatusRequest object, you get a point-in-time snapshot of device counts
-— total, allocated, available, and unavailable — for each pool managed by a given
-driver. This enables better integration with dashboards and capacity planning tools.List types for attributesResourceClaim constraint evaluation has changed to work better with scalar
-and list values:
- now checks for a non-empty intersection, and
- checks for pairwise disjoint values.An  function in CEL has also been introduced,
-that lets device selectors keep working more easily when an attribute
-changes between scalar and list representations.
-(The  function is only available in DRA
-contexts for expression evaluation).Deterministic device selectionThe Kubernetes scheduler has been updated to evaluate devices using lexicographical
-ordering based on resource pool and ResourceSlice names. This change empowers drivers
-to proactively influence the scheduling process, leading to improved throughput and
-more optimal scheduling decisions. The ResourceSlice controller toolkit automatically
-generates names that reflect the exact device ordering specified by the driver author.Workloads running on nodes with DRA devices often need to discover details about
-their allocated devices, such as PCI bus addresses or network
-interface configuration, without querying the Kubernetes API. With
-Device metadata,
-Kubernetes defines a standard protocol for how DRA drivers expose device
-attributes to containers as versioned JSON files at well-known paths. Drivers
-built with the
-DRA kubelet plugin library
-get this behavior transparently; they just provide the metadata and the
-library handles file layout, CDI bind-mounts, versioning, and lifecycle. This
-gives applications a consistent, driver-independent way to discover and
-consume device metadata, eliminating the need for custom controllers or
-looking up ResourceSlice objects to get metadata via attributes.This release introduced a wealth of new Dynamic Resource Allocation (DRA) features,
-and the momentum is only building. As we look ahead, our roadmap focuses on maturing
-existing features toward beta and stable releases while hardening DRA’s performance,
-scalability, and reliability. A key priority over the coming cycles will be deep
-integration with  and topology aware scheduling.A big goal for us is to migrate users from Device Plugin to DRA, and we want
-you involved. Whether you are currently maintaining a driver or are just beginning
-to explore the possibilities, your input is vital. Partner with us to shape the next
-generation of resource management. Reach out today to collaborate on development,
-share feedback, or start building your first DRA driver.A good starting point is joining the WG Device Management
-Slack channel and
-meetings,
-which happen at Americas/EMEA and EMEA/APAC friendly time slots.Not all enhancement ideas are tracked as issues yet, so come talk to us if you want to help or have some ideas yourself!
-We have work to do at all levels, from difficult core changes to usability enhancements in kubectl, which could be picked up by newcomers.]]></content:encoded></item><item><title>Python 3.15.0 beta 1 is here!</title><link>https://blog.python.org/2026/05/python-3150-beta-1/</link><author>Hugo van Kemenade</author><category>dev</category><pubDate>Thu, 7 May 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[The propreantepenultimate 3.15 beta is out!]]></content:encoded></item><item><title>Kubernetes v1.36: Server-Side Sharded List and Watch</title><link>https://kubernetes.io/blog/2026/05/06/kubernetes-v1-36-server-side-sharded-list-and-watch/</link><author></author><category>dev</category><pubDate>Wed, 6 May 2026 18:35:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[As Kubernetes clusters grow to tens of thousands of nodes, controllers that watch
-high-cardinality resources like Pods face a scaling wall. Every replica of a
-horizontally scaled controller receives the full stream of events from the API
-server, paying the CPU, memory, and network cost to deserialize everything, only
-to discard the objects it is not responsible for. Scaling out the controller
-does not reduce per-replica cost; it multiplies it.Kubernetes v1.36 introduces server-side sharded list and watch as an alpha
-feature (KEP-5866).
-With this feature enabled, the API server filters events at the source so that
-each controller replica receives only the slice of the resource collection it
-owns.The problem with client-side shardingSome controllers, such as kube-state-metrics,
-already support horizontal sharding. Each replica is assigned a portion of the
-keyspace and discards objects that do not belong to it. While this works
-functionally, it does not reduce the volume of data flowing from the API server:N replicas x full event stream: every replica deserializes and processes
-every event, then throws away what it does not need.Network bandwidth scales with replicas, not with shard size.CPU spent on deserialization is wasted for the discarded fraction.Server-side sharded list and watch solves this by moving the filtering upstream
-into the API server. Each replica tells the API server which hash range it owns,
-and the API server only sends matching events.The feature adds a  field to . Clients specify a
-hash range using the  function:shardRange(object.metadata.uid, '0x0000000000000000', '0x8000000000000000')
-The API server computes a deterministic 64-bit
-FNV-1a
-hash of the specified field and returns only objects whose hash falls within the
-range . This applies to both list responses and watch event
-streams. The hash function produces the same result across all API server
-instances, so the feature is safe to use with multiple API server replicas.Currently supported field paths are  and
-object.metadata.namespace.Using sharded watches in controllersControllers typically use informers to list and watch resources. To shard the
-workload, each replica injects the  into the  used
-by its informers via :For a 2-replica deployment, the selectors split the hash space in half:A single replica can also cover non-contiguous ranges using :When the API server honors a shard selector, the list response includes a
- field in the response metadata that echoes back the applied
-selector:If  is absent, the server did not honor the shard selector and the
-client received the complete, unfiltered collection. In this case, the client
-should be prepared to handle the full result set, for example by applying
-client-side filtering to discard objects outside its assigned shard range.This feature is in alpha and requires enabling the  feature
-gate on the API server. We are looking for feedback from controller authors and
-operators running large clusters.If you have questions or feedback, join the  channel on
-Kubernetes Slack.]]></content:encoded></item><item><title>Kubernetes v1.36: Declarative Validation Graduates to GA</title><link>https://kubernetes.io/blog/2026/05/05/kubernetes-v1-36-declarative-validation-ga/</link><author></author><category>dev</category><pubDate>Tue, 5 May 2026 18:35:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[In Kubernetes v1.36,  for Kubernetes native types has reached General Availability (GA).For users, this means more reliable, predictable, and better-documented APIs. By moving to a declarative model, the project also unlocks the future ability to publish validation rules via OpenAPI and integrate with ecosystem tools like Kubebuilder. For contributors and ecosystem developers, this replaces thousands of lines of handwritten validation code with a unified, maintainable framework.This post covers why this migration was necessary, how the declarative validation framework works, and what new capabilities come with this GA release.The Motivation: Escaping the "Handwritten" Technical DebtFor years, the validation of Kubernetes native APIs relied almost entirely on handwritten Go code. If a field needed to be bounded by a minimum value, or if two fields needed to be mutually exclusive, developers had to write explicit Go functions to enforce those constraints.As the Kubernetes API surface expanded, this approach led to several systemic issues: The project accumulated roughly 18,000 lines of boilerplate validation code. This code was difficult to maintain, error-prone, and required intense scrutiny during code reviews. Without a centralized framework, validation rules were sometimes applied inconsistently across different resources. Handwritten validation logic was difficult to discover or analyze programmatically. This meant clients and tooling couldn't predictably know validation rules without consulting the source code or encountering errors at runtime.The solution proposed by SIG API Machinery was : using Interface Definition Language (IDL) tags (specifically  marker tags) directly within  files to define validation rules.At the core of the declarative validation feature is a new code generator called . Just as Kubernetes uses generators for deep copies, conversions, and defaulting,  parses  tags and automatically generates the corresponding Go validation functions.These generated functions are then registered seamlessly with the API scheme. The generator is designed as an extensible framework, allowing developers to plug in new "Validators" by describing the tags they parse and the Go logic they should produce.The declarative validation framework introduces a comprehensive suite of marker tags that provide rich validation capabilities highly optimized for Go types. For a full list of supported tags, check out the official documentation. Here is a catalog of some of the most common tags you will now see in the Kubernetes codebase:, , , , +k8s:format=k8s-short-name, , , +k8s:update=[NoSet, NoModify, NoClear]By placing these tags directly above the field definitions, the constraints are self-documenting and immediately visible to anyone reading the type definitions.Advanced Capabilities: "Ambient Ratcheting"One of the most substantial outcomes of this work is that validation ratcheting is now a standard, ambient part of the API. In the past, if we needed to tighten validation, we had to first add handwritten ratcheting code, wait a release, and then tighten the validation to avoid breaking existing objects.With declarative validation, this safety mechanism is built-in. If a user updates an existing object, the validation framework compares the incoming object with the . If a specific field's value is semantically equivalent to its prior state (i.e., the user didn't change it), the new validation rule is bypassed. This "ambient ratcheting" means we can loosen or tighten validation immediately and in the least disruptive way possible.Scaling API Reviews with Reaching GA required absolute confidence in the generated code, but our vision extends beyond just validation. Declarative validation is a key part of a comprehensive approach to making API review easier, more consistent, and highly scalable.By moving validation rules out of opaque Go functions and into structured markers, we are empowering tools like . This linter can now statically analyze API types and enforce API conventions automatically, significantly reducing the manual burden on SIG API Machinery reviewers and providing immediate feedback to contributors.With the release of Kubernetes v1.36, Declarative Validation graduates to General Availability (GA). As a stable feature, the associated  feature gate is now enabled by default. It has become the primary mechanism for adding new validation rules to Kubernetes native types.Looking forward, the project is committed to adopting declarative validation even more extensively. This includes migrating the remaining legacy handwritten validation code for established APIs and requiring its use for all new APIs and new fields. This ongoing transition will continue to shrink the codebase's complexity while enhancing the consistency and reliability of the entire Kubernetes API surface.Beyond the core migration, declarative validation also unlocks an exciting future for the broader ecosystem. Because validation rules are now defined as structured markers rather than opaque Go code, they can be parsed and reflected in the OpenAPI schemas published by the Kubernetes API server. This paves the way for tools like , client libraries, and IDEs to perform rich client-side validation before a request is ever sent to the cluster. The same declarative framework can also be consumed by ecosystem tools like Kubebuilder, enabling a more consistent developer experience for authors of Custom Resource Definitions (CRDs).The migration to declarative validation is an ongoing effort. While the framework itself is GA, there is still work to be done migrating older APIs to the new declarative format.A huge thank you to everyone who helped bring this feature to GA:And the many others across the Kubernetes community who contributed along the way.Welcome to the declarative future of Kubernetes validation!]]></content:encoded></item><item><title>Kubernetes v1.36: Admission Policies That Can&apos;t Be Deleted</title><link>https://kubernetes.io/blog/2026/05/04/kubernetes-v1-36-manifest-based-admission-control/</link><author></author><category>dev</category><pubDate>Mon, 4 May 2026 18:35:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[If you've ever tried to enforce a security policy across a fleet of
-Kubernetes clusters, you've probably run into a frustrating chicken-and-egg
-problem. Your admission policies are API objects, which means they don't
-exist until someone creates them, and they can be deleted by anyone with
-the right permissions. There's always a window during cluster bootstrap
-where your policies aren't active yet, and there's no way to prevent a
-privileged user from removing them.Kubernetes v1.36 introduces an alpha feature that addresses this:
-manifest-based admission control. It lets you define admission webhooks
-and CEL-based policies as files on disk, loaded by the API server at
-startup, before it serves any requests.Most Kubernetes policy enforcement today works through the API. You create
-a ValidatingAdmissionPolicy or a webhook configuration as an API object,
-and the admission controller picks it up. This works well in steady state,
-but it has some fundamental limitations.During cluster bootstrap, there's a gap between when the API server starts
-serving requests and when your policies are created and active. If you're
-restoring from a backup or recovering from an etcd failure, that gap can be
-significant.There's also a self-protection problem. Admission webhooks and policies
-can't intercept operations on their own configuration resources. Kubernetes
-skips invoking webhooks on types like ValidatingWebhookConfiguration to
-avoid circular dependencies. That means a sufficiently privileged user can
-delete your critical admission policies, and there's nothing in the
-admission chain to stop them.We - Kubernetes SIG API Machinery - wanted a way to say "these policies are always on, full stop."You add a  field to the  file
-that you already pass to the API server via --admission-control-config-file.
-Point it at a directory, drop your policy YAML files in there, and the API
-server loads them before it starts serving.The manifest files are standard Kubernetes resource definitions. The only
-requirement is that all the objects that these manifests define  have names ending in .
-This reserved suffix prevents collisions with API-based configurations and
-makes it easy to tell where an admission decision came from when you're
-looking at metrics or audit logs.Here's a complete example that denies privileged containers outside
-kube-system:Protecting what couldn't be protected beforeThe part we're most excited about is the ability to intercept operations on
-admission configuration resources themselves.With API-based admission, webhooks and policies are never invoked on types
-like ValidatingAdmissionPolicy or ValidatingWebhookConfiguration. That
-restriction exists for good reason: if a webhook could reject changes to
-its own configuration, you could end up locked out with no way to fix it
-through the API.Manifest-based policies don't have that problem. If a bad policy is
-blocking something it shouldn't, you fix the file on disk and the API
-server picks up the change. There's no circular dependency because the
-recovery path doesn't go through the API.This means you can write a manifest-based policy that prevents deletion of
-your critical API-based admission policies. For platform teams managing
-shared clusters, this is a significant improvement. You can now guarantee
-that your baseline security policies can't be removed by a cluster admin,
-accidentally or otherwise.Here's what that looks like in practice. This policy prevents any
-modification or deletion of admission resources that carry the
-platform.example.com/protected: "true" label:With this in place, any API-based admission policy or webhook configuration
-labeled platform.example.com/protected: "true" is shielded from tampering.
-The protection itself lives on disk and can't be removed through the API.Manifest-based configurations are intentionally self-contained. They can't
-reference API resources, which means no  for policies, no
-Service references for admission webhooks (instead they are URL-only),
-and bindings may only reference
-policies in the same manifest set. These restrictions exist because the
-configurations need to work without any cluster state, including at startup
-before etcd is available.If you run multiple API server instances, each one loads its own manifest
-files independently. There's no cross-server synchronization built in. This
-is the same model as other file-based API server configurations like
-encryption at rest. When this feature is enabled, Kubernetes exposes a configuration hash as a label on relevant metrics, so you can
-detect drift.Files are watched for changes at runtime, so you don't need to restart the
-API server to update policies. If you update a manifest file, the API
-server validates the new configuration and swaps it in atomically. If
-validation fails, it keeps the previous good configuration and logs the
-error. This means you can roll out policy changes across your fleet using
-standard configuration management tools (Ansible, Puppet, or even mounted
-ConfigMaps) without any API server downtime.The initial load at startup is stricter: if any manifest is invalid, the
-API server won't start. This is intentional. At startup, failing fast is
-safer than running without your expected policies.To try this in Kubernetes v1.36:Create a directory with your static manifest files.
-If you need to mount that in to the Pod where the API server runs, do that too. Read-only is fine.Start the API server with --admission-control-config-file pointing to
-your  file.If you're interested in contributing to this feature or other
-SIG API Machinery projects, join us on
-#sig-api-machinery
-on Kubernetes Slack. You're also welcome to attend the
-SIG API Machinery meetings,
-held every other Wednesday.]]></content:encoded></item><item><title>Python 3.14.5 release candidate</title><link>https://blog.python.org/2026/05/python-3145rc1/</link><author>Hugo van Kemenade</author><category>dev</category><pubDate>Mon, 4 May 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[A special release candidate with a new (old) garbage collector.]]></content:encoded></item><item><title>Rust is participating in Outreachy</title><link>https://blog.rust-lang.org/2026/05/04/outreachy-2026-may/</link><author>Jack Huey</author><category>dev</category><pubDate>Mon, 4 May 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust Project has been building up a good history of participating in various open-source mentorship programs, including Google Summer of Code for three years (including this year) and previously OSPP. We're happy to announce that this year we are also participating in Outreachy starting in the May 2026 cohort.Each of these mentorship programs has different criteria for eligibility depending on who they target and the motivations of the program. Outreachy provides internships in open source, to people from any background who face underrepresentation, systemic bias, or discrimination in the technical industry where they are living. You can learn more about the Outreachy program on their website.
-What is Outreachy and how is it different than Google Summer of CodeOutreachy is similar to Google Summer of Code (GSoC) in some aspects, but different in others. First off, unlike GSoC, Outreachy interns first apply to the overall program and only  can apply to specific communities. Second, while oftentimes GSoC applicants submit various contributions prior to their application, Outreachy has a dedicated period where contributions are not just optional, but required. Finally, Outreachy applicants submit an application similar to GSoC applications and communities pick interns based on those applications and the interns' contributions. Outreachy has two internship periods per year, one running from May to August (in which we are currently participating) and one from December to March.The other major difference between Google Summer of Code and Outreachy is the source of intern stipends. For GSoC, Google graciously covers contributor stipends and overhead. For Outreachy, communities instead cover the interns' stipends and overhead.
-We are mentoring 4 interns for the May 2026 cohortBecause of limited funding availability and mentoring capacity, the Rust Project decided to select four interns for mentorship. We'll briefly share these projects below.
-Calling overloaded C++ functions from RustThis project aims to implement an experimental feature for calling overloaded C++ functions from Rust, and to begin testing that feature in a few representative use cases.This project aims to develop the workflows to run and analyze code coverage of the compiler at the scale of the entire compiler test suite and on ecosystem crates detected by crater. The hope is to be able to detect when the compiler is inadequately tested, both within the compiler and in the ecosystem, and to build tools to do continuous analysis on this.This project aims to implement fuzzing for a-mir-formality, an in-progress model for Rust's type and trait system.  The goal is to generate programs in order to identify rules with underspecified semantics in a-mir-formality.
-Improve the security of GitHub Actions of the Rust ProjectThis project aims to improve the security of GitHub Actions workflows of the repositories owned by the Rust Project. It will develop tools and workflows, integrating with existing software, to analyze Github repositories and detect if they follow the best security practices, fix existing issues, and ensure that good security practices are followed in the future.Over the next 3 months, the interns will work closely with their mentors to make progress on their projects. When the internship period is over, we'll write another blog post to share the results! See you then!We also want to thank all the people that submitted applications and made contributions. It was quite tough to decide which applicants to select. Hopefully we will participate in Outreachy again in the future and there are other opportunities to participate. We also very much welcome you to stick around and continue being involved - there is a ton of places in the Rust Project with opportunities to be involved.]]></content:encoded></item><item><title>Kubernetes v1.36: Pod-Level Resource Managers (Alpha)</title><link>https://kubernetes.io/blog/2026/05/01/kubernetes-v1-36-feature-pod-level-resource-managers-alpha/</link><author></author><category>dev</category><pubDate>Fri, 1 May 2026 18:35:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[Kubernetes v1.36 introduces
-Pod-Level Resource Managers
-as an alpha feature, bringing a more flexible and powerful resource management
-model to performance-sensitive workloads. This enhancement extends the kubelet's
-Topology, CPU, and Memory Managers to support pod-level resource specifications
-(), evolving them from a strictly per-container allocation
-model to a pod-centric one.Why do we need pod-level resource managers?When running performance-critical workloads such as machine learning (ML)
-training, high-frequency trading applications, or low-latency databases, you
-often need exclusive, NUMA-aligned resources for your primary application
-containers to ensure predictable performance.However, modern Kubernetes pods rarely consist of just one container. They
-frequently include sidecar containers for logging, monitoring, service meshes,
-or data ingestion.Before this feature, this created a trade-off, to get NUMA-aligned, exclusive
-resources for your main application, you had to allocate exclusive,
-integer-based CPU resources to  container in the pod. This might be
-wasteful for lightweight sidecars. If you didn't do this, you forfeited the
-pod's Guaranteed Quality of Service (QoS) class entirely, losing the performance
-benefits.Introducing pod-level resource managersEnabling pod-level resources support for the resource managers (via the
- and  feature gates) allows the
-kubelet to create hybrid resource allocation models. This brings flexibility
-and efficiency to high-performance workloads without sacrificing NUMA alignment.Here are a few practical scenarios demonstrating how this feature can be
-applied, depending on the configured Topology Manager scope:1. Tightly-coupled database (Topology manager's pod scope)Consider a latency-sensitive database pod that includes a main database
-container, a local metrics exporter, and a backup agent sidecar.When configured with the  Topology Manager scope, the kubelet performs a
-single NUMA alignment based on the entire pod's budget. The database container
-gets its exclusive CPU and memory slices from that NUMA node. The remaining
-resources from the pod's budget form a new . The metrics
-exporter and backup agent run in this pod shared pool. They share resources with
-each other, but they are strictly isolated from the database's exclusive slices
-and the rest of the node.This allows you to safely co-locate auxiliary containers on the same NUMA node
-as your primary workload without wasting dedicated cores on them.2. ML workload with infrastructure sidecars (Topology manager's container scope)Imagine a pod running a GPU-accelerated ML training workload alongside a generic
-service mesh sidecar.Under the  Topology Manager scope, the kubelet evaluates each
-container individually. You can grant the ML container exclusive, NUMA-aligned
-CPUs and Memory for maximum performance. Meanwhile, the service mesh sidecar
-doesn't need to be NUMA-aligned; it can run in the general node-wide shared
-pool. The collective resource consumption is still safely bounded by the overall
-pod limits, but you only allocate NUMA-aligned, exclusive resources to the
-specific containers that actually require them.CPU quotas (CFS) and isolationWhen running these mixed workloads within a pod, isolation is enforced
-differently depending on the allocation: Containers granted exclusive CPU slices have their
-CPU CFS quota enforcement disabled at the container level, allowing them to
-run without being throttled by the Linux scheduler.Pod shared pool containers: Containers falling into the pod shared pool
-have CPU CFS quotas enforced at the pod level, ensuring they do not consume
-more than the leftover pod budget.How to enable Pod-Level Resource ManagersUsing this feature requires Kubernetes v1.36 or newer. To enable it, you must
-configure the kubelet with the appropriate feature gates and policies:To help cluster administrators monitor and debug these new allocation models, we
-have introduced several new kubelet metrics when the feature gate is enabled:resource_manager_allocations_total: Counts the total number of exclusive
-resource allocations performed by a manager. The  label ("pod" or
-"node") distinguishes between allocations drawn from the node-level pool
-versus a pre-allocated pod-level pool.resource_manager_allocation_errors_total: Counts errors encountered during
-exclusive resource allocation, distinguished by the intended allocation
- ("pod" or "node").resource_manager_container_assignments: Tracks the cumulative number of
-containers running with specific assignment types. The 
-label ("node_exclusive", "pod_exclusive", "pod_shared") provides visibility
-into how workloads are distributed.Current limitations and caveatsWhile this feature opens up new possibilities, there are a few things to keep in
-mind during its alpha phase. Be sure to review the
-Limitations and caveats
-in the official documentation for full details on compatibility, requirements,
-and downgrade instructions.Getting started and providing feedbackFor a deep dive into the technical details and configuration of this feature,
-check out the official concept documentation:To learn more about the overall pod-level resources feature and how to assign
-resources to pods, see:As this feature moves through Alpha, your feedback is invaluable. Please report
-any issues or share your experiences via the standard Kubernetes communication
-channels:]]></content:encoded></item><item><title>Raising the baseline for the `nvptx64-nvidia-cuda` target</title><link>https://blog.rust-lang.org/2026/05/01/nvptx-baseline-update/</link><author>Kjetil Kjeka</author><category>dev</category><pubDate>Fri, 1 May 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The  target is a compilation target for NVIDIA GPUs. When using this target, the final output is PTX. Two version choices shape that output:a GPU architecture (for example, , , …), which determines which GPUs can run the PTX, anda PTX ISA version, which determines which CUDA driver versions can load (and JIT-compile) the PTX.In Rust 1.97 (scheduled for release on July 9, 2026), the baseline PTX ISA version and GPU architecture for  will be increased. These changes affect both the Rust compiler () and related host tooling, and they make it impossible to generate PTX artifacts compatible with older GPUs and older CUDA drivers.The new minimum supported versions will be: (requires a CUDA 11 driver or newer) (GPUs with compute capability below 7.0 are no longer supported)
-Why are the requirements being changed?Until now, Rust has supported emitting PTX for a wide range of GPU architectures and PTX ISA versions. In practice, several defects existed that could cause valid Rust code to trigger compiler crashes or miscompilations. Raising the baseline addresses these issues and enables more complete support for the remaining supported hardware.Removing support affects users of the architectures being removed. In this case, the most recent affected GPU architectures date back to 2017 and are no longer actively supported by NVIDIA. We therefore expect the overall impact of this change to be limited.Maintaining support for these architectures would require substantial effort. These removals let us focus development efforts on improving correctness and performance for currently supported hardware.
-What happens when I update to Rust 1.97?If you need to target a CUDA driver that does not support PTX ISA 7.0 (CUDA 10-era drivers and older), Rust 1.97 will no longer be able to generate PTX compatible with that environment. Similarly, if you need to run on GPUs with compute capability below 7.0 (for example, Maxwell or Pascal), Rust 1.97 will no longer be able to generate compatible PTX for those GPUs.Assuming you are targeting a CUDA driver compatible with CUDA 11 or newer and using GPUs with compute capability 7.0 or newer:If you do  specify , the new default will be , and your build should continue to work (but will no longer be compatible with pre-Volta GPUs).If you currently specify an older  (for example, ), you will need to either:
-remove that flag and let it default to , orupdate it to  or a newer architecture.If you already specify  (or newer), there should be no behavioral changes from this update.]]></content:encoded></item><item><title>Kubernetes v1.36: In-Place Vertical Scaling for Pod-Level Resources Graduates to Beta</title><link>https://kubernetes.io/blog/2026/04/30/kubernetes-v1-36-inplace-pod-level-resources-beta/</link><author></author><category>dev</category><pubDate>Thu, 30 Apr 2026 18:35:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[Following the graduation of Pod-Level Resources to Beta in v1.34 and the General Availability (GA) of In-Place Pod Vertical Scaling in v1.35, the Kubernetes community is thrilled to announce that In-Place Pod-Level Resources Vertical Scaling has graduated to Beta in v1.36!This feature is now enabled by default via the InPlacePodLevelResourcesVerticalScaling feature gate. It allows users to update the aggregate Pod resource budget () for a running Pod, often without requiring a container restart.Why Pod-level in-place resize?The Pod-level resource model simplified management for complex Pods (such as those with sidecars) by allowing containers to share a collective pool of resources. In v1.36, you can now adjust this aggregate boundary on-the-fly.This is particularly useful for Pods where containers do not have individual limits defined. These containers automatically scale their effective boundaries to fit the newly resized Pod-level dimensions, allowing you to expand the shared pool during peak demand without manual per-container recalculations.Resource inheritance and the When a Pod-level resize is initiated, the Kubelet treats the change as a resize event for every container that inherits its limits from the Pod-level budget. To determine whether a restart is required, the Kubelet consults the  defined within individual containers: If a container's  is set to , the Kubelet attempts to update the cgroup limits dynamically via the Container Runtime Interface (CRI). If set to , the container will be restarted to apply the new aggregate boundary safely. Currently,  is not supported at the Pod level. The Kubelet always defers to individual container settings to decide if an update can be applied in-place or requires a restart.Example: Scaling a shared resource poolIn this scenario, a Pod is defined with a 2 CPU pod-level limit. Because the individual containers do not have their own limits defined, they share this total pool.1. Initial Pod specificationTo double the CPU capacity to 4 CPUs, apply a patch using the  subresource:Node-Level reality: feasibility and safetyApplying a resize patch is only the first step. The Kubelet performs several checks and follows a specific sequence to ensure node stability:Before admitting a resize, the Kubelet verifies if the new aggregate request fits within the Node's allocatable capacity. If the Node is overcommitted, the resize is not ignored; instead, the  condition will reflect a  or  status, providing immediate feedback on why the "envelope" hasn't grown.To prevent resource "overshoot", the Kubelet coordinates the cgroup updates in a specific order: The Pod-level cgroup is expanded first, creating the "room" before the individual container cgroups are enlarged. The container cgroups are throttled first, and only then is the aggregate Pod-level cgroup shrunken.Observability: tracking resize statusWith the move to Beta, Kubernetes uses  to track the lifecycle of a resize:: The spec is updated, but the Node hasn't admitted the change (e.g., due to capacity).: The Node has admitted the resize (status.allocatedResources) but the changes aren't yet fully applied to the cgroups ().Constraints and requirements Required for accurate aggregate enforcement. Requires a container runtime that supports the  CRI call (e.g., containerd v2.0+ or CRI-O). Requires , InPlacePodVerticalScaling, InPlacePodLevelResourcesVerticalScaling, and . Currently exclusive to Linux-based nodes.As we move toward General Availability (GA), the community is focusing on Vertical Pod Autoscaler (VPA) Integration, enabling VPA to issue Pod-level resource recommendations and trigger in-place actuation automatically.Getting started and providing feedbackWe encourage you to test this feature and provide feedback via the standard Kubernetes communication channels:]]></content:encoded></item><item><title>Announcing Google Summer of Code 2026 selected projects</title><link>https://blog.rust-lang.org/2026/04/30/gsoc-2026-selected-projects/</link><author>Jakub Beránek</author><category>dev</category><pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[A few months ago, we published a list of GSoC project ideas, and started discussing these projects with potential GSoC applicants on our Zulip. We had many interesting discussions with the potential contributors, and even saw some of them making non-trivial contributions to various Rust Project repositories before GSoC officially started!The applicants prepared and submitted their project proposals by the end of March. This year, we received 96 proposals, which is a 50% increase from last year. We are glad that there was again a lot of interest in our projects! Like many other GSoC organizations this year, we somewhat struggled with some AI-generated proposals and low-quality contributions generated using AI agents, but it stayed manageable.GSoC requires us to produce an ordered list of the best proposals, which is always challenging, as Rust is a big project with many priorities. Our mentors examined the submitted proposals and evaluated them based on their prior interactions with the given applicant, their contributions so far, the quality of the proposal itself, but also the importance of the proposed project for the Rust Project and its wider community. We also had to take mentor bandwidth and availability into account. Unfortunately, we had to cancel some projects due to several mentors losing their funding for Rust work in the past few weeks.As is usual in GSoC, even though some project topics received multiple proposals, we had to pick only one proposal per project topic. We also had to choose between proposals targeting different work to avoid overloading a single mentor with multiple projects. In the end, we narrowed the list down to the best proposals that we could still realistically support with our available mentor pool. We submitted this list and eagerly awaited how many of them would be accepted into GSoC.On the 30th of April, Google has announced the accepted projects. We are happy to share that  Rust Project proposals were accepted by Google for Google Summer of Code 2026. That is a lot of projects! We are really happy and excited about GSoC 2026!Below you can find the list of accepted proposals (in alphabetical order), along with the names of their authors and the assigned mentor(s):Congratulations to all applicants whose project was selected! Our mentors are looking forward to working with you on these exciting projects to improve the Rust ecosystem. You can expect to hear from us soon, so that we can start coordinating the work on your GSoC projects.We are excited to mentor three contributors who already experienced GSoC with us in the previous year. Welcome back, Kei, Marcelo and Shourya!We would like to thank all the applicants whose proposal was sadly not accepted, for their interactions with the Rust community and contributions to various Rust projects. There were some great proposals that did not make the cut, in large part because of limited mentorship capacity. However, even if your proposal was not accepted, we would be happy if you would consider contributing to the projects that got you interested, even outside GSoC! Our project idea list is still current and could serve as a general entry point for contributors that would like to work on projects that would help the Rust Project and the Rust ecosystem. Some of the Rust Project Goals are also looking for help.There is a good chance we'll participate in GSoC next year as well (though we can't promise anything at this moment), so we hope to receive your proposals again in the future!The accepted GSoC projects will run for several months. After GSoC 2026 finishes (in autumn of 2026), we will publish a blog post in which we will summarize the outcome of the accepted projects.]]></content:encoded></item><item><title>Kubernetes v1.36: Tiered Memory Protection with Memory QoS</title><link>https://kubernetes.io/blog/2026/04/29/kubernetes-v1-36-memory-qos-tiered-protection/</link><author></author><category>dev</category><pubDate>Wed, 29 Apr 2026 18:35:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[On behalf of SIG Node, we are pleased to announce updates to the Memory QoS
-feature (alpha) in Kubernetes v1.36. Memory QoS uses the cgroup v2 memory
-controller to give the kernel better guidance on how to treat container memory.
-It was first introduced in v1.22 and updated in v1.27. In Kubernetes v1.36, we're introducing: opt-in memory reservation, tiered
-protection by QoS class, observability metrics, and kernel-version warning for .Opt-in memory reservation with v1.36 separates throttling from reservation. Enabling the feature gate turns on
- throttling (the kubelet sets  based on
-, default 0.9), but memory reservation is now controlled
-by a separate kubelet configuration field: (default): no  or  is written. Throttling
-via  still works.: the kubelet writes tiered memory protection based on the Pod's
-QoS class: Pods get hard protection via . For example, a
-Guaranteed Pod requesting 512 MiB of memory results in:$ cat /sys/fs/cgroup/kubepods.slice/kubepods-pod6a4f2e3b_1c9d_4a5e_8f7b_2d3e4f5a6b7c.slice/memory.min
-536870912
-The kernel will not reclaim this memory under any circumstances. If it cannot
-honor the guarantee, it invokes the OOM killer on other processes to free pages. Pods get soft protection via . For the same 512 MiB
-request on a Burstable Pod:$ cat /sys/fs/cgroup/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-pod8b3c7d2e_4f5a_6b7c_9d1e_3f4a5b6c7d8e.slice/memory.low
-536870912
-The kernel avoids reclaiming this memory under normal pressure, but may reclaim
-it if the alternative is a system-wide OOM. Pods get neither  nor . Their memory
-remains fully reclaimable.In earlier versions, enabling the MemoryQoS feature gate immediately set  for every container with a memory request.  is a hard reservation that the kernel will not reclaim, regardless of memory pressure.Consider a node with 8 GiB of RAM where Burstable Pod requests total 7 GiB. In earlier versions, that 7 GiB would be locked as , leaving little headroom for the kernel, system daemons, or BestEffort workloads and increasing the risk of OOM kills.With v1.36 tiered reservation, those Burstable requests map to  instead of . Under normal pressure, the kernel still protects that memory, but under extreme pressure it can reclaim part of it to avoid system-wide OOM. Only Guaranteed Pods use , which keeps hard reservation lower.With  in v1.36, you can enable throttling first, observe workload behavior, and opt into reservation when your node has enough headroom.Two alpha-stability metrics are exposed on the kubelet  endpoint:kubelet_memory_qos_node_memory_min_bytesTotal  across Guaranteed Podskubelet_memory_qos_node_memory_low_bytesTotal  across Burstable PodsThese are useful for capacity planning. If kubelet_memory_qos_node_memory_min_bytes
-is creeping toward your node's physical memory, you know hard reservation is
-getting tight.$ curl -sk https://localhost:10250/metrics | grep memory_qos
-# HELP kubelet_memory_qos_node_memory_min_bytes [ALPHA] Total memory.min in bytes for Guaranteed pods
-kubelet_memory_qos_node_memory_min_bytes 5.36870912e+08
-# HELP kubelet_memory_qos_node_memory_low_bytes [ALPHA] Total memory.low in bytes for Burstable pods
-kubelet_memory_qos_node_memory_low_bytes 2.147483648e+09
-On kernels older than 5.9,  throttling can trigger the
-kernel livelock issue. The bug was fixed
-in kernel 5.9. In v1.36, when the feature gate is enabled, the kubelet checks the
-kernel version at startup and logs a warning if it is below 5.9. The feature
-continues to work — this is informational, not a hard block.How Kubernetes maps Memory QoS to cgroup v2Memory QoS uses four cgroup v2 memory controller interfaces:: hard memory limit — unchanged from previous versions: hard memory protection — with , set only for Guaranteed Pods: soft memory protection — set for Burstable Pods with : memory throttling threshold — unchanged from previous versionsThe following table shows how Kubernetes container resources map to cgroup v2
-interfaces when memoryReservationPolicy: TieredReservation is configured.
-With the default memoryReservationPolicy: None, no  or
- values are set.Set to (hard protection)Not set(requests == limits, so throttling is not useful)Set to (soft protection)Calculated based onformula with throttling factorSet to (if specified)Calculated based onnode allocatable memorycgroup v2 requires that a parent cgroup's memory protection is at least as
-large as the sum of its children's. The kubelet maintains this by setting
- on the kubepods root cgroup to the sum of all Guaranteed and
-Burstable Pod memory requests, and  on the Burstable QoS cgroup
-to the sum of all Burstable Pod memory requests. This way the kernel can
-enforce the per-container and per-pod protection values correctly.The kubelet manages pod-level and QoS-class cgroups directly using the runc
-libcontainer library, while container-level cgroups are managed by the
-container runtime (containerd or CRI-O).Kubernetes v1.36 or laterLinux with cgroup v2. Kernel 5.9 or higher is recommended — earlier kernels
-work but may experience the livelock issue. You can verify cgroup v2 is
-active by running .A container runtime that supports cgroup v2 (containerd 1.6+, CRI-O 1.22+)To enable Memory QoS with tiered protection:If you want  throttling without memory protection, omit
- or set it to :]]></content:encoded></item><item><title>Kubernetes v1.36: Staleness Mitigation and Observability for Controllers</title><link>https://kubernetes.io/blog/2026/04/28/kubernetes-v1-36-staleness-mitigation-for-controllers/</link><author></author><category>dev</category><pubDate>Tue, 28 Apr 2026 18:35:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[Staleness in Kubernetes controllers is a problem that affects many controllers, and is something may affect controller behavior
-in subtle ways. It is usually not until it is too late, when a controller in production has already taken incorrect action, that
-staleness is found to be an issue due to some underlying assumption made by the controller author. Some issues caused by staleness
-include controllers taking incorrect actions, controllers not taking action when they should, and controllers taking too long to
-take action. I am excited to announce that Kubernetes v1.36 includes new features that help mitigate staleness in controllers
-and provide better observability into controller behavior.Staleness in controllers comes from an outdated view of the world inside of the controller cache. In order to provide a fast user
-experience, controllers typically maintain a local cache of the state of the cluster. This cache is populated by watching the
-Kubernetes API server for changes to objects that the controller cares about. When the controller needs to take action, it will
-first check its cache to see if it has the latest information. If it does not, it will then update its cache by watching the API
-server for changes to objects that the controller cares about. This process is known as .However, there are some cases where the controller's cache may be outdated. For example, if the controller is restarted, it will
-need to rebuild its cache by watching the API server for changes to objects that the controller cares about. During this time, the
-controller's cache will be outdated, and it will not be able to take action. Additionally, if the API server is down, the controller's
-cache will not be updated, and it will not be able to take action. These are just a few examples of cases where the controller's
-cache may be outdated.Kubernetes v1.36 includes improvements in both client-go as well as implementations of highly contended controllers in
-kube-controller-manager, using those client-go improvements.In client-go, the project added  (feature gate
-name ), which is on top of the existing FIFO queue implementation. The new approach allows for
-the queue to atomically handle operations that are recieved in batches, such as the initial set of objects from a
- operation that an informer uses to populate its cache. This ensures that the queue is always in a consistent state,
-even when events come out of order. Prior to this, events were added to the queue
-in the order that they were received, which could lead to an inconsistent state in the cache that does not accurately reflect
-the state of the cluster.With this change, you can now ensure that the queue is always in a consistent state, even when events come out of order. To take
-advantage of this, clients using client-go can now introspect into the cache to determine the latest resource version that the
-controller cache has seen. This is done with the newly added function LastStoreSyncResourceVersion() implemented on the 
-interface here. This function is the basis for the staleness mitigation
-features in kube-controller-manager.kube-controller-manager improvementsIn kube-controller-manager, the v1.36 release has added the ability for 4 different controllers to use this new capability. The controllers are:These controllers all act on pods, which in most cases are under the highest amount of contention in a cluster. The changes are
-on by default for these controllers, and can be disabled by setting the feature gates StaleControllerConsistency<API type>
-to  for the specific controller you wish to disable it for. For example, to disable the feature for the DaemonSet controller,
-you would set the feature gate StaleControllerConsistencyDaemonSet to .When the relevant feature gate is enabled, the controller will first check the latest
-resource version of the cache before taking action. If the
-latest resource version of the cache is lower than what the controller has written to the API server for the object it is trying to
-reconcile, the controller will not take action. This is because the controller's cache is outdated, and it does not have the latest
-information about the state of the cluster.Informer authors using client-go can also immediately take advantage of these improvements. See an example of how to use this feature
-in the ReplicaSet informer. This PR shows how to use the new feature to check
-if the informer's cache is stale before taking action. The client-go library provides a  data structure that queries the store
-and compares the latest resource version of the cache with the written resource version of the object.The ReplicaSet controller tracks both the ReplicaSet's resource version and the resource version of the pods that the ReplicaSet
-manages. For a specific ReplicaSet, it tracks the latest written resource version of the pods that the ReplicaSet owns as well as
-any writes to the ReplicaSet itself. If the latest resource version of the cache is lower than what the controller has
-written to the API server for the object it is trying to reconcile, the controller will not take action. This is because the
-controller's cache is outdated, and it does not have the latest information about the state of the cluster.An informer author can use the  to track the latest resource version of the objects that the informer cares about.
-It provides 3 main functions:: This function is called by the controller when it writes to the API server for an object. It is used to record the
-latest resource version of the object that the controller has written to the API server. The  is the object that the
-controller is reconciling, and the  is the UID of that object. The resource version and GroupResource are the resource version
-and GroupResource of the object that the controller has written to the API server. The object is not explicitly tracked, since the
-controller only cares about waiting to catch up to the latest resource version of the written object.: This function is called by the controller to ensure that the cache is up to date for the object. It is used prior
-to reconciliation to decide whether to reconcile or not. It returns true if the cache is up to date for the object, and false
-otherwise. It will use the information provided by  to determine if the cache is up to date.: This function is called by the controller when an object is deleted. It is used to remove the object from the consistency
-store. This is mostly used for cleanup when an object is deleted to prevent the consistency store from growing indefinitely.The UID is used to distinguish between different objects that have the same name, such as when an object is deleted and then
-recreated. It is not needed for EnsureReady because the consistency store is only concerned with catching up to the latest resource
-version of the object, not the specific object. It is primarily used to ensure that the controller doesn't delete the entry for
-an object when it is recreated with a new UID.With these 3 functions, an informer author can implement staleness mitigation in their controller.In addition to the staleness mitigation features, the Kubernetes project has also added related instrumentation to kube-controller-manager
-in 1.36. These metrics are also enabled by default, and are controlled using the same set of feature gates.The following alpha metrics have been added to kube-controller-manager in 1.36:: The number of times the controller has skipped a sync due to stale cache. This metric is exposed
-for each controller that uses the staleness mitigation feature with the subsystem of the controller.This metric is exposed by the kube-controller-manager metrics endpoint, and can be used to monitor the health of the controller.Along with this metric, client-go also emits metrics that expose the latest resource version of every shared informer
-with the subsystem of the informer. This allows you to see the latest resource version of each informer, and use that to
-determine if the controller's cache is stale, especially great for comparing against the resource version of the API server.This metric is named  and has the Group, Version, and Resource as labels.Kubernetes SIG API Machinery is excited to continue working on this feature and hope to bring it to more controllers in the future.
-We are also interested in hearing your feedback on this feature. Please let us know what you think in the comments
-below or by opening an issue on the Kubernetes GitHub repository.We are also working with controller-runtime to enable this set of
-semantics for all controllers built with controller-runtime. This will allow any controller built with controller-runtime to gain
-the benefits of read your own writes, without having to implement the logic themselves.]]></content:encoded></item></channel></rss>
+Versions:
+  v0.7.0
+  v0.6.0
+  v0.5.9
+  ... more
+
+Packages:
+  github.com/google/go-cmp/cmp             Package cmp determines equality of values.
+  github.com/google/go-cmp/cmp/cmpopts     Package cmpopts provides common options for the cmp package.
+  ... more
+The command handles pagination and formatting, allowing you to focus on the
+data you need for your scripts or manual investigation. To learn more, please
+visit pkgsite-cli’s
+documentation.This concludes our brief tour of the pkg.go.dev API. While
+we plan to expand the interface’s capabilities over time, we are committed to
+maintaining backward compatibility so that existing integrations continue to
+function seamlessly. (Note that command line interface of the  reference client is not yet stable.) We welcome your feedback via our issue
+tracker, and we look forward to seeing the
+new tools and workflows the community will build.]]></content:encoded></item><item><title>Announcing etcd 3.7.0-beta.0</title><link>https://kubernetes.io/blog/2026/05/20/etcd-370-beta/</link><author></author><category>dev</category><pubDate>Wed, 20 May 2026 00:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[SIG-Etcd announces the availability of the first beta release of etcd v3.7.0. This new version of the popular distributed database and key Kubernetes component includes the long-requested RangeStream feature, as well as a refactoring and cleanup of multiple legacy components and interfaces. v3.7 will deliver improved security, better operational reliability, and an improved experience for working with large resultsets.First, however, the project needs users to test the beta. You can find v3.7.0-beta.0 here:This beta also determines the EOL of version 3.4.In etcd v3.6 and earlier, it is challenging to work with requests that return large resultsets. The client or requesting application is forced to wait for the full result set, leading to unpredictable latency and memory usage. The RangeStream RPC lets calling applications accept result sets in chunks, reducing latency and making buffering memory usage more predictable.Much of the work on RangeStream was done by a relatively new contributor to etcd, Jeffrey Ying, a software engineer at Google. New contributors can have a substantial impact on etcd development."I've always been fascinated by database internals, and building RangeStream was a great opportunity to solve a bottleneck we were hitting in production with Kubernetes. It was the perfect opportunity to collaborate across projects and improve the ecosystem as a whole. Jumping into etcd as a new contributor had a bit of a learning curve, but the community is incredibly welcoming. The leads were very receptive to my ideas and helped me iterate quickly, while maintaining the project's high bar for reliability and code quality," said Jeffrey.Instructions on how to use RangeStream in gRPC calls and in etcdctl can be found in the etcd documentation. Users should try it out for their own applications.All of these changes may create some breakage for users, particularly those who have not already updated to v3.6.11. We are interested in hearing about blockers encountered by users and dependent applications; please report anything you find that can't be remedied or needs better upgrade documentation.According to our community support policy, we typically maintain only the latest two minor versions, currently v3.6 and v3.5. Etcd v3.5 will be supported for 1 year after v3.7.0 final release.As mentioned in extended support for v3.4 in the etcd v3.6.0 release announcement, etcd v3.4 has been EOL since May 15, 2026. SIG-etcd may release one more security patch for that version at the end of May, if warranted by patched vulnerabilities. In any case, it will cease being updated after the end of May. Users on v3.4 should be planning to upgrade their clusters.Feedback and Future BetasReach the etcd contributors with your feedback about v3.7.0-beta.0 in any of the following places:SIG-etcd may release additional betas of version v3.7.0 with additional refactoring, particularly of our use of protobuf libraries. Release candidates and the final release will probably happen through June, possibly into early July.]]></content:encoded></item><item><title>Project goals update — April 2026 (end of 2025H2)</title><link>https://blog.rust-lang.org/2026/05/18/project-goals-2026-04/</link><author>Nurzhan Saken</author><category>dev</category><pubDate>Mon, 18 May 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[Updates from the 2026-01-28 and 2026-02-11 meetings:
+Removing the / hints in favour of The team discussed the impact of this. These hints are used in C but not yet in Rust.  would be sufficient, but / would still be more convenient in cases where there isn't an  branch. Tyler Mandry mentioned that these can be implemented in terms of .We discussed the feasibility of embedding data in lower bits of a pointer -- something the kernel is doing in C. This could also enable setting the top bit in the integers (which is otherwise never set) and make it represent an error in that case (and a regular pointer otherwise).Ideally, this would be done in safe Rust, as the idea is to improve the safety of the C code in question.Extending the niches is something Rust wants to see, but it's waiting on pattern types. There are short/medium-term options by using  and wrapping it in a safe macro, but the long-term hope is to have this supported in the language.The project has interest in vendoring zerocopy. We had its maintainers Jack Wrenn and Joshua Liebow-Feeser join us to discuss this and answer our questions. The main question was about whether to vendor at all, how often should we (or will have to) upgrade, and how much of it is expected to end up in the standard library.The project follows semver with the extended promise to not break minor versions even before 1.0.0. We could vendor the current 0.8 and we should be upgrade on our own terms (e.g. when we bring in new features) rather than being forced to.Right now, the project is able to experiment with various approaches and capabilities. Any stdlib integration a long way away, but there is interest in integrating these to the language and libraries where appropriate.There's been a long-term effort to finish the new trait solver, which will unblock a lot of things. Niko Matsakis asked about things it's blocking for Rust for Linux.This is the list: unmovable types, guaranteed destructors, Type Alias Impl Trait (TAIT), Return Type Notation (RTN), const traits, const generics (over integer types), extern type.This year brings in the concept of roadmaps. We now have a Rust for Linux and a few more granular Goals. We'll be adding more goals over time, but the one merged cover what we've been focusing on for now.]]></content:encoded></item></channel></rss>
