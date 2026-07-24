@@ -17,7 +17,7 @@ http://blog.golang.org/feed.atom "~Golang Blog" ! dev
 https://kubernetes.io/feed.xml "~Kubernetes Blog" ! dev
 https://blog.rust-lang.org/feed "~Rust Blog" ! dev
 https://blog.python.org/feeds/posts/default?alt=rss "~Python official news" ! dev
-https://lwn.net/headlines/rss "~LWN" ! dev
+
 
 
 https://www.youtube.com/feeds/videos.xml?playlist_id=UULFknLrEdhRCp1aegoMqRaCZg "~News - DW" ! news
