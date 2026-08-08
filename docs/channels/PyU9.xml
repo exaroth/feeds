@@ -1,172 +1,393 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Get Ready: 2026 Python Packaging Council Nominations Opening Soon!</title><link>https://blog.python.org/2026/07/2026-packaging-council-nominations/</link><author>Pradyun Gedam</author><category>dev</category><pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[The inaugural Python Packaging Council election nomination period opens on Tuesday, July 28th, 2:00 pm UTC and closes on Tuesday, August 11th, 2:00 pm UTC.]]></content:encoded></item><item><title>Python 3.15.0 beta 4 is here!</title><link>https://blog.python.org/2026/07/python-3150-beta-4/</link><author>Hugo van Kemenade</author><category>dev</category><pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[The final 3.15 beta is out!]]></content:encoded></item><item><title>Announcing Rust 1.97.1</title><link>https://blog.rust-lang.org/2026/07/16/Rust-1.97.1/</link><author>The Rust Release Team</author><category>dev</category><pubDate>Thu, 16 Jul 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust team has published a new point release of Rust, 1.97.1. Rust is a programming language that is empowering everyone to build reliable and efficient software.If you have a previous version of Rust installed via rustup, getting Rust 1.97.1 is as easy as:If you don't have it already, you can get  from the appropriate page on our website.We have backported both an LLVM fix and a disable of the underlying change in Rust 1.97.0 of
-Rust's generated IR that increased the likelihood of this happening. However,
-note that the underlying miscompilation has been present since at least Rust
-1.87.If you'd like to help us out by testing future releases, you might consider
-running your code's CI or locally using the beta channel () or the nightly
-channel (). Please
-report any bugs you
-might come across!Many people came together to create Rust 1.97.1. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>Building a Custom Metrics Exporter for Kubernetes</title><link>https://kubernetes.io/blog/2026/07/14/custom-metrics-exporter-kubernetes/</link><author></author><category>dev</category><pubDate>Tue, 14 Jul 2026 18:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[Kubernetes ships with built-in awareness of CPU and memory, but most
-real-world scaling decisions depend on signals that live entirely outside
-that narrow window: how many messages are waiting in a queue, how long
-the last batch job took, how many active WebSocket connections a pod is
-holding. When the built-in metrics are not enough, a 
-bridges that gap.This post walks through writing one from scratch, packaging it as a
-container, and wiring it into a cluster so that Prometheus — and
-ultimately the HorizontalPodAutoscaler — can consume it.What a metrics exporter actually doesAn exporter is a small HTTP server with a single responsibility: expose
-application state as text on a  endpoint. Prometheus 
-that endpoint on a regular interval, stores the time-series data, and
-makes it available for queries, alerts, and autoscaling rules.In some cases you can instrument your application directly — embedding
-the Prometheus client library and exposing  from within the
-same process — rather than running a separate exporter. A standalone
-exporter makes more sense when the data source is external to your
-application or when you do not control the application code.The format Prometheus expects is plain text — one metric per line, with
-a name, optional labels, and a numeric value. Client libraries handle
-the serialization for you, so in practice you only need to decide what
-to measure and call the right function when that value changes.Before writing any code, it helps to decide what kind of signal you are
-dealing with. The Prometheus data model has three main types: only ever increase. They are the right tool for totals:
-requests served, jobs processed, errors encountered. Never use a
-counter for a value that can go down. represent a current snapshot of a value that can rise and
-fall freely. Queue depth, active connections, and cache size are all
-gauges. record the distribution of observed values, such as
-request latency. They let you calculate percentiles (p99, p50) rather
-than just averages.Once you know which type fits your signal, choose a name that follows
-the convention <namespace>_<name>_<unit> in . A job
-processor might expose worker_jobs_processed_total (counter),
- (gauge), and worker_job_duration_seconds
-(histogram). Clear names save everyone debugging time later.The Go Prometheus client is the most common choice for exporters in the
-Kubernetes ecosystem, largely because the same library powers most of
-the official Kubernetes components. Start by creating a module and
-pulling in the dependency:Create . The first thing to do is declare the metrics and
-register them with Prometheus's default registry. Registration tells
-the library that these metrics exist so they appear in the output even
-before the first observation is recorded: panics on a duplicate registration, which
-makes misconfigurations obvious at startup rather than silently at
-runtime. If you are embedding this exporter inside a library that other
-packages will also instrument, prefer  and handle
-the error yourself.With the metrics registered, the next step is to keep them current.
-You can either continually update the data as the data change, or run
-your own internal refresh loop.
-The pattern below shows a polling loop — a goroutine that periodically
-reads from whatever data source your application owns and updates the
-registered metrics. Replace the simulated values with real calls to
-your database, internal API, or message broker:The polling interval (here five seconds) should be shorter than
-Prometheus's scrape interval so that each scrape sees a fresh value.
-The default scrape interval in most cluster deployments is fifteen
-seconds, which gives you comfortable headroom.Wire the collection loop and the HTTP handler together in . A
- path alongside  gives Kubernetes a liveness probe
-target without exposing metric data on the health route:Verify the output locally before building the image:You should see three  and  blocks followed by the
-current metric values. If those lines appear, the exporter is working
-correctly and is ready to be containerized.A multi-stage build keeps the final image small and avoids shipping a
-Go toolchain to production. The first stage compiles a statically linked
-binary; the second stage copies only that binary into a minimal base.
-The example below uses Docker, but the same pattern works with any
-OCI-compatible build tool such as Buildah or Podman:distroless/static:nonroot contains no shell, no package manager, and
-runs as a non-root user by default, which satisfies most cluster
-security policies without extra configuration.Build and push the image, replacing  with your own registry
-address:(Note: Using a CI/CD pipeline to automate this is generally a better pattern than running these commands manually.)Two manifests are enough to run the exporter: a Deployment that manages
-the pod lifecycle, and a Service that gives Prometheus a stable address
-to scrape.
-(You might prefer to have Prometheus scrape from every Pod; if that makes
-sense for your use case, then it's OK to configure instead).The examples below use the  namespace, which is a common
-convention when running Prometheus and related components together. Adjust
-the namespace to match your own cluster setup.The Deployment sets conservative resource limits appropriate for a
-lightweight sidecar-style process, and uses the  route for
-its liveness probe:The Service names the port , which the ServiceMonitor in the
-next section will reference by that name:Telling Prometheus where to lookHow you configure scraping depends on how Prometheus was installed.Option 1: Prometheus Operator (ServiceMonitor)If you installed Prometheus using the
-Prometheus Operator
-or the  Helm chart, the operator must be running
-in your cluster before you create a ServiceMonitor. The  label
-must match the label selector configured on your Prometheus resource —
- is the default for a standard Helm install:Option 2: Annotation-based discoveryIf your Prometheus uses annotation-based pod discovery instead, you will
-need a matching  rule in your Prometheus configuration —
-check with whoever manages your Prometheus installation to confirm it is
-in place.You can add the following two annotations to the Pod template regardless
-of which scraping method you use. They are ignored by the Prometheus
-Operator but picked up automatically by annotation-based setups:If you are unsure which setup your cluster uses, the ServiceMonitor
-approach is more explicit and easier to debug.Port-forward to the Prometheus service and open the targets page to
-confirm the exporter has been discovered:Navigate to http://localhost:9090/targets. The  target
-should appear with state . If it shows , check that the
-ServiceMonitor's  label matches and that the pod is running:Once the target is healthy, run a quick query in the expression browser
-to confirm data is flowing:rate(worker_jobs_processed_total{status="success"}[2m])
-A non-zero result here means the full pipeline is working: your
-application is producing data, Prometheus is scraping it, and the
-time-series are stored and queryable.A working exporter is the foundation, not the destination. The natural
-next step is surfacing these metrics to the
-HorizontalPodAutoscaler
-so that your workload scales on the signals that actually drive load,
-not just CPU. That requires a metrics adapter — the Prometheus Adapter
-is the most widely deployed option — which registers your custom metrics
-with the Kubernetes Custom Metrics API. Once registered, any
-HorizontalPodAutoscaler in the cluster can reference 
-or worker_jobs_processed_total directly in its  block.]]></content:encoded></item><item><title>Operating AI/ML Workloads on Kubernetes: A Headlamp Plugin for Kubeflow</title><link>https://kubernetes.io/blog/2026/07/13/introducing-headlamp-plugin-for-kubeflow/</link><author></author><category>dev</category><pubDate>Mon, 13 Jul 2026 20:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[Kubernetes has quietly become the default platform for AI and machine learning. Whether you run notebook servers for data scientists, schedule distributed training jobs, tune hyperparameters, or orchestrate multi-step ML pipelines, those workloads increasingly land on a Kubernetes cluster. Kubeflow is one of the most popular ways to assemble that stack, and it does so the Kubernetes-native way: every capability is exposed as a Custom Resource Definition (CRD).That design is a gift to cluster operators, because it means ML workloads can be observed and managed with the same primitives as everything else in the cluster. But in practice the specialized ML dashboards that ship with these platforms hide the Kubernetes layer underneath. When a notebook is stuck or a training run fails, the operator is often left dropping back to  to find out what actually happened at the Pod level.This post introduces the , which closes that gap by surfacing Kubeflow's custom resources directly inside a general-purpose Kubernetes UI. It is a worked example of a pattern any CRD-heavy platform can follow: meet operators where they already work, and show them the cluster-level truth.Headlamp itself is an extensible Kubernetes web UI maintained under Kubernetes SIG UI and licensed under Apache 2.0. It runs as a desktop app or in-cluster, and its plugin system lets anyone add first-class views for custom resources.Why operators need a different viewPurpose-built ML dashboards help data scientists submit experiments, pipelines, and
-notebooks. Cluster operators and site reliability engineers (SREs) troubleshoot the
-Kubernetes resources underneath, and they ask different questions:Why is a notebook stuck? Is it , , or a Pod waiting on a PersistentVolumeClaim?Which Run resources failed recently across namespaces?Which parameter set does a Katib Experiment report as optimal?Do TrainJob resources reference the expected TrainingRuntime resources?Which batch workloads are running, and what state does Kubernetes report?The Headlamp Kubeflow plugin helps answer these questions by reading directly from
-the Kubernetes API server. It shows Pod conditions, Kubernetes failure reasons, and
-resources across namespaces without requiring an intermediary ML service or
-database.Kubeflow is modular, and teams often install only the components they need. The
-plugin discovers the Kubeflow API groups on a cluster and displays only the
-corresponding sections.The plugin supports the following component families and API resources:Kubeflow components and API resources supported by the Headlamp pluginProvides development environments such as Jupyter, VS Code, and RStudioNotebook, Profile, PodDefaultDefines and tracks pipelines, versions, experiments, runs, and schedulesPipeline, PipelineVersion, Run, RecurringRun, ExperimentAutomates hyperparameter tuning and neural architecture searchExperiment, Trial, SuggestionRuns distributed training workloads such as PyTorch and TensorFlow jobsTrainJob, TrainingRuntime, ClusterTrainingRuntimeRuns large-scale data processing with Apache SparkSparkApplication, ScheduledSparkApplicationThe Notebook detail view shows Pod conditions and their  and 
-fields. It also shows CPU, memory, and GPU requests and limits; volume mounts and
-their backing types, such as PersistentVolumeClaim, ConfigMap, Secret, or
-; environment variables that reference Secret or ConfigMap objects;
-sidecar containers; and node tolerations. This view consolidates information that
-would otherwise require several  commands.Inspect hyperparameter tuningThe Katib views show the tuning algorithm, search space, every Trial with its live
-status, and the current best Trial with its metric values and parameter assignments.
-They also show the early-stopping configuration and the number of Trial resources
-that stopped early, so you can follow the search without leaving the cluster UI.Inspect pipeline state without the backend databaseThe Pipelines views read Kubernetes API resources directly and do not query the
-Kubeflow Pipelines API service or backend database. You can inspect stored pipeline
-state even when that service is unavailable. The Pipeline detail view compares the
-latest and previous PipelineVersion specifications in a side-by-side YAML diff. Run
-views show state and duration, RecurringRun views show human-readable schedules, and
-the artifacts view aggregates  values from recent Run resources.The plugin registers a
-Headlamp map source
-that renders Notebook, Profile, PodDefault, Experiment, Pipeline, SparkApplication,
-and TrainJob resources as graph nodes. It draws edges between supported resources
-based on .metadata.ownerReferences. Headlamp also shows inline summaries for these
-resource types when you hover over them.The
-Kubeflow plugin README
-explains installation and local-cluster setup, including a lightweight CRD-only path
-for evaluation. Because the plugin discovers installed API groups, you can use it
-with an existing modular Kubeflow installation or create an evaluation cluster with
-only the CRDs and sample resources.Kubeflow illustrates a broader pattern. Platforms often model domain-specific
-workflows with custom resources. Their dashboards focus on those workflows, while
-Kubernetes operators also need the state of the underlying API resources and Pods.
-A CRD-driven plugin in a general Kubernetes UI can expose that state without making
-operators switch between unrelated tools.The plugin uses the Apache 2.0 license and is developed under Kubernetes SIG UI. To
-report a problem or contribute an improvement, use the Headlamp plugins repository's
-issue tracker or
-pull requests.]]></content:encoded></item><item><title>Kubernetes Dashboard to Headlamp: A Step-by-Step Guide</title><link>https://kubernetes.io/blog/2026/07/13/kubernetes-dashboard-to-headlamp/</link><author></author><category>dev</category><pubDate>Mon, 13 Jul 2026 18:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[1. Before you start: know what is changingKubernetes Dashboard and Headlamp both show what is running in a cluster, but they work differently. When Headlamp runs on the desktop, it uses your existing kubeconfig to connect to one or more clusters and can be extended with plugins. When Headlamp runs inside a cluster, it uses a Kubernetes ServiceAccount to access the API and follow RBAC rules. Kubernetes Dashboard, in contrast, only runs in-cluster and always relies on service account tokens. Understanding these models early helps you choose the right setup and permissions.1.1 How Kubernetes Dashboard worksDashboard is a web app that runs inside your cluster.You install it in the cluster, often with Helm.You usually run one Dashboard per cluster.You often reach it with  or an ingress.You log in with a Bearer token. That token is often from a service account.It includes forms that help you create resources.It leans on tables and lists for navigation.It feels like this: a UI that lives with the cluster.Headlamp acts more like a Kubernetes client with a UI.It can run on your desktop or in a cluster.It reads your kubeconfig, like kubectl does.It can show more than one cluster in one place.It favors YAML when you create or change resources.It includes list views and a visual map.You can add features with plugins.Headlamp is a UI that follows your identity, not your cluster.Many workflows will feel familiar:Browse workloads and resourcesInspect YAML, events, and statusTake actions your RBAC allowsA few things will feel different:Login shifts from pasted tokens to kubeconfig (and sometimes SSO).Creation shifts from forms to "apply YAML."Multi-cluster becomes normal, not a special case.The map view helps you see how resources connect.2. Pre-migration checklistThis checklist helps you avoid surprises during the switch. It makes sure Headlamp can use the same identity and permissions you already trust in Kubernetes. It also gives you a quick way to prove the migration worked before you turn off Dashboard.2.1 Write down what you use todayWhich clusters you use (dev, staging, prod)Which namespaces you touch mostWhat you do most often (view, edit, scale, delete, debug)How you access Dashboard today (port-forward or ingress)How you log in (service account token, and which RBAC bindings)2.2 Check that kubeconfig worksHeadlamp uses kubeconfig, especially on desktop. Make sure yours works before you install anything.If you cannot list nodes, test in a namespace you can access:If these work, Headlamp can use the same identity and RBAC.There is no need to rush. Most teams choose one of these:Parallel rollout (recommended)Keep Dashboard for a short timeRemove Dashboard after the team is readyRemove Dashboard soon afterParallel rollout is safer for shared clusters.2.4 Decide where Headlamp will runYou can use either option. Many teams use both.Uses no cluster resourcesMulti-cluster works out of the boxWorks well for shared, browser accessCan be managed like other cluster appsOften paired with ingress and SSO2.5 Note optional dependenciesThese are common. You can handle them later. (for CPU and memory graphs)ingress (for an in-cluster URL)OIDC / SSO (for browser sign-in)cleanup of old Dashboard service accounts and RBAC3. Choose where Headlamp will run (desktop or in-cluster)Headlamp can run on your desktop or inside a cluster. Both work well, but they fit different needs. Desktop is the fastest way to start because it uses your kubeconfig and does not run in the cluster. In-cluster is best when you need a shared URL and want the platform team to manage upgrades and access.Option A: Desktop (user-managed)Desktop Headlamp runs on each user's machine. It reads the same kubeconfig you use with kubectl. This keeps access tied to each user's identity and RBAC.No in-cluster service to deploy or expose.It uses no cluster CPU or memory.It uses your kubeconfig and RBAC.It works with many clusters in one app.You do not need port-forward for day-to-day use.Option B: In-cluster (best for shared access)In-cluster Headlamp is installed as a Kubernetes workload (often via Helm). This lets cluster admins manage it like other in-cluster apps.Cluster admins manage install, upgrades, and configuration through the Helm chart and standard Kubernetes tooling.Admins control ingress and can set up OIDC login for shared access.It supports shared use in team environments.4. Install Headlamp (desktop and in-cluster)This section gets Headlamp running. Follow the path you chose in Section 3.4.1 Desktop install (fastest way to start)Install Headlamp on your machine. Then open it like any other app. Headlamp reads your kubeconfig and uses the same identity and RBAC rules as kubectl.Install with Flatpak (Flathub):Confirm you can see a cluster context.Open a namespace you can access and confirm you can list workloads. Headlamp will only show actions your RBAC allows.4.2 In-cluster install (shared access)Use this path when you want a shared UI that the platform team can manage. Headlamp supports in-cluster deployment with Helm or a YAML manifest.Create a namespace (example):Install with a YAML manifest (optional)Headlamp also provides a YAML manifest you can apply and then adjust to your needs.Confirm the pod is running:Confirm the service exists:Access it (two common ways)Quick test with port-forwardThis is the fastest way to verify the service works:Then open: http://localhost:8080Shared access with ingressIf you want a stable URL, expose the service through your ingress controller. Your exact ingress YAML depends on your setup. Headlamp's OIDC callback URL is your public URL plus , so ingress and TLS settings matter.Updates depend on how you installed Headlamp. Package managers upgrade in place. DMG or EXE installs update by reinstalling the newer download.If you installed with Homebrew, run:If you installed from a DMG, download the newest DMG and drag Headlamp into , replacing the old version. DMG installs do not auto upgrade.If you installed with WinGet, run:If you installed with Chocolatey, run:If you installed from the EXE, download the newest installer and run it again. EXE installs do not auto upgrade.If you installed with Flatpak, run:If you installed with AppImage, download the newest AppImage and run that file instead.If you installed with a tarball, download the newest tarball, extract it, and run the new headlamp binary.4.4 Notes for in-cluster access (keep it safe)Treat an in-cluster UI like any other cluster-facing service. Use TLS, lock down who can reach it, and rely on Kubernetes auth and RBAC to control what users can do.5. Authentication and RBACHeadlamp uses the Kubernetes API the same way kubectl does. Your cluster still decides who can do what. Headlamp only shows actions your identity is allowed to take.This section covers two setups: desktop and in-cluster.5.1 Desktop: use kubeconfigOn desktop, Headlamp reads your kubeconfig and uses the same credentials you use with kubectl. There is no separate token login flow to manage.Step 1: Confirm your kubeconfig worksIf you cannot list nodes, test a namespace you can access:If these commands work, your kubeconfig and credentials are valid for Headlamp too.Step 2: Point Headlamp at the right kubeconfig (if needed)Headlamp can use the default kubeconfig path. It can also use a custom file path. You can set  to choose a specific file.You can also use more than one kubeconfig file at once. On Unix systems, separate paths with . On Windows, separate paths with .Headlamp adapts to your RBAC permissions. If you do not have permission to edit or delete a resource, Headlamp will not offer those actions.5.2 In-cluster: shared access needs a sign-in planIn-cluster Headlamp is shared by many users. You need a clear plan for sign-in and access. Headlamp supports OpenID Connect (OIDC) for a "Sign in" flow.You will usually choose one of these patterns: Configure Headlamp with OIDC (built-in). Put an auth layer in front of Headlamp (common in enterprises).A. Built-in OIDC (Headlamp)To use OIDC, Headlamp needs:Your OIDC provider must also allow Headlamp's callback URL. The callback is your Headlamp URL plus:https://headlamp.example.com/oidc-callbackIf Headlamp is behind an ingress or load balancer, make sure it forwards . If it does not, Headlamp may generate an  callback URL instead of . That can break login.B. Auth layer in front of HeadlampSome teams protect Headlamp with an identity-aware proxy or a platform auth system. This keeps sign-in consistent across tools. Headlamp docs include an example using OpenUnison, which can deploy Headlamp with hardened defaults and integrate with identity providers.5.3 RBAC: keep it least privilegeKubernetes security starts with API authentication and authorization (RBAC). Headlamp respects those rules.Start with the lowest permissions that still let users do their job.If Dashboard used a high-privilege service account token, plan to remove or tighten that access after the move.For in-cluster, treat the UI like any other endpoint. Use TLS and limit network access.5.4 Quick troubleshootingDesktop: "I do not see my cluster"Your kubeconfig may not be in the default location. Point Headlamp to the file with  or a file path.In-cluster: "OIDC login fails after redirect"Confirm your provider allows https://YOUR_URL/oidc-callback. If you use ingress, make sure it forwards .6. Manage multiple clustersKubernetes Dashboard is usually tied to one cluster at a time. Headlamp is built for multi-cluster work. It is a client that follows your kubeconfig, not a single cluster install. That means you can keep one UI open and switch clusters as you work.Headlamp reads clusters from your kubeconfig files. That means the clusters you can access with kubectl can also show up in Headlamp.Switch clusters in the UIOnce Headlamp loads your kubeconfig, you can switch clusters using the cluster selector. This makes it easier to move between dev, staging, and prod without changing tools.Optional: use more than one kubeconfig fileIf you keep separate kubeconfig files, you can load them together. Headlamp supports multiple kubeconfig paths in .Unix/macOS/Linux ( separator):Optional: add a cluster from inside HeadlampYou can also add clusters by loading additional kubeconfig files from the UI.Permissions stay the sameMulti-cluster does not change security rules. Each cluster still enforces its own RBAC. Headlamp shows only what your identity can do in the selected cluster.7. Navigate and understand resourcesIf you used Kubernetes Dashboard, this part will feel familiar. Headlamp keeps the same core resource views, but makes it easier to move around and understand what is connected.Find resources in familiar placesHeadlamp groups resources in a way that maps closely to Dashboard: for Pods, Deployments, StatefulSets, and Jobs for Services and Ingress for PersistentVolumes and Claims for ConfigMaps and Secrets for cluster infrastructureYou can filter by namespace at the top of the UI, just like in Dashboard.Inspect and edit resourcesFrom any list, you can click into a resource to see details:If your RBAC allows it, you can edit YAML directly from the UI. If it does not, Headlamp shows the resource as read-only. This matches how kubectl behaves.Use search and filters to move fasterHeadlamp adds faster search and filtering across lists. This helps when clusters or namespaces get large. You can narrow views without jumping between pages.Understand relationships with Map ViewDashboard mostly shows resources as lists. Headlamp also includes a Map View.Map View shows how resources relate to each other:This helps when you are troubleshooting. Instead of clicking through several pages, you can see the connections at once. You can spot missing links or broken relationships faster.When to use lists vs Map ViewUse  when you know what resource you are looking for.Use  when you are trying to understand why something is not working.Both views work on the same data. You are just choosing how much context you want at that moment.8. Deploy applications with YAMLThis is the biggest change for most Kubernetes Dashboard users. Dashboard relied on forms. Headlamp relies on manifests. The goal is not to slow you down. It is to align the UI with how Kubernetes is usually run in practice.In Kubernetes Dashboard, you often deployed an app by filling in a form:Headlamp does not include the same wizard. Instead, it lets you apply YAML directly from the UI.This matches how most teams deploy today:Helm or GitOps tools manage changesHeadlamp fits into that flow rather than replacing it.Create resources using YAMLTo deploy an application in Headlamp:Select a cluster and namespace.Paste or upload a YAML manifest.The resource appears immediately in the UI.If the manifest is not valid, Headlamp shows the same errors you would see from the Kubernetes API.Generate YAML the easy wayIf you miss the Dashboard wizard, you can still generate YAML quickly.You can edit the file if needed, then paste it into Headlamp and apply it.This gives you a repeatable manifest instead of an object created only through a UI.What if you use Helm or GitOps?That works well with Headlamp.Install with Helm as usual.Deploy with GitOps pipelines as usual.Use Headlamp to view, inspect, and debug what is running.Headlamp does not replace those tools. It gives you visibility into what they create.You will not see a multi-step deploy form.You will work more with YAML.You gain clarity about what is actually applied to the cluster.The same manifest can be reused in CI, Git, or other tools.9. Deploy and debug workloadsOne of the main reasons people used Kubernetes Dashboard was day-to-day debugging. Headlamp covers the same tasks and adds a few useful upgrades.You can view pod logs directly in the UI.If the pod has more than one container, you can switch between containers. Logs stream live, which helps during rollouts or active incidents.Headlamp also lets you open a shell inside a container.Open the pod actions menu.This opens an interactive session inside the container. It replaces the need to switch back to the terminal for quick checks.This action follows RBAC rules. If you cannot run , Headlamp will not allow it either.Check metrics and resource usageHeadlamp can show CPU and memory usage for pods and nodes. This works the same way it did in Dashboard.Metrics require  to be installed in the cluster.If metrics are missing, Headlamp shows a clear notice.Once metrics are available, usage appears on pod and node views.This makes it easy to answer simple questions:Is this pod using too much memory?Is a node under pressure?View events when something goes wrongEvents are often the fastest way to understand failures.View events on resource detail pages.See warnings and errors tied to pods, nodes, or deployments.This is often the first place to look when a workload is stuck or crashes.Clearer layout and filteringFewer context switches between UI and CLI10. Remove Kubernetes DashboardAfter Headlamp is working and your team is comfortable using it, you can remove Kubernetes Dashboard. This is the final cleanup step.Removing Dashboard reduces clutter and avoids keeping unused access paths around.Confirm Headlamp covers your needsBefore uninstalling anything, make sure:Users can access the clusters they need in Headlamp.Common tasks work:
-exec into pods (if allowed)RBAC behaves as expected for different roles.Once these checks pass, you are ready to remove Dashboard.If you installed Kubernetes Dashboard with Helm, remove it with:If Dashboard was installed by a manifest or addon, remove it using the same method you used to install it.After removal, confirm the resources are gone:Many Dashboard setups used dedicated service accounts and cluster-wide roles.Review and remove anything that was created only for Dashboard access, such as:role bindings or cluster role bindingsold documentation that points users to Dashboard URLs or port-forward commandsThis reduces long-lived credentials and unused permissions.Make sure your team knows:Headlamp is now the primary Kubernetes UI.How to access it (desktop or URL).Where to go for help if something feels different.11. Post-migration checklistThis final checklist helps you confirm the migration is complete. It gives you confidence that Headlamp is working as expected and that nothing important was left behind.You've now completed the move from Kubernetes Dashboard to Headlamp. Your team can use the same Kubernetes access model, work across clusters, and rely on workflows that match how Kubernetes is used today. From here, Headlamp becomes your default UI, whether on the desktop or in shared environments. As your needs grow, you can keep using it as-is or extend it with plugins and new views over time.If you want to help shape what comes next, join the Headlamp community and contribute at headlamp.dev.]]></content:encoded></item><item><title>crates.io: development update</title><link>https://blog.rust-lang.org/2026/07/13/crates-io-development-update/</link><author>Tobias Bieniek</author><category>dev</category><pubDate>Mon, 13 Jul 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[Another six months have passed since our last development update, and the crates.io team has been busy. Here's a summary of the most notable changes and improvements made to crates.io since then.Crate pages now have a "Code" tab that lets you browse the contents of published crate versions directly on crates.io. This shows you the exact files that  downloads when you add a crate as a dependency, which might differ from the linked repository. This makes it much easier to audit your dependencies, including files that never appear in the repository, like the normalized  files that  generates.The viewer comes with a file tree sidebar with search functionality, syntax highlighting, and GitHub-style line selection, where clicking or dragging line numbers produces shareable  URLs.Under the hood, the server now builds a zip file for every published version. Since the  files that  consumes are gzipped tarballs without random access support, a background job re-packs each of them into a seekable zip archive plus a JSON manifest describing the contained files. Both are served from our static CDN. The frontend then fetches only the manifest and loads each file on demand with an HTTP range request. Because of this architecture, browsing crate sources essentially adds no load on the crates.io API servers. Existing crate versions have been backfilled, so this works for old releases too.The rendering library behind the code viewer is a diff renderer at heart, and that's no accident: a version-to-version diff viewer built on the same infrastructure is currently in the works. This will allow you to review exactly what changed between two published versions, right on crates.io. Stay tuned!
-Untangling crates.io Accounts from GitHubAt the end of May, the crates.io team accepted RFC #3946. Crates.io accounts always have been tightly coupled to GitHub: signing in means "Log in with GitHub", and your crates.io identity is your GitHub username. The RFC changes that. It introduces usernames that are native to crates.io and independent of linked GitHub accounts, as a prerequisite for eventually supporting login via other identity providers.The implementation of crates.io usernames has started, but there is still a lot left to do, most visibly the ability to change your crates.io username. After that is complete, there will be future RFCs and implementation for signing in with identity providers other than GitHub. Since all of this touches authentication and account security, we are deliberately taking it slow and rolling these changes out in small, carefully reviewed steps.
-Advisories and SuggestionsIn our January update we introduced the "Security" tab, which shows security advisories from the RustSec database. We have since taken this integration one step further: crates that RustSec has flagged as unmaintained now show a warning banner directly on their crate pages, linking to the corresponding advisory for details and possible alternatives. Thanks to Dirkjan Ochtman for implementing this feature!Related to this, some popular crates have been largely absorbed into the Rust standard library over the years, like , which has been superseded by  since Rust 1.80. Crate pages of such crates now show a friendly "You might not need this dependency" banner describing the standard library replacement, and superseded crates in dependency lists get a small light bulb icon with a similar hint.The dataset behind this feature lives in the new rust-lang/std-replacement-data repository, together with a documented inclusion policy: standard library replacements only, every entry must cite the stable , , or  API and Rust version, and crate maintainers get a notice-and-comment window before an entry is added. New entries can be proposed upstream and can benefit other tools too.The most delightful change of this cycle: the Ferris on our error pages now follows your mouse cursor with its eyes:Getting a 404 error on crates.io is now slightly less sad.In our January update, we announced that we were experimenting with porting the crates.io frontend from Ember.js to Svelte. This experiment has concluded successfully: the new frontend reached feature parity, went through a public testing phase in April, became the default at the beginning of May, and the Ember.js app has been removed from our repository.We designed this change to be invisible for our users, since the new frontend is a 1:1 port of the previous design and functionality. For the team and our contributors, however, it is a big deal: the frontend is now built on a more modern framework, which should make it easier for new contributors to get started. It also allows us to iterate faster, as the source code viewer above demonstrates.We want to thank the Ember.js team for a framework that served crates.io well for many years, and the Svelte team for making the transition so enjoyable.These were some of the more visible changes to crates.io over the past six months, but a lot has happened "under the hood" as well:: Relevance-sorted search queries previously ranked every crate matching the query, which could take 1-2 seconds for short or common search terms. Ranking is now bounded to the 1,000 matching crates with the highest recent download counts.Reverse dependencies performance: The reverse dependencies endpoint no longer recomputes the full dependent set on every request. It is now served from a precomputed table kept in sync by database triggers, turning an expensive join into a bounded index scan and greatly reducing the chance of getting a timeout error.: If you've ever wondered how crates.io actually works, our  document got a complete rewrite. It is now organized around the high-level systems that make up crates.io and how they fit together, and includes walkthroughs of what happens when you run , why a typical crate download never touches our API servers, and how download counts are derived from CDN access logs.: READMEs now render Markdown definition lists, a widely used Markdown extension. Our markdown renderer comrak already supported them, the extension just wasn't enabled yet. Thanks to @mistaste for this contribution!: Files uploaded to our static CDN now carry cache-tag metadata, allowing us to invalidate all cached files of a crate or a specific release in a single operation, instead of issuing one invalidation per file URL.: We removed a global  response header that was preventing our CDNs from caching public API responses and frontend assets effectively. Per-user responses now use  instead, resulting in better cache hit rates at the CDN edge.: We have made crates.io friendlier to screen readers: decorative icons are now hidden from the accessibility tree, heading hierarchies have been fixed, and lists are marked up as proper lists. ARIA snapshot tests now ensure that regressions can't slip in unnoticed. We plan to continue to improve crates.io accessibility over the coming months.: The background worker's local clone of the git index is now a bare and shallow repository, eliminating roughly 250,000 checked-out files and the full commit history from its disk, improving its performance as we see increased rates of crate publication. The periodic index squashing now goes through the GitHub API instead of generating large git packs locally, which had previously caused out-of-memory failures on the production worker.We hope you enjoyed this update on the development of crates.io. If you have any feedback or questions, please let us know on Zulip or GitHub. We are always happy to hear from you and are looking forward to your feedback!]]></content:encoded></item><item><title>Announcing Rust 1.97.0</title><link>https://blog.rust-lang.org/2026/07/09/Rust-1.97.0/</link><author>The Rust Release Team</author><category>dev</category><pubDate>Thu, 9 Jul 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust team is happy to announce a new version of Rust, 1.97.0. Rust is a programming language empowering everyone to build reliable and efficient software.If you have a previous version of Rust installed via , you can get 1.97.0 with:If you'd like to help us out by testing future releases, you might consider updating locally to use the beta channel () or the nightly channel (). Please report any bugs you might come across!
-Symbol mangling v0 enabled by defaultWhen Rust is compiled into object files and binaries, each item (functions,
-statics, etc) must have a globally unique "symbol" identifying it. To avoid
-conflicts when linking together different Rust programs, Rust mangles the
-original name of items to include additional context such as the module path,
-defining crate, generics, and more. Historically, this mangling was based on
-the Itanium ABI,
-also (sometimes) used by C++.The new mangling scheme resolves a number of drawbacks from the previous one:Generic parameter instantiations preserve their values, rather than being tracked solely behind a hashInconsistencies: not all parts used the Itanium ABI, meaning that custom demangling was still necessarySince Rust 1.59, the compiler has supported opting into a Rust-specific
-mangling scheme via -Csymbol-mangling-version=v0. Since November 2025, this
-scheme has been enabled by default on nightly, and 1.97 is now enabling it on
-stable Rust. The legacy mangling scheme can only be enabled on nightly, and the
-current plan is to fully remove it.
-Cargo support for denying warningsIt's common practice to deny warnings in CI. Historically, doing so is
-typically done through . With Rust 1.97, Cargo controls
-how warnings interact with build success: either silencing them (via 
-level), rendering without failing (default, ), or denying them (via ).As a  result of Cargo configuration determining the behavior, using this
-feature doesn't invalidate the underlying build cache, meaning that it's easy
-to temporarily opt-in. For example, if warnings are adding unwanted noise while
-working through fixing errors after a refactor, you can run
-CARGO_BUILD_WARNINGS=allow cargo check, temporarily silencing them.In CI, jobs can instead set CARGO_BUILD_WARNINGS=deny to deny warnings. This
-can be combined with  to collect all errors and warnings rather
-than stopping on the first failing package.rustc invokes a linker on behalf of users. Historically, rustc has silenced
-linker output by default if the link completes successfully. This can mask real
-problems, though, so in Rust 1.97 we are enabling linker messages by default.
-These are emitted as a warning lint, for example:Common linker messages that have been diagnosed as false positives or intentional behavior
-are filtered out by rustc. Several defects have already been fixed as a result
-of no longer hiding this output on nightly.Note that currently,  is a special lint that is  affected
-by the  lint group. This is intentional as rustc generally doesn't
-control linker output as precisely, and it's not uncommon for output to only
-appear on some platforms. If you are seeing what you think is a false positive
-output from the linker, please file an issue.To silence the warning in the mean time, you can configure the lint level to
-allow. This can be done through  by adding a lints section like this:These previously stable APIs are now stable in const contexts:Many people came together to create Rust 1.97.0. We couldn't have done it without all of you. Thanks!]]></content:encoded></item></channel></rss>
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Python 3.14.7 and 3.13.15 are now available!</title><link>https://blog.python.org/2026/08/python-3147-31315/</link><author>Thomas Wouters</author><category>dev</category><pubDate>Wed, 5 Aug 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[A pair of bug fix releases await your upgrade.]]></content:encoded></item><item><title>Python 3.15.0 candidate 1 is here!</title><link>https://blog.python.org/2026/08/python-3150-rc1/</link><author>Hugo van Kemenade</author><category>dev</category><pubDate>Tue, 4 Aug 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Get those wheels rolling!]]></content:encoded></item><item><title>Enabling the next iteration of the borrow checker on nightly</title><link>https://blog.rust-lang.org/2026/08/04/enabling-polonius-alpha-on-nighty/</link><author>Jack Huey</author><category>dev</category><pubDate>Tue, 4 Aug 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[TL;DR We are enabling the next iteration of the borrow checker (coined Polonius Alpha)
+on nightly in preparation for stabilization in the next few months.Yes! You heard it right! The next iteration of the Rust borrow checker is coming! Rust's first borrow checker ("AST borrowck") was very limited and was phased out in 2019 in favor of NLL, other than a "migrate mode" that was used to provide nice error messages. That migrate mode was finally removed in 2022.The Polonius borrow checker spun out of the NLL effort in 2018. The initial formulation passed the NLL test suite and accepted (sound) code that NLL did not. However, performance was a critically-limiting factor; generally borrow check was slower than NLL, but certain programs were considerably slower than NLL to the extent that using that implementation/formulation of Polonius was a non-starter. Attempts were made over the years to implement the Polonius formulation in a performant manner, without much luck in addressing the core issues.In 2023, a new formulation of a Polonius-style borrow checker was imagined that required minimal rearchitecture of the existing NLL implementation and could be extended to allow more code to compile. We had hoped, to try to stabilize this new formulation in 2024; but, various things popped up that delayed this.But! We're nearly there now! At this point, there are no known remaining issues with the subset coined Polonius Alpha that we intend to stabilize. And, performance is generally acceptable for stabilization (will discuss that a bit below).So, we are enabling the Polonius Alpha borrow checker on nightly for testing until we stabilize fully later in the year. We're doing this in order to help find:Any serious performance regressions we're unaware ofUnsoundness in the formulation that we haven't thought aboutAny weird diagnostic issues that we need to improve
+Note: we have not  seen any diagnostic changesThe key thing that Polonius Alpha enables that NLL does not is  borrow checking of lifetime outlives relationships.Perhaps the smallest example demonstrating what will pass with Polonius Alpha but not the current NLL is:However, the example you will see more often is:The issue is that the  branch causes the borrow checker to think that the borrow returned by  lives for the entire function (because of the  return type), even though that borrow isn't live in the  branch. NLL's analysis is .Polonius Alpha passes this because its analysis is , and it knows that the borrow isn't live in the  branch.Now, Polonius Alpha is not ; some programs that would compile under legacy Polonius (the slow original implementation) don't compile with Polonius Alpha. (This is of course why we call it "Polonius Alpha"). For example:(As a slight note: we have also found programs that compile with Polonius Alpha but not legacy Polonius, so it's not really a full subset.)Polonius Alpha currently does strictly equal or more work compared to NLL, so we have been paying particular attention to potential performance regressions.From the top ten thousand crates by downloads on crates.io, we have seen relatively few "significant" regressions, and even crates that have a "significant" regression are typically  minimal:Each point represents a crate within the 10,000 most-downloaded crates. The black line is an arbitrary threshold of significance, set to a 1% regression and quadratically scaled below 30 seconds. Red points are crates that pass this arbitrary regression threshold. X-axis is compile time (for the leaf crate only without dependencies) under NLL; Y-axis is the ratio of compile time under Polonius Time compared to NLL.If you look at the top five crates, they are:Outside the top ten thousand crates, we have focused mainly on crates with many borrows. The worst case we've seen is a 2-3x regression.We have done some initial triage of the causes of these regressions and are thinking about the best way to fix them. Though, overall we think these regressions are fairly reasonable even if we  fix them, given how rare and relatively minimal they are compared to the additional power Polonius Alpha brings over NLL.
+I really don't want this. How do I opt-out?To reiterate: this is only being enabled on nightly. But if you want to disable Polonius Alpha, and only use the stable NLL, you can pass  to , use , or with a project's  configuration file:Over the next few months, we will be monitoring Github and Zulip for any reported issues about Polonius Alpha. We will also be working to address known performance regressions. Finally, we will be working on internal documentation about the implementation. All prior to stabilization. Then, we are aiming to stabilize prior to the end of the year!Although some programs that we  to compile don't work with Polonius Alpha (nor NLL today), we don't currently have any concrete plans to continue active feature work on the Polonius implementation after the stabilization of Polonius Alpha. We expect to continue to optimize the implementation and address any performance regressions for a little while. We will likely come back to Polonius feature-work , but given that Polonius Alpha solves the most-encountered borrow-check issues, we are shifting our time to other high-priority work for the near future.]]></content:encoded></item><item><title>Enabling the next iteration of the borrow checker on nightly</title><link>https://blog.rust-lang.org/2026/08/04/enabling-polonius-alpha-on-nightly/</link><author>Jack Huey</author><category>dev</category><pubDate>Tue, 4 Aug 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[TL;DR We are enabling the next iteration of the borrow checker (coined Polonius Alpha)
+on nightly in preparation for stabilization in the next few months.Yes! You heard it right! The next iteration of the Rust borrow checker is coming! Rust's first borrow checker ("AST borrowck") was very limited and was phased out in 2019 in favor of NLL, other than a "migrate mode" that was used to provide nice error messages. That migrate mode was finally removed in 2022.The Polonius borrow checker spun out of the NLL effort in 2018. The initial formulation passed the NLL test suite and accepted (sound) code that NLL did not. However, performance was a critically-limiting factor; generally borrow check was slower than NLL, but certain programs were considerably slower than NLL to the extent that using that implementation/formulation of Polonius was a non-starter. Attempts were made over the years to implement the Polonius formulation in a performant manner, without much luck in addressing the core issues.In 2023, a new formulation of a Polonius-style borrow checker was imagined that required minimal rearchitecture of the existing NLL implementation and could be extended to allow more code to compile. We had hoped, to try to stabilize this new formulation in 2024; but, various things popped up that delayed this.But! We're nearly there now! At this point, there are no known remaining issues with the subset coined Polonius Alpha that we intend to stabilize. And, performance is generally acceptable for stabilization (will discuss that a bit below).So, we are enabling the Polonius Alpha borrow checker on nightly for testing until we stabilize fully later in the year. We're doing this in order to help find:Any serious performance regressions we're unaware ofUnsoundness in the formulation that we haven't thought aboutAny weird diagnostic issues that we need to improve
+Note: we have not  seen any diagnostic changesThe key thing that Polonius Alpha enables that NLL does not is  borrow checking of lifetime outlives relationships.Perhaps the smallest example demonstrating what will pass with Polonius Alpha but not the current NLL is:However, the example you will see more often is:The issue is that the  branch causes the borrow checker to think that the borrow returned by  lives for the entire function (because of the  return type), even though that borrow isn't live in the  branch. NLL's analysis is .Polonius Alpha passes this because its analysis is , and it knows that the borrow isn't live in the  branch.Now, Polonius Alpha is not ; some programs that would compile under legacy Polonius (the slow original implementation) don't compile with Polonius Alpha. (This is of course why we call it "Polonius Alpha"). For example:(As a slight note: we have also found programs that compile with Polonius Alpha but not legacy Polonius, so it's not really a full subset.)Polonius Alpha currently does strictly equal or more work compared to NLL, so we have been paying particular attention to potential performance regressions.From the top ten thousand crates by downloads on crates.io, we have seen relatively few "significant" regressions, and even crates that have a "significant" regression are typically  minimal:Each point represents a crate within the 10,000 most-downloaded crates. The black line is an arbitrary threshold of significance, set to a 1% regression and quadratically scaled below 30 seconds. Red points are crates that pass this arbitrary regression threshold. X-axis is compile time (for the leaf crate only without dependencies) under NLL; Y-axis is the ratio of compile time under Polonius Time compared to NLL.If you look at the top five crates, they are:Outside the top ten thousand crates, we have focused mainly on crates with many borrows. The worst case we've seen is a 2-3x regression.We have done some initial triage of the causes of these regressions and are thinking about the best way to fix them. Though, overall we think these regressions are fairly reasonable even if we  fix them, given how rare and relatively minimal they are compared to the additional power Polonius Alpha brings over NLL.
+I really don't want this. How do I opt-out?To reiterate: this is only being enabled on nightly. But if you want to disable Polonius Alpha, and only use the stable NLL, you can pass  to , use , or with a project's  configuration file:Over the next few months, we will be monitoring Github and Zulip for any reported issues about Polonius Alpha. We will also be working to address known performance regressions. Finally, we will be working on internal documentation about the implementation. All prior to stabilization. Then, we are aiming to stabilize prior to the end of the year!Although some programs that we  to compile don't work with Polonius Alpha (nor NLL today), we don't currently have any concrete plans to continue active feature work on the Polonius implementation after the stabilization of Polonius Alpha. We expect to continue to optimize the implementation and address any performance regressions for a little while. We will likely come back to Polonius feature-work , but given that Polonius Alpha solves the most-encountered borrow-check issues, we are shifting our time to other high-priority work for the near future.]]></content:encoded></item><item><title>Gateway API v1.6: TCPRoute and UDPRoute Graduate to Standard</title><link>https://kubernetes.io/blog/2026/08/03/gateway-api-v1-6-release/</link><author></author><category>dev</category><pubDate>Mon, 3 Aug 2026 16:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[The Kubernetes SIG Network community is thrilled to share the release of , which was released on June 30th of this year!Gateway API has become the standard for modern, role-oriented,
+and expressive service networking in Kubernetes.
+In previous releases, Gateway API established a production-grade foundation
+for HTTP and TLS layer 7 traffic.
+With version 1.6.0, Gateway API takes a major step forward by expanding
+standard layer 4 protocol routing and introducing cleaner API boundaries for experimental innovation.Here is a quick summary of what's new in Gateway API v1.6.0:TCPRoute and UDPRoute Graduate to Standard: Raw L4 TCP and UDP traffic routing reach GA stability in the  API version.Experimental API Group Separation: Experimental resources transition to a distinct API group (gateway.networking.x-k8s.io) with an  prefix to make experimental vs. standard boundaries crystal clear.Let's dive into the details!TCPRoute and UDPRoute graduate to StandardUntil now, Gateway API only offered a stable routing model for HTTP and TLS traffic.
+Workloads that speak a raw protocol over TCP or UDP - databases,
+DNS, VoIP, gaming, IoT telemetry - had no portable way to plug
+into a Gateway. Users either fell back to a plain Kubernetes Service,
+or to an implementation-specific CRD that doesn't travel between Gateway controllers.TCPRoute and UDPRoute close that gap: they route traffic to backends based on protocol and port alone, no L7 awareness required.
+With this release, both have graduated from the Experimental channel to Standard, and moved to the  API version.
+The  version of each was deprecated as of the v1.6 release, and will be removed in a future release.A Gateway needs a listener that allows TCPRoute attachment:A TCPRoute then attaches to that listener and forwards traffic to a backend:Traffic arriving on the Gateway's port  is proxied to the endpoints of  on port . Omitting  and  from  attaches the route to every TCP listener on the Gateway instead of a single one.UDPRoute follows the same pattern; swap the listener protocol and the route kind:XBackend arrives in ExperimentalGateway API v1.6 introduces the new  resource, which is a general-purpose decorator for Service (and other backend types) within Gateway API.The Service resource is an amazing, stable, and flexible object, but that comes with some costs: The flexibility creates a lot of edge cases that Gateway API needs to handle, and the stability makes it impossible to add new concepts to Service.The XBackend resource builds on the ideas in the upstream  KEP, to add a Gateway API-native object that still targets the backend app, while allowing the community to extend it to handle use cases that are difficult or dangerous to handle with Service.The first version of XBackend includes support for ExternalHostname destinations, which are ruled out from Service support in Gateway API because of the possibility of confused deputy attacks.For XBackend, this support is an Extended/Optional feature, allowing implementations and users to opt in once they understand the security tradeoffs.This support is very useful for egress use cases (which are most commonly used for cluster-hosted agentic workloads), which the community is also working towards formalizing in GEPs about Gateways for Egress (work in progress, stay tuned!)The XBackend API is experimental and its behavior can change, do not assume it is ready for productionAn example of a Gateway with an ExternalName backend that can be used for egress to a cloud AI API is as follows:The community is also working on moving Session Persistence config from  into , along with other use cases like retries, TLS origination and similar config that is useful to be able to configure per-application rather than per-Route.Experimental resources move off the standard API groupPreviously, experimental resources shared the same API group as standard ones - gateway.networking.k8s.io - distinguished only by a -style version. TCPRoute and UDPRoute were the last resources to graduate under that scheme.Going forward, new experimental resources are defined in a separate group,
+gateway.networking.x-k8s.io,
+and the names of their API types get an  prefix - for example XBackend and XMesh.
+When one of these graduates to Standard, it's renamed into the gateway.networking.k8s.io group
+and drops the  prefix, the same way XMesh is expected to become Mesh.This separation makes the experimental/standard boundary explicit at the API group level, rather than relying on version strings alone.What's next & getting involvedThe graduation of TCPRoute and UDPRoute to Standard marks an essential milestone
+in making Gateway API a complete, universal ingress and mesh networking API
+for Kubernetes workloads across layer 4 and layer 7 protocols.You can start using Gateway API v1.6.0 today with your favorite Gateway controller implementation:Gateway API relies on an extensive conformance test suite to ensure consistent,
+portable behavior across all implementations.
+Here is a list of the implementations that are conforment with v1.6 on the day we published the article:Gateway API is an open, community-driven project built under Kubernetes SIG Network. We welcome contributions, feedback, and participation from everyone!A huge thank you to all the contributors, reviewers, maintainers, and implementation authors whose hard work made Gateway API v1.6.0 possible!]]></content:encoded></item><item><title>Kubernetes v1.37 Sneak Peek</title><link>https://kubernetes.io/blog/2026/07/31/kubernetes-v1-37-sneak-peek/</link><author></author><category>dev</category><pubDate>Fri, 31 Jul 2026 16:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[As we get closer to the release date for Kubernetes v1.37, the project develops and matures,
+features may be deprecated, removed, or replaced with better ones for the project's overall
+health. This blog outlines some of the planned changes for the Kubernetes v1.37 release that the
+release team feels you should be aware of for the continued maintenance of your Kubernetes
+environment and keeping up to date with the latest changes. The information below reflects the
+current status of the v1.37 release and may change before the actual release date.Deprecations and removals for Kubernetes v1.37Kubectl: kubectl run --filename/-f to be deprecatedThe  (or ) flag for  is being deprecated as the generated pod is always built purely from CLI arguments like  and .Kubelet: Static Pods can no longer reference Secrets or ConfigMapsStatic Pods were never meant to read API resources directly, since they aren't created through the API server — but a bug let them reference Secrets or ConfigMaps via fields like  or . That bug is now fixed: as of v1.37 these references are strictly prohibited, and the PreventStaticPodAPIReferences feature gate that previously let you opt out of the restriction has been removed.Deprecating kube-proxy's support for  mode support for  mode was introduced in v1.8 to resolve  performance bottlenecks. However, since the kernel  API alone cannot fully implement Kubernetes Services,  mode continues to use  underneath (KEP-3866, "The ipvs mode of kube-proxy will not save us").Clusters running  in ipvs mode (or mode: ipvs in KubeProxyConfiguration) would now be logging a deprecation warning on startup. The deprecation timeline looks like this:By v1.40,  mode for  is expected to be disabled by default (still selectable via the feature gate)Future removal of cgroup v1 supportAs modern Linux distributions and container runtimes use cgroup v2 as the default, support for the legacy cgroup v1 is officially being phased out. Since the v1.35 release, the  setting has defaulted to true. Consequently, the  will fail to initialize on any nodes that still rely on cgroup v1 unless an explicit configuration override is applied.Using this override should be considered a short-term fix. Advanced resource management capabilities, such as In-Place Pod Resizing and Tiered Memory Protection, depend entirely on cgroup v2. While the override remains available in Kubernetes v1.37, users are encouraged to migrate to cgroup v2, as support for cgroup v1 is planned to be removed in a future release.Breaking changes in Kubernetes v1.37SELinux volume relabeling ("SELinuxMount") graduates to GASELinuxMount is expected to reach GA and be enabled by default in v1.37. Volumes would then be
+mounted with  (the mount option default) instead of being recursively
+relabeled, but  when the volume's CSI driver opts in via a CSIDriver that sets .Because a single mount can only hold one SELinux context, pods with different SELinux labels sharing a volume on the same node (which previously coexisted under recursive relabeling) may now fail to start. To retain the previous recursive behavior for a specific workload, set seLinuxChangePolicy: Recursive in the Pod spec.Featured enhancements of Kubernetes v1.37The  API is expected to graduate to Stable (GA) in Kubernetes v1.37 after spending nearly nine years in Beta. The API provides a standard way to retrieve CPU and memory usage for pods and nodes, powering widely used Kubernetes features such as the Horizontal Pod Autoscaler (HPA) and commands like .This graduation recognizes the API's stability and widespread adoption, with no functional changes expected. Both  and  will remain usable during the transition, enabling developers to adopt the stable API at their own pace without breaking existing workflows.Kubelet in UserNS a.k.a. Rootless ModeTraditionally, Kubernetes node components such as the  run with root privileges on the host. While necessary for many deployments, this also means that a vulnerability in one of these components could potentially have a greater impact on the underlying system.With Kubernetes v1.37, kubelet in User Namespace (Rootless Mode) is expected to graduate to
+Beta. This enhancement allows Kubernetes node components to run inside a Linux user namespace as an unprivileged user on the host while still behaving as root within the namespace. By reducing the need for host-level root privileges, it adds an extra layer of isolation and helps limit the impact of potential vulnerabilities affecting node components.Historically, Kubernetes has lacked an API for CSI drivers to report storage failures, which become evident only through
+failed mounts or hung I/O. Since remediation controllers had nothing machine-readable to act upon, the only way to figure out the root cause behind this failure was to cross-reference Kubernetes objects alongside external vendor dashboards.In Kubernetes v1.37, this KEP resets graduation to Alpha after an initial implementation in v1.21 and introduces four new CSI
+RPCs. The controller plugin reports the health of storage volumes using ControllerListVolumeHealth (lists unhealthy volumes) and ControllerGetVolumeHealth (checks a specific volume). A controller-side health monitor polls these CSI controllers and stores the results in
+PersistentVolumeClaim.status.healthStatus.On the node side, the kubelet calls  to obtain the health of individual volumes on that node and records
+it in , while  reports the health of the drivers registered to a node in
+CSINode.status.storageHealth.The error vocabulary is kept simple, extensible, and machine-parsable (, , etc.), with further driver-specific elaboration available via  and . Finally, the controller-side and node-side reports are kept independent and are hence displayed separately, providing a more holistic view of storage health to consumers.New features and deprecations are also announced in the Kubernetes release notes. We will formally announce what's new in Kubernetes v1.37 as part of the CHANGELOG for that release.Kubernetes v1.37 release is planned for Wednesday, August 26th, 2026. Stay tuned for updates!You can see the announcements of changes in the release notes for:The simplest way to get involved with Kubernetes is by joining one of the many Special Interest Groups (SIGs) that align with your interests.If you don't know where to start, join our monthly New Contributor Orientations
+where we teach the community how the project is structured, and we'll guide you on how to make your first contribution to the project.]]></content:encoded></item><item><title>How the controller-runtime Cache Actually Works, and Why Your Controller Does Not Crash the API Server</title><link>https://kubernetes.io/blog/2026/07/29/controller-runtime-cache-explained/</link><author></author><category>dev</category><pubDate>Wed, 29 Jul 2026 18:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[This article has been revised since it was first published, to correct several significant technical inaccuracies in the original text.Kubernetes has long been the default platform for distributed workloads, and writing your own
+controller for it is now a matter of a few hours. The common path — Golang, using  on top of
+ — gives you a project scaffold, types, and a reconciler. For typical
+scenarios that is more than enough. But as soon as load grows or the controller starts behaving
+in ways you did not expect, a whole class of edge cases shows up. Most of them trace back to
+the same root cause: a fuzzy mental model of how  works inside. If you
+write Kubernetes controllers in Go, this article should help you build a coherent picture and
+avoid expensive surprises in production.This article walks through the internals of  and, along the way, shows which
+architectural decisions are baked into Kubernetes itself. The starting point is how
+controllers actually read objects from the Kubernetes API.A common misconception goes like this:  inside  queries 
+directly;  returns a fresh, live view of the world; and after  you can
+re-read the object and immediately see the new state. In practice the model is the opposite:
+ operates against a local copy of the data populated through  + .
+Reads inside a reconciler cost almost nothing and do not load the control plane even at
+hundreds of calls per second — but the price of this design is that a controller can quietly
+consume gigabytes of memory, perform hidden O(n) scans, and regularly trip over stale reads.This post is aimed at engineers who already write controllers in Go with 
+but want to consolidate the pieces into a single mental model rather than carry around a bag
+of isolated observations. The focus is the practical impact on production clusters: memory,
+network traffic, read consistency, and reconciler behavior.If you take only one idea from this article, take this: and  inside a reconciler typically do not read from the API server. They
+read from a local in-memory cache, which the manager warms up with  and then keeps
+current through .Almost every other property of the system follows from that one fact:Reads are cheap, but not strongly consistent immediately after a write.Writes go straight to the API server, not through the cache.The size of the local cache and the set of indexes directly drive memory consumption.An incorrectly written  can silently turn into a linear scan over tens of thousands
+of objects. is rarely needed — but in some places you really cannot do without it.The rest of the article unpacks why this is so and how the model is wired underneath.A bit of context: what a reconciliation loop isTo avoid arguments about terminology, start with the basic model.A controller in Kubernetes lives inside a reconciliation loop: it continuously compares the
+desired state of an object with the actual state and tries to bring one in line with the
+other. The idea is described in the original
+architectural notes
+on Kubernetes. In practice it looks like this:A user or another controller mutates an object.An event lands in a queue. reads the current state.The controller decides what to create, update, or delete.The system produces a new event and the loop repeats.What matters here is not that the controller "does something" — it is where it learns about
+changes from and where it reads state from. That is exactly where the cache comes in.On a live cluster, the easiest way to see this in action is:In watch mode,  subscribes to the same event stream that controllers consume.
+You create or delete a Pod and you see not a single "final" object but a chain of states: the
+scheduler assigns a node, the kubelet updates status, other controllers contribute their
+changes. Kubernetes controllers do not poll continuously — they consume an event stream and
+maintain a local state that is kept current.Why the cache exists in  at allImagine the simplest possible controller:Looks straightforward. But what happens when you call ? Does it fire an HTTP request at
+the API server? If it did, picture the scene: a dozen controllers, each issuing a  and
+a  per reconcile, with hundreds of reconciles per second. The API server and 
+would be writing each other farewell letters within minutes.To prevent that, Kubernetes was built around a  rather than polling from the
+very beginning. The standard mechanism works like this: a client takes a snapshot of the slice
+of the world it cares about once, then subscribes to a stream of changes and keeps a local copy
+current. This is the  +  pattern, and there is no "what is in the world right
+now?" loop anywhere in it.This idea has lived in  since the very first controllers in
+.  wraps it in a friendly framework so
+that you do not have to glue the , the delta queue, and the  together
+yourself (more on those below).So when people talk about "the controller-runtime cache", they are not talking about a clever
+optimization. They are describing the foundation of the entire model: you read from memory,
+you write to the API server, and you receive feedback through a watch.The rest of this article walks through how each piece is wired up.A few terms collected up front, so you do not have to jump back and forth later. Skim or skip
+if any of them are already familiar. — the triple that uniquely identifies an API type in
+Kubernetes: group, version, and kind, for example . Almost every API in
+ works in terms of GVK rather than the name you would type in 
+(such as ). — a monotonic counter
+that the API server tracks automatically, and that changes every time the object is written.
+Although it's a decimal number, the field is represented as a string.
+Resource versions serve two main purposes. The first one, you can use them for
+optimistic concurrency control (for example: on , the API server checks
+that the  you provide matches the one in , otherwise it
+returns ). The second place you are going to see resource versions
+in your controller is to resume a . Read
+watch bookmarks to learn
+more. — the  object in . This is what your controller
+constructs in  and runs through . It orchestrates everything: it
+owns the shared cache, builds the client, starts controllers, webhooks, the healthz
+endpoint, and other runnables. A single process usually has exactly one manager, with many
+controllers living inside it. — an entity from  that maintains a watch on a single GVK, keeps an
+indexed local store, and dispatches events to subscribers. In  an
+informer is created automatically when you register  or perform the first
+/ on a given type. — the in-memory backing store of an informer, where the objects themselves live.
+Each informer in  has its own store. — an interface with three methods: , , .
+The informer calls them for every event delivered through the delta queue. The store is
+always updated before the handler runs, so a handler never sees an indexer that is behind
+its own event. Subscribers (your controllers) register handlers like this and learn about
+changes through them. — a queue of reconcile requests () with deduplication and rate
+limiting. On every event the controller enqueues a request; workers pop them one at a time
+and hand them to  as a . — a controller-side filter. A predicate decides whether an event should be
+enqueued at all (for example, "react only to changes in , ignore ").With those in hand, you can dive in.Anatomy: what lives under the cache packageIf you peek into sigs.k8s.io/controller-runtime/pkg/cache, you will see that it is a thin
+wrapper over k8s.io/client-go/tools/cache. The same primitives that power the rest of
+Kubernetes live underneath: — keeps a  open against the API server and writes incoming changes
+into a queue as . A delta is a record of the form "object X received an  /
+ /  event, and here is its new version". Effectively a single line in a
+change log.The  (, or  on older client-go) — holds those deltas in
+arrival order until the informer processes them. — the in-memory object store, plus the indexes built over it. — the conductor that ties everything together and dispatches events
+to subscribers — your controllers and any other observers.At a glance the pipeline looks like this:Pipeline diagram: API server to Reflector to the delta queue to Indexer to Event handlersNow walk through each link.Reflector and resourceVersionWithin the cache, the Reflector is the only component that talks to the API server. It has
+exactly two jobs: fetch the initial snapshot at startup, then keep a  open from there
+on. (Writes and  reads bypass the cache entirely and reach the API server on their
+own — more on those later.)This is where the  earns its keep. Along with the objects, the API server
+reports the version at which the snapshot was produced. The Reflector then says to the API
+server, "open a  from version X", and receives a stream of events for everything that
+happened after that version. That is the basis of consistency: there is no gap between the
+snapshot and the stream, because the stream resumes exactly where the snapshot ended.That snapshot no longer arrives as a separate  call by default. Current versions use a
+streaming list instead: the Reflector
+opens the  with , and the API server begins the stream with
+synthetic  events for the whole current state before switching to live changes. One
+request instead of two, and a plain  as the fallback. The pattern is unchanged —
+snapshot, then stream — which is why this article keeps saying  + , the way the
+Kubernetes documentation does.If the connection drops, the Reflector reconnects with the last known . If
+the API server replies with  ("that version is no longer in the history, you are
+too far behind"), the Reflector fetches a fresh snapshot and starts over. This is called a
+, and it does not happen on a schedule — only in those failure scenarios.This piece is worth pausing on, and it is also the piece that changed most recently.Historically the buffer between the Reflector and the rest of the informer was ,
+which held deltas in a map keyed by : deltas for one object accumulated in a
+slot,  handed back the whole slice for that key at once, and a  helper
+collapsed consecutive  entries. If you have read about informer internals before,
+that is probably the picture you are carrying.That is no longer the default. Shared informers now use , and since client-go 1.36
+ cannot be switched back on at all. Which version you compile against is what
+decides this, not the version of the cluster you point at. The new queue is deliberately
+simpler — a flat, strictly ordered slice of deltas:Its own documentation states the design goal plainly: every notification from the Reflector is
+passed, in order, through . Which means:Order is preserved globally, not just per object. Deltas come out in exactly the
+sequence they arrived. There is no per-key slot and no slice —  takes
+. (There is also a  for processing several deltas in one pass, on by
+default since client-go 1.35, but it is a batching optimization, not a merge: each delta is
+still delivered.)No deduplication whatsoever. has no  equivalent. Nothing is
+collapsed — including consecutive deletes, and including intermediate states.So the worked example gets simpler than it used to be. Suppose three events for
+ arrive in quick succession: — the Deployment is created (say, with ). — somebody bumps  to . — and immediately to .All three are appended to the queue and popped one at a time, and the informer dispatches them
+in order: first , then two  calls (the intermediate , then the final
+). The event handler runs three times, no shortcuts.The store is written  the handlers are notified, and handler delivery is asynchronous — the informer writes the indexer, then hands the
+notification to a per-subscriber buffer that the subscriber's own goroutine drains later. So
+your handler never sees an indexer lagging behind its own event, but it can see one that has
+moved well past it. Handling the  update, a  from the cache can legitimately
+return  — or , if the object has since been deleted. Never treat the object in the
+store as "the state at the time of my event".Deduplication does exist — but it lives one layer up, in the controller's workqueue, and with
+ that is now the  place it happens. The mechanic is straightforward: for each
+delta, the controller's event handler extracts the  from the object and
+enqueues it. Re-inserting the same key silently coalesces with the existing entry; the
+workqueue does not care about the object itself.A concrete picture: you create a Pod. Within a second or two a flurry of  deltas
+arrives — the scheduler assigns a node, the kubelet sets , then ,
+, . Five deltas in a row, and the event handler fires on every one of them —
+but throughout this window the workqueue holds a single entry with the key .
+By the time  pops it, the cache already holds the final state, and 
+runs once.So you get two layers with cleanly separated responsibilities:The  — an ordered stream of change facts, delivered one at a time and
+without merging. Its job is to tell consumers everything that happened, in the right order. — a queue of  with deduplication. This is the layer
+that collapses "ten updates in a row → a reconcile or two".If you keep that two-layer picture in your head, it becomes clear why a flood of events
+against a single object barely affects controller throughput — the workqueue absorbs them.Indexer: the local copy of the clusterThe Indexer, backed by a , is the local copy of the cluster. Underneath
+it is a plain  keyed by , plus a single
+, plus a dictionary of registered indexes (covered in their own section below).An uncontended  is cheap: a map lookup followed by a  of the object. The
+part of that structure that matters most at scale, though, is not the map — it is the one
+, which guards the store and every index at once. Readers hold it for shared
+access, the informer needs it exclusively to write, so the two genuinely compete: a 
+holds the read lock while it walks every object of that kind, and the next store write waits
+behind that walk. This was a real bottleneck in  at scale
+(kubernetes#130767); recent
+client-go releases hold the write lock for much less time.A SharedIndexInformer fuses the Reflector, the delta queue, and the Indexer together and
+exposes two interfaces to the rest of the world:Read objects directly from the indexer.Register a  and receive notifications for every event coming out of
+the queue — , , . The store is written before the handler call,
+so by the time your handler runs the indexer already reflects that event, and possibly
+later ones too."Outside" here means your controllers. When a controller registers , under the
+hood it asks the informer: "add a handler that, on every change, enqueues the key into my
+workqueue". The controller's workers then pop keys one at a time and call your
+Reconcile(ctx, ctrl.Request{NamespacedName: ...}).The keyword in the name is . The manager creates  informer per GVK, and
+every controller, webhook, and event source within that manager subscribes to it:Shared informer diagram: a single list / watch per GVK, feeding multiple subscribersIn other words: an informer is the thing that subscribed to Pods once, holds them locally,
+and serves every interested party in the process. From the API server's perspective, that is
+one snapshot and one  per GVK, regardless of how many reconcilers live inside your
+process.What happens at startup and on the very first Step by step, here is what happens between the moment the manager starts and the first
+ inside your reconciler:The manager's  brings up every registered informer.For each GVK, the Reflector fetches a full snapshot: every object of that type that falls
+within your scope.The snapshot is loaded into the informer's store, registered indexes are rebuilt, and the
+informer is marked as synced.The same stream then continues as an ordinary  from the  the
+snapshot synced to. does the controller start invoking  — specifically, once every
+source it owns reports synced, which includes its event handlers having processed the
+initial snapshot. Until that point, workers do not drain the workqueue, even if events have
+already started piling up.So "the reconciler is running but the cache is still empty" is not a state you can
+observe — the warm-up happens before the first . (The one exception: a  for a
+type nothing registered a watch for starts a new informer on the spot, and blocks until it is
+warm.)What happens during the first ? Suppose your reconciler contains:Under the hood it boils down to roughly this:No HTTP, no TLS, no protobuf serialization, no . A map lookup plus a deep copy of the
+object, and no I/O at all.To repeat, because it matters: even the very first  for a registered type reads from a
+fully warmed-up, fully indexed snapshot. There is no "first time slow, then fast". This applies specifically to . If for some reason you need to
+read objects  (for example, during initialization), use
+, which goes straight to the API server. The regular client does not hand
+you an empty result at that point — it fails fast with . More on this
+later.Client ≠ Cache: read from memory, write to the API serverAnother point that often gets lost.  in  is a composite
+object: (, ) go through the cache. (, , , , , ) go straight to the API
+server.This is not a hack — it is a deliberate design choice:Reads are frequent; they should be cheap.Writes are rare; they should be exact.Writing through the cache would invite split-brain — the local copy thinks the change went
+through, while the API server has already rejected it.It is worth dwelling on "should be exact". This is where  shows up again.When you read an object from the cache, you do not get its current state in  — you get
+the state as the Reflector last observed it. That state carries a . You then
+mutate the object and call . The request goes to the API server right
+now, and the API server checks:Does the  in your PUT match the  in ? Yes — write
+it.No,  already has a newer one? Reply with  — somebody beat you to it.This is optimistic concurrency control. No real locks are taken; everybody writes in
+parallel; but only one of the racing  calls wins — the one that arrives with the
+current version. Everyone else gets a  and is expected to re-read and try again.Why does this matter for the cache? If you naively send a PUT with "your" 
+from the cache and somebody has updated the object since you read it, you will get .
+That is . It is exactly the protection the system is supposed to give you.
+Writing without the  check (via  without an optimistic lock, or via
+Server-Side Apply) is also possible, but that
+is a separate conversation.The "write → visibility" cycle now looks like this:Write visibility diagram: client.Update to API server to watch event to cacheBetween "you executed " and "the cache reflects the new state" there is a window —
+usually milliseconds, but with no guaranteed upper bound. Inside that window, an  for the
+same object returns the previous version. The next section is essentially a list of mistakes
+that grow out of that window.Mistake 1: expecting read-after-writeThis is not a  bug. It is a property of an eventually consistent system:
+the cache catches up asynchronously, through the watch.The right pattern is to never rely on instant freshness.  must be idempotent and
+must always look at the current state. If it does not match the desired state, the next
+reconcile fixes it. You do not need to "wait 100ms" or "re-trigger". You need to write the
+logic so that one or two extra invocations break nothing.If a stale read is a genuine correctness problem for you, a live read does not fix it — a
+concurrent write can be mid-commit anyway. See the
+controller-runtime FAQ
+for patterns that do.Mistake 2:  and who owns the memoryTo make sense of this, a quick word on event mechanics inside a controller. When you register
+a source via , two layers sit between the indexer and your : — the filter. It looks at an event (, ,
+, ) and decides whether to pass it through. — the transformer. It receives the object and turns it into one or more
+ values that go into the workqueue. The classic
+ enqueues the  of the current object.Here is the critical part. Predicates and handlers receive the same objects that live in
+the informer's shared store. The same  is seen by every controller subscribed
+to Pods.Because Go has no immutable structs, nothing prevents you from doing
+pod.Labels["foo"] = "bar" directly inside a handler — and that Pod is the one in the store.
+Raw  listers have always worked this way; 's own documentation puts
+it bluntly: you must not modify anything returned by  or  as it will break the indexing
+feature. Patch a status "for convenience" in a handler and you break the world view of an
+unrelated controller next door.The cache-backed client from  shields you from that on the read path:  and
+ deep-copy by default, and have since its earliest releases. You can opt out with
+, which is named that way on purpose. The event path is not shielded —
+there is no  anywhere between the informer and your predicate. The simple rule:Anything you receive from  /  is yours; mutate freely.Anything you receive in a  or an  is shared, not yours. If you
+must mutate it, call  first; otherwise you are silently corrupting the
+cache for every other controller subscribed to the same type.A concrete review heuristic: if predicate.Funcs{UpdateFunc: ...} or
+handler.EnqueueRequestsFromMapFunc(...) contains expressions like
+e.ObjectNew.SetLabels(...) or , stop and ask whether a  is
+missing before that mutation.Mistake 3: resync is not relistAn informer has a resync period (, 10 hours by default in
+), and many people read it as meaning: rebuild the cache from the API
+server every n hours, fetching every resource once again.It does not. A resync does  perform a . It  everything currently in
+the indexer back through the delta queue, and the informer dispatches an update per object,
+calling  for each one. This is for controllers that manage state outside
+the Kubernetes API (a cloud provider resource, for example): out-of-band changes produce no
+watch event, and a periodic resync is the only way to notice them. It generates no traffic to
+the API server.One caveat before you rely on resync as a safety net: because both sides of the synthetic
+update are the same object, predicates that compare old and new — such as
+GenerationChangedPredicate — will drop it.A real  happens only in two cases: when the  died with , and when
+you explicitly recreate the informer.Mistake 4: do not confuse  with a timerA small note that often saves time. Sometimes you want to wait inside a reconciler — "we
+just called the provider's API; if it is not ready yet, retry in a minute". The temptation is
+to spin up  or your own goroutine.Resist it.  already provides a built-in mechanism:The controller puts your  back into the workqueue with a delayed trigger 30 seconds out.
+If a real event for the same object arrives within that window, the reconcile fires
+immediately, without waiting for the timer (the key is deduplicated in the queue). This is
+both cheaper and more correct than a hand-rolled timer: you do not hold a worker, and you do
+not risk missing a real event.cache + index = almost SQLNow you get to what is, arguably, the most useful capability of the cache — and the one most
+controllers leave unused.By default, a  from the cache looks like this:It works — until the cluster has 50,000 Pods and reconciles run hundreds of times per second.
+Then the loop turns slow: every trigger walks all 50,000 Pods under the store's read lock,
+then deep-copies each one after the lock is released, doing O(n) work per reconcile, and it is
+the walk, not the copying, that blocks writers into the store.The Indexer in  can do much better. You declare up front which field you want to
+index on:Two things about that call are worth making explicit, because the tidy example hides
+them behind a convention.The index name is arbitrary. That second argument, , is only a
+string key the index is registered under.  does not parse it as
+JSONPath and does not check it against the object's schema — you could write 
+or  and it would behave identically. The only rule is that the  comes back in  at query time. Naming the index after the field it
+happens to read is a readability convention, nothing more.But remember: this only works for reads served from the cache.The indexed value is computed, not read. The function returns whatever strings you
+build; they need not be the verbatim contents of any single field. You can lowercase a
+value, join several fields into one composite key, bucket a timestamp (the 
+trick below does exactly this), or emit a string that appears nowhere in the object
+literally. Whatever the function returns becomes a key in the inverted dictionary, and a
+ lookup for that exact key is what finds the objects again. The only
+constraint is that the value has to be derivable from the object you are indexing.What is an ? The term comes from search engines. Normally you have
+documents and each document has a list of words in it. "Inverted" means the relationship is
+flipped: a dictionary in which the key is a word and the value is the list of documents that
+contain it. Same idea here: the key is the value of a field (for example, ), and the
+value is the list of object keys whose field has that value:map["node-1"] = {"default/pod-a", "kube-system/pod-b", ...}
+map["node-2"] = {"default/pod-c", ...}
+On every incoming event (, , ), the indexer runs the object
+through your indexing function, gets back the set of index keys, and updates the inverted
+dictionary. If a Pod migrates from  to , the  key loses its
+reference to it and the  key gains one.By the time you call , the index is . You do not pay for a
+rebuild at query time — no scan over all objects, no dictionary reconstruction. All the
+work was done up front, at the moment the object changed.This is not "fetch the full list, then filter". It is a lookup in the inverted index → a
+ready set of keys → a fetch of the corresponding objects. A different code path entirely.The comparison to SQL is more accurate than it might look at first:CREATE INDEX idx_node ON pods(node_name)IndexField(&Pod{}, "spec.nodeName", fn)SELECT * FROM pods WHERE node_name = 'node-1'List(&pods, MatchingFields{"spec.nodeName": "node-1"})SELECT * FROM obj WHERE owner_uid = $1List(&list, MatchingFields{"metadata.ownerReferences.uid": uid}) (requires an  for that field)Note the last row:  does  make magic out of thin air. For every field
+you want to look up via  you need a corresponding  registered
+during manager setup. Without one,  rejects the query and returns
+an error.A few things worth keeping in mind: No range queries, no , no sorts, no aggregates. If you need
+"everything older than five minutes", either do a regular  and filter in code, or
+use a  trick: instead of indexing the precise , index a rounded
+value (for example, now.Truncate(5*time.Minute).Format(...)). You can then select objects
+by a specific window. is not an index. Many people assume that since label-based lookups are
+so common, there must be an optimization for them. There is not:  keeps no
+separate label dictionary. The only indexes the cache has are the namespace index and the
+field indexes you register yourself.Two separate things follow, and they get conflated. The walk really is O(n): with no label
+index, List(..., MatchingLabels{...}) still visits every cached
+object of that kind, or whatever subset the namespace or a field index already narrowed it
+to. But the selector is evaluated  the deep copy, so objects that do not match are
+skipped without ever being copied. Against 50,000 Pods with ten matches, that is 50,000
+cheap comparisons and ten expensive copies — not 50,000 copies. Which is why a
+label-filtered  is still much better than fetching everything and filtering in your
+own code afterwards: same walk either way, and the filtered version skips the copies you
+were going to throw away.So  is fine to use — just do not expect it to make the traversal cheaper.
+To shrink the candidate set itself, use a namespace or a field selector backed by a
+registered . To avoid holding the objects at all, filter at 
+time via cache.ByObject{Label: ...} or , which pushes the selector
+down to the  itself — covered in the next section on selective caches. An index maps each indexed value to a set of 
+keys — not to copies of the objects. Cheap per object, not free, and still not a reason to
+index everything in sight speculatively.You can only index data that is in the object itself. You cannot index a Pod by "has a
+related PVC with such-and-such flag". Either store that bit in the Pod itself, or index
+the PVC, not the Pod. An index is built at registration time and is populated as part of the initial
+snapshot. By the time the first  runs,  with  already works —
+the index is not built lazily. ( never consults a field index; it is a direct lookup by
+store key.)Selective cache: do not pull the whole cluster into your controllerBy default, an informer pulls every object of its type from every namespace. For Pod,
+Secret, ConfigMap, and Event in a large cluster, that is a multi-gigabyte surprise
+delivered on the first  at startup.It hurts especially with:, because Helm stores release state in them (), and those
+secrets are often a hundred kilobytes each. objects, whose  field carries a list of every image that has
+ever landed on the node — tens of kilobytes per node in busy clusters., which can be very numerous and which you almost certainly do not need cached at
+all.In , caching policy lives in , passed when constructing
+the manager:A subtle point: this is a  setting and it affects every controller in the
+process that reads the corresponding type. If you narrow the cache for Secrets to a single
+namespace and another controller in the same binary needs all secrets in the cluster, that
+controller will not see them. Before you tighten the scope, audit who else is reading
+the type.A short tour of the options: restricts the visible scope. If your controller only manages its own
+namespace, there is no reason to keep other people's objects in memory. become parameters of the  itself. The API server only sends
+matching objects, saving network and memory. is invoked before the object lands in the store. It is the perfect place to
+drop , oversized , or the binary  of ConfigMaps that
+you do not need. /  apply the same restriction globally, when
+every type needs the same scope. A selector limits what is , not what . If an object does
+not match your selector, then as far as your controller is concerned, it does not exist in
+either  or . This bites people: somebody mislabels a single Secret and then
+spends half a day figuring out why their controller "cannot see it".A separate pattern: you need to know that an object exists, but you do not need its  or
+. Typical examples: a controller that waits for a Secret with a particular name to
+appear but never reads it; one that counts PersistentVolume objects by the
+topology.kubernetes.io/zone label; one that reacts to ConfigMap objects in a namespace
+by name and does not care about contents. by definition gives you nothing from  or
+ — only . So you  filter through it on  fields (such as
+a PersistentVolume's  or a Pod's ); those fields do not
+exist in the local copy. Everything covered by metadata-only is , ,
+, , , and the rest of .For this case there is :Under the hood this is a separate watch that asks the API server for metadata only. The
+store keeps such objects without , , or  — only . For
+Secrets the memory difference can reach an order of magnitude.APIReader: when the cache is not enough returns a  that goes straight to the API server, around
+the cache. When you actually need it:A one-off read of a resource for which you do not maintain an informer. Spinning up a watch
+for a single operation is expensive.Reads , for instance during initialization. At that point the
+cache-backed client fails with  rather than returning data.Paginated traversal of large result sets through . The cache-backed
+client rejects  with an explicit error, and honors  only as truncation — an
+arbitrary N objects, not a stable "first N". For genuine pagination you need  or
+a direct client of your own.The price is a real network request, and it is easy to underestimate: on top of the round trip
+you pay to deserialize whatever comes back, which for a large collection is not cheap. So the
+trade is less obvious than it looks — reading from the API server is not automatically cheaper
+just because it avoids keeping objects in memory. Measure before you "optimize" a cached read
+into a live one. One thing to avoid outright: do not build "look in the cache, and if missing,
+fall back to the API" logic. That is exactly the split-brain pattern the cache is meant to
+protect you from.Disabling the cache for a type entirelyIf you do not need a local cache for a given type at all — say, the type is "fat", read
+rarely, and the  +  overhead is not worth paying — you can tell the manager not to
+cache it. This is configured through client.Options.Cache.DisableFor:With this configuration,  and  for Secret go straight
+to the API server, bypassing the cache. No informer is started for that type, which means no
+ at startup and no permanent memory pressure from a store. That also means no events:
+nothing will trigger your controller when such an object changes. If you need those triggers,
+pair the direct reads with a metadata-only watch. This is a more radical
+alternative to : where  is reached for ad hoc, individual requests,
+ turns the cache off for the type wholesale.Real-world projects use this: external-secrets,
+for instance, has flags that disable caching for Secrets and ConfigMaps, trading memory for
+API traffic. If you want to avoid a watch on the API server entirely, you can feed the
+controller events from a source of your own design, bypassing  + . In
+ this is done with  / : you can wire
+the controller to events from any place — an internal queue, a kubelet, a custom watch.
+Niche, but a perfectly valid pattern when the API server should not be touched.A short checklist worth running through before you ship a controller into a live cluster: (, ,  selectors), especially for "fat"
+types: Secret, ConfigMap, Event, Pod, Node.Remember that a constrained cache acts as if everything outside its scope does not
+exist. A mislabeled object "disappears" with no error anywhere. for objects whose heavy fields you do not need —
+ alone consume a noticeable share of memory. for every  that uses . Without a matching
+index the query does not silently degrade — it fails with an error. objects you receive in an  or a  without a prior
+. Mutations to the store break neighboring controllers silently and persistently. It must behave correctly even if it is invoked five times
+in a row with no real change.Do not expect read-after-write from the cache immediately after . The cache
+lags during that window.When the cache cannot serve a read (initialization, deliberately uncached types), use
+, not the regular client. for types where you only need metadata. It can save
+gigabytes.Do not call  before . The cache is not running yet, so
+reads fail with  instead of returning data. Use 
+when you genuinely need to read during initialization.For deferred actions, use , not  and not your own goroutines.The cache in  is not an optimization, it is the operating model. Under
+the hood it is  + a delta queue +  — exactly the same primitives that
+power Kubernetes itself. and  go to memory; , , , and  go straight
+to the API server. Feedback flows in through the watch. plus  turn the cache into a near-complete query engine with
+inverted indexes., selectors, , and  are the levers that
+control how much memory and traffic you actually consume. bypasses the cache for the rare read the cache cannot serve — but it is not a
+fix for staleness races; see the
+controller-runtime FAQ.And the single sentence to remember:  inside a reconciler reads from memory, not from the
+API server — not even the first time. The exceptions are the ones you opt into yourself:
+, , and unstructured reads. Once that becomes a reflex, half the
+questions on controller code reviews answer themselves.]]></content:encoded></item><item><title>Get Ready: 2026 Python Packaging Council Nominations Opening Soon!</title><link>https://blog.python.org/2026/07/2026-packaging-council-nominations/</link><author>Pradyun Gedam</author><category>dev</category><pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[The inaugural Python Packaging Council election nomination period opens on Tuesday, July 28th, 2:00 pm UTC and closes on Tuesday, August 11th, 2:00 pm UTC.]]></content:encoded></item></channel></rss>
