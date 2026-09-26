@@ -1,4 +1,169 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Be alert: targeted attacks on prominent Rustaceans</title><link>https://blog.rust-lang.org/2026/09/17/targeted-attacks/</link><author>Adam Harvey</author><category>dev</category><pubDate>Thu, 17 Sep 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[We believe that there is an ongoing campaign targeting rust-lang members and
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Platform-independent SIMD in Go</title><link>https://go.dev/blog/simd-experiment</link><author>David Chase and Junyang Shao</author><category>dev</category><pubDate>Thu, 24 Sep 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[Go 1.26 and 1.27 include experimental APIs for Single Instruction Multiple Data (SIMD) operations. SIMD is a native feature of many modern CPUs that allows software to perform uniform operations across vectors of data very quickly, such as adding 8 pairs of  values in a single instruction. It can significantly speed up many computationally-intensive tasks, ranging from cryptography to data processing to AI. In fact, Go’s Green Tea garbage collector even makes use of SIMD to accelerate scanning memory for live objects.Prior to these new experimental APIs, the only way to access this functionality from Go was by writing Go assembly. This was only worth it for truly performance-critical compute kernels, which meant plenty of software that could benefit from SIMD simply left a lot of the CPU unused.Go 1.26 introduced a SIMD API for amd64, and Go 1.27 added APIs for arm64 (specifically NEON) and wasm. However, a basic challenge for a SIMD API is the enormous variation between platforms, not simply in what operations they support, but even in how vectors are represented. Some platforms provide fixed-size vectors, typically between 128 bits and 512 bits, while on others the vector size isn’t known at build time and must be queried when the program starts. To provide full access to the breadth of these platforms, these APIs live in an architecture-dependent  package.But Go 1.27 goes beyond these architecture-dependent APIs and introduces an experimental, fully portable, platform- and size-agnostic SIMD interface,
+loosely based on Highway for C++.  The goal is to support write-once near-asm-performance “simd” code on platforms with SIMD support, and to provide a competent emulation on those platforms that do not (yet) have SIMD support.  The  package currently supports AVX, AVX2, and AVX512 on amd64, NEON on arm64, and wasm’s SIMD instructions.Motivation: variation among SIMD architecturesSIMD architectures vary in several dimensions.  Some provide a single fixed vector size (wasm, PowerPC, and s390x, 128 bits).  Some provide several fixed vector sizes (amd64, with 128, 256, and 512; loong64 with 128 and 256).  Riscv64 supports vectors of unspecified size between 128 and 65536 bits, though the length is limited to powers of 2.  Arm64 supports one fixed size (128 bits, NEON), and one variable size (128-2048 bits, powers of two only, SVE).  On a given instance of a particular architecture, determining what sizes that particular instance happens to support requires feature checks: amd64, but is it AVX, AVX2, or AVX512?  Arm64, but is it NEON or SVE?  If SVE, how large? Which variant of SVE: SVE, SVE2, or SVE2.1?Different SIMD architectures vary in how they handle vector masking. For vectors, if-then-else across a vector can be implemented with masks; do the operation, but only assign the result (or load, or store) where the mask is “true”.  Some SIMD variants do not provide masks; all operations work across all elements, and “masking” is done with vector bitmasks and vector boolean operations (wasm, AVX, AVX2, NEON).  Some provide special mask registers, with one bit governing operations on one vector element (AVX512 and RVV).  Others (SVE) allocate one bit per vector byte, but the least-significant bit of each element’s mask bits governs masked operations.  AVX2 also supports masked loads and stores, but using a plain vector as the mask, and with the most-significant bit governing the operation.A third source of variation is in the operations themselves.  Each architecture provides its own primitives for rearranging vector elements; some require constant inputs, others support variable inputs.  Different SIMD architectures support different crypto-related operations.  Even basic arithmetic can have varying support; for example wasm lacks comparisons for vectors of 64-bit integers.  Even for a given vector length on a particular architecture, instruction support depends on “features” that must be checked.Even though Go’s architecture-dependent  package was designed to be as uniform as possible across architectures, many of these quirks remain, and make designing, writing, and testing code for multiplatform SIMD onerous.  We could do more in the  package to make the different architectures appear more similar, but we can only go so far without compromising efficiency.The new  package hides these differences by removing fixed-size vectors from the type system, and by only supporting those operations that are in the intersection of all the different platforms, and fills gaps in the intersection with efficient emulation in terms of other SIMD instructions.  The goal is a set of operations that isadequate to support many data processing algorithms that benefit from a vectorized implementation (but are not tied to a particular vector size),is as efficient as assembly language when the source code operations match the underlying hardware,is otherwise emulated as well as possible,and is easy to read and understand (even/especially if an LLM ends up writing the code).On platforms that lack SIMD instructions or that lack support in , all of the operations are emulated,
+so that code written using the  package will always run.To use this experimental package, set  at build time, just like using the experimental  package.The  vector types are just capitalized, plural, primitive types, for example  or . Vectors are loaded from and stored to slices, for example:// innerProduct returns the inner product of x and y.
+func innerProduct(x, y []float32) float32 {
+    var a simd.Float32s
+    var i int
+    for i = 0; i < len(x)-a.Len()+1; i += a.Len() {
+        u := simd.LoadFloat32s(x[i : i+a.Len()])
+        v := simd.LoadFloat32s(y[i : i+a.Len()])
+        a = u.MulAdd(v, a)
+    }
+    if i < len(x) {
+        u, _ := simd.LoadFloat32sPart(x[i:])
+        v, _ := simd.LoadFloat32sPart(y[i:])
+        a = u.MulAdd(v, a)
+    }
+    return sum(a)
+}
+// sum returns scalar sum of elements of x.
+func sum(x simd.Float32s) float32 {
+    s := make([]float32, x.Len())
+    x.Store(s)
+    var r float32
+    for _, e := range s {
+        r += e
+    }
+    return r
+}
+This example also shows one of the limitations of the first experimental release of this package; because there’s no common way to sum across all the elements of a vector, it’s not supported by  in Go 1.27, though  will appear in the next release so  can be replaced with just .SIMD comparisons produce mask values, which are specific to the corresponding vector element width, so that comparisons of  produce , etc., and mask values can be used to select and filter vectors.Supported  package operations as of Go 1.27In this table,  and  are vector types,  is a mask type,  is a scalar type, and  is a width.Package-Level Load / Broadcast FunctionsIfElse(mask MaskWs, y V) VBoolean and vector masking operationsCarrylessMultiplyEven(y V) VCarrylessMultiplyOdd(y V) VIfElse(mask MaskWs, y V) VConvertToFloatW() FloatWsShift and rotate operationsRotateAllLeft(dist uint64) VRotateAllRight(dist uint64) VShiftAllLeft(dist uint64) VShiftAllRight(dist uint64) VZero-cost reshaping operationsReshapeToUint16s() Uint16sReshapeToUint32s() Uint32sReshapeToUint64s() Uint64sIt may happen that the  package is too limited for all parts of a particular application, or that we have not yet provided an adequate emulation for some necessary feature.  For that case, the  package supports transition to and from architecture-specific SIMD.  Each vector type in the  package has a conversion method  returning an .  That  can be type-asserted to one of the architecture-specific types for a platform.  To convert back, use one of the  functions.  For portable code this creates an obligation to write architecture-specific code for each of the platforms, including an emulation.Here’s a complete example for a method/function that is currently missing, but should be added in Go 1.28. Suppose your algorithm needs  (which  in Go 1.27 lacks).  Rather than rewriting the entire algorithm for each platform, it’s possible to just implement the missing operation.First, for amd64, which lacks the instruction for AVX and AVX2, but not AVX512://go:build goexperiment.simd && amd64
+package simd_test
+import (
+    "simd"
+    "simd/archsimd"
+)
+var popcnt4x16 = [16]int8{0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4}
+var popcnt4x32 = [32]int8{
+    0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4,
+    0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4,
+}
+// OnesCount returns the number of one bits for each element.
+func OnesCount(v simd.Int8s) simd.Int8s {
+    switch x := v.ToArch().(type) {
+    case archsimd.Int8x16:
+        lut := archsimd.LoadInt8x16Array(&popcnt4x16)
+        mask0f := archsimd.BroadcastInt8x16(0x0f)
+        lo := x.And(mask0f)
+        hi := x.ToBits().ReshapeToUint16s().ShiftAllRight(4).
+                ReshapeToUint8s().BitsToInt8().And(mask0f)
+        return simd.Int8sFromArch(lut.PermuteOrZero(lo).
+                Add(lut.PermuteOrZero(hi)))
+    case archsimd.Int8x32:
+        lut := archsimd.LoadInt8x32Array(&popcnt4x32)
+        mask0f := archsimd.BroadcastInt8x32(0x0f)
+        lo := x.And(mask0f)
+        hi := x.ToBits().ReshapeToUint16s().ShiftAllRight(4).
+                ReshapeToUint8s().BitsToInt8().And(mask0f)
+        return simd.Int8sFromArch(lut.PermuteOrZeroGrouped(lo).
+                Add(lut.PermuteOrZeroGrouped(hi)))
+    case archsimd.Int8x64:
+        return simd.Int8sFromArch(x.OnesCount())
+    default:
+        // GODEBUG=simd=0 emulation
+        return OnesCountEmulated(v)
+    }
+}
+The interface conversion and type switch look like they should be inefficient, but the compiler-side implementation of  specializes code and optimizes away the type switch.NEON and Wasm both support , so their implementation is much simpler, though it still uses  and .//go:build goexperiment.simd && (wasm || arm64)
+package simd_test
+import (
+    "simd"
+    "simd/archsimd"
+)
+// OnesCount returns the number of one bits for each element.
+func OnesCount(v simd.Int8s) simd.Int8s {
+    // TODO when SVE is added, this won't work
+    switch x := v.ToArch().(type) {
+    case archsimd.Int8x16:
+        return simd.Int8sFromArch(x.OnesCount())
+    default:
+        // GODEBUG=simd=0 emulation
+        return OnesCountEmulated(v)
+    }
+}
+Don’t forget that some people don’t have hardware SIMD support://go:build goexperiment.simd && !(amd64 || wasm || arm64)
+
+package simd_test
+import (
+    "simd"
+)
+// OnesCount returns the number of one bits for each element.
+func OnesCount(v simd.Int8s) simd.Int8s {
+    return OnesCountEmulated(v)
+}
+And to complete the exercise, a separate emulation function shared as a fallback across all implementations://go:build goexperiment.simd
+package simd_test
+import (
+    "simd"
+)
+// OnesCountEmulated returns the number of one bits for each element.
+func OnesCountEmulated(v simd.Int8s) simd.Int8s {
+    a := [2]uint64{}
+    v.ToBits().ReshapeToUint64s().Store(a[:])
+    a0, a1 := a[0], a[1]
+    m1 := uint64(0x5555555555555555)
+    m2 := uint64(0x3333333333333333)
+    m4 := uint64(0x0f0f0f0f0f0f0f0f)
+    a0 = (a0 & m1) + ((a0 >> 1) & m1)
+    a1 = (a1 & m1) + ((a1 >> 1) & m1)
+    a0 = (a0 & m2) + ((a0 >> 2) & m2)
+    a1 = (a1 & m2) + ((a1 >> 2) & m2)
+    a0 = (a0 & m4) + ((a0 >> 4) & m4)
+    a1 = (a1 & m4) + ((a1 >> 4) & m4)
+    a[0], a[1] = a0, a1
+    return simd.LoadUint64s(a[:]).ReshapeToUint8s().BitsToInt8()
+}
+API intersection and method emulationWhatever operations the  package offers need to run acceptably well on most architectures.  As a first step, any operation that is supported everywhere, can easily be supported on .  This tends to include loads, stores, arithmetic, and comparisons (but not all comparisons!).A naive intersection across SIMD methods from different architectures still leaves plenty of holes.
+These are filled by adding emulations to the various architecture-specific  APIs.
+These APIs already contain many trivial emulations to simplify life for Go programmers;
+signed and unsigned integer addition use the same instruction,
+but in the same way that Go supports the  operator for both  and ,
+the  package provides both  and ,
+even though those compile to the same instruction.
+Modern programming languages also don’t expect programmers to know how to implement floating point negation and absolute value with bit fiddling,
+so  implements that where necessary, or “emulates” if you look at it just so.There are many emulations that require just 2 or 3 instructions; for example, some architectures support only a same-value shift distance across vector elements, while others support a different shift distance for each vector element.  To support scalar shifting in , we emulate scalar shift with vector shift.  Some architectures lack some unsigned comparisons–these are just signed comparison, plus two XORs with a constant.Not all missing instructions are that simple.  The “carryless multiply” instruction is important to cryptography and CRC checksumming, but it isn’t always supported.  Leaving that out of the  API would prevent its use for some important algorithms.  Therefore, we provide an emulation, and because one important use is in crypto, its run time does not vary depending on its inputs.In other cases, rather than implement a primitive instruction like “add pairs” (also called “horizontal addition”), for the  package in the next release we will provide the higher level operation that add pairs is usually used for, which is sum reduction.  This also helps insulate users from vector-length dependence; even given the hardware instruction for adding pairs, the number of reduction steps depends on the vector length.The constraint of supporting all platforms, including ones that we predict will appear in  within the next year or so, forces a somewhat conservative approach to which methods we add to .  Riscv64, ppc64, s390x, and loong64 all have their own SIMD extensions.On platforms where there is some hardware support, behavior can be modified with , to make it easier to test -using code with various hardware configurations. You can set the  environment variable prior to executing your program.In Go 1.27, levels of SIMD support are roughly described by vector length: means use emulation for SIMD operations even if the hardware support is available. means use 128-bit vectors and their features.  If the features aren’t available, panic immediately. means use 256-bit vectors and their features, if possible. means use 512-bit vectors and their features, if possible. means use 128-bit vectors and their features even if some features are not supported. If unsupported instructions are used, the code will panic, but if they are not it may still run.  An example of this is Raspberry Pi, which supports NEON but lacks PMULL (carryless multiply). means use 256-bit vectors and their features even if some features are not supported. If unsupported instructions are used, the code will panic, but if they are not it may still run.  An example of this is Apple Silicon’s amd64 emulation, which supports AVX2 but not VPCLMULQDQ (again, carryless multiply). means use 512-bit vectors, even if some features are not supported.If you are debugging code that uses , or even just look at a stack trace, you will notice some weird extra types and methods.  The reason is that  is both a package, an internal implementation package, and some AST rewriting in the front end of the compiler.The AST rewrite creates multiple specialized copies of functions, variables, and types that mention  types, where  types are replaced with references to size-specialized types in .  Each of these bridge types is defined as an  type, but with a restricted set of methods.  The specialized functions, variables, and types acquire a suffix of the form , where  is either a vector length (128, 256, or 512) or 0, indicating emulation.  Functions that mention  internally, but not in their signature, are converted to wrappers that switch on the SIMD level detected at program start, and call the appropriate specialized version of that function.  Specialized functions call other specialized functions directly without dispatch overhead (and perhaps with inlining).  This rewrite strategy was chosen as a compromise between code duplication and SIMD performance; the overhead is hoisted as high as necessary to avoid dispatch within SIMD computations, but not higher.  If SIMD dispatch appears “too low” in a computation, a gratuitous mention of a  type will move it upwards, as in this example:func BenchmarkVpsumdSIMD(b *testing.B) {
+    // mention "simd" so the benchmark loop calls specialized vpsumd3 directly
+    var _ simd.Uint64s
+    var w, x, y, z uint64 = ... // magic constants omitted.
+    var lo, hi uint64
+    for b.Loop() {
+        // vpsumd3 does simd stuff, but lacks a simd signature,
+        // so that it can be compared with non-SIMD emulations.
+        lo, hi = vpsumd3(w, x, y, z)
+    }
+    sinkLo, sinkHi = lo, hi
+}
+We plan to publish a blog post describing  in greater detail soon.For Go 1.28, we intend to add SVE support to , and also hope to add that to .  More importantly, we hope to add additional SIMD operations to those that the  package already supports (e.g., OnesCount, mask operations, reduction operations, vector shuffling operations). Go 1.28 will also include a small number of “feature variants” to avoid downgrading all the way to full emulation for platforms that have a hardware vector implementation but just lack one or a few operations, such as Raspberry Pi.]]></content:encoded></item><item><title>The Python documentation is now available in Persian</title><link>https://blog.python.org/2026/09/the-python-documentation-is-now-available-in-persian/</link><author>Stan Ulbrych</author><category>dev</category><pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Spotlight on SIG Apps</title><link>https://kubernetes.io/blog/2026/09/22/sig-apps-spotlight/</link><author></author><category>dev</category><pubDate>Tue, 22 Sep 2026 18:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[As Kubernetes adoption has grown, the conversation has shifted beyond running containers to managing increasingly complex application lifecycles. Modern platforms support stateless web services, stateful databases, batch processing, AI workloads, and platform services. At the same time, they must remain reliable during upgrades, scaling events, and infrastructure failures.Every Kubernetes user relies on SIG Apps, whether they realize it or not. Deployments, StatefulSets, DaemonSets, Jobs, and CronJobs form the foundation of how applications are deployed, updated, scaled, and operated across the Kubernetes ecosystem.SIG Apps is focused on improving workload resilience, refining application lifecycle management, and addressing the operational challenges that emerge when applications encounter node failures, rollout disruptions, and increasingly complex infrastructure environments.In this spotlight, we sit down with two of the three SIG Apps chairs  and  to discuss the evolution of Kubernetes workload management, the challenges of balancing application reliability with operational simplicity, and the future of application lifecycle management within one of Kubernetes’ most influential Special Interest Groups.Natalie Fisher: Can you introduce yourself, your role, and how you got involved in SIG Apps?Janet Kuo: I'm a Senior Staff Software Engineer at Google and have been a Kubernetes maintainer since 2015, joining the community just as we were racing toward the 1.0 launch. In those early days, my focus was on building the core Workloads API, specifically developing controllers like Deployment, ReplicaSet, StatefulSet, and DaemonSet, defining their rollout behaviors, and bringing them from initial designs to GA. That hands-on work was my entry point into SIG Apps.Since then, I've stayed deeply involved in both the technical and community sides of Kubernetes. I have led SIG Apps as Co-Chair and Tech Lead since 2019. Currently, in addition to maintaining the workloads API, I am driving new subprojects like the Agent Sandbox to ensure Kubernetes is ready for next-generation agentic and AI workloads.Maciej Szulik: I started contributing to Kubernetes all the way back in 2014. Since then, I've worked across various areas of the project: controllers, kubectl, and apimachinery, which eventually led me to become one of the Chairs and Tech Leads for SIG Apps. My current focus is reliability of the workload controllers under the SIG Apps umbrella and stability and ease of use of kubectl as part of my SIG CLI Tech Lead role. I also care about overall community health and growth as part of my Steering Committee role. Outside of Kubernetes, I work as a Staff Platform Engineer at Defense Unicorns, where I'm helping make Kubernetes more airgap-native with a project called zarf.The problem and the solutionSIG Apps is responsible for the core workload APIs that power how applications run on Kubernetes. From Deployments and StatefulSets to Jobs and CronJobs, these controllers determine how workloads are created, updated, scaled, and recovered when things go wrong.As Kubernetes expands to support increasingly diverse workloads – including AI, batch processing, and large-scale distributed applications – SIG Apps continues to evolve these APIs while balancing reliability, backward compatibility, and operational simplicity.NF: For readers who may not be familiar, what is SIG Apps, and what role does it play within the broader Kubernetes ecosystem?MS: SIG Apps is the Kubernetes Special Interest Group responsible for the workloads APIs. CronJob and Job help running batch workloads, whereas DaemonSet, Deployment, ReplicaSet, and StatefulSet serve the majority of other applications. More broadly, SIG Apps owns the layer most developers actually touch day-to-day: the controllers that turn a workload specification into running, self-healing pods. It's the group deciding how Deployments roll out, how Jobs retry, how DaemonSets place a pod per node.JK: Adding to what Maciej described, as the industry shifts, we are seeing a massive demand to run complex, non-traditional workloads like distributed AI training, batch computing, and dynamic agent environments. Our role is expanding: we aren't just maintaining the classic workloads API, but we are actively evolving it and establishing new patterns (like the Agent Sandbox) to make sure Kubernetes remains the best platform for the next generation of workloads, such as AI.NF: Looking at the workload APIs owned by SIG Apps (Deployments, StatefulSets, DaemonSets, Jobs, and CronJobs), which areas are receiving the most attention from maintainers and contributors?MS: After a long stretch focused on making batch workloads run smoothly on Kubernetes, we’ve shifted attention to make sure serving workloads (DaemonSets, StatefulSets, etc) aren’t left behind. This means performance and high-scale improvements to rollout and scaling behavior, plus working through our backlog of user-reported issues, prioritizing the ones with the strongest support from the user base.As Kubernetes workloads grow in scale and complexity, the challenges facing workload controllers evolve as well. We asked the SIG Apps chairs where contributors are focusing their efforts today and which resilience problems they believe are the highest priorities.NF: From your perspective, what are the most important workload resilience problems SIG Apps is trying to solve today?MS: Node lifecycle challenges have come up repeatedly across SIG Apps, SIG Node, and SIG Autoscaling discussions. DaemonSets and Jobs are just where the pain is most visible, since they're the workloads most directly bound to node state. Rather than solve it piecemeal within one SIG, we've settled on spinning up a dedicated Node Lifecycle Working Group to focus on this properly and hopefully land long-term solutions instead of one-off patches.JK: From an AI perspective, resilience is critical. When you are running a massive distributed LLM training job that spans hundreds of GPUs, a single node failure can halt the entire pipeline. Similarly, if a DaemonSet that runs your logging or GPU monitoring agent gets stuck on a bad node, it impacts the entire cluster's health.In addition to the work in the Node Lifecycle WG to handle infrastructure-level degradation, SIG Apps is addressing this at the orchestration layer through subprojects like JobSet (for distributed training) and LeaderWorkerSet (LWS) (for sharded LLM inference). These APIs introduce patterns like "all-or-nothing" failure handling, where a single pod or job failure triggers a coordinated group-level restart to resume from the last clean checkpoint, rather than letting stuck workloads hang in an inconsistent state.The work happening within SIG Apps extends far beyond controller implementations and API design. We wanted to understand what these improvements mean in practice for platform teams operating Kubernetes clusters in production.NF: For platform teams operating Kubernetes in production, what practical improvements would they notice if the node lifecycle and workload resilience work currently under discussion is successfully delivered?MS: I’m mostly looking from the sidelines, the folks actually in the Node Lifecycle Working Group would give you a sharper answer. But from where I sit, I’m hoping their work translates into fewer 3am pages that turn out to be “a DaemonSet rollout got stuck because node X was flaky, and someone had to manually cordon/delete/restart to unstick it.”JK: +1 to what Maciej said, and beyond reducing manual intervention, platform teams will also see much better resource predictability and cost efficiency. For example, in AI workloads where GPU idle time is extremely expensive, having Kubernetes automatically detect a degraded node and reschedule the training coordinator or agent before the job crashes means less wasted compute and more stable job execution.Challenges and trade-offsEvolving APIs that millions of workloads rely on requires careful engineering and even more careful decision-making. We asked the SIG Apps chairs about the technical and operational trade-offs they weigh when introducing changes to Kubernetes’ core workload controllers.NF: What are some of the hardest technical or operational trade-offs SIG Apps encounters when evolving core workload controllers?MS: Honestly, a few tensions keep coming up: how aggressively a controller should give up on stuck pods, and what signals it actually needs to make that call correctly. At the same time, we always have to think about backward compatibility. Deployment, DaemonSet, and Job behavior has been depended on for a decade [by Kubernetes users, tooling, automation, and higher-level controllers], so even a change that’s clearly “more correct” can break automation people built around the old behavior without meaning to.JK: One of our hardest trade-offs is resisting the urge to make "elegant" design changes that break backward compatibility. Instead, we have to design opt-in features that let users adopt new behaviors without forcing them on legacy workloads. When we need to support completely new paradigms, we prefer introducing them as CRDs first rather than bloating the core APIs, like we are doing with Agent Sandbox, JobSet, and LWS.While much of SIG Apps’ work focuses on maintaining the stability of existing workload APIs, the group is also shaping the future of Kubernetes through new enhancements and proposals. We concluded by asking about one proposal that recently returned to active development and what it represents for the future of workload management.NF: The SIG recently discussed reviving KEP-4443 with a target release of Kubernetes 1.38. What opportunities or challenges does this proposal aim to address, and why is now the right time to revisit it?KEP-4443 addresses a small but real gap in the Job API: a PodFailurePolicy can be configured to add a condition reason to the JobFailed condition, but different pod failure policy rules targeting different container exit codes all produce that same generic reason. The proposal is simple: an optional Name field on each PodFailurePolicyRule, which gets appended to the JobFailed condition reason, so higher-level tools like JobSet can finally react differently depending on which rule triggered the failure.As for timing, the answer is as simple as it always is in open source: we lost the original contributor who was driving this. Now we’ve got someone new interested in picking it up, that’s why we’re targeting the next release.NF: For someone interested in contributing to SIG Apps, where would you recommend they start, especially if they are not yet a Kubernetes maintainer?MS: The best place to start is the #sig-apps slack channel and our regular SIG Apps meetings. We’ve all started there, and if it feels intimidating, or nobody replies right away, that’s completely normal. Everyone's busy. It's not personal.JK: In addition to what Maciej answered, I'd suggest looking at our newer subprojects and initiatives. Contributing to stable APIs like Deployment or StatefulSet can be daunting because the barrier for making changes is very high due to backward compatibility, and there is much less low-hanging fruit.If you are new to the community, projects like the Agent Sandbox are fantastic entry points. They are actively evolving, have a friendly group of maintainers, and offer plenty of greenfield development opportunities where you can make a significant impact quickly.SIG Apps has shaped how Kubernetes applications are deployed and operated since the project’s earliest days. While users often interact with Deployments, StatefulSets, Jobs, and DaemonSets without thinking about the controllers behind them, the work within SIG Apps continues to shape the reliability and scalability of workloads across the Kubernetes ecosystem.From improving workload resilience and node lifecycle behavior to enabling new patterns for AI and distributed computing, the SIG is evolving Kubernetes while remaining committed to one of the project’s core principles: preserving the stability and backward compatibility that users depend on. Whether you’re interested in core workload APIs, emerging projects like Agent Sandbox, or helping improve the operational experience of Kubernetes users everywhere, SIG Apps offers many opportunities to get involved.]]></content:encoded></item><item><title>Announcing a Maintainer in Residence: Scott Schafer for the Cargo team</title><link>https://blog.rust-lang.org/2026/09/22/announcing-a-maintainer-in-residence-scott-schafer-for-the-cargo-team/</link><author>Jakub Beránek</author><category>dev</category><pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[At the end of August, we announced our first Maintainers in Residence, Rust Project contributors who are funded for their upstream contributions and maintenance work from the Rust Foundation Maintainers Fund (RFMF). Since then, the Rust Leadership Council has dedicated more funds from its Project Priorities budget to RFMF, and together with AWS also providing additional funds, this allowed us to open a new full-time Maintainer in Residence (MiR) position to support the Cargo team. We would like to thank the Rust Leadership Council, AWS, and also the Rust Foundation for providing us with this opportunity! If you would like to help us hire more maintainers to improve Rust, consider donating to RFMF.This post explains why we chose to support the Cargo team specifically, and introduces Scott Schafer, the new Cargo Maintainer in Residence.The new MiR full-time position is dedicated to helping with the maintenance of Cargo, our build system and package manager. The Cargo project is deeply involved in many new Rust features, improvements, and Project Goals. Combined with its cross-cutting nature, where it has to support many different use-cases and integrate with several other tools, it takes a lot of work just to keep up with its maintenance needs, let alone support so many feature requests and proposed changes.Because of that, the Cargo team has sometimes struggled with meeting its maintenance demands. You might remember that for several years, it actually held a feature freeze, to reduce Cargo's internal tech debt, perform necessary refactorings, go through the issue and pull request backlog, and come up with scalable internal development and design processes, so that they could eventually go back to even thinking about adding new features.Recently, some changes occurred within the team, which made it more difficult for them to meet their maintenance baseline. Some members of the team left, while others lost their dedicated funding for working on Cargo maintenance and had to scale down their involvement. The Funding team thus considered it very important to support this team, given that we had an opportunity to do so. And thus we decided to hire a full-time maintainer to work on Cargo for (at least) the next 12 months.Even though we know that a single full-time maintainer will not completely solve the maintenance struggles of the Cargo team, we hope that it will improve the situation, and provide a bit of a relief for the team.
+Introducing Scott SchaferWe are very happy to welcome Scott Schafer (@muscraft) into the Maintainer in Residence role! Scott has joined the Cargo team three years ago, and apart from working on Cargo, he is also the lead of the Rust Docker team, which prepares official Docker images for every Rust version.Apart from working on general maintenance of Cargo, Scott has implemented Cargo's Workspace inheritance feature, and has also spearheaded a complex multi-year effort to switch the rendering of diagnostics in the Rust compiler to use the annotate-snippets crate. This effort has been completed in the Rust 1.93.0 release. Thanks to it, the same diagnostics interface can now be shared between the compiler and Cargo (and also other tools), which amongst other things unblocked further development of the Cargo linting system, which has now been stabilized and will ship in the Rust 1.100.0 release.Everyone we talked about was very excited about Scott becoming a Cargo Maintainer in Residence, and we share that feeling. We wish Scott all the best in his new role, and we are very happy that we can support his maintenance work.Here is what Scott thinks about it:I am incredibly excited to work on Cargo full-time! There have been so many things that I wish I could've worked on over the years, that I will now be able to get to. I hope that my efforts will bring Cargo into a more maintainable state.We are incredibly happy that we keep getting more funds for the Rust Foundation Maintainers Fund, which allows us to support Rust Project contributors. The funding team will be working with the supported maintainers, and also the funders, to ensure that they are all happy with the arrangement, so that we can secure stable funding for Rust maintenance for years to come.If you would like to help us support more Rust maintainers, consider donating to RFMF!]]></content:encoded></item><item><title>Kubernetes v1.37: Tracking When a PersistentVolumeClaim Was Last Used (Beta)</title><link>https://kubernetes.io/blog/2026/09/21/kubernetes-v1-37-pvc-last-used-time/</link><author></author><category>dev</category><pubDate>Mon, 21 Sep 2026 18:30:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[Kubernetes v1.37 promotes the PersistentVolumeClaimUnusedSinceTime feature gate to Beta (enabled by
+default). With this feature, the PersistentVolumeClaim (PVC) protection controller adds an 
+condition to each PVC, telling you whether any running pod currently references it — no custom
+tooling or cross-referencing required.In large-scale Kubernetes clusters, it is common for users to create PVCs and then delete the
+associated pods without cleaning up the storage, because Kubernetes does not automatically delete
+PVCs when their pods are removed (to protect against accidental data loss). Over time, these
+ PVCs may accumulate, silently consuming storage capacity and driving up cloud costs.Before Kubernetes v1.37, it was easy to identify an unused PersistentVolume, but much harder to
+determine whether a PVC was still being used. Doing so required cross-referencing pods,
+PersistentVolumes, and PVCs over a potentially large window of time. Administrators often resorted
+to custom monitoring pipelines or scripts to answer a seemingly simple question:
+"Is anything actually using this volume?"The PersistentVolumeClaimUnusedSinceTime feature solves this by making the answer available
+natively in the PVC status. Once the feature is enabled, every PVC gets an  condition managed
+by the PVC protection controller.: "I want to know which PVCs in my cluster are not being used by any pod
+so I can safely identify orphaned volumes and schedule them for deletion.": "I want to list PVCs that have the  condition set to  so I
+can automate cleanup in development environments."The condition works as follows:No non-terminal pods reference the PVCAt least one running or pending pod references the PVCA few details worth noting:Terminated pods don't count: A pod that has completed (phase  or ) does not
+keep the PVC marked as in use. This means batch jobs with  won't prevent
+the PVC from becoming  after they finish.: Even an unschedulable pod (for example, one with an impossible node
+selector) still counts as using the PVC. The intent to use the volume is enough.: If several pods reference the same PVC, the condition transitions to
+ only after the *" non-terminated pod is removed or terminates.Using  to find when a PVC became idleLike every Kubernetes condition, the  condition carries a standard 
+field. This means you get a useful bonus for free: when the condition transitions from  to
+, the  records exactly when the PVC became idle. You can use this
+timestamp to answer questions like "how long has this PVC been sitting unused?" — for example,
+to find PVCs that have been idle for more than 30 days (see the
+example query below).What changed from Alpha to Beta?Kubernetes v1.36 introduced this feature as Alpha, where you had to enable the
+PersistentVolumeClaimUnusedSinceTime feature gate explicitly. For Beta in v1.37, the feature gate
+is enabled by default, and the feature has full end-to-end test coverage.Since the feature is Beta and enabled by default in Kubernetes v1.37, the  condition will
+appear on PVCs automatically. Here is a walkthrough to see it in action:After a short time, inspect the PVC conditions:You should see an  condition with status  and reason :Create a pod that uses the PVC:Check the condition again — it should now show :Delete the pod and wait for the condition to transition back to :The condition should show  with reason  again.Finding unused PVCs across the clusterTo list all PVCs that have been unused for more than 30 days, you can use a command like:This command uses , a command-line JSON processor.Depending on feedback and adoption, the Kubernetes project intends to graduate this feature to
+General Availability (GA) in a future release. If you have feedback on this feature, please open an issue
+in the kubernetes/kubernetes repository.The Kubernetes project always welcomes new contributors. If you would like to get involved, you can
+join us at SIG Storage.Special thanks to the contributors who helped design and implement this feature (alphabetical order):]]></content:encoded></item><item><title>GitHub Actions leaking secrets when Miri output is cached</title><link>https://blog.rust-lang.org/2026/09/21/github-actions-leaking-secrets-when-miri-output-is-cached/</link><author>Manish Goregaokar</author><category>dev</category><pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust Security Response Team was notified that Miri stores all environment variables to , allowing secrets to persist in caches.While not necessary a vulnerability in and of itself, when paired with GitHub Actions caching behavior, it is possible for this to expose secrets to PRs.GitHub Actions makes it possible to cache directories between runs. Typical setups allow CI runs on  (and other branches) to  to cache, and PRs can only  from cache (preventing cache poisoning). Rust projects tend to speed up CI by caching binaries built by  and sometimes the contents of .PR CI can be triggered by anyone who can open PRs on your repository. GitHub requires maintainer approval for the  PR, but future PRs will rerun CI on every push. Anyone who has previously landed a change can trigger a CI run extracting information from cached  and then cover their tracks by pushing a second commit to the PR.GitHub sometimes hides overwritten commits in its UI, making this kind of attack harder to detect. CI run logs and overwritten commits are also deleted after a few months.When  is invoked, Miri needs to retain build-relevant environment variables between runs. The current code to do so achieves this by storing all environment variables to . This, of course, persists when  is cached.If your environment contained secrets, these can now be accessed by PRs via the cache.Our short term fix for this is to make Miri only preserve  environment variables (excepting ) and . In the longer term, Miri and cargo may figure out better ways to inform Miri of the relevant list of environment variables. Note that this patch may not be available on nightly yet.We also performed an ecosystem scan of GitHub repositories and identified 1 repository with this issue and 7 repositories that do not appear to be vulnerable but should be cautious anyway. We have reached out to those maintainers.It is likely that our scan was imperfect, so we recommend you check your own GitHub Actions setups if you run Miri.The step that runs has access to secrets as an environment variable:
+By being passed in to the step itself as an environment variableBy being set in  for the workflowBy being passed in to a previous step that persists it in the environment somehowThe cache is accessible to PRs (common and often the intended use case)Possible quick fixes include:Disabling cache for that job.Scoping secrets to steps in that job that do not call Miri.Temporarily disabling Miri.The Miri release in the upcoming nightly (2026-09-22) will no longer have this problem.Even if you do not run Miri, ensure jobs that can write to public caches do not have access to secrets. Many tools do not have special handling for secrets, and assume the entire environment can be written to the filesystem.We consider it bad practice to have a cache that can easily be tainted by secrets.If caching , it is worth making sure that the inputs to processes that create  (anything invoking ) do not have secrets available. It is generally rare for standard  build/test subcommands to need any secrets or tokens, so this is mostly a matter of being careful about having secrets exposed as environment variables to the entire job.Cargo/Miri/Rust does not guarantee that environment variables will be safe from being copied into . While we are treating this as a security issue and patching it out of an abundance of caution, this is not something you should rely on in general. Beyond official Rust tooling, it is possible for build scripts to be doing things that lead to the environment being stored in compilation artifacts.Thanks to Predrag Gruevski of OpenAI for reporting this issue to us. Furthermore, the ecosystem scan was performed using Codex access and credits donated by OpenAI, which we also thank them for.Issue triage and remediation was performed by Manish Goregaokar, Ralf Jung, Ben Kimock, Weihang Lo, Jacob Finkelman, Walter Pearce, Josh Stone, and Mark Rousskov.]]></content:encoded></item><item><title>Be alert: targeted attacks on prominent Rustaceans</title><link>https://blog.rust-lang.org/2026/09/17/targeted-attacks/</link><author>Adam Harvey</author><category>dev</category><pubDate>Thu, 17 Sep 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[We believe that there is an ongoing campaign targeting rust-lang members and
 owners of popular crates that is attempting to compromise devices and accounts
 in order to use them to publish malware.A video call is set up for something positive — maybe for a job, maybe for a
 project, maybe for a contract opportunity — and then that's used as a vector to
@@ -467,1050 +632,4 @@ the ongoing Google Summer of Code project improving how we test debug info and
 visualizer scripts, making it easier to maintain and improve our own visualizer
 scripts and general compatibility with visualizer scripts without silent
 breakage or regressions.Once again, we'd like to thank everyone who took the time to participate in the
-survey!]]></content:encoded></item><item><title>Kubernetes v1.37: KubeletInUserNamespace (aka Rootless mode) Graduates to Beta</title><link>https://kubernetes.io/blog/2026/09/04/kubernetes-v1-37-rootless-beta/</link><author></author><category>dev</category><pubDate>Fri, 4 Sep 2026 18:30:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[Kubernetes v1.37 promotes the  feature gate to beta.
-With this feature enabled, all of the node components (kubelet, CRI and OCI runtimes,
-CNI plugins, and kube-proxy) can run as a non-root user on the host, using a
-Linux user namespace.
-This technique is also known as .
-The work started as an experiment in 2018, and was merged into Kubernetes v1.22 (2021)
-as an alpha feature (Kubernetes Enhancement Proposal KEP-2033).This feature should not be confused with user namespaces for pods
-( with the  feature gate, GA since v1.36),
-which puts pods in user namespaces but still runs the node components as root.
-These two features do not conflict.
-Moreover, they can be combined to nest Kubernetes inside Kubernetes without resorting to
-the full .Because the node components have historically had container-breakout vulnerabilities
-that could compromise full root privileges on the host.Examples of such vulnerabilities include:CVE-2022-0811
-("cr8escape"): CRI-O could be tricked into setting arbitrary sysctls, such as
-, resulting in arbitrary code execution as root on the hostCVE-2023-27561:
-runc could be tricked into bypassing the masked paths of a container via a volume
-mount race, exposing the host's procfs files (a regression of CVE-2019-19921)CVE-2024-10220:
-the kubelet could be made to execute arbitrary commands as root via  volumes
-( volumes had a similar vulnerability,
-CVE-2018-11235, back in 2018 too)CVE-2025-31133:
-runc could be tricked into bind-mounting attacker-controlled paths and writing to the
-host's procfs files, such as  and
-/proc/sys/kernel/core_patternCVE-2026-53488:
-containerd could be tricked into executing arbitrary commands on the host, via
-crafted labels in a container imageBy running the node components in a user namespace, the potential damage is confined to
-the non-root user's account.
-Notably, an attacker cannot conceal their intrusion by modifying the kernel, the boot
-loader, or the firmware.It should still be noted that user namespaces are not effective for mitigating
-vulnerabilities in the kernel itself.
-User namespaces should be used in conjunction with traditional hardening measures such as
-seccomp to prevent containers from invoking
-unnecessary system calls.: mitigate potential container-breakout vulnerabilities.Shared machines (e.g., HPC): users can deploy Kubernetes without asking the machine
-administrator for root privileges, and without the risk of accidentally breaking
-other users' environments.: prevent a local cluster from accidentally breaking the host system configuration,
-e.g., the host iptables rules used for VPNs.: a Kubernetes application developer may create a dedicated local user account for
-running an AI coding agent and a test Kubernetes cluster.
-This setup is useful for preventing the AI agent from breaking the host when it is deceived by
-malicious information on the Internet.: a nested cluster can run inside a parent cluster as a user-namespaced
-pod (), isolating workloads more strictly than Kubernetes API namespaces do.: a temporary unprivileged cluster can be used to bootstrap an actual
-cluster, e.g., with Cluster API.A Linux kernel  maps a host level non-root user (e.g., UID 1000) to a  user inside the namespace. The UID 0
-privileges are limited to the inside of the namespace.
-The fake root is enough for most of the node components' tasks: mounting volumes,
-creating cgroups, and configuring the network namespaces of pods.
-It still comes with some caveats that may break compatibility with specific CNI and CSI drivers, though.The user namespace has to be created outside of Kubernetes.
-For example, Rootless Docker can be used to prepare the user namespace in which Kubernetes runs.What changed from Alpha to Beta?The  feature gate is now enabled by default.
-Enabling the gate does not put the kubelet into a user namespace automatically, so nothing
-changes for existing "rootful" clusters.kubectl get nodes -o yaml now reports whether nodes are running in a user namespace via
-the  property.
-A cluster administrator can use this property to set node labels or taints, to avoid scheduling workloads
-that need real root privileges (e.g., some CNI plugin installers) onto rootless nodes.Several related improvements have also happened outside the promotion of the feature gate itself:: enabled the  feature gate
-by default, allowing user-namespaced pods () to be created without extra configuration.With these improvements, a Kubernetes cluster with  can now also be nested
-inside Kubernetes pods with  ().The easiest way is to use kind (a Kubernetes SIG Testing project)
-to run a Kubernetes cluster in rootless Docker, rootless nerdctl, or rootless Podman:Depending on the host configuration, you may need additional configuration for
-systemd, kernel modules, sysctl, etc.minikube (a Kubernetes SIG Cluster Lifecycle project)
-also supports running a Kubernetes cluster in rootless Docker or rootless Podman:Usernetes (a third-party project)
-is a distribution of rootless Kubernetes, maintained by the author of this article.
-The project began in 2018, and it is where the  feature gate
-originally came from.Unlike kind and minikube, Usernetes supports creating a cluster with multiple rootless
-Docker / Podman / nerdctl nodes, connected using VXLAN via the Flannel CNI plugin.k3s (a CNCF Sandbox project) also supports rootless mode.
-Unlike kind, minikube, and the current generation of Usernetes, rootless k3s does not rely on an external runtime such as rootless Docker.Depending on feedback and adoption, the Kubernetes project plans to graduate this feature to
-General Availability (GA) in a future release. If you have feedback on this feature, please
-open an issue in the kubernetes/kubernetes repository.The project is also discussing several Kubernetes Enhancement Proposals that may contribute to
-simplifying Kubernetes-in-Kubernetes with this feature:Special thanks to everyone who helped design and implement this feature,
-including but not limited to (in alphabetical order):]]></content:encoded></item><item><title>Kubernetes v1.37: DRA Updates</title><link>https://kubernetes.io/blog/2026/09/03/kubernetes-v1-37-dra-updates/</link><author></author><category>dev</category><pubDate>Thu, 3 Sep 2026 18:30:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[Kubernetes 1.37 is here and Dynamic Resource Allocation (DRA) keeps pushing past where it started! This release brings DRA Extended Resource support to GA, a milestone the team has been building toward for three straight releases. Several more features graduate to Beta or GA. A fresh batch of alpha features rounds out the release.I'll dive into what's new for DRA in Kubernetes 1.37!DRA Extended Resource support has graduated to GA. This is the mechanism that lets DRA drivers satisfy requests made through the traditional extended resource API, think  in a Pod spec, without requiring a separate device plugin alongside the DRA driver. An extended resource name can be set directly on a DeviceClass, and Pods requesting it get matched to a device through DRA with no ResourceClaim needed on the workload's part.It's been on a steady path since KEP acceptance in 1.34. Alpha landed in 1.35, Beta in 1.36, and now it's Stable. For cluster operators, this is what makes DRA adoption gradual. Existing workloads written against extended resources keep working unmodified while the backend allocation logic moves over to DRA.ResourceClaims status with possible standardized network interface data adds a  field to ResourceClaim , letting DRA drivers report per-device status, including, for network devices, the interface name, MAC address, and IP addresses. This gives users and controllers visibility into device state that was previously invisible once a device was configured in a Pod, and makes it possible to build things like network services that rely on a device's reported IPs.DRA: device taints and tolerations is now Stable; DRA drivers can mark devices as tainted so they're skipped for new Pod scheduling, and cluster admins can apply the same taints cluster-wide via a DeviceTaintRule, without reconfiguring drivers. Pods already using a tainted device can be evicted automatically, unless their ResourceClaim explicitly tolerates the taint. This mirrors node taints and tolerations, letting operators take a single device offline for maintenance or mark it degraded, without disrupting the rest of the cluster.Standard numaNode device attribute standardizes resource.kubernetes.io/numaNode as a shared attribute name, so devices from different drivers can be compared on the same NUMA node instead of each driver inventing its own name for it. It landed directly as stable in 1.37, since it's a naming/registration KEP with no feature gate or in-tree behavior change.ResourceClaim support for workloads
-graduates to Beta behind the DRAWorkloadResourceClaims feature gate, which stays disabled by default.
-In a cluster that has the feature enabled, Workloads and PodGroups can reference ResourceClaims directly, so
-a single claim can be shared across an entire group of Pods. This is instead of claims being capped at 256
-Pods through the old per-Pod reservation limit.The DRA Device Attributes Downward API is aimed at
-supporting device injection into KubeVirt VMs. Drivers populate a  field when preparing a claim,
-and the framework writes it to a JSON file mounted into the container via CDI, letting workloads read a
-device's PCI bus address, MAC address, and other attributes directly instead of requiring custom controllers
-to watch and translate ResourceClaims and ResourceSlices.List types for attributes moved into a second Alpha in 1.37,
-letting a device attribute hold more than one value instead of a single scalar, such as a CPU that's
-adjacent to more than one PCIe root. This makes it possible to match or distinguish devices based on
-overlapping or non-overlapping sets of values, while single-value attributes keep working as they do today.Node allocatable resource requests moved into Alpha 2. It
-lets the scheduler and kubelet treat DRA-managed CPU, memory, and similar node resources the same way they
-treat ordinary resource requests, so a node doesn't get oversubscribed and users no longer have to duplicate
-the same request in both a ResourceClaim and the pod spec.Resource availability visibility moved to a second Alpha in Kubernetes 1.37. Users create a ResourcePoolStatusRequest to get a point-in-time availability snapshot. To refresh it, delete and recreate the request; it is not a continuous monitoring API.DRA: Optional Node Operations lets a driver skip kubelet's
-prepare and unprepare calls for allocations that don't need any setup on the node. This makes it possible to
-avoid an unnecessary dependency on the driver for allocations where there's genuinely nothing for it to do
-locally.Derived Attributes is a new feature that lets you use CEL expressions to match up devices based on your own
-custom rules. Before this, pairing devices from different vendors (like a GPU/TPU and a NIC on the same NUMA
-node) only worked if both drivers used the exact same attribute name. If one used  and the other used
-, the scheduler couldn't pair them together. Now, you can easily bridge these differences yourself
-inside your manifest, meaning you don't have to wait for hardware vendors to agree on standardized attribute
-names. Beyond just fixing naming differences, you can also use CEL to handle more complex scenarios like
-slicing a specific ID out of a long, monolithic topology string, or grouping devices into custom performance
-tiers based on their available capacity.DRA Device Compatibility Groups lets drivers tag partitions
-of a device, like MIG vs vGPU profiles on the same GPU, with compatibility groups, so the scheduler rejects
-incompatible combinations up front instead of the driver failing at node preparation time. It's controlled by
-the DRADeviceCompatibilityGroups feature gate, disabled by default.PreQueueingHint extension point is new as Alpha in 1.37.
-DRA ResourceClaim events used to trigger a full scan of every unschedulable pod, an O(N²) cost during large
-scale-ups. The DRA plugin now uses a pod informer index to narrow that to just the pods actually affected,
-cutting the requeue path to O(1) and roughly doubling scheduling throughput in early benchmarks. Controlled
-by the SchedulerPreQueueingHints feature gate.DRA Consumable Capacity now supports fractional values in
-CapacityRequestPolicyRange, enabling more precise capacity requests and allocation for devices with fractional resources.
-This improves flexibility for workloads that require fine-grained resource allocation. The enhancement is gated by the
-DRAFractionalCapacityRange feature gate, which is in Beta in 1.37.DRA continues to mature with every release. Several features currently in Alpha and Beta are on track to progress in the
-coming releases, and the community keeps working on DRA's performance, scalability, and reliability. Expect another
-ambitious set of DRA features in Kubernetes 1.38.A good starting point is joining the WG Device Management Slack channel and meetings which happens at US/EU and EU/APAC friendly time slots.Not all enhancement ideas are tracked as issues yet, so come talk to us if you want to help or have some ideas yourself! We have work to do at all levels, from difficult core changes to usability enhancements in  which could be picked up by newcomers.The following KEP owners added or promoted a feature in the 1.37 release (in alphabetic order):This would not have been possible without the help of the reviewers and approvers.
-So a huge thanks to everyone else who helped shape this release, in ways big and small. Given enough eyeballs, all bugs are shallow and this release had plenty of them, watching closely and caring enough to make things better. DRA got better this cycle because of all of you.]]></content:encoded></item><item><title>Announcing Rust 1.98.1</title><link>https://blog.rust-lang.org/2026/09/03/Rust-1.98.1/</link><author>The Rust Release Team</author><category>dev</category><pubDate>Thu, 3 Sep 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust team has published a new point release of Rust, 1.98.1. Rust is a programming language that is empowering everyone to build reliable and efficient software.If you have a previous version of Rust installed via rustup, getting Rust 1.98.1 is as easy as:If you don't have it already, you can get  from the appropriate page on our website.In Rust 1.98.0, in some circumstances, rustc would incorrectly generate a trait object vtable with a null pointer
-where a function pointer should be. This leads to undefined behavior in the
-emitted code. In some cases this may 'just' cause segfaults due to the null
-pointer being loaded, but it is possible for it to be justification for
-arbitrary effects (as is typical for UB).If you'd like to help us out by testing future releases, you might consider
-using the beta () and nightly () channels locally and in your CI. Please
-report any bugs you
-might come across!Many people came together to create Rust 1.98.1. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>Kubernetes v1.37: Scale Workloads to Zero with HorizontalPodAutoscaler</title><link>https://kubernetes.io/blog/2026/09/02/kubernetes-v1-37-hpa-scale-to-zero-beta/</link><author></author><category>dev</category><pubDate>Wed, 2 Sep 2026 18:30:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[Kubernetes v1.37 includes API support for horizontal autoscaling of workloads down
-to zero replicas. This feature is now Beta and enabled by default. A
-HorizontalPodAutoscaler
-(HPA) that uses a suitable  or  can now scale a
-workload to zero replicas, then bring it back when the metric changes.Before v1.37, you needed an add-on or external component, or you had to enable the
-Alpha feature gate, to scale from zero. It is now part of core Kubernetes.Scaling to zero removes the last idle Pod from workloads such as queue consumers and
-batch processors. The savings are largest when each Pod reserves expensive resources,
-including dedicated CPUs or GPUs.The trade-off is cold-start time: the HPA must observe the metric, schedule a Pod, and
-start the application. This works well when work can wait in a durable queue.Kubernetes Services do not buffer requests while no Pods are ready, so HTTP and other
-request-driven workloads need a separate buffering layer.Why scaling from zero needs a different metricThe HPA commonly scales on CPU or memory usage. Both metrics come from running Pods.
-Once the replica count reaches zero, there are no Pods left to measure and no signal
-that can tell the HPA to scale back up.Object and external metrics do not have that limitation. A queue length, for example,
-exists independently of the workers that consume it. The HPA can continue reading the
-queue length while no workers are running.The following example scales a queue consumer to and from zero using an external
-metric.Configure an external metricThe following example uses a Prometheus metric named . It assumes
-that Prometheus already collects a series similar to this one:Kubernetes needs a metrics adapter to make that value available through the External
-Metrics API. One implementation is the
-Prometheus Adapter, which can
-expose the series using an  entry:The exact adapter installation and discovery rules depend on your monitoring setup.
-See the Prometheus Adapter guide to
-external metrics
-for the full configuration options.Before creating the HPA, you can verify that Kubernetes can read the metric:The request should return the current value for . If it does not, fix the
-metrics pipeline before configuring the HPA. An HPA cannot scale from zero when its
-metric is unavailable.The following HPA targets a Deployment named . It allows between zero
-and ten replicas, with one replica requested for each 30 queued tasks:When the queue is empty, the HPA can reduce the Deployment to zero replicas. When
-tasks arrive, the external metric remains available and the HPA calculates a new
-replica count, capped at ten by .Start the Deployment with at least one replica. Manually setting a Deployment to zero
-has always paused autoscaling. The HPA preserves that behavior and will not wake a
-workload that it did not scale down itself.Normal HPA behavior still applies. In particular, the default downscale stabilization
-window is five minutes. The window prevents a short drop in queue length from
-immediately removing all workers. You can configure the window through
- if your workload needs different behavior.How the HPA distinguishes zero from pausedScaling from zero creates an ambiguity. A replica count of zero can mean that the HPA
-scaled the workload down, or that an operator manually paused it.The controller resolves this with a  status condition. When the HPA
-scales a workload from one or more replicas to zero, it records
-. The condition tells later reconciliation loops that the
-controller owns the zero state and should continue evaluating object or external
-metrics.After scaling the workload back up, the controller changes the condition to
- with the reason . A workload at zero without
-the  condition remains paused.You can inspect the conditions with:If the adapter cannot return the configured metric, the HPA reports
- with a reason such as . Restore the
-metric or manually scale the workload to recover capacity.Before upgrading or rolling backIn Kubernetes v1.37, the  feature gate is enabled by default on both the
- and . The API server accepts
-; the controller manager performs the condition-based scaling.During a version-skewed control plane upgrade, wait until both components support the
-feature and have it enabled before creating HPAs with . A controller
-manager with the feature disabled treats  as a manual pause and may leave
-a workload at zero.Before disabling the feature gate or downgrading to a version without the
-condition-based implementation:Change affected HPAs to  or higher.Scale any workload currently at zero to at least one replica. also requires at least one object or external metric. The API server
-rejects an HPA that only contains resource metrics such as CPU or memory.The first Alpha implementation shipped in Kubernetes v1.16. Kubernetes v1.36 added
-the  condition and the controller behavior needed to distinguish an
-automatic scale-down from a manual pause.Kubernetes v1.37 enables the feature by default after adding integration and end-to-end
-coverage for scaling down to zero and back up from an external metric. The next step is
-to gather operational feedback before considering graduation to GA.Thanks to the SIG Autoscaling contributors who took this feature from the original
-v1.16 implementation to the condition-based redesign and Beta graduation. Thanks
-also to Guy Templeton and
-Adrian Moisey for reviewing the KEP, and to the
-release, documentation, and production-readiness reviewers who helped prepare it for
-Kubernetes v1.37.]]></content:encoded></item><item><title>Goroutine Leak Profiles</title><link>https://go.dev/blog/goroutine-leak-profiles</link><author>Vlad Saioc</author><category>dev</category><pubDate>Wed, 2 Sep 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[Go’s concurrency features are powerful and easy to use, but
-that same ease can sometimes lead even seasoned developers to make
-mistakes.
-Fortunately, the Go ecosystem comes equipped with useful tools for
-debugging, e.g., the race detector,
-but even existing tools may miss some concurrency bugs,
-such as the topic of this article, the .Goroutines synchronize or exchange information
-via shared concurrency primitives, e.g., channels, locks, and wait groups.
-While communicating, goroutines often  on these primitives,
-as in, wait until some condition is met;
-ubiquitous examples include waiting to acquire a held mutex,
-or receive a message over a channel.
-Goroutines can also block on operating system operations, like reading from a network socket or a file.We may consider a goroutine leaked if it is blocked,
-but the conditions needed to unblock it can never be met.
-Over time, an accumulation of leaked goroutines degrades
-performance through excessive memory usage (by the leaked
-goroutines themselves or the memory they reference), as well as
-CPU usage from the garbage collector, especially
-if  is in use.Goroutine leaks can be notoriously difficult to detect.
-In unit testing, the most significant breakthroughs include
-the open-source library ,
-which can instrument individual tests to signal any
-un-terminated goroutines after the test wraps up as suspicious.
-Similarly, Go 1.25 introduced the  package to
-the standard library; it can significantly improve
-the quality of unit tests in concurrent code by giving
-Go developers more control over the ordering of concurrent events
-in order to reliably test hard-to-reproduce scenarios.Unfortunately, neither approach can check for goroutine leaks
-in production systems, especially at larger scales,
-which may behave in ways unaccounted for by tests.
-Goroutine profiles are a rudimentary way to check for operations
-that block too many goroutines, or analyze growth trends.
-However, goroutine profiles cannot distinguish between
-goroutines which are leaked, and those which are temporarily blocked
-in high numbers by design, e.g., as caused by increased
-traffic in a microservice.
-Likewise, leaks which are low in number may slip by undetected for many years.Go 1.27 introduces the ,
-a flexible and lightweight mechanism for finding
-goroutine leaks in running Go programs, including production systems.
-Unlike previous approaches, which require human analysis,
-this mechanism is precise and generates little-to-no false positives.
-The trade-off is that it is limited to a subset of goroutine leaks:
-goroutines permanently blocked on channels or primitives
-in the  package.
-Luckily for us, this already covers a very large subset of goroutine leaks,
-as we’ll see in our examples.In the following sections, we showcase how to use the feature, followed by
-some additional examples of detectable leaks, and a description of the
-underlying implementation and trade-offs.Example: concurrent workersConsider a function that processes work items concurrently:type result struct {
-    res workResult
-    err error
-}
-
-func processWorkItems(ws []workItem) ([]workResult, error) {
-    // Process work items in parallel, aggregating results in ch.
-    ch := make(chan result)
-    for _, w := range ws {
-        go func() {
-            res, err := processWorkItem(w)
-            ch <- result{res, err}
-        }()
-    }
-
-    // Collect the results from ch, or return an error if one is found.
-    var results []workResult
-    for range len(ws) {
-        r := <-ch
-        if r.err != nil {
-            // This early return may cause goroutine leaks.
-            return nil, r.err
-        }
-        results = append(results, r.res)
-    }
-    return results, nil
-}
-Because  is an unbuffered channel, each worker goroutine blocks when sending
-its result until the main goroutine receives from the channel.
-If  returns early due to an error, the receiving loop terminates,
-and all remaining sender goroutines block forever.This example is emblematic of a common mistake discovered in real Go programs,
-including Uber production services.
-Let’s see how we can find these leaks by using the
-new goroutine leak profiler.Debugging with the goroutine leak profilerThe profile is available through the
- package, as the
- profile type, or by installing the profile handlers defined
-by the  package.
-If you already have  set up in your service,
-then you don’t need to do anything else! The profile will be
-automatically made available for collection at the /debug/pprof/goroutineleak
-endpoint on whatever host and port the handlers are installed.Let’s put our concurrency bug in context and set up the  package.
-This way, you can try it yourself!package main
-
-import (
-    "errors"
-    "log"
-    "net/http"
-    _ "net/http/pprof"
-    "time"
-)
-
-type workItem int
-type workResult int
-
-func processWorkItem(w workItem) (workResult, error) {
-    time.Sleep(10 * time.Millisecond)
-    if w == 5 {
-        return 0, errors.New("simulated error")
-    }
-    return workResult(w * 2), nil
-}
-
-type result struct {
-    res workResult
-    err error
-}
-
-func processWorkItems(ws []workItem) ([]workResult, error) {
-    ch := make(chan result)
-    for _, w := range ws {
-        go func() {
-            res, err := processWorkItem(w)
-            ch <- result{res, err}
-        }()
-    }
-
-    var results []workResult
-    for range len(ws) {
-        r := <-ch
-        if r.err != nil {
-            return nil, r.err
-        }
-        results = append(results, r.res)
-    }
-    return results, nil
-}
-
-func main() {
-    // Start pprof server
-    go func() {
-        log.Println(http.ListenAndServe("localhost:6060", nil))
-    }()
-
-    // Repeatedly trigger the leak
-    for {
-        items := []workItem{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-        _, err := processWorkItems(items)
-        if err != nil {
-            log.Printf("Error processing items: %v", err)
-        }
-
-        time.Sleep(time.Second)
-    }
-}
-Build the program above, then run it:$ go build -o leaky
-$ ./leaky
-It won’t take long for the program to start accumulating
-leaks, which you can then view by using the web UI
-at http://localhost:6060/debug/pprof.Alternatively, you can collect the goroutine
-leak profile using , and then examine it with :$ curl http://localhost:6060/debug/pprof/goroutineleak > leak.prof
-$ go tool pprof leak.prof
-Type: goroutineleak
-Time: 2026-03-01 13:19:49 UTC
-Entering interactive mode (type "help" for commands, "o" for options)
-(pprof) list processWorkItems
-Total: 116
-ROUTINE ======================== main.processWorkItems.func1 in .../main.go
-         0        116 (flat, cum)   100% of Total
-         .          .     31:           go func() {
-         .          .     32:                   res, err := processWorkItem(w)
-         .        116     33:                   ch <- result{res, err}
-         .          .     34:           }()
-The profile reveals the goroutines leaked at
- (line 33), pinpointing the culprit operation.
-Notably, the longer the program is running, the larger the number of leaked
-goroutines.This leak can be simply fixed by giving  a :ch := make(chan result, len(ws))
-This allows all the work item goroutines to send a message without blocking
-in the event of a premature return of .This section is for those interested how leak detection
-works under the hood of the goroutine leak profiler.
-For details strictly pertaining to performance overhead and limitations,
-skip ahead to this section.Let’s start with an initial observation: if a goroutine
-is blocked over some concurrency primitive that no other goroutine has access to
-(in this case, via a reference in memory), then it is obviously leaked.
-This is already a strong lead, we can generalize it further into a definition
-for when a goroutine is  leaked, a property we term as .
-We formally define liveness, an inductive property
-as follows:it is not blocked by a concurrency primitive, orat least one concurrency primitive that blocks it is referenced
-by another live goroutine.In the trivial case, goroutines which are not blocked are obviously
-not leaked.
-In the inductive case, the underlying assumption is that
-any goroutine which is not leaked may eventually use
-concurrency primitives it references to unblock any
-other goroutines blocked by those primitives.To find all live goroutines, we start from the obviously live
-unblocked goroutines and trace any references
-they hold, i.e., through their local variables, to find
-the concurrency primitives they have access to.
-We then incrementally include any goroutines blocked over those
-primitives as live, and repeat the process until no
-additional live goroutines are discovered.Fortunately for us, the Go runtime already computes memory reachability
-through the garbage collector (GC),
-so the next step is to adapt the GC to suit our purposes.
-You can quickly compare the two GCs with the following diagrams:A complete overhaul of the GC is not necessary.
-The Go runtime uses a concurrent tri-color mark-and-sweep garbage collector,
-(now with the Green Tea variant!),
-so its MO already neatly aligns with our goals.
-Only a few key changes are needed:In the initial phases, the regular GC marks  goroutines (and global variables)
-as reachable, such that they would never be considered garbage,
-i.e., they are .
-We change it to instead  include unblocked goroutines,
-since these are guaranteed to be live.This is followed by the marking phase, where the GC traces objects referenced
-(transitively) by the mark roots, and  them as usable memory.
-Even though we do not modify this phase directly, the changes in step 1.
-implicitly ensure that the GC only marks memory referenced by live goroutines.The marking phase is finalized by inspecting all the blocked
-goroutines not included as mark roots in step 1.
-If a goroutine is blocked by at least one concurrency
-primitive that has been marked in step 2., it is added as a mark root,
-and the GC resumes the marking phase from step 2.
-This coincides with the inductive step in the definition
-of liveness.Once all live goroutines have been discovered, any goroutine
-which has not been added as a mark root has its status set to leaked.The marking phase then resumes one last time with all the leaked goroutines
-added   as mark roots, allowing the GC to mark all the memory it would have
-marked during a regular run.Once the GC cycle is complete, the goroutine leak profiler picks up
-like in a regular goroutine profile, and filters for strictly
-leaked goroutines.The examples above demonstrate the usefulness of goroutine leak profiles.
-Nevertheless, the garbage collector has some limitations that may lead
-it to miss leaks:: if a concurrency primitive is
-consistently reachable through  or ,
-then goroutines blocking on it are never reported as leaked, even if
-that concurrency primitive is never used in the future.This can be alleviated by better regimenting access to
-concurrency primitive references, and more clearly
-delineating their lifecycle.:
-For the sake of correctness, goroutine leak detection is strictly limited
-to Go first-class concurrency primitives, which includes:
-channel send and receive operations (including over  channels),
-blocking  statements, i.e., with no  case, up to, and including
- statements with no cases, and members of the
- package, specifically ,
-,  and .Goroutines blocked for any other reason, e.g.,
-file and network IO, or direct system calls
-are never considered as leaked.
-This likewise applies for custom, user-defined concurrency,
-e.g., spin locks, unless they rely on the primitives outlined above
-for their underlying implementation.: leaks can be detected only after
-they have occurred, but cannot be otherwise predicted,
-so reproducing and diagnosing leaks in flaky programs
-continues to be a challenge.
-For the best results, we encourage mixing approaches, by using
-goroutine leak profiles at various layers, up to, and including production,
-as well as comprehensive test suites instrumented with  and .Goroutine leak detection is carefully designed to minimize
-performance impact, but there are, nevertheless, some costs.While memory overhead is negligible, only limited to small additions
-required for bookkeeping, goroutine leak detection can be slower
-than the regular GC.
-This is best illustrated through a pathological case we
-call the “daisy-chain”:
-
-In this leak-free example, runnable goroutine G₀ has a
-reference to primitive P₁ which blocks G₁, and so on.This implies that proving liveness for some Pᵢ₊₁,
-requires proving liveness for Pᵢ, which introduces
-two costs:The GC marking phase is effectively serialized relative to the
-order in which goroutines can be scanned, as all the memory reachable
-from some Pᵢ must be marked before Pᵢ₊₁ can be added as a root.The inspection currently checks all blocked goroutines
-at the end of each marking round, for a worst-case of O(n²) steps for one
-GC cycle, where n is the total number of goroutines.While the second point can eventually be optimized for,
-the first point is an intrinsic limitation of leak detection
-that cannot be circumvented.Regardless, we remind the reader that, unless configured otherwise
-via runtime flags, the GC still operates concurrently with user code.
-Furthermore, if a goroutine leak can be observed at some point in time, then it
-can also be observed at any future point during the same execution.
-Periodic profiling infrastructures can therefore tune profiling frequency,
-e.g., every 4 hours, to minimize overhead at virtually no cost in
-leak detection capabilities.The transition from academic prototype to actual Go feature was made possible
-with the guidance of Michael Knyszek and Michael Pratt on the Go team at Google, and
-PJ Malloy (@thepudds).The following are coding patterns that lead to leaks, as
-observed in industrial-scale codebases and open source projects,
-in ascending order of complexity.You can quickly test drive the goroutine leak detector on them in
-the Go playground, as well as
-experiment with your own leaks.Some of the simplest leaks occur when more messages
-are sent over a channel than expected.
-Below, a goroutine is expected to send one message to the main goroutine
-over an unbuffered channel.
-However, the  statement is missing after the send operation
-in the error case.
-For every error, the sender will, therefore, attempt to send two messages,
-which causes a leak.func DoubleSend() {
-    ch := make(chan any)
-    go func(err error) {
-        if err != nil {
-            // In case of an error, send nil.
-            ch <- nil
-            // Return statement is missing.
-        }
-        // Otherwise, continue with normal behaviour.
-        // This send is still executed, which causes a leak in the error case.
-        ch <- struct{}{}
-    }(fmt.Errorf("error"))
-    // Receive only one message.
-    <-ch
-}
-While the profile does not explicitly highlight the missing 
-as the cause, it at least directs you to the faulty function, by
-highlighting the leaking send operation.(pprof) list DoubleSend
-Total: 1
-ROUTINE ======================== main.DoubleSend.func1 in .../main.go
-         0          1 (flat, cum)   100% of Total
-         .          .    118:   go func(err error) {
-         .          .    119:           if err != nil {
-         .          .    121:                   ch <- nil
-         .          .    123:           }
-         .          1    126:           ch <- struct{}{}
-         .          .    127:   }(fmt.Errorf("error"))
-         .          .    129:   <-ch
-This leak can be addressed simply by adding a  statement after the
-send operation in the error case.The inverse situation is just as common, where the receiver
-omits communication on some control flow paths,
-in what is effectively a simplified version of the introductory example.// Incoming error simulates an error produced internally.
-func EarlyReturn(err error) {
-    ch := make(chan any)
-
-    // Create a worker goroutine.
-    go func() {
-        // Send something to the channel.
-        // Leaks if the parent goroutine terminates early.
-        ch <- struct{}{}
-    }()
-
-    if err != nil {
-        // The parent goroutine quits too early in case of an error.
-        // Sender leaks.
-        return
-    }
-
-    // Receive is only executed if there is no error.
-    <-ch
-}
-The goroutine leak is exposed by the profile:ROUTINE ======================== main.EarlyReturn.func1 in .../main.go
-         0          1 (flat, cum)   100% of Total
-         .          .    140:   go func() {
-         .          1    143:           ch <- struct{}{}
-         .          .    144:   }()
-         .          .    145:
-         .          .    146:   if err != nil {
-The leak can be addressed by giving  a buffer of size 1.A variation of the  pattern above involves contexts
-and non-deterministic choice ( statements):func Timeout(ctx context.Context) {
-    // An unbuffered channel is used to coordinate
-    // a worker and parent thread
-    ch := make(chan any)
-
-    // Create worker goroutine
-    go func() {
-        // Perform some work then signal to the parent thread.
-        ch <- struct{}{}
-    }()
-
-    // Wait for message from worker or context
-    // to be cancelled or timed out.
-    select {
-    case <-ch: // Receive message from worker
-    case <-ctx.Done():
-        // Sender leaks because there is no
-        // future rendezvous over the channel.
-    }
-}
-If the context is cancelled before the sender synchronizes with the parent,
-the sender will leak:(pprof) list Timeout
-Total: 10
-ROUTINE ======================== main.Timeout.func1.1 in .../main.go
-         0         10 (flat, cum)   100% of Total
-         .          .    198:           go func() {
-         .         10    201:                   ch <- struct{}{}
-         .          .    202:           }()
-As in the previous example, the fix is to give the channel
-buffer of size 1.Example: Range over channel without closingIterating over channels by using 
-allows you to repeatedly receive values from a channel in a loop.
-Once the channel is closed and all values that have been enqueued
-in the channel’s buffer have been received, the loop exits.Importantly, if the channel is never closed, a  loop will block
-the executing goroutine forever.
-Omitting the  operation is a common mistake, as below:// Incoming list of items and the number of workers.
-func noCloseRange(list []any, workers int) {
-    // Create a channel that distributes work items.
-    ch := make(chan any)
-
-    // Create the worker goroutines.
-    for i := 0; i < workers; i++ {
-        go func() {
-            // Each worker pulls items from the channel
-            // and then processes it.
-            for item := range ch {
-                // Process each item
-                _ = item
-            }
-        }()
-    }
-
-    // Queue items to the workers by using the channel.
-    for _, item := range list {
-        // The parent leaks by sending an item if workers == 0
-        // or if all the workers panic, but the panic is recovered.
-        ch <- item
-    }
-    // Otherwise, the channel is never closed, so workers
-    // leak once there are no more items left to process.
-}
-
-...
-go noCloseRange([]any{1, 2, 3}, 3) // Leaks all 3 workers
-A goroutine leak profile for such a program would include the following:Type: goroutineleak
-(pprof) list noCloseRange.func1
-Total: 4
-ROUTINE ======================== main.noCloseRange.func1 in .../main.go
-         0          3 (flat, cum) 75.00% of Total
-         .          .     82:           go func() {
-         .          3     84:                   for item := range ch {
-         .          .     86:                           _ = item
-         .          .     87:                   }
-         .          .     88:           }()
-We see the 3 workers blocked at the  operation, which
-gives an ample hint as to the cause of the leak. The leak can be
-addressed by simply closing the channel once all messages have been sent:    for _, item := range list {
-        ch <- item
-    }
-    // All items have been sent. It is now safe to close.
-    close(ch)
- Eagle-eyed readers may have spotted another potential
-leak in this example, if the number of workers is mistakenly set to zero,
-which will lead the parent sender to leak:go noCloseRange([]any{1, 2, 3}, 0) // Sender leaks with 0 workers
-This is also captured by the profile:(pprof) list noCloseRange$
-Total: 4
-ROUTINE ======================== main.noCloseRange in .../main.go
-         0          1 (flat, cum) 25.00% of Total
-         .          .     76:func noCloseRange(list []any, workers int) {
-...
-         .          .     92:   for _, item := range list {
-         .          1     95:           ch <- item
-         .          .     96:   }
-While  can be assumed to hold in realistic production systems,
-goroutine leak profiles can nevertheless be used to implicitly monitor for off-chance
-violations without conservative  checks.Example: Method contract violationsThe patterns seen so far have been relatively constrained in their lexical scope.
-However, as functionality is spread out across functions, methods and packages, and
-implementations are obfuscated by interfaces, the difficulty of manually detecting
-leaks drastically increases.Such a case is exemplified in this section, with the custom  type that embeds two channel
-fields,  and  and creates a looping goroutine with its  method that
-reads from both channels with a  statement.
-Said goroutine can only be terminated by receiving a message through the  channel,
-which is closed by the  method.The  method can be invoked any number of times, but if it is invoked
-at least once,  should eventually be called.As a result,  and  form an implicit contract that dictates the order
-in which the methods should be invoked.
-Breaking that contract can lead to undesirable behavior,
-in this case, goroutine leaks:func MethodContractViolation() {
-    items := make([]any, 10)
-    // Create a new worker
-    w := NewWorker()
-
-    // Start worker
-    w.Start()
-
-    // Operate on worker
-    for _, item := range items {
-        w.AddToQueue(item)
-    }
-    // Exits without calling ’Stop’.
-}
-
-type worker struct {
-    ch   chan any
-    done chan any
-}
-
-type Worker interface {
-    Start()
-    Stop()
-    AddToQueue(item any)
-}
-
-func NewWorker() Worker {
-    return &worker{
-        ch:   make(chan any),
-        done: make(chan any),
-    }
-}
-
-// Start spawns a background goroutine that extracts items pushed to the queue.
-func (w *worker) Start() {
-    go func() {
-        for {
-            select {
-            case <-w.ch: // Normal workflow
-            case <-w.done:
-                return // Shut down
-            }
-        }
-    }()
-}
-
-func (w *worker) Stop() {
-    // Allows goroutine created by Start to terminate
-    close(w.done)
-}
-
-func (w *worker) AddToQueue(item any) {
-    w.ch <- item
-}
-This issue is further exacerbated in practice, where such custom types are only
-exported as interfaces, in this case, through the non-descript
- type.
-Clients may not even be aware of the underlying implementation and,
-consequently, violate the implicit contract without realizing.Fortunately, soliciting a goroutine leak profile can reveal the defect:(pprof) list Start
-Total: 1
-ROUTINE ======================== main.(*worker).Start.func1 in .../main.go
-         0          1 (flat, cum)   100% of Total
-         .          .    266:   go func() {
-         .          .    267:           for {
-         .          1    268:                   select {
-         .          .    269:                   case <-w.ch:
-         .          .    270:                   case <-w.done:
-         .          .    271:                           return
-Naturally, the fix involves following the trail to the  call
-and adding an invocation of .Example (Cockroach): Missing unlockThe following example
-is taken from CockroachDB.
-It involves acquiring and releasing a lock in a loop,
-but forgetting to unlock it
-before executing a  statement:type Gossip struct {
-    mu     sync.Mutex
-    closed bool
-}
-
-func (g *Gossip) bootstrap() {
-    for {
-        g.mu.Lock()
-        if g.closed {
-            // Missing g.mu.Unlock
-            break
-        }
-        g.mu.Unlock()
-    }
-}
-
-func Cockroach584() {
-    g := &Gossip{
-        closed: true,
-    }
-    // ...
-    g.bootstrap()
-    g.bootstrap() // Causes a leak
-}
-In such a case, the goroutine will leak when failing to acquire the lock.(pprof) list Gossip
-Total: 1
-ROUTINE ======================== main.(*Gossip).bootstrap in .../main.go
-         0          1 (flat, cum)   100% of Total
-         .          .    165:func (g *Gossip) bootstrap() {
-         .          .    166:   for {
-         .          1    167:           g.mu.Lock()
-         .          .    168:           if g.closed {
-         .          .    170:                   break
-         .          .    171:           }
-         .          .    172:           g.mu.Unlock()
-Adding a call to  before the  addresses the issue.Example (etcd): Unexpected channel operation orderingsThis example,
-found in etcd,
-shows how an unexpected ordering between channel
-operations can lead to a goroutine leak:type node struct {
-    status chan chan struct{}
-    stop   chan struct{}
-    done   chan struct{}
-}
-
-func (n *node) Status() struct{} {
-    c := make(chan struct{})
-    n.status <- c
-    return <-c
-}
-
-func (n *node) run() {
-    for {
-        select {
-        case c := <-n.status:
-            c <- struct{}{}
-        case <-n.stop:
-            close(n.done)
-            return
-        }
-    }
-}
-
-func (n *node) Stop() {
-    select {
-    case n.stop <- struct{}{}:
-    case <-n.done:
-        return
-    }
-    <-n.done
-}
-
-func Etcd6857() {
-    n := &node{
-        status: make(chan chan struct{}),
-        stop:   make(chan struct{}),
-        done:   make(chan struct{}),
-    }
-    go n.run()
-    go n.Status()
-    go n.Stop()
-}
-The  method fires a loop which expects to
-repeatedly receive messages over the  channel
-(sent by invoking the  method).
-At the same time, it can also receive one message over the
- channel (sent via the  method),
-at which point it closes the  channel and exits.
-The  method itself then waits to receive message
-over , which is unblocked once  is closed.A leak may occur if the , , and  methods
-run concurrently.
-The  and  goroutines can synchronize
-and exit without receiving the message issued
-by , causing it to block forever.(pprof) list Status
-Total: 8
-ROUTINE ======================== main.(*node).Status in .../main.go
-         0          8 (flat, cum)   100% of Total
-         .          .     16:func (n *node) Status() struct{} {
-         .          .     17:   c := make(chan struct{})
-         .          8     18:   n.status <- c
-         .          .     19:   return <-c
-         .          .     20:}
-Wrapping the send to  in a  statement
-where the other  branch tries to receive a message
-over  allows the goroutine running to 
-to gracefully exit if it lost the race with a 
-call.Example (Kubernetes): Mutual blocking between channels and mutexestype Connection struct {
-    closeChan chan bool
-}
-
-type idleAwareFramer struct {
-    resetChan chan bool
-    writeLock sync.Mutex
-    conn      *Connection
-}
-
-func (i *idleAwareFramer) monitor() {
-    var resetChan = i.resetChan
-    for range i.conn.closeChan {
-        i.writeLock.Lock()
-        close(resetChan)
-        i.resetChan = nil
-        i.writeLock.Unlock()
-        break
-    }
-}
-
-func (i *idleAwareFramer) WriteFrame() {
-    i.writeLock.Lock()
-    defer i.writeLock.Unlock()
-    if i.resetChan == nil {
-        return
-    }
-    i.resetChan <- true
-}
-
-func NewIdleAwareFramer() *idleAwareFramer {
-    return &idleAwareFramer{
-        resetChan: make(chan bool),
-        conn: &Connection{
-            closeChan: make(chan bool),
-        },
-    }
-}
-
-func Kubernetes6632() {
-    i := NewIdleAwareFramer()
-
-    go func() {
-        i.conn.closeChan <- true
-    }()
-    go i.monitor()
-    go i.WriteFrame()
-}
-The goroutine running  may acquire the
-idle-aware framer lock, followed by sending a message over the
- channel, while the  goroutine
-waits to receive a message over the  channel.
-Once a message has been dispatched, the  goroutine
-will attempt to acquire the same lock.
-However, since there isn’t any traffic over , the send operation
-blocks forever, preventing the  goroutine from releasing
-the lock.
-This, in turn, causes both goroutines to leak.(pprof) list AwareFramer
-Total: 200
-ROUTINE ======================== main.(*idleAwareFramer).WriteFrame in .../main.go
-         0        100 (flat, cum) 50.00% of Total
-         .          .     32:func (i *idleAwareFramer) WriteFrame() {
-         .          .     33:   i.writeLock.Lock()
-         .          .     34:   defer i.writeLock.Unlock()
-         .          .     35:   if i.resetChan == nil {
-         .          .     36:           return
-         .          .     37:   }
-         .        100     38:   i.resetChan <- true
-         .          .     39:}
-ROUTINE ======================== main.(*idleAwareFramer).monitor in .../main.go
-         0        100 (flat, cum) 50.00% of Total
-         .          .     21:func (i *idleAwareFramer) monitor() {
-         .          .     22:   var resetChan = i.resetChan
-         .          .     23:   for range i.conn.closeChan {
-         .        100     24:           i.writeLock.Lock()
-         .          .     25:           close(resetChan)
-The fix is to set up a separate goroutine after a message is received
-over  in the  goroutine that drains the 
-before attempting to acquire the lock.Example (Moby): Misusing type Manager struct {
-    plugins []int
-}
-
-func (pm *Manager) init() {
-    var group sync.WaitGroup
-    group.Add(len(pm.plugins))
-    for _, p := range pm.plugins {
-        go func(p int) {
-            defer group.Done()
-        }(p)
-        group.Wait() // Block here
-    }
-}
-
-func Moby25384() {
-    pm := &Manager{
-        plugins: []int{1, 2},
-    }
-    go pm.init()
-}
-The  wait group increments its counter
-depending on the number of plugins held by the
-plugin manager , then iterates over each plugin
-and spawns a goroutine.
-Each goroutine decrements the counter once it finishes
-its task with the  method.
-However,  erroneously invokes  inside
-the loop body, instead of after it!
-This will cause any goroutine running the  method
-when the manager has more than one plugin to leak.(pprof) list init
-Total: 1
-ROUTINE ======================== main.(*Manager).init in .../main.go
-         0          1 (flat, cum)   100% of Total
-         .          .     17:   group.Add(len(pm.plugins))
-         .          .     18:   for _, p := range pm.plugins {
-         .          .     19:           go func(p int) {
-         .          .     20:                   defer group.Done()
-         .          .     21:           }(p)
-         .          1     22:           group.Wait() // Block here
-         .          .     23:   }
-This can be easily addressed by moving the  outside
-the loop.Example (Moby): Mutual blocking between channels and mutexesAnother example
-in Moby
-showcases a mixed channel-lock leak:type (
-    State struct {
-        Health *Health
-    }
-    Container struct {
-        sync.Mutex
-        State *State
-    }
-
-    Store struct {
-        ctr *Container
-    }
-
-    Daemon struct {
-        containers Store
-    }
-
-    Health struct {
-        stop chan struct{}
-    }
-)
-
-func (d *Daemon) StateChanged() {
-    c := d.containers.ctr
-    c.Lock()
-    d.updateHealthMonitorElseBranch(c)
-    defer c.Unlock()
-}
-
-func (d *Daemon) updateHealthMonitorElseBranch(c *Container) {
-    c.State.Health.CloseMonitorChannel()
-}
-
-func (s *Health) CloseMonitorChannel() {
-    if s.stop != nil {
-        s.stop <- struct{}{}
-    }
-}
-
-func monitor(c *Container, stop chan struct{}) {
-    for {
-        select {
-        case <-stop:
-            return
-        default:
-            handleProbeResult(c)
-        }
-    }
-}
-
-func handleProbeResult(c *Container) {
-    c.Lock()
-    defer c.Unlock()
-    // Additional work...
-}
-
-func NewDaemonAndContainer() (*Daemon, *Container) {
-    c := &Container{
-        State: &State{&Health{
-            stop: make(chan struct{}),
-        }},
-    }
-    d := &Daemon{Store{c}}
-    return d, c
-}
-
-func Moby28462() {
-    d, c := NewDaemonAndContainer()
-    go monitor(c, c.State.Health.stop)
-    go d.StateChanged()
-}
-The goroutine invoking  may acquire the lock
-of the container stored by the daemon, then invoke
-the updateHealthMonitorElseBranch method on
-the daemon, which attempts to send a message over
-the  channel of the container.
-However, the goroutine running 
-may fail to receive a message over , if the message
-is not already in-flight, and instead unblock by picking
-the  case of the  statement.
-This will lead it to try to acquire the same container
-lock that is already held by the 
-goroutine, leading both goroutines to leak.(pprof) list .CloseMonitorChannel
-Total: 2
-ROUTINE ======================== main.(*Health).CloseMonitorChannel in .../main.go
-         0          1 (flat, cum) 50.00% of Total
-         .          .     66:func (s *Health) CloseMonitorChannel() {
-         .          .     67:   if s.stop != nil {
-         .          1     68:           s.stop <- struct{}{}
-         .          .     69:   }
-         .          .     70:}
-(pprof) list main.handleProbeResult
-Total: 2
-ROUTINE ======================== main.handleProbeResult in .../main.go
-         0          1 (flat, cum) 50.00% of Total
-         .          .     83:func handleProbeResult(c *Container) {
-         .          1     84:   c.Lock()
-         .          .     85:   // Additional work...
-         .          .     86:   defer c.Unlock()
-         .          .     87:}
-The fix is to close the  channel instead
-of sending a message over it.
-Since closing a channel is not a blocking operation,
-the  goroutine is then able to release
-the lock.
-In turn, this unblocks the  goroutine,
-which may now terminate by picking unblocked
- case branch in the  statement
-on the next loop iteration.]]></content:encoded></item><item><title>Kubernetes v1.37: etcd RangeStream Cuts Memory Use on Large List Reads</title><link>https://kubernetes.io/blog/2026/09/01/kubernetes-v1-37-etcd-range-stream/</link><author></author><category>dev</category><pubDate>Tue, 1 Sep 2026 18:30:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[I am excited to announce that etcd RangeStream is graduating to beta in
-Kubernetes v1.37. Paired with etcd v3.7, it reduces the memory the API server and
-etcd need to read a large collection, and makes peak usage more predictable.The API server serves most list and watch requests from its in-memory watch cache.
-Populating that cache requires reading a resource's full state from etcd, at
-startup and on every re-initialization. For a resource with many objects, or large
-ones, such as Pods, that read is expensive.The API server already paginated these reads, asking etcd for a fixed number of
-keys at a time rather than the whole collection at once. But a page bounded by key
-count has no awareness of object size, so a page of large objects can still be
-very large. That makes memory usage hard to predict, and a bad combination of
-object size and concurrent reads can be enough to trigger an OOM. etcd's unary
- assembles each page in full before sending it, and the API server holds it
-while decoding, so the same payload sits in memory on both sides at once. Most of
-that cost lands on etcd, which is also where streaming helps most.Streaming reads with RangeStreametcd v3.7 adds a streaming version of that read, the  RPC. It takes
-the same  as  and returns the same result set, but instead of
-building the whole response up front, etcd splits it into chunks and streams them.
-Chunk size is tuned adaptively to the values being returned, so a collection of
-large objects is bounded by bytes rather than by a key count, and memory is freed
-as the stream progresses instead of being held until a whole page is assembled.When the feature is enabled, the API server uses  wherever it reads a
-whole collection out of etcd. This includes watch cache initialization, and the
-fallback paths where a list request cannot be served from the cache and reads etcd
-directly. In either case the API server decodes each chunk as it arrives and
-releases it before pulling the next one, so neither side ever holds the whole
-collection.Kubernetes v1.37 or laterRangeStream is used when the  feature gate is enabled on the
-kube-apiserver, which is beta and on by default in v1.37, and etcd is v3.7 or
-later. The API server resolves etcd's support at startup
-and also falls back at runtime if a call returns , so an API server
-paired with an older etcd keeps using the paginated  path on its own. To
-turn it off, disable the gate:--feature-gates=EtcdRangeStream=false
-Confirming RangeStream is in useThe API server records streamed reads under their own operation label on its etcd
-metrics. A non-zero count here means  is in use:etcd_request_duration_seconds_count{operation="listStream"}
-If it stays at zero, the API server is still using the paginated  path, most
-likely because etcd is older than v3.7.]]></content:encoded></item></channel></rss>
+survey!]]></content:encoded></item></channel></rss>
