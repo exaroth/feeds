@@ -1,4 +1,231 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Python 3.15.0 (final) is here!</title><link>https://blog.python.org/2026/10/python-3150-final-is-here/</link><author>Hugo van Kemenade</author><category>dev</category><pubDate>Fri, 9 Oct 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[A brand new Python here for you to enjoy!]]></content:encoded></item><item><title>The Shift to cgroup v2 in Kubernetes: What You Need to Know</title><link>https://kubernetes.io/blog/2026/10/06/kubernetes-cgroups-v2-shift/</link><author></author><category>dev</category><pubDate>Tue, 6 Oct 2026 18:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[In Linux,  (control groups) are a kernel feature used for managing system resources.
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Announcing Rust 1.99.1</title><link>https://blog.rust-lang.org/2026/10/15/Rust-1.99.1/</link><author>The Rust Release Team</author><category>dev</category><pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust team has published a new point release of Rust, 1.99.1. Rust is a programming language that is empowering everyone to build reliable and efficient software.If you have a previous version of Rust installed via rustup, getting Rust 1.99.1 is as easy as:If you don't have it already, you can get  from the appropriate page on our website.Rust 1.99.1 fixes the following regressions from prior releases:Missing symbol : Some Rust targets were getting link errors for missing , and that function is now present in Rust's compiler-builtins library as a fallback.The LLVM  pass may introduce calls to  as an optimization, and some Rust targets did not have that function readily available in  or elsewhere. The UEFI targets in particular were broken for any project using , as some of these calls were introduced in the precompiled standard library, but the issue was also reproducible for similar user code patterns.Miscompilation of FFI  return values on x86_64: Rust functions returning  through FFI could leave bits 1-7 of the return register unspecified, causing callers to observe raw values other than  or . This return type is now marked for zero-extension again, as required by the ABI. failed to load  on macOS: This linker could fail to run if the compiler was invoked without the  proxy, as there was no direct setting for the appropriate library search path. Now  is built with an  entry for the directory containing .If you'd like to help us out by testing future releases, you might consider using the beta () and nightly () channels locally and in your CI. Please report any bugs you might come across!Many people came together to create Rust 1.99.1. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>Why Is My Kubernetes Job Still Pending? Tracing Kueue Admission with Headlamp</title><link>https://kubernetes.io/blog/2026/10/14/tracing-kueue-admission-with-headlamp/</link><author></author><category>dev</category><pubDate>Wed, 14 Oct 2026 18:35:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[You submit a Kubernetes Job and
+wait for its Pods to appear. A minute passes. Then another. The Job is still suspended, there are no
+application logs, and there may not even be a Pod to inspect.In a cluster managed by Kueue, this can be completely normal. Kueue
+may still be deciding whether the Job can use the requested resources. The useful question is not
+only “Why is the Pod pending?” It is first “Has Kueue admitted the Workload?”The Kueue plugin for Headlamp brings that
+investigation into the Headlamp UI. Instead of reconstructing the admission path from several
+commands and large YAML objects, you can begin with the Workload, read its condition message, and
+follow links through the LocalQueue, ClusterQueue, ResourceFlavor, and Cohort.This article follows that Headlamp-first path. The command line appears only in a short optional
+section for reproducing the example.The alpha release provides read-only views for Kueue  Cohorts, ClusterQueues, LocalQueues,
+ResourceFlavors, and Workloads. It does not add its own create, edit, stop, resume, or delete
+workflows. Headlamp still provides its standard YAML and resource actions where your permissions
+allow them.First, separate admission from Pod schedulingKueue and the Kubernetes scheduler answer different questions.Kueue admission: Should this Workload start now, considering queue policy, quota, ResourceFlavors,
+admission checks, and other waiting Workloads?Pod scheduling: After the Workload is admitted and the Job resumes, which nodes can run its Pods?That boundary changes the investigation. If the Workload is not admitted, stay in the Kueue section
+of Headlamp. If it is admitted but its Pods are still , move to Headlamp's normal Job and
+Pod views and inspect scheduler events.Kueue admission architectureThe Headlamp-first troubleshooting pathThe quickest investigation starts with the Workload, not with a shell.Tracing a pending Job through HeadlampStep 1: Open the Workloads viewIn Headlamp, open . Select the namespace that contains the Job, then find the
+Workload created for it.Kueue creates a Workload to represent the
+resource request and admission state of a Job. In the alpha plugin, owner references are shown as
+ text but are not yet clickable. The Workload name normally contains the Job name, so the
+namespace filter and table search are the simplest ways to locate it.Before opening the detail page, the list already gives you a useful first scan:priority and priority classa readable current status such as , , or If there is no matching Workload, check three things before going further: the selected namespace,
+whether the Job was submitted to a LocalQueue, and whether your Kubernetes account can list
+Workloads. The plugin performs permission checks and displays an access message when the current
+identity cannot read a resource.Step 2: Read status, conditions, and eventsOpen the Workload. Start with its current status and
+conditions,
+not with the full YAML.For admission troubleshooting, the most important condition types are  and
+. means Kueue has admitted the Workload. The Job can resume, so any remaining
+ Pods belong to the scheduling branch of the investigation. with a reason such as  means Kueue has not reserved quota. The
+condition message explains what prevented the reservation.An  status means the Workload currently cannot fit the available queue
+configuration. A missing covered resource, unsuitable ResourceFlavor, stopped queue, or admission
+check can all lead you here.For example, a condition message may report that Kueue could not assign a ResourceFlavor because the
+ClusterQueue has insufficient CPU quota. That message is the first real answer to “Why is my Job
+still pending?” The rest of the Headlamp journey explains the configuration behind it.Also check the  section. Conditions describe the current state; events help show what
+recently changed or what Kueue attempted.Stay on the Workload detail page and inspect the PodSets and resource requests. The plugin shows the
+requested Pod count, CPU, memory, and other resources that Kueue evaluates together.This matters because a Job with  and a one-CPU request per Pod asks Kueue for three
+CPUs in total. Looking at only one Pod's template would underestimate the Workload.If quota has already been reserved, the same page also shows the assigned ClusterQueue,
+ResourceFlavors, and admitted resource usage. If those admission assignments are absent, the
+Workload has not reached that point yet.In our example, the Workload requests:600 MiB of memory in totalThe next question is where that request entered Kueue.Step 4: Follow the linked LocalQueueUse the LocalQueue link on the Workload
+detail page. A LocalQueue is the namespace-level entry point used by the Job. It connects namespaced
+Workloads to a cluster-scoped ClusterQueue.The LocalQueue page shows:its namespace and connected ClusterQueuestop policy and current statuspending, reserving, and admitted Workload countsKueue conditions and Kubernetes eventsrelated Workloads in the same namespaceThis page answers two practical questions: Did the Job enter the queue you expected, and is it the
+only Workload waiting there?If the LocalQueue is inactive or stopped, that may already explain the wait. If it is active, follow
+the linked ClusterQueue to inspect the capacity behind it.Step 5: Inspect ClusterQueue capacity and usageA ClusterQueue represents the
+cluster-level quota and admission policy available to one or more LocalQueues.On its Headlamp detail page, compare the Workload request with:nominal quota for each ResourceFlavorcurrent reservations and usageborrowing and lending limitspending, reserving, and admitted Workload countsqueueing strategy and stop policypreemption, fair-sharing, flavor-fungibility, and admission-check settingsKueue conditions and Kubernetes eventsFor the example in this article, the ClusterQueue provides a nominal quota of two CPUs and two Pod
+slots. The Workload asks for three of each. The condition message and the ClusterQueue page now tell
+the same story: the Workload does not fit, so Kueue leaves the Job suspended.This is an admission-capacity problem. It is not evidence that kube-scheduler failed to find a node.Step 6: Check ResourceFlavor and Cohort when neededQuota is not always a single pool. A
+ResourceFlavor can represent a class of
+compute through node labels, taints, tolerations, or topology settings. Use the ResourceFlavor link
+from the ClusterQueue when the condition mentions flavor assignment or when the Workload requires a
+particular hardware class, such as GPU nodes.If the ClusterQueue belongs to a Cohort, follow
+that link too. Cohorts let ClusterQueues share unused quota. The Headlamp page shows parent and
+child Cohorts, member ClusterQueues, referenced ResourceFlavors, resource groups, borrowing and
+lending limits, and fair-sharing information.These pages help answer a more subtle question: Is the Workload blocked because the queue has no
+quota of its own, because it cannot borrow enough, or because no suitable flavor can be assigned?What we learned without leaving HeadlampFor the sample pending Job, the UI gives us a complete explanation:The Workload is not admitted.Its  condition is false and the message points to insufficient quota.The Workload requests three CPUs and three Pod slots.Its LocalQueue is active and points to the expected ClusterQueue.The ClusterQueue provides only two CPUs and two Pod slots.Kueue therefore keeps the Job suspended until quota becomes available or the queue configuration
+changes.The important part is not that Headlamp invents a new status. It reads the same Kubernetes API
+objects as other clients, then places the related resources and human-readable values in one
+connected investigation.If the Workload is admitted, switch viewsSuppose the Workload detail page shows , but the application is still not running.
+Kueue has completed its part of the decision. Continue in Headlamp's standard Kubernetes views:Open  and inspect the Job state and events.Open  and filter by the Job name or namespace.Select a  Pod and read its  section.At this stage, look for scheduler concerns such as insufficient node capacity,
+node affinity,
+taints and tolerations,
+topology constraints, persistent-volume binding, or image-pull failures.This handoff is the most useful troubleshooting rule in the article:Not admitted: investigate Kueue resources in Headlamp., but Pods are : investigate Job, Pod, node, and scheduler information in
+Headlamp.A repeatable Headlamp checklistWhen the next Job does not start, use this short path:Open  and select the correct namespace.Find the Workload associated with the Job.Check the readable status, , and  conditions.Read the condition message and recent events.Compare PodSet resource requests with any admission assignments.Follow the LocalQueue link and confirm its status and ClusterQueue.Follow the ClusterQueue link and compare quota, reservations, usage, and policy.Inspect ResourceFlavor or Cohort details when the message points to flavor selection or shared
+quota.If admitted, move to Headlamp's Job and Pod views.What Headlamp replaces during this investigationThe plugin does not replace  or
+ for scripts, exact object
+output, or changes. It replaces the repetitive UI-less navigation needed during an interactive
+investigation.Is the Workload admitted?Kueue → Workloads → status and conditionskubectl describe workload <workload-name> -n <namespace>Which LocalQueue did it enter?Workload → linked LocalQueuekubectl get localqueue <localqueue-name> -n <namespace> -o yamlWhich ClusterQueue provides quota?LocalQueue → linked ClusterQueuekubectl get clusterqueue <clusterqueue-name> -o yamlWhich flavor or shared quota matters?ClusterQueue → ResourceFlavor or Cohortkubectl get resourceflavor <flavor-name> -o yaml or kubectl get cohort <cohort-name> -o yamlWhat happened after admission?Workloads → Jobs and Pods → eventskubectl describe job <job-name> -n <namespace> or kubectl describe pod <pod-name> -n <namespace>For scripts and GitOps workflows, the command line remains the right tool. For a person asking “why
+is this waiting?”, the linked Headlamp path is usually faster to read.Optional: reproduce the pending scenarioTo reproduce the specific quota mismatch used in this article, configure a ClusterQueue with two
+CPUs and two Pod slots, then submit a three-Pod Job that requests one CPU per Pod. The Job enters
+its LocalQueue, Kueue creates a Workload, and the Workload remains pending because the combined
+request is larger than the available quota.Keeping this setup separate from the main walkthrough is intentional: once the resources exist, the
+investigation itself should happen in Headlamp.Current alpha limitationsThe  release is an initial read-only view of the Kueue admission path.The plugin does not add its own create, edit, pause, resume, or delete flows.Workload owner references are displayed as text and are not currently navigable.The UI depends on the Kubernetes permissions of the identity used by Headlamp.Metrics and a visual relationship map are possible follow-up areas rather than features of this
+release.These limits are useful to state clearly: the plugin's current purpose is to make admission state
+and resource relationships easier to inspect.Developed during LFX MentorshipThe plugin was developed during CNCF LFX Mentorship
+2026 Term 2 using TypeScript, React, Kubernetes APIs, and Headlamp's plugin system.Utkarsh Raj implemented the plugin with guidance and review from René Dudfield
+(@illume) and Kevin Hannon (@kannon92).
+Feedback from the Headlamp and Kueue communities shaped the resource views, status presentation,
+navigation, documentation, tests, and first alpha release.Try it and share feedbackIf a pending Workload is still difficult to explain after following the Headlamp path, that is
+exactly the kind of feedback that can improve the plugin.]]></content:encoded></item><item><title>Better HTTP/1 connection reuse</title><link>https://go.dev/blog/http-connection-reuse</link><author>Nicholas Husin and Damien Neil</author><category>dev</category><pubDate>Wed, 14 Oct 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[Take a look at the following function:func getStatus(url string) (int, error) {
+    resp, err := http.Get(url)
+    if err != nil {
+        return 0, err
+    }
+    defer resp.Body.Close()
+    return resp.StatusCode, nil
+}
+It sends a  request to  and returns the HTTP status code.Using HTTP/1 (), calling this function 100 times against
+index.golang.org takes ~710 milliseconds on Go 1.26
+on my machine. On Go 1.27, the same program takes ~150 milliseconds.That is almost 5 times faster! How is such a drastic performance difference
+possible?The cost of establishing HTTP connectionsTo understand the difference, consider what happens on the network when we make
+an HTTP request.Go’s  package supports HTTP/1.0, HTTP/1.1, and
+HTTP/2. All three run over TCP, and usually over TLS when talking to HTTPS
+endpoints. Making a request over a new connection looks something like this:: the client sends a  packet, the server
+replies with , and the client replies with . Because the
+client can send the first TLS message alongside that final ,
+establishing the TCP connection takes 1 round-trip time (RTT).: next, a TLS handshake exchanges encryption keys
+and verifies the server’s identity; using TLS 1.2, this takes 2 RTT.: with the keys exchanged, HTTP requests can finally be sent
+after a total of 3 RTT.These round trips (plus some CPU time spent on TLS handshakes) add up quickly.
+In cross-region communications, one-way latencies often reach or exceed the 50
+ms (100 ms RTT) shown in the diagram above. Compared to the 300 ms spent just
+setting up the connection, the HTTP request itself can be cheap to serve, taking
+only a little over 1 RTT when bandwidth is plentiful or the HTTP response is
+small.Even in more favorable conditions, opening a new connection can still be
+expensive. Our opening benchmark queries
+index.golang.org, which is distributed worldwide and
+supports TLS 1.3. This means that latency is relatively low, and the TLS
+handshake can actually finish in just 1 RTT. Even so, the performance difference
+is still very noticeable.To avoid paying this setup cost on every request, HTTP clients and servers try
+to reuse existing connections across multiple requests when possible. The
+mechanics of this differ based on the HTTP version:: while not part of the official specification, clients and
+servers often opt into connection reuse by sending a  header. Reuse continues until either endpoint omits the header
+or sends a  header.: connections are persistent by default, and can be reused for
+subsequent requests and responses unless either side declares otherwise by
+sending a  header.: multiple requests and responses can be multiplexed over a single
+TCP connection.When connection reuse failsIn HTTP/1 (both HTTP/1.0 and HTTP/1.1), multiple requests and responses on the
+same connection are sent sequentially on the wire. If two  requests are
+sent to index.golang.org over the same TCP
+connection, the responses arrive as a single stream of bytes:As shown in the diagram,  reads and parses
+the status line and headers from the byte stream to populate
+, then returns immediately. The
+response body remains unread on the connection and is consumed only as the
+caller reads from .Because responses are sent back-to-back on the same stream,
+ can only find the start of the next response after
+the current response body has been read to the very end (as determined by the
+ or  header).Now look back at our example program, where we never read :func getStatus(url string) (int, error) {
+    resp, err := http.Get(url)
+    if err != nil {
+        return 0, err
+    }
+    defer resp.Body.Close()
+    return resp.StatusCode, nil
+}
+Through Go 1.26, when  is called, 
+sees that there is still an unread response body. Realizing that it cannot reuse
+the connection, it abandons the existing connection and creates new connections
+for its next requests, causing it to repeatedly incur the cost of establishing
+new connections.(HTTP/2 does not have this problem. Because it multiplexes streams of frames
+over a single connection rather than sending responses strictly back-to-back, an
+unread response body on one stream does not block other requests from sharing
+the connection.)Where failed connection reuse hurtsThis subtlety of HTTP/1 connection reuse can cause silent performance
+degradation in seemingly innocuous code.As in our opening example, a client might only care about an API response’s
+status code. However, the API endpoint it is talking to might send bodies that
+provide more detailed but ultimately unused information, such as {"success": true, "message": "update processed"}. This will unfortunately cause connection
+reuse to fail.Even programs that do read the response body can run into this issue if they
+stop just short of the end of the body. For example,
+ stops reading as soon as
+it sees the closing  of a JSON object. If a server sends a JSON response
+terminated with a newline, decoding the JSON object will leave the newline still
+unread. The connection cannot be reused for a new request until that newline is
+consumed. Thus, a healthy connection might end up being abandoned, even though
+it was only a single byte away from being reusable.The unread body problem has been a long-standing sharp edge. Over the years,
+many Go developers came up with their own workarounds. Most commonly, this is
+done by draining the response body prior to closing it:func getStatus(url string) (int, error) {
+    resp, err := http.Get(url)
+    if err != nil {
+        return 0, err
+    }
+    drainAndCloseBody(resp.Body)
+    return resp.StatusCode, nil
+}
+
+func drainAndCloseBody(body io.ReadCloser) {
+    io.Copy(io.Discard, body) // Drain the response body before closing it.
+    body.Close()
+}
+While this works for small responses, if the unread body is large, establishing
+a new TCP connection can be faster than downloading and discarding the rest of
+the body. A better approach is to cap the number of bytes we are willing to
+drain:func drainAndCloseBody(body io.ReadCloser) {
+    io.CopyN(io.Discard, body, 256<<10) // Only drain up to 256 KB.
+    body.Close()
+}
+However, a server might send a response body that trickles in slowly, so we also
+need to cap the time we spend draining:func drainAndCloseBody(body io.ReadCloser) {
+    drainDone := make(chan struct{}, 1)
+    go func() {
+        io.CopyN(io.Discard, body, 256<<10) // Only drain up to 256 KB.
+        drainDone <- struct{}{}
+    }()
+    // Only spend at most 50 ms trying to drain the response body.
+    select {
+    case <-drainDone:
+    case <-time.After(50 * time.Millisecond):
+        // If we reach the 50 ms timeout, body.Close will run and interrupt the
+        // io.CopyN, preventing goroutine leaks.
+    }
+    body.Close()
+}
+Of course, we also do not want to block for up to 50 milliseconds when closing a
+response body. Instead, we can drain the body asynchronously in the background
+and let it race against subsequent requests:func drainAndCloseBody(body io.ReadCloser) {
+    drainDone := make(chan struct{}, 1)
+    go func() {
+        io.CopyN(io.Discard, body, 256<<10) // Only drain up to 256 KB.
+        drainDone <- struct{}{}
+    }()
+    go func() {
+        // Only spend at most 50 ms trying to drain the response body.
+        select {
+        case <-drainDone:
+            // If the drain can finish before a new request is sent, the
+            // connection will be reused; otherwise, a new connection is
+            // created, and the current connection will be put in a pool of
+            // idle connections, potentially being reused for another future
+            // request.
+        case <-time.After(50 * time.Millisecond):
+            // If we reach the 50 ms timeout, body.Close will run and interrupt
+            // the io.CopyN, preventing goroutine leaks.
+        }
+        body.Close()
+    }()
+}
+As we can see, draining response bodies safely is surprisingly tricky and
+cumbersome. Worse, as the practice of draining response bodies spread, some
+nuances were often lost. This has led to misunderstandings such as attempting to
+drain response bodies for HTTP/2 connections, when doing so is unnecessary.The current state and conclusionStarting in Go 1.27, 
+automatically does everything we have implemented in the code above: it will
+asynchronously drain an unread HTTP/1 response body for up to 50 ms or 256 KB.
+It also implements additional optimizations; for example, when a response
+contains the  header, draining the body is guaranteed to be
+wasted work, and it therefore skips doing so. Note that this behavior might
+evolve in future versions of Go, as other possible enhancements become apparent.As a general best practice, we now recommend that users simply close their HTTP
+bodies once they no longer need them, like in our original example:func getStatus(url string) (int, error) {
+    resp, err := http.Get(url)
+    if err != nil {
+        return 0, err
+    }
+    defer resp.Body.Close()
+    return resp.StatusCode, nil
+}
+Go is all about simplicity. Let your code stay clean and simple, and let
+ deal with the complexities on your behalf.]]></content:encoded></item><item><title>Python 3.16.0 alpha 1 is now available</title><link>https://blog.python.org/2026/10/python-3160-alpha-1-is-now-available/</link><author>Savannah Ostrowski</author><category>dev</category><pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[The first developer preview of Python 3.16 is ready for testing.]]></content:encoded></item><item><title>Python 3.15.0 (final) is here!</title><link>https://blog.python.org/2026/10/python-3150-final-is-here/</link><author>Hugo van Kemenade</author><category>dev</category><pubDate>Fri, 9 Oct 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[A brand new Python here for you to enjoy!]]></content:encoded></item><item><title>The Shift to cgroup v2 in Kubernetes: What You Need to Know</title><link>https://kubernetes.io/blog/2026/10/06/kubernetes-cgroups-v2-shift/</link><author></author><category>dev</category><pubDate>Tue, 6 Oct 2026 18:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[In Linux,  (control groups) are a kernel feature used for managing system resources.
 Kubernetes uses cgroups to allocate resources like CPU and memory to containers,
 ensuring that applications run smoothly without interfering with each other.
 With the release of Kubernetes v1.31, support for v1 cgroup management moved into
@@ -236,138 +463,4 @@ updated the documentation on  to recommend against patterns that
 later deallocate that memory. This was done because such code was found to have
 problematic interactions with current and future potential compiler optimizations,
 and is especially problematic with the upcoming stabilization of custom allocators.
-Instead,  or  should be preferred.This guidance also applies to other  functions in the standard library.Many people came together to create Rust 1.99.0. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>Python Language Summit 2026</title><link>https://blog.python.org/2026/09/language-summit-2026/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:11 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[The 2026 Python Language Summit was hosted in Kraków, Poland as part of EuroPython 2026. There were 15 talks covering free-threading, Rust, garbage collection, type annotations, and more.]]></content:encoded></item><item><title>Lightning Talks (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-lightning-talks/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:10 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Lightning talks on a one-time ABI break, safer interruptions, EktuPy (Scratch but Python), an AGENTS.md file for CPython, and a call to read PEP 836.]]></content:encoded></item><item><title>PEP 827: Type Manipulation (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-pep-827-type-manipulation/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:09 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Michael J. Sullivan presents PEP 827 and discusses a key design decision: how to store type annotations?]]></content:encoded></item><item><title>Free-Threaded Python Post-Era (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-free-threading-post-era/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:08 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Tobias Wrigstad, Fridtjof Stoldt, and Donghee Na propose a safe and performant, high-level concurrency model for free-threaded Python]]></content:encoded></item><item><title>Developer-in-Residence Update &amp; Future (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-developer-in-residence-update-and-future/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:07 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Petr Viktorin gives an update on the Developer-in-Residence role and asks Python core developers for projects to prioritize]]></content:encoded></item><item><title>Spicycrab (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-spicycrab/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:06 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Kushal Das shows off Spicycrab, a Python-to-Rust transpiler for Python users who need performance without learning Rust or leaving Python]]></content:encoded></item><item><title>Rust for CPython (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-rust-for-cpython/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:05 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[David Hewitt shares a status update, first module, and potential acceptance criteria for the Rust for CPython project]]></content:encoded></item><item><title>Memory Snapshots for CPython (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-memory-snapshots/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:04 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Hood Chatham proposes memory snapshots and an initialization phase for speedier Python startups]]></content:encoded></item><item><title>Memory Buffer Protocol (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-memory-buffer-protocol/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:03 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Nathan Goldbaum proposes safe concurrent access through buffer leases and custom data types for the Python Buffer Protocol.]]></content:encoded></item><item><title>Garbage Collection: Generational? Incremental? Both! (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-garbage-collection-generational-incremental-both/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:02 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Mark Shannon proposes a future garbage collection strategy for Python following the revert of the incremental garbage collector in Python 3.14]]></content:encoded></item><item><title>macOS and Python (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-macos-python/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:01 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Ned Deily weighs whether Python should continue shipping macOS installers]]></content:encoded></item><item><title>One namespace to namespace them all (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-namespaces/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Pablo Galindo Salgado proposes a top-level `std` namespace for the Python standard library to prevent module shadowing and free up module names.]]></content:encoded></item><item><title>The Python documentation is now available in German</title><link>https://blog.python.org/2026/09/python-docs-in-german/</link><author>Stan Ulbrych</author><category>dev</category><pubDate>Sat, 26 Sep 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[You can now read the Python documentation online in German!]]></content:encoded></item><item><title>Platform-independent SIMD in Go</title><link>https://go.dev/blog/simd-experiment</link><author>David Chase and Junyang Shao</author><category>dev</category><pubDate>Thu, 24 Sep 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[Go 1.26 and 1.27 include experimental APIs for Single Instruction Multiple Data (SIMD) operations. SIMD is a native feature of many modern CPUs that allows software to perform uniform operations across vectors of data very quickly, such as adding 8 pairs of  values in a single instruction. It can significantly speed up many computationally-intensive tasks, ranging from cryptography to data processing to AI. In fact, Go’s Green Tea garbage collector even makes use of SIMD to accelerate scanning memory for live objects.Prior to these new experimental APIs, the only way to access this functionality from Go was by writing Go assembly. This was only worth it for truly performance-critical compute kernels, which meant plenty of software that could benefit from SIMD simply left a lot of the CPU unused.Go 1.26 introduced a SIMD API for amd64, and Go 1.27 added APIs for arm64 (specifically NEON) and wasm. However, a basic challenge for a SIMD API is the enormous variation between platforms, not simply in what operations they support, but even in how vectors are represented. Some platforms provide fixed-size vectors, typically between 128 bits and 512 bits, while on others the vector size isn’t known at build time and must be queried when the program starts. To provide full access to the breadth of these platforms, these APIs live in an architecture-dependent  package.But Go 1.27 goes beyond these architecture-dependent APIs and introduces an experimental, fully portable, platform- and size-agnostic SIMD interface,
-loosely based on Highway for C++.  The goal is to support write-once near-asm-performance “simd” code on platforms with SIMD support, and to provide a competent emulation on those platforms that do not (yet) have SIMD support.  The  package currently supports AVX, AVX2, and AVX512 on amd64, NEON on arm64, and wasm’s SIMD instructions.Motivation: variation among SIMD architecturesSIMD architectures vary in several dimensions.  Some provide a single fixed vector size (wasm, PowerPC, and s390x, 128 bits).  Some provide several fixed vector sizes (amd64, with 128, 256, and 512; loong64 with 128 and 256).  Riscv64 supports vectors of unspecified size between 128 and 65536 bits, though the length is limited to powers of 2.  Arm64 supports one fixed size (128 bits, NEON), and one variable size (128-2048 bits, powers of two only, SVE).  On a given instance of a particular architecture, determining what sizes that particular instance happens to support requires feature checks: amd64, but is it AVX, AVX2, or AVX512?  Arm64, but is it NEON or SVE?  If SVE, how large? Which variant of SVE: SVE, SVE2, or SVE2.1?Different SIMD architectures vary in how they handle vector masking. For vectors, if-then-else across a vector can be implemented with masks; do the operation, but only assign the result (or load, or store) where the mask is “true”.  Some SIMD variants do not provide masks; all operations work across all elements, and “masking” is done with vector bitmasks and vector boolean operations (wasm, AVX, AVX2, NEON).  Some provide special mask registers, with one bit governing operations on one vector element (AVX512 and RVV).  Others (SVE) allocate one bit per vector byte, but the least-significant bit of each element’s mask bits governs masked operations.  AVX2 also supports masked loads and stores, but using a plain vector as the mask, and with the most-significant bit governing the operation.A third source of variation is in the operations themselves.  Each architecture provides its own primitives for rearranging vector elements; some require constant inputs, others support variable inputs.  Different SIMD architectures support different crypto-related operations.  Even basic arithmetic can have varying support; for example wasm lacks comparisons for vectors of 64-bit integers.  Even for a given vector length on a particular architecture, instruction support depends on “features” that must be checked.Even though Go’s architecture-dependent  package was designed to be as uniform as possible across architectures, many of these quirks remain, and make designing, writing, and testing code for multiplatform SIMD onerous.  We could do more in the  package to make the different architectures appear more similar, but we can only go so far without compromising efficiency.The new  package hides these differences by removing fixed-size vectors from the type system, and by only supporting those operations that are in the intersection of all the different platforms, and fills gaps in the intersection with efficient emulation in terms of other SIMD instructions.  The goal is a set of operations that isadequate to support many data processing algorithms that benefit from a vectorized implementation (but are not tied to a particular vector size),is as efficient as assembly language when the source code operations match the underlying hardware,is otherwise emulated as well as possible,and is easy to read and understand (even/especially if an LLM ends up writing the code).On platforms that lack SIMD instructions or that lack support in , all of the operations are emulated,
-so that code written using the  package will always run.To use this experimental package, set  at build time, just like using the experimental  package.The  vector types are just capitalized, plural, primitive types, for example  or . Vectors are loaded from and stored to slices, for example:// innerProduct returns the inner product of x and y.
-func innerProduct(x, y []float32) float32 {
-    var a simd.Float32s
-    var i int
-    for i = 0; i < len(x)-a.Len()+1; i += a.Len() {
-        u := simd.LoadFloat32s(x[i : i+a.Len()])
-        v := simd.LoadFloat32s(y[i : i+a.Len()])
-        a = u.MulAdd(v, a)
-    }
-    if i < len(x) {
-        u, _ := simd.LoadFloat32sPart(x[i:])
-        v, _ := simd.LoadFloat32sPart(y[i:])
-        a = u.MulAdd(v, a)
-    }
-    return sum(a)
-}
-// sum returns scalar sum of elements of x.
-func sum(x simd.Float32s) float32 {
-    s := make([]float32, x.Len())
-    x.Store(s)
-    var r float32
-    for _, e := range s {
-        r += e
-    }
-    return r
-}
-This example also shows one of the limitations of the first experimental release of this package; because there’s no common way to sum across all the elements of a vector, it’s not supported by  in Go 1.27, though  will appear in the next release so  can be replaced with just .SIMD comparisons produce mask values, which are specific to the corresponding vector element width, so that comparisons of  produce , etc., and mask values can be used to select and filter vectors.Supported  package operations as of Go 1.27In this table,  and  are vector types,  is a mask type,  is a scalar type, and  is a width.Package-Level Load / Broadcast FunctionsIfElse(mask MaskWs, y V) VBoolean and vector masking operationsCarrylessMultiplyEven(y V) VCarrylessMultiplyOdd(y V) VIfElse(mask MaskWs, y V) VConvertToFloatW() FloatWsShift and rotate operationsRotateAllLeft(dist uint64) VRotateAllRight(dist uint64) VShiftAllLeft(dist uint64) VShiftAllRight(dist uint64) VZero-cost reshaping operationsReshapeToUint16s() Uint16sReshapeToUint32s() Uint32sReshapeToUint64s() Uint64sIt may happen that the  package is too limited for all parts of a particular application, or that we have not yet provided an adequate emulation for some necessary feature.  For that case, the  package supports transition to and from architecture-specific SIMD.  Each vector type in the  package has a conversion method  returning an .  That  can be type-asserted to one of the architecture-specific types for a platform.  To convert back, use one of the  functions.  For portable code this creates an obligation to write architecture-specific code for each of the platforms, including an emulation.Here’s a complete example for a method/function that is currently missing, but should be added in Go 1.28. Suppose your algorithm needs  (which  in Go 1.27 lacks).  Rather than rewriting the entire algorithm for each platform, it’s possible to just implement the missing operation.First, for amd64, which lacks the instruction for AVX and AVX2, but not AVX512://go:build goexperiment.simd && amd64
-package simd_test
-import (
-    "simd"
-    "simd/archsimd"
-)
-var popcnt4x16 = [16]int8{0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4}
-var popcnt4x32 = [32]int8{
-    0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4,
-    0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4,
-}
-// OnesCount returns the number of one bits for each element.
-func OnesCount(v simd.Int8s) simd.Int8s {
-    switch x := v.ToArch().(type) {
-    case archsimd.Int8x16:
-        lut := archsimd.LoadInt8x16Array(&popcnt4x16)
-        mask0f := archsimd.BroadcastInt8x16(0x0f)
-        lo := x.And(mask0f)
-        hi := x.ToBits().ReshapeToUint16s().ShiftAllRight(4).
-                ReshapeToUint8s().BitsToInt8().And(mask0f)
-        return simd.Int8sFromArch(lut.PermuteOrZero(lo).
-                Add(lut.PermuteOrZero(hi)))
-    case archsimd.Int8x32:
-        lut := archsimd.LoadInt8x32Array(&popcnt4x32)
-        mask0f := archsimd.BroadcastInt8x32(0x0f)
-        lo := x.And(mask0f)
-        hi := x.ToBits().ReshapeToUint16s().ShiftAllRight(4).
-                ReshapeToUint8s().BitsToInt8().And(mask0f)
-        return simd.Int8sFromArch(lut.PermuteOrZeroGrouped(lo).
-                Add(lut.PermuteOrZeroGrouped(hi)))
-    case archsimd.Int8x64:
-        return simd.Int8sFromArch(x.OnesCount())
-    default:
-        // GODEBUG=simd=0 emulation
-        return OnesCountEmulated(v)
-    }
-}
-The interface conversion and type switch look like they should be inefficient, but the compiler-side implementation of  specializes code and optimizes away the type switch.NEON and Wasm both support , so their implementation is much simpler, though it still uses  and .//go:build goexperiment.simd && (wasm || arm64)
-package simd_test
-import (
-    "simd"
-    "simd/archsimd"
-)
-// OnesCount returns the number of one bits for each element.
-func OnesCount(v simd.Int8s) simd.Int8s {
-    // TODO when SVE is added, this won't work
-    switch x := v.ToArch().(type) {
-    case archsimd.Int8x16:
-        return simd.Int8sFromArch(x.OnesCount())
-    default:
-        // GODEBUG=simd=0 emulation
-        return OnesCountEmulated(v)
-    }
-}
-Don’t forget that some people don’t have hardware SIMD support://go:build goexperiment.simd && !(amd64 || wasm || arm64)
-
-package simd_test
-import (
-    "simd"
-)
-// OnesCount returns the number of one bits for each element.
-func OnesCount(v simd.Int8s) simd.Int8s {
-    return OnesCountEmulated(v)
-}
-And to complete the exercise, a separate emulation function shared as a fallback across all implementations://go:build goexperiment.simd
-package simd_test
-import (
-    "simd"
-)
-// OnesCountEmulated returns the number of one bits for each element.
-func OnesCountEmulated(v simd.Int8s) simd.Int8s {
-    a := [2]uint64{}
-    v.ToBits().ReshapeToUint64s().Store(a[:])
-    a0, a1 := a[0], a[1]
-    m1 := uint64(0x5555555555555555)
-    m2 := uint64(0x3333333333333333)
-    m4 := uint64(0x0f0f0f0f0f0f0f0f)
-    a0 = (a0 & m1) + ((a0 >> 1) & m1)
-    a1 = (a1 & m1) + ((a1 >> 1) & m1)
-    a0 = (a0 & m2) + ((a0 >> 2) & m2)
-    a1 = (a1 & m2) + ((a1 >> 2) & m2)
-    a0 = (a0 & m4) + ((a0 >> 4) & m4)
-    a1 = (a1 & m4) + ((a1 >> 4) & m4)
-    a[0], a[1] = a0, a1
-    return simd.LoadUint64s(a[:]).ReshapeToUint8s().BitsToInt8()
-}
-API intersection and method emulationWhatever operations the  package offers need to run acceptably well on most architectures.  As a first step, any operation that is supported everywhere, can easily be supported on .  This tends to include loads, stores, arithmetic, and comparisons (but not all comparisons!).A naive intersection across SIMD methods from different architectures still leaves plenty of holes.
-These are filled by adding emulations to the various architecture-specific  APIs.
-These APIs already contain many trivial emulations to simplify life for Go programmers;
-signed and unsigned integer addition use the same instruction,
-but in the same way that Go supports the  operator for both  and ,
-the  package provides both  and ,
-even though those compile to the same instruction.
-Modern programming languages also don’t expect programmers to know how to implement floating point negation and absolute value with bit fiddling,
-so  implements that where necessary, or “emulates” if you look at it just so.There are many emulations that require just 2 or 3 instructions; for example, some architectures support only a same-value shift distance across vector elements, while others support a different shift distance for each vector element.  To support scalar shifting in , we emulate scalar shift with vector shift.  Some architectures lack some unsigned comparisons–these are just signed comparison, plus two XORs with a constant.Not all missing instructions are that simple.  The “carryless multiply” instruction is important to cryptography and CRC checksumming, but it isn’t always supported.  Leaving that out of the  API would prevent its use for some important algorithms.  Therefore, we provide an emulation, and because one important use is in crypto, its run time does not vary depending on its inputs.In other cases, rather than implement a primitive instruction like “add pairs” (also called “horizontal addition”), for the  package in the next release we will provide the higher level operation that add pairs is usually used for, which is sum reduction.  This also helps insulate users from vector-length dependence; even given the hardware instruction for adding pairs, the number of reduction steps depends on the vector length.The constraint of supporting all platforms, including ones that we predict will appear in  within the next year or so, forces a somewhat conservative approach to which methods we add to .  Riscv64, ppc64, s390x, and loong64 all have their own SIMD extensions.On platforms where there is some hardware support, behavior can be modified with , to make it easier to test -using code with various hardware configurations. You can set the  environment variable prior to executing your program.In Go 1.27, levels of SIMD support are roughly described by vector length: means use emulation for SIMD operations even if the hardware support is available. means use 128-bit vectors and their features.  If the features aren’t available, panic immediately. means use 256-bit vectors and their features, if possible. means use 512-bit vectors and their features, if possible. means use 128-bit vectors and their features even if some features are not supported. If unsupported instructions are used, the code will panic, but if they are not it may still run.  An example of this is Raspberry Pi, which supports NEON but lacks PMULL (carryless multiply). means use 256-bit vectors and their features even if some features are not supported. If unsupported instructions are used, the code will panic, but if they are not it may still run.  An example of this is Apple Silicon’s amd64 emulation, which supports AVX2 but not VPCLMULQDQ (again, carryless multiply). means use 512-bit vectors, even if some features are not supported.If you are debugging code that uses , or even just look at a stack trace, you will notice some weird extra types and methods.  The reason is that  is both a package, an internal implementation package, and some AST rewriting in the front end of the compiler.The AST rewrite creates multiple specialized copies of functions, variables, and types that mention  types, where  types are replaced with references to size-specialized types in .  Each of these bridge types is defined as an  type, but with a restricted set of methods.  The specialized functions, variables, and types acquire a suffix of the form , where  is either a vector length (128, 256, or 512) or 0, indicating emulation.  Functions that mention  internally, but not in their signature, are converted to wrappers that switch on the SIMD level detected at program start, and call the appropriate specialized version of that function.  Specialized functions call other specialized functions directly without dispatch overhead (and perhaps with inlining).  This rewrite strategy was chosen as a compromise between code duplication and SIMD performance; the overhead is hoisted as high as necessary to avoid dispatch within SIMD computations, but not higher.  If SIMD dispatch appears “too low” in a computation, a gratuitous mention of a  type will move it upwards, as in this example:func BenchmarkVpsumdSIMD(b *testing.B) {
-    // mention "simd" so the benchmark loop calls specialized vpsumd3 directly
-    var _ simd.Uint64s
-    var w, x, y, z uint64 = ... // magic constants omitted.
-    var lo, hi uint64
-    for b.Loop() {
-        // vpsumd3 does simd stuff, but lacks a simd signature,
-        // so that it can be compared with non-SIMD emulations.
-        lo, hi = vpsumd3(w, x, y, z)
-    }
-    sinkLo, sinkHi = lo, hi
-}
-We plan to publish a blog post describing  in greater detail soon.For Go 1.28, we intend to add SVE support to , and also hope to add that to .  More importantly, we hope to add additional SIMD operations to those that the  package already supports (e.g., OnesCount, mask operations, reduction operations, vector shuffling operations). Go 1.28 will also include a small number of “feature variants” to avoid downgrading all the way to full emulation for platforms that have a hardware vector implementation but just lack one or a few operations, such as Raspberry Pi.]]></content:encoded></item></channel></rss>
+Instead,  or  should be preferred.This guidance also applies to other  functions in the standard library.Many people came together to create Rust 1.99.0. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>Python Language Summit 2026</title><link>https://blog.python.org/2026/09/language-summit-2026/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:11 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[The 2026 Python Language Summit was hosted in Kraków, Poland as part of EuroPython 2026. There were 15 talks covering free-threading, Rust, garbage collection, type annotations, and more.]]></content:encoded></item><item><title>Lightning Talks (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-lightning-talks/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:10 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Lightning talks on a one-time ABI break, safer interruptions, EktuPy (Scratch but Python), an AGENTS.md file for CPython, and a call to read PEP 836.]]></content:encoded></item><item><title>PEP 827: Type Manipulation (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-pep-827-type-manipulation/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:09 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Michael J. Sullivan presents PEP 827 and discusses a key design decision: how to store type annotations?]]></content:encoded></item><item><title>Free-Threaded Python Post-Era (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-free-threading-post-era/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:08 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Tobias Wrigstad, Fridtjof Stoldt, and Donghee Na propose a safe and performant, high-level concurrency model for free-threaded Python]]></content:encoded></item><item><title>Developer-in-Residence Update &amp; Future (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-developer-in-residence-update-and-future/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:07 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Petr Viktorin gives an update on the Developer-in-Residence role and asks Python core developers for projects to prioritize]]></content:encoded></item><item><title>Spicycrab (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-spicycrab/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:06 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Kushal Das shows off Spicycrab, a Python-to-Rust transpiler for Python users who need performance without learning Rust or leaving Python]]></content:encoded></item><item><title>Rust for CPython (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-rust-for-cpython/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:05 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[David Hewitt shares a status update, first module, and potential acceptance criteria for the Rust for CPython project]]></content:encoded></item><item><title>Memory Snapshots for CPython (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-memory-snapshots/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:04 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Hood Chatham proposes memory snapshots and an initialization phase for speedier Python startups]]></content:encoded></item><item><title>Memory Buffer Protocol (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-memory-buffer-protocol/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:03 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Nathan Goldbaum proposes safe concurrent access through buffer leases and custom data types for the Python Buffer Protocol.]]></content:encoded></item><item><title>Garbage Collection: Generational? Incremental? Both! (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-garbage-collection-generational-incremental-both/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:02 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Mark Shannon proposes a future garbage collection strategy for Python following the revert of the incremental garbage collector in Python 3.14]]></content:encoded></item><item><title>macOS and Python (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-macos-python/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:01 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Ned Deily weighs whether Python should continue shipping macOS installers]]></content:encoded></item><item><title>One namespace to namespace them all (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-namespaces/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Pablo Galindo Salgado proposes a top-level `std` namespace for the Python standard library to prevent module shadowing and free up module names.]]></content:encoded></item><item><title>The Python documentation is now available in German</title><link>https://blog.python.org/2026/09/python-docs-in-german/</link><author>Stan Ulbrych</author><category>dev</category><pubDate>Sat, 26 Sep 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[You can now read the Python documentation online in German!]]></content:encoded></item></channel></rss>
