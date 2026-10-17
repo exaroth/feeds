@@ -1,4 +1,155 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Announcing Rust 1.99.1</title><link>https://blog.rust-lang.org/2026/10/15/Rust-1.99.1/</link><author>The Rust Release Team</author><category>dev</category><pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust team has published a new point release of Rust, 1.99.1. Rust is a programming language that is empowering everyone to build reliable and efficient software.If you have a previous version of Rust installed via rustup, getting Rust 1.99.1 is as easy as:If you don't have it already, you can get  from the appropriate page on our website.Rust 1.99.1 fixes the following regressions from prior releases:Missing symbol : Some Rust targets were getting link errors for missing , and that function is now present in Rust's compiler-builtins library as a fallback.The LLVM  pass may introduce calls to  as an optimization, and some Rust targets did not have that function readily available in  or elsewhere. The UEFI targets in particular were broken for any project using , as some of these calls were introduced in the precompiled standard library, but the issue was also reproducible for similar user code patterns.Miscompilation of FFI  return values on x86_64: Rust functions returning  through FFI could leave bits 1-7 of the return register unspecified, causing callers to observe raw values other than  or . This return type is now marked for zero-extension again, as required by the ABI. failed to load  on macOS: This linker could fail to run if the compiler was invoked without the  proxy, as there was no direct setting for the appropriate library search path. Now  is built with an  entry for the directory containing .If you'd like to help us out by testing future releases, you might consider using the beta () and nightly () channels locally and in your CI. Please report any bugs you might come across!Many people came together to create Rust 1.99.1. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>Why Is My Kubernetes Job Still Pending? Tracing Kueue Admission with Headlamp</title><link>https://kubernetes.io/blog/2026/10/14/tracing-kueue-admission-with-headlamp/</link><author></author><category>dev</category><pubDate>Wed, 14 Oct 2026 18:35:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[You submit a Kubernetes Job and
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Interactive refactoring in gopls</title><link>https://go.dev/blog/interactive-refactoring</link><author>Hongxiang Jiang</author><category>dev</category><pubDate>Fri, 16 Oct 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[When editing code in a modern IDE or editor, developers rely on its refactoring
+features to automate common transformations. Today, we are excited to introduce
+ in gopls, powered by a new capability we are
+proposing for the Language Server Protocol (LSP)
+that brings dynamic, multi-step dialogs directly into your favorite editor.
+Crucially, we designed this capability (in collaboration with the Dart team)
+not just for Go, but as an open standard for all programming languages and
+editor ecosystems. Working support is already available in gopls v0.24.0 and
+the official Go extension for VS Code v0.56.0.What is the Language Server Protocol (LSP)?The LSP is an open standard that decouples language-specific
+features from specific text editors. As you navigate and edit code, your
+editor (such as VS Code, Neovim, or Emacs) and a language server (like gopls)
+engage in a continuous JSON-RPC exchange to provide features like autocomplete,
+hover documentation, diagnostics, and code actions.Today, almost every code transformation in the LSP is like a function of no
+parameters: you trigger the operation, and the server immediately computes the
+edits. (Renaming a symbol is the sole exception: because it is a function of one
+parameter, the desired new name, it required its own dedicated 
+RPC in the protocol.)The language server must deduce the user’s intent from context alone, namely
+the cursor position and the enclosing syntax tree. When that context is not
+enough, the server is forced into one of two choices: apply a one-size-fits-all
+default, or refrain from offering the transformation altogether. The limitation
+lies not in gopls’s ability to compute the necessary edits, but in the
+LSP’s lack of a mechanism for language servers to ask the user for input.For many transformations, this parameterless model works well. But many others
+need additional input from the user: which struct tags to add and in what
+naming convention, which interface to implement, which file to move a
+declaration to. Without a way to ask, gopls could only guess—“Add struct
+tags”, for example, always produced  tags in —or not offer the
+refactoring at all. With interactive refactoring, language servers can now
+easily provide new operations with one or more parameters.While some language extensions have worked around this limitation by embedding
+custom, language-specific dialog logic directly into individual editors, doing
+so leaves behind other editors (such as Neovim and Emacs) that stick strictly
+to the LSP with minimal custom client code. More importantly, editor-specific
+workarounds go against the fundamental purpose of the LSP: to decouple
+language-specific features from editors so that each server improvement benefits
+every client.Interactive refactorings in actionAdding and removing struct tags (gopls v0.23.0)When configuring serialization formats, developers frequently need custom tags
+and casing conventions. Previously, running “Add struct tags” unconditionally
+injected  tags using  formatting.With interactive refactoring:Place your cursor on any struct definition and select the
+ code action.An input dialog appears, pre-filled with , allowing you to customize
+any combination of tags (such as ).A second dialog lets you select your desired naming convention (such as
+, , or ).Gopls generates and applies the formatted struct tags across your type
+definition.Here is the before-and-after transformation:type UserProfile struct {
+    ID        int64
+    FirstName string
+    LastName  string
+    EmailAddr string
+}
+type UserProfile struct {
+    ID        int64  `json:"id" db:"id"`
+    FirstName string `json:"first_name" db:"first_name"`
+    LastName  string `json:"last_name" db:"last_name"`
+    EmailAddr string `json:"email_addr" db:"email_addr"`
+}
+Similarly,  now asks you for the specific tag keys
+you wish to delete (for example, removing only  tags while preserving the 
+tag), rather than wiping out all struct tags indiscriminately.Implementing interfaces with dynamic symbol searchWhen creating a type to satisfy an interface, developers previously had to copy
+the interface declaration and manually turn it into a set of methods on the
+receiver type (or rely on external tools like  by manually typing the
+receiver and qualifying the name of the interface).Since gopls v0.23.0, with interactive refactoring:Place your cursor on any concrete type and select the
+“Add methods to X to implement an interface…” code action.A text entry field appears, inviting you to choose the name of an interface
+type. It makes dynamic queries to gopls to auto-complete names of types in
+your workspace and the standard library (for example, ).If the selected interface has type parameters, gopls asks for a
+concrete type argument for each type parameter (such as ).Gopls generates complete method stubs with appropriate receiver names and
+instantiated method signatures.type Foo struct{}
+
+type MyHasher struct{}
+type Foo struct{}
+
+type MyHasher struct{}
+
+// Equal implements [maphash.Hasher].
+func (m *MyHasher) Equal(x Foo, y Foo) bool {
+    panic("unimplemented")
+}
+
+// Hash implements [maphash.Hasher].
+func (m *MyHasher) Hash(*maphash.Hash, Foo) {
+    panic("unimplemented")
+}
+Moving declarations across files and packages (preview)Moving declarations manually by cutting and pasting can easily break references
+and requires tedious import cleanup across multiple files. While scheduled for
+an upcoming gopls release, our working implementation already demonstrates how
+interactive file selection streamlines cross-file and cross-package moves:Place your cursor on any top-level declaration and select the
+ code action.A file picker dialog lets you choose an existing destination  file or
+specify a new file path.Gopls moves the declaration along with its dependent declarations (such as
+unexported helpers or methods) while leaving unrelated symbols in place,
+updates references across your workspace, and cleans up imports in both the
+source and destination files.In the example below, we move the type  from package  to package
+. Its method  and the unexported constant , which only 
+uses, move along with it, while the unrelated function  stays behind:// from/from.go
+package from
+
+import (
+    "fmt"
+    "strings"
+)
+
+const bar = "bar"
+
+// Doc comment for Foo
+type Foo struct{}
+
+func (f Foo) Print() {
+    fmt.Println(bar)
+}
+
+func Baz() string {
+    return strings.ToUpper("baz")
+}
+// from/from.go
+package from
+
+import "strings"
+
+func Baz() string {
+    return strings.ToUpper("baz")
+}
+
+// to/to.go
+package to
+
+import "fmt"
+
+const bar = "bar"
+
+// Doc comment for Foo
+type Foo struct{}
+
+func (f Foo) Print() {
+    fmt.Println(bar)
+}
+Slaying the dragon (gopls v0.24.0)As a demonstration of multi-step interactive dialogs and a self-contained test
+case for client editor implementations, gopls v0.24.0 offers a  code action when you place your cursor on a package-level variable
+named  (for example, ). Happy hunting!Interactive refactoring establishes a foundational capability in gopls,
+opening up several exciting directions on our roadmap:Change signature refactoring (#38028): Adding, removing,
+or reordering function parameters across a workspace requires input that
+cannot be deduced from syntax alone, such as the new parameter order or the
+default argument expression to insert at existing call sites. Interactive
+forms allow gopls to collect these details before rewriting the declaration
+and all call sites.Interactive conflict resolution: When a code transformation encounters
+naming collisions, identifier shadowing, or ambiguous references, gopls can
+ask the user for guidance, such as asking for permission to proceed or
+offering to rename conflicting symbols on the fly.Interactive commands beyond code edits: Because interactivity is modeled
+at the LSP command
+layer, it naturally generalizes to non-edit server
+operations that require user configuration, such as configuring test or
+benchmark runs with profiling flags (CPU, memory, tracing).Getting Started and Sharing FeedbackInteractive refactoring is available in gopls v0.24.0
+and v0.56.0
+(with proof-of-concept client integrations also explored for
+Neovim and
+Emacs).We would love to hear your thoughts as we continue
+refining interactive code actions in gopls:(Special thanks to Alan Donovan, Alex Putman, Brian Wilkerson, Danny Tuppeny,
+Hana Kim, Madeline Kalil, Peter Weinberger, and Robert Findley for their
+insights, discussions, feedback, and collaboration on this work.)]]></content:encoded></item><item><title>Announcing Rust 1.99.1</title><link>https://blog.rust-lang.org/2026/10/15/Rust-1.99.1/</link><author>The Rust Release Team</author><category>dev</category><pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust team has published a new point release of Rust, 1.99.1. Rust is a programming language that is empowering everyone to build reliable and efficient software.If you have a previous version of Rust installed via rustup, getting Rust 1.99.1 is as easy as:If you don't have it already, you can get  from the appropriate page on our website.Rust 1.99.1 fixes the following regressions from prior releases:Missing symbol : Some Rust targets were getting link errors for missing , and that function is now present in Rust's compiler-builtins library as a fallback.The LLVM  pass may introduce calls to  as an optimization, and some Rust targets did not have that function readily available in  or elsewhere. The UEFI targets in particular were broken for any project using , as some of these calls were introduced in the precompiled standard library, but the issue was also reproducible for similar user code patterns.Miscompilation of FFI  return values on x86_64: Rust functions returning  through FFI could leave bits 1-7 of the return register unspecified, causing callers to observe raw values other than  or . This return type is now marked for zero-extension again, as required by the ABI. failed to load  on macOS: This linker could fail to run if the compiler was invoked without the  proxy, as there was no direct setting for the appropriate library search path. Now  is built with an  entry for the directory containing .If you'd like to help us out by testing future releases, you might consider using the beta () and nightly () channels locally and in your CI. Please report any bugs you might come across!Many people came together to create Rust 1.99.1. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>Why Is My Kubernetes Job Still Pending? Tracing Kueue Admission with Headlamp</title><link>https://kubernetes.io/blog/2026/10/14/tracing-kueue-admission-with-headlamp/</link><author></author><category>dev</category><pubDate>Wed, 14 Oct 2026 18:35:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[You submit a Kubernetes Job and
 wait for its Pods to appear. A minute passes. Then another. The Job is still suspended, there are no
 application logs, and there may not even be a Pod to inspect.In a cluster managed by Kueue, this can be completely normal. Kueue
 may still be deciding whether the Job can use the requested resources. The useful question is not
@@ -463,4 +614,4 @@ updated the documentation on  to recommend against patterns that
 later deallocate that memory. This was done because such code was found to have
 problematic interactions with current and future potential compiler optimizations,
 and is especially problematic with the upcoming stabilization of custom allocators.
-Instead,  or  should be preferred.This guidance also applies to other  functions in the standard library.Many people came together to create Rust 1.99.0. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>Python Language Summit 2026</title><link>https://blog.python.org/2026/09/language-summit-2026/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:11 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[The 2026 Python Language Summit was hosted in Kraków, Poland as part of EuroPython 2026. There were 15 talks covering free-threading, Rust, garbage collection, type annotations, and more.]]></content:encoded></item><item><title>Lightning Talks (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-lightning-talks/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:10 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Lightning talks on a one-time ABI break, safer interruptions, EktuPy (Scratch but Python), an AGENTS.md file for CPython, and a call to read PEP 836.]]></content:encoded></item><item><title>PEP 827: Type Manipulation (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-pep-827-type-manipulation/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:09 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Michael J. Sullivan presents PEP 827 and discusses a key design decision: how to store type annotations?]]></content:encoded></item><item><title>Free-Threaded Python Post-Era (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-free-threading-post-era/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:08 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Tobias Wrigstad, Fridtjof Stoldt, and Donghee Na propose a safe and performant, high-level concurrency model for free-threaded Python]]></content:encoded></item><item><title>Developer-in-Residence Update &amp; Future (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-developer-in-residence-update-and-future/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:07 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Petr Viktorin gives an update on the Developer-in-Residence role and asks Python core developers for projects to prioritize]]></content:encoded></item><item><title>Spicycrab (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-spicycrab/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:06 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Kushal Das shows off Spicycrab, a Python-to-Rust transpiler for Python users who need performance without learning Rust or leaving Python]]></content:encoded></item><item><title>Rust for CPython (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-rust-for-cpython/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:05 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[David Hewitt shares a status update, first module, and potential acceptance criteria for the Rust for CPython project]]></content:encoded></item><item><title>Memory Snapshots for CPython (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-memory-snapshots/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:04 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Hood Chatham proposes memory snapshots and an initialization phase for speedier Python startups]]></content:encoded></item><item><title>Memory Buffer Protocol (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-memory-buffer-protocol/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:03 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Nathan Goldbaum proposes safe concurrent access through buffer leases and custom data types for the Python Buffer Protocol.]]></content:encoded></item><item><title>Garbage Collection: Generational? Incremental? Both! (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-garbage-collection-generational-incremental-both/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:02 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Mark Shannon proposes a future garbage collection strategy for Python following the revert of the incremental garbage collector in Python 3.14]]></content:encoded></item><item><title>macOS and Python (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-macos-python/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:01 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Ned Deily weighs whether Python should continue shipping macOS installers]]></content:encoded></item><item><title>One namespace to namespace them all (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-namespaces/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Pablo Galindo Salgado proposes a top-level `std` namespace for the Python standard library to prevent module shadowing and free up module names.]]></content:encoded></item><item><title>The Python documentation is now available in German</title><link>https://blog.python.org/2026/09/python-docs-in-german/</link><author>Stan Ulbrych</author><category>dev</category><pubDate>Sat, 26 Sep 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[You can now read the Python documentation online in German!]]></content:encoded></item></channel></rss>
+Instead,  or  should be preferred.This guidance also applies to other  functions in the standard library.Many people came together to create Rust 1.99.0. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>Python Language Summit 2026</title><link>https://blog.python.org/2026/09/language-summit-2026/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:11 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[The 2026 Python Language Summit was hosted in Kraków, Poland as part of EuroPython 2026. There were 15 talks covering free-threading, Rust, garbage collection, type annotations, and more.]]></content:encoded></item><item><title>Lightning Talks (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-lightning-talks/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:10 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Lightning talks on a one-time ABI break, safer interruptions, EktuPy (Scratch but Python), an AGENTS.md file for CPython, and a call to read PEP 836.]]></content:encoded></item><item><title>PEP 827: Type Manipulation (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-pep-827-type-manipulation/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:09 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Michael J. Sullivan presents PEP 827 and discusses a key design decision: how to store type annotations?]]></content:encoded></item><item><title>Free-Threaded Python Post-Era (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-free-threading-post-era/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:08 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Tobias Wrigstad, Fridtjof Stoldt, and Donghee Na propose a safe and performant, high-level concurrency model for free-threaded Python]]></content:encoded></item><item><title>Developer-in-Residence Update &amp; Future (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-developer-in-residence-update-and-future/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:07 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Petr Viktorin gives an update on the Developer-in-Residence role and asks Python core developers for projects to prioritize]]></content:encoded></item><item><title>Spicycrab (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-spicycrab/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:06 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Kushal Das shows off Spicycrab, a Python-to-Rust transpiler for Python users who need performance without learning Rust or leaving Python]]></content:encoded></item><item><title>Rust for CPython (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-rust-for-cpython/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:05 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[David Hewitt shares a status update, first module, and potential acceptance criteria for the Rust for CPython project]]></content:encoded></item><item><title>Memory Snapshots for CPython (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-memory-snapshots/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:04 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Hood Chatham proposes memory snapshots and an initialization phase for speedier Python startups]]></content:encoded></item><item><title>Memory Buffer Protocol (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-memory-buffer-protocol/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:03 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Nathan Goldbaum proposes safe concurrent access through buffer leases and custom data types for the Python Buffer Protocol.]]></content:encoded></item><item><title>Garbage Collection: Generational? Incremental? Both! (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-garbage-collection-generational-incremental-both/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:02 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Mark Shannon proposes a future garbage collection strategy for Python following the revert of the incremental garbage collector in Python 3.14]]></content:encoded></item><item><title>macOS and Python (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-macos-python/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:01 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Ned Deily weighs whether Python should continue shipping macOS installers]]></content:encoded></item><item><title>One namespace to namespace them all (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-namespaces/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Pablo Galindo Salgado proposes a top-level `std` namespace for the Python standard library to prevent module shadowing and free up module names.]]></content:encoded></item></channel></rss>
