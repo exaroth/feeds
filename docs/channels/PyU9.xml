@@ -1,4 +1,163 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Announcing Rust 1.99.1</title><link>https://blog.rust-lang.org/2026/10/15/Rust-1.99.1/</link><author>The Rust Release Team</author><category>dev</category><pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust team has published a new point release of Rust, 1.99.1. Rust is a programming language that is empowering everyone to build reliable and efficient software.If you have a previous version of Rust installed via rustup, getting Rust 1.99.1 is as easy as:If you don't have it already, you can get  from the appropriate page on our website.Rust 1.99.1 fixes the following regressions from prior releases:Missing symbol : Some Rust targets were getting link errors for missing , and that function is now present in Rust's compiler-builtins library as a fallback.The LLVM  pass may introduce calls to  as an optimization, and some Rust targets did not have that function readily available in  or elsewhere. The UEFI targets in particular were broken for any project using , as some of these calls were introduced in the precompiled standard library, but the issue was also reproducible for similar user code patterns.Miscompilation of FFI  return values on x86_64: Rust functions returning  through FFI could leave bits 1-7 of the return register unspecified, causing callers to observe raw values other than  or . This return type is now marked for zero-extension again, as required by the ABI. failed to load  on macOS: This linker could fail to run if the compiler was invoked without the  proxy, as there was no direct setting for the appropriate library search path. Now  is built with an  entry for the directory containing .If you'd like to help us out by testing future releases, you might consider using the beta () and nightly () channels locally and in your CI. Please report any bugs you might come across!Many people came together to create Rust 1.99.1. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>Why Is My Kubernetes Job Still Pending? Tracing Kueue Admission with Headlamp</title><link>https://kubernetes.io/blog/2026/10/14/tracing-kueue-admission-with-headlamp/</link><author></author><category>dev</category><pubDate>Wed, 14 Oct 2026 18:35:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[You submit a Kubernetes Job and
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>Help set Go&apos;s priorities for next year</title><link>https://go.dev/blog/survey2026-announce</link><author>Cameron Balahan, on behalf of the Go team</author><category>dev</category><pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[Hi Gophers! The 2026 Go Developer Survey is now open. We run this survey every year to understand how you use Go and the challenges you face. Your answers directly shape how we plan and prioritize our work.Last year, 5,379 of you responded, and your top frustration was making sure your code follows best practices and Go idioms (33% of respondents). Since then, we shipped a rewritten  in Go 1.26 that automatically modernizes your code, and added more modernizers in Go 1.27. You can read everything we learned in the 2025 results.Take the survey here. It’s open through , takes about 10–20 minutes, and every question is optional. We’ll share the results on this blog in early 2027.Please share the survey with your colleagues, friends, and online communities—the more Go developers we hear from, the better we understand what you need.Thank you for helping shape the future of Go!]]></content:encoded></item><item><title>Python 3.15.1, 3.14.9 and 3.13.17 are out</title><link>https://blog.python.org/2026/10/python-3151-3149-31317/</link><author>Hugo van Kemenade</author><category>dev</category><pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Three certified security releases for 3.15, 3.14 and 3.13.]]></content:encoded></item><item><title>Announcing rustup 1.29.2</title><link>https://blog.rust-lang.org/2026/10/20/Rustup-1.29.2/</link><author>The Rustup Team</author><category>dev</category><pubDate>Tue, 20 Oct 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The rustup team is happy to announce the release of rustup version 1.29.2.Rustup is the recommended tool to install Rust, a
+programming language that empowers everyone to build reliable and efficient
+software.
+What's new in rustup 1.29.2This is a small release which only updates the rustls-webpki and
+webpki-root-certs dependencies to address the problematic eMudhra
+intermediate certificates issue described in CVE-2026-111943.Further details are available in the changelog!If you have a previous version of rustup installed, getting the new one is as easy as stopping
+any programs which may be using rustup (e.g. closing your IDE) and running:Rustup will also automatically update itself at the end of a normal toolchain update:If you don't have it already, you can get rustup from the appropriate page on our website.Rustup releases can come with problems not caused by rustup itself but just due to having a new release.In particular, anti-malware scanners might block rustup or stop it from creating or copying
+files, especially when installing  which contains many small files.Issues like this should be automatically resolved in a few weeks when the anti-malware scanners are updated
+to be aware of the new rustup release.Thanks again to all the contributors who made this rustup release possible!]]></content:encoded></item><item><title>Interactive refactoring in gopls</title><link>https://go.dev/blog/interactive-refactoring</link><author>Hongxiang Jiang</author><category>dev</category><pubDate>Fri, 16 Oct 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[When editing code in a modern IDE or editor, developers rely on its refactoring
+features to automate common transformations. Today, we are excited to introduce
+ in gopls, powered by a new capability we are
+proposing for the Language Server Protocol (LSP)
+that brings dynamic, multi-step dialogs directly into your favorite editor.
+Crucially, we designed this capability (in collaboration with the Dart team)
+not just for Go, but as an open standard for all programming languages and
+editor ecosystems. Working support is already available in gopls v0.24.0 and
+the official Go extension for VS Code v0.56.0.What is the Language Server Protocol (LSP)?The LSP is an open standard that decouples language-specific
+features from specific text editors. As you navigate and edit code, your
+editor (such as VS Code, Neovim, or Emacs) and a language server (like gopls)
+engage in a continuous JSON-RPC exchange to provide features like autocomplete,
+hover documentation, diagnostics, and code actions.Today, almost every code transformation in the LSP is like a function of no
+parameters: you trigger the operation, and the server immediately computes the
+edits. (Renaming a symbol is the sole exception: because it is a function of one
+parameter, the desired new name, it required its own dedicated 
+RPC in the protocol.)The language server must deduce the user’s intent from context alone, namely
+the cursor position and the enclosing syntax tree. When that context is not
+enough, the server is forced into one of two choices: apply a one-size-fits-all
+default, or refrain from offering the transformation altogether. The limitation
+lies not in gopls’s ability to compute the necessary edits, but in the
+LSP’s lack of a mechanism for language servers to ask the user for input.For many transformations, this parameterless model works well. But many others
+need additional input from the user: which struct tags to add and in what
+naming convention, which interface to implement, which file to move a
+declaration to. Without a way to ask, gopls could only guess—“Add struct
+tags”, for example, always produced  tags in —or not offer the
+refactoring at all. With interactive refactoring, language servers can now
+easily provide new operations with one or more parameters.While some language extensions have worked around this limitation by embedding
+custom, language-specific dialog logic directly into individual editors, doing
+so leaves behind other editors (such as Neovim and Emacs) that stick strictly
+to the LSP with minimal custom client code. More importantly, editor-specific
+workarounds go against the fundamental purpose of the LSP: to decouple
+language-specific features from editors so that each server improvement benefits
+every client.Interactive refactorings in actionAdding and removing struct tags (gopls v0.23.0)When configuring serialization formats, developers frequently need custom tags
+and casing conventions. Previously, running “Add struct tags” unconditionally
+injected  tags using  formatting.With interactive refactoring:Place your cursor on any struct definition and select the
+ code action.An input dialog appears, pre-filled with , allowing you to customize
+any combination of tags (such as ).A second dialog lets you select your desired naming convention (such as
+, , or ).Gopls generates and applies the formatted struct tags across your type
+definition.Here is the before-and-after transformation:type UserProfile struct {
+    ID        int64
+    FirstName string
+    LastName  string
+    EmailAddr string
+}
+type UserProfile struct {
+    ID        int64  `json:"id" db:"id"`
+    FirstName string `json:"first_name" db:"first_name"`
+    LastName  string `json:"last_name" db:"last_name"`
+    EmailAddr string `json:"email_addr" db:"email_addr"`
+}
+Similarly,  now asks you for the specific tag keys
+you wish to delete (for example, removing only  tags while preserving the 
+tag), rather than wiping out all struct tags indiscriminately.Implementing interfaces with dynamic symbol searchWhen creating a type to satisfy an interface, developers previously had to copy
+the interface declaration and manually turn it into a set of methods on the
+receiver type (or rely on external tools like  by manually typing the
+receiver and qualifying the name of the interface).Since gopls v0.23.0, with interactive refactoring:Place your cursor on any concrete type and select the
+“Add methods to X to implement an interface…” code action.A text entry field appears, inviting you to choose the name of an interface
+type. It makes dynamic queries to gopls to auto-complete names of types in
+your workspace and the standard library (for example, ).If the selected interface has type parameters, gopls asks for a
+concrete type argument for each type parameter (such as ).Gopls generates complete method stubs with appropriate receiver names and
+instantiated method signatures.type Foo struct{}
+
+type MyHasher struct{}
+type Foo struct{}
+
+type MyHasher struct{}
+
+// Equal implements [maphash.Hasher].
+func (m *MyHasher) Equal(x Foo, y Foo) bool {
+    panic("unimplemented")
+}
+
+// Hash implements [maphash.Hasher].
+func (m *MyHasher) Hash(*maphash.Hash, Foo) {
+    panic("unimplemented")
+}
+Moving declarations across files and packages (preview)Moving declarations manually by cutting and pasting can easily break references
+and requires tedious import cleanup across multiple files. While scheduled for
+an upcoming gopls release, our working implementation already demonstrates how
+interactive file selection streamlines cross-file and cross-package moves:Place your cursor on any top-level declaration and select the
+ code action.A file picker dialog lets you choose an existing destination  file or
+specify a new file path.Gopls moves the declaration along with its dependent declarations (such as
+unexported helpers or methods) while leaving unrelated symbols in place,
+updates references across your workspace, and cleans up imports in both the
+source and destination files.In the example below, we move the type  from package  to package
+. Its method  and the unexported constant , which only 
+uses, move along with it, while the unrelated function  stays behind:// from/from.go
+package from
+
+import (
+    "fmt"
+    "strings"
+)
+
+const bar = "bar"
+
+// Doc comment for Foo
+type Foo struct{}
+
+func (f Foo) Print() {
+    fmt.Println(bar)
+}
+
+func Baz() string {
+    return strings.ToUpper("baz")
+}
+// from/from.go
+package from
+
+import "strings"
+
+func Baz() string {
+    return strings.ToUpper("baz")
+}
+
+// to/to.go
+package to
+
+import "fmt"
+
+const bar = "bar"
+
+// Doc comment for Foo
+type Foo struct{}
+
+func (f Foo) Print() {
+    fmt.Println(bar)
+}
+Slaying the dragon (gopls v0.24.0)As a demonstration of multi-step interactive dialogs and a self-contained test
+case for client editor implementations, gopls v0.24.0 offers a  code action when you place your cursor on a package-level variable
+named  (for example, ). Happy hunting!Interactive refactoring establishes a foundational capability in gopls,
+opening up several exciting directions on our roadmap:Change signature refactoring (#38028): Adding, removing,
+or reordering function parameters across a workspace requires input that
+cannot be deduced from syntax alone, such as the new parameter order or the
+default argument expression to insert at existing call sites. Interactive
+forms allow gopls to collect these details before rewriting the declaration
+and all call sites.Interactive conflict resolution: When a code transformation encounters
+naming collisions, identifier shadowing, or ambiguous references, gopls can
+ask the user for guidance, such as asking for permission to proceed or
+offering to rename conflicting symbols on the fly.Interactive commands beyond code edits: Because interactivity is modeled
+at the LSP command
+layer, it naturally generalizes to non-edit server
+operations that require user configuration, such as configuring test or
+benchmark runs with profiling flags (CPU, memory, tracing).Getting Started and Sharing FeedbackInteractive refactoring is available in gopls v0.24.0
+and v0.56.0
+(with proof-of-concept client integrations also explored for
+Neovim and
+Emacs).We would love to hear your thoughts as we continue
+refining interactive code actions in gopls:(Special thanks to Alan Donovan, Alex Putman, Brian Wilkerson, Danny Tuppeny,
+Hana Kim, Madeline Kalil, Peter Weinberger, and Robert Findley for their
+insights, discussions, feedback, and collaboration on this work.)]]></content:encoded></item><item><title>Announcing Rust 1.99.1</title><link>https://blog.rust-lang.org/2026/10/15/Rust-1.99.1/</link><author>The Rust Release Team</author><category>dev</category><pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust team has published a new point release of Rust, 1.99.1. Rust is a programming language that is empowering everyone to build reliable and efficient software.If you have a previous version of Rust installed via rustup, getting Rust 1.99.1 is as easy as:If you don't have it already, you can get  from the appropriate page on our website.Rust 1.99.1 fixes the following regressions from prior releases:Missing symbol : Some Rust targets were getting link errors for missing , and that function is now present in Rust's compiler-builtins library as a fallback.The LLVM  pass may introduce calls to  as an optimization, and some Rust targets did not have that function readily available in  or elsewhere. The UEFI targets in particular were broken for any project using , as some of these calls were introduced in the precompiled standard library, but the issue was also reproducible for similar user code patterns.Miscompilation of FFI  return values on x86_64: Rust functions returning  through FFI could leave bits 1-7 of the return register unspecified, causing callers to observe raw values other than  or . This return type is now marked for zero-extension again, as required by the ABI. failed to load  on macOS: This linker could fail to run if the compiler was invoked without the  proxy, as there was no direct setting for the appropriate library search path. Now  is built with an  entry for the directory containing .If you'd like to help us out by testing future releases, you might consider using the beta () and nightly () channels locally and in your CI. Please report any bugs you might come across!Many people came together to create Rust 1.99.1. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>Why Is My Kubernetes Job Still Pending? Tracing Kueue Admission with Headlamp</title><link>https://kubernetes.io/blog/2026/10/14/tracing-kueue-admission-with-headlamp/</link><author></author><category>dev</category><pubDate>Wed, 14 Oct 2026 18:35:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[You submit a Kubernetes Job and
 wait for its Pods to appear. A minute passes. Then another. The Job is still suspended, there are no
 application logs, and there may not even be a Pod to inspect.In a cluster managed by Kueue, this can be completely normal. Kueue
 may still be deciding whether the Job can use the requested resources. The useful question is not
@@ -352,115 +511,4 @@ This sweep deployed simultaneous Python sandbox sessions analyzing 5 million row
 The in-depth scaling results and deployment code for this sweep can be reviewed in the Agent Sandbox GKE Swap Python Density directory.Without swap, heavy concurrent bursts exhausted physical memory, causing the node to hit a hard RAM limit and fail at 80 concurrent sessions.
 Enabling Local SSD swap offloaded dormant anonymous memory, freeing up physical RAM and preserving the node's page cache.
 This allowed the node to scale to 240 concurrently isolated Python sandboxes—a 3× density improvement.
-As with the browser workloads, the latency rise at peak density comes mainly from the sandboxes competing for CPU rather than from swap itself.If you manage Kubernetes infrastructure for developer environments, browser testing farms, JVM applications, or AI execution runtimes, leveraging Local SSD swap can multiply your density efficiency.In Kubernetes v1.34+, node swap is Generally Available. You enable it via the kubelet configuration:Pairing this upstream configuration with your cloud provider's high-speed local disk gives you dynamic memory balancing. For example, this is natively supported on Google Kubernetes Engine via Node Memory Swap configured on Local SSD profiles.To get the benefits, configure your workloads with Burstable QoS: set your container's memory limits higher than its requests. The node automatically rations fast swap space based on idle application memory usage while keeping active processes responsive.As the Kubernetes ecosystem transitions into the agentic era, administrators face a growing conflict between finite hardware memory limits and the bursty behavior of AI workloads. Frameworks like Agent Sandbox provide the security isolation required for running untrusted agents, but that isolation traditionally demands large amounts of idle memory overhead.By configuring the kubelet with  and routing it to Local SSDs, you can mitigate this conflict. Fast swap offloads the dormant states of idle agents, allowing you to increase pod density and node utilization on the same infrastructure without compromising security boundaries.]]></content:encoded></item><item><title>Arch-specific SIMD in Go</title><link>https://go.dev/blog/archsimd</link><author>Junyang Shao and David Chase</author><category>dev</category><pubDate>Fri, 2 Oct 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[Since Go 1.26, we have supported an experimental  SIMD API. Now in Go 1.27, we support two more architectures:  and .The new APIs can be accessed by setting  when building a program. They are defined in the  package. is the lower-level infrastructure that  builds on, essentially the intrinsics layer in other languages. For exotic operations that only exist on a specific architecture, users can access them by transitioning from  to  (via  and ). For details, please refer to the simd blog post.For readers with prior knowledge of SIMD intrinsics in other languages, you might find that our  API does not directly mirror the underlying hardware instructions:We give our APIs sensible names: e.g., instead of , we just call it .We leave some architecture details to compiler optimizations rather than exposing them in the API: e.g., instead of _mm512_maskz_add_ps(m, x, y), we optimize  into the same instruction.These design decisions make our APIs smaller and more accessible, and they also happily make the  implementation much easier.For readers without prior knowledge of SIMD intrinsics, we hope our low-level API is a natural and pleasant journey for you.Please share your feedback and comments. Anything about usability, performance, etc., is appreciated. The parent issue for this project is #73787.SIMD stands for Single Instruction, Multiple Data. SIMD instructions operate on wide registers (128-bit, 256-bit, or more) containing multiple 8- to 64-bit elements, performing operations across all elements in parallel. Wider registers and parallel execution provide a significant performance boost to algorithms that can take advantage of them.Until now, anyone who wanted to use SIMD in Go had to endure the friction of writing assembly language. The new  package is here to change that.The goal is to support as many SIMD instructions across different architectures as possible. Currently, we have , , and  available. Our  support has the largest API surface, covering AVX, AVX2, and many AVX-512 extensions. Our  support currently covers NEON, with SVE and some SVE2 already on the way. Our  support is also mostly complete, thanks to its well-defined 128-bit SIMD abstraction.Some users might be interested in matrix extensions on certain architectures, such as AMX and SME. We haven’t fully settled on how to represent matrices effectively in Go, so they are not yet supported, but we might support them in the future.The architecture-specific SIMD API is imported from .  uses distinct struct types, such as , , or , to signal the shape and element type of each vector, and defines operations as methods on those types. At this moment,  supports only fixed-width vector extensions. Scalable vector extensions like  SVE and RVV will have different struct types to represent vectors. Mask types also come with vector-like shapes, e.g., .Across different vector widths, element types, and architectures, we use the same method name whenever operations are semantically identical:Regardless of vector width or architecture, element-wise addition is simply ; the type of  determines which instruction to emit. Instead of 18 different function names for addition, there is only one method name.When instructions on different architectures look similar at a glance but differ in edge-case behavior, we give them distinct names so differences don’t silently bite you. For example, 16-byte table lookup on  () zeros the output byte when the index is negative () and wraps modulo 16 otherwise, so we call it . On  NEON () and  (), any out-of-range index () zeros the output byte, so we call it .On , many 256-bit and 512-bit instructions operate independently within 128-bit lanes rather than across the entire register. We explicitly suffix those methods with  (such as  or ) to make the 128-bit lane boundary obvious.Methods require a receiver value, which doesn’t work for creating a vector from memory or a scalar. For those,  provides package-level functions named with the target vector type:: In Go 1.27, loading and storing slices use the shortest names: archsimd.LoadFloat32x4(s []float32) Float32x4 and . For tail elements that may be shorter than a full vector, archsimd.LoadFloat32x4Part(s []float32) (Float32x4, int) zero-fills the remaining lanes and returns the number of elements loaded, paired with x.StorePart(s []float32) int.: Fixed-size array pointers use the  suffix (archsimd.LoadFloat32x4Array(y *[4]float32) and x.StoreArray(y *[4]float32)), and archsimd.BroadcastFloat32x4(v float32) broadcasts a scalar to all lanes.Reinterpretations are type casts without any cost. SIMD algorithms frequently reinterpret bits across element types and widths.In the Go 1.26 experiment, we implemented this with  methods, which suffered from a quadratic explosion of type pairs and couldn’t generalize to width-agnostic vectors in  or SVE.In Go 1.27, we replace them with composable zero-cost conversions: reinterprets a signed integer or float vector as an unsigned integer vector of the same element width (e.g., Int32x4.ToBits() -> Uint32x4), and  /  converts back. on unsigned vectors changes the element width within the same register width. For example, if  is an , then x.ReshapeToUint32s().BitsToFloat32() reinterprets the bits of  as an  at zero runtime cost.Different architectures encode vector masks very differently, e.g.  mask registers on AVX-512, full vector bitmasks on AVX/AVX2, NEON, and , and predicate registers on SVE. To hide this hardware detail,  provides opaque  types (such as ) matching each vector shape:Comparisons like  produce a . zeros elements where  is false, and  (which replaces  from Go 1.26) selects elements from  where  is true and from  where  is false.The compiler peepholes mask operations with the surrounding instructions: on AVX-512,  or  compiles into a single zero-masked or merge-masked  instruction; on AVX2, NEON, or , it lowers to the appropriate bitwise  or blend/bitselect instruction.Portable algorithms like inner product can easily be implemented using the portable  package, as shown in the companion simd blog post. However, we still expose  to tap into exotic, architecture-specific instructions that do not fit into a portable intersection API, or instructions that can simply do things faster than what  provides.On , the GFNI extension exposes GaloisFieldAffineTransform operations. Putting aside what a Galois Field is, these operations do a simple thing:// Each element of A is interpreted as a matrix of 8 rows of vectors of 8 bits.
-// Each element of x is interpreted as a vector of 8 bits.
-// The b argument is likewise a vector of 8 bits.
-// The result is z[i] = (A[i/8] * x[i]) + b.
-//
-// The matrix * and vector + follow the usual rules for linear algebra,
-// but based on AND and XOR for scalar * and +
-//
-// Asm: VGF2P8AFFINEQB, CPU Feature: AVX512GFNI
-func (x Uint8x16) GaloisFieldAffineTransform(A Uint64x2, b uint8) Uint8x16
-Each 8x8 bit matrix  is packed row-by-row into a single . Because any linear combination or permutation of the 8 bits within a byte can be written as an 8x8 bit matrix, this single instruction is a Swiss Army knife for byte-level bit manipulation.For example, reversing the bit order of every byte () normally requires nibble lookup tables, masks, shifts, and ORs in SIMD. With GaloisFieldAffineTransform, we can simply multiply each byte by the 8x8 anti-diagonal identity matrix () to reverse all 8 bits of 64 bytes at a time in a single instruction:/*
-    Anti-diagonal 8x8 bit matrix (0x8040201008040201):
-    [ 0 0 0 0 0 0 0 1 ]   [ x7 ]   [ x0 ]
-    [ 0 0 0 0 0 0 1 0 ]   [ x6 ]   [ x1 ]
-    [ 0 0 0 0 0 1 0 0 ]   [ x5 ]   [ x2 ]
-    [ 0 0 0 0 1 0 0 0 ] * [ x4 ] = [ x3 ]
-    [ 0 0 0 1 0 0 0 0 ]   [ x3 ]   [ x4 ]
-    [ 0 0 1 0 0 0 0 0 ]   [ x2 ]   [ x5 ]
-    [ 0 1 0 0 0 0 0 0 ]   [ x1 ]   [ x6 ]
-    [ 1 0 0 0 0 0 0 0 ]   [ x0 ]   [ x7 ]
-*/
-func ReverseBits(dst, src []uint8) {
-    if !archsimd.X86.AVX512GFNI() {
-        // A slow fallback emulation impl, details omitted.
-        slowReverseBits(dst, src)
-        return
-    }
-    if len(src) > len(dst) {
-        // Make sure src and dst are the same size
-        src = src[:len(dst)]
-    }
-    revMatrix := archsimd.BroadcastUint64x8(0x8040201008040201)
-    var v archsimd.Uint8x64
-    var i int
-    for i = 0; i < len(src)-v.Len()+1; i += v.Len() {
-        v = archsimd.LoadUint8x64(src[i : i+v.Len()])
-        v.GaloisFieldAffineTransform(revMatrix, 0).Store(dst[i : i+v.Len()])
-    }
-    if i < len(src) {
-        v, _ = archsimd.LoadUint8x64Part(src[i:])
-        v.GaloisFieldAffineTransform(revMatrix, 0).StorePart(dst[i:])
-    }
-}
-Another example is matrix transpose. On , the permutation instructions are shaped in a non-portable way, so using  is cumbersome and might incur emulations. An efficient implementation can be written more directly in . The example below transposes an 8-by-8 matrix of 32-bit integers in registers on  using AVX2’s 128-bit lane-grouped interleaves (, ) and cross-lane permutations (ConcatPermuteScalarsGrouped, ):func Transpose8(a0, a1, a2, a3, a4, a5, a6, a7 archsimd.Int32x8) (
-    b0, b1, b2, b3, b4, b5, b6, b7 archsimd.Int32x8) {
-    if !archsimd.X86.AVX2() {
-        // A slow fallback emulation impl, details omitted.
-        return slowTranspose8(a0, a1, a2, a3, a4, a5, a6, a7)
-    }
-    /*
-            LOW  HIGH
-        a0: abcd efgh
-        a1: ijkl mnop
-        a2: qrst uvwx
-        a3: 0123 4567
-        a4: ABCD EFGH
-        a5: IJKL MNOP
-        a6: QRST UVWX
-        a7: 89yz YZ$@
-    */
-    t0 := a0.InterleaveLoGrouped(a1) // t0 = aibj emfn
-    t1 := a0.InterleaveHiGrouped(a1) // t1 = ckdl gohp
-    t2 := a2.InterleaveLoGrouped(a3) // t2 = q0r1 u4v5
-    t3 := a2.InterleaveHiGrouped(a3) // t3 = s2t3 w6x7
-    t4 := a4.InterleaveLoGrouped(a5) // t4 = AIBJ EMFN
-    t5 := a4.InterleaveHiGrouped(a5) // t5 = CKDL GOHP
-    t6 := a6.InterleaveLoGrouped(a7) // t6 = Q8R9 UYVZ
-    t7 := a6.InterleaveHiGrouped(a7) // t7 = SyTz W$X@
-
-    a0 = t0.ConcatPermuteScalarsGrouped(0, 1, 4, 5, t2) // a0 = aiq0 emu4
-    a1 = t0.ConcatPermuteScalarsGrouped(2, 3, 6, 7, t2) // a1 = bjr1 fnv5
-    a2 = t1.ConcatPermuteScalarsGrouped(0, 1, 4, 5, t3) // a2 = cks2 gow6
-    a3 = t1.ConcatPermuteScalarsGrouped(2, 3, 6, 7, t3) // a3 = dlt3 hpx7
-    a4 = t4.ConcatPermuteScalarsGrouped(0, 1, 4, 5, t6) // a4 = AIQ8 EMUY
-    a5 = t4.ConcatPermuteScalarsGrouped(2, 3, 6, 7, t6) // a5 = BJR9 FNVZ
-    a6 = t5.ConcatPermuteScalarsGrouped(0, 1, 4, 5, t7) // a6 = CKSy GOW$
-    a7 = t5.ConcatPermuteScalarsGrouped(2, 3, 6, 7, t7) // a7 = DLTz HPX@
-
-    b0 = a0.ConcatPermute128Scalars(0, 2, a4) // b0 = aiq0 AIQ8
-    b1 = a1.ConcatPermute128Scalars(0, 2, a5) // b1 = bjr1 BJR9
-    b2 = a2.ConcatPermute128Scalars(0, 2, a6) // b2 = cks2 CKSy
-    b3 = a3.ConcatPermute128Scalars(0, 2, a7) // b3 = dlt3 DLTz
-    b4 = a0.ConcatPermute128Scalars(1, 3, a4) // b4 = emu4 EMUY
-    b5 = a1.ConcatPermute128Scalars(1, 3, a5) // b5 = fnv5 FNVZ
-    b6 = a2.ConcatPermute128Scalars(1, 3, a6) // b6 = gow6 GOW$
-    b7 = a3.ConcatPermute128Scalars(1, 3, a7) // b7 = hpx7 HPX@
-
-    return
-}
-When walking through the examples above, you might have a few questions:What is archsimd.X86.AVX512GFNI(), and can I omit it?Why is the strided loop written as i = 0; i < len(src)-v.Len()+1; i += v.Len(), instead of i = 0; i + v.Len() <= len(src); i += v.Len()?Why does  take 8 vector parameters rather than a struct or an  array?At first glance these choices might look like minor stylistic preferences, but each of them is chosen for an important performance or correctness reason:CPU feature checks (, )On , we provide runtime feature checks like , , , and extension checks like  or ; on , NEON is always available, and we provide checks for optional extensions like , , and . The compiler doesn’t know ahead of time whether the machine running your binary supports optional SIMD extensions. If you don’t guard your SIMD code with the appropriate feature check, your program may crash with  on hardware that lacks the instruction.Just as importantly, CPU feature checks act as compiler optimization hints. For example, AVX-512 supports hardware merge-masking on instruction outputs. How the compiler lowers  on a 128-bit or 256-bit vector depends on which CPU features are known to be available. If the code is not guarded by , the compiler must conservatively emit a vector  followed by a  instruction. Inside an  block, however, the compiler knows AVX-512 is available and fuses the sequence into a single merge-masked AVX-512  instruction.Bounds check elimination in strided loopsHow you write the loop bound determines whether the compiler’s  pass can eliminate slice bounds checks inside the loop. In , the addition  could theoretically overflow to a negative  if  were near , which prevents the compiler from proving that  is always non-negative and in-bounds. Writing  avoids that potential overflow, allowing the loop body to compile with zero bounds checks.Keeping vectors in registers (avoiding large composite types) passes 8 vector parameters rather than a struct of 8 fields or an  array because Go’s ABI and SSA backend currently place large composite types in memory rather than in registers (a known issue tracked at #24416). Because SIMD vectors are 16 to 64 bytes each, spilling them to the stack hurts performance much more than spilling scalar values. This applies to both function parameters and local variables, so avoid wrapping SIMD vectors inside large arrays or structs in hot loops. There are ongoing efforts to promote composite memory accesses back into registers, which have not yet landed in Go 1.27.In Go 1.27,  supports  (AVX, AVX2, and AVX-512),  (NEON), and  (WebAssembly 128-bit SIMD) out of the box. Whether you are on an Intel/AMD machine, an  server or Apple Silicon Mac (M1/M2/M3/M4), or targeting WebAssembly, you can try  natively right away:GOEXPERIMENT=simd go test simd/archsimd/...
-You can also cross-test  (or  via Rosetta emulation on Apple Silicon) by setting :# Run wasm SIMD tests using a WASI runtime:
-GOOS=wasip1 GOARCH=wasm GOEXPERIMENT=simd go test simd/archsimd/...
-
-# Or run amd64 AVX2 tests on Apple Silicon via Rosetta:
-GOARCH=amd64 GOEXPERIMENT=simd go test simd/archsimd/...
-We’re interested in all sorts of feedback! Early users have already helped us catch bugs (such as #77582) and identify places where code generation or API ergonomics could be improved. We tried hard to pick clear, consistent names and cover the most useful instructions, but  is a massive API surface and there is always room to improve.For Go 1.28 and beyond, we are actively working on completing  SVE and SVE2 support in  (introducing width-agnostic scalable vector types like  backed directly by hardware SVE registers and predicates) and wiring it into . We also plan to expand  to additional architectures such as , , , and , improve register promotion for composite types, and continue filling in instructions and compiler optimizations based on community feedback.]]></content:encoded></item><item><title>Python 3.15.0 candidate 3 is here!</title><link>https://blog.python.org/2026/10/python-3150-rc3/</link><author>Hugo van Kemenade</author><category>dev</category><pubDate>Fri, 2 Oct 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Following tradition, a surprise rc3!]]></content:encoded></item><item><title>Demoting i686 Windows targets to std-only</title><link>https://blog.rust-lang.org/2026/10/02/demoting-i686-windows-targets-to-std-only/</link><author>Mateusz Mikuła, Ralf Jung</author><category>dev</category><pubDate>Fri, 2 Oct 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[With Rust 1.100.0, the following changes to 32-bit Windows targets will happen: Tier 1  host tools target will be demoted to Tier 1  host tools. Tier 2  host tools target will be demoted to Tier 2  host tools.Builds of the standard library will continue to be distributed, but host tools such as the compiler will be no longer available.  as a Tier 1 target still undergoes CI testing.To build 32-bit Windows binaries, cross-compiling from a still-supported host toolchain (such as a 64-bit Windows ones) will be required from now on.Desktop and Server 32-bit only x86 CPUs are no longer sold for over 15 years, and general 32-bit Windows support has ended in October 2025. This means that the development platforms these targets are meant for hardly exist these days, and even if they do exist they typically aren't capable enough for development.Even on the modern x86_64 hardware, building i686 Windows toolchains has proven to be problematic. We have encountered compiler binaries crashing when built with the i686 MSVC target, and the GNU C++ toolchain failing with OOMs during LLVM build.Considering all these things, cross-compiling these targets from a better supported one is what we have found to be the best solution forward. As part of that, we stopped producing host tools for these targets. For the time being, the prebuilt standard library is still available, and in case of  still tested on CI.After Rust 1.100, it will no longer be possible to install toolchains on 32-bit Windows hosts. We recommend cross-compiling from a still-supported host (such as a 64-bit Windows toolchain) instead. Other 32-bit platforms are not impacted by this change.For more details about these demotions, see RFC 3999 for  demotion, and MCP 1020 for  demotion.]]></content:encoded></item><item><title>Python 3.10.22, 3.11.17, 3.12.15, 3.13.16 and 3.14.8 are now available!</title><link>https://blog.python.org/2026/10/python-31022-31117/</link><author>Pablo Galindo</author><category>dev</category><pubDate>Thu, 1 Oct 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Security updates across Python 3.10–3.14, the final maintenance release of 3.13, and a farewell to Python 3.10.]]></content:encoded></item><item><title>Announcing Rust 1.99.0</title><link>https://blog.rust-lang.org/2026/10/01/Rust-1.99.0/</link><author>The Rust Release Team</author><category>dev</category><pubDate>Thu, 1 Oct 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust team is happy to announce a new version of Rust, 1.99.0. Rust is a programming language empowering everyone to build reliable and efficient software.If you have a previous version of Rust installed via , you can get 1.99.0 with:If you'd like to help us out by testing future releases, you might consider updating locally to use the beta channel () or the nightly channel (). Please report any bugs you might come across!Rust 1.99.0 stabilizes defining C-ABI variadic functions with "C" and
-"C-unwind" ABIs. Variadic functions defined this way use a variable argument
-list () and accept an arbitrary number of arguments. Rust could already
-call externally-defined variadic functions (e.g., ). With Rust
-1.99, these functions can now be written in Rust itself:The type of  is ,
-which is ABI-compatible with the C  type across targets. What types can be read from a  is guarded by the
- trait.For more details on c-variadic functions, see the
-Reference.
-This release also stabilizes support for defining naked variadic functions with
-non-"C" ABIs, which must be written via inline assembly.This release settles the safety requirements for retrieving the size and
-alignment on raw pointers to both  (trivially safe, already possible on
-stable) and non- types.This is done by stabilizing three functions:While there are no changes to the language semantics in Rust 1.99, we have
-updated the documentation on  to recommend against patterns that
-later deallocate that memory. This was done because such code was found to have
-problematic interactions with current and future potential compiler optimizations,
-and is especially problematic with the upcoming stabilization of custom allocators.
-Instead,  or  should be preferred.This guidance also applies to other  functions in the standard library.Many people came together to create Rust 1.99.0. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>Python Language Summit 2026</title><link>https://blog.python.org/2026/09/language-summit-2026/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:11 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[The 2026 Python Language Summit was hosted in Kraków, Poland as part of EuroPython 2026. There were 15 talks covering free-threading, Rust, garbage collection, type annotations, and more.]]></content:encoded></item><item><title>Lightning Talks (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-lightning-talks/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:10 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Lightning talks on a one-time ABI break, safer interruptions, EktuPy (Scratch but Python), an AGENTS.md file for CPython, and a call to read PEP 836.]]></content:encoded></item><item><title>PEP 827: Type Manipulation (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-pep-827-type-manipulation/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:09 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Michael J. Sullivan presents PEP 827 and discusses a key design decision: how to store type annotations?]]></content:encoded></item><item><title>Free-Threaded Python Post-Era (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-free-threading-post-era/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:08 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Tobias Wrigstad, Fridtjof Stoldt, and Donghee Na propose a safe and performant, high-level concurrency model for free-threaded Python]]></content:encoded></item><item><title>Developer-in-Residence Update &amp; Future (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-developer-in-residence-update-and-future/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:07 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Petr Viktorin gives an update on the Developer-in-Residence role and asks Python core developers for projects to prioritize]]></content:encoded></item><item><title>Spicycrab (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-spicycrab/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:06 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Kushal Das shows off Spicycrab, a Python-to-Rust transpiler for Python users who need performance without learning Rust or leaving Python]]></content:encoded></item><item><title>Rust for CPython (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-rust-for-cpython/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:05 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[David Hewitt shares a status update, first module, and potential acceptance criteria for the Rust for CPython project]]></content:encoded></item><item><title>Memory Snapshots for CPython (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-memory-snapshots/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:04 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Hood Chatham proposes memory snapshots and an initialization phase for speedier Python startups]]></content:encoded></item><item><title>Memory Buffer Protocol (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-memory-buffer-protocol/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:03 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Nathan Goldbaum proposes safe concurrent access through buffer leases and custom data types for the Python Buffer Protocol.]]></content:encoded></item><item><title>Garbage Collection: Generational? Incremental? Both! (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-garbage-collection-generational-incremental-both/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:02 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Mark Shannon proposes a future garbage collection strategy for Python following the revert of the incremental garbage collector in Python 3.14]]></content:encoded></item><item><title>macOS and Python (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-macos-python/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:01 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Ned Deily weighs whether Python should continue shipping macOS installers]]></content:encoded></item><item><title>One namespace to namespace them all (Python Language Summit 2026)</title><link>https://blog.python.org/2026/09/language-summit-2026-namespaces/</link><author>Seth Larson</author><category>dev</category><pubDate>Wed, 30 Sep 2026 12:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Pablo Galindo Salgado proposes a top-level `std` namespace for the Python standard library to prevent module shadowing and free up module names.]]></content:encoded></item><item><title>The Python documentation is now available in German</title><link>https://blog.python.org/2026/09/python-docs-in-german/</link><author>Stan Ulbrych</author><category>dev</category><pubDate>Sat, 26 Sep 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[You can now read the Python documentation online in German!]]></content:encoded></item></channel></rss>
+As with the browser workloads, the latency rise at peak density comes mainly from the sandboxes competing for CPU rather than from swap itself.If you manage Kubernetes infrastructure for developer environments, browser testing farms, JVM applications, or AI execution runtimes, leveraging Local SSD swap can multiply your density efficiency.In Kubernetes v1.34+, node swap is Generally Available. You enable it via the kubelet configuration:Pairing this upstream configuration with your cloud provider's high-speed local disk gives you dynamic memory balancing. For example, this is natively supported on Google Kubernetes Engine via Node Memory Swap configured on Local SSD profiles.To get the benefits, configure your workloads with Burstable QoS: set your container's memory limits higher than its requests. The node automatically rations fast swap space based on idle application memory usage while keeping active processes responsive.As the Kubernetes ecosystem transitions into the agentic era, administrators face a growing conflict between finite hardware memory limits and the bursty behavior of AI workloads. Frameworks like Agent Sandbox provide the security isolation required for running untrusted agents, but that isolation traditionally demands large amounts of idle memory overhead.By configuring the kubelet with  and routing it to Local SSDs, you can mitigate this conflict. Fast swap offloads the dormant states of idle agents, allowing you to increase pod density and node utilization on the same infrastructure without compromising security boundaries.]]></content:encoded></item></channel></rss>
