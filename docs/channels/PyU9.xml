@@ -1,4 +1,263 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>From Working Group to SIG Architecture: spotlight on AI Conformance</title><link>https://kubernetes.io/blog/2026/10/29/sig-arch-ai-conformance-2026/</link><author></author><category>dev</category><pubDate>Thu, 29 Oct 2026 05:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[Frederico Muñoz and Kirti Goyal (FK): Hi Janet, Yuan, and thank you for the opportunity to learn a
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dev</title><link>https://konrad.website/feeds/</link><description></description><item><title>A new Go API for JSON</title><link>https://go.dev/blog/jsonv2</link><author>Michael Pratt, Joe Tsai, Daniel Martí, Johan Brandhorst-Satzkorn, Roger Peppe, Chris Hines, and Damien Neil</author><category>dev</category><pubDate>Wed, 4 Nov 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[JavaScript Object Notation (JSON) is a simple data interchange format, the most popular data format used on the internet, and widely read and written by Go programs.
+Go has included support for JSON in the standard library since well before Go 1.0.
+We first wrote about support for JSON in Go more than 15 years ago!Over time, packages evolve with the needs of their users, and  is no exception.
+Last year, we wrote about a new experimental API for JSON designed to bring long-awaited improvements and fixes.After additional feedback and refinement, the new  and  packages are stable and generally available in Go 1.27!
+This post is an updated version of the article introducing the experiment, describing the problems with  and introducing the new packages.Problems with Overall,  has held up well.
+The idea of marshaling and unmarshaling arbitrary Go types
+with some default representation in JSON, combined with the ability to
+customize the representation, has proven to be highly flexible.
+However, in the years since its introduction,
+various users have identified numerous shortcomings.There are various behavioral flaws in :Imprecise handling of JSON syntax: Over the years, JSON has seen
+increased standardization in order for programs to properly communicate.
+Generally, decoders have become stricter at rejecting ambiguous inputs,
+to reduce the chance that two implementations will have different
+(successful) interpretations of a particular JSON value. currently accepts invalid UTF-8,
+whereas the latest Internet Standard (RFC 8259) requires valid UTF-8.
+The default behavior should report an error in the presence of invalid UTF-8,
+instead of introducing silent data corruption,
+which may cause problems downstream. currently accepts objects with duplicate member names.
+RFC 8259 does not specify how to handle duplicate names,
+so an implementation is free to choose an arbitrary value,
+merge the values, discard the values, or report an error.
+The presence of a duplicate name results in a JSON value
+without a universally agreed upon meaning.
+This could be exploited by attackers in security applications
+and has been exploited before (as in CVE-2017-12635).
+The default behavior should err on the side of safety and reject duplicate names.Leaking nilness of slices and maps: JSON is often used to communicate with
+programs using JSON implementations that do not allow  to be unmarshaled
+into a data type expected to be a JSON array or object.
+Since  marshals a nil slice or map as a JSON ,
+this may lead to errors when unmarshaling by other implementations.
+A survey
+indicated that most Go users prefer that nil slices and maps
+are marshaled as an empty JSON array or object by default.Case-insensitive unmarshaling: When unmarshaling, a JSON object member name
+is resolved to a Go struct field name using a case-insensitive match.
+This is a surprising default, a potential security vulnerability, and a performance limitation.Inconsistent calling of methods: Due to an implementation detail,
+ methods declared on a pointer receiver
+are inconsistently called by . While regarded as a bug,
+this cannot be fixed as too many applications depend on the current behavior.The API of  can be tricky or restrictive:It is difficult to correctly unmarshal from an .
+Users often write json.NewDecoder(r).Decode(v),
+which fails to reject trailing junk at the end of the input.Options can be set on the  and  types,
+but cannot be used with the  and  functions.
+Similarly, types implementing the  and  interfaces
+cannot make use of the options and there is no way to plumb options down the call stack.
+For example, the Decoder.DisallowUnknownFields option loses its effect
+when calling a custom  method.The , , and  functions write to a 
+instead of something more flexible like a  or .
+This limits the usability of those functions.Setting aside internal implementation details,
+the public API commits it to certain performance limitations:: The  interface method forces the implementation
+to allocate the returned . Also, the semantics require that
+ verify that the result is valid JSON
+and also to reformat it to match the specified indentation.: The  interface method requires that
+a complete JSON value be provided (without any trailing data).
+This forces  to parse the JSON value to be unmarshaled
+in its entirety to determine where it ends before it can call .
+Afterwards, the  method itself must parse the provided JSON value again.: Even though the  and  types operate
+on an  or , they buffer the entire JSON value in memory.
+The  method for reading individual tokens is allocation-heavy
+and there is no corresponding API for writing tokens.Furthermore, if the implementation of a  or  method
+recursively calls the  or  function,
+then the performance becomes quadratic.Trying to fix  directlyIntroducing a new, incompatible major version of a package is a heavy consideration.
+If possible, we should try to fix the existing package.While it is relatively easy to add new features,
+it is difficult to change existing features.
+Unfortunately, these problems are inherent consequences of the existing API,
+making them practically impossible to fix within the Go 1 compatibility promise.We could in principle declare separate names, such as  or ,
+but that is tantamount to creating a parallel namespace within the same package.
+This leads us to  (henceforth called ),
+where we can make these changes within a separate  namespace
+in contrast to  (henceforth called ).Building on Before discussing the  API, we first introduce the
+ package
+that lays the foundation for improvements to JSON in Go.JSON serialization in Go can be broken down into two primary components: that is concerned with processing JSON based on its grammar, and that defines the relationship between JSON values and Go values.We use the terms “encode” and “decode” to describe syntactic functionality and
+the terms “marshal” and “unmarshal” to describe semantic functionality.
+We aim to provide a clear distinction between functionality
+that is purely concerned with encoding versus that of marshaling.This diagram provides an overview of this separation.
+Purple blocks represent types, while blue blocks represent functions or methods.
+The direction of the arrows approximately represents the flow of data.
+The bottom half of the diagram, implemented by the  package,
+contains functionality that is only concerned with syntax,
+while the upper half, implemented by the  package,
+contains functionality that assigns semantic meaning to syntactic data
+handled by the bottom half.The basic API of  is the following:package jsontext
+
+type Encoder struct { ... }
+func NewEncoder(io.Writer, ...Options) *Encoder
+func (*Encoder) WriteValue(Value) error
+func (*Encoder) WriteToken(Token) error
+
+type Decoder struct { ... }
+func NewDecoder(io.Reader, ...Options) *Decoder
+func (*Decoder) ReadValue() (Value, error)
+func (*Decoder) ReadToken() (Token, error)
+
+type Kind byte
+type Value []byte
+func (Value) Kind() Kind
+type Token struct { ... }
+func (Token) Kind() Kind
+The  package provides functionality for interacting with JSON
+at a syntactic level and derives its name from
+RFC 8259, section 2
+where the grammar for JSON data is literally called .
+Since it only interacts with JSON at a syntactic level,
+it does not depend on Go reflection.The  and
+
+provide support for encoding and decoding JSON values and tokens.
+The constructors
+accept variadic options
+that affect the particular behavior of encoding and decoding.
+Unlike the  and  types declared in ,
+the new types in  avoid muddling the distinction between syntax and
+semantics and operate in a truly streaming manner.A JSON value is a complete unit of data and is represented in Go as
+a named .
+It is identical to  in , which is now a type alias to .
+A JSON value is syntactically composed of one or more JSON tokens.
+A JSON token is represented in Go as the opaque  type
+with constructors and accessor methods.
+It is analogous to  in 
+but is designed to represent arbitrary JSON tokens without allocation.To resolve the fundamental performance problems with
+the  and  interface methods,
+we need an efficient way of encoding and decoding JSON
+as a streaming sequence of tokens and values.
+In , we introduce the  and  interface methods
+that operate on an  or , allowing the methods’ implementations
+to process JSON in a purely streaming manner. Thus, the  package need not
+be responsible for validating or formatting a JSON value returned by ,
+nor would it need to be responsible for determining the boundaries of a JSON value
+provided to . These responsibilities belong to the  and .Introducing Building on the  package, we now introduce the
+ package.
+It is designed to fix the problems in ,
+while remaining familiar to users of the  package.
+Our goal is that usages of  will operate  the same if directly migrated to .The basic API of  is the following:package json
+
+func Marshal(in any, opts ...Options) (out []byte, err error)
+func MarshalWrite(out io.Writer, in any, opts ...Options) error
+func MarshalEncode(out *jsontext.Encoder, in any, opts ...Options) error
+
+func Unmarshal(in []byte, out any, opts ...Options) error
+func UnmarshalRead(in io.Reader, out any, opts ...Options) error
+func UnmarshalDecode(in *jsontext.Decoder, out any, opts ...Options) error
+The 
+and  functions
+have a signature similar to , but accept options to configure their behavior.
+The 
+and  functions
+directly operate on an  or ,
+avoiding the need to temporarily construct an  or 
+just to write or read from such types.
+The 
+and  functions
+operate on a  and  and
+are actually the underlying implementation of the previously mentioned functions.
+Unlike , options are a first-class argument to each of the marshal and unmarshal functions,
+greatly extending the flexibility and configurability of .
+There are several options available
+in  which are not covered by this article.Type-specified customizationSimilar to ,  allows types to define their own JSON representation
+by satisfying particular interfaces.type Marshaler interface {
+    MarshalJSON() ([]byte, error)
+}
+type MarshalerTo interface {
+    MarshalJSONTo(*jsontext.Encoder) error
+}
+
+type Unmarshaler interface {
+    UnmarshalJSON([]byte) error
+}
+type UnmarshalerFrom interface {
+    UnmarshalJSONFrom(*jsontext.Decoder) error
+}
+The 
+and  interfaces
+are identical to those in .
+The new 
+and  interfaces
+allow a type to represent itself as JSON using a  or .
+This allows options to be forwarded down the call stack, since options
+can be retrieved via the  accessor method on the  or .Caller-specified customizationIn , the caller of  and  can also specify
+a custom JSON representation for any arbitrary type,
+where caller-specified functions take precedence over type-defined methods
+or the default representation for a particular type.func WithMarshalers(*Marshalers) Options
+
+type Marshalers struct { ... }
+func MarshalFunc[T any](fn func(T) ([]byte, error)) *Marshalers
+func MarshalToFunc[T any](fn func(*jsontext.Encoder, T) error) *Marshalers
+
+func WithUnmarshalers(*Unmarshalers) Options
+
+type Unmarshalers struct { ... }
+func UnmarshalFunc[T any](fn func([]byte, T) error) *Unmarshalers
+func UnmarshalFromFunc[T any](fn func(*jsontext.Decoder, T) error) *Unmarshalers
+While  aims to behave  the same as ,
+its behavior has changed in some ways
+to address problems in , most notably: reports an error in the presence of invalid UTF-8. reports an error if a JSON object contains a duplicate name. marshals a nil Go slice or Go map as an empty JSON array or JSON object, respectively. unmarshals a JSON object into a Go struct using a
+case-sensitive match from the JSON member name to the Go field name. redefines the  tag option to omit a field if it would have
+encoded as an “empty” JSON value (which are , , , and ). reports an error when trying to serialize a ,
+which currently has no default representation,
+but provides options to let the caller decide.For most behavior changes, there is a struct tag option or caller-specified option
+that can configure the behavior to operate under  or  semantics,
+or even other caller-determined behavior.
+See “Migrating to v2” for more information.The  performance of  is roughly at parity with .
+Sometimes it is slightly faster, but other times it is slightly slower.
+The  performance of  is significantly faster than ,
+with benchmarks demonstrating improvements of up to 10x.In order to obtain greater performance gains,
+existing implementations of
+ and
+ should
+migrate to also implement
+ and
+,
+so that they can benefit from processing JSON in a purely streaming manner.
+For example, recursive parsing of OpenAPI specifications in  methods
+significantly hurt performance in a particular service of Kubernetes
+(see kubernetes/kube-openapi#315),
+while switching to  improved performance by orders of magnitude.On top of structural improvements, we’re continuing to invest in performance optimizations in the implementation for cases where the  implementation is slower than .
+You can expect additional improvements in Go 1.28.The Go 1 compatibility promise is a core guarantee from the Go project that allows developers to build applications that will stand the test of time and continue working on future versions of Go.The original  and new  packages are of course both subject to the Go 1 compatibility promise.
+Applications using  will continue to be supported indefinitely and need not ever migrate to .That said, when designing the  packages we wanted to do better than keeping  supported.
+We wanted to ensure that  and  are compatible with one another so that packages using different versions can work together.
+Doing so allows a smooth ecosystem migration rather than forcing users to use one version or another due to the choices of their dependencies.For instance, suppose your package uses  to marshal a struct containing a field with a type defined in another package.
+That package may use the original  method to define its marshaling behavior.
+No problem,  supports  methods, so marshaling will continue working as expected.Vice versa, suppose your package uses  to marshal the same struct.
+The other package may use the  method for better performance.
+No problem here either, as the  implementation supports ’s  method under the hood.We’ve achieved this by designing the new packages such that, under the hood,  is implemented in terms of .
+As mentioned above,  supports a variety of .
+Each behavior difference is controlled by one of these options.
+Thus,  can be implemented in terms of  by passing the full set of  compatibility options.With this approach, backwards-compatible additions such as new methods (e.g., ) or new struct tags (e.g., ) are automatically supported to the benefit of existing  users.Implementing  in terms of  options has the additional benefit of allowing gradual migration of callsites.documents the full set of behavior differences between  and , and which option controls those behaviors.Many applications can migrate directly to  with no visible behavior changes, but applications that depend on  behavior can use the options to change only the behaviors they depend on.For example, we can select all  behavior except that duplicate names are allowed:json.Marshal(..., json.DefaultOptionsV2(), jsontext.AllowDuplicateNames(true))
+Alternatively, we can select all  behavior except that duplicate names are disallowed:json.Marshal(..., jsonv1.DefaultOptionsV1(), jsontext.AllowDuplicateNames(false))
+For additional references on working with the new JSON packages, see:The planning for a new major version of  spanned years.
+In late 2020, spurred on by the inability to fix issues in the current package,
+Daniel Martí (one of the maintainers of ) first drafted his
+thoughts on what a hypothetical  package should look like.
+Separately, after previous work on the Go API for Protocol Buffers,
+Joe Tsai was disappointed that the  package
+needed to use a custom JSON implementation because  was
+neither capable of adhering to the stricter JSON standard that the
+Protocol Buffer specification required,
+nor of efficiently serializing JSON in a streaming manner.Believing a brighter future for JSON was both beneficial and achievable,
+Daniel and Joe joined forces to brainstorm on  and
+started to build a prototype
+(with the initial code being a polished version of the JSON serialization logic from the Go protobuf module).
+Over time, a few others (Roger Peppe, Chris Hines, Johan Brandhorst-Satzkorn, Damien Neil, Austin Clements, and Michael Pratt)
+joined the effort by providing design review, code review, and regression testing.
+Many of the early discussions are publicly available in our
+recorded meetings and
+meeting notes.
+Later discussions are available in our  working group meeting notes.The  effort took about 6 years to reach this point,
+incorporating feedback from many contributors and also gaining valuable
+empirical experience from use in production settings.It’s worth noting that it’s largely been developed and promoted by people
+not employed by Google, demonstrating that the Go project is a collaborative endeavor
+with a thriving global community dedicated to improving the Go ecosystem.Thank you to everyone that contributed!]]></content:encoded></item><item><title>Announcing rustup 1.29.3</title><link>https://blog.rust-lang.org/2026/11/03/Rustup-1.29.3/</link><author>The Rustup Team</author><category>dev</category><pubDate>Tue, 3 Nov 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The rustup team has published a new point release of rustup, 1.29.3.Rustup is the recommended tool to install Rust, a
+programming language that empowers everyone to build reliable and efficient
+software.
+What's new in rustup 1.29.3This new patch release has fixed some minor regressions over the previous one:Fixed "Illegal instruction" error on certain x86_64 CPUs without SSE4.1.
+pr#5162Fixed " not supported" error on Solaris. pr#5167Further details are available in the changelog!If you have a previous version of rustup installed, getting the new one is as easy as stopping
+any programs which may be using rustup (e.g. closing your IDE) and running:Rustup will also automatically update itself at the end of a normal toolchain update:For this particular release, if you have encountered any issues during
+self-update, you may try to update rustup manually by following the steps below:Download the corresponding  binary for
+your platform.Make double sure that no other  processes are running.Replace your existing  binary with the downloaded 
+renamed to .
+As a reminder, this binary is often located at , or
+ if you have overridden the  environment
+variable.If you don't have it already, you can get rustup from the appropriate page on our website.Rustup releases can come with problems not caused by rustup itself but just due to having a new release.In particular, anti-malware scanners might block rustup or stop it from creating or copying
+files, especially when installing  which contains many small files.Issues like this should be automatically resolved in a few weeks when the anti-malware scanners are updated
+to be aware of the new rustup release.Thanks again to all the contributors who made this rustup release possible!]]></content:encoded></item><item><title>0.17.1 Released</title><link>https://ziglang.org/news/0.17.1-released/</link><author></author><category>dev</category><pubDate>Tue, 3 Nov 2026 00:00:00 +0000</pubDate><source url="https://ziglang.org/news/">News</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>From Working Group to SIG Architecture: spotlight on AI Conformance</title><link>https://kubernetes.io/blog/2026/10/29/sig-arch-ai-conformance-2026/</link><author></author><category>dev</category><pubDate>Thu, 29 Oct 2026 05:00:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[Frederico Muñoz and Kirti Goyal (FK): Hi Janet, Yuan, and thank you for the opportunity to learn a
 bit more about AI Conformance. Can you tell us a bit about yourselves and how you got involved in
 Kubernetes?: I'm a Senior Staff Software Engineer at Google and have been a Kubernetes maintainer
 since 2015, joining the community just as we were racing toward the 1.0 launch. I started my journey
@@ -101,7 +360,7 @@ Joining the mailing list usually adds the meeting invite to your calendar.]]></c
 $ govulncheck -mode=binary <path_to_your_binary>
 Securing Go Deployments EverywhereFor us, securing Go and its users extends beyond fixing direct security vulnerabilities in the runtime and libraries we ship. In order to keep the ecosystem secure, we believe we also need to provide users with the right tools to write secure software, look towards the future of cryptographic algorithms and protocols, and proactively respond to ecosystem wide issues when we can.We are grateful to the independent security researchers and the Mozilla security team for this rapid notification and coordination during this incident.]]></content:encoded></item><item><title>Python 3.15.2, 3.14.10, 3.13.18, 3.12.16 and 3.11.18 are out</title><link>https://blog.python.org/2026/10/python-3152-31410-31318-31216-31118/</link><author>Hugo van Kemenade</author><category>dev</category><pubDate>Mon, 26 Oct 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Five expedited security releases to distrust the compromised eMudhra intermediate CA keys.]]></content:encoded></item><item><title>How to fund Rust contributors</title><link>https://blog.rust-lang.org/2026/10/26/how-to-fund-rust-contributors/</link><author>Jakub Beránek</author><category>dev</category><pubDate>Mon, 26 Oct 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[There is always so much to do in the Rust Project! New features to implement, bugs to fix, performance optimizations to make, issues to triage… It takes a lot of work to keep our high bar of quality while also shipping new features and improvements. And the workload keeps increasing with the continuous growth of Rust adoption.As is unfortunately common in open source projects, a large fraction of that work is currently done by volunteers. That causes various issues, such as people burning out or complex features taking many years to ship.Unsurprisingly, one of the best ways to help improve that is to get more people who work on Rust funded! This year, several funding initiatives started ramping up, and we already experience many positive effects. They helped us improve the maintenance status of critical Rust projects and make significant progress on several long-awaited features, such as allocators, the never type, the next trait solver or the Polonius borrow checker. However, only a fraction of people working on Rust are currently funded for their work.We know that there are Rust users, both individuals and companies, who would like to help improve Rust by funding it, but it might not always be obvious  to do that. This post thus provides suggestions on how you can support the development of Rust in three ways.If you're unsure which option fits, or would like to discuss funding on behalf of your company, please contact the Funding team.Maintenance is a continuous process required to keep Rust (or any software project for that matter) working. It consists of two main activities. The first is general housekeeping, such as ensuring that Continuous Integration works, dependencies are kept up-to-date and issues, bugs and security incidents are promptly triaged and resolved. The second is performing refactorings and code reviews, which ensures that the codebase will be able to evolve and continuously ship new features, without accruing extensive technical debt.Having quality maintenance is crucial for the long-term health of Rust, yet it is typically very difficult to find funding for it; funders often want to sponsor specific new features, rather than just "keeping the lights on". However, without sufficient maintenance, it becomes much more difficult, and much slower, to ship new features. Improving the maintenance of Rust thus also helps us ship features and improvements faster, though the effects are sometimes only observable over longer periods of time.Funding maintenance is a great choice if you want to let us decide how best to improve Rust. The Rust Funding team continuously looks for Rust teams and projects that require help with their maintenance efforts, and allocates available funds to Rust maintainers who could help improve the situation.
 Fund specific features and improvementsThere are always many Rust improvements and new features that are in progress. We track some of those initiatives through Rust Project Goals. Each Goal describes a specific improvement to Rust: what it is, who is going to develop and drive it forward and which Rust teams are willing to help reviewing and maintaining it.Some of those Goals are looking for funding. Either to help their owner dedicate time and focus to push the given feature forward, or to fund maintainers who will perform refactorings necessary to unblock that feature and review its implementation. Often funding is required for both. When a Goal is properly funded, the probability that it will achieve its milestones is much higher, which then translates in the given improvement being shipped sooner to Rust users.Funding Project Goals is a great choice if you want to help push forward specific Rust features or Rust toolchain improvements that will benefit you or your company.To fund contributors working on Project Goals, consider taking a look at Goals that need funding and reaching out to their funding contact. If in doubt how to proceed, reach out to the Rust Funding team.
-Fund individual contributorsThere are hundreds of people in the Rust Project who continuously work on improving Rust. Some of them have personal fundraising profiles (e.g. on GitHub Sponsors), which allows you to support them directly.There might be various reasons for supporting a specific person. Maybe they are maintaining a crate that you love to use, maybe you like reading their blog posts, or maybe you are simply a fan of the work that they do. Whatever the reason, we are sure that they would appreciate your support!Funding individual contributors is a great choice if you want to directly support Rust contributors whose work you appreciate.To fund individual Rust contributors, check out their GitHub profile or personal website to see what options there are for supporting them. You can also examine our list of Rust Project members who can be supported through GitHub Sponsors.We hope that this post is useful to anyone who would potentially like to invest funds into making Rust better. You can also find a shortened version of the "how to fund Rust guide" at the Funding page of the Rust website, or check out a RustConf 2026 talk by Niko Matsakis about how Project Goals and their funding works.If you are a company looking to fund the development of Rust, consider joining the Rust Commercial Network. Joining the network is free, and Rust Foundation membership is not required. It can help you find opportunities for funding improvements in specific areas related to Rust usage (e.g. user interfaces, language interop, supply chain security, etc.) and collaborate on funding Rust development with other companies.There are of course other ways of helping Rust other than donating funds. For example, you can check out Project Goals that are looking for contributors or more generally check our contributor onboarding guide. Companies can also help by giving employees paid time to contribute upstream, or by hiring Rust contributors to do that work. One possible model is the Engineer in Residence role, that was recently established in the Rust Foundation.]]></content:encoded></item><item><title>Help set Go&apos;s priorities for next year</title><link>https://go.dev/blog/survey2026-announce</link><author>Cameron Balahan, on behalf of the Go team</author><category>dev</category><pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[Hi Gophers! The 2026 Go Developer Survey is now open. We run this survey every year to understand how you use Go and the challenges you face. Your answers directly shape how we plan and prioritize our work.Last year, 5,379 of you responded, and your top frustration was making sure your code follows best practices and Go idioms (33% of respondents). Since then, we shipped a rewritten  in Go 1.26 that automatically modernizes your code, and added more modernizers in Go 1.27. You can read everything we learned in the 2025 results.Take the survey here. It’s open through , takes about 10–20 minutes, and every question is optional. We’ll share the results on this blog in early 2027.Please share the survey with your colleagues, friends, and online communities—the more Go developers we hear from, the better we understand what you need.Thank you for helping shape the future of Go!]]></content:encoded></item><item><title>Python 3.15.1, 3.14.9 and 3.13.17 are out</title><link>https://blog.python.org/2026/10/python-3151-3149-31317/</link><author>Hugo van Kemenade</author><category>dev</category><pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Three certified security releases for 3.15, 3.14 and 3.13.]]></content:encoded></item><item><title>Announcing rustup 1.29.2</title><link>https://blog.rust-lang.org/2026/10/20/Rustup-1.29.2/</link><author>The Rustup Team</author><category>dev</category><pubDate>Tue, 20 Oct 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The rustup team is happy to announce the release of rustup version 1.29.2.Rustup is the recommended tool to install Rust, a
+Fund individual contributorsThere are hundreds of people in the Rust Project who continuously work on improving Rust. Some of them have personal fundraising profiles (e.g. on GitHub Sponsors), which allows you to support them directly.There might be various reasons for supporting a specific person. Maybe they are maintaining a crate that you love to use, maybe you like reading their blog posts, or maybe you are simply a fan of the work that they do. Whatever the reason, we are sure that they would appreciate your support!Funding individual contributors is a great choice if you want to directly support Rust contributors whose work you appreciate.To fund individual Rust contributors, check out their GitHub profile or personal website to see what options there are for supporting them. You can also examine our list of Rust Project members who can be supported through GitHub Sponsors.We hope that this post is useful to anyone who would potentially like to invest funds into making Rust better. You can also find a shortened version of the "how to fund Rust guide" at the Funding page of the Rust website, or check out a RustConf 2026 talk by Niko Matsakis about how Project Goals and their funding works.If you are a company looking to fund the development of Rust, consider joining the Rust Commercial Network. Joining the network is free, and Rust Foundation membership is not required. It can help you find opportunities for funding improvements in specific areas related to Rust usage (e.g. user interfaces, language interop, supply chain security, etc.) and collaborate on funding Rust development with other companies.There are of course other ways of helping Rust other than donating funds. For example, you can check out Project Goals that are looking for contributors or more generally check our contributor onboarding guide. Companies can also help by giving employees paid time to contribute upstream, or by hiring Rust contributors to do that work. One possible model is the Engineer in Residence role, that was recently established in the Rust Foundation.]]></content:encoded></item><item><title>CPython 3.11.18</title><link>https://www.python.org/downloads/release/python-31118/</link><author>Brian Skinn</author><category>Python releases</category><category>dev</category><pubDate>Sun, 25 Oct 2026 00:00:00 +0000</pubDate><source url="https://github.com/bskinn/cpython-release-feed">CPython Release Downloads</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>CPython 3.12.16</title><link>https://www.python.org/downloads/release/python-31216/</link><author>Brian Skinn</author><category>Python releases</category><category>dev</category><pubDate>Sun, 25 Oct 2026 00:00:00 +0000</pubDate><source url="https://github.com/bskinn/cpython-release-feed">CPython Release Downloads</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>CPython 3.13.18</title><link>https://www.python.org/downloads/release/python-31318/</link><author>Brian Skinn</author><category>Python releases</category><category>dev</category><pubDate>Sun, 25 Oct 2026 00:00:00 +0000</pubDate><source url="https://github.com/bskinn/cpython-release-feed">CPython Release Downloads</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>CPython 3.14.10</title><link>https://www.python.org/downloads/release/python-31410/</link><author>Brian Skinn</author><category>Python releases</category><category>dev</category><pubDate>Sun, 25 Oct 2026 00:00:00 +0000</pubDate><source url="https://github.com/bskinn/cpython-release-feed">CPython Release Downloads</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>CPython 3.15.2</title><link>https://www.python.org/downloads/release/python-3152/</link><author>Brian Skinn</author><category>Python releases</category><category>dev</category><pubDate>Sun, 25 Oct 2026 00:00:00 +0000</pubDate><source url="https://github.com/bskinn/cpython-release-feed">CPython Release Downloads</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Help set Go&apos;s priorities for next year</title><link>https://go.dev/blog/survey2026-announce</link><author>Cameron Balahan, on behalf of the Go team</author><category>dev</category><pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[Hi Gophers! The 2026 Go Developer Survey is now open. We run this survey every year to understand how you use Go and the challenges you face. Your answers directly shape how we plan and prioritize our work.Last year, 5,379 of you responded, and your top frustration was making sure your code follows best practices and Go idioms (33% of respondents). Since then, we shipped a rewritten  in Go 1.26 that automatically modernizes your code, and added more modernizers in Go 1.27. You can read everything we learned in the 2025 results.Take the survey here. It’s open through , takes about 10–20 minutes, and every question is optional. We’ll share the results on this blog in early 2027.Please share the survey with your colleagues, friends, and online communities—the more Go developers we hear from, the better we understand what you need.Thank you for helping shape the future of Go!]]></content:encoded></item><item><title>Python 3.15.1, 3.14.9 and 3.13.17 are out</title><link>https://blog.python.org/2026/10/python-3151-3149-31317/</link><author>Hugo van Kemenade</author><category>dev</category><pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate><source url="https://blog.python.org/">Python official news</source><content:encoded><![CDATA[Three certified security releases for 3.15, 3.14 and 3.13.]]></content:encoded></item><item><title>CPython 3.13.17</title><link>https://www.python.org/downloads/release/python-31317/</link><author>Brian Skinn</author><category>Python releases</category><category>dev</category><pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate><source url="https://github.com/bskinn/cpython-release-feed">CPython Release Downloads</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>CPython 3.14.9</title><link>https://www.python.org/downloads/release/python-3149/</link><author>Brian Skinn</author><category>Python releases</category><category>dev</category><pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate><source url="https://github.com/bskinn/cpython-release-feed">CPython Release Downloads</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>CPython 3.15.1</title><link>https://www.python.org/downloads/release/python-3151/</link><author>Brian Skinn</author><category>Python releases</category><category>dev</category><pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate><source url="https://github.com/bskinn/cpython-release-feed">CPython Release Downloads</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Announcing rustup 1.29.2</title><link>https://blog.rust-lang.org/2026/10/20/Rustup-1.29.2/</link><author>The Rustup Team</author><category>dev</category><pubDate>Tue, 20 Oct 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The rustup team is happy to announce the release of rustup version 1.29.2.Rustup is the recommended tool to install Rust, a
 programming language that empowers everyone to build reliable and efficient
 software.
 What's new in rustup 1.29.2This is a small release which only updates the rustls-webpki and
@@ -109,229 +368,4 @@ webpki-root-certs dependencies to address the problematic eMudhra
 intermediate certificates issue described in CVE-2026-111943.Further details are available in the changelog!If you have a previous version of rustup installed, getting the new one is as easy as stopping
 any programs which may be using rustup (e.g. closing your IDE) and running:Rustup will also automatically update itself at the end of a normal toolchain update:If you don't have it already, you can get rustup from the appropriate page on our website.Rustup releases can come with problems not caused by rustup itself but just due to having a new release.In particular, anti-malware scanners might block rustup or stop it from creating or copying
 files, especially when installing  which contains many small files.Issues like this should be automatically resolved in a few weeks when the anti-malware scanners are updated
-to be aware of the new rustup release.Thanks again to all the contributors who made this rustup release possible!]]></content:encoded></item><item><title>Interactive refactoring in gopls</title><link>https://go.dev/blog/interactive-refactoring</link><author>Hongxiang Jiang</author><category>dev</category><pubDate>Fri, 16 Oct 2026 00:00:00 +0000</pubDate><source url="http://blog.golang.org/feed.atom">Golang Blog</source><content:encoded><![CDATA[When editing code in a modern IDE or editor, developers rely on its refactoring
-features to automate common transformations. Today, we are excited to introduce
- in gopls, powered by a new capability we are
-proposing for the Language Server Protocol (LSP)
-that brings dynamic, multi-step dialogs directly into your favorite editor.
-Crucially, we designed this capability (in collaboration with the Dart team)
-not just for Go, but as an open standard for all programming languages and
-editor ecosystems. Working support is already available in gopls v0.24.0 and
-the official Go extension for VS Code v0.56.0.What is the Language Server Protocol (LSP)?The LSP is an open standard that decouples language-specific
-features from specific text editors. As you navigate and edit code, your
-editor (such as VS Code, Neovim, or Emacs) and a language server (like gopls)
-engage in a continuous JSON-RPC exchange to provide features like autocomplete,
-hover documentation, diagnostics, and code actions.Today, almost every code transformation in the LSP is like a function of no
-parameters: you trigger the operation, and the server immediately computes the
-edits. (Renaming a symbol is the sole exception: because it is a function of one
-parameter, the desired new name, it required its own dedicated 
-RPC in the protocol.)The language server must deduce the user’s intent from context alone, namely
-the cursor position and the enclosing syntax tree. When that context is not
-enough, the server is forced into one of two choices: apply a one-size-fits-all
-default, or refrain from offering the transformation altogether. The limitation
-lies not in gopls’s ability to compute the necessary edits, but in the
-LSP’s lack of a mechanism for language servers to ask the user for input.For many transformations, this parameterless model works well. But many others
-need additional input from the user: which struct tags to add and in what
-naming convention, which interface to implement, which file to move a
-declaration to. Without a way to ask, gopls could only guess—“Add struct
-tags”, for example, always produced  tags in —or not offer the
-refactoring at all. With interactive refactoring, language servers can now
-easily provide new operations with one or more parameters.While some language extensions have worked around this limitation by embedding
-custom, language-specific dialog logic directly into individual editors, doing
-so leaves behind other editors (such as Neovim and Emacs) that stick strictly
-to the LSP with minimal custom client code. More importantly, editor-specific
-workarounds go against the fundamental purpose of the LSP: to decouple
-language-specific features from editors so that each server improvement benefits
-every client.Interactive refactorings in actionAdding and removing struct tags (gopls v0.23.0)When configuring serialization formats, developers frequently need custom tags
-and casing conventions. Previously, running “Add struct tags” unconditionally
-injected  tags using  formatting.With interactive refactoring:Place your cursor on any struct definition and select the
- code action.An input dialog appears, pre-filled with , allowing you to customize
-any combination of tags (such as ).A second dialog lets you select your desired naming convention (such as
-, , or ).Gopls generates and applies the formatted struct tags across your type
-definition.Here is the before-and-after transformation:type UserProfile struct {
-    ID        int64
-    FirstName string
-    LastName  string
-    EmailAddr string
-}
-type UserProfile struct {
-    ID        int64  `json:"id" db:"id"`
-    FirstName string `json:"first_name" db:"first_name"`
-    LastName  string `json:"last_name" db:"last_name"`
-    EmailAddr string `json:"email_addr" db:"email_addr"`
-}
-Similarly,  now asks you for the specific tag keys
-you wish to delete (for example, removing only  tags while preserving the 
-tag), rather than wiping out all struct tags indiscriminately.Implementing interfaces with dynamic symbol searchWhen creating a type to satisfy an interface, developers previously had to copy
-the interface declaration and manually turn it into a set of methods on the
-receiver type (or rely on external tools like  by manually typing the
-receiver and qualifying the name of the interface).Since gopls v0.23.0, with interactive refactoring:Place your cursor on any concrete type and select the
-“Add methods to X to implement an interface…” code action.A text entry field appears, inviting you to choose the name of an interface
-type. It makes dynamic queries to gopls to auto-complete names of types in
-your workspace and the standard library (for example, ).If the selected interface has type parameters, gopls asks for a
-concrete type argument for each type parameter (such as ).Gopls generates complete method stubs with appropriate receiver names and
-instantiated method signatures.type Foo struct{}
-
-type MyHasher struct{}
-type Foo struct{}
-
-type MyHasher struct{}
-
-// Equal implements [maphash.Hasher].
-func (m *MyHasher) Equal(x Foo, y Foo) bool {
-    panic("unimplemented")
-}
-
-// Hash implements [maphash.Hasher].
-func (m *MyHasher) Hash(*maphash.Hash, Foo) {
-    panic("unimplemented")
-}
-Moving declarations across files and packages (preview)Moving declarations manually by cutting and pasting can easily break references
-and requires tedious import cleanup across multiple files. While scheduled for
-an upcoming gopls release, our working implementation already demonstrates how
-interactive file selection streamlines cross-file and cross-package moves:Place your cursor on any top-level declaration and select the
- code action.A file picker dialog lets you choose an existing destination  file or
-specify a new file path.Gopls moves the declaration along with its dependent declarations (such as
-unexported helpers or methods) while leaving unrelated symbols in place,
-updates references across your workspace, and cleans up imports in both the
-source and destination files.In the example below, we move the type  from package  to package
-. Its method  and the unexported constant , which only 
-uses, move along with it, while the unrelated function  stays behind:// from/from.go
-package from
-
-import (
-    "fmt"
-    "strings"
-)
-
-const bar = "bar"
-
-// Doc comment for Foo
-type Foo struct{}
-
-func (f Foo) Print() {
-    fmt.Println(bar)
-}
-
-func Baz() string {
-    return strings.ToUpper("baz")
-}
-// from/from.go
-package from
-
-import "strings"
-
-func Baz() string {
-    return strings.ToUpper("baz")
-}
-
-// to/to.go
-package to
-
-import "fmt"
-
-const bar = "bar"
-
-// Doc comment for Foo
-type Foo struct{}
-
-func (f Foo) Print() {
-    fmt.Println(bar)
-}
-Slaying the dragon (gopls v0.24.0)As a demonstration of multi-step interactive dialogs and a self-contained test
-case for client editor implementations, gopls v0.24.0 offers a  code action when you place your cursor on a package-level variable
-named  (for example, ). Happy hunting!Interactive refactoring establishes a foundational capability in gopls,
-opening up several exciting directions on our roadmap:Change signature refactoring (#38028): Adding, removing,
-or reordering function parameters across a workspace requires input that
-cannot be deduced from syntax alone, such as the new parameter order or the
-default argument expression to insert at existing call sites. Interactive
-forms allow gopls to collect these details before rewriting the declaration
-and all call sites.Interactive conflict resolution: When a code transformation encounters
-naming collisions, identifier shadowing, or ambiguous references, gopls can
-ask the user for guidance, such as asking for permission to proceed or
-offering to rename conflicting symbols on the fly.Interactive commands beyond code edits: Because interactivity is modeled
-at the LSP command
-layer, it naturally generalizes to non-edit server
-operations that require user configuration, such as configuring test or
-benchmark runs with profiling flags (CPU, memory, tracing).Getting Started and Sharing FeedbackInteractive refactoring is available in gopls v0.24.0
-and v0.56.0
-(with proof-of-concept client integrations also explored for
-Neovim and
-Emacs).We would love to hear your thoughts as we continue
-refining interactive code actions in gopls:(Special thanks to Alan Donovan, Alex Putman, Brian Wilkerson, Danny Tuppeny,
-Hana Kim, Madeline Kalil, Peter Weinberger, and Robert Findley for their
-insights, discussions, feedback, and collaboration on this work.)]]></content:encoded></item><item><title>Announcing Rust 1.99.1</title><link>https://blog.rust-lang.org/2026/10/15/Rust-1.99.1/</link><author>The Rust Release Team</author><category>dev</category><pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate><source url="https://blog.rust-lang.org/">Rust Blog</source><content:encoded><![CDATA[The Rust team has published a new point release of Rust, 1.99.1. Rust is a programming language that is empowering everyone to build reliable and efficient software.If you have a previous version of Rust installed via rustup, getting Rust 1.99.1 is as easy as:If you don't have it already, you can get  from the appropriate page on our website.Rust 1.99.1 fixes the following regressions from prior releases:Missing symbol : Some Rust targets were getting link errors for missing , and that function is now present in Rust's compiler-builtins library as a fallback.The LLVM  pass may introduce calls to  as an optimization, and some Rust targets did not have that function readily available in  or elsewhere. The UEFI targets in particular were broken for any project using , as some of these calls were introduced in the precompiled standard library, but the issue was also reproducible for similar user code patterns.Miscompilation of FFI  return values on x86_64: Rust functions returning  through FFI could leave bits 1-7 of the return register unspecified, causing callers to observe raw values other than  or . This return type is now marked for zero-extension again, as required by the ABI. failed to load  on macOS: This linker could fail to run if the compiler was invoked without the  proxy, as there was no direct setting for the appropriate library search path. Now  is built with an  entry for the directory containing .If you'd like to help us out by testing future releases, you might consider using the beta () and nightly () channels locally and in your CI. Please report any bugs you might come across!Many people came together to create Rust 1.99.1. We couldn't have done it without all of you. Thanks!]]></content:encoded></item><item><title>Why Is My Kubernetes Job Still Pending? Tracing Kueue Admission with Headlamp</title><link>https://kubernetes.io/blog/2026/10/14/tracing-kueue-admission-with-headlamp/</link><author></author><category>dev</category><pubDate>Wed, 14 Oct 2026 18:35:00 +0000</pubDate><source url="https://kubernetes.io/">Kubernetes Blog</source><content:encoded><![CDATA[You submit a Kubernetes Job and
-wait for its Pods to appear. A minute passes. Then another. The Job is still suspended, there are no
-application logs, and there may not even be a Pod to inspect.In a cluster managed by Kueue, this can be completely normal. Kueue
-may still be deciding whether the Job can use the requested resources. The useful question is not
-only “Why is the Pod pending?” It is first “Has Kueue admitted the Workload?”The Kueue plugin for Headlamp brings that
-investigation into the Headlamp UI. Instead of reconstructing the admission path from several
-commands and large YAML objects, you can begin with the Workload, read its condition message, and
-follow links through the LocalQueue, ClusterQueue, ResourceFlavor, and Cohort.This article follows that Headlamp-first path. The command line appears only in a short optional
-section for reproducing the example.The alpha release provides read-only views for Kueue  Cohorts, ClusterQueues, LocalQueues,
-ResourceFlavors, and Workloads. It does not add its own create, edit, stop, resume, or delete
-workflows. Headlamp still provides its standard YAML and resource actions where your permissions
-allow them.First, separate admission from Pod schedulingKueue and the Kubernetes scheduler answer different questions.Kueue admission: Should this Workload start now, considering queue policy, quota, ResourceFlavors,
-admission checks, and other waiting Workloads?Pod scheduling: After the Workload is admitted and the Job resumes, which nodes can run its Pods?That boundary changes the investigation. If the Workload is not admitted, stay in the Kueue section
-of Headlamp. If it is admitted but its Pods are still , move to Headlamp's normal Job and
-Pod views and inspect scheduler events.Kueue admission architectureThe Headlamp-first troubleshooting pathThe quickest investigation starts with the Workload, not with a shell.Tracing a pending Job through HeadlampStep 1: Open the Workloads viewIn Headlamp, open . Select the namespace that contains the Job, then find the
-Workload created for it.Kueue creates a Workload to represent the
-resource request and admission state of a Job. In the alpha plugin, owner references are shown as
- text but are not yet clickable. The Workload name normally contains the Job name, so the
-namespace filter and table search are the simplest ways to locate it.Before opening the detail page, the list already gives you a useful first scan:priority and priority classa readable current status such as , , or If there is no matching Workload, check three things before going further: the selected namespace,
-whether the Job was submitted to a LocalQueue, and whether your Kubernetes account can list
-Workloads. The plugin performs permission checks and displays an access message when the current
-identity cannot read a resource.Step 2: Read status, conditions, and eventsOpen the Workload. Start with its current status and
-conditions,
-not with the full YAML.For admission troubleshooting, the most important condition types are  and
-. means Kueue has admitted the Workload. The Job can resume, so any remaining
- Pods belong to the scheduling branch of the investigation. with a reason such as  means Kueue has not reserved quota. The
-condition message explains what prevented the reservation.An  status means the Workload currently cannot fit the available queue
-configuration. A missing covered resource, unsuitable ResourceFlavor, stopped queue, or admission
-check can all lead you here.For example, a condition message may report that Kueue could not assign a ResourceFlavor because the
-ClusterQueue has insufficient CPU quota. That message is the first real answer to “Why is my Job
-still pending?” The rest of the Headlamp journey explains the configuration behind it.Also check the  section. Conditions describe the current state; events help show what
-recently changed or what Kueue attempted.Stay on the Workload detail page and inspect the PodSets and resource requests. The plugin shows the
-requested Pod count, CPU, memory, and other resources that Kueue evaluates together.This matters because a Job with  and a one-CPU request per Pod asks Kueue for three
-CPUs in total. Looking at only one Pod's template would underestimate the Workload.If quota has already been reserved, the same page also shows the assigned ClusterQueue,
-ResourceFlavors, and admitted resource usage. If those admission assignments are absent, the
-Workload has not reached that point yet.In our example, the Workload requests:600 MiB of memory in totalThe next question is where that request entered Kueue.Step 4: Follow the linked LocalQueueUse the LocalQueue link on the Workload
-detail page. A LocalQueue is the namespace-level entry point used by the Job. It connects namespaced
-Workloads to a cluster-scoped ClusterQueue.The LocalQueue page shows:its namespace and connected ClusterQueuestop policy and current statuspending, reserving, and admitted Workload countsKueue conditions and Kubernetes eventsrelated Workloads in the same namespaceThis page answers two practical questions: Did the Job enter the queue you expected, and is it the
-only Workload waiting there?If the LocalQueue is inactive or stopped, that may already explain the wait. If it is active, follow
-the linked ClusterQueue to inspect the capacity behind it.Step 5: Inspect ClusterQueue capacity and usageA ClusterQueue represents the
-cluster-level quota and admission policy available to one or more LocalQueues.On its Headlamp detail page, compare the Workload request with:nominal quota for each ResourceFlavorcurrent reservations and usageborrowing and lending limitspending, reserving, and admitted Workload countsqueueing strategy and stop policypreemption, fair-sharing, flavor-fungibility, and admission-check settingsKueue conditions and Kubernetes eventsFor the example in this article, the ClusterQueue provides a nominal quota of two CPUs and two Pod
-slots. The Workload asks for three of each. The condition message and the ClusterQueue page now tell
-the same story: the Workload does not fit, so Kueue leaves the Job suspended.This is an admission-capacity problem. It is not evidence that kube-scheduler failed to find a node.Step 6: Check ResourceFlavor and Cohort when neededQuota is not always a single pool. A
-ResourceFlavor can represent a class of
-compute through node labels, taints, tolerations, or topology settings. Use the ResourceFlavor link
-from the ClusterQueue when the condition mentions flavor assignment or when the Workload requires a
-particular hardware class, such as GPU nodes.If the ClusterQueue belongs to a Cohort, follow
-that link too. Cohorts let ClusterQueues share unused quota. The Headlamp page shows parent and
-child Cohorts, member ClusterQueues, referenced ResourceFlavors, resource groups, borrowing and
-lending limits, and fair-sharing information.These pages help answer a more subtle question: Is the Workload blocked because the queue has no
-quota of its own, because it cannot borrow enough, or because no suitable flavor can be assigned?What we learned without leaving HeadlampFor the sample pending Job, the UI gives us a complete explanation:The Workload is not admitted.Its  condition is false and the message points to insufficient quota.The Workload requests three CPUs and three Pod slots.Its LocalQueue is active and points to the expected ClusterQueue.The ClusterQueue provides only two CPUs and two Pod slots.Kueue therefore keeps the Job suspended until quota becomes available or the queue configuration
-changes.The important part is not that Headlamp invents a new status. It reads the same Kubernetes API
-objects as other clients, then places the related resources and human-readable values in one
-connected investigation.If the Workload is admitted, switch viewsSuppose the Workload detail page shows , but the application is still not running.
-Kueue has completed its part of the decision. Continue in Headlamp's standard Kubernetes views:Open  and inspect the Job state and events.Open  and filter by the Job name or namespace.Select a  Pod and read its  section.At this stage, look for scheduler concerns such as insufficient node capacity,
-node affinity,
-taints and tolerations,
-topology constraints, persistent-volume binding, or image-pull failures.This handoff is the most useful troubleshooting rule in the article:Not admitted: investigate Kueue resources in Headlamp., but Pods are : investigate Job, Pod, node, and scheduler information in
-Headlamp.A repeatable Headlamp checklistWhen the next Job does not start, use this short path:Open  and select the correct namespace.Find the Workload associated with the Job.Check the readable status, , and  conditions.Read the condition message and recent events.Compare PodSet resource requests with any admission assignments.Follow the LocalQueue link and confirm its status and ClusterQueue.Follow the ClusterQueue link and compare quota, reservations, usage, and policy.Inspect ResourceFlavor or Cohort details when the message points to flavor selection or shared
-quota.If admitted, move to Headlamp's Job and Pod views.What Headlamp replaces during this investigationThe plugin does not replace  or
- for scripts, exact object
-output, or changes. It replaces the repetitive UI-less navigation needed during an interactive
-investigation.Is the Workload admitted?Kueue → Workloads → status and conditionskubectl describe workload <workload-name> -n <namespace>Which LocalQueue did it enter?Workload → linked LocalQueuekubectl get localqueue <localqueue-name> -n <namespace> -o yamlWhich ClusterQueue provides quota?LocalQueue → linked ClusterQueuekubectl get clusterqueue <clusterqueue-name> -o yamlWhich flavor or shared quota matters?ClusterQueue → ResourceFlavor or Cohortkubectl get resourceflavor <flavor-name> -o yaml or kubectl get cohort <cohort-name> -o yamlWhat happened after admission?Workloads → Jobs and Pods → eventskubectl describe job <job-name> -n <namespace> or kubectl describe pod <pod-name> -n <namespace>For scripts and GitOps workflows, the command line remains the right tool. For a person asking “why
-is this waiting?”, the linked Headlamp path is usually faster to read.Optional: reproduce the pending scenarioTo reproduce the specific quota mismatch used in this article, configure a ClusterQueue with two
-CPUs and two Pod slots, then submit a three-Pod Job that requests one CPU per Pod. The Job enters
-its LocalQueue, Kueue creates a Workload, and the Workload remains pending because the combined
-request is larger than the available quota.Keeping this setup separate from the main walkthrough is intentional: once the resources exist, the
-investigation itself should happen in Headlamp.Current alpha limitationsThe  release is an initial read-only view of the Kueue admission path.The plugin does not add its own create, edit, pause, resume, or delete flows.Workload owner references are displayed as text and are not currently navigable.The UI depends on the Kubernetes permissions of the identity used by Headlamp.Metrics and a visual relationship map are possible follow-up areas rather than features of this
-release.These limits are useful to state clearly: the plugin's current purpose is to make admission state
-and resource relationships easier to inspect.Developed during LFX MentorshipThe plugin was developed during CNCF LFX Mentorship
-2026 Term 2 using TypeScript, React, Kubernetes APIs, and Headlamp's plugin system.Utkarsh Raj implemented the plugin with guidance and review from René Dudfield
-(@illume) and Kevin Hannon (@kannon92).
-Feedback from the Headlamp and Kueue communities shaped the resource views, status presentation,
-navigation, documentation, tests, and first alpha release.Try it and share feedbackIf a pending Workload is still difficult to explain after following the Headlamp path, that is
-exactly the kind of feedback that can improve the plugin.]]></content:encoded></item></channel></rss>
+to be aware of the new rustup release.Thanks again to all the contributors who made this rustup release possible!]]></content:encoded></item></channel></rss>
