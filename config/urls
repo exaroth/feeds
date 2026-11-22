@@ -5,7 +5,6 @@
 "query:HN:tags # \"hn\""
 "query:Tech:tags # \"tech\""
 "query:Dev:tags # \"dev\""
-"query:Reddit:tags # \"reddit\""
 "query:Github Issues:tags # \"gh\" and age < 14"
 
 https://feeds.feedburner.com/ign/reviews "~IGN" ign
@@ -20,7 +19,6 @@ https://blog.rust-lang.org/feed "~Rust Blog" ! dev
 https://blog.python.org/feeds/posts/default?alt=rss "~Python official news" ! dev
 https://raw.githubusercontent.com/bskinn/cpython-release-feed/refs/heads/main/feed/feed.rss "Python releases" ! dev
 https://ziglang.org/news/index.xml ! dev
-
 
 
 https://www.youtube.com/feeds/videos.xml?playlist_id=UULFknLrEdhRCp1aegoMqRaCZg "~News - DW" ! news
@@ -78,21 +76,13 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UC3RcjbuyF5M1U4R62zjE3hg "~D
 https://podcasts.files.bbci.co.uk/p07mdbhg.rss "~Youre dead to me" ! podcast
 https://www.theguardian.com/news/series/the-audio-long-read/podcast.xml "~Long reads" ! podcast
 
-# reddit
-https://www.reddit.com/r/rust/top/.rss?sort=top&t=day&limit=3 "~Reddit - Rust" ! rust reddit
-https://www.reddit.com/r/programming/top/.rss?sort=top&t=day&limit=6 "~Reddit - Programming" ! reddit
-https://www.reddit.com/r/linux/top/.rss?sort=top&t=day&limit=6 "~Reddit - Linux" ! reddit
-https://www.reddit.com/r/kubernetes/top/.rss?sort=top&t=day&limit=6 "~Kubernetes" ! reddit
-https://www.reddit.com/r/golang/top/.rss?sort=top&t=day&limit=6 "~Reddit - Go" ! golang reddit
-https://www.reddit.com/r/MachineLearning/top/.rss?sort=top&t=day&limit=3 "~Reddit - ML" ! ai reddit
-https://www.reddit.com/r/artificial/top/.rss?sort=top&t=day&limit=3 "~Reddit - AI" ! ai reddit
-
 https://gh-issues-to-rss.fly.dev/exaroth/liveboat?m=io ! gh
 https://gh-issues-to-rss.fly.dev/exaroth/liveboat-github-runner?m=io ! gh
-https://gh-issues-to-rss.fly.dev/exaroth/awesome-dev.news?m=io ! gh
 https://gh-issues-to-rss.fly.dev/exaroth/i3-news?m=io ! gh
 https://gh-issues-to-rss.fly.dev/exaroth/poom?m=io ! gh
 https://gh-issues-to-rss.fly.dev/exaroth/game-appimage?m=io ! gh
+https://gh-issues-to-rss.fly.dev/exaroth/narrative?m=io ! gh
+https://gh-issues-to-rss.fly.dev/exaroth/goose-lang.vim?m=io ! gh
 
 # Astrum
 https://www.youtube.com/feeds/videos.xml?playlist_id=UULF-9b7aDP6ZN0coj9-xFnrtw ! yt
